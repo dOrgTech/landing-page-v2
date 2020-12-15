@@ -1,7 +1,7 @@
 # landing-page-v2
 
 ## Setup
-1. `nvm use` - Use the proper version of node.
+1. `nvm install && nvm use` - Use the proper version of node.
 1. `yarn` - Install all dependencies.
 
 ## Develop
