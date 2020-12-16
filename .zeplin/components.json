@@ -1,0 +1,14 @@
+{
+    "projects": [
+        "5fc8757e071b5908d4857503"
+    ],
+    "styleguides": [],
+    "components": [
+        {
+            "path": "src/components/Button1.tsx",
+            "zeplinNames": [
+                "Component 1"
+            ]
+        }
+    ]
+}
