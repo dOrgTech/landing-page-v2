@@ -42,7 +42,7 @@ export const Header: React.FC = () => {
       <AppBarBody container justify="space-between" alignItems='center'>
         <Grid item>
           <Box>
-            <Logo src={process.env.PUBLIC_URL + "/imgs/test.png"} alt="dOrg Logo" onClick={onLogoClick} />
+            <Logo src={process.env.PUBLIC_URL + "/imgs/dOrg_logo_white.svg"} alt="dOrg Logo" onClick={onLogoClick} />
           </Box>
         </Grid>
         <Grid item>
