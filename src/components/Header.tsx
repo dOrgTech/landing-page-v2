@@ -48,13 +48,13 @@ export const Header: React.FC = () => {
         <Grid item>
           <LinksContainer container wrap='nowrap'>
             <Grid item>
-              <LinkButton href="https://web3api.substack.com/" target="_blank" color={'textSecondary'} variant='body1'>
+              <LinkButton href="https://web3api.substack.com/" target="_blank" color={'textPrimary'} variant='body1' >
                 ABOUT
               </LinkButton>
             </Grid>
             <LinkDivider item />
             <Grid item>
-              <LinkButton href="https://github.com/web3-api/prototype" target="_blank" color={'textSecondary'} variant='body1'>
+              <LinkButton href="https://github.com/web3-api/prototype" target="_blank" color={'textPrimary'} variant='body1'>
                 CAREERS
               </LinkButton>
             </Grid>

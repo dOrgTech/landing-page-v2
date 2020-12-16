@@ -37,7 +37,7 @@ export const Footer = () => {
         <LogoContainer href="https://t.me/TODO" target="_blank">
           <Logo
             icon={faTelegram}
-            color={theme.palette.text.secondary}
+            color={theme.palette.text.primary}
             style={{ paddingRight: 10 }}
           />
         </LogoContainer>
@@ -46,7 +46,7 @@ export const Footer = () => {
         <LogoContainer href="https://twitter.com/dorg_tech" target="_blank">
           <Logo
             icon={faTwitter}
-            color={theme.palette.text.secondary}
+            color={theme.palette.text.primary}
             style={{ paddingRight: 10 }}
           />
         </LogoContainer>
