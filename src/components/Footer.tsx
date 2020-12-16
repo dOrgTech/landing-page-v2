@@ -1,4 +1,5 @@
-import { faTelegram, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faKeybase, faTelegram, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Grid, Link, styled, useTheme } from '@material-ui/core'
 import React from 'react'
@@ -34,18 +35,36 @@ export const Footer = () => {
   return (
     <FooterContainer container justify='flex-end'>
       <Grid item>
-        <LogoContainer href="https://t.me/TODO" target="_blank">
+        <LogoContainer href="https://github.com/dOrgTech" target="_blank">
           <Logo
-            icon={faTelegram}
+            icon={faGithub}
             color={theme.palette.text.primary}
             style={{ paddingRight: 10 }}
           />
         </LogoContainer>
       </Grid>
       <Grid item>
-        <LogoContainer href="https://twitter.com/dorg_tech" target="_blank">
+        <LogoContainer href="https://twitter.com/dOrg_tech" target="_blank">
           <Logo
             icon={faTwitter}
+            color={theme.palette.text.primary}
+            style={{ paddingRight: 10 }}
+          />
+        </LogoContainer>
+      </Grid>
+      <Grid item>
+        <LogoContainer href="https://keybase.io/team/dorg.membrane" target="_blank">
+          <Logo
+            icon={faKeybase}
+            color={theme.palette.text.primary}
+            style={{ paddingRight: 10 }}
+          />
+        </LogoContainer>
+      </Grid>
+      <Grid item>
+        <LogoContainer href="mailto:contact@dorg.tech" target="_blank">
+          <Logo
+            icon={faEnvelope}
             color={theme.palette.text.primary}
             style={{ paddingRight: 10 }}
           />
