@@ -49,19 +49,19 @@ export const Header: React.FC = () => {
           <LinksContainer container wrap='nowrap'>
             <Grid item>
               <LinkButton href="https://web3api.substack.com/" target="_blank" color={'textSecondary'} variant='body1'>
-                Blog
+                ABOUT
               </LinkButton>
             </Grid>
             <LinkDivider item />
             <Grid item>
               <LinkButton href="https://github.com/web3-api/prototype" target="_blank" color={'textSecondary'} variant='body1'>
-                Code
+                CAREERS
               </LinkButton>
             </Grid>
             <LinkDivider item />
             <Grid item>
               <LinkButton href="https://airtable.com/shri2hEgu1BlMLXZ9" target="_blank" color={'textSecondary'} variant='body1'>
-                Contact
+                CONTACT
               </LinkButton>
             </Grid>
           </LinksContainer>
