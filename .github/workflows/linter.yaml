@@ -19,7 +19,7 @@ on:
     branches-ignore: [master]
     # Remove the line above to run when pushing to master
   pull_request:
-    branches: [master]
+    branches: [master, dev]
 
 ###############
 # Set the Job #
@@ -51,10 +51,11 @@ jobs:
         uses: github/super-linter@v3
         env:
           VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: master
+          DEFAULT_BRANCH: dev
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LINTER_RULES_PATH: src
-          CSS_FILE_NAME: .stylelintrc.json
-          TYPESCRIPT_ES_CONFIG_FILE: .eslintrc.js
+          CSS_FILE_NAME: stylelintrc.json
+          TYPESCRIPT_ES_CONFIG_FILE: eslintrc.js
           VALIDATE_CSS: true
           VALIDATE_TYPESCRIPT_ES: true
+          FILTER_REGEX_INCLUDE: .*src/.*
