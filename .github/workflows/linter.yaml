@@ -55,6 +55,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LINTER_RULES_PATH: src
           CSS_FILE_NAME: .stylelintrc.json
-          JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.js
+          TYPESCRIPT_ES_CONFIG_FILE: .eslintrc.js
           VALIDATE_CSS: true
-          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_TYPESCRIPT_ES: true
