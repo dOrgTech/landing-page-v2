@@ -10,7 +10,8 @@
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
-    "deploy:ci": "gh-pages -d build -b ci-$(git rev-parse HEAD | cut -c 1-10)"
+    "deploy:ci": "gh-pages -d build -b ci-$(git rev-parse HEAD | cut -c 1-10)",
+    "lint:fix": "eslint src/**/*.tsx src/**/*.ts --fix"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
@@ -30,15 +31,22 @@
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.6",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "eslint": "^7.15.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-flowtype": "latest",
+    "eslint-plugin-import": "latest",
+    "eslint-plugin-jsx-a11y": "latest",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "gh-pages": "^3.1.0",
+    "prop-types": "^15.7.2",
+    "react-refresh": "^0.9.0",
     "serve": "^11.3.2",
+    "stylelint": "^13.8.0",
+    "stylelint-config-standard": "^20.0.0",
     "typescript": "^4.0.3"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
