@@ -53,6 +53,7 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: dev
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LINTER_RULES_PATH: /
           CSS_FILE_NAME: .stylelintrc.json
           TYPESCRIPT_ES_CONFIG_FILE: .eslintrc.js
           VALIDATE_CSS: true
