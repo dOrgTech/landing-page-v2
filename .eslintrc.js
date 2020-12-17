@@ -2,7 +2,6 @@ module.exports = {
     "parser": "@typescript-eslint/parser",
     "extends": [
         "react-app",
-        "react-app/jest",
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
@@ -19,5 +18,8 @@ module.exports = {
         "ecmaFeatures": {
             "jsx": true
         }
+    },
+    "rules": {
+        "indent": ["warn", 4]
     }
 }
