@@ -1,5 +1,7 @@
 # landing-page-v2
 
+Dev branch hosted at https://polished-fog-7734.on.fleek.co/
+
 ## Setup
 1. `nvm install && nvm use` - Use the proper version of node.
 1. `yarn` - Install all dependencies.
