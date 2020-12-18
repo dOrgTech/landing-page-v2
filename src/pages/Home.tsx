@@ -4,7 +4,7 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import ReactGA from "react-ga";
-import {Button1} from '../components/Button1'
+import {Rectangle} from '../components/Rectangle'
 const Root = styled(Box)({
   margin: 'auto'
 });
@@ -37,7 +37,7 @@ export const Home = () => {
   return (
     <Root>
       <TestSvg />
-      <Button1/>
+      <Rectangle/>
       <TestPng />
       <TestGif />
     </Root>

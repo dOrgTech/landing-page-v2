@@ -9,7 +9,7 @@ const StyleBox = styled(Box)({
      margin: 'auto'
    });
 
-export const Button1 = () => {
+export const ZepBox = () => {
     const theme = useTheme()
   
     return (

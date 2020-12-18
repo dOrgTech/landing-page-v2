@@ -1,14 +1,16 @@
 {
-    "plugins":[{
-        "name":"@zeplin/cli-connect-react-plugin"
-    }],
+    "plugins": [
+        {
+            "name": "@zeplin/cli-connect-react-plugin"
+        }
+    ],
     "projects": [
         "5fc8757e071b5908d4857503"
     ],
     "styleguides": [],
     "components": [
         {
-            "path": "src/components/Button1.tsx",
+            "path": "src/components/ZepBox.tsx",
             "zeplinNames": [
                 "Component 1"
             ]
@@ -17,6 +19,11 @@
             "path": "src/components/Footer.tsx",
             "zeplinNames": [
                 "Component 3"
+            ]
+        },  {
+            "path": "src/components/Rectangle.tsx",
+            "zeplinNames": [
+                "Component 31"
             ]
         }
     ]
