@@ -16,7 +16,7 @@ const App: React.FC = () => {
           <Header />
           <Switch >
             <Route path="/" exact>
-              <Home />
+              <Home onClick={() => console.log("hey")} />
             </Route>
           </Switch>
           <Footer />

@@ -41,7 +41,7 @@ export const theme = createMuiTheme({
     MuiTextField: {
       root: {
         border: 'solid 1px #529dad',
-        borderRadius: 4, 
+        borderRadius: 4,
         backgroundColor: '#242F35',
         '& .MuiInput-underline:before': {
           borderBottomColor: 'none',
