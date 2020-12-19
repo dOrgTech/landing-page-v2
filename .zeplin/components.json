@@ -30,7 +30,7 @@
                 "Component 3"
             ]
         },  {
-            "path": "src/components/icons/MobileMenuBar.tsx",
+            "path": "src/components/MobileMenuBar.tsx",
             "zeplinNames": [
                 "Component 6"
             ]
@@ -115,12 +115,12 @@
                 "Component 22"
             ]
         },  {
-            "path": "src/components/icons/HorizontalInfoBox.tsx",
+            "path": "src/components/HorizontalInfoBox.tsx",
             "zeplinNames": [
                 "Component 23"
             ]
         },  {
-            "path": "src/components/icons/VerticalInfoBox.tsx",
+            "path": "src/components/VerticalInfoBox.tsx",
             "zeplinNames": [
                 "Component 26"
             ]
