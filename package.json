@@ -59,5 +59,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/dOrgTech/landing-page-v2.git",
+  "author": "linus@dorg.tech",
+  "license": "MIT"
 }
