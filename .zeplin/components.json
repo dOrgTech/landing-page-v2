@@ -8,11 +8,20 @@
         "5fc8757e071b5908d4857503"
     ],
     "styleguides": [],
+    "github": {
+        "repository": "dOrgTech/landing-page-v2",
+        "branch": "dev"
+    },
     "components": [
         {
             "path": "src/components/ZepBox.tsx",
             "zeplinNames": [
                 "Component 1"
+            ]
+        },  {
+            "path": "src/components/Header.tsx",
+            "zeplinNames": [
+                "Component 2"
             ]
         },
         {
@@ -21,9 +30,154 @@
                 "Component 3"
             ]
         },  {
+            "path": "src/components/icons/MobileMenuBar.tsx",
+            "zeplinNames": [
+                "Component 6"
+            ]
+        },  {
+            "path": "src/components/MobileFooter.tsx",
+            "zeplinNames": [
+                "Component 7"
+            ]
+        },  {
+            "path": "src/components/SquareInfoBox.tsx",
+            "zeplinNames": [
+                "Component 22"
+            ]
+        },  {
+            "path": "src/components/icons/TinyDotIcon.tsx",
+            "zeplinNames": [
+                "Component 9"
+            ]
+        },  {
+            "path": "src/components/icons/QuarterCircleIcon.tsx",
+            "zeplinNames": [
+                "Component 10"
+            ]
+        },  {
+            "path": "src/components/icons/SmileyFaceIcon.tsx",
+            "zeplinNames": [
+                "Component 11"
+            ]
+        },  {
+            "path": "src/components/icons/BackgroundPersonIcon.tsx",
+            "zeplinNames": [
+                "Component 12"
+            ]
+        },  {
+            "path": "src/components/icons/DashIcon.tsx",
+            "zeplinNames": [
+                "Component 13"
+            ]
+        },  {
+            "path": "src/components/icons/VerticalDashIcon.tsx",
+            "zeplinNames": [
+                "Component 14"
+            ]
+        },  {
+            "path": "src/components/icons/SimpleDotIcon.tsx",
+            "zeplinNames": [
+                "Component 15"
+            ]
+        },  {
+            "path": "src/components/icons/CheckDotIcon.tsx",
+            "zeplinNames": [
+                "Component 16"
+            ]
+        },  {
+            "path": "src/components/icons/GearIcon2.tsx",
+            "zeplinNames": [
+                "Component 17"
+            ]
+        },  {
+            "path": "src/components/icons/JewelIcon.tsx",
+            "zeplinNames": [
+                "Component 18"
+            ]
+        },  {
+            "path": "src/components/icons/CircleWithSliverIcon.tsx",
+            "zeplinNames": [
+                "Component 19"
+            ]
+        },  {
+            "path": "src/components/icons/LeftHandShakeIcon.tsx",
+            "zeplinNames": [
+                "Component 20"
+            ]
+        },  {
+            "path": "src/components/icons/ConcentricDotIcon.tsx",
+            "zeplinNames": [
+                "Component 21"
+            ]
+        },  {
+            "path": "src/components/icons/SquareLoopIcon.tsx",
+            "zeplinNames": [
+                "Component 22"
+            ]
+        },  {
+            "path": "src/components/icons/HorizontalInfoBox.tsx",
+            "zeplinNames": [
+                "Component 23"
+            ]
+        },  {
+            "path": "src/components/icons/VerticalInfoBox.tsx",
+            "zeplinNames": [
+                "Component 26"
+            ]
+        },  {
+            "path": "src/components/icons/GearIcon.tsx",
+            "zeplinNames": [
+                "Component 27"
+            ]
+        },  {
+            "path": "src/components/icons/PenTipIcon.tsx",
+            "zeplinNames": [
+                "Component 28"
+            ]
+        },  {
+            "path": "src/components/icons/ArrowBracketsIcon.tsx",
+            "zeplinNames": [
+                "Component 29"
+            ]
+        },  {
+            "path": "src/components/icons/ChevronDownIcon.tsx",
+            "zeplinNames": [
+                "Component 30"
+            ]
+        },  {
             "path": "src/components/Rectangle.tsx",
             "zeplinNames": [
                 "Component 31"
+            ]
+        },  {
+            "path": "src/components/icons/TwitterIcon.tsx",
+            "zeplinNames": [
+                "Component 34"
+            ]
+        },  {
+            "path": "src/components/icons/KeybaseIcon.tsx",
+            "zeplinNames": [
+                "Component 35"
+            ]
+        },  {
+            "path": "src/components/icons/GitHubIcon.tsx",
+            "zeplinNames": [
+                "Component 36"
+            ]
+        },  {
+            "path": "src/components/icons/MailIcon.tsx",
+            "zeplinNames": [
+                "Component 37"
+            ]
+        },  {
+            "path": "src/components/icons/dOrgLogo.tsx",
+            "zeplinNames": [
+                "download"
+            ]
+        },  {
+            "path": "src/components/icons/RightArrowIcon.tsx",
+            "zeplinNames": [
+                "trending_flat-24px (2)"
             ]
         }
     ]
