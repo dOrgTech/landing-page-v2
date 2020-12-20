@@ -5,7 +5,6 @@ const boxStyle: CSSProperties = {
     width: '21.25rem',
     height: '19.125rem',
     padding: '1.75rem 1.75rem 5.688rem 4.875rem',
-    opacity: 0,
     backgroundColor: 'var(--black)'
 };
 
@@ -61,7 +60,7 @@ export function SquareInfoBox(props: SquareInfoBoxProps): JSX.Element {
 
     return (
         <Box style={boxStyle}>
-            <img src="public/imgs/Component 9 – 2.svg" style={iconStyle} alt='icon' />
+            <img src="imgs/Component 9 – 2.svg" style={iconStyle} alt='icon' />
             <p style={numberStyle}>{props.number}</p>
             <p style={textStyle}>{props.text}</p>
         </Box>
