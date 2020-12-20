@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Component_12_2" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-2,.cls-3{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px}.cls-2{stroke:#fff}.cls-3{stroke:#1aaf71}
+        </style>
+    </defs>
+    <g id="users">
+        <path id="Path_406" d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" class="cls-2"/>
+        <circle id="Ellipse_38" cx="4" cy="4" r="4" class="cls-2" transform="translate(5 3)"/>
+        <path id="Path_407" d="M23 21v-2a4 4 0 0 0-3-3.87" class="cls-3"/>
+        <path id="Path_408" d="M16 3.13a4 4 0 0 1 0 7.75" class="cls-3"/>
+    </g>
+</svg>

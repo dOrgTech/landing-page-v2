@@ -7,6 +7,7 @@ import {
 import React, { CSSProperties } from "react";
 import ReactGA from "react-ga";
 import {SquareInfoBox} from "../components/SquareInfoBox";
+import {SQUARE_INFO_BOX_STRINGS} from "../strings/about-strings";
 
 
 const Root = styled(Box)({
@@ -52,7 +53,26 @@ export const Home: React.FC<Props> = (props: Props) => {
         <TestPng />
         <TestGif />
       </Grid>
-      <SquareInfoBox text={"PROJECTS SHIPPED"} number={'25'} iconPath={'imgs/Component 9 – 2.svg'} />
+      <Grid container spacing={0} style={{width: '42.5rem', height: '38.25rem'}}>
+        <Grid item xs={6}>
+          <SquareInfoBox text={SQUARE_INFO_BOX_STRINGS.ONE.TEXT} number={SQUARE_INFO_BOX_STRINGS.ONE.NUMBER} iconPath={SQUARE_INFO_BOX_STRINGS.ONE.ICON_PATH} />
+        </Grid>
+        <Grid item xs={6}>
+          <SquareInfoBox text={SQUARE_INFO_BOX_STRINGS.TWO.TEXT} number={SQUARE_INFO_BOX_STRINGS.TWO.NUMBER} iconPath={SQUARE_INFO_BOX_STRINGS.TWO.ICON_PATH} />
+        </Grid>
+        <Grid item xs={6}>
+          <SquareInfoBox text={SQUARE_INFO_BOX_STRINGS.THREE.TEXT} number={SQUARE_INFO_BOX_STRINGS.THREE.NUMBER} iconPath={SQUARE_INFO_BOX_STRINGS.THREE.ICON_PATH} />
+        </Grid>
+        <Grid item xs={6}>
+          <SquareInfoBox text={SQUARE_INFO_BOX_STRINGS.FOUR.TEXT} number={SQUARE_INFO_BOX_STRINGS.FOUR.NUMBER} iconPath={SQUARE_INFO_BOX_STRINGS.FOUR.ICON_PATH} />
+        </Grid>
+        <Grid item xs={6}>
+          <SquareInfoBox text={SQUARE_INFO_BOX_STRINGS.FIVE.TEXT} number={SQUARE_INFO_BOX_STRINGS.FIVE.NUMBER} iconPath={SQUARE_INFO_BOX_STRINGS.FIVE.ICON_PATH} />
+        </Grid>
+        <Grid item xs={6}>
+          <SquareInfoBox text={SQUARE_INFO_BOX_STRINGS.SIX.TEXT} number={SQUARE_INFO_BOX_STRINGS.SIX.NUMBER} iconPath={SQUARE_INFO_BOX_STRINGS.SIX.ICON_PATH} />
+        </Grid>
+      </Grid>
       <Button onClick={() => {
         setCounter(counter + 1)
         if (props.onClick) {
