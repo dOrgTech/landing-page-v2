@@ -1,20 +1,24 @@
 import React from 'react'
 import {Box, styled, Typography, Grid} from '@material-ui/core'
+import {theme} from "../theme";
 
 const StyleBox = styled(Box)({
   width: '21.25rem',
   height: '19.125rem',
   padding: '1.75rem 1.75rem 1.75rem 1.75rem',
-  opacity: '0.15',
-  backgroundColor: 'var(--black)',
-  boxSizing: 'border-box'
+  opacity: '0',
+  backgroundColor: '#000000',
+  boxSizing: 'border-box',
+  '&:hover': {
+    opacity: '0.15'
+  }
 });
 
 const StyleText = styled(Typography)({
   width: '100%',
   height: '100%',
   margin: '1.938rem 0 0 0',
-  fontFamily: 'Spartan',
+  fontFamily: theme.typography.fontFamily,
   fontSize: '0.938rem',
   fontWeight: 'bold',
   fontStretch: 'normal',
@@ -22,14 +26,14 @@ const StyleText = styled(Typography)({
   lineHeight: 1.2,
   letterSpacing: '1.5px',
   textAlign: 'center',
-  color: 'var(--dark-seafoam)'
+  color: theme.palette.text.secondary
 });
 
 const StyleNumber = styled(Typography)({
   width: "100%",
   height: "100%",
   margin: "0 0 1.938rem 0",
-  fontFamily: "Spartan",
+  fontFamily: theme.typography.fontFamily,
   fontSize: "3.25rem",
   fontWeight: "bold",
   fontStretch: "normal",
@@ -37,7 +41,7 @@ const StyleNumber = styled(Typography)({
   lineHeight: 1.35,
   letterSpacing: "normal",
   textAlign: "center",
-  color: "var(--white)"
+  color: theme.palette.text.primary
 });
 
 const StyleIcon = styled('img')({
