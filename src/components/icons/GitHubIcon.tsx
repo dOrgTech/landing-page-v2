@@ -2,5 +2,5 @@ import React from 'react'
 
 export function GitHubIcon() {
 
-    return (<div/>);
+  return (<div/>);
 }

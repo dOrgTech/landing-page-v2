@@ -2,5 +2,5 @@ import React from 'react'
 
 export function DashIcon() {
 
-    return (<div/>);
+  return (<div/>);
 }

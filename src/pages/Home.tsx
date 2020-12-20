@@ -1,8 +1,8 @@
 import {
-    Box,
-    Grid,
-    Button,
-    styled
+  Box,
+  Grid,
+  Button,
+  styled
 } from "@material-ui/core";
 import React, { CSSProperties } from "react";
 import ReactGA from "react-ga";
@@ -10,29 +10,29 @@ import {SquareInfoBox} from "../components/SquareInfoBox";
 
 
 const Root = styled(Box)({
-    margin: 'auto'
+  margin: 'auto'
 });
 
 const TestImage: CSSProperties = {
-    height: 500,
-    width: 500,
-    backgroundSize: 'contain',
-    margin: 'auto'
+  height: 500,
+  width: 500,
+  backgroundSize: 'contain',
+  margin: 'auto'
 };
 
 const TestSvg = styled(Box)({
-    backgroundImage: `url('${process.env.PUBLIC_URL}/imgs/test.svg');`,
-    ...TestImage
+  backgroundImage: `url('${process.env.PUBLIC_URL}/imgs/test.svg');`,
+  ...TestImage
 });
 
 const TestPng = styled(Box)({
-    backgroundImage: `url('${process.env.PUBLIC_URL}/imgs/test.png');`,
-    ...TestImage
+  backgroundImage: `url('${process.env.PUBLIC_URL}/imgs/test.png');`,
+  ...TestImage
 });
 
 const TestGif = styled(Box)({
-    backgroundImage: `url('${process.env.PUBLIC_URL}/imgs/test.gif');`,
-    ...TestImage
+  backgroundImage: `url('${process.env.PUBLIC_URL}/imgs/test.gif');`,
+  ...TestImage
 });
 
 interface Props {
@@ -41,26 +41,26 @@ interface Props {
 
 export const Home: React.FC<Props> = (props: Props) => {
 
-    ReactGA.pageview('home');
+  ReactGA.pageview('home');
 
-    const [counter, setCounter] = React.useState(0);
+  const [counter, setCounter] = React.useState(0);
 
-    return (
-        <Root>
-            <Grid container direction="row">
-                <TestSvg />
-                <TestPng />
-                <TestGif />
-            </Grid>
-            <SquareInfoBox text={"PROJECTS SHIPPED"} number={'25'} />
-            <Button onClick={() => {
-                setCounter(counter + 1)
-                if (props.onClick) {
-                    props.onClick();
-                }
-            }}>
-                {counter}
-            </Button>
-        </Root>
-    );
+  return (
+    <Root>
+      <Grid container direction="row">
+        <TestSvg />
+        <TestPng />
+        <TestGif />
+      </Grid>
+      <SquareInfoBox text={"PROJECTS SHIPPED"} number={'25'} iconPath={'imgs/Component 9 – 2.svg'} />
+      <Button onClick={() => {
+        setCounter(counter + 1)
+        if (props.onClick) {
+          props.onClick();
+        }
+      }}>
+        {counter}
+      </Button>
+    </Root>
+  );
 };
