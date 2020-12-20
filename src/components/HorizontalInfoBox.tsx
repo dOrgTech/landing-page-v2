@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function HorizontalInfoBox(props) {
+export function HorizontalInfoBox() {
 
     return (<div/>);
 }

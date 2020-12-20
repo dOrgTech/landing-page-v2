@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function dOrgLogo(props) {
+export function dOrgLogo() {
 
     return (<div/>);
 }

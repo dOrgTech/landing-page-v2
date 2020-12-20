@@ -1,4 +1,91 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700&display=swap');
+
+:root {
+  --white: #ffffff;
+  --dark-seafoam: #1aaf71;
+  --navy-blue: #001047;
+  --black: #000000;
+}
+
+:root {
+  --spacing-xxs: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-s: 0.75rem;
+  --spacing-m: 1rem;
+  --spacing-l: 1.25rem;
+}
+
+.Spartan-62pt {
+  font-family: Spartan, serif;
+  font-size: 3.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.13;
+  letter-spacing: normal;
+  color: var(--white);
+}
+.Spartan-52pt {
+  font-family: Spartan, serif;
+  font-size: 3.25rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.46;
+  letter-spacing: -1.56px;
+  color: var(--white);
+}
+.Spartan-42pt {
+  font-family: Spartan, serif;
+  font-size: 2.625rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.48;
+  letter-spacing: -1.26px;
+  color: var(--white);
+}
+.Spartan-36pt {
+  font-family: Spartan, serif;
+  font-size: 2.25rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.94;
+  letter-spacing: -1.08px;
+  color: var(--white);
+}
+.Spartan-26pt {
+  font-family: Spartan, serif;
+  font-size: 1.625rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.69;
+  letter-spacing: -0.78px;
+  color: var(--white);
+}
+.Spartan-16pt {
+  font-family: Spartan, serif;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.25;
+  letter-spacing: normal;
+  color: var(--white);
+}
+.Spartan-15pt {
+  font-family: Spartan, serif;
+  font-size: 0.938rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.87;
+  letter-spacing: normal;
+  color: var(--white);
+}
 
 body {
   margin: 0;

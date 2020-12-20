@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function SimpleDotIcon(props) {
+export function SimpleDotIcon() {
 
     return (<div/>);
 }

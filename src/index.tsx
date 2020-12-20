@@ -6,8 +6,8 @@ import ReactGA from 'react-ga';
 ReactGA.initialize('TODO: use dOrg\'s google analytics ID UA-ID');
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    document.getElementById('root')
 );

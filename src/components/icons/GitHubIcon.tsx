@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function GitHubIcon(props) {
+export function GitHubIcon() {
 
     return (<div/>);
 }

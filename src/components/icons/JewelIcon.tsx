@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function JewelIcon(props) {
+export function JewelIcon() {
 
     return (<div/>);
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function PenTipIcon(props) {
+export function PenTipIcon() {
 
     return (<div/>);
 }
