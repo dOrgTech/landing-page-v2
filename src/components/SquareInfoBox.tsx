@@ -6,11 +6,10 @@ const StyleBox = styled(Box)({
   width: '21.25rem',
   height: '19.125rem',
   padding: '1.75rem 1.75rem 1.75rem 1.75rem',
-  opacity: '0',
-  backgroundColor: '#000000',
+  backgroundColor: 'transparent',
   boxSizing: 'border-box',
   '&:hover': {
-    opacity: '0.15'
+    backgroundColor: 'rgba(0, 0, 0, 0.15)'
   }
 });
 
