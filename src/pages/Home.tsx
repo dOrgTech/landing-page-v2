@@ -6,6 +6,7 @@ import {
 } from "@material-ui/core";
 import React, { CSSProperties } from "react";
 import ReactGA from "react-ga";
+import {SquareInfoBox} from "../components/SquareInfoBox";
 
 
 const Root = styled(Box)({
@@ -51,6 +52,7 @@ export const Home: React.FC<Props> = (props: Props) => {
                 <TestPng />
                 <TestGif />
             </Grid>
+            <SquareInfoBox text={"PROJECTS SHIPPED"} number={'25'} />
             <Button onClick={() => {
                 setCounter(counter + 1)
                 if (props.onClick) {

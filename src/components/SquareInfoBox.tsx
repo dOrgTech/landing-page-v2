@@ -25,31 +25,31 @@ const textStyle: CSSProperties = {
 };
 
 const numberStyle: CSSProperties = {
-    "width": "4.625rem",
-    "height": "3.688rem",
-    "marginTop": "3.5rem",
-    "marginRight": "5.063rem",
-    "marginBottom": "1.938rem",
-    "marginLeft": "3.438rem",
-    "fontFamily": "Spartan",
-    "fontSize": "3.25rem",
-    "fontWeight": "bold",
-    "fontStretch": "normal",
-    "fontStyle": "normal",
-    "lineHeight": 1.35,
-    "letterSpacing": "normal",
-    "textAlign": "center",
-    "color": "var(--white)"
+    width: "4.625rem",
+    height: "3.688rem",
+    marginTop: "3.5rem",
+    marginRight: "5.063rem",
+    marginBottom: "1.938rem",
+    marginLeft: "3.438rem",
+    fontFamily: "Spartan",
+    fontSize: "3.25rem",
+    fontWeight: "bold",
+    fontStretch: "normal",
+    fontStyle: "normal",
+    lineHeight: 1.35,
+    letterSpacing: "normal",
+    textAlign: "center",
+    color: "var(--white)"
 };
 
 const iconStyle: CSSProperties = {
-    "width": "1.5rem",
-    "height": "1.5rem",
-    "marginTop": 0,
-    "marginRight": 0,
-    "marginBottom": "3.5rem",
-    "marginLeft": "1.625rem",
-    "objectFit": "contain"
+    width: "1.5rem",
+    height: "1.5rem",
+    marginTop: 0,
+    marginRight: 0,
+    marginBottom: "3.5rem",
+    marginLeft: "1.625rem",
+    objectFit: "contain"
 }
 
 type SquareInfoBoxProps = {
@@ -57,13 +57,13 @@ type SquareInfoBoxProps = {
     number: string
 };
 
-export function SquareInfoBox({text, number}: SquareInfoBoxProps): JSX.Element {
+export function SquareInfoBox(props: SquareInfoBoxProps): JSX.Element {
 
     return (
         <Box style={boxStyle}>
             <img src="public/imgs/Component 9 – 2.svg" style={iconStyle} alt='icon' />
-            <p style={numberStyle}>{number}</p>
-            <p style={textStyle}>{text}</p>
+            <p style={numberStyle}>{props.number}</p>
+            <p style={textStyle}>{props.text}</p>
         </Box>
     );
 }
