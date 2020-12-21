@@ -9,10 +9,11 @@ const StyleBox = styled(Box)({
     width: '21.313rem',
     height: '29.125rem',
     padding: '3.813rem 3.313rem 8.813rem 2.875rem',
-    backgroundColor: 'transparent',
+    backgroundColor: '#000000',
+    opacity: 0.15,
     boxSizing: 'border-box',
     '&:hover': {
-        backgroundColor: 'rgba(0, 0, 0, 0.15)'
+        backgroundColor: theme.palette.secondary
     }
 });
 
