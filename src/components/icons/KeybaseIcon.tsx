@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function KeyBaseIcon(props:any) {
+export function KeyBaseIcon() {
 
-    return (<div/>);
+  return (<div/>);
 }

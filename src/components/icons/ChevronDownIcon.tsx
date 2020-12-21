@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function ChevronDownIcon(props:any) {
+export function ChevronDownIcon() {
 
-    return (<div/>);
+  return (<div/>);
 }

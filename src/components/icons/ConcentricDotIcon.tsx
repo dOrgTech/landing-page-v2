@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function ConcentricDotIcon(props:any) {
+export function ConcentricDotIcon() {
 
-    return (<div/>);
+  return (<div/>);
 }

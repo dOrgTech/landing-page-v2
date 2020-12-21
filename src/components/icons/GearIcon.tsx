@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function GearIcon(props:any) {
+export function GearIcon() {
 
-    return (<div/>);
+  return (<div/>);
 }

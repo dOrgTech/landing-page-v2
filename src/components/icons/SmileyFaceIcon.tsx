@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function SmileyFaceIcon(props:any) {
+export function SmileyFaceIcon() {
 
-    return (<div/>);
+  return (<div/>);
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function MobileFooter(props:any) {
+export function MobileFooter() {
 
-    return (<div/>);
+  return (<div/>);
 }

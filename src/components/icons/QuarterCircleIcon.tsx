@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function QuarterCircleIcon(props:any) {
+export function QuarterCircleIcon() {
 
-    return (<div/>);
+  return (<div/>);
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function VerticalInfoBox(props:any) {
+export function VerticalInfoBox() {
 
-    return (<div/>);
+  return (<div/>);
 }

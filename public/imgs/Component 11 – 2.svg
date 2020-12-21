@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Component_11_2" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-3{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;stroke:#1aaf71}
+        </style>
+    </defs>
+    <g id="Group_1195" transform="translate(-626 -3303)">
+        <g id="smile" transform="translate(626 3303)">
+            <circle id="Ellipse_39" cx="10" cy="10" r="10" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2px" transform="translate(2 2)"/>
+            <path id="Path_409" d="M8 14a5.4 5.4 0 0 0 4 2 5.4 5.4 0 0 0 4-2" class="cls-3"/>
+            <path id="Line_12" d="M0 0L0.01 0" class="cls-3" transform="translate(9 9)"/>
+            <path id="Line_13" d="M0 0L0.01 0" class="cls-3" transform="translate(15 9)"/>
+        </g>
+    </g>
+</svg>

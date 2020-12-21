@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function RightArrowIcon(props:any) {
+export function RightArrowIcon() {
 
-    return (<div/>);
+  return (<div/>);
 }

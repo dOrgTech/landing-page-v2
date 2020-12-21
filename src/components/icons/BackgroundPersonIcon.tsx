@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function BackgroundPersonIcon(props:any) {
+export function BackgroundPersonIcon() {
 
-    return (<div/>);
+  return (<div/>);
 }

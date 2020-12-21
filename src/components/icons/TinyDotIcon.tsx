@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function TinyDotIcon(props:any) {
+export function TinyDotIcon() {
 
-    return (<div/>);
+  return (<div/>);
 }
