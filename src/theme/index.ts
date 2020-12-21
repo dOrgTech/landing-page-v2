@@ -11,7 +11,7 @@ export const theme = createMuiTheme({
     },
     text: {
       primary: '#FFFFFF',
-      secondary: '#529dad'
+      secondary: '#1aaf71'
     }
   },
   typography: {
@@ -28,6 +28,19 @@ export const theme = createMuiTheme({
       fontSize: 40,
       lineHeight: 1.5,
       letterSpacing: '-1px'
+    },
+    h4: {
+      fontWeight:500,
+      fontSize: 40,
+      lineHeight: 1.5,
+      letterSpacing: '-1px'
+      
+    },
+    h5: {
+      fontSize: 40,
+      lineHeight: 1.5,
+      letterSpacing: '-1px'
+      
     },
     subtitle1: {
       fontSize: 22,

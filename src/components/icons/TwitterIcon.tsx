@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function TwitterIcon(props) {
+export function TwitterIcon(props:any) {
 
     return (<div/>);
 }
