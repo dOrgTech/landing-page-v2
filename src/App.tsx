@@ -4,6 +4,7 @@ import { Box, ThemeProvider } from "@material-ui/core";
 import { theme } from "./theme";
 import { About } from "./pages/About";
 import { Home } from "./pages/Home";
+import { Careers } from "./pages/Careers";
 import { routes } from "./constants/routes";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
@@ -22,6 +23,9 @@ const App: React.FC = () => {
             </Route>
             <Route path={routes.about.path}>
               <About />
+            </Route>
+            <Route path={routes.careers.path}>
+              <Careers />
             </Route>
           </Switch>
           <Footer />
