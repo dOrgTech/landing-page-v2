@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function VerticalDashIcon(props) {
+export function VerticalDashIcon() {
 
-    return (<div/>);
+  return (<div/>);
 }

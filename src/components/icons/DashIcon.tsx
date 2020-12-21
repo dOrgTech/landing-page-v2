@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function DashIcon(props) {
+export function DashIcon() {
 
-    return (<div/>);
+  return (<div/>);
 }

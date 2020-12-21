@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function ArrowBracketsIcon(props) {
+export function ArrowBracketsIcon() {
 
-    return (<div/>);
+  return (<div/>);
 }

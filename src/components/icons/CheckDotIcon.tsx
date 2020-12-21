@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function CheckDotIcon(props) {
+export function CheckDotIcon() {
 
-    return (<div/>);
+  return (<div/>);
 }

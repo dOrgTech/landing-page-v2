@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function LeftHandShakeIcon(props) {
+export function LeftHandShakeIcon() {
 
-    return (<div/>);
+  return (<div/>);
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function MailIcon(props) {
+export function MailIcon() {
 
-    return (<div/>);
+  return (<div/>);
 }

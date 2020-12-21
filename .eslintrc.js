@@ -20,6 +20,6 @@ module.exports = {
         }
     },
     "rules": {
-        "indent": ["warn", 4]
+        "indent": ["warn", 2]
     }
 }

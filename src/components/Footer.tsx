@@ -28,7 +28,7 @@ const Logo = styled(FontAwesomeIcon)(({ theme }) => ({
   }
 }));
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   const theme = useTheme()
 
   return (
