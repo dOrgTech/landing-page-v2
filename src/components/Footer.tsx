@@ -29,6 +29,15 @@ const Logo = styled(FontAwesomeIcon)(({ theme }) => ({
   }
 }));
 
+const LogoIcon = styled(FontAwesomeIcon)(({ theme }) => ({
+  cursor: 'pointer',
+  color: theme.palette.text.primary,
+  paddingRight: 10,
+  "&:hover": {
+    color: theme.palette.secondary.main
+  }
+}));
+
 export const Footer = () => {
   const theme = useTheme()
 
@@ -36,37 +45,32 @@ export const Footer = () => {
     <FooterContainer container justify='flex-end'>
       <Grid item>
         <LogoContainer href="https://github.com/dOrgTech" target="_blank">
-          <Logo
+          <LogoIcon
             icon={faGithub}
-            color={theme.palette.text.primary}
-            style={{ paddingRight: 10 }}
           />
         </LogoContainer>
       </Grid>
+
       <Grid item>
         <LogoContainer href="https://twitter.com/dOrg_tech" target="_blank">
-          <Logo
+          <LogoIcon
             icon={faTwitter}
-            color={theme.palette.text.primary}
-            style={{ paddingRight: 10 }}
           />
         </LogoContainer>
       </Grid>
+
       <Grid item>
         <LogoContainer href="https://keybase.io/team/dorg.membrane" target="_blank">
-          <Logo
+          <LogoIcon
             icon={faKeybase}
-            color={theme.palette.text.primary}
-            style={{ paddingRight: 10 }}
           />
         </LogoContainer>
       </Grid>
+
       <Grid item>
         <LogoContainer href="mailto:contact@dorg.tech" target="_blank">
-          <Logo
+          <LogoIcon
             icon={faEnvelope}
-            color={theme.palette.text.primary}
-            style={{ paddingRight: 10 }}
           />
         </LogoContainer>
       </Grid>
