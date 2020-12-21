@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function MobileMenuBar(props) {
+export function MobileMenuBar(props:any) {
 
     return (<div/>);
 }

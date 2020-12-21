@@ -45,19 +45,8 @@ export const Home: React.FC<Props> = (props: Props) => {
 
   return (
     <Root>
-      <Grid container direction="row">
-        <TestSvg />
-        <TestPng />
-        <TestGif />
-      </Grid>
-      <Button onClick={() => {
-        setCounter(counter + 1)
-        if (props.onClick) {
-          props.onClick();
-        }
-      }}>
-        {counter}
-      </Button>
+      
+     
     </Root>
   );
 };
