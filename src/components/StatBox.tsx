@@ -16,7 +16,7 @@ const StyleBox = styled(Box)({
   }
 });
 
-const StyleText = styled(Typography)({
+const StyleTitle = styled(Typography)({
   width: '100%',
   height: '100%',
   margin: '1.938rem 0 0 0',
@@ -31,7 +31,7 @@ const StyleText = styled(Typography)({
   color: theme.palette.text.secondary
 });
 
-const StyleNumber = styled(Typography)({
+const StyleStat = styled(Typography)({
   width: "100%",
   height: "100%",
   margin: "0 0 1.938rem 0",
@@ -64,8 +64,8 @@ export const StatBox: React.FC<Props> = (props: Props) => {
       <StyleIcon src={props.stat.icon} alt='icon' />
       <Grid container direction='column' spacing={0} justify='center' alignItems='center'>
         <div>
-          <StyleNumber>{props.stat.stat}</StyleNumber>
-          <StyleText>{props.stat.title}</StyleText>
+          <StyleStat>{props.stat.stat}</StyleStat>
+          <StyleTitle>{props.stat.title}</StyleTitle>
         </div>
       </Grid>
     </StyleBox>

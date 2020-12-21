@@ -38,7 +38,7 @@ const LinkDivider = styled(Grid)({
 export const Header: React.FC = () => {
   const history = useHistory();
   const onLogoClick = () => history.push(routes.home.path);
-  const onContactClick = () => history.push(routes.contact.path);
+  const onContactClick = () => history.push(routes.about.path);
 
   return (
     <AppBar position="static">

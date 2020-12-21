@@ -4,14 +4,14 @@ export interface Route {
 
 export interface Routes {
   home: Readonly<Route>;
-  contact: Readonly<Route>;
+  about: Readonly<Route>;
 }
 
 export const routes: Routes = {
   home: {
     path: '/'
   },
-  contact: {
+  about: {
     path: '/contact'
   }
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route, HashRouter } from "react-router-dom";
 import { Box, ThemeProvider } from "@material-ui/core";
 import { theme } from "./theme";
-import { Contact } from "./pages/Contact";
+import { About } from "./pages/About";
 import { Home } from "./pages/Home";
 import { routes } from "./constants/routes";
 import { Header } from "./components/Header";
@@ -20,8 +20,8 @@ const App: React.FC = () => {
             <Route path={routes.home.path} exact>
               <Home onClick={() => console.log("hey")} />
             </Route>
-            <Route path={routes.contact.path}>
-              <Contact />
+            <Route path={routes.about.path}>
+              <About />
             </Route>
           </Switch>
           <Footer />

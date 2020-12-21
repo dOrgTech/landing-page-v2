@@ -16,7 +16,7 @@ const StatsContainer = styled(Grid)({
   width: '42.5rem'
 });
 
-export const Contact: React.FC = () => {
+export const About: React.FC = () => {
   return (
     <Root>
       <StatsContainer container spacing={0} justify="center">
