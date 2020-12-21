@@ -1,8 +1,11 @@
 import React from 'react'
-import {Box, styled, Typography, Grid} from '@material-ui/core'
-import {theme} from "../theme";
+import { Box, styled, Typography, Grid } from '@material-ui/core'
+
+import { Stat } from "../constants/stats";
+import { theme } from "../theme";
 
 const StyleBox = styled(Box)({
+  margin: 'auto',
   width: '21.25rem',
   height: '19.125rem',
   padding: '1.75rem 1.75rem 1.75rem 1.75rem',
@@ -51,21 +54,18 @@ const StyleIcon = styled('img')({
   float: 'right'
 });
 
-type SquareInfoBoxProps = {
-    text: string
-    number: string
-    iconPath: string
-};
+interface Props {
+  stat: Stat;
+}
 
-export function SquareInfoBox(props: SquareInfoBoxProps): JSX.Element {
-
+export const StatBox: React.FC<Props> = (props: Props) => {
   return (
     <StyleBox>
-      <StyleIcon src={props.iconPath} alt='icon' />
+      <StyleIcon src={props.stat.icon} alt='icon' />
       <Grid container direction='column' spacing={0} justify='center' alignItems='center'>
         <div>
-          <StyleNumber>{props.number}</StyleNumber>
-          <StyleText>{props.text}</StyleText>
+          <StyleNumber>{props.stat.stat}</StyleNumber>
+          <StyleText>{props.stat.title}</StyleText>
         </div>
       </Grid>
     </StyleBox>

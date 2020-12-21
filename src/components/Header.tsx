@@ -2,6 +2,8 @@ import React from "react";
 import { styled, AppBar, Grid, Box, Link } from "@material-ui/core";
 import { useHistory } from 'react-router-dom';
 
+import { routes } from "../constants/routes";
+
 const AppBarBody = styled(Grid)({
   maxHeight: 70,
   maxWidth: '1400px',
@@ -35,7 +37,8 @@ const LinkDivider = styled(Grid)({
 
 export const Header: React.FC = () => {
   const history = useHistory();
-  const onLogoClick = () => history.push('/');
+  const onLogoClick = () => history.push(routes.home.path);
+  const onContactClick = () => history.push(routes.contact.path);
 
   return (
     <AppBar position="static">
@@ -60,7 +63,7 @@ export const Header: React.FC = () => {
             </Grid>
             <LinkDivider item />
             <Grid item>
-              <LinkButton href="https://airtable.com/shri2hEgu1BlMLXZ9" target="_blank" color={'textSecondary'} variant='body1'>
+              <LinkButton onClick={onContactClick} color={'textSecondary'} variant='body1'>
                 Contact
               </LinkButton>
             </Grid>
