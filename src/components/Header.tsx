@@ -60,7 +60,9 @@ const LinkDivider = styled(Grid)({
 export const Header: React.FC = () => {
   const history = useHistory();
   const onLogoClick = () => history.push(routes.home.path);
-  const onContactClick = () => history.push(routes.about.path);
+  const onAboutClick = () => history.push(routes.about.path);
+  const onCareersClick = () => history.push(routes.careers.path);
+  const onContactClick = () => history.push(routes.contact.path);
 
   return (
     <StyledAppBar position="static">
@@ -79,13 +81,13 @@ export const Header: React.FC = () => {
         <Grid item>
           <LinksContainer container wrap='nowrap'>
             <Grid item>
-              <LinkButton href="https://web3api.substack.com/" target="_blank" color={'textSecondary'} variant='body1'>
+              <LinkButton onClick={onAboutClick} color={'textSecondary'} variant='body1'>
                 About
               </LinkButton>
             </Grid>
             <LinkDivider item />
             <Grid item>
-              <LinkButton href="https://github.com/web3-api/prototype" target="_blank" color={'textSecondary'} variant='body1'>
+              <LinkButton onClick={onCareersClick} color={'textSecondary'} variant='body1'>
                 Careers
               </LinkButton>
             </Grid>

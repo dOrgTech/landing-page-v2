@@ -5,6 +5,8 @@ export interface Route {
 export interface Routes {
   home: Readonly<Route>;
   about: Readonly<Route>;
+  careers: Readonly<Route>;
+  contact: Readonly<Route>;
 }
 
 export const routes: Routes = {
@@ -12,6 +14,12 @@ export const routes: Routes = {
     path: '/'
   },
   about: {
+    path: '/about'
+  },
+  careers: {
+    path: '/careers'
+  },
+  contact: {
     path: '/contact'
   }
 }
