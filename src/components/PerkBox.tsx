@@ -1,8 +1,8 @@
 import React from 'react'
 import { Box, styled, Typography, Grid } from '@material-ui/core'
 
-import { Stat } from "../constants/stats";
 import { theme } from "../theme";
+import {Perk} from "../constants/perks";
 
 const StyleBox = styled(Box)({
     margin: 'auto',
@@ -55,17 +55,17 @@ const StyleIcon = styled('img')({
 });
 
 interface Props {
-    stat: Stat;
+    perk: Perk;
 }
 
 export const PerkBox: React.FC<Props> = (props: Props) => {
     return (
         <StyleBox>
-            <StyleIcon src={props.stat.icon} alt='icon' />
+            <StyleIcon src={props.perk.icon} alt='icon' />
             <Grid container direction='column' spacing={0} justify='center' alignItems='center'>
                 <div>
-                    <StylePerk>{props.stat.stat}</StylePerk>
-                    <StyleDetail>{props.stat.title}</StyleDetail>
+                    <StylePerk>{props.perk.perk}</StylePerk>
+                    <StyleDetail>{props.perk.detail}</StyleDetail>
                 </div>
             </Grid>
         </StyleBox>
