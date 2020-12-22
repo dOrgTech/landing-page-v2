@@ -2,8 +2,10 @@ import React from "react";
 import { Box, Grid, styled } from "@material-ui/core";
 import { StatBox } from "../components/StatBox";
 import { PitchBox } from "../components/PitchBox";
+import {PressBox} from "../components/PressBox";
 import { Stat, stats } from "../constants/stats";
 import { Pitch, pitches } from "../constants/pitches";
+import {press} from "../constants/press";
 
 const Root = styled(Box)({
   margins: 'auto'
@@ -34,6 +36,7 @@ export const About: React.FC = () => {
           </Grid>
         ))}
       </PitchesContainer>
+      <PressBox press={press} />
     </Root>
   );
 }
