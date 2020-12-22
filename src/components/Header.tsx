@@ -10,7 +10,7 @@ const StyledAppBar = styled(AppBar)({
 });
 
 const AppBarBody = styled(Grid)({
-  maxHeight: 70,
+  maxHeight: 140,
   maxWidth: '1400px',
   marginRight: 'auto',
   marginLeft:'5%',
@@ -68,7 +68,7 @@ export const Header: React.FC = () => {
     <StyledAppBar position="static">
       <AppBarBody container wrap='nowrap'>
         <LeftHead container wrap='wrap'>
-          <Logo><DOrgLogo/></Logo>
+          <Logo><DOrgLogo onClick={onLogoClick}/></Logo>
           <HeadText variant='h4'>We build custom</HeadText>
         
           <Typography variant ='h4' color={'textSecondary'}>Dapps</Typography>

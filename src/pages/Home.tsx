@@ -4,34 +4,27 @@ import {
   Button,
   styled
 } from "@material-ui/core";
-import React, { CSSProperties } from "react";
 import ReactGA from "react-ga";
-
+import React from "react";
+import { CompanyBox } from "../components/CompanyBox";
+import { PitchBox } from "../components/PitchBox";
+import { Company, companies} from "../constants/company";
+import { Pitch, pitches } from "../constants/pitches";
 const Root = styled(Box)({
   margin: 'auto'
 });
 
-const TestImage: CSSProperties = {
-  height: 500,
-  width: 500,
-  backgroundSize: 'contain',
-  margin: 'auto'
-};
 
-const TestSvg = styled(Box)({
-  backgroundImage: `url('${process.env.PUBLIC_URL}/imgs/test.svg');`,
-  ...TestImage
+
+const StatsContainer = styled(Grid)({
+  width: '42.5rem',
 });
 
-const TestPng = styled(Box)({
-  backgroundImage: `url('${process.env.PUBLIC_URL}/imgs/test.png');`,
-  ...TestImage
+const PitchesContainer = styled(Grid)({
+  width: '85rem'
 });
 
-const TestGif = styled(Box)({
-  backgroundImage: `url('${process.env.PUBLIC_URL}/imgs/test.gif');`,
-  ...TestImage
-});
+
 
 interface Props {
   onClick?: () => void;
@@ -45,8 +38,20 @@ export const Home: React.FC<Props> = (props: Props) => {
 
   return (
     <Root>
-      
+
+
+      <StatsContainer container spacing={0} justify="center">
+        {Object.values(companies).map((company: Company, index: number) => (
+          <Grid item xs={11} key={`company-${index}`} direction="column">
+            <CompanyBox company={company} />
+          </Grid>
+        ))}
+      </StatsContainer>
+     
      
     </Root>
+
+
+
   );
 };
