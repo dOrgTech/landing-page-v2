@@ -4,6 +4,10 @@ import { StatBox } from "../components/StatBox";
 import { PitchBox } from "../components/PitchBox";
 import { Stat, stats } from "../constants/stats";
 import { Pitch, pitches } from "../constants/pitches";
+import {AboutTitleBox} from "../components/AboutTitleBox";
+
+
+const TITLE_TEXT = 'We are a full-stack Web3 development collective.';
 
 const Root = styled(Box)({
   margins: 'auto'
@@ -34,6 +38,7 @@ export const About: React.FC = () => {
           </Grid>
         ))}
       </PitchesContainer>
+      <AboutTitleBox text={TITLE_TEXT} />
     </Root>
   );
 }
