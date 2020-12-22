@@ -17,8 +17,8 @@ const StyleBox = styled(Box)({
 });
 
 const StyleDetail = styled(Typography)({
-  width: '100%',
-  height: '100%',
+  width: '24rem',
+  height: '2.813rem',
   margin: '1.25rem 0 0 2.313rem',
   fontFamily: theme.typography.fontFamily,
   fontSize: '0.938rem',
@@ -32,15 +32,15 @@ const StyleDetail = styled(Typography)({
 });
 
 const StylePitch = styled(Typography)({
-  width: "100%",
-  height: "100%",
-  margin: '0 3.625rem 0 2.313rem',
+  width: '100%',
+  height: '100%',
+  margin: '0 0 0 2.313rem',
   fontFamily: theme.typography.fontFamily,
   fontSize: '2rem',
   fontWeight: 600,
   fontStretch: "normal",
   fontStyle: "normal",
-  lineHeight: 2.19,
+  lineHeight: 1,
   letterSpacing: '-1.6px',
   textAlign: "left",
   color: theme.palette.text.primary
@@ -49,7 +49,7 @@ const StylePitch = styled(Typography)({
 const StyleIcon = styled('img')({
   width: "3.75rem",
   height: "3.75rem",
-  margin: '0 0 2.625rem 0',
+  margin: '0 0 0 0',
   objectFit: "contain",
   float: 'left'
 });
@@ -62,10 +62,10 @@ export const PitchBox: React.FC<Props> = (props: Props) => {
   return (
     <StyleBox>
       <Grid container direction='row' spacing={0} justify='flex-start' alignItems='flex-start'>
-        <Grid item xs={1}>
+        <Grid item>
           <StyleIcon src={props.pitch.icon} alt='icon' />
         </Grid>
-        <Grid item xs={11}>
+        <Grid item>
           <StylePitch>{props.pitch.pitch}</StylePitch>
           <StyleDetail>{props.pitch.detail}</StyleDetail>
         </Grid>
