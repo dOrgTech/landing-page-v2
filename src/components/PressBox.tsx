@@ -30,6 +30,7 @@ const StyleIcon = styled('img')({
   objectFit: "contain",
   background: 'transparent',
   display: 'block',
+  position: 'relative',
   zIndex: 2
 });
 
@@ -56,7 +57,9 @@ export const PressBox: React.FC<Props> = (props: Props) => {
       <StyleGrid container direction='row' spacing={0} justify='center' alignItems='center'>
         {Object.values(props.press).map((article: Article, index: number) => (
           <Grid item xs={6} key={`article-${index}`}>
-            <StyleIcon src={article.logo} srcSet={article.logo + ' 1x, ' + article.logo2x + ' 2x, ' + article.logo3x + ' 3x'} alt='icon' />
+            <a href={article.url} target='_blank' rel='noopener noreferrer'>
+              <StyleIcon src={article.logo} srcSet={article.logo + ' 1x, ' + article.logo2x + ' 2x, ' + article.logo3x + ' 3x'} alt='icon' />
+            </a>
           </Grid>
         ))}
       </StyleGrid>
