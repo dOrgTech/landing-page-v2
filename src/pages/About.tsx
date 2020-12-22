@@ -1,12 +1,9 @@
 import React from "react";
-import {
-  Box,
-  Grid,
-  styled
-} from "@material-ui/core";
-
+import { Box, Grid, styled } from "@material-ui/core";
 import { StatBox } from "../components/StatBox";
+import { PitchBox } from "../components/PitchBox";
 import { Stat, stats } from "../constants/stats";
+import { Pitch, pitches } from "../constants/pitches";
 
 const Root = styled(Box)({
   margins: 'auto'
@@ -14,6 +11,10 @@ const Root = styled(Box)({
 
 const StatsContainer = styled(Grid)({
   width: '42.5rem'
+});
+
+const PitchesContainer = styled(Grid)({
+  width: '85rem'
 });
 
 export const About: React.FC = () => {
@@ -26,6 +27,13 @@ export const About: React.FC = () => {
           </Grid>
         ))}
       </StatsContainer>
+      <PitchesContainer container spacing={0} justify="center">
+        {Object.values(pitches).map((pitch: Pitch, index: number) => (
+          <Grid item xs={6} key={`pitch-${index}`}>
+            <PitchBox pitch={pitch} />
+          </Grid>
+        ))}
+      </PitchesContainer>
     </Root>
   );
 }
