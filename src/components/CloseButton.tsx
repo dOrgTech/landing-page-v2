@@ -4,11 +4,11 @@ import { theme } from "../theme";
 import {CSSProperties} from "@material-ui/core/styles/withStyles";
 
 
-const StyleButton = styled(Button)({
+const StyleButton = styled(Grid)({
   margin: 'auto',
   width: '100%',
   height: '4.5rem',
-  padding: '1.5rem 2.5rem',
+  padding: '1.5rem 1.5rem 1.5rem 2.5rem',
   background: 'transparent',
   boxSizing: 'border-box',
   boxShadow: '0 0.1875rem 0.375rem 0 rgba(0, 0, 0, 0.16)',
@@ -23,7 +23,7 @@ const StyleButton = styled(Button)({
 const StyleText = styled(Typography)({
   width: '100%',
   height: '1rem',
-  margin: 0,
+  margin: 'auto',
   padding: 0,
   fontFamily: theme.typography.fontFamily,
   fontSize: '0.938rem',
@@ -39,8 +39,8 @@ const StyleText = styled(Typography)({
 const StyleArrow = styled('img')({
   width: '1.5rem',
   height: '1.5rem',
-  margin: 0,
-  padding: '0 0 0 1.75rem',
+  margin: '0 0 0 1.75rem',
+  padding: 0,
   objectFit: "contain"
 });
 
@@ -52,9 +52,13 @@ interface Props {
 export const CloseButton: React.FC<Props> = (props: Props) => {
 
   return (
-    <StyleButton>
-      <StyleText>{props.text}</StyleText>
-      <StyleArrow src='imgs/right-arrow.svg' alt={'right-pointing arrow'} />
+    <StyleButton container spacing={0} justify={'space-between'} alignItems={'center'}>
+      <Grid item>
+        <StyleText>{props.text}</StyleText>
+      </Grid>
+      <Grid item>
+        <StyleArrow src='imgs/right-arrow.svg' alt={'right-pointing arrow'} />
+      </Grid>
     </StyleButton>
   );
 }
