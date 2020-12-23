@@ -17,6 +17,10 @@ const Root = styled(Box)({
   margins: 'auto'
 });
 
+const Container = styled(Grid)({
+  width: '85rem'
+});
+
 const StatsContainer = styled(Grid)({
   width: '42.5rem'
 });
@@ -28,7 +32,7 @@ const PitchesContainer = styled(Grid)({
 export const About: React.FC = () => {
   return (
     <Root>
-      <Grid container spacing={0} justify="center" alignItems='flex-start' style={{width: '85rem'}}>
+      <Container container spacing={0} justify="center" alignItems='flex-start'>
         <Grid item xs={6}>
           <AboutTitleBox text={ABOUT_TITLE} />
           <PressBox press={press} />
@@ -50,7 +54,7 @@ export const About: React.FC = () => {
             </Grid>
           ))}
         </PitchesContainer>
-      </Grid>
+      </Container>
     </Root>
   );
 }
