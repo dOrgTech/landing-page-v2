@@ -1,6 +1,7 @@
-import { faTelegram, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faKeybase, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Grid, Link, styled, useTheme } from '@material-ui/core'
+import { Grid, Link, styled } from '@material-ui/core'
 import React from 'react'
 
 const FooterContainer = styled(Grid)({
@@ -18,36 +19,46 @@ const LogoContainer = styled(Link)({
   maxHeight: '50px'
 });
 
-const Logo = styled(FontAwesomeIcon)(({ theme }) => ({
+const LogoIcon = styled(FontAwesomeIcon)(({ theme }) => ({
   cursor: 'pointer',
-  fontSize: 24,
-  color: theme.palette.text.secondary,
-
+  color: theme.palette.text.primary,
+  paddingRight: 10,
   "&:hover": {
     color: theme.palette.secondary.main
   }
 }));
 
 export const Footer: React.FC = () => {
-  const theme = useTheme()
-
   return (
     <FooterContainer container justify='flex-end'>
       <Grid item>
-        <LogoContainer href="https://t.me/TODO" target="_blank">
-          <Logo
-            icon={faTelegram}
-            color={theme.palette.text.secondary}
-            style={{ paddingRight: 10 }}
+        <LogoContainer href="https://github.com/dOrgTech" target="_blank">
+          <LogoIcon
+            icon={faGithub}
           />
         </LogoContainer>
       </Grid>
+
       <Grid item>
-        <LogoContainer href="https://twitter.com/dorg_tech" target="_blank">
-          <Logo
+        <LogoContainer href="https://twitter.com/dOrg_tech" target="_blank">
+          <LogoIcon
             icon={faTwitter}
-            color={theme.palette.text.secondary}
-            style={{ paddingRight: 10 }}
+          />
+        </LogoContainer>
+      </Grid>
+
+      <Grid item>
+        <LogoContainer href="https://keybase.io/team/dorg.membrane" target="_blank">
+          <LogoIcon
+            icon={faKeybase}
+          />
+        </LogoContainer>
+      </Grid>
+
+      <Grid item>
+        <LogoContainer href="mailto:contact@dorg.tech" target="_blank">
+          <LogoIcon
+            icon={faEnvelope}
           />
         </LogoContainer>
       </Grid>

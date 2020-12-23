@@ -7,16 +7,21 @@ import { Stat, stats } from "../constants/stats";
 import { Pitch, pitches } from "../constants/pitches";
 import {press} from "../constants/press";
 import {AboutTitleBox} from "../components/AboutTitleBox";
+import {PitchTitleBox} from "../components/PitchTitleBox";
 import {CloseBox} from "../components/CloseBox";
 
 
 const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
-
+const PITCHES_TITLE = 'What’s it like to work with us?';
 const QUOTE_TEXT = 'dOrg helped me save 15% on car insurance.';
 const QUOTE_CITATION = 'Satoshi - Bitcoin, Inc.';
 
 const Root = styled(Box)({
   margins: 'auto'
+});
+
+const Container = styled(Grid)({
+  width: '85rem'
 });
 
 const StatsContainer = styled(Grid)({
@@ -30,7 +35,7 @@ const PitchesContainer = styled(Grid)({
 export const About: React.FC = () => {
   return (
     <Root>
-      <Grid container spacing={0} justify="center" alignItems='flex-start' style={{width: '85rem'}}>
+      <Container container spacing={0} justify="center" alignItems='flex-start'>
         <Grid item xs={6}>
           <AboutTitleBox text={ABOUT_TITLE} />
           <PressBox press={press} />
@@ -42,6 +47,9 @@ export const About: React.FC = () => {
             </Grid>
           ))}
         </StatsContainer>
+        <Grid item xs={12}>
+          <PitchTitleBox text={PITCHES_TITLE} />
+        </Grid>
         <PitchesContainer container item spacing={0} justify="center">
           {Object.values(pitches).map((pitch: Pitch, index: number) => (
             <Grid item xs={6} key={`pitch-${index}`}>
@@ -50,7 +58,7 @@ export const About: React.FC = () => {
           ))}
         </PitchesContainer>
         <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} />
-      </Grid>
+      </Container>
     </Root>
   );
 }
