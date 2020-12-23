@@ -29,6 +29,19 @@ export const theme = createMuiTheme({
       lineHeight: 1.5,
       letterSpacing: '-1px'
     },
+    h4: {
+      fontWeight:500,
+      fontSize: 40,
+      lineHeight: 1.5,
+      letterSpacing: '-1px'
+      
+    },
+    h5: {
+      fontSize: 40,
+      lineHeight: 1.5,
+      letterSpacing: '-1px'
+      
+    },
     subtitle1: {
       fontSize: 22,
       lineHeight: 1.75

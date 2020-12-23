@@ -1,7 +1,7 @@
-import { faGithub, faKeybase, faTelegram, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faKeybase, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Grid, Link, styled, useTheme } from '@material-ui/core'
+import { Grid, Link, styled } from '@material-ui/core'
 import React from 'react'
 
 const FooterContainer = styled(Grid)({
@@ -28,7 +28,7 @@ const LogoIcon = styled(FontAwesomeIcon)(({ theme }) => ({
   }
 }));
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   return (
     <FooterContainer container justify='flex-end'>
       <Grid item>

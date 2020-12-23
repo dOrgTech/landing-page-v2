@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Component_9_2" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px}
+        </style>
+    </defs>
+    <g id="code">
+        <path id="Path_411" d="M16 18l6-6-6-6" class="cls-2"/>
+        <path id="Path_412" d="M8 6l-6 6 6 6" class="cls-2"/>
+        <circle id="Ellipse_40" cx="2" cy="2" r="2" fill="#1aaf71" transform="translate(10 10)"/>
+    </g>
+</svg>

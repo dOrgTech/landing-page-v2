@@ -1,13 +1,24 @@
 import React from "react";
-import { styled, AppBar, Grid, Box, Link } from "@material-ui/core";
+import { styled, AppBar, Grid, Link, Typography } from "@material-ui/core";
 import { useHistory } from 'react-router-dom';
+import { routes } from "../constants/routes";
+
+const StyledAppBar = styled(AppBar)({
+  justify:'flex-start',
+});
 
 const AppBarBody = styled(Grid)({
   maxHeight: 70,
   maxWidth: '1400px',
-  margin: 'auto',
+  marginRight: 'auto',
+  marginLeft:'5%',
   paddingTop: '20px',
   paddingBottom: '20px'
+});
+
+const HeadText = styled(Typography)({
+  paddingRight:'10px',
+ 
 });
 
 const Logo = styled("img")({
@@ -19,7 +30,18 @@ const Logo = styled("img")({
 });
 
 const LinksContainer = styled(Grid)({
-  marginRight: '2vw'
+  marginRight: '2vw',
+  marginTop:'20px'
+});
+
+const LeftHead = styled(Grid)({
+  marginRight: 'auto'
+  
+});
+
+const Subtitle = styled(Grid)({
+  display:'flex',
+  marginLeft:'100px'
 });
 
 const LinkButton = styled(Link)({
@@ -33,40 +55,50 @@ const LinkDivider = styled(Grid)({
   marginLeft: '10px'
 });
 
+
 export const Header: React.FC = () => {
   const history = useHistory();
-  const onLogoClick = () => history.push('/');
+  const onLogoClick = () => history.push(routes.home.path);
+  const onAboutClick = () => history.push(routes.about.path);
+  const onCareersClick = () => history.push(routes.careers.path);
+  const onContactClick = () => history.push(routes.contact.path);
 
   return (
-    <AppBar position="static">
-      <AppBarBody container justify="space-between" alignItems='center'>
-        <Grid item>
-          <Box>
-            <Logo src={process.env.PUBLIC_URL + "/imgs/dOrg_logo_white.svg"} alt="dOrg Logo" onClick={onLogoClick} />
-          </Box>
-        </Grid>
+    <StyledAppBar position="static">
+      <AppBarBody container wrap='nowrap'>
+        <LeftHead container wrap='wrap'>
+          <Logo src={process.env.PUBLIC_URL + "/imgs/dOrg_logo_white.svg"} alt="dOrg Logo" onClick={onLogoClick} />
+          <HeadText variant='h4'>We build custom</HeadText>
+        
+          <Typography variant ='h4' color={'textPrimary'}>Dapps</Typography>
+          <Subtitle>
+            <Typography variant ='subtitle1'>We&apos;ve helped some of Web3&apos;s top projects design, code and ship</Typography>
+          </Subtitle>
+
+        </LeftHead>
+
         <Grid item>
           <LinksContainer container wrap='nowrap'>
             <Grid item>
-              <LinkButton href="https://web3api.substack.com/" target="_blank" color={'textPrimary'} variant='body1' >
-                ABOUT
+              <LinkButton onClick={onAboutClick} color={'textPrimary'} variant='body1'>
+                About
               </LinkButton>
             </Grid>
             <LinkDivider item />
             <Grid item>
-              <LinkButton href="https://github.com/web3-api/prototype" target="_blank" color={'textPrimary'} variant='body1'>
-                CAREERS
+              <LinkButton onClick={onCareersClick} color={'textPrimary'} variant='body1'>
+                Careers
               </LinkButton>
             </Grid>
             <LinkDivider item />
             <Grid item>
-              <LinkButton href="https://airtable.com/shri2hEgu1BlMLXZ9" target="_blank" color={'textSecondary'} variant='body1'>
-                CONTACT
+              <LinkButton onClick={onContactClick} color={'textPrimary'} variant='body1'>
+                Contact
               </LinkButton>
             </Grid>
           </LinksContainer>
         </Grid>
       </AppBarBody>
-    </AppBar>
+    </StyledAppBar>
   );
 };
