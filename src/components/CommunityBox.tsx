@@ -5,7 +5,7 @@ import { Community } from "../constants/community";
 import { theme } from "../theme";
 
 const StyleBox = styled(Box)({
-  width: '100%',
+  width: '25rem',
   backgroundColor: 'transparent',
   height:'100%',
   boxSizing: 'border-box',

@@ -1,14 +1,15 @@
 import {
-  Box,styled
+  Box,styled,Grid
 } from "@material-ui/core";
 import ReactGA from "react-ga";
 import React from "react";
-import {Companycomp} from "../components/Companycomp"
 import {Communitycomp} from "../components/CommunityComp"
 const Root = styled(Box)({
   margin: 'auto'
 });
-
+const HomeGrid = styled(Grid)({
+  
+})
 
 
 
@@ -25,7 +26,6 @@ export const Home: React.FC<Props> = (props: Props): JSX.Element => {
 
   return (
     <Root>
-      <Companycomp/>   
       <Communitycomp/> 
     </Root>
   );
