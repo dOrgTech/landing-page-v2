@@ -76,7 +76,7 @@ export const CloseBox: React.FC<Props> = (props: Props) => {
     <StyleBox>
       <Grid container direction='row' justify='flex-start' alignItems='flex-start' style={{height: 'inherit'}}>
         <Grid item>
-          <StyleIcon src='imgs/Component 33 – 1.svg' alt={'quotation marks icon'} />
+          <StyleIcon src='imgs/quotation-mark-icon.svg' alt={'quotation mark icon'} />
         </Grid>
         <Grid item>
           <StyleQuote><strong>“</strong>{props.quote}<strong>”</strong></StyleQuote>
