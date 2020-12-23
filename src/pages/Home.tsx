@@ -4,6 +4,7 @@ import {
 import ReactGA from "react-ga";
 import React from "react";
 import {Companycomp} from "../components/Companycomp"
+import {Communitycomp} from "../components/CommunityComp"
 const Root = styled(Box)({
   margin: 'auto'
 });
@@ -24,7 +25,8 @@ export const Home: React.FC<Props> = (props: Props): JSX.Element => {
 
   return (
     <Root>
-      <Companycomp/>    
+      <Companycomp/>   
+      <Communitycomp/> 
     </Root>
   );
 };
