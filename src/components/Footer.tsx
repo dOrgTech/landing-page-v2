@@ -19,16 +19,6 @@ const LogoContainer = styled(Link)({
   maxHeight: '50px'
 });
 
-const Logo = styled(FontAwesomeIcon)(({ theme }) => ({
-  cursor: 'pointer',
-  fontSize: 24,
-  color: theme.palette.text.secondary,
-
-  "&:hover": {
-    color: theme.palette.secondary.main
-  }
-}));
-
 const LogoIcon = styled(FontAwesomeIcon)(({ theme }) => ({
   cursor: 'pointer',
   color: theme.palette.text.primary,
@@ -39,8 +29,6 @@ const LogoIcon = styled(FontAwesomeIcon)(({ theme }) => ({
 }));
 
 export const Footer = () => {
-  const theme = useTheme()
-
   return (
     <FooterContainer container justify='flex-end'>
       <Grid item>
