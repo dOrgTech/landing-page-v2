@@ -7,9 +7,11 @@ import { Stat, stats } from "../constants/stats";
 import { Pitch, pitches } from "../constants/pitches";
 import {press} from "../constants/press";
 import {AboutTitleBox} from "../components/AboutTitleBox";
+import {PitchTitleBox} from "../components/PitchTitleBox";
 
 
 const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
+const PITCHES_TITLE = 'What’s it like to work with us?';
 
 const Root = styled(Box)({
   margins: 'auto'
@@ -38,6 +40,9 @@ export const About: React.FC = () => {
             </Grid>
           ))}
         </StatsContainer>
+        <Grid item xs={12}>
+          <PitchTitleBox text={PITCHES_TITLE} />
+        </Grid>
         <PitchesContainer container item spacing={0} justify="center">
           {Object.values(pitches).map((pitch: Pitch, index: number) => (
             <Grid item xs={6} key={`pitch-${index}`}>
