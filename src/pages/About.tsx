@@ -7,9 +7,13 @@ import { Stat, stats } from "../constants/stats";
 import { Pitch, pitches } from "../constants/pitches";
 import {press} from "../constants/press";
 import {AboutTitleBox} from "../components/AboutTitleBox";
+import {CloseBox} from "../components/CloseBox";
 
 
 const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
+
+const QUOTE_TEXT = 'dOrg helped me save 15% on car insurance.';
+const QUOTE_CITATION = 'Satoshi - Bitcoin, Inc.';
 
 const Root = styled(Box)({
   margins: 'auto'
@@ -45,6 +49,7 @@ export const About: React.FC = () => {
             </Grid>
           ))}
         </PitchesContainer>
+        <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} />
       </Grid>
     </Root>
   );
