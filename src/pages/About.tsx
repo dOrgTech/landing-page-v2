@@ -6,6 +6,10 @@ import {PressBox} from "../components/PressBox";
 import { Stat, stats } from "../constants/stats";
 import { Pitch, pitches } from "../constants/pitches";
 import {press} from "../constants/press";
+import {AboutTitleBox} from "../components/AboutTitleBox";
+
+
+const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
 
 const Root = styled(Box)({
   margins: 'auto'
@@ -22,21 +26,26 @@ const PitchesContainer = styled(Grid)({
 export const About: React.FC = () => {
   return (
     <Root>
-      <StatsContainer container spacing={0} justify="center">
-        {Object.values(stats).map((stat: Stat, index: number) => (
-          <Grid item xs={6} key={`stat-${index}`}>
-            <StatBox stat={stat} />
-          </Grid>
-        ))}
-      </StatsContainer>
-      <PitchesContainer container spacing={0} justify="center">
-        {Object.values(pitches).map((pitch: Pitch, index: number) => (
-          <Grid item xs={6} key={`pitch-${index}`}>
-            <PitchBox pitch={pitch} />
-          </Grid>
-        ))}
-      </PitchesContainer>
-      <PressBox press={press} />
+      <Grid container spacing={0} justify="center" alignItems='flex-start' style={{width: '85rem'}}>
+        <Grid item xs={6}>
+          <AboutTitleBox text={ABOUT_TITLE} />
+          <PressBox press={press} />
+        </Grid>
+        <StatsContainer container item xs={6} spacing={0} justify="center">
+          {Object.values(stats).map((stat: Stat, index: number) => (
+            <Grid item xs={6} key={`stat-${index}`}>
+              <StatBox stat={stat} />
+            </Grid>
+          ))}
+        </StatsContainer>
+        <PitchesContainer container item spacing={0} justify="center">
+          {Object.values(pitches).map((pitch: Pitch, index: number) => (
+            <Grid item xs={6} key={`pitch-${index}`}>
+              <PitchBox pitch={pitch} />
+            </Grid>
+          ))}
+        </PitchesContainer>
+      </Grid>
     </Root>
   );
 }
