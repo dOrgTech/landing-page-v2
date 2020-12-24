@@ -1,7 +1,6 @@
 import React from 'react'
-import {Box, styled, Typography, Grid, Button} from '@material-ui/core'
+import { styled, Typography, Grid } from '@material-ui/core'
 import { theme } from "../theme";
-import {CSSProperties} from "@material-ui/core/styles/withStyles";
 
 
 const StyleButton = styled(Grid)({

@@ -1,7 +1,7 @@
 import React from 'react'
-import {Box, styled, Typography, Grid, Button} from '@material-ui/core'
+import { Box, styled, Typography, Grid } from '@material-ui/core'
 import { theme } from "../theme";
-import {CloseButton} from "./CloseButton";
+import { CloseButton } from "./CloseButton";
 
 
 const StyleBox = styled(Box)({

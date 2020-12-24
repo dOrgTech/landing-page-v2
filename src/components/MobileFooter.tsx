@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function MobileFooter() {
+export const MobileFooter: React.FC = () => {
 
   return (<div/>);
 }

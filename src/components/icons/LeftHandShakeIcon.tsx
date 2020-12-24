@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function LeftHandShakeIcon() {
+export const LeftHandShakeIcon: React.FC = () => {
 
   return (<div/>);
 }

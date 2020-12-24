@@ -1,6 +1,7 @@
 import React from 'react'
 
-export function ArrowBracketsIcon() {
+
+export const ArrowBracketsIcon: React.FC = () => {
 
   return (<div/>);
 }

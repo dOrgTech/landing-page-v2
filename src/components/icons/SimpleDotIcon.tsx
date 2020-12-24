@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function SimpleDotIcon() {
+export const SimpleDotIcon: React.FC = () => {
 
   return (<div/>);
 }

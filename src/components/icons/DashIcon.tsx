@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function DashIcon() {
+export const DashIcon: React.FC = () => {
 
   return (<div/>);
 }

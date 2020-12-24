@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, styled, Typography, Grid } from '@material-ui/core'
+import { Box, styled, Typography } from '@material-ui/core'
 import { theme } from "../theme";
 
 

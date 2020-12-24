@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function GearIcon2() {
+export const GearIcon2: React.FC = () => {
 
   return (<div/>);
 }
