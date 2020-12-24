@@ -9,12 +9,14 @@ import {press} from "../constants/press";
 import {AboutTitleBox} from "../components/AboutTitleBox";
 import {PitchTitleBox} from "../components/PitchTitleBox";
 import {CloseBox} from "../components/CloseBox";
+import {routes} from "../constants/routes";
 
 
 const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
 const PITCHES_TITLE = 'What’s it like to work with us?';
 const QUOTE_TEXT = 'dOrg helped me save 15% on car insurance.';
 const QUOTE_CITATION = 'Satoshi - Bitcoin, Inc.';
+const CLOSE_BUTTON_TEXT = 'GET IN TOUCH';
 
 const Root = styled(Box)({
   margins: 'auto'
@@ -33,6 +35,7 @@ const PitchesContainer = styled(Grid)({
 });
 
 export const About: React.FC = () => {
+
   return (
     <Root>
       <Container container spacing={0} justify="center" alignItems='flex-start'>
@@ -57,7 +60,7 @@ export const About: React.FC = () => {
             </Grid>
           ))}
         </PitchesContainer>
-        <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} />
+        <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} buttonNavTarget={routes.contact.path} />
       </Container>
     </Root>
   );

@@ -1,9 +1,9 @@
 import React from 'react'
-import { styled, Typography, Grid } from '@material-ui/core'
+import {styled, Typography, Grid} from '@material-ui/core'
 import { theme } from "../theme";
 
 
-const StyleButton = styled(Grid)({
+const StyleGrid = styled(Grid)({
   margin: 'auto',
   width: '100%',
   height: '4.5rem',
@@ -45,19 +45,21 @@ const StyleArrow = styled('img')({
 
 interface Props {
   text: string;
-  border: boolean;
+  navTarget: string;
 }
 
 export const CloseButton: React.FC<Props> = (props: Props) => {
 
   return (
-    <StyleButton container spacing={0} justify={'space-between'} alignItems={'center'}>
-      <Grid item>
-        <StyleText>{props.text}</StyleText>
-      </Grid>
-      <Grid item>
-        <StyleArrow src='imgs/right-arrow.svg' alt={'right-pointing arrow'} />
-      </Grid>
-    </StyleButton>
+    <a href={props.navTarget} style={{textDecoration: 'none'}}>
+      <StyleGrid container spacing={0} justify={'space-between'} alignItems={'center'}>
+        <Grid item>
+          <StyleText>{props.text}</StyleText>
+        </Grid>
+        <Grid item>
+          <StyleArrow src='imgs/right-arrow.svg' alt={'right-pointing arrow'} />
+        </Grid>
+      </StyleGrid>
+    </a>
   );
 }

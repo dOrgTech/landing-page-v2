@@ -69,6 +69,8 @@ const StyleRings = styled('img')({
 interface Props {
   quote: string;
   citation: string;
+  buttonText: string;
+  buttonNavTarget: string;
 }
 
 export const CloseBox: React.FC<Props> = (props: Props) => {
@@ -84,7 +86,7 @@ export const CloseBox: React.FC<Props> = (props: Props) => {
         </Grid>
         <Grid item style={{height: 'inherit'}}>
           <Grid container direction='row' justify='flex-start' alignItems='center' style={{height: 'inherit'}}>
-            <CloseButton text='GET IN TOUCH' border />
+            <CloseButton text={props.buttonText} navTarget={props.buttonNavTarget} />
           </Grid>
         </Grid>
       </Grid>
