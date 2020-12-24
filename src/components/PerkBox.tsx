@@ -2,17 +2,17 @@ import React from 'react'
 import { Box, styled, Typography, Grid } from '@material-ui/core'
 import { theme } from "../theme";
 import { Perk } from "../constants/perks";
+import {hexToRGB} from "../utils";
 
 const StyleBox = styled(Box)({
   margin: 'auto',
   width: '21.313rem',
   height: '29.125rem',
   padding: '3.813rem 3.313rem 8.813rem 2.875rem',
-  backgroundColor: '#000000',
-  opacity: 0.15,
+  backgroundColor: 'rgba(0, 0, 0, 0.15)',
   boxSizing: 'border-box',
   '&:hover': {
-    backgroundColor: theme.palette.secondary.main
+    backgroundColor: hexToRGB(theme.palette.secondary.main, 0.15)
   }
 });
 
