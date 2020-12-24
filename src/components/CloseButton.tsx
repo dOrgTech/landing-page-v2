@@ -1,5 +1,5 @@
 import React from 'react'
-import {styled, Typography, Grid} from '@material-ui/core'
+import {styled, Typography, Grid, ButtonBase} from '@material-ui/core'
 import { theme } from "../theme";
 
 
@@ -45,13 +45,13 @@ const StyleArrow = styled('img')({
 
 interface Props {
   text: string;
-  navTarget: string;
+  handleClick: () => void
 }
 
 export const CloseButton: React.FC<Props> = (props: Props) => {
 
   return (
-    <a href={props.navTarget} style={{textDecoration: 'none'}}>
+    <ButtonBase onClick={() => props.handleClick()}>
       <StyleGrid container spacing={0} justify={'space-between'} alignItems={'center'}>
         <Grid item>
           <StyleText>{props.text}</StyleText>
@@ -60,6 +60,6 @@ export const CloseButton: React.FC<Props> = (props: Props) => {
           <StyleArrow src='imgs/right-arrow.svg' alt={'right-pointing arrow'} />
         </Grid>
       </StyleGrid>
-    </a>
+    </ButtonBase>
   );
 }

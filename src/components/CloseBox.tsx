@@ -70,7 +70,7 @@ interface Props {
   quote: string;
   citation: string;
   buttonText: string;
-  buttonNavTarget: string;
+  onButtonClick: () => void;
 }
 
 export const CloseBox: React.FC<Props> = (props: Props) => {
@@ -86,7 +86,7 @@ export const CloseBox: React.FC<Props> = (props: Props) => {
         </Grid>
         <Grid item style={{height: 'inherit'}}>
           <Grid container direction='row' justify='flex-start' alignItems='center' style={{height: 'inherit'}}>
-            <CloseButton text={props.buttonText} navTarget={props.buttonNavTarget} />
+            <CloseButton text={props.buttonText} handleClick={props.onButtonClick} />
           </Grid>
         </Grid>
       </Grid>

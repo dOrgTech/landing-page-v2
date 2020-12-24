@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from 'react-router-dom'
 import { Box, Grid, styled } from "@material-ui/core";
 import { StatBox } from "../components/StatBox";
 import { PitchBox } from "../components/PitchBox";
@@ -36,6 +37,9 @@ const PitchesContainer = styled(Grid)({
 
 export const About: React.FC = () => {
 
+  const history = useHistory();
+  const navigateToContactPage = () => { history.push(routes.contact.path) };
+
   return (
     <Root>
       <Container container spacing={0} justify="center" alignItems='flex-start'>
@@ -60,7 +64,7 @@ export const About: React.FC = () => {
             </Grid>
           ))}
         </PitchesContainer>
-        <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} buttonNavTarget={routes.contact.path} />
+        <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} />
       </Container>
     </Root>
   );
