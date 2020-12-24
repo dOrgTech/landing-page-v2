@@ -5,7 +5,7 @@ import { theme } from "../theme";
 
 const StyleBox = styled(Box)({
   margin: 'auto',
-  width: '43.063rem',
+  width: '42.5rem',
   height: '38.25rem',
   padding: '4.313rem 11.875rem 4.125rem 1.75rem',
   background: 'transparent',

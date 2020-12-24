@@ -6,7 +6,7 @@ import {CloseButton} from "./CloseButton";
 
 const StyleBox = styled(Box)({
   margin: 'auto',
-  width: '85.688rem',
+  width: '85rem',
   height: '14.563rem',
   padding: '0 0 0 5rem',
   background: theme.palette.secondary.main,

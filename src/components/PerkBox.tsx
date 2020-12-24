@@ -6,7 +6,7 @@ import {hexToRGB} from "../utils";
 
 const StyleBox = styled(Box)({
   margin: 'auto',
-  width: '21.313rem',
+  width: '21.25rem',
   height: '29.125rem',
   padding: '3.813rem 3.313rem 8.813rem 2.875rem',
   backgroundColor: 'rgba(0, 0, 0, 0.15)',
