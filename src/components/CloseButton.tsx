@@ -10,11 +10,11 @@ const StyleGrid = styled(Grid)({
   padding: '1.5rem 1.5rem 1.5rem 2.5rem',
   background: 'transparent',
   boxSizing: 'border-box',
-  boxShadow: '0 0.1875rem 0.375rem 0 rgba(0, 0, 0, 0.16)',
+  boxShadow: '0 0.1875rem 0.375rem 0 rgba(0, 0, 0, 0.16), inset 0 0.1875rem 0.375rem 0 rgba(0, 0, 0, 0.16)',
   borderRadius: 0,
   border: 'solid 2px ' + theme.palette.text.primary,
   '&:hover': {
-    border: 'solid 1px ' + theme.palette.text.primary
+    border: 'solid 1px ' + theme.palette.text.primary,
   },
   zIndex: 1
 });
