@@ -1,12 +1,12 @@
 import React from 'react'
-import {Box, styled, Typography, Grid, Button} from '@material-ui/core'
+import { Box, styled, Typography, Grid } from '@material-ui/core'
 import { theme } from "../theme";
-import {CloseButton} from "./CloseButton";
+import { CloseButton } from "./CloseButton";
 
 
 const StyleBox = styled(Box)({
   margin: 'auto',
-  width: '85.688rem',
+  width: '85rem',
   height: '14.563rem',
   padding: '0 0 0 5rem',
   background: theme.palette.secondary.main,
@@ -69,6 +69,8 @@ const StyleRings = styled('img')({
 interface Props {
   quote: string;
   citation: string;
+  buttonText: string;
+  onButtonClick: () => void;
 }
 
 export const CloseBox: React.FC<Props> = (props: Props) => {
@@ -76,7 +78,7 @@ export const CloseBox: React.FC<Props> = (props: Props) => {
     <StyleBox>
       <Grid container direction='row' justify='flex-start' alignItems='flex-start' style={{height: 'inherit'}}>
         <Grid item>
-          <StyleIcon src='imgs/Component 33 – 1.svg' alt={'quotation marks icon'} />
+          <StyleIcon src='imgs/quotation-mark-icon.svg' alt={'quotation mark icon'} />
         </Grid>
         <Grid item>
           <StyleQuote><strong>“</strong>{props.quote}<strong>”</strong></StyleQuote>
@@ -84,7 +86,7 @@ export const CloseBox: React.FC<Props> = (props: Props) => {
         </Grid>
         <Grid item style={{height: 'inherit'}}>
           <Grid container direction='row' justify='flex-start' alignItems='center' style={{height: 'inherit'}}>
-            <CloseButton text='GET IN TOUCH' border />
+            <CloseButton text={props.buttonText} handleClick={props.onButtonClick} />
           </Grid>
         </Grid>
       </Grid>

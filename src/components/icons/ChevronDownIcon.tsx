@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function ChevronDownIcon() {
+export const ChevronDownIcon: React.FC = () => {
 
   return (<div/>);
 }

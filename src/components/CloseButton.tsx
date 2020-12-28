@@ -1,21 +1,20 @@
 import React from 'react'
-import {Box, styled, Typography, Grid, Button} from '@material-ui/core'
+import {styled, Typography, Grid, ButtonBase} from '@material-ui/core'
 import { theme } from "../theme";
-import {CSSProperties} from "@material-ui/core/styles/withStyles";
 
 
-const StyleButton = styled(Grid)({
+const StyleGrid = styled(Grid)({
   margin: 'auto',
   width: '100%',
   height: '4.5rem',
   padding: '1.5rem 1.5rem 1.5rem 2.5rem',
   background: 'transparent',
   boxSizing: 'border-box',
-  boxShadow: '0 0.1875rem 0.375rem 0 rgba(0, 0, 0, 0.16)',
+  boxShadow: '0 0.1875rem 0.375rem 0 rgba(0, 0, 0, 0.16), inset 0 0.1875rem 0.375rem 0 rgba(0, 0, 0, 0.16)',
   borderRadius: 0,
   border: 'solid 2px ' + theme.palette.text.primary,
   '&:hover': {
-    border: 'solid 1px ' + theme.palette.text.primary
+    border: 'solid 1px ' + theme.palette.text.primary,
   },
   zIndex: 1
 });
@@ -46,19 +45,21 @@ const StyleArrow = styled('img')({
 
 interface Props {
   text: string;
-  border: boolean;
+  handleClick: () => void
 }
 
 export const CloseButton: React.FC<Props> = (props: Props) => {
 
   return (
-    <StyleButton container spacing={0} justify={'space-between'} alignItems={'center'}>
-      <Grid item>
-        <StyleText>{props.text}</StyleText>
-      </Grid>
-      <Grid item>
-        <StyleArrow src='imgs/right-arrow.svg' alt={'right-pointing arrow'} />
-      </Grid>
-    </StyleButton>
+    <ButtonBase onClick={() => props.handleClick()}>
+      <StyleGrid container spacing={0} justify={'space-between'} alignItems={'center'}>
+        <Grid item>
+          <StyleText>{props.text}</StyleText>
+        </Grid>
+        <Grid item>
+          <StyleArrow src='imgs/right-arrow.svg' alt={'right-pointing arrow'} />
+        </Grid>
+      </StyleGrid>
+    </ButtonBase>
   );
 }

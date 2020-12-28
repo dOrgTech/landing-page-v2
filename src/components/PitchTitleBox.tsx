@@ -1,11 +1,11 @@
 import React from 'react'
-import { Box, styled, Typography, Grid } from '@material-ui/core'
+import { Box, styled, Typography, } from '@material-ui/core'
 import { theme } from "../theme";
 
 
 const StyleBox = styled(Box)({
   margin: 'auto',
-  width: '85.563',
+  width: '85rem',
   height: '16.2rem',
   padding: '6.188rem 0 6.313rem 1.8rem',
   background: 'transparent',

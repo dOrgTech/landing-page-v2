@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function MailIcon() {
+export const MailIcon: React.FC = () => {
 
   return (<div/>);
 }

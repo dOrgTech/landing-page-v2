@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function DOrgLogo() {
+export const DOrgLogo: React.FC = () => {
 
   return (<div/>);
 }

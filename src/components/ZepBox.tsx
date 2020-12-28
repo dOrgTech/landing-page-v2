@@ -7,7 +7,7 @@ const StyleBox = styled(Box)({
   margin: 'auto'
 });
 
-export const ZepBox = () => {
+export const ZepBox: React.FC = () => {
   const theme = useTheme()
   
   return (

@@ -1,9 +1,9 @@
 import React from 'react'
-import { Box, styled, Typography, Grid } from '@material-ui/core'
+import { Box, styled, Grid } from '@material-ui/core'
 import { theme } from "../theme";
 import {Article, Press} from "../constants/press";
 
-const BOX_WIDTH = 43.063;
+const BOX_WIDTH = 42.5;
 const BOX_HEIGHT = 19.125;
 const PADDING = 2;
 

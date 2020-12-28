@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function KeyBaseIcon() {
+export const KeyBaseIcon: React.FC = () => {
 
   return (<div/>);
 }

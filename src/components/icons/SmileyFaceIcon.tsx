@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function SmileyFaceIcon() {
+export const SmileyFaceIcon: React.FC = () => {
 
   return (<div/>);
 }
