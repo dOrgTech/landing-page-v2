@@ -1,24 +1,21 @@
 import React from 'react'
-import { Box, styled, Typography, Grid } from '@material-ui/core'
+import {Box, styled, Typography, Grid, useMediaQuery, useTheme, Theme} from '@material-ui/core'
 import { theme } from "../theme";
 import { CloseButton } from "./CloseButton";
 
 
-const StyleBox = styled(Box)({
+const StyledBox = styled(Box)({
   margin: 'auto',
-  width: '85rem',
-  height: '14.563rem',
-  padding: '0 0 0 5rem',
+  width: '100%',
+  height: '14.6rem',
   background: theme.palette.secondary.main,
   boxSizing: 'border-box',
   position: 'relative'
 });
 
-const StyleQuote = styled(Typography)({
-  width: '33.25rem',
+const StyledQuote = styled(Typography)({
+  maxWidth: '31rem',
   height: '6.375rem',
-  margin: '2.3rem 15.312rem 1.938rem 0',
-  padding: 0,
   fontFamily: theme.typography.fontFamily,
   fontSize: '2.25rem',
   fontWeight: 300,
@@ -30,11 +27,10 @@ const StyleQuote = styled(Typography)({
   color: theme.palette.text.primary
 });
 
-const StyleCitation = styled(Typography)({
+const StyledCitation = styled(Typography)({
   width: '100%',
   height: '1.25rem',
-  margin: '1.25rem 0 2.563rem 0',
-  padding: 0,
+  margin: '2rem 0 0 0',
   fontFamily: theme.typography.fontFamily,
   fontSize: '1.125rem',
   fontWeight: 500,
@@ -46,19 +42,18 @@ const StyleCitation = styled(Typography)({
   color: theme.palette.text.primary
 });
 
-const StyleIcon = styled('img')({
-  width: '5.626rem',
-  height: '3.917rem',
-  margin: '4.25rem 4.937rem 3.02rem 0',
+const StyledIcon = styled('img')({
+  width: '5.6rem',
+  height: '3.9rem',
+  margin: '1rem',
   objectFit: "contain",
-  float: 'left'
+  position: 'relative',
+  bottom: '1.6rem'
 });
 
-const StyleRings = styled('img')({
-  width: '13.524rem',
-  height: '13.683rem',
-  margin: '0',
-  padding: '0',
+const StyledRings = styled('img')({
+  width: '13.5rem',
+  height: '13.7rem',
   objectFit: 'contain',
   transform: 'scaleX(-1)',
   position: 'absolute',
@@ -74,23 +69,37 @@ interface Props {
 }
 
 export const CloseBox: React.FC<Props> = (props: Props) => {
+
+  const theme: Theme = useTheme();
+  const extraLargeScreen = useMediaQuery(theme.breakpoints.up('xl'));
+
   return (
-    <StyleBox>
-      <Grid container direction='row' justify='flex-start' alignItems='flex-start' style={{height: 'inherit'}}>
-        <Grid item>
-          <StyleIcon src='imgs/quotation-mark-icon.svg' alt={'quotation mark icon'} />
-        </Grid>
-        <Grid item>
-          <StyleQuote><strong>“</strong>{props.quote}<strong>”</strong></StyleQuote>
-          <StyleCitation>{props.citation}</StyleCitation>
-        </Grid>
-        <Grid item style={{height: 'inherit'}}>
-          <Grid container direction='row' justify='flex-start' alignItems='center' style={{height: 'inherit'}}>
+    <StyledBox>
+      <Grid container spacing={0} direction='row' justify='flex-start' alignItems='flex-start' style={{height: 'inherit'}}>
+        {extraLargeScreen &&
+        (<Grid container item xs={8} lg={7} xl={6} spacing={0} direction='row' justify='space-evenly' alignItems='center' style={{height: 'inherit'}}>
+          <Grid item>
+            <StyledIcon src='imgs/quotation-mark-icon.svg' alt={'quotation mark icon'} />
+          </Grid>
+          <Grid item>
+            <StyledQuote><strong>“</strong>{props.quote}<strong>”</strong></StyledQuote>
+            <StyledCitation>{props.citation}</StyledCitation>
+          </Grid>
+        </Grid>)}
+        {!extraLargeScreen &&
+        (<Grid container item xs={8} lg={7} xl={6} spacing={0} direction='row' justify='space-evenly' alignItems='center' style={{height: 'inherit'}}>
+          <Grid item>
+            <StyledQuote><strong>“</strong>{props.quote}<strong>”</strong></StyledQuote>
+            <StyledCitation>{props.citation}</StyledCitation>
+          </Grid>
+        </Grid>)}
+        <Grid item xs={4} lg={5} xl={6} container direction='row' justify='center' alignItems='center' style={{height: 'inherit'}}>
+          <Grid item>
             <CloseButton text={props.buttonText} handleClick={props.onButtonClick} />
           </Grid>
         </Grid>
       </Grid>
-      <StyleRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} />
-    </StyleBox>
+      <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} />
+    </StyledBox>
   );
 }
