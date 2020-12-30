@@ -42,11 +42,12 @@ const StyledRings = styled('img')({
 
 interface Props {
   press: Press;
+  classes?: string;
 }
 
 export const PressBox: React.FC<Props> = (props: Props) => {
   return (
-    <StyledBox>
+    <StyledBox className={props.classes}>
       <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} />
       <StyledGrid container direction='row' spacing={0} justify='center' alignItems='center'>
         {Object.values(props.press).map((article: Article, index: number) => (

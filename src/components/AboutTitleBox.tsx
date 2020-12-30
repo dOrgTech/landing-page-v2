@@ -27,11 +27,12 @@ const StyledText = styled(Typography)({
 
 interface Props {
   text: string;
+  classes?: string;
 }
 
 export const AboutTitleBox: React.FC<Props> = (props: Props) => {
   return (
-    <StyledBox>
+    <StyledBox className={props.classes}>
       <StyledText>{props.text}</StyledText>
     </StyledBox>
   );

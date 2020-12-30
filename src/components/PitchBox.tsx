@@ -56,6 +56,7 @@ const StyledIcon = styled('img')({
 
 interface Props {
     pitch: Pitch;
+    classes?: string;
 }
 
 export const PitchBox: React.FC<Props> = (props: Props) => {
@@ -65,7 +66,7 @@ export const PitchBox: React.FC<Props> = (props: Props) => {
 
   if (extraLargeScreen) {
     return (
-      <StyledGrid container direction='row' spacing={0} justify='flex-start' alignItems='center'>
+      <StyledGrid className={props.classes} container direction='row' spacing={0} justify='flex-start' alignItems='center'>
         <Grid item xs={12} sm={2}>
           <StyledIcon src={props.pitch.icon} alt='icon' />
         </Grid>
@@ -77,7 +78,7 @@ export const PitchBox: React.FC<Props> = (props: Props) => {
     );
   } else {
     return (
-      <StyledGrid container direction='row' spacing={0} justify='flex-start' alignItems='center' style={{padding: '4% 3.375%'}}>
+      <StyledGrid className={props.classes} container direction='row' spacing={0} justify='flex-start' alignItems='center' style={{padding: '4% 3.375%'}}>
         <Grid item xs={12} sm={2}>
           <StyledIcon src={props.pitch.icon} alt='icon' style={{margin: 0, marginBottom: '1rem'}} />
         </Grid>

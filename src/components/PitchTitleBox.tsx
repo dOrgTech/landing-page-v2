@@ -37,11 +37,12 @@ const StyledRings = styled('img')({
 
 interface Props {
   text: string;
+  classes?: string;
 }
 
 export const PitchTitleBox: React.FC<Props> = (props: Props) => {
   return (
-    <StyledGrid container alignItems='center'>
+    <StyledGrid className={props.classes} container alignItems='center'>
       <Grid item>
         <StyledText>{props.text}</StyledText>
       </Grid>

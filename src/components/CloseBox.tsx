@@ -66,6 +66,7 @@ interface Props {
   citation: string;
   buttonText: string;
   onButtonClick: () => void;
+  classes?: string;
 }
 
 export const CloseBox: React.FC<Props> = (props: Props) => {
@@ -74,7 +75,7 @@ export const CloseBox: React.FC<Props> = (props: Props) => {
   const extraLargeScreen = useMediaQuery(theme.breakpoints.up('xl'));
 
   return (
-    <StyledBox>
+    <StyledBox className={props.classes}>
       <Grid container spacing={0} direction='row' justify='flex-start' alignItems='flex-start' style={{height: 'inherit'}}>
         {extraLargeScreen &&
         (<Grid container item xs={8} lg={7} xl={6} spacing={0} direction='row' justify='space-evenly' alignItems='center' style={{height: 'inherit'}}>

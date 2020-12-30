@@ -55,11 +55,12 @@ const StyledIcon = styled('img')({
 
 interface Props {
   stat: Stat;
+  classes?: string;
 }
 
 export const StatBox: React.FC<Props> = (props: Props) => {
   return (
-    <StyledBox>
+    <StyledBox className={props.classes}>
       <StyledIcon src={props.stat.icon} alt='icon' />
       <Grid container direction='column' spacing={0} justify='center' alignItems='center'>
         <StyledStat>{props.stat.stat}</StyledStat>
