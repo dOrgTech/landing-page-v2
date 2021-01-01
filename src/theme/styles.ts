@@ -1,7 +1,29 @@
-import {makeStyles} from "@material-ui/core";
 
 export const borderStyle = '1px solid rgba(255, 255, 255, 0.25)';
-export const useBorders = makeStyles({
+
+export interface BorderClasses {
+  allBorders: {
+    border: string
+  },
+  rightBorder: {
+    borderRight: string
+  },
+  leftBorder: {
+    borderLeft: string
+  },
+  topBorder: {
+    borderTop: string
+  },
+  bottomBorder: {
+    borderBottom: string
+  },
+  bottomLeftBorder: {
+    borderBottom: string,
+    borderLeft: string
+  }
+}
+
+export const borderStyles: BorderClasses = {
   allBorders: {
     border: borderStyle
   },
@@ -21,4 +43,4 @@ export const useBorders = makeStyles({
     borderBottom: borderStyle,
     borderLeft: borderStyle
   }
-});
+};

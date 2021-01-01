@@ -1,4 +1,4 @@
-import {createMuiTheme} from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 
 // TODO: adjust these settings to the theme provided by the designer
 export const theme = createMuiTheme({

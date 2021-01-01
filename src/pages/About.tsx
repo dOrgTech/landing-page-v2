@@ -1,19 +1,19 @@
 import React from "react";
-import {useHistory} from 'react-router-dom'
-import {Grid, styled} from "@material-ui/core";
-import {StatBox} from "../components/StatBox";
-import {PitchBox} from "../components/PitchBox";
+import { useHistory } from 'react-router-dom'
+import {Grid, makeStyles, styled} from "@material-ui/core";
+import { StatBox } from "../components/StatBox";
+import { PitchBox } from "../components/PitchBox";
 import {PressBox} from "../components/PressBox";
-import {Stat, stats} from "../constants/stats";
-import {Pitch, pitches} from "../constants/pitches";
+import { Stat, stats } from "../constants/stats";
+import { Pitch, pitches } from "../constants/pitches";
 import {press} from "../constants/press";
 import {AboutTitleBox} from "../components/AboutTitleBox";
 import {PitchTitleBox} from "../components/PitchTitleBox";
 import {CloseBox} from "../components/CloseBox";
 import {LongLeftMargin} from "../components/LongLeftMargin";
-import {LongRightMargin} from "../components/LongRightMargin"
+import { LongRightMargin } from "../components/LongRightMargin"
 import {routes} from "../constants/routes";
-import {borderStyle, useBorders} from "../theme/styles";
+import {borderStyle, borderStyles} from "../theme/styles";
 
 
 const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
@@ -38,6 +38,8 @@ const StatsContainer = styled(Grid)({
 const PitchesContainer = styled(Grid)({
   width: '100%'
 });
+
+const useBorders = makeStyles(borderStyles);
 
 export const About: React.FC = () => {
 

@@ -1,8 +1,8 @@
 import React from "react";
 import { Grid, styled } from "@material-ui/core";
 import {ContactTitleBox} from "../components/ContactTitleBox";
-import {LongLeftMargin} from "../components/LongLeftMargin";
 import {LongRightMargin} from "../components/LongRightMargin";
+import {LongLeftMargin} from "../components/LongLeftMargin";
 import {borderStyle} from "../theme/styles";
 
 const TITLE = 'Get in Touch.';
