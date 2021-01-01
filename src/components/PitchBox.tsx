@@ -13,7 +13,9 @@ const StyledGrid = styled(Grid)({
   boxSizing: 'border-box',
   '&:hover': {
     backgroundColor: hexToRGB(theme.palette.secondary.main, 0.15)
-  }
+  },
+  position: 'relative',
+  zIndex: 2
 });
 
 const StyledDetail = styled(Typography)({

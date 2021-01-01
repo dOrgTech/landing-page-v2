@@ -84,7 +84,7 @@ export const About: React.FC = () => {
           ))}
         </StatsContainer>
         <Grid item xs={12}>
-          <PitchTitleBox text={PITCHES_TITLE} classes={borders.bottomLeftBorder} />
+          <PitchTitleBox text={PITCHES_TITLE} classes={borders.bottomLeftBorder} accentStyle={borderStyle} />
         </Grid>
         <PitchesContainer container item xs={12} spacing={0} justify="center">
           {Object.values(pitches).map((pitch: Pitch, index: number) => (

@@ -33,11 +33,21 @@ const StyledRings = styled('img')({
   top: 0,
   right: 0,
   zIndex: 1
-})
+});
+
+const Accent = styled('div')({
+  height: '5rem',
+  position: 'absolute',
+  top: 0,
+  left: '50%',
+  right: '50%'
+});
+
 
 interface Props {
   text: string;
   classes?: string;
+  accentStyle?: string;
 }
 
 export const PitchTitleBox: React.FC<Props> = (props: Props) => {
@@ -47,6 +57,7 @@ export const PitchTitleBox: React.FC<Props> = (props: Props) => {
         <StyledText>{props.text}</StyledText>
       </Grid>
       <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'} />
+      <Accent style={{borderRight: props.accentStyle}} />
     </StyledGrid>
   );
 }
