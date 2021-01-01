@@ -1,4 +1,5 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import {createMuiTheme} from '@material-ui/core/styles';
+import {makeStyles} from "@material-ui/core";
 
 // TODO: adjust these settings to the theme provided by the designer
 export const theme = createMuiTheme({
@@ -117,4 +118,27 @@ export const theme = createMuiTheme({
       xl: 1485,
     },
   },
+});
+
+export const borderStyle = '1px solid rgba(255, 255, 255, 0.25)';
+export const useBorders = makeStyles({
+  allBorders: {
+    border: borderStyle
+  },
+  rightBorder: {
+    borderRight: borderStyle
+  },
+  leftBorder: {
+    borderLeft: borderStyle
+  },
+  topBorder: {
+    borderTop: borderStyle
+  },
+  bottomBorder: {
+    borderBottom: borderStyle
+  },
+  bottomLeftBorder: {
+    borderBottom: borderStyle,
+    borderLeft: borderStyle
+  }
 });

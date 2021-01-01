@@ -44,7 +44,7 @@ const Accents: React.FC<Props> = (props: Props) => {
   );
 }
 
-export const RightMargin: React.FC<Props> = (props: Props) => {
+export const LongRightMargin: React.FC<Props> = (props: Props) => {
 
   const theme: Theme = useTheme();
   const largeScreen = useMediaQuery(theme.breakpoints.up('lg'));

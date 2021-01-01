@@ -16,7 +16,7 @@ interface Props {
   border?: string;
 }
 
-export const LeftMargin: React.FC<Props> = (props: Props) => {
+export const LongLeftMargin: React.FC<Props> = (props: Props) => {
 
   const theme: Theme = useTheme();
   const largeScreen = useMediaQuery(theme.breakpoints.up('lg'));

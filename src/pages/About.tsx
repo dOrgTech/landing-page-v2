@@ -1,18 +1,19 @@
 import React from "react";
-import { useHistory } from 'react-router-dom'
-import { Grid, makeStyles, styled} from "@material-ui/core";
-import { StatBox } from "../components/StatBox";
-import { PitchBox } from "../components/PitchBox";
+import {useHistory} from 'react-router-dom'
+import {Grid, styled} from "@material-ui/core";
+import {StatBox} from "../components/StatBox";
+import {PitchBox} from "../components/PitchBox";
 import {PressBox} from "../components/PressBox";
-import { Stat, stats } from "../constants/stats";
-import { Pitch, pitches } from "../constants/pitches";
+import {Stat, stats} from "../constants/stats";
+import {Pitch, pitches} from "../constants/pitches";
 import {press} from "../constants/press";
 import {AboutTitleBox} from "../components/AboutTitleBox";
 import {PitchTitleBox} from "../components/PitchTitleBox";
 import {CloseBox} from "../components/CloseBox";
-import {LeftMargin} from "../components/LeftMargin";
-import { RightMargin } from "../components/RightMargin"
+import {LongLeftMargin} from "../components/LongLeftMargin";
+import {LongRightMargin} from "../components/LongRightMargin"
 import {routes} from "../constants/routes";
+import {borderStyle, useBorders} from "../theme";
 
 
 const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
@@ -38,29 +39,6 @@ const PitchesContainer = styled(Grid)({
   width: '100%'
 });
 
-const borderStyle = '1px solid rgba(255, 255, 255, 0.25)';
-const useBorders = makeStyles({
-  allBorders: {
-    border: borderStyle
-  },
-  rightBorder: {
-    borderRight: borderStyle
-  },
-  leftBorder: {
-    borderLeft: borderStyle
-  },
-  topBorder: {
-    borderTop: borderStyle
-  },
-  bottomBorder: {
-    borderBottom: borderStyle
-  },
-  bottomLeftBorder: {
-    borderBottom: borderStyle,
-    borderLeft: borderStyle
-  }
-});
-
 export const About: React.FC = () => {
 
   const history = useHistory();
@@ -70,7 +48,7 @@ export const About: React.FC = () => {
 
   return (
     <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-      <LeftMargin xs={1} border={borderStyle} />
+      <LongLeftMargin xs={1} border={borderStyle} />
       <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
         <Grid item xs={12} lg={6}>
           <AboutTitleBox text={ABOUT_TITLE} classes={borders.bottomLeftBorder} />
@@ -97,7 +75,7 @@ export const About: React.FC = () => {
           <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} classes={borders.leftBorder} />
         </Grid>
       </ContentContainer>
-      <RightMargin xs={1} border={borderStyle} />
+      <LongRightMargin xs={1} border={borderStyle} />
     </Root>
   );
 }
