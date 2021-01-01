@@ -1,15 +1,15 @@
 import React from 'react'
-import { styled, Grid } from '@material-ui/core'
+import {styled, Grid, useTheme, Theme, useMediaQuery} from '@material-ui/core'
 import {theme} from "../theme";
 
 const StyledGrid = styled(Grid)({
   height: '116.775rem',
-  maxWidth: '7.5vw'
+  maxWidth: '8vw'
 });
 
-const CenterLine = styled('div')({
+const CenterLine = styled(Grid)({
   width: 'inherit',
-  height: '57.25rem',
+  height: '57.375rem',
 });
 
 const RectangleAccentPrimary = styled('div')({
@@ -30,22 +30,30 @@ const RectangleAccentSecondary = styled('div')({
 interface Props {
   xs: boolean | "auto" | 10 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 11 | 12 | undefined;
   border?: string;
-  centerLine?: string;
+}
+
+const Accents: React.FC<Props> = (props: Props) => {
+  return (
+    <CenterLine container direction={'column'} justify={'center'} alignItems={'center'} style={{borderBottom: props.border}}>
+      <RectangleAccentPrimary />
+      <RectangleAccentSecondary />
+      <RectangleAccentPrimary />
+      <RectangleAccentPrimary />
+      <RectangleAccentPrimary />
+    </CenterLine>
+  );
 }
 
 export const RightMargin: React.FC<Props> = (props: Props) => {
+
+  const theme: Theme = useTheme();
+  const largeScreen = useMediaQuery(theme.breakpoints.up('lg'));
+
   return (
-    <StyledGrid item xs={props.xs} className={props.border}>
-      <Grid item container xs={12} direction={'column'} justify={'center'} alignItems={'center'} style={{height: '57.25rem'}}>
-        <RectangleAccentPrimary />
-        <RectangleAccentSecondary />
-        <RectangleAccentPrimary />
-        <RectangleAccentPrimary />
-        <RectangleAccentPrimary />
-      </Grid>
-      <Grid item xs={12} style={{width: 'inherit'}}>
-        <CenterLine style={{borderTop: props.centerLine}} />
-      </Grid>
+    <StyledGrid item xs={props.xs} style={{borderLeft: props.border, height: largeScreen ? '116.775rem' : '202.75rem'}}>
+      {largeScreen ?
+        <Accents xs={props.xs} border={props.border}/> :
+        <CenterLine container direction={'column'} justify={'center'} alignItems={'center'} style={{borderBottom: props.border}} />}
     </StyledGrid>
   );
 }

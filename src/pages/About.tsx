@@ -54,6 +54,10 @@ const useBorders = makeStyles({
   },
   bottomBorder: {
     borderBottom: borderStyle
+  },
+  bottomLeftBorder: {
+    borderBottom: borderStyle,
+    borderLeft: borderStyle
   }
 });
 
@@ -66,34 +70,34 @@ export const About: React.FC = () => {
 
   return (
     <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-      <LeftMargin xs={1} border={borders.allBorders} centerLine={borderStyle}/>
+      <LeftMargin xs={1} border={borderStyle} />
       <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
         <Grid item xs={12} lg={6}>
-          <AboutTitleBox text={ABOUT_TITLE} classes={borders.allBorders} />
-          <PressBox press={press} classes={borders.allBorders} />
+          <AboutTitleBox text={ABOUT_TITLE} classes={borders.bottomLeftBorder} />
+          <PressBox press={press} classes={borders.bottomLeftBorder} />
         </Grid>
         <StatsContainer container item xs={12} lg={6} spacing={0} justify="center">
           {Object.values(stats).map((stat: Stat, index: number) => (
             <Grid item xs={6} key={`stat-${index}`}>
-              <StatBox stat={stat} classes={borders.allBorders} />
+              <StatBox stat={stat} classes={borders.bottomLeftBorder} />
             </Grid>
           ))}
         </StatsContainer>
         <Grid item xs={12}>
-          <PitchTitleBox text={PITCHES_TITLE} classes={borders.allBorders} />
+          <PitchTitleBox text={PITCHES_TITLE} classes={borders.bottomLeftBorder} />
         </Grid>
         <PitchesContainer container item xs={12} spacing={0} justify="center">
           {Object.values(pitches).map((pitch: Pitch, index: number) => (
             <Grid item xs={12} lg={6} key={`pitch-${index}`}>
-              <PitchBox pitch={pitch} classes={borders.allBorders} />
+              <PitchBox pitch={pitch} classes={borders.bottomLeftBorder} />
             </Grid>
           ))}
         </PitchesContainer>
         <Grid item xs={12}>
-          <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} classes={borders.allBorders} />
+          <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} classes={borders.leftBorder} />
         </Grid>
       </ContentContainer>
-      <RightMargin xs={1} border={borders.allBorders} centerLine={borderStyle} />
+      <RightMargin xs={1} border={borderStyle} />
     </Root>
   );
 }
