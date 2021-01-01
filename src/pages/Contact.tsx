@@ -2,8 +2,8 @@ import React from "react";
 import { Grid, styled } from "@material-ui/core";
 import {ContactTitleBox} from "../components/ContactTitleBox";
 import {LongLeftMargin} from "../components/LongLeftMargin";
-import {borderStyle} from "../theme";
 import {LongRightMargin} from "../components/LongRightMargin";
+import {borderStyle} from "../theme/styles";
 
 const TITLE = 'Get in Touch.';
 const SUBTITLE = 'Not sure where to start?';

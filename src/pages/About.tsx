@@ -13,7 +13,7 @@ import {CloseBox} from "../components/CloseBox";
 import {LongLeftMargin} from "../components/LongLeftMargin";
 import {LongRightMargin} from "../components/LongRightMargin"
 import {routes} from "../constants/routes";
-import {borderStyle, useBorders} from "../theme";
+import {borderStyle, useBorders} from "../theme/styles";
 
 
 const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
