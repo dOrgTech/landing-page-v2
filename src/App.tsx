@@ -10,6 +10,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 
 import "./App.css";
+import {Contact} from "./pages/Contact";
 
 const App: React.FC = () => {
   return (
@@ -26,6 +27,9 @@ const App: React.FC = () => {
             </Route>
             <Route path={routes.careers.path}>
               <Careers />
+            </Route>
+            <Route path={routes.contact.path}>
+              <Contact />
             </Route>
           </Switch>
           <Footer />
