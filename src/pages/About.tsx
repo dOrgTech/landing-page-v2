@@ -10,6 +10,8 @@ import {press} from "../constants/press";
 import {AboutTitleBox} from "../components/AboutTitleBox";
 import {PitchTitleBox} from "../components/PitchTitleBox";
 import {CloseBox} from "../components/CloseBox";
+import {LeftMargin} from "../components/LeftMargin";
+import { RightMargin } from "../components/RightMargin"
 import {routes} from "../constants/routes";
 
 
@@ -36,21 +38,22 @@ const PitchesContainer = styled(Grid)({
   width: '100%'
 });
 
+const borderStyle = '1px solid rgba(255, 255, 255, 0.25)';
 const useBorders = makeStyles({
   allBorders: {
-    border: '1px solid rgba(255, 255, 255, 0.25)'
+    border: borderStyle
   },
   rightBorder: {
-    borderRight: '1px solid rgba(255, 255, 255, 0.25)'
+    borderRight: borderStyle
   },
   leftBorder: {
-    borderLeft: '1px solid rgba(255, 255, 255, 0.25)'
+    borderLeft: borderStyle
   },
   topBorder: {
-    borderTop: '1px solid rgba(255, 255, 255, 0.25)'
+    borderTop: borderStyle
   },
   bottomBorder: {
-    borderBottom: '1px solid rgba(255, 255, 255, 0.25)'
+    borderBottom: borderStyle
   }
 });
 
@@ -63,7 +66,7 @@ export const About: React.FC = () => {
 
   return (
     <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-      <Grid item xs={1} style={{height: '100%', maxWidth: '7.5vw'}} />
+      <LeftMargin xs={1} border={borders.allBorders} centerLine={borderStyle}/>
       <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
         <Grid item xs={12} lg={6}>
           <AboutTitleBox text={ABOUT_TITLE} classes={borders.allBorders} />
@@ -90,7 +93,7 @@ export const About: React.FC = () => {
           <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} classes={borders.allBorders} />
         </Grid>
       </ContentContainer>
-      <Grid item xs={1} style={{height: '100%', maxWidth: '7.5vw'}} />
+      <RightMargin xs={1} border={borders.allBorders} centerLine={borderStyle} />
     </Root>
   );
 }
