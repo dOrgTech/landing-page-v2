@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from 'react-router-dom'
-import { Box, Grid, styled } from "@material-ui/core";
+import { Grid, makeStyles, styled} from "@material-ui/core";
 import { StatBox } from "../components/StatBox";
 import { PitchBox } from "../components/PitchBox";
 import {PressBox} from "../components/PressBox";
@@ -10,6 +10,8 @@ import {press} from "../constants/press";
 import {AboutTitleBox} from "../components/AboutTitleBox";
 import {PitchTitleBox} from "../components/PitchTitleBox";
 import {CloseBox} from "../components/CloseBox";
+import {LeftMargin} from "../components/LeftMargin";
+import { RightMargin } from "../components/RightMargin"
 import {routes} from "../constants/routes";
 
 
@@ -19,53 +21,83 @@ const QUOTE_TEXT = 'dOrg helped me save 15% on car insurance.';
 const QUOTE_CITATION = 'Satoshi - Bitcoin, Inc.';
 const CLOSE_BUTTON_TEXT = 'GET IN TOUCH';
 
-const Root = styled(Box)({
-  margins: 'auto'
+const Root = styled(Grid)({
+  margins: 'auto',
+  width: '100vw'
 });
 
-const Container = styled(Grid)({
-  width: '85rem'
+const ContentContainer = styled(Grid)({
+  maxWidth: '85vw'
 });
 
 const StatsContainer = styled(Grid)({
-  width: '42.5rem'
+  width: '100%'
 });
 
 const PitchesContainer = styled(Grid)({
-  width: '85rem'
+  width: '100%'
+});
+
+const borderStyle = '1px solid rgba(255, 255, 255, 0.25)';
+const useBorders = makeStyles({
+  allBorders: {
+    border: borderStyle
+  },
+  rightBorder: {
+    borderRight: borderStyle
+  },
+  leftBorder: {
+    borderLeft: borderStyle
+  },
+  topBorder: {
+    borderTop: borderStyle
+  },
+  bottomBorder: {
+    borderBottom: borderStyle
+  },
+  bottomLeftBorder: {
+    borderBottom: borderStyle,
+    borderLeft: borderStyle
+  }
 });
 
 export const About: React.FC = () => {
 
   const history = useHistory();
-  const navigateToContactPage = () => { history.push(routes.contact.path) };
+  const navigateToContactPage = () => history.push(routes.contact.path);
+
+  const borders = useBorders();
 
   return (
-    <Root>
-      <Container container spacing={0} justify="center" alignItems='flex-start'>
-        <Grid item xs={6}>
-          <AboutTitleBox text={ABOUT_TITLE} />
-          <PressBox press={press} />
+    <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
+      <LeftMargin xs={1} border={borderStyle} />
+      <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
+        <Grid item xs={12} lg={6}>
+          <AboutTitleBox text={ABOUT_TITLE} classes={borders.bottomLeftBorder} />
+          <PressBox press={press} classes={borders.bottomLeftBorder} />
         </Grid>
-        <StatsContainer container item xs={6} spacing={0} justify="center">
+        <StatsContainer container item xs={12} lg={6} spacing={0} justify="center">
           {Object.values(stats).map((stat: Stat, index: number) => (
             <Grid item xs={6} key={`stat-${index}`}>
-              <StatBox stat={stat} />
+              <StatBox stat={stat} classes={borders.bottomLeftBorder} />
             </Grid>
           ))}
         </StatsContainer>
         <Grid item xs={12}>
-          <PitchTitleBox text={PITCHES_TITLE} />
+          <PitchTitleBox text={PITCHES_TITLE} classes={borders.bottomLeftBorder} accentStyle={borderStyle} />
         </Grid>
-        <PitchesContainer container item spacing={0} justify="center">
+        <PitchesContainer container item xs={12} spacing={0} justify="center">
           {Object.values(pitches).map((pitch: Pitch, index: number) => (
-            <Grid item xs={6} key={`pitch-${index}`}>
-              <PitchBox pitch={pitch} />
+            <Grid item xs={12} lg={6} key={`pitch-${index}`}>
+              <PitchBox pitch={pitch} classes={borders.bottomLeftBorder} />
             </Grid>
           ))}
         </PitchesContainer>
-        <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} />
-      </Container>
+        <Grid item xs={12}>
+          <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} classes={borders.leftBorder} />
+        </Grid>
+      </ContentContainer>
+      <RightMargin xs={1} border={borderStyle} />
     </Root>
   );
 }
