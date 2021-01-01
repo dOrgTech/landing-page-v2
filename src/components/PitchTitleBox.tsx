@@ -40,7 +40,8 @@ const Accent = styled('div')({
   position: 'absolute',
   top: 0,
   left: '50%',
-  right: '50%'
+  right: '50%',
+  zIndex: 2
 });
 
 
