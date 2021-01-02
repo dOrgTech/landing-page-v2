@@ -18,6 +18,7 @@ import {AboutTitleBoxMobile} from "../components/AboutTitleBoxMobile";
 import {PressBoxMobile} from "../components/PressBoxMobile";
 import {StatBoxMobile} from "../components/StatBoxMobile";
 import {PitchTitleBoxMobile} from "../components/PitchTitleBoxMobile";
+import {PitchBoxMobile} from "../components/PitchBoxMobile";
 
 
 const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
@@ -110,7 +111,7 @@ export const About: React.FC = () => {
           <PitchesContainer container item xs={12} spacing={0} justify="center">
             {Object.values(pitches).map((pitch: Pitch, index: number) => (
               <Grid item xs={12} lg={6} key={`pitch-${index}`}>
-                <PitchBox pitch={pitch} classes={borders.bottomLeftBorder} />
+                <PitchBoxMobile pitch={pitch} classes={borders.bottomLeftBorder} />
               </Grid>
             ))}
           </PitchesContainer>
