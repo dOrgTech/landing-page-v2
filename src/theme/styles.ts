@@ -1,4 +1,7 @@
+// font used for StatBoxMobile statistics, in accordance with design spec
+export const mobileStatFont = "'Open Sans', sans-serif";
 
+// borders used for grid-like look
 export const borderStyle = '1px solid rgba(255, 255, 255, 0.25)';
 
 export interface BorderClasses {
