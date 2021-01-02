@@ -31,7 +31,7 @@ const StyledRings = styled('img')({
   height: '12.334rem',
   objectFit: 'contain',
   position: 'absolute',
-  top: 0,
+  top: -3,
   right: 0,
   zIndex: 1
 });
