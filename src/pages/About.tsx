@@ -17,6 +17,7 @@ import {borderStyle, borderStyles} from "../theme/styles";
 import {AboutTitleBoxMobile} from "../components/AboutTitleBoxMobile";
 import {PressBoxMobile} from "../components/PressBoxMobile";
 import {StatBoxMobile} from "../components/StatBoxMobile";
+import {PitchTitleBoxMobile} from "../components/PitchTitleBoxMobile";
 
 
 const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
@@ -104,7 +105,7 @@ export const About: React.FC = () => {
             ))}
           </StatsContainer>
           <Grid item xs={12}>
-            <PitchTitleBox text={PITCHES_TITLE} classes={borders.bottomLeftBorder} accentStyle={borderStyle} />
+            <PitchTitleBoxMobile text={PITCHES_TITLE} classes={borders.bottomLeftBorder} />
           </Grid>
           <PitchesContainer container item xs={12} spacing={0} justify="center">
             {Object.values(pitches).map((pitch: Pitch, index: number) => (
