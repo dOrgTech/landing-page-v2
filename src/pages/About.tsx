@@ -10,8 +10,8 @@ import {press} from "../constants/press";
 import {AboutTitleBox} from "../components/AboutTitleBox";
 import {PitchTitleBox} from "../components/PitchTitleBox";
 import {CloseBox} from "../components/CloseBox";
-import {LongLeftMargin} from "../components/LongLeftMargin";
-import {LongRightMargin} from "../components/LongRightMargin"
+import {LeftMargin} from "../components/LeftMargin";
+import {RightMargin} from "../components/RightMargin"
 import {routes} from "../constants/routes";
 import {borderStyle, borderStyles} from "../theme/styles";
 import {AboutTitleBoxMobile} from "../components/AboutTitleBoxMobile";
@@ -60,7 +60,7 @@ export const About: React.FC = () => {
   if (desktop) {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-        <LongLeftMargin xs={1} border={borderStyle} />
+        <LeftMargin xs={1} border={borderStyle} />
         <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
           <Grid item xs={12} lg={6}>
             <AboutTitleBox text={ABOUT_TITLE} classes={borders.bottomLeftBorder} />
@@ -87,13 +87,13 @@ export const About: React.FC = () => {
             <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} classes={borders.leftBorder} />
           </Grid>
         </ContentContainer>
-        <LongRightMargin xs={1} border={borderStyle} />
+        <RightMargin xs={1} border={borderStyle} />
       </Root>
     );
   } else {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-        <LongLeftMargin xs={1} border={borderStyle} />
+        <LeftMargin xs={1} border={borderStyle} />
         <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
           <Grid item xs={12} lg={6}>
             <AboutTitleBoxMobile text={ABOUT_TITLE} classes={borders.bottomLeftBorder} />
@@ -120,7 +120,7 @@ export const About: React.FC = () => {
             <CloseBoxMobile quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} classes={borders.leftBorder} />
           </Grid>
         </ContentContainer>
-        <LongRightMargin xs={1} border={borderStyle} />
+        <RightMargin xs={1} border={borderStyle} />
       </Root>
     );
   }
