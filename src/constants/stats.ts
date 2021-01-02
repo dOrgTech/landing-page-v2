@@ -45,3 +45,36 @@ export const stats: Stats = {
     icon: 'imgs/dollar-sign-icon.svg'
   }
 }
+
+export const statsMobile: Stats = {
+  projects: {
+    title: 'Projects shipped',
+    stat: '25',
+    icon: 'imgs/bracketed-dot-icon.svg'
+  },
+  tvl: {
+    title: 'TVL in our products',
+    stat: '$200m+',
+    icon: 'imgs/circle-slice-icon.svg'
+  },
+  clients: {
+    title: 'Client satisfaction',
+    stat: '98%',
+    icon: 'imgs/smiley-face-icon.svg'
+  },
+  builders: {
+    title: 'Active builders',
+    stat: '30',
+    icon: 'imgs/people-icon.svg'
+  },
+  lifetime: {
+    title: 'Months together',
+    stat: '18',
+    icon: 'imgs/calendar-icon.svg'
+  },
+  raised: {
+    title: 'Funding raised',
+    stat: '$0',
+    icon: 'imgs/dollar-sign-icon.svg'
+  }
+}

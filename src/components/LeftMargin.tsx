@@ -2,13 +2,12 @@ import React from 'react'
 import {styled, Grid, useTheme, Theme, useMediaQuery} from '@material-ui/core'
 
 const StyledGrid = styled(Grid)({
-  maxWidth: '8vw'
+  maxWidth: '8vw',
 });
 
 // It's a little weird using a grid here, but doing so correctly lines up box borders
 const CenterLine = styled(Grid)({
   width: 'inherit',
-  height: '57.375rem',
 });
 
 interface Props {
@@ -16,14 +15,16 @@ interface Props {
   border?: string;
 }
 
-export const LongLeftMargin: React.FC<Props> = (props: Props) => {
+export const LeftMargin: React.FC<Props> = (props: Props) => {
 
   const theme: Theme = useTheme();
   const largeScreen = useMediaQuery(theme.breakpoints.up('lg'));
+  const desktop = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
-    <StyledGrid item xs={props.xs} style={{height: largeScreen ? '116.775rem' : '202.75rem'}}>
-      <CenterLine item style={{borderBottom: props.border}} />
+    <StyledGrid item xs={props.xs} style={{height: largeScreen ? '116.775rem' : (desktop ? '202.75rem' : '144.25rem')}}>
+      <CenterLine item style={{borderBottom: props.border, height: desktop ? '57.375rem' : '47.375rem'}} />
     </StyledGrid>
   );
 }
+

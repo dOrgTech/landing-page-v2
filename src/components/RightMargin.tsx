@@ -3,7 +3,6 @@ import {styled, Grid, useTheme, Theme, useMediaQuery} from '@material-ui/core'
 import {theme} from "../theme";
 
 const StyledGrid = styled(Grid)({
-  height: '116.775rem',
   maxWidth: '8vw'
 });
 
@@ -44,16 +43,17 @@ const Accents: React.FC<Props> = (props: Props) => {
   );
 }
 
-export const LongRightMargin: React.FC<Props> = (props: Props) => {
+export const RightMargin: React.FC<Props> = (props: Props) => {
 
   const theme: Theme = useTheme();
   const largeScreen = useMediaQuery(theme.breakpoints.up('lg'));
+  const desktop = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
-    <StyledGrid item xs={props.xs} style={{borderLeft: props.border, height: largeScreen ? '116.775rem' : '202.75rem'}}>
+    <StyledGrid item xs={props.xs} style={{borderLeft: props.border, height: largeScreen ? '116.775rem' : (desktop ? '202.75rem' : '144.25rem')}}>
       {largeScreen ?
         <Accents xs={props.xs} border={props.border}/> :
-        <CenterLine container direction={'column'} justify={'center'} alignItems={'center'} style={{borderBottom: props.border}} />}
+        <CenterLine item style={{borderBottom: props.border, height: desktop ? '57.375rem' : '47.375rem'}} />}
     </StyledGrid>
   );
 }
