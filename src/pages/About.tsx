@@ -19,6 +19,7 @@ import {PressBoxMobile} from "../components/PressBoxMobile";
 import {StatBoxMobile} from "../components/StatBoxMobile";
 import {PitchTitleBoxMobile} from "../components/PitchTitleBoxMobile";
 import {PitchBoxMobile} from "../components/PitchBoxMobile";
+import {CloseBoxMobile} from "../components/CloseBoxMobile";
 
 
 const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
@@ -116,7 +117,7 @@ export const About: React.FC = () => {
             ))}
           </PitchesContainer>
           <Grid item xs={12}>
-            <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} classes={borders.leftBorder} />
+            <CloseBoxMobile quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} classes={borders.leftBorder} />
           </Grid>
         </ContentContainer>
         <LongRightMargin xs={1} border={borderStyle} />
