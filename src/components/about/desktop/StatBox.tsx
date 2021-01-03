@@ -1,8 +1,8 @@
 import React from 'react'
 import { Box, styled, Typography, Grid } from '@material-ui/core'
 
-import { Stat } from "../constants/stats";
-import { theme } from "../theme";
+import { Stat } from "../../../constants/stats";
+import { theme } from "../../../theme";
 
 const StyledBox = styled(Box)({
   margin: 'auto',

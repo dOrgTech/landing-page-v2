@@ -1,14 +1,13 @@
 import React from 'react'
 import { Box, styled, Grid } from '@material-ui/core'
-import { theme } from "../theme";
-import {Article, Press} from "../constants/press";
+import { theme } from "../../../theme";
+import {Article, Press} from "../../../constants/press";
 
 
 const StyledBox = styled(Box)({
   margin: 'auto',
   width: '100%',
-  height: '19.125vw',
-  padding: '1vw 0',
+  height: '10.75rem',
   backgroundColor: theme.palette.secondary.main,
   boxSizing: 'border-box',
   position: 'relative'
@@ -20,8 +19,8 @@ const StyledGrid = styled(Grid)({
 });
 
 const StyledIcon = styled('img')({
-  width: "12.5vw",
-  height: "3vw",
+  width: "7.5rem",
+  height: "1.625rem",
   margin: 'auto',
   objectFit: "contain",
   background: 'transparent',
@@ -31,8 +30,8 @@ const StyledIcon = styled('img')({
 });
 
 const StyledRings = styled('img')({
-  width: '14.313vw',
-  height: '14.5vw',
+  width: '9.064rem',
+  height: '9.171rem',
   objectFit: 'contain',
   position: 'absolute',
   top: 0,
@@ -45,7 +44,7 @@ interface Props {
   classes?: string;
 }
 
-export const PressBox: React.FC<Props> = (props: Props) => {
+export const PressBoxMobile: React.FC<Props> = (props: Props) => {
   return (
     <StyledBox className={props.classes}>
       <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} />

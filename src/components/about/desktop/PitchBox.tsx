@@ -1,8 +1,8 @@
 import React from 'react'
 import {styled, Typography, Grid} from '@material-ui/core'
-import { theme } from "../theme";
-import {Pitch} from "../constants/pitches";
-import {hexToRGB} from "../utils";
+import { theme } from "../../../theme";
+import {Pitch} from "../../../constants/pitches";
+import {hexToRGB} from "../../../utils";
 
 const StyledGrid = styled(Grid)({
   margin: 'auto',
