@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function CircleWithSliverIcon() {
+export const CircleWithSliverIcon: React.FC = () => {
 
   return (<div/>);
 }

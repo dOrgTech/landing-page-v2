@@ -1,27 +1,29 @@
 import React from 'react'
-import { Box, styled, Typography, Grid } from '@material-ui/core'
+import {styled, Typography, Grid} from '@material-ui/core'
 import { theme } from "../theme";
 import {Pitch} from "../constants/pitches";
+import {hexToRGB} from "../utils";
 
-const StyleBox = styled(Box)({
+const StyledGrid = styled(Grid)({
   margin: 'auto',
-  width: '42.5rem',
-  height: '14.313rem',
-  padding: '3.813rem 8.75rem 4.125rem 2.875rem',
-  backgroundColor: '#000000',
-  opacity: 0.15,
+  width: '100%',
+  height: '14.3vw',
+  padding: '9% 6.75%',
+  backgroundColor: 'rgba(0, 0, 0, 0.15)',
   boxSizing: 'border-box',
   '&:hover': {
-    backgroundColor: theme.palette.secondary.main
-  }
+    backgroundColor: hexToRGB(theme.palette.secondary.main, 0.15)
+  },
+  position: 'relative',
+  zIndex: 2
 });
 
-const StyleDetail = styled(Typography)({
-  width: '24rem',
-  height: '2.813rem',
-  margin: '1.25rem 0 0 2.313rem',
+const StyledDetail = styled(Typography)({
+  width: '24vw',
+  height: '2.8vw',
+  margin: '1.25vw 0 0 0',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '0.938rem',
+  fontSize: '0.938vw',
   fontWeight: 500,
   fontStretch: 'normal',
   fontStyle: 'normal',
@@ -31,12 +33,11 @@ const StyleDetail = styled(Typography)({
   color: theme.palette.text.secondary
 });
 
-const StylePitch = styled(Typography)({
+const StyledPitch = styled(Typography)({
   width: '100%',
   height: '100%',
-  margin: '0 0 0 2.313rem',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '2rem',
+  fontSize: '2vw',
   fontWeight: 600,
   fontStretch: "normal",
   fontStyle: "normal",
@@ -46,30 +47,31 @@ const StylePitch = styled(Typography)({
   color: theme.palette.text.primary
 });
 
-const StyleIcon = styled('img')({
-  width: "3.75rem",
-  height: "3.75rem",
-  margin: '0 0 0 0',
+const StyledIcon = styled('img')({
+  width: "3.75vw",
+  height: "3.75vw",
+  marginRight: '2.3vw',
+  marginBottom: '3vw',
   objectFit: "contain",
   float: 'left'
 });
 
 interface Props {
     pitch: Pitch;
+    classes?: string;
 }
 
 export const PitchBox: React.FC<Props> = (props: Props) => {
+
   return (
-    <StyleBox>
-      <Grid container direction='row' spacing={0} justify='flex-start' alignItems='flex-start'>
-        <Grid item>
-          <StyleIcon src={props.pitch.icon} alt='icon' />
-        </Grid>
-        <Grid item>
-          <StylePitch>{props.pitch.pitch}</StylePitch>
-          <StyleDetail>{props.pitch.detail}</StyleDetail>
-        </Grid>
+    <StyledGrid className={props.classes} container direction='row' spacing={0} justify='flex-start' alignItems='center'>
+      <Grid item xs={12} sm={2}>
+        <StyledIcon src={props.pitch.icon} alt='icon' />
       </Grid>
-    </StyleBox>
+      <Grid item xs={12} sm={10}>
+        <StyledPitch>{props.pitch.pitch}</StyledPitch>
+        <StyledDetail>{props.pitch.detail}</StyledDetail>
+      </Grid>
+    </StyledGrid>
   );
 }

@@ -25,57 +25,57 @@ export interface Companies {
 
 export const companies: Companies = {
   TheGraph: {
-    name: 'TheGraph',
+    name: 'The Graph',
     link: 'https://thegraph.com',
-    icon: 'imgs/maskgroup1.svg'
+    icon: 'imgs/logos/TheGraph.svg'
   },
   Gnosis: {
     name: 'Gnosis',
     link: 'Full Transparency',
-    icon: 'imgs/Component 20 – 2.svg'
+    icon: 'imgs/logos/Gnosis.svg'
   },
   Balancer: {
     name:'Balancer',
     link: 'Never Stop Learning',
-    icon: 'imgs/Component 21 – 2.svg'
+    icon: 'imgs/logos/Balancer.svg'
   },
   DeversiFi: {
     name:'Deversifi',
     link: 'Never Stop Learning',
-    icon: 'imgs/Component 21 – 2.svg'
+    icon: 'imgs/logos/Deversifi.svg'
   }, Compound: {
     name:'Compound',
     link: 'Never Stop Learning',
-    icon: 'imgs/Component 21 – 2.svg'
+    icon: 'imgs/logos/Compound.svg'
   },
   Stakedus: {
     name:'Staked.us',
     link: 'Never Stop Learning',
-    icon: 'imgs/Component 21 – 2.svg'
+    icon: 'imgs/logos/StakedUs.svg'
   },
   Minds: {
     name:'Minds',
     link: 'Never Stop Learning',
-    icon: 'imgs/Component 21 – 2.svg'
+    icon: 'imgs/logos/Minds.svg'
   },
   ParaSwap: {
     name:'ParaSwap',
     link: 'Never Stop Learning',
-    icon: 'imgs/Component 21 – 2.svg'
+    icon: 'imgs/logos/ParaSwap.svg'
   },
   Boardroom: {
     name:'Boardroom',
     link: 'Never Stop Learning',
-    icon: 'imgs/Component 21 – 2.svg'
+    icon: 'imgs/logos/Boardroom.svg'
   },
   Centrality: {
     name:'Centrality',
     link: 'Freedom & Peer Support',
-    icon: 'imgs/Component 22 – 2.svg'
+    icon: 'imgs/logos/Centrality.svg'
   },
   eToro: {
     name:'eToro',
     link: 'Freedom & Peer Support',
-    icon: 'imgs/Component 22 – 2.svg'
+    icon: 'imgs/logos/eToro.svg'
   }
 }

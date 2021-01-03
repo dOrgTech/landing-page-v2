@@ -24,42 +24,43 @@ export const communities: Communities = {
   DAOstack: {
     name: 'DAOstack',
     link: '',
-    icon: 'imgs/maskgroup1.svg'
+    icon: 'imgs/logos/DaoStack.svg'
   },
   Aragon: {
     name: 'Aragon',
     link: '',
-    icon: 'imgs/Component 20 – 2.svg'
+    icon: 'imgs/logos/Aragon.svg'
+
   },
   Dxdao: {
     name:'Dxdao',
     link: '',
-    icon: 'imgs/Component 21 – 2.svg'
+    icon: 'imgs/logos/DxDao.svg'
   },
   Prime: {
     name:'Prime',
     link: '',
-    icon: 'imgs/Component 21 – 2.svg'
+    icon: 'imgs/logos/Prime.svg'
   },
   Badger: {
     name:'Badger',
     link: '',
-    icon: 'imgs/Component 21 – 2.svg'
+    icon: 'imgs/logos/Badger.svg'
   },
   API3: {
     name:'API3',
     link: '',
-    icon: 'imgs/Component 21 – 2.svg'
+    icon: 'imgs/logos/api3.svg'
   },
   LID: {
     name:'LID',
     link: '',
-    icon: 'imgs/Component 21 – 2.svg'
+    icon: 'imgs/logos/LID.svg'
   },
   Web3API: {
     name:'Web3API',
     link: '',
-    icon: 'imgs/Component 21 – 2.svg'
+    icon: 'imgs/logos/Web3api.png'
   }
   
 }

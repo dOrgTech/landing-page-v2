@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function QuarterCircleIcon() {
+export const QuarterCircleIcon: React.FC = () => {
 
   return (<div/>);
 }

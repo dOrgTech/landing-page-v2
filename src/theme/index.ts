@@ -4,18 +4,18 @@ import { createMuiTheme } from '@material-ui/core/styles';
 export const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#1C272D",
+      main: "#001047",
     },
     secondary: {
-      main: "#60c093",
+      main: "#1AAF71",
     },
     text: {
       primary: '#FFFFFF',
-      secondary: '#1aaf71'
+      secondary: '#1AAF71'
     }
   },
   typography: {
-    fontFamily: `'Montserrat', sans-serif`,
+    fontFamily: `'Spartan', sans-serif`,
     h1: {
       fontSize: 45,
       letterSpacing: -1
@@ -48,8 +48,7 @@ export const theme = createMuiTheme({
     },
     body1: {
       fontSize: 14
-    },
-   
+    }
   },
   overrides: {
     MuiTextField: {
@@ -103,10 +102,19 @@ export const theme = createMuiTheme({
         border: 'solid 1px #529dad',
         '&:hover': {
           border: 'solid 1px #529dad',
-          backgroundColor: '#60c093',
+          backgroundColor: '#1AAF71',
           color: '#ffffff'
         }
       }
     }
-  }
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
 });

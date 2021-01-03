@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function SquareLoopIcon() {
+export const SquareLoopIcon: React.FC = () => {
 
   return (<div/>);
 }

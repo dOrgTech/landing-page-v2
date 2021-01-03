@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function TwitterIcon() {
+export const TwitterIcon: React.FC = () => {
 
   return (<div/>);
 }

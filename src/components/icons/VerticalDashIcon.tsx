@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function VerticalDashIcon() {
+export const VerticalDashIcon: React.FC = () => {
 
   return (<div/>);
 }

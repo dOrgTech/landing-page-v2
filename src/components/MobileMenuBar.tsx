@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function MobileMenuBar() {
+export const MobileMenuBar: React.FC = () => {
 
   return (<div/>);
 }

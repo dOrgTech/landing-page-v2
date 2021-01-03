@@ -1,4 +1,4 @@
-import { styled, useTheme, Box } from '@material-ui/core'
+import { styled, Box } from '@material-ui/core'
 import React from 'react'
 
 const StyleBox = styled(Box)({
@@ -7,9 +7,8 @@ const StyleBox = styled(Box)({
   margin: 'auto'
 });
 
-export const ZepBox = () => {
-  const theme = useTheme()
-  
+export const ZepBox: React.FC = () => {
+
   return (
     <StyleBox>
       <h1>test</h1>

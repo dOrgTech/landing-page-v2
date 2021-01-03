@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function TinyDotIcon() {
+export const TinyDotIcon: React.FC = () => {
 
   return (<div/>);
 }

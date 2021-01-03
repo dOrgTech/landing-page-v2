@@ -1,6 +1,4 @@
-import { faTelegram, faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Grid, Link, styled, useTheme, Box } from '@material-ui/core'
+import { styled, useTheme, Box } from '@material-ui/core'
 import React from 'react'
 
 const StyleBox = styled(Box)({
@@ -9,7 +7,7 @@ const StyleBox = styled(Box)({
   margin: 'auto'
 });
 
-export const Rectangle = () => {
+export const Rectangle: React.FC = () => {
   const theme = useTheme()
   
   return (

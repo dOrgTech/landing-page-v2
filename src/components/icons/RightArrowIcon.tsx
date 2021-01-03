@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function RightArrowIcon() {
+export const RightArrowIcon: React.FC = () => {
 
   return (<div/>);
 }

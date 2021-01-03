@@ -42,8 +42,8 @@ const StyleStat = styled(Typography)({
 });
 
 const StyleIcon = styled('img')({
-  width: "1.5rem",
-  height: "1.5rem",
+  width: "3rem",
+  height: "3rem",
   objectFit: "contain",
   float: 'left',
   margin:'1rem 1rem 0 0'

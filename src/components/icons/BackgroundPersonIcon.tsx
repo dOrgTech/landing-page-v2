@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function BackgroundPersonIcon() {
+export const BackgroundPersonIcon: React.FC = () => {
 
   return (<div/>);
 }

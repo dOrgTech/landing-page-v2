@@ -4,11 +4,11 @@ import { Box, styled, Typography, Grid } from '@material-ui/core'
 import { Stat } from "../constants/stats";
 import { theme } from "../theme";
 
-const StyleBox = styled(Box)({
+const StyledBox = styled(Box)({
   margin: 'auto',
-  width: '21.25rem',
-  height: '19.125rem',
-  padding: '1.75rem 1.75rem 1.75rem 1.75rem',
+  width: '100%',
+  height: '19.125vw',
+  padding: '1.75vw',
   backgroundColor: 'transparent',
   boxSizing: 'border-box',
   '&:hover': {
@@ -16,12 +16,11 @@ const StyleBox = styled(Box)({
   }
 });
 
-const StyleTitle = styled(Typography)({
+const StyledTitle = styled(Typography)({
   width: '100%',
   height: '100%',
-  margin: '1.938rem 0 0 0',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '0.938rem',
+  fontSize: '0.938vw',
   fontWeight: 'bold',
   fontStretch: 'normal',
   fontStyle: 'normal',
@@ -31,12 +30,12 @@ const StyleTitle = styled(Typography)({
   color: theme.palette.text.secondary
 });
 
-const StyleStat = styled(Typography)({
+const StyledStat = styled(Typography)({
   width: "100%",
   height: "100%",
-  margin: "0 0 1.938rem 0",
+  margin: '0 0 1.938vw 0',
   fontFamily: theme.typography.fontFamily,
-  fontSize: "3.25rem",
+  fontSize: "3.25vw",
   fontWeight: "bold",
   fontStretch: "normal",
   fontStyle: "normal",
@@ -46,28 +45,27 @@ const StyleStat = styled(Typography)({
   color: theme.palette.text.primary
 });
 
-const StyleIcon = styled('img')({
-  width: "1.5rem",
-  height: "1.5rem",
-  margin: '0 0 3.5rem 1.625rem',
+const StyledIcon = styled('img')({
+  width: "1.5vw",
+  height: "1.5vw",
+  margin: '0 0 3.5vw 0',
   objectFit: "contain",
   float: 'right'
 });
 
 interface Props {
   stat: Stat;
+  classes?: string;
 }
 
 export const StatBox: React.FC<Props> = (props: Props) => {
   return (
-    <StyleBox>
-      <StyleIcon src={props.stat.icon} alt='icon' />
+    <StyledBox className={props.classes}>
+      <StyledIcon src={props.stat.icon} alt='icon' />
       <Grid container direction='column' spacing={0} justify='center' alignItems='center'>
-        <div>
-          <StyleStat>{props.stat.stat}</StyleStat>
-          <StyleTitle>{props.stat.title}</StyleTitle>
-        </div>
+        <StyledStat>{props.stat.stat}</StyledStat>
+        <StyledTitle>{props.stat.title}</StyledTitle>
       </Grid>
-    </StyleBox>
+    </StyledBox>
   );
 }
