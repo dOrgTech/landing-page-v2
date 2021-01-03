@@ -6,16 +6,16 @@ import { theme } from "../theme";
 const StyledGrid = styled(Grid)({
   margin: 'auto',
   width: '100%',
-  height: '16.2rem',
+  height: '16.2vw',
   background: 'transparent',
   boxSizing: 'border-box',
   position: 'relative'
 });
 
 const StyledText = styled(Typography)({
-  marginLeft: '1.8rem',
+  marginLeft: '1.8vw',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '3.25rem',
+  fontSize: '3.25vw',
   fontWeight: 600,
   fontStretch: "normal",
   fontStyle: "normal",
@@ -26,8 +26,8 @@ const StyledText = styled(Typography)({
 });
 
 const StyledRings = styled('img')({
-  width: '19.125rem',
-  height: '19.063rem',
+  width: '19.125vw',
+  height: '19.063vw',
   objectFit: 'contain',
   position: 'absolute',
   top: 0,
@@ -36,7 +36,7 @@ const StyledRings = styled('img')({
 });
 
 const Accent = styled('div')({
-  height: '5rem',
+  height: '5vw',
   position: 'absolute',
   top: 0,
   left: '50%',

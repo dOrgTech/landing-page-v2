@@ -55,18 +55,18 @@ export const About: React.FC = () => {
   const borders = useBorders();
 
   const theme: Theme = useTheme();
-  const desktop = useMediaQuery(theme.breakpoints.up('md'));
+  const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
   if (desktop) {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
         <LeftMargin xs={1} border={borderStyle} />
         <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
-          <Grid item xs={12} lg={6}>
+          <Grid item xs={6}>
             <AboutTitleBox text={ABOUT_TITLE} classes={borders.bottomLeftBorder} />
             <PressBox press={press} classes={borders.bottomLeftBorder} />
           </Grid>
-          <StatsContainer container item xs={12} lg={6} spacing={0} justify="center">
+          <StatsContainer container item xs={6} spacing={0} justify="center">
             {Object.values(stats).map((stat: Stat, index: number) => (
               <Grid item xs={6} key={`stat-${index}`}>
                 <StatBox stat={stat} classes={borders.bottomLeftBorder} />
@@ -78,7 +78,7 @@ export const About: React.FC = () => {
           </Grid>
           <PitchesContainer container item xs={12} spacing={0} justify="center">
             {Object.values(pitches).map((pitch: Pitch, index: number) => (
-              <Grid item xs={12} lg={6} key={`pitch-${index}`}>
+              <Grid item xs={6} key={`pitch-${index}`}>
                 <PitchBox pitch={pitch} classes={borders.bottomLeftBorder} />
               </Grid>
             ))}
@@ -95,11 +95,11 @@ export const About: React.FC = () => {
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
         <LeftMargin xs={1} border={borderStyle} />
         <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
-          <Grid item xs={12} lg={6}>
+          <Grid item xs={12}>
             <AboutTitleBoxMobile text={ABOUT_TITLE} classes={borders.bottomLeftBorder} />
             <PressBoxMobile press={press} classes={borders.bottomLeftBorder} />
           </Grid>
-          <StatsContainer container item xs={12} lg={6} spacing={0} justify="center">
+          <StatsContainer container item xs={12} spacing={0} justify="center">
             {Object.values(statsMobile).map((stat: Stat, index: number) => (
               <Grid item xs={6} key={`statMobile-${index}`}>
                 <StatBoxMobile stat={stat} classes={borders.bottomLeftBorder} />
@@ -111,7 +111,7 @@ export const About: React.FC = () => {
           </Grid>
           <PitchesContainer container item xs={12} spacing={0} justify="center">
             {Object.values(pitches).map((pitch: Pitch, index: number) => (
-              <Grid item xs={12} lg={6} key={`pitch-${index}`}>
+              <Grid item xs={12} key={`pitch-${index}`}>
                 <PitchBoxMobile pitch={pitch} classes={borders.bottomLeftBorder} />
               </Grid>
             ))}

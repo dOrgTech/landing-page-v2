@@ -8,21 +8,21 @@ const StyledGrid = styled(Grid)({
 
 const CenterLine = styled(Grid)({
   width: 'inherit',
-  height: '57.375rem',
+  height: '57.375vw',
 });
 
 const RectangleAccentPrimary = styled('div')({
-  width: '1.625rem',
-  height: '0.125rem',
-  marginTop: '1.125rem',
+  width: '1.625vw',
+  height: '0.125vw',
+  marginTop: '1.125vw',
   opacity: '0.6',
   backgroundColor: theme.palette.text.primary
 });
 
 const RectangleAccentSecondary = styled('div')({
-  width: '2.875rem',
-  height: '0.125rem',
-  marginTop: '1.125rem',
+  width: '2.875vw',
+  height: '0.125vw',
+  marginTop: '1.125vw',
   backgroundColor: theme.palette.text.secondary
 });
 
@@ -46,14 +46,13 @@ const Accents: React.FC<Props> = (props: Props) => {
 export const RightMargin: React.FC<Props> = (props: Props) => {
 
   const theme: Theme = useTheme();
-  const largeScreen = useMediaQuery(theme.breakpoints.up('lg'));
-  const desktop = useMediaQuery(theme.breakpoints.up('md'));
+  const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
   return (
-    <StyledGrid item xs={props.xs} style={{borderLeft: props.border, height: largeScreen ? '116.775rem' : (desktop ? '202.75rem' : '144.25rem')}}>
-      {largeScreen ?
+    <StyledGrid item xs={props.xs} style={{borderLeft: props.border, height: desktop ? '116.775vw' : '144.25rem'}}>
+      {desktop ?
         <Accents xs={props.xs} border={props.border}/> :
-        <CenterLine item style={{borderBottom: props.border, height: desktop ? '57.375rem' : '47.375rem'}} />}
+        <CenterLine item style={{borderBottom: props.border, height: '47.375rem'}} />}
     </StyledGrid>
   );
 }

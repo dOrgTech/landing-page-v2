@@ -1,7 +1,7 @@
 import React from 'react'
 import {Box, styled, Typography, Grid} from '@material-ui/core'
 import { theme } from "../theme";
-import { CloseButton } from "./CloseButton";
+import {CloseButtonMobile} from "./CloseButtonMobile";
 
 
 const StyledBox = styled(Box)({
@@ -70,7 +70,7 @@ export const CloseBoxMobile: React.FC<Props> = (props: Props) => {
           <StyledCitation>{props.citation}</StyledCitation>
         </Grid>
         <Grid item>
-          <CloseButton text={props.buttonText} handleClick={props.onButtonClick} />
+          <CloseButtonMobile text={props.buttonText} handleClick={props.onButtonClick} />
         </Grid>
       </Grid>
       <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} />
