@@ -45,7 +45,6 @@ export const Communitycomp: React.FC<Props> = (props: Props) => {
   
   ReactGA.pageview('home');
   
-  const [counter, setCounter] = React.useState(0);
   
   return (
      

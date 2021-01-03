@@ -28,18 +28,6 @@ const StyleTitle = styled(Typography)({
   
 });
 
-const StyleStat = styled(Typography)({
-  width: "100%",
-  height: "100%",
-  fontFamily: theme.typography.fontFamily,
-  fontWeight: "bold",
-  fontStretch: "normal",
-  fontStyle: "normal",
-  lineHeight: 1.35,
-  letterSpacing: "normal",
-  textAlign: "start",
-  color: theme.palette.text.primary
-});
 
 const StyleIcon = styled('img')({
   width: "3rem",
