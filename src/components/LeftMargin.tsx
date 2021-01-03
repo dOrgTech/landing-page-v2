@@ -18,12 +18,11 @@ interface Props {
 export const LeftMargin: React.FC<Props> = (props: Props) => {
 
   const theme: Theme = useTheme();
-  const largeScreen = useMediaQuery(theme.breakpoints.up('lg'));
   const desktop = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
-    <StyledGrid item xs={props.xs} style={{height: largeScreen ? '116.775rem' : (desktop ? '202.75rem' : '144.25rem')}}>
-      <CenterLine item style={{borderBottom: props.border, height: desktop ? '57.375rem' : '47.375rem'}} />
+    <StyledGrid item xs={props.xs} style={{height: desktop ? '116.775vw' : '144.25rem'}}>
+      <CenterLine item style={{borderBottom: props.border, height: desktop ? '57.375vw' : '47.375rem'}} />
     </StyledGrid>
   );
 }

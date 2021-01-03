@@ -7,8 +7,8 @@ import { theme } from "../theme";
 const StyledBox = styled(Box)({
   margin: 'auto',
   width: '100%',
-  height: '19.125rem',
-  padding: '1.75rem',
+  height: '19.125vw',
+  padding: '1.75vw',
   backgroundColor: 'transparent',
   boxSizing: 'border-box',
   '&:hover': {
@@ -20,7 +20,7 @@ const StyledTitle = styled(Typography)({
   width: '100%',
   height: '100%',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '0.938rem',
+  fontSize: '0.938vw',
   fontWeight: 'bold',
   fontStretch: 'normal',
   fontStyle: 'normal',
@@ -33,9 +33,9 @@ const StyledTitle = styled(Typography)({
 const StyledStat = styled(Typography)({
   width: "100%",
   height: "100%",
-  margin: '0 0 1.938rem 0',
+  margin: '0 0 1.938vw 0',
   fontFamily: theme.typography.fontFamily,
-  fontSize: "3.25rem",
+  fontSize: "3.25vw",
   fontWeight: "bold",
   fontStretch: "normal",
   fontStyle: "normal",
@@ -46,9 +46,9 @@ const StyledStat = styled(Typography)({
 });
 
 const StyledIcon = styled('img')({
-  width: "1.5rem",
-  height: "1.5rem",
-  margin: '0 0 3.5rem 0',
+  width: "1.5vw",
+  height: "1.5vw",
+  margin: '0 0 3.5vw 0',
   objectFit: "contain",
   float: 'right'
 });

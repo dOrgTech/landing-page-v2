@@ -7,7 +7,7 @@ import {hexToRGB} from "../utils";
 const StyledGrid = styled(Grid)({
   margin: 'auto',
   width: '100%',
-  height: '14.3rem',
+  height: '14.3vw',
   padding: '9% 6.75%',
   backgroundColor: 'rgba(0, 0, 0, 0.15)',
   boxSizing: 'border-box',
@@ -19,11 +19,11 @@ const StyledGrid = styled(Grid)({
 });
 
 const StyledDetail = styled(Typography)({
-  width: '24rem',
-  height: '2.8rem',
-  margin: '1.25rem 0 0 0',
+  width: '24vw',
+  height: '2.8vw',
+  margin: '1.25vw 0 0 0',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '0.938rem',
+  fontSize: '0.938vw',
   fontWeight: 500,
   fontStretch: 'normal',
   fontStyle: 'normal',
@@ -37,7 +37,7 @@ const StyledPitch = styled(Typography)({
   width: '100%',
   height: '100%',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '2rem',
+  fontSize: '2vw',
   fontWeight: 600,
   fontStretch: "normal",
   fontStyle: "normal",
@@ -48,10 +48,10 @@ const StyledPitch = styled(Typography)({
 });
 
 const StyledIcon = styled('img')({
-  width: "3.75rem",
-  height: "3.75rem",
-  marginRight: '2.3rem',
-  marginBottom: '3rem',
+  width: "3.75vw",
+  height: "3.75vw",
+  marginRight: '2.3vw',
+  marginBottom: '3vw',
   objectFit: "contain",
   float: 'left'
 });
@@ -82,7 +82,7 @@ export const PitchBox: React.FC<Props> = (props: Props) => {
     return (
       <StyledGrid className={props.classes} container direction='row' spacing={0} justify='flex-start' alignItems='center' style={{padding: '4% 3.375%'}}>
         <Grid item xs={12} sm={2}>
-          <StyledIcon src={props.pitch.icon} alt='icon' style={{margin: 0, marginBottom: '1rem'}} />
+          <StyledIcon src={props.pitch.icon} alt='icon' style={{margin: 0, marginBottom: '1vw'}} />
         </Grid>
         <Grid item xs={12} sm={10}>
           <StyledPitch>{props.pitch.pitch}</StyledPitch>

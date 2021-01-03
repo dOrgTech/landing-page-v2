@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box, styled, Typography, Grid, useMediaQuery, useTheme, Theme} from '@material-ui/core'
+import {Box, styled, Typography, Grid} from '@material-ui/core'
 import { theme } from "../theme";
 import { CloseButton } from "./CloseButton";
 
@@ -7,17 +7,17 @@ import { CloseButton } from "./CloseButton";
 const StyledBox = styled(Box)({
   margin: 'auto',
   width: '100%',
-  height: '14.6rem',
+  height: '14.6vw',
   background: theme.palette.secondary.main,
   boxSizing: 'border-box',
   position: 'relative'
 });
 
 const StyledQuote = styled(Typography)({
-  maxWidth: '31rem',
-  height: '6.375rem',
+  maxWidth: '31vw',
+  height: '6.375vw',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '2.25rem',
+  fontSize: '2.25vw',
   fontWeight: 300,
   fontStretch: "normal",
   fontStyle: "normal",
@@ -29,10 +29,10 @@ const StyledQuote = styled(Typography)({
 
 const StyledCitation = styled(Typography)({
   width: '100%',
-  height: '1.25rem',
-  margin: '2rem 0 0 0',
+  height: '1.25vw',
+  margin: '2vw 0 0 0',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '1.125rem',
+  fontSize: '1.125vw',
   fontWeight: 500,
   fontStretch: "normal",
   fontStyle: "normal",
@@ -43,17 +43,17 @@ const StyledCitation = styled(Typography)({
 });
 
 const StyledIcon = styled('img')({
-  width: '5.6rem',
-  height: '3.9rem',
-  margin: '1rem',
+  width: '5.6vw',
+  height: '3.9vw',
+  margin: '1vw',
   objectFit: "contain",
   position: 'relative',
-  bottom: '1.6rem'
+  bottom: '1.6vw'
 });
 
 const StyledRings = styled('img')({
-  width: '13.5rem',
-  height: '13.7rem',
+  width: '13.5vw',
+  height: '13.7vw',
   objectFit: 'contain',
   transform: 'scaleX(-1)',
   position: 'absolute',
@@ -71,14 +71,10 @@ interface Props {
 
 export const CloseBox: React.FC<Props> = (props: Props) => {
 
-  const theme: Theme = useTheme();
-  const extraLargeScreen = useMediaQuery(theme.breakpoints.up('xl'));
-
   return (
     <StyledBox className={props.classes}>
       <Grid container spacing={0} direction='row' justify='flex-start' alignItems='flex-start' style={{height: 'inherit'}}>
-        {extraLargeScreen &&
-        (<Grid container item xs={8} lg={7} xl={6} spacing={0} direction='row' justify='space-evenly' alignItems='center' style={{height: 'inherit'}}>
+        <Grid container item xs={8} lg={7} xl={6} spacing={0} direction='row' justify='space-evenly' alignItems='center' style={{height: 'inherit'}}>
           <Grid item>
             <StyledIcon src='imgs/quotation-mark-icon.svg' alt={'quotation mark icon'} />
           </Grid>
@@ -86,14 +82,7 @@ export const CloseBox: React.FC<Props> = (props: Props) => {
             <StyledQuote><strong>“</strong>{props.quote}<strong>”</strong></StyledQuote>
             <StyledCitation>{props.citation}</StyledCitation>
           </Grid>
-        </Grid>)}
-        {!extraLargeScreen &&
-        (<Grid container item xs={8} lg={7} xl={6} spacing={0} direction='row' justify='space-evenly' alignItems='center' style={{height: 'inherit'}}>
-          <Grid item>
-            <StyledQuote><strong>“</strong>{props.quote}<strong>”</strong></StyledQuote>
-            <StyledCitation>{props.citation}</StyledCitation>
-          </Grid>
-        </Grid>)}
+        </Grid>
         <Grid item xs={4} lg={5} xl={6} container direction='row' justify='center' alignItems='center' style={{height: 'inherit'}}>
           <Grid item>
             <CloseButton text={props.buttonText} handleClick={props.onButtonClick} />
