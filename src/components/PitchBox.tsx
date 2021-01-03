@@ -1,5 +1,5 @@
 import React from 'react'
-import {styled, Typography, Grid, useMediaQuery, useTheme, Theme} from '@material-ui/core'
+import {styled, Typography, Grid} from '@material-ui/core'
 import { theme } from "../theme";
 import {Pitch} from "../constants/pitches";
 import {hexToRGB} from "../utils";
@@ -63,32 +63,15 @@ interface Props {
 
 export const PitchBox: React.FC<Props> = (props: Props) => {
 
-  const theme: Theme = useTheme();
-  const extraLargeScreen = useMediaQuery(theme.breakpoints.up('lg'));
-
-  if (extraLargeScreen) {
-    return (
-      <StyledGrid className={props.classes} container direction='row' spacing={0} justify='flex-start' alignItems='center'>
-        <Grid item xs={12} sm={2}>
-          <StyledIcon src={props.pitch.icon} alt='icon' />
-        </Grid>
-        <Grid item xs={12} sm={10}>
-          <StyledPitch>{props.pitch.pitch}</StyledPitch>
-          <StyledDetail>{props.pitch.detail}</StyledDetail>
-        </Grid>
-      </StyledGrid>
-    );
-  } else {
-    return (
-      <StyledGrid className={props.classes} container direction='row' spacing={0} justify='flex-start' alignItems='center' style={{padding: '4% 3.375%'}}>
-        <Grid item xs={12} sm={2}>
-          <StyledIcon src={props.pitch.icon} alt='icon' style={{margin: 0, marginBottom: '1vw'}} />
-        </Grid>
-        <Grid item xs={12} sm={10}>
-          <StyledPitch>{props.pitch.pitch}</StyledPitch>
-          <StyledDetail>{props.pitch.detail}</StyledDetail>
-        </Grid>
-      </StyledGrid>
-    );
-  }
+  return (
+    <StyledGrid className={props.classes} container direction='row' spacing={0} justify='flex-start' alignItems='center'>
+      <Grid item xs={12} sm={2}>
+        <StyledIcon src={props.pitch.icon} alt='icon' />
+      </Grid>
+      <Grid item xs={12} sm={10}>
+        <StyledPitch>{props.pitch.pitch}</StyledPitch>
+        <StyledDetail>{props.pitch.detail}</StyledDetail>
+      </Grid>
+    </StyledGrid>
+  );
 }
