@@ -55,7 +55,7 @@ export const About: React.FC = () => {
   const borders = useBorders();
 
   const theme: Theme = useTheme();
-  const desktop = useMediaQuery(theme.breakpoints.up('md'));
+  const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
   if (desktop) {
     return (

@@ -64,7 +64,7 @@ interface Props {
 export const PitchBox: React.FC<Props> = (props: Props) => {
 
   const theme: Theme = useTheme();
-  const extraLargeScreen = useMediaQuery(theme.breakpoints.up('xl'));
+  const extraLargeScreen = useMediaQuery(theme.breakpoints.up('lg'));
 
   if (extraLargeScreen) {
     return (

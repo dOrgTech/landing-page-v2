@@ -18,7 +18,7 @@ interface Props {
 export const LeftMargin: React.FC<Props> = (props: Props) => {
 
   const theme: Theme = useTheme();
-  const desktop = useMediaQuery(theme.breakpoints.up('md'));
+  const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
   return (
     <StyledGrid item xs={props.xs} style={{height: desktop ? '116.775vw' : '144.25rem'}}>
