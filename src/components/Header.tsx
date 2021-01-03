@@ -1,5 +1,5 @@
 import React from "react";
-import {styled, AppBar, Grid, Link, makeStyles, Box} from "@material-ui/core";
+import {styled, AppBar, Grid, Link, makeStyles, Box, useTheme, Theme, useMediaQuery} from "@material-ui/core";
 import { useHistory, useLocation } from 'react-router-dom';
 import { routes } from "../constants/routes";
 import {borderStyles} from "../theme/styles";
@@ -37,8 +37,15 @@ const LinksContainer = styled(Grid)({
   position: 'relative'
 });
 
-const StyledLink = styled(Link)({
+const LinkBox = styled(Grid)({
   marginRight: '3.75vw',
+  width: '4.5vw',
+  height: 'inherit',
+  boxSizing: 'border-box',
+  position: 'relative'
+});
+
+const StyledLink = styled(Link)({
   fontFamily: theme.typography.fontFamily,
   fontSize: '0.813vw',
   fontWeight: 500,
@@ -55,7 +62,7 @@ const StyledLink = styled(Link)({
 });
 
 const Underline = styled(Box)({
-  width: '5vw',
+  width: '4.5vw',
   height: '0.438vw',
   backgroundColor: theme.palette.secondary.main,
   position: 'absolute',
@@ -78,12 +85,15 @@ export const Header: React.FC = () => {
   const onContactClick = () => history.push(routes.contact.path);
 
   const location = useLocation();
-  const underlineTranslation = location.pathname === routes.about.path ? '20vw'
-    : location.pathname === routes.careers.path ? '12.3vw'
+  const underlineTranslation = location.pathname === routes.about.path ? '20.25vw'
+    : location.pathname === routes.careers.path ? '12vw'
       : location.pathname === routes.contact.path ? '3.75vw'
         : '0';
 
   const borders = useBorders();
+
+  const theme: Theme = useTheme();
+  const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
   return (
     <StyledAppBar position="static">
@@ -93,15 +103,15 @@ export const Header: React.FC = () => {
         </LogoContainer>
         <LeftHead item xs={5} className={borders.bottomLeftBorder} />
         <LinksContainer container item xs={5} spacing={0} direction='row' justify="flex-end" alignItems='center' className={borders.bottomLeftBorder}>
-          <Grid item>
-            <StyledLink onClick={onAboutClick} underline='none'>{routes.about.name}</StyledLink>
-          </Grid>
-          <Grid item>
-            <StyledLink onClick={onCareersClick} underline='none'>{routes.careers.name}</StyledLink>
-          </Grid>
-          <Grid item>
-            <StyledLink onClick={onContactClick} underline='none'>{routes.contact.name}</StyledLink>
-          </Grid>
+          <LinkBox item container direction='row' justify='center' alignItems='center'>
+            <StyledLink onClick={onAboutClick} underline='none' style={{fontSize: desktop ? '0.813vw' : '1.2vw'}}>{routes.about.name}</StyledLink>
+          </LinkBox>
+          <LinkBox item container direction='row' justify='center' alignItems='center'>
+            <StyledLink onClick={onCareersClick} underline='none' style={{fontSize: desktop ? '0.813vw' : '1.2vw'}}>{routes.careers.name}</StyledLink>
+          </LinkBox>
+          <LinkBox item container direction='row' justify='center' alignItems='center'>
+            <StyledLink onClick={onContactClick} underline='none' style={{fontSize: desktop ? '0.813vw' : '1.2vw'}}>{routes.contact.name}</StyledLink>
+          </LinkBox>
           <Underline style={{right: underlineTranslation}} />
         </LinksContainer>
         <HeaderRightMargin item xs={1} className={borders.bottomLeftBorder} />
