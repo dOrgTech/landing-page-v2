@@ -79,7 +79,7 @@ export const Header: React.FC = () => {
 
   const location = useLocation();
   const underlineTranslation = location.pathname === routes.about.path ? '20vw'
-    : location.pathname === routes.careers.path ? '12.375vw'
+    : location.pathname === routes.careers.path ? '12.3vw'
       : location.pathname === routes.contact.path ? '3.75vw'
         : '0';
 
