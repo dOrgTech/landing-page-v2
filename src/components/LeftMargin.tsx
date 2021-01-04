@@ -3,6 +3,7 @@ import {styled, Grid, useTheme, Theme, useMediaQuery} from '@material-ui/core'
 
 const StyledGrid = styled(Grid)({
   maxWidth: '8vw',
+  minWidth: '4.5vw'
 });
 
 // It's a little weird using a grid here, but doing so correctly lines up box borders
@@ -21,8 +22,8 @@ export const LeftMargin: React.FC<Props> = (props: Props) => {
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
   return (
-    <StyledGrid item xs={props.xs} style={{height: desktop ? '116.775vw' : '144.25rem', maxWidth: desktop ? '8vw' : '5.5vw'}}>
-      <CenterLine item style={{borderBottom: props.border, height: desktop ? '57.375vw' : '47.375rem'}} />
+    <StyledGrid item xs={props.xs} style={{height: desktop ? '116.775vw' : '550vw', maxWidth: desktop ? '8vw' : '6vw'}}>
+      <CenterLine item style={{borderBottom: props.border, height: desktop ? '57.375vw' : '180.5vw'}} />
     </StyledGrid>
   );
 }

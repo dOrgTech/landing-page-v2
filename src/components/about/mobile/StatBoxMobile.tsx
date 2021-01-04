@@ -8,7 +8,7 @@ import {mobileStatFont} from "../../../theme/styles";
 const StyledBox = styled(Grid)({
   margin: 'auto',
   width: '100%',
-  height: '31.35vw',
+  height: '31.5vw',
   padding: '7.15vw 4vw 7.15vw 4.75vw',
   backgroundColor: 'transparent',
   boxSizing: 'border-box',
