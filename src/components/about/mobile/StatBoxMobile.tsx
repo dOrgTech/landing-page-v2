@@ -14,7 +14,9 @@ const StyledBox = styled(Grid)({
   boxSizing: 'border-box',
   '&:hover': {
     backgroundColor: 'rgba(0, 0, 0, 0.15)'
-  }
+  },
+  position: 'relative',
+  zIndex: 2
 });
 
 const StyledTitle = styled(Typography)({
