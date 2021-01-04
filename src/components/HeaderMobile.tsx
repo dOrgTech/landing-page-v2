@@ -1,9 +1,9 @@
 import React from "react";
 import {styled, AppBar, Grid, makeStyles} from "@material-ui/core";
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { routes } from "../constants/routes";
 import {borderStyles} from "../theme/styles";
-import {MobileMenuBar} from "./MobileMenuBar";
+import {MobileMenu} from "./MobileMenu";
 
 
 const LOGO_PATH = process.env.PUBLIC_URL + "/imgs/dOrg-logo-white.svg";
@@ -49,7 +49,7 @@ export const HeaderMobile: React.FC = () => {
             <StyledLogo src={LOGO_PATH} alt="dOrg Logo" onClick={onLogoClick} />
           </Grid>
           <Grid item>
-            <MobileMenuBar />
+            <MobileMenu />
           </Grid>
         </LogoContainer>
         <HeaderMargin item xs={1} className={borders.bottomLeftBorder} />

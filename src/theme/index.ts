@@ -1,4 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles';
+import {borderStyle} from "./styles";
 
 // TODO: adjust these settings to the theme provided by the designer
 export const theme = createMuiTheme({
@@ -105,6 +106,15 @@ export const theme = createMuiTheme({
           backgroundColor: '#1AAF71',
           color: '#ffffff'
         }
+      }
+    },
+    MuiMenu: {
+      paper: {
+        backgroundColor: "#001047",
+        border: borderStyle
+      },
+      list: {
+        backgroundColor: 'rgba(0, 0, 0, 0.15)'
       }
     }
   },
