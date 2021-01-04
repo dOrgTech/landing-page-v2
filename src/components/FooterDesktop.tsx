@@ -17,6 +17,7 @@ const FooterContainer = styled(Grid)({
 
 const IconContainer = styled(Link)({
   height: '1.5vw',
+  marginRight: '0.7vw',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center'
@@ -26,12 +27,11 @@ const StyledIcon = styled('img')({
   width: '1.25vw',
   height: 'auto',
   objectFit: 'contain',
-  marginRight: '0.7vw',
   color: theme.palette.text.primary,
   "&:hover": {
     color: theme.palette.secondary.main
   },
-  cursor: 'pointer',
+  cursor: 'pointer'
 });
 
 const CopyrightText = styled(Typography)({
