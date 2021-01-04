@@ -1,6 +1,6 @@
 import React from 'react'
 import {Box, styled, Typography, Grid} from '@material-ui/core'
-import { theme } from "../theme";
+import { theme } from "../../../theme";
 import {CloseButtonMobile} from "./CloseButtonMobile";
 
 

@@ -1,25 +1,25 @@
 import React from "react";
 import { useHistory } from 'react-router-dom'
 import {Grid, makeStyles, styled, Theme, useMediaQuery, useTheme} from "@material-ui/core";
-import { StatBox } from "../components/StatBox";
-import { PitchBox } from "../components/PitchBox";
-import {PressBox} from "../components/PressBox";
+import { StatBox } from "../components/about/desktop/StatBox";
+import { PitchBox } from "../components/about/desktop/PitchBox";
+import {PressBox} from "../components/about/desktop/PressBox";
 import {Stat, stats, statsMobile} from "../constants/stats";
 import { Pitch, pitches } from "../constants/pitches";
 import {press} from "../constants/press";
-import {AboutTitleBox} from "../components/AboutTitleBox";
-import {PitchTitleBox} from "../components/PitchTitleBox";
-import {CloseBox} from "../components/CloseBox";
+import {AboutTitleBox} from "../components/about/desktop/AboutTitleBox";
+import {PitchTitleBox} from "../components/about/desktop/PitchTitleBox";
+import {CloseBox} from "../components/about/desktop/CloseBox";
 import {LeftMargin} from "../components/LeftMargin";
 import {RightMargin} from "../components/RightMargin"
 import {routes} from "../constants/routes";
 import {borderStyle, borderStyles} from "../theme/styles";
-import {AboutTitleBoxMobile} from "../components/AboutTitleBoxMobile";
-import {PressBoxMobile} from "../components/PressBoxMobile";
-import {StatBoxMobile} from "../components/StatBoxMobile";
-import {PitchTitleBoxMobile} from "../components/PitchTitleBoxMobile";
-import {PitchBoxMobile} from "../components/PitchBoxMobile";
-import {CloseBoxMobile} from "../components/CloseBoxMobile";
+import {AboutTitleBoxMobile} from "../components/about/mobile/AboutTitleBoxMobile";
+import {PressBoxMobile} from "../components/about/mobile/PressBoxMobile";
+import {StatBoxMobile} from "../components/about/mobile/StatBoxMobile";
+import {PitchTitleBoxMobile} from "../components/about/mobile/PitchTitleBoxMobile";
+import {PitchBoxMobile} from "../components/about/mobile/PitchBoxMobile";
+import {CloseBoxMobile} from "../components/about/mobile/CloseBoxMobile";
 
 
 const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
