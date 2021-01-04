@@ -11,13 +11,14 @@ import { Footer } from "./components/Footer";
 
 import "./App.css";
 import {Contact} from "./pages/Contact";
+import {HeaderMobile} from "./components/HeaderMobile";
 
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <Box bgcolor="primary.main" width="100%" minHeight='100vh'>
         <HashRouter>
-          <Header />
+          <HeaderMobile />
           <Switch >
             <Route path={routes.home.path} exact>
               <Home onClick={() => console.log("hey")} />
