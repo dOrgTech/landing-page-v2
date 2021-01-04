@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Group_3" width="28" height="48" viewBox="0 0 28 48">
+    <defs>
+        <style>
+            .cls-1{fill:#fff;font-size:29px;font-family:BrandonGrotesque-Medium,Brandon Grotesque;font-weight:500}
+        </style>
+    </defs>
+    <text id="C" class="cls-1" transform="translate(0 30)">
+        <tspan x="0" y="0">C</tspan>
+    </text>
+    <text id="C-2" class="cls-1" transform="rotate(180 14 9)">
+        <tspan x="0" y="0">C</tspan>
+    </text>
+</svg>

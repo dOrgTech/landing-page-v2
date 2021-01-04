@@ -2000,8 +2000,7 @@ __metadata:
   checksum: 5c511d7807f414b298299ae4a053abf265f39984942e0eefdfb17a7986a36f1047e0fd9a6f785bdddbf7343a5737595dfabe148719a80e118dd77486502009cc
   languageName: node
   linkType: hard
-
-"@material-ui/core@npm:^4.11.2":
+  "@material-ui/core@npm:^4.11.2":
   version: 4.11.2
   resolution: "@material-ui/core@npm:4.11.2"
   dependencies:
@@ -4100,8 +4099,7 @@ __metadata:
   checksum: c1b41a26ddc6620eb7f1ee6c29c812f5942a4e328e74263f995872cfb8ca3aee08542beb25cd10fd7ef16e4f16603e25c35a26e776c01fd55277e5035e829e0e
   languageName: node
   linkType: hard
-
-"base@npm:^0.11.1":
+  "base@npm:^0.11.1":
   version: 0.11.2
   resolution: "base@npm:0.11.2"
   dependencies:
@@ -6218,8 +6216,8 @@ __metadata:
   checksum: e7648a5a91dd5e91838d14f0e9631f2adf0117cc271ea86d8ce394a8fbe8fc7545755c8261faaf4b1e196795a10da99e5d5f1013163ba0f6260a57b0ba29cc60
   languageName: node
   linkType: hard
-
-"detect-port-alt@npm:1.1.6":
+  
+  "detect-port-alt@npm:1.1.6":
   version: 1.1.6
   resolution: "detect-port-alt@npm:1.1.6"
   dependencies:
@@ -7935,8 +7933,7 @@ fsevents@^1.2.7:
   checksum: 6ccb7efcb79e504f4361f344413927e5aaf0789e1498c58f0c27cd7031bf84e50830395241eac79c20e99498a0352f08223f1e9e7aa5f19bbae00bdac17ab2a5
   languageName: node
   linkType: hard
-
-"fsevents@patch:fsevents@~2.1.2#builtin<compat/fsevents>":
+  "fsevents@patch:fsevents@~2.1.2#builtin<compat/fsevents>":
   version: 2.1.3
   resolution: "fsevents@patch:fsevents@npm%3A2.1.3#builtin<compat/fsevents>::version=2.1.3&hash=11e9ea"
   dependencies:
@@ -10217,8 +10214,8 @@ fsevents@~2.1.2:
   checksum: b530d48a64e6aff9523407856a54c5b9beee30f34a410612057f4fa097d90072fc8403c49604dacf0c3e7620dca43c2b7f0de3f954af611e43716a254c46f6f5
   languageName: node
   linkType: hard
-
-"jsdom@npm:^16.4.0":
+  
+  "jsdom@npm:^16.4.0":
   version: 16.4.0
   resolution: "jsdom@npm:16.4.0"
   dependencies:
@@ -13294,8 +13291,8 @@ fsevents@~2.1.2:
   checksum: 7093ca8313659807290f6b039e9064787e777002cf7c84f896667c2c9cf6d349c32b809153dcf5475145ae6a6c2d198a769681ec16321ca227db4b682a5f5344
   languageName: node
   linkType: hard
-
-"postcss-normalize@npm:8.0.1":
+  
+  "postcss-normalize@npm:8.0.1":
   version: 8.0.1
   resolution: "postcss-normalize@npm:8.0.1"
   dependencies:
@@ -15776,8 +15773,7 @@ resolve@1.18.1:
   checksum: 025221cfc21c1226e64158c35a8a5ae0c9e46d0adf0f66dabab9a103c390a7f1aa9a605fa1321d319a3a16c6a5f27ae5ae00fc98740d07e8188e5743041b5445
   languageName: node
   linkType: hard
-
-"split-string@npm:^3.0.1, split-string@npm:^3.0.2":
+  "split-string@npm:^3.0.1, split-string@npm:^3.0.2":
   version: 3.1.0
   resolution: "split-string@npm:3.1.0"
   dependencies:
@@ -17024,8 +17020,7 @@ typescript@^4.0.3:
   checksum: 2fa80e62a6ec395af3ee4747ce9738d2fee25ef963fb5650e358b2eb878d7f047f5ccdbd5f92e9605d13276f995fc3c4e3084475b03722cdd7ce9d58a148b2bd
   languageName: node
   linkType: hard
-
-"unified@npm:^9.1.0":
+  "unified@npm:^9.1.0":
   version: 9.2.0
   resolution: "unified@npm:9.2.0"
   dependencies:
