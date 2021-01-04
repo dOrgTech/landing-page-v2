@@ -3,7 +3,6 @@ import {Theme, useMediaQuery, useTheme} from "@material-ui/core";
 import {HeaderMobile} from "./HeaderMobile";
 import {HeaderDesktop} from "./HeaderDesktop";
 
-
 export const Header: React.FC = () => {
 
   const theme: Theme = useTheme();
