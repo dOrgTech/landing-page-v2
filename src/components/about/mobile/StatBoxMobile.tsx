@@ -8,8 +8,8 @@ import {mobileStatFont} from "../../../theme/styles";
 const StyledBox = styled(Grid)({
   margin: 'auto',
   width: '100%',
-  height: '8.25rem',
-  padding: '1.875rem 1.25rem',
+  height: '31.35vw',
+  padding: '7.15vw 4vw 7.15vw 4.75vw',
   backgroundColor: 'transparent',
   boxSizing: 'border-box',
   '&:hover': {
@@ -20,9 +20,9 @@ const StyledBox = styled(Grid)({
 const StyledTitle = styled(Typography)({
   width: '100%',
   height: '100%',
-  margin: '0.813rem 0 0 0',
+  margin: '3.1vw 0 0 0',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '0.813rem',
+  fontSize: '3.1vw',
   fontWeight: 500,
   fontStretch: 'normal',
   fontStyle: 'normal',
@@ -37,7 +37,7 @@ const StyledStat = styled(Typography)({
   height: "100%",
   // the design spec calls for OpenSans font here, but I am using Spartan for now
   fontFamily: mobileStatFont,
-  fontSize: "2rem",
+  fontSize: "7.15vw",
   fontWeight: "bold",
   fontStretch: "normal",
   fontStyle: "normal",
@@ -48,10 +48,12 @@ const StyledStat = styled(Typography)({
 });
 
 const StyledIcon = styled('img')({
-  width: "1.5rem",
-  height: "1.5rem",
+  width: "4.3vw",
+  height: "4.3vw",
   objectFit: "contain",
-  float: 'right'
+  float: 'right',
+  position: 'relative',
+  top: '-1vw'
 });
 
 interface Props {
