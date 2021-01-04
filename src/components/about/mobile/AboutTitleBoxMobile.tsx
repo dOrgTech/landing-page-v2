@@ -5,34 +5,36 @@ import { theme } from "../../../theme";
 const StyledBox = styled(Box)({
   margin: 'auto',
   width: '100%',
-  height: '11.875rem',
+  height: '45vw',
   background: 'transparent',
   boxSizing: 'border-box',
   position: 'relative'
 });
 
 const StyledText = styled(Typography)({
-  maxWidth: '19.5rem',
-  padding: '2.1rem 1.4rem',
+  maxWidth: '74vw',
+  padding: '6.5vw 5.5vw',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '1.75rem',
+  fontSize: '6.67vw',
   fontWeight: 600,
   fontStretch: "normal",
   fontStyle: "normal",
   lineHeight: 1.5,
   letterSpacing: '-0.84px',
   textAlign: "left",
-  color: theme.palette.text.primary
+  color: theme.palette.text.primary,
+  position: 'relative',
+  zIndex: 1
 });
 
 const StyledRings = styled('img')({
-  width: '12.191rem',
-  height: '12.334rem',
+  width: '46.4vw',
+  height: '47vw',
   objectFit: 'contain',
   position: 'absolute',
-  top: 0,
+  top: -3,
   right: 0,
-  zIndex: 1
+  zIndex: 0
 });
 
 interface Props {

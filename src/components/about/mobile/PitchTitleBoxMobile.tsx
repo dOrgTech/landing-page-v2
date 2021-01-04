@@ -6,17 +6,17 @@ import { theme } from "../../../theme";
 const StyledGrid = styled(Grid)({
   margin: 'auto',
   width: '100%',
-  height: '9.375rem',
+  height: '35.5vw',
   background: 'transparent',
   boxSizing: 'border-box',
   position: 'relative'
 });
 
 const StyledText = styled(Typography)({
-  maxWidth: '19.438rem',
-  marginLeft: '1.438rem',
+  maxWidth: '74vw',
+  marginLeft: '5.15vw',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '1.75rem',
+  fontSize: '6.67vw',
   fontWeight: 600,
   fontStretch: "normal",
   fontStyle: "normal",
@@ -27,8 +27,8 @@ const StyledText = styled(Typography)({
 });
 
 const StyledRings = styled('img')({
-  width: '12.191rem',
-  height: '12.334rem',
+  width: '46.45vw',
+  height: '47vw',
   objectFit: 'contain',
   position: 'absolute',
   top: -3,

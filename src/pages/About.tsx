@@ -92,9 +92,9 @@ export const About: React.FC = () => {
     );
   } else {
     return (
-      <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
+      <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start' style={{width: '105vw'}}>
         <LeftMargin xs={1} border={borderStyle} />
-        <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
+        <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start' style={{maxWidth: '91vw'}}>
           <Grid item xs={12}>
             <AboutTitleBoxMobile text={ABOUT_TITLE} classes={borders.bottomLeftBorder} />
             <PressBoxMobile press={press} classes={borders.bottomLeftBorder} />

@@ -6,11 +6,11 @@ import { theme } from "../../../theme";
 const StyleGrid = styled(Grid)({
   margin: 'auto',
   width: '100%',
-  height: '4.5rem',
-  padding: '1.5rem 1.5rem 1.5rem 2.5rem',
+  height: '17.15vw',
+  padding: '5.7vw 5.7vw 5.7vw 9.5vw',
   background: 'transparent',
   boxSizing: 'border-box',
-  boxShadow: '0 0.1875rem 0.375rem 0 rgba(0, 0, 0, 0.16), inset 0 0.1875rem 0.375rem 0 rgba(0, 0, 0, 0.16)',
+  boxShadow: '0 0.715vw 1.43vw 0 rgba(0, 0, 0, 0.16), inset 0 0.715vw 1.43vw 0 rgba(0, 0, 0, 0.16)',
   borderRadius: 0,
   border: 'solid 2px ' + theme.palette.text.primary,
   '&:hover': {
@@ -21,11 +21,11 @@ const StyleGrid = styled(Grid)({
 
 const StyleText = styled(Typography)({
   width: '100%',
-  height: '1rem',
+  height: '3.81vw',
   margin: 'auto',
   padding: 0,
   fontFamily: theme.typography.fontFamily,
-  fontSize: '0.938rem',
+  fontSize: '3.57vw',
   fontWeight: 'bold',
   fontStretch: "normal",
   fontStyle: "normal",
@@ -36,9 +36,9 @@ const StyleText = styled(Typography)({
 });
 
 const StyleArrow = styled('img')({
-  width: '1.5rem',
-  height: '1.5rem',
-  margin: '0 0 0 1.75rem',
+  width: '5.7vw',
+  height: '5.7vw',
+  margin: '0 0 0 6.67vw',
   padding: 0,
   objectFit: "contain"
 });

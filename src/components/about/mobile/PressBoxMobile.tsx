@@ -7,7 +7,7 @@ import {Article, Press} from "../../../constants/press";
 const StyledBox = styled(Box)({
   margin: 'auto',
   width: '100%',
-  height: '10.75rem',
+  height: '41vw',
   backgroundColor: theme.palette.secondary.main,
   boxSizing: 'border-box',
   position: 'relative'
@@ -19,8 +19,8 @@ const StyledGrid = styled(Grid)({
 });
 
 const StyledIcon = styled('img')({
-  width: "7.5rem",
-  height: "1.625rem",
+  width: "28.6vw",
+  height: "6.2vw",
   margin: 'auto',
   objectFit: "contain",
   background: 'transparent',
@@ -30,8 +30,8 @@ const StyledIcon = styled('img')({
 });
 
 const StyledRings = styled('img')({
-  width: '9.064rem',
-  height: '9.171rem',
+  width: '34.55vw',
+  height: '34.95vw',
   objectFit: 'contain',
   position: 'absolute',
   top: 0,

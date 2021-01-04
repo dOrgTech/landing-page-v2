@@ -7,8 +7,8 @@ import {hexToRGB} from "../../../utils";
 const StyledGrid = styled(Grid)({
   margin: 'auto',
   width: '100%',
-  height: '15.5rem',
-  padding: '2.5rem 1.5rem',
+  height: '59vw',
+  padding: '9.3vw 5.5vw',
   backgroundColor: 'rgba(0, 0, 0, 0.15)',
   boxSizing: 'border-box',
   '&:hover': {
@@ -19,8 +19,9 @@ const StyledGrid = styled(Grid)({
 });
 
 const StyledDetail = styled(Typography)({
+  maxWidth: '71vw',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '0.875rem',
+  fontSize: '3.33vw',
   fontWeight: 500,
   fontStretch: 'normal',
   fontStyle: 'normal',
@@ -33,9 +34,9 @@ const StyledDetail = styled(Typography)({
 const StyledPitch = styled(Typography)({
   width: '100%',
   height: '100%',
-  margin: '0.75rem 0',
+  margin: '2.85vw 0',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '1.5rem',
+  fontSize: '5.72vw',
   fontWeight: 600,
   fontStretch: "normal",
   fontStyle: "normal",
@@ -46,9 +47,9 @@ const StyledPitch = styled(Typography)({
 });
 
 const StyledIcon = styled('img')({
-  width: "3rem",
-  height: "3rem",
-  marginBottom: '1.1rem',
+  width: "11.43vw",
+  height: "11.43vw",
+  marginBottom: '4.2vw',
   objectFit: "contain",
   float: 'left'
 });
