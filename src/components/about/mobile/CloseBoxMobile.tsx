@@ -7,17 +7,17 @@ import {CloseButtonMobile} from "./CloseButtonMobile";
 const StyledBox = styled(Box)({
   margin: 'auto',
   width: '100%',
-  height: '25.5rem',
+  height: '98vw',
   background: theme.palette.secondary.main,
   boxSizing: 'border-box',
   position: 'relative'
 });
 
 const StyledQuote = styled(Typography)({
-  maxWidth: '19.438rem',
-  margin: '0 0 -1.125rem 0',
+  maxWidth: '74vw',
+  margin: '0 0 -4.3vw 0',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '2.25rem',
+  fontSize: '8.57vw',
   fontWeight: 300,
   fontStretch: "normal",
   fontStyle: "normal",
@@ -30,7 +30,7 @@ const StyledQuote = styled(Typography)({
 const StyledCitation = styled(Typography)({
   width: '100%',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '1.125rem',
+  fontSize: '4.3vw',
   fontWeight: 600,
   fontStretch: "normal",
   fontStyle: "normal",
@@ -41,8 +41,8 @@ const StyledCitation = styled(Typography)({
 });
 
 const StyledRings = styled('img')({
-  width: '9.064rem',
-  height: '9.171rem',
+  width: '34.53vw',
+  height: '34.94vw',
   objectFit: 'contain',
   transform: 'scaleX(-1)',
   position: 'absolute',
