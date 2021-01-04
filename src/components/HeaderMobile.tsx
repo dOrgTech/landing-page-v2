@@ -10,7 +10,9 @@ const LOGO_PATH = process.env.PUBLIC_URL + "/imgs/dOrg-logo-white.svg";
 
 const StyledAppBar = styled(AppBar)({
   height: '14.3vw',
-  width: '100vw'
+  width: '100vw',
+  position: 'relative',
+  zIndex: 2
 });
 
 const LogoContainer = styled(Grid)({
