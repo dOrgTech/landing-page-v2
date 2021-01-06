@@ -1,13 +1,16 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
-import {ButtonBase, Grid, makeStyles, styled, TextField, Typography} from '@material-ui/core'
+import {ButtonBase, Grid, makeStyles, Snackbar, styled, TextField, Typography} from '@material-ui/core'
 import { theme } from "../theme";
 import {AccountCircleTwoTone, EmailTwoTone, RateReviewTwoTone} from '@material-ui/icons';
 
+// Input placeholders and button image
 const NAME_PLACEHOLDER = 'Your Name';
 const EMAIL_PLACEHOLDER = 'Email';
 const MESSAGE_PLACEHOLDER = 'Message';
 const SUBMIT_BUTTON_IMG_PATH = "/imgs/circled-arrow-icon.svg";
+
+// Form input validation parameters and error messages
 const MAX_NAME_LENGTH = 100;
 const MAX_EMAIL_LENGTH = 100;
 const MAX_MESSAGE_LENGTH = 2000;
@@ -17,6 +20,10 @@ const ERROR_EMAIL_REQUIRED = 'Your email is required';
 const ERROR_MESSAGE_REQUIRED = 'Tell us what we can do for you';
 const ERROR_INVALID_EMAIL = 'Enter a valid email address';
 const ERROR_EXCEEDS_LENGTH = (chars: number, max: number) => {return `${chars}/${max} characters`};
+
+// Text that appears in SnackBar upon form submission
+const SUCCESS_TEXT = 'Submission succeeded!';
+const FAIL_TEXT = 'Submission failed :(';
 
 const StyledGrid = styled(Grid)({
   margin: 'auto',
@@ -141,6 +148,44 @@ const StyledError = styled(Typography)({
   left: '3vw'
 });
 
+const useSuccessSnackBarStyle = makeStyles({
+  root: {
+    backgroundColor: theme.palette.primary.main,
+    position: 'relative',
+    right: '17.5vw',
+    bottom: '7vw'
+  },
+  message: {
+    paddingLeft: '4vw',
+    fontFamily: theme.typography.fontFamily,
+    fontSize: '1vw',
+    fontWeight: 600,
+    fontStretch: "normal",
+    fontStyle: "normal",
+    letterSpacing: '-0.45px',
+    color: theme.palette.text.secondary,
+  },
+});
+
+const useFailsureSnackBarStyle = makeStyles({
+  root: {
+    backgroundColor: '#FF1744',
+    position: 'relative',
+    right: '17.5vw',
+    bottom: '7vw'
+  },
+  message: {
+    fontFamily: theme.typography.fontFamily,
+    fontSize: '1vw',
+    fontWeight: 600,
+    fontStretch: "normal",
+    fontStyle: "normal",
+    letterSpacing: '-0.45px',
+    color: theme.palette.text.primary,
+  },
+});
+
+
 interface Props {
   classes?: string;
 }
@@ -155,7 +200,7 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
 
   // FORM HOOK
   // eslint-disable-next-line @typescript-eslint/unbound-method
-  const { register, errors, handleSubmit, formState: {isSubmitSuccessful}} = useForm<IFormInput>();
+  const { register, errors, handleSubmit } = useForm<IFormInput>();
 
   // INPUT STATE HOOKS
   const [name, setName] = React.useState('');
@@ -169,6 +214,19 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
   const [message, setMessage] = React.useState('');
   const handleMessageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMessage(event.target.value);
+  };
+
+  // SUCCESS AND FAILURE MESSAGES
+  const successSnackBarStyle = useSuccessSnackBarStyle();
+  const failureSnackBarStyle = useFailsureSnackBarStyle();
+  const [successOpen, setSuccessOpen] = React.useState(false);
+  const [failOpen, setFailOpen] = React.useState(false);
+  const handleClose = (event: React.SyntheticEvent | React.MouseEvent, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setSuccessOpen(false);
+    setFailOpen(false);
   };
 
   // FORM SUBMISSION
@@ -197,26 +255,22 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
   }
 
   const onSubmit = (data: IFormInput) => {
-    if (isSubmitSuccessful) {
-      const submittedData: IFormInput = {...data}
+    const submittedData: IFormInput = {...data}
 
-      // the following two lines should be removed before final publish:
-      console.log(submittedData);
-      resetInputs();
+    // the following two lines should be removed before final publish:
+    console.log(submittedData);
+    setSuccessOpen(true);
+    resetInputs();
 
-      // The following lines should be uncommented before final publish:
-      // sendSubmission(submittedData)
-      //   .then(() => {
-      //     console.log('success')
-      //     resetInputs();
-      //   })
-      //   .catch(error => {
-      //     console.log('error')
-      //   });
-
-    } else {
-      console.log(data);
-    }
+    // The following lines should be uncommented before final publish:
+    // sendSubmission(submittedData)
+    //   .then(() => {
+    //     setSuccessOpen(true);
+    //     resetInputs();
+    //   })
+    //   .catch(error => {
+    //     setFailOpen(true);
+    //   });
   };
 
   // CONDITIONAL STYLING
@@ -284,6 +338,18 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
         </StyledSubmitButton>
       </form>
       <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} />
+      <Snackbar anchorOrigin={{vertical: 'bottom', horizontal: 'right',}}
+        open={successOpen}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        message={SUCCESS_TEXT}
+        ContentProps={{classes: successSnackBarStyle}} />
+      <Snackbar anchorOrigin={{vertical: 'bottom', horizontal: 'right',}}
+        open={failOpen}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        message={FAIL_TEXT}
+        ContentProps={{classes: failureSnackBarStyle}} />
     </StyledGrid>
   );
 }
