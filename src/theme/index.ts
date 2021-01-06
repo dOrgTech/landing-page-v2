@@ -84,6 +84,17 @@ export const theme = createMuiTheme({
           borderWidth: 0
         }
       },
+      multiline: {
+        fontFamily: `'Spartan', sans-serif`,
+        fontSize: '0.938vw',
+        fontWeight: 600,
+        fontStretch: "normal",
+        fontStyle: "normal",
+        lineHeight: 1.5,
+        letterSpacing: '-0.45px',
+        textAlign: "left",
+        color: "#001047"
+      }
     },
     MuiLink: {
       root: {
