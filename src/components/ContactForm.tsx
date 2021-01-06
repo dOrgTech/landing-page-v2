@@ -222,7 +222,7 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
             <RateReviewTwoTone fontSize='inherit'/>
           </StyledIconWrapper>
           <Grid item style={{height: '13.975vw'}}>
-            <StyledTextField id='message' name='message' multiline rowsMax={18} label={MESSAGE_PLACEHOLDER} value={message}
+            <StyledTextField id='message' name='message' multiline rowsMax={9} label={MESSAGE_PLACEHOLDER} value={message}
               onChange={handleMessageChange}
               InputProps={{disableUnderline: true}}
               inputRef={register({required: true, maxLength: MAX_MESSAGE_LENGTH})}

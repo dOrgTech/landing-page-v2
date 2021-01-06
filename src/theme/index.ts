@@ -93,7 +93,8 @@ export const theme = createMuiTheme({
         lineHeight: 1.5,
         letterSpacing: '-0.45px',
         textAlign: "left",
-        color: "#001047"
+        color: "#001047",
+        alignItems: 'flex-start'
       }
     },
     MuiLink: {
