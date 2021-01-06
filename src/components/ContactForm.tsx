@@ -1,8 +1,9 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
-import {ButtonBase, Grid, styled, TextField} from '@material-ui/core'
+import {ButtonBase, Grid, makeStyles, styled, TextField} from '@material-ui/core'
 import { theme } from "../theme";
 import {AccountCircleTwoTone, EmailTwoTone, RateReviewTwoTone} from '@material-ui/icons';
+import {borderStyle, borderStyles} from "../theme/styles";
 
 const NAME_PLACEHOLDER = 'Your Name';
 const EMAIL_PLACEHOLDER = 'Email';
@@ -74,6 +75,25 @@ const StyledTextField = styled(TextField)({
   }
 });
 
+const useLabelColors = makeStyles({
+  primary: {
+    '& label.MuiInputLabel-root': {
+      color: theme.palette.primary.main
+    },
+    '& label.Mui-focused': {
+      color: theme.palette.text.secondary,
+    }
+  },
+  secondary: {
+    '& label.MuiInputLabel-root': {
+      color: theme.palette.text.secondary
+    },
+    '& label.Mui-focused': {
+      color: theme.palette.text.secondary,
+    }
+  },
+});
+
 const StyledSubmitButton = styled(ButtonBase)({
   width: "5vw",
   height: "5vw",
@@ -116,27 +136,27 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
 
   const onSubmit = (data: IFormInput) => { console.log(data) };
 
+  // INPUT STATE HOOKS
   const [name, setName] = React.useState('');
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
   };
-
   const [email, setEmail] = React.useState('');
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   };
-
   const [message, setMessage] = React.useState('');
   const handleMessageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMessage(event.target.value);
   };
 
-  // CONDITIONAL STYLING
+  // CONDITIONAL STYLING --> will use to keep label green when input has content
+  const labelColors = useLabelColors();
   const unfocusedLabelColor = (val: string) => {
     if(val === '') {
-      return theme.palette.primary.main;
+      return labelColors.primary;
     }
-    return theme.palette.text.secondary;
+    return labelColors.secondary;
   }
 
   return (
@@ -151,7 +171,8 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
             <StyledTextField id='name' name='name' label={NAME_PLACEHOLDER} value={name}
               onChange={handleNameChange}
               InputProps={{disableUnderline: true}}
-              inputRef={register({required: true, maxLength: 100})}/>
+              inputRef={register({required: true, maxLength: 100})}
+              className={unfocusedLabelColor(name)}/>
           </Grid>
         </InputContainer>
         <InputContainer container direction='row' justify='flex-start' alignItems='center'>
