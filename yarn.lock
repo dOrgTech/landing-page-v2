@@ -1580,6 +1580,7 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": ^5.15.1
     "@fortawesome/react-fontawesome": ^0.1.13
     "@material-ui/core": ^4.11.2
+    "@material-ui/icons": ^4.11.2
     "@types/node": ^12.0.0
     "@types/react": ^16.9.53
     "@types/react-dom": ^16.9.8
@@ -1602,6 +1603,7 @@ __metadata:
     react: ^17.0.1
     react-dom: ^17.0.1
     react-ga: ^3.3.0
+    react-hook-form: ^6.14.0
     react-refresh: ^0.9.0
     react-router-dom: ^5.2.0
     react-scripts: 4.0.1
@@ -2025,6 +2027,23 @@ __metadata:
     "@types/react":
       optional: true
   checksum: fe89aa37a5117873b467923f0b16189bcd795fb28aa422ec678ff781b14a1351bea8db6fde9cec0a76f49a38ca9ded1fc4f82705d42ac27e6ede787d3412c584
+  languageName: node
+  linkType: hard
+
+"@material-ui/icons@npm:^4.11.2":
+  version: 4.11.2
+  resolution: "@material-ui/icons@npm:4.11.2"
+  dependencies:
+    "@babel/runtime": ^7.4.4
+  peerDependencies:
+    "@material-ui/core": ^4.0.0
+    "@types/react": ^16.8.6 || ^17.0.0
+    react: ^16.8.0 || ^17.0.0
+    react-dom: ^16.8.0 || ^17.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 0f5f70d10581e50e96dadf4d7cd5ef2acdc135e460a74eb29fdeecd5fd98fb1caae9692979997438a9606c193b52b6e0186cabf57af1352fa92221b7eb71ea83
   languageName: node
   linkType: hard
 
@@ -14183,6 +14202,15 @@ fsevents@~2.1.2:
     prop-types: ^15.6.0
     react: ^15.6.2 || ^16.0 || ^17
   checksum: fe3dc0a7679b3a52df3944660f2b1f353ee5d24f73e4bdb88c8323e012e1042ef3c2c1a6e432d3c6e3196861162925ff9f5ba515a8112e11187d21d8a00cc863
+  languageName: node
+  linkType: hard
+
+"react-hook-form@npm:^6.14.0":
+  version: 6.14.0
+  resolution: "react-hook-form@npm:6.14.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17
+  checksum: d2c7023ed8f506aab0fcd95cb24b20df9ef2da6846269686de5072ab7eb0a5fb430be513ca8054503698f92a96f020cbac5711567936bb1dfc25992e01804324
   languageName: node
   linkType: hard
 
