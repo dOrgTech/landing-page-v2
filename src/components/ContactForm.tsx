@@ -153,11 +153,9 @@ interface IFormInput {
 
 export const ContactForm: React.FC<Props> = (props: Props) => {
 
-  // FORM HOOKS
+  // FORM HOOK
   // eslint-disable-next-line @typescript-eslint/unbound-method
-  const { register, errors, handleSubmit } = useForm<IFormInput>();
-
-  const onSubmit = (data: IFormInput) => { console.log(data) };
+  const { register, errors, handleSubmit, formState: {isSubmitSuccessful}} = useForm<IFormInput>();
 
   // INPUT STATE HOOKS
   const [name, setName] = React.useState('');
@@ -171,6 +169,54 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
   const [message, setMessage] = React.useState('');
   const handleMessageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMessage(event.target.value);
+  };
+
+  // FORM SUBMISSION
+  const resetInputs = () => {
+    setName('');
+    setEmail('');
+    setMessage('');
+  }
+
+  const sendSubmission = async (data: IFormInput) => {
+    return fetch(
+      "https://api.airtable.com/v0/appro4l8TqwcZvFsC/Contact%20Form",
+      {
+        method: "post",
+        headers: new Headers({
+          Authorization: "Bearer keyhfYL0UX5ysZchd",
+          "Content-Type": "application/json"
+        }),
+        body: JSON.stringify({ records: [{ fields: {
+          Name: data.name,
+          Email: data.email,
+          Message: data.message
+        }}]})
+      }
+    )
+  }
+
+  const onSubmit = (data: IFormInput) => {
+    if (isSubmitSuccessful) {
+      const submittedData: IFormInput = {...data}
+
+      // the following two lines should be removed before final publish:
+      console.log(submittedData);
+      resetInputs();
+
+      // The following lines should be uncommented before final publish:
+      // sendSubmission(submittedData)
+      //   .then(() => {
+      //     console.log('success')
+      //     resetInputs();
+      //   })
+      //   .catch(error => {
+      //     console.log('error')
+      //   });
+
+    } else {
+      console.log(data);
+    }
   };
 
   // CONDITIONAL STYLING
