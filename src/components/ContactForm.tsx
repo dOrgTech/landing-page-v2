@@ -4,6 +4,10 @@ import {ButtonBase, Grid, makeStyles, Snackbar, styled, TextField, Typography} f
 import { theme } from "../theme";
 import {AccountCircleTwoTone, EmailTwoTone, RateReviewTwoTone} from '@material-ui/icons';
 
+// Airtable integration
+const AIRTABLE_URL = 'https://api.airtable.com/PATH';
+const AIRTABLE_CREDENTIAL = 'Bearer keyXXXXXXXXX';
+
 // Input placeholders and button image
 const NAME_PLACEHOLDER = 'Your Name';
 const EMAIL_PLACEHOLDER = 'Email';
@@ -238,11 +242,11 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
 
   const sendSubmission = async (data: IFormInput) => {
     return fetch(
-      "https://api.airtable.com/v0/appro4l8TqwcZvFsC/Contact%20Form",
+      AIRTABLE_URL,
       {
         method: "post",
         headers: new Headers({
-          Authorization: "Bearer keyhfYL0UX5ysZchd",
+          Authorization: AIRTABLE_CREDENTIAL,
           "Content-Type": "application/json"
         }),
         body: JSON.stringify({ records: [{ fields: {
@@ -257,7 +261,7 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
   const onSubmit = (data: IFormInput) => {
     const submittedData: IFormInput = {...data}
 
-    // the following two lines should be removed before final publish:
+    // the following three lines should be removed before final publish:
     console.log(submittedData);
     setSuccessOpen(true);
     resetInputs();
