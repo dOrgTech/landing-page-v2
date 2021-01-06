@@ -1,14 +1,22 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
-import {ButtonBase, Grid, makeStyles, styled, TextField} from '@material-ui/core'
+import {ButtonBase, Grid, makeStyles, styled, TextField, Typography} from '@material-ui/core'
 import { theme } from "../theme";
 import {AccountCircleTwoTone, EmailTwoTone, RateReviewTwoTone} from '@material-ui/icons';
-import {borderStyle, borderStyles} from "../theme/styles";
 
 const NAME_PLACEHOLDER = 'Your Name';
 const EMAIL_PLACEHOLDER = 'Email';
 const MESSAGE_PLACEHOLDER = 'Message';
 const SUBMIT_BUTTON_IMG_PATH = "/imgs/circled-arrow-icon.svg";
+const MAX_NAME_LENGTH = 100;
+const MAX_EMAIL_LENGTH = 100;
+const MAX_MESSAGE_LENGTH = 2000;
+const EMAIL_PATTERN = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+const ERROR_NAME_REQUIRED = 'Your name is required';
+const ERROR_EMAIL_REQUIRED = 'Your email is required';
+const ERROR_MESSAGE_REQUIRED = 'Tell us what we can do for you';
+const ERROR_INVALID_EMAIL = 'Enter a valid email address';
+const ERROR_EXCEEDS_LENGTH = (chars: number, max: number) => {return `${chars}/${max} characters`};
 
 const StyledGrid = styled(Grid)({
   margin: 'auto',
@@ -26,7 +34,8 @@ const InputContainer = styled(Grid)({
   marginBottom: '1.875vw',
   boxSizing: 'border-box',
   boxShadow: '0 0.625vw 1.25vw 0 rgba(0, 0, 0, 0.16)',
-  backgroundColor: '#FFFFFF'
+  backgroundColor: '#FFFFFF',
+  position: 'relative'
 });
 
 const StyledIconWrapper = styled(Grid)({
@@ -118,6 +127,20 @@ const StyledRings = styled('img')({
   left: 0
 })
 
+const StyledError = styled(Typography)({
+  fontFamily: theme.typography.fontFamily,
+  fontSize: '0.8vw',
+  fontWeight: 'normal',
+  fontStretch: "normal",
+  fontStyle: "normal",
+  lineHeight: 'normal',
+  letterSpacing: 'normal',
+  color: 'red',
+  position: 'absolute',
+  bottom: 0,
+  left: '3vw'
+});
+
 interface Props {
   classes?: string;
 }
@@ -150,7 +173,7 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
     setMessage(event.target.value);
   };
 
-  // CONDITIONAL STYLING --> will use to keep label green when input has content
+  // CONDITIONAL STYLING
   const labelColors = useLabelColors();
   const unfocusedLabelColor = (val: string) => {
     if(val === '') {
@@ -171,10 +194,13 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
             <StyledTextField id='name' name='name' label={NAME_PLACEHOLDER} value={name}
               onChange={handleNameChange}
               InputProps={{disableUnderline: true}}
-              inputRef={register({required: true, maxLength: 100})}
-              className={unfocusedLabelColor(name)}/>
+              inputRef={register({required: true, maxLength: MAX_NAME_LENGTH})}
+              className={unfocusedLabelColor(name)} />
           </Grid>
+          {errors.name?.type === "required" && <StyledError>{ERROR_NAME_REQUIRED}</StyledError>}
+          {errors.name?.type === "maxLength" && <StyledError>{ERROR_EXCEEDS_LENGTH(name.length, MAX_NAME_LENGTH)}</StyledError>}
         </InputContainer>
+
         <InputContainer container direction='row' justify='flex-start' alignItems='center'>
           <StyledIconWrapper container item justify='center' alignItems='center'>
             <EmailTwoTone fontSize='inherit'/>
@@ -183,8 +209,12 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
             <StyledTextField id='email' name='email' label={EMAIL_PLACEHOLDER} value={email}
               onChange={handleEmailChange}
               InputProps={{disableUnderline: true}}
-              inputRef={register({required: true, maxLength: 100, pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i})} />
+              inputRef={register({required: true, maxLength: MAX_EMAIL_LENGTH, pattern: EMAIL_PATTERN})}
+              className={unfocusedLabelColor(name)} />
           </Grid>
+          {errors.email?.type === "required" && <StyledError>{ERROR_EMAIL_REQUIRED}</StyledError>}
+          {errors.email?.type === "maxLength" && <StyledError>{ERROR_EXCEEDS_LENGTH(email.length, MAX_EMAIL_LENGTH)}</StyledError>}
+          {errors.email?.type === "pattern" && <StyledError>{ERROR_INVALID_EMAIL}</StyledError>}
         </InputContainer>
 
         <InputContainer container direction='row' justify='flex-start' alignItems='flex-start' style={{height: '15.375vw'}}>
@@ -192,12 +222,15 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
             <RateReviewTwoTone fontSize='inherit'/>
           </StyledIconWrapper>
           <Grid item style={{height: '13.975vw'}}>
-            <StyledTextField id='message' name='message' multiline label={MESSAGE_PLACEHOLDER} value={message}
+            <StyledTextField id='message' name='message' multiline rowsMax={18} label={MESSAGE_PLACEHOLDER} value={message}
               onChange={handleMessageChange}
               InputProps={{disableUnderline: true}}
-              inputRef={register({required: true, maxLength: 1000})}
-              style={{height: 'inherit'}} />
+              inputRef={register({required: true, maxLength: MAX_MESSAGE_LENGTH})}
+              style={{height: 'inherit'}}
+              className={unfocusedLabelColor(name)} />
           </Grid>
+          {errors.message?.type === "required" && <StyledError>{ERROR_MESSAGE_REQUIRED}</StyledError>}
+          {errors.message?.type === "maxLength" && <StyledError>{ERROR_EXCEEDS_LENGTH(message.length, MAX_MESSAGE_LENGTH)}</StyledError>}
         </InputContainer>
 
         <StyledSubmitButton type='submit'>
