@@ -22,3 +22,6 @@ export const ERROR_EXCEEDS_LENGTH = (chars: number, max: number): string => {ret
 // Text that appears in SnackBar upon form submission
 export const SUCCESS_TEXT = 'Submission succeeded!';
 export const FAIL_TEXT = 'Submission failed :(';
+
+// Toast duration
+export const TOAST_DURATION = 4000;

@@ -5,11 +5,23 @@ import { theme } from "../../../theme";
 import {AccountCircleTwoTone, EmailTwoTone, RateReviewTwoTone} from '@material-ui/icons';
 import {
   AIRTABLE_CREDENTIAL,
-  AIRTABLE_URL, EMAIL_PATTERN, EMAIL_PLACEHOLDER, ERROR_EMAIL_REQUIRED,
+  AIRTABLE_URL,
+  EMAIL_PATTERN,
+  EMAIL_PLACEHOLDER,
+  ERROR_EMAIL_REQUIRED,
   ERROR_EXCEEDS_LENGTH,
   ERROR_INVALID_EMAIL,
-  ERROR_MESSAGE_REQUIRED, ERROR_NAME_REQUIRED, FAIL_TEXT, MAX_EMAIL_LENGTH,
-  MAX_MESSAGE_LENGTH, MAX_NAME_LENGTH, MESSAGE_PLACEHOLDER, NAME_PLACEHOLDER, SUBMIT_BUTTON_IMG_PATH, SUCCESS_TEXT
+  ERROR_MESSAGE_REQUIRED,
+  ERROR_NAME_REQUIRED,
+  FAIL_TEXT,
+  MAX_EMAIL_LENGTH,
+  MAX_MESSAGE_LENGTH,
+  MAX_NAME_LENGTH,
+  MESSAGE_PLACEHOLDER,
+  NAME_PLACEHOLDER,
+  SUBMIT_BUTTON_IMG_PATH,
+  SUCCESS_TEXT,
+  TOAST_DURATION
 } from "../../../constants/contactForm";
 
 
@@ -142,6 +154,8 @@ const StyledError = styled(Typography)({
 const useSuccessSnackBarStyle = makeStyles({
   root: {
     backgroundColor: theme.palette.primary.main,
+    position: 'relative',
+    bottom: '50vh'
   },
   message: {
     paddingLeft: '15.25vw',
@@ -342,15 +356,15 @@ export const ContactFormMobile: React.FC<Props> = (props: Props) => {
         </StyledSubmitButton>
       </form>
       <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} />
-      <Snackbar anchorOrigin={{vertical: 'bottom', horizontal: 'right',}}
+      <Snackbar anchorOrigin={{vertical: 'bottom', horizontal: 'center',}}
         open={successOpen}
-        autoHideDuration={6000}
+        autoHideDuration={TOAST_DURATION}
         onClose={handleClose}
         message={SUCCESS_TEXT}
         ContentProps={{classes: successSnackBarStyle}} />
-      <Snackbar anchorOrigin={{vertical: 'bottom', horizontal: 'right',}}
+      <Snackbar anchorOrigin={{vertical: 'bottom', horizontal: 'center',}}
         open={failOpen}
-        autoHideDuration={6000}
+        autoHideDuration={TOAST_DURATION}
         onClose={handleClose}
         message={FAIL_TEXT}
         ContentProps={{classes: failureSnackBarStyle}} />
