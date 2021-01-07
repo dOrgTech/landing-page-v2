@@ -21,7 +21,7 @@ import {PitchTitleBoxMobile} from "../components/about/mobile/PitchTitleBoxMobil
 import {PitchBoxMobile} from "../components/about/mobile/PitchBoxMobile";
 import {CloseBoxMobile} from "../components/about/mobile/CloseBoxMobile";
 
-
+// strings
 const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
 const PITCHES_TITLE = 'What’s it like to work with us?';
 const QUOTE_TEXT = 'dOrg helped me save 15% on car insurance.';
@@ -60,7 +60,7 @@ export const About: React.FC = () => {
   if (desktop) {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-        <LeftMargin xs={1} border={borderStyle} />
+        <LeftMargin xs={1} border={borderStyle} height='116.775vw' centerLineHeight='57.375vw' />
         <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
           <Grid item xs={6}>
             <AboutTitleBox text={ABOUT_TITLE} classes={borders.bottomLeftBorder} />
@@ -87,13 +87,13 @@ export const About: React.FC = () => {
             <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} classes={borders.leftBorder} />
           </Grid>
         </ContentContainer>
-        <RightMargin xs={1} border={borderStyle} />
+        <RightMargin xs={1} border={borderStyle} height='116.775vw' centerLineHeight='57.375vw' longAccentIndex={1}/>
       </Root>
     );
   } else {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start' style={{width: '105vw'}}>
-        <LeftMargin xs={1} border={borderStyle} />
+        <LeftMargin xs={1} border={borderStyle} height='550vw' centerLineHeight='180.5vw' />
         <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start' style={{maxWidth: '91vw'}}>
           <Grid item xs={12}>
             <AboutTitleBoxMobile text={ABOUT_TITLE} classes={borders.bottomLeftBorder} />
@@ -120,7 +120,7 @@ export const About: React.FC = () => {
             <CloseBoxMobile quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} classes={borders.leftBorder} />
           </Grid>
         </ContentContainer>
-        <RightMargin xs={1} border={borderStyle} />
+        <RightMargin xs={1} border={borderStyle} height='550vw' centerLineHeight='180.5vw' />
       </Root>
     );
   }

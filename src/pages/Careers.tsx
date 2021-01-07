@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid, styled } from "@material-ui/core";
 import { Perk, perks } from "../constants/perks";
-import { PerkBox } from "../components/PerkBox";
+import { PerkBox } from "../components/careers/desktop/PerkBox";
 
 const Root = styled(Box)({
   margins: 'auto'

@@ -27,33 +27,47 @@ const RectangleAccentSecondary = styled('div')({
   backgroundColor: theme.palette.text.secondary
 });
 
-interface Props {
-  xs: boolean | "auto" | 10 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 11 | 12 | undefined;
+interface AccentProps {
   border?: string;
+  longAccentIndex?: number
 }
 
-const Accents: React.FC<Props> = (props: Props) => {
+const Accents: React.FC<AccentProps> = (props: AccentProps) => {
   return (
     <CenterLine container direction={'column'} justify={'center'} alignItems={'center'} style={{borderBottom: props.border}}>
-      <RectangleAccentPrimary />
-      <RectangleAccentSecondary />
-      <RectangleAccentPrimary />
-      <RectangleAccentPrimary />
-      <RectangleAccentPrimary />
+      {props.longAccentIndex === 0 ? <RectangleAccentSecondary /> : <RectangleAccentPrimary />}
+      {props.longAccentIndex === 1 ? <RectangleAccentSecondary /> : <RectangleAccentPrimary />}
+      {props.longAccentIndex === 2 ? <RectangleAccentSecondary /> : <RectangleAccentPrimary />}
+      {props.longAccentIndex === 3 ? <RectangleAccentSecondary /> : <RectangleAccentPrimary />}
+      {props.longAccentIndex === 4 ? <RectangleAccentSecondary /> : <RectangleAccentPrimary />}
     </CenterLine>
   );
 }
 
-export const RightMargin: React.FC<Props> = (props: Props) => {
+interface Props {
+  height: string;
+  xs?: boolean | "auto" | 10 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 11 | 12 | undefined;
+  centerLineHeight?: string;
+  border?: string;
+  longAccentIndex?: number
+}
+
+const RightMargin: React.FC<Props> = (props: Props) => {
 
   const theme: Theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
   return (
-    <StyledGrid item xs={props.xs} style={{borderLeft: props.border, height: desktop ? '116.775vw' : '550vw', maxWidth: desktop ? '8vw' : '6vw'}}>
+    <StyledGrid item xs={props.xs} style={{borderLeft: props.border, height: props.height, maxWidth: desktop ? '8vw' : '6vw'}}>
       {desktop ?
-        <Accents xs={props.xs} border={props.border}/> :
-        <CenterLine item style={{borderBottom: props.border, height: '180.5vw'}} />}
+        <Accents border={props.border} longAccentIndex={props.longAccentIndex}/> :
+        (props.centerLineHeight && props.border && <CenterLine item style={{borderBottom: props.border, height: props.centerLineHeight}} />)}
     </StyledGrid>
   );
 }
+
+RightMargin.defaultProps = {
+  xs: false
+}
+
+export {RightMargin};
