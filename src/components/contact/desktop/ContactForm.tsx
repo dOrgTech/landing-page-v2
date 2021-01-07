@@ -171,7 +171,7 @@ const useSuccessSnackBarStyle = makeStyles({
   },
 });
 
-const useFailsureSnackBarStyle = makeStyles({
+const useFailureSnackBarStyle = makeStyles({
   root: {
     backgroundColor: '#FF1744',
     position: 'relative',
@@ -179,6 +179,7 @@ const useFailsureSnackBarStyle = makeStyles({
     bottom: '7vw'
   },
   message: {
+    paddingLeft: '4vw',
     fontFamily: theme.typography.fontFamily,
     fontSize: '1vw',
     fontWeight: 600,
@@ -222,7 +223,7 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
 
   // SUCCESS AND FAILURE MESSAGES
   const successSnackBarStyle = useSuccessSnackBarStyle();
-  const failureSnackBarStyle = useFailsureSnackBarStyle();
+  const failureSnackBarStyle = useFailureSnackBarStyle();
   const [successOpen, setSuccessOpen] = React.useState(false);
   const [failOpen, setFailOpen] = React.useState(false);
   const handleClose = (event: React.SyntheticEvent | React.MouseEvent, reason?: string) => {
