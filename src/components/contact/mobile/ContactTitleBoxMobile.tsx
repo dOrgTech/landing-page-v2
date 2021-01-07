@@ -1,6 +1,6 @@
 import React from 'react'
 import {Box, styled, Typography} from '@material-ui/core'
-import { theme } from "../theme";
+import { theme } from "../../../theme";
 
 
 const StyledBox = styled(Box)({
@@ -26,14 +26,14 @@ const StyledTitle = styled(Typography)({
   fontWeight: 600,
   fontStretch: "normal",
   fontStyle: "normal",
-  lineHeight: 1.5,
+  lineHeight: 1,
   letterSpacing: '-0.84px',
   textAlign: "left",
   color: theme.palette.text.primary
 });
 
 const StyledSubTitle = styled(Typography)({
-  margin: '8.57vw 0 0 0',
+  margin: '7vw 0 0 0',
   fontFamily: theme.typography.fontFamily,
   fontSize: '5.7vw',
   fontWeight: 600,

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
 import {ButtonBase, Grid, makeStyles, Snackbar, styled, TextField, Typography} from '@material-ui/core'
-import { theme } from "../theme";
+import { theme } from "../../../theme";
 import {AccountCircleTwoTone, EmailTwoTone, RateReviewTwoTone} from '@material-ui/icons';
 
 // Airtable integration
@@ -41,7 +41,7 @@ const StyledGrid = styled(Grid)({
 const InputContainer = styled(Grid)({
   width: '78.6vw',
   height: '16.43vw',
-  padding: '2vw 5.7vw',
+  padding: '1.5vw 5.5vw',
   marginBottom: '4.75vw',
   boxSizing: 'border-box',
   boxShadow: '0 2.4vw 4.75vw 0 rgba(0, 0, 0, 0.16)',
@@ -51,18 +51,17 @@ const InputContainer = styled(Grid)({
 
 const StyledIconWrapper = styled(Grid)({
   width: '4.75vw',
-  height: '15vw',
-  paddingRight: '6.4vw',
+  height: '13vw',
+  paddingRight: '5.5vw',
   fontSize: '4.75vw',
   color: theme.palette.secondary.main,
   position: 'relative',
-  top: '-0.75vw'
+  top: '0.5vw'
 });
 
-// TODO: adjust text field height
 const StyledTextField = styled(TextField)({
-  width: '65vw',
-  height: '15vw',
+  width: '62vw',
+  height: '13vw',
   border: 'none',
   backgroundColor: '#FFFFFF',
   '& input.MuiInput-input': {
@@ -116,18 +115,20 @@ const useLabelColors = makeStyles({
 });
 
 const StyledSubmitButton = styled(ButtonBase)({
-  width: "14.5vw",
-  height: "14.5vw",
+  marginTop: '2vw',
   float: 'right',
   borderRadius: '50%',
-  boxShadow: '0 2.4vw 4.75vw 0 rgba(0, 16, 71, 0.2)',
+  position: 'relative',
+  left: '3vw'
 });
 
 const StyledSubmitIcon = styled('img')({
+  width: "25vw",
+  height: "25vw",
   objectFit: "contain",
   position: 'relative',
-  top: '1.9vw',
-  borderRadius: '50%'
+  top: '1vw',
+  borderRadius: '50%',
 });
 
 const StyledRings = styled('img')({
@@ -167,7 +168,7 @@ const useSuccessSnackBarStyle = makeStyles({
     fontStyle: "normal",
     letterSpacing: '-0.45px',
     color: theme.palette.text.secondary,
-  },
+  }
 });
 
 const useFailsureSnackBarStyle = makeStyles({
@@ -183,7 +184,22 @@ const useFailsureSnackBarStyle = makeStyles({
     fontStyle: "normal",
     letterSpacing: '-0.45px',
     color: theme.palette.text.primary,
-  },
+  }
+});
+
+const useMultiLineStyle = makeStyles({
+  multiline: {
+    fontFamily: theme.typography.fontFamily,
+    fontSize: '3.57vw',
+    fontWeight: 'normal',
+    fontStretch: "normal",
+    fontStyle: "normal",
+    lineHeight: 1.5,
+    letterSpacing: '-0.45px',
+    textAlign: "left",
+    color: theme.palette.primary.main,
+    alignItems: 'flex-start'
+  }
 });
 
 
@@ -283,6 +299,9 @@ export const ContactFormMobile: React.FC<Props> = (props: Props) => {
     return labelColors.secondary;
   }
 
+  // Multiline InputBox styling workaround
+  const multiLineStyle = useMultiLineStyle();
+
   return (
     <StyledGrid container className={props.classes} direction='column' justify='center' alignItems='center'>
       <form onSubmit={handleSubmit(onSubmit)} method='post'>
@@ -318,14 +337,14 @@ export const ContactFormMobile: React.FC<Props> = (props: Props) => {
           {errors.email?.type === "pattern" && <StyledError>{ERROR_INVALID_EMAIL}</StyledError>}
         </InputContainer>
 
-        <InputContainer container direction='row' justify='flex-start' alignItems='flex-start' style={{height: '15.375vw'}}>
+        <InputContainer container direction='row' justify='flex-start' alignItems='flex-start' style={{height: '42.5vw'}}>
           <StyledIconWrapper container item justify='center' alignItems='center'>
             <RateReviewTwoTone fontSize='inherit'/>
           </StyledIconWrapper>
-          <Grid item style={{height: '13.975vw'}}>
-            <StyledTextField id='message' name='message' multiline rowsMax={9} label={MESSAGE_PLACEHOLDER} value={message}
+          <Grid item style={{height: '39vw'}}>
+            <StyledTextField id='message' name='message' multiline rowsMax={6} label={MESSAGE_PLACEHOLDER} value={message}
               onChange={handleMessageChange}
-              InputProps={{disableUnderline: true}}
+              InputProps={{disableUnderline: true, classes: multiLineStyle}}
               inputRef={register({required: true, maxLength: MAX_MESSAGE_LENGTH})}
               style={{height: 'inherit'}}
               className={unfocusedLabelColor(name)} />
