@@ -12,19 +12,27 @@ const CenterLine = styled(Grid)({
 });
 
 interface Props {
-  xs: boolean | "auto" | 10 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 11 | 12 | undefined;
+  height: string;
+  xs?: boolean | "auto" | 10 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 11 | 12 | undefined;
+  centerLineHeight?: string;
   border?: string;
 }
 
-export const LeftMargin: React.FC<Props> = (props: Props) => {
+const LeftMargin: React.FC<Props> = (props: Props) => {
 
   const theme: Theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
   return (
-    <StyledGrid item xs={props.xs} style={{height: desktop ? '116.775vw' : '550vw', maxWidth: desktop ? '8vw' : '6vw'}}>
-      <CenterLine item style={{borderBottom: props.border, height: desktop ? '57.375vw' : '180.5vw'}} />
+    <StyledGrid item xs={props.xs} style={{height: props.height, maxWidth: desktop ? '8vw' : '6vw'}}>
+      {props.border && props.centerLineHeight && <CenterLine item style={{borderBottom: props.border, height: props.centerLineHeight}} />}
     </StyledGrid>
   );
 }
+
+LeftMargin.defaultProps = {
+  xs: false
+}
+
+export {LeftMargin};
 
