@@ -2,7 +2,7 @@
 import { Box, styled } from "@material-ui/core";
 import React from "react";
 import ReactGA from "react-ga";
-import {Communitycomp} from "../components/CommunityComp"
+import {HomeComp} from "../components/HomeComp"
 const Root = styled(Box)({
   margin: 'auto'
 });
@@ -19,7 +19,7 @@ export const Home: React.FC<Props> = (): JSX.Element => {
 
   return (
     <Root>
-      <Communitycomp/> 
+      <HomeComp/> 
     </Root>
   );
 };

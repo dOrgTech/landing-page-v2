@@ -16,32 +16,35 @@ const StyledContainer = styled(Grid)({
   float:'none',
   width:'80%',
   margin:'5% auto 0 auto',
-  position:'relative'
+  position:'relative',
+  overflow:'no-wrap'
+
 });
 
 const CompaniesContainer = styled(Container)({
   height:'80%',
-  width:'40%',
+  width:'80%',
   float:'left'
 });
 
 const CommunitiesContainer = styled(Container)({
   height:'80%',
-  float:'right',
+  float:'left',
   width:'40%',
   marginLeft:'auto',
-  marginBottom:'auto'
+  marginBottom:'auto',
+  marginTop:'15%'
 });
 
 const StyledTypography = styled(Typography)({
-  margin:'0rem 0rem 4rem -3rem'
+  margin:'0rem 3rem 4rem 0rem'
 })
   
   interface Props {
     onClick?: () => void;
   }
   
-export const Communitycomp: React.FC<Props> = (props: Props) => {
+export const HomeCompMobile: React.FC<Props> = (props: Props) => {
   
   ReactGA.pageview('home');
   

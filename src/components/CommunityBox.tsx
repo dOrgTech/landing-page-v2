@@ -5,7 +5,7 @@ import { Community } from "../constants/community";
 import { theme } from "../theme";
 
 const StyleBox = styled(Box)({
-  width: '25rem',
+  width: '30rem',
   backgroundColor: 'transparent',
   height:'100%',
   boxSizing: 'border-box',
@@ -14,7 +14,6 @@ const StyleBox = styled(Box)({
     backgroundColor: 'rgba(0, 0, 0, 0.15)'
     
   },
-  marginRight:'auto'
 });
 
 const StyleTitle = styled(Typography)({
@@ -34,7 +33,7 @@ const StyleIcon = styled('img')({
   height: "3rem",
   objectFit: "contain",
   float: 'left',
-  margin:'1rem 1rem 0 0'
+  margin:'0 3rem 0 0'
  
 });
 
