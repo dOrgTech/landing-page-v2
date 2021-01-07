@@ -1,10 +1,10 @@
 import React from "react";
 import { Grid, styled } from "@material-ui/core";
-import {ContactTitleBox} from "../components/ContactTitleBox";
+import {ContactTitleBox} from "../components/contact/desktop/ContactTitleBox";
 import {RightMargin} from "../components/RightMargin";
 import {LeftMargin} from "../components/LeftMargin";
 import {borderStyle} from "../theme/styles";
-import {ContactForm} from "../components/ContactForm";
+import {ContactForm} from "../components/contact/desktop/ContactForm";
 
 const TITLE = 'Get in Touch.';
 const SUBTITLE = 'Not sure where to start?';
