@@ -3,31 +3,15 @@ import { useForm } from "react-hook-form";
 import {ButtonBase, Grid, makeStyles, Snackbar, styled, TextField, Typography} from '@material-ui/core'
 import { theme } from "../../../theme";
 import {AccountCircleTwoTone, EmailTwoTone, RateReviewTwoTone} from '@material-ui/icons';
+import {
+  AIRTABLE_CREDENTIAL,
+  AIRTABLE_URL, EMAIL_PATTERN, EMAIL_PLACEHOLDER, ERROR_EMAIL_REQUIRED,
+  ERROR_EXCEEDS_LENGTH,
+  ERROR_INVALID_EMAIL,
+  ERROR_MESSAGE_REQUIRED, ERROR_NAME_REQUIRED, FAIL_TEXT, MAX_EMAIL_LENGTH,
+  MAX_MESSAGE_LENGTH, MAX_NAME_LENGTH, MESSAGE_PLACEHOLDER, NAME_PLACEHOLDER, SUBMIT_BUTTON_IMG_PATH, SUCCESS_TEXT
+} from "../../../constants/contactForm";
 
-// Airtable integration
-const AIRTABLE_URL = 'https://api.airtable.com/PATH';
-const AIRTABLE_CREDENTIAL = 'Bearer keyXXXXXXXXX';
-
-// Input placeholders and button image
-const NAME_PLACEHOLDER = 'Your Name';
-const EMAIL_PLACEHOLDER = 'Email';
-const MESSAGE_PLACEHOLDER = 'Message';
-const SUBMIT_BUTTON_IMG_PATH = "/imgs/circled-arrow-icon.svg";
-
-// Form input validation parameters and error messages
-const MAX_NAME_LENGTH = 100;
-const MAX_EMAIL_LENGTH = 100;
-const MAX_MESSAGE_LENGTH = 2000;
-const EMAIL_PATTERN = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-const ERROR_NAME_REQUIRED = 'Your name is required';
-const ERROR_EMAIL_REQUIRED = 'Your email is required';
-const ERROR_MESSAGE_REQUIRED = 'Tell us what we can do for you';
-const ERROR_INVALID_EMAIL = 'Enter a valid email address';
-const ERROR_EXCEEDS_LENGTH = (chars: number, max: number) => {return `${chars}/${max} characters`};
-
-// Text that appears in SnackBar upon form submission
-const SUCCESS_TEXT = 'Submission succeeded!';
-const FAIL_TEXT = 'Submission failed :(';
 
 const StyledGrid = styled(Grid)({
   margin: 'auto',
