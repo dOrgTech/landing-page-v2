@@ -1,8 +1,8 @@
 import React from 'react'
 import { Box, styled, Typography, Grid } from '@material-ui/core'
-import { theme } from "../theme";
-import { Perk } from "../constants/perks";
-import {hexToRGB} from "../utils";
+import { theme } from "../../../theme";
+import { Perk } from "../../../constants/perks";
+import {hexToRGB} from "../../../utils";
 
 const StyleBox = styled(Box)({
   margin: 'auto',

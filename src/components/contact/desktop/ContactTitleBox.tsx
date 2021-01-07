@@ -1,6 +1,6 @@
 import React from 'react'
 import {Box, styled, Typography} from '@material-ui/core'
-import { theme } from "../theme";
+import { theme } from "../../../theme";
 
 
 const StyledBox = styled(Box)({
