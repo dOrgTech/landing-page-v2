@@ -6,9 +6,9 @@ import {hexToRGB} from "../../../utils";
 
 const StyleBox = styled(Box)({
   margin: 'auto',
-  width: '21.25rem',
-  height: '29.125rem',
-  padding: '3.813rem 3.313rem 8.813rem 2.875rem',
+  width: '100%',
+  height: '29.125vw',
+  padding: '3.8vw 3.3vw 8.8vw 2.875vw',
   backgroundColor: 'rgba(0, 0, 0, 0.15)',
   boxSizing: 'border-box',
   '&:hover': {
@@ -19,9 +19,9 @@ const StyleBox = styled(Box)({
 const StyleDetail = styled(Typography)({
   width: '100%',
   height: '100%',
-  margin: '1.625rem 0 0 0.188rem',
+  margin: '1.625vw 0 0 0.2vw',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '0.938rem',
+  fontSize: '0.938vw',
   fontWeight: 500,
   fontStretch: 'normal',
   fontStyle: 'normal',
@@ -34,9 +34,9 @@ const StyleDetail = styled(Typography)({
 const StylePerk = styled(Typography)({
   width: "100%",
   height: "100%",
-  margin: '1.688rem 1.313rem 0 0.188rem',
+  margin: '1.7vw 1.3vw 0 0.2vw',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '2rem',
+  fontSize: '2vw',
   fontWeight: 600,
   fontStretch: "normal",
   fontStyle: "normal",
@@ -47,20 +47,21 @@ const StylePerk = styled(Typography)({
 });
 
 const StyleIcon = styled('img')({
-  width: "3.75rem",
-  height: "3.75rem",
-  margin: '0 11.375rem 0 0',
+  width: "3.75vw",
+  height: "3.75vw",
+  margin: '0 11.375vw 0 0',
   objectFit: "contain",
   float: 'left'
 });
 
 interface Props {
-    perk: Perk;
+  perk: Perk;
+  classes?: string;
 }
 
 export const PerkBox: React.FC<Props> = (props: Props) => {
   return (
-    <StyleBox>
+    <StyleBox className={props.classes} >
       <StyleIcon src={props.perk.icon} alt='icon' />
       <Grid container direction='column' spacing={0} justify='center' alignItems='flex-start'>
         <div>
