@@ -6,6 +6,8 @@ import {CareersTitleBox} from "../components/careers/desktop/CareersTitleBox";
 import {LeftMargin} from "../components/LeftMargin";
 import {borderStyle, borderStyles} from "../theme/styles";
 import {RightMargin} from "../components/RightMargin";
+import {ActivationPromptBox} from "../components/careers/desktop/ActivationPromptBox";
+import {externalLinks} from "../constants/routes";
 
 const Root = styled(Grid)({
   margins: 'auto',
@@ -24,22 +26,25 @@ const useBorders = makeStyles(borderStyles);
 
 export const Careers: React.FC = () => {
 
+  const navigationToActivation = () => window.location.assign(externalLinks.activation.path);
+
   const borders = useBorders();
 
   return (
     <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-      <LeftMargin xs={1} border={borderStyle} height='116.775vw' centerLineHeight='57.375vw' />
+      <LeftMargin xs={1} border={borderStyle} height='116.775vw'/>
       <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
         <CareersTitleBox textPrimary={'Discover a new way to'} textSecondary={'work'} classes={borders.bottomLeftBorder}/>
         <PerksContainer container spacing={0} justify="center">
           {Object.values(perks).map((perk: Perk, index: number) => (
             <Grid item xs={3} key={`perk-${index}`}>
-              <PerkBox perk={perk} classes={borders.bottomLeftBorder} />
+              <PerkBox perk={perk} classes={borders.leftBorder} />
             </Grid>
           ))}
         </PerksContainer>
+        <ActivationPromptBox prompt={'Get started by completing an activation challenge.'} buttonText={'APPLY NOW'} onButtonClick={navigationToActivation}/>
       </ContentContainer>
-      <RightMargin xs={1} border={borderStyle} height='116.775vw' centerLineHeight='57.375vw' longAccentIndex={3}/>
+      <RightMargin xs={1} border={borderStyle} height='116.775vw' longAccentIndex={3}/>
     </Root>
   );
 }

@@ -60,7 +60,7 @@ const RightMargin: React.FC<Props> = (props: Props) => {
   return (
     <StyledGrid item xs={props.xs} style={{borderLeft: props.border, height: props.height, maxWidth: desktop ? '8vw' : '6vw'}}>
       {desktop ?
-        <Accents border={props.border} longAccentIndex={props.longAccentIndex}/> :
+        <Accents border={props.centerLineHeight ? props.border : ''} longAccentIndex={props.longAccentIndex}/> :
         (props.centerLineHeight && props.border && <CenterLine item style={{borderBottom: props.border, height: props.centerLineHeight}} />)}
     </StyledGrid>
   );

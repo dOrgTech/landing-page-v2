@@ -28,3 +28,14 @@ export const routes: Routes = {
     name: 'CONTACT'
   }
 }
+
+export interface ExternalLinks {
+  activation: Readonly<Route>;
+}
+
+export const externalLinks: ExternalLinks = {
+  activation: {
+    path: 'https://docs.dorg.tech/lifecycle/activation',
+    name: 'Activation'
+  }
+}

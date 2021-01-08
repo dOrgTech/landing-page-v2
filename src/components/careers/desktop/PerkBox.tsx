@@ -19,9 +19,9 @@ const StyleBox = styled(Box)({
 const StyleDetail = styled(Typography)({
   width: '100%',
   height: '100%',
-  margin: '1.625vw 0 0 0.2vw',
+  margin: '1.4vw 0 0 0.2vw',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '0.938vw',
+  fontSize: '0.92vw',
   fontWeight: 500,
   fontStretch: 'normal',
   fontStyle: 'normal',
