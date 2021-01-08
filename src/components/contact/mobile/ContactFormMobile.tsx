@@ -28,42 +28,42 @@ import {
 const StyledGrid = styled(Grid)({
   margin: 'auto',
   width: '100%',
-  height: '57.375vw',
+  height: '135.25vw',
   background: theme.palette.secondary.main,
   boxSizing: 'border-box',
   position: 'relative'
 });
 
 const InputContainer = styled(Grid)({
-  width: '34vw',
-  height: '5vw',
-  padding: '0.7vw 1.5vw',
-  marginBottom: '1.875vw',
+  width: '78.6vw',
+  height: '16.43vw',
+  padding: '1.5vw 5.5vw',
+  marginBottom: '4.75vw',
   boxSizing: 'border-box',
-  boxShadow: '0 0.625vw 1.25vw 0 rgba(0, 0, 0, 0.16)',
+  boxShadow: '0 2.4vw 4.75vw 0 rgba(0, 0, 0, 0.16)',
   backgroundColor: '#FFFFFF',
   position: 'relative'
 });
 
 const StyledIconWrapper = styled(Grid)({
-  width: '1.25vw',
-  height: '3.6vw',
-  paddingRight: '1.5vw',
-  fontSize: '1.25vw',
+  width: '4.75vw',
+  height: '13vw',
+  paddingRight: '5.5vw',
+  fontSize: '4.75vw',
   color: theme.palette.secondary.main,
   position: 'relative',
-  top: '-0.2vw'
+  top: '0.5vw'
 });
 
 const StyledTextField = styled(TextField)({
-  width: '29.5vw',
-  height: '3.6vw',
+  width: '62vw',
+  height: '13vw',
   border: 'none',
   backgroundColor: '#FFFFFF',
   '& input.MuiInput-input': {
     fontFamily: theme.typography.fontFamily,
-    fontSize: '0.938vw',
-    fontWeight: 600,
+    fontSize: '3.57vw',
+    fontWeight: 'normal',
     fontStretch: "normal",
     fontStyle: "normal",
     lineHeight: 1.5,
@@ -73,15 +73,15 @@ const StyledTextField = styled(TextField)({
   },
   '& label.MuiInputLabel-root': {
     fontFamily: theme.typography.fontFamily,
-    fontSize: '0.938vw',
-    fontWeight: 600,
+    fontSize: '3.57vw',
+    fontWeight: 'normal',
     fontStretch: "normal",
     fontStyle: "normal",
     letterSpacing: '-0.45px',
     color: theme.palette.primary.main
   },
   '& label.Mui-focused': {
-    fontSize: '0.8vw',
+    fontSize: '2.14vw',
     fontWeight: 'normal',
     fontStretch: "normal",
     fontStyle: "normal",
@@ -111,22 +111,25 @@ const useLabelColors = makeStyles({
 });
 
 const StyledSubmitButton = styled(ButtonBase)({
-  width: "5vw",
-  height: "5vw",
+  marginTop: '2vw',
   float: 'right',
-  borderRadius: '50%'
+  borderRadius: '50%',
+  position: 'relative',
+  left: '3vw'
 });
 
 const StyledSubmitIcon = styled('img')({
+  width: "25vw",
+  height: "25vw",
   objectFit: "contain",
   position: 'relative',
-  top: '0.5vw',
-  borderRadius: '50%'
+  top: '1vw',
+  borderRadius: '50%',
 });
 
 const StyledRings = styled('img')({
-  width: '13.524vw',
-  height: '13.683vw',
+  width: '34.5vw',
+  height: '34.9vw',
   objectFit: 'contain',
   transform: 'rotate(-90deg)',
   position: 'absolute',
@@ -136,7 +139,7 @@ const StyledRings = styled('img')({
 
 const StyledError = styled(Typography)({
   fontFamily: theme.typography.fontFamily,
-  fontSize: '0.8vw',
+  fontSize: '3vw',
   fontWeight: 'normal',
   fontStretch: "normal",
   fontStyle: "normal",
@@ -145,45 +148,56 @@ const StyledError = styled(Typography)({
   color: 'red',
   position: 'absolute',
   bottom: 0,
-  left: '3vw'
+  left: '11.43vw'
 });
 
 const useSuccessSnackBarStyle = makeStyles({
   root: {
     backgroundColor: theme.palette.primary.main,
     position: 'relative',
-    right: '17.5vw',
-    bottom: '7vw'
+    bottom: '50vh'
   },
   message: {
-    paddingLeft: '4vw',
+    paddingLeft: '15.25vw',
     fontFamily: theme.typography.fontFamily,
-    fontSize: '1vw',
+    fontSize: '3.8vw',
     fontWeight: 600,
     fontStretch: "normal",
     fontStyle: "normal",
     letterSpacing: '-0.45px',
     color: theme.palette.text.secondary,
-  },
+  }
 });
 
-const useFailureSnackBarStyle = makeStyles({
+const useFailsureSnackBarStyle = makeStyles({
   root: {
-    backgroundColor: '#FF1744',
-    position: 'relative',
-    right: '17.5vw',
-    bottom: '7vw'
+    backgroundColor: '#FF1744'
   },
   message: {
-    paddingLeft: '4vw',
+    paddingLeft: '15.25vw',
     fontFamily: theme.typography.fontFamily,
-    fontSize: '1vw',
+    fontSize: '3.8vw',
     fontWeight: 600,
     fontStretch: "normal",
     fontStyle: "normal",
     letterSpacing: '-0.45px',
     color: theme.palette.text.primary,
-  },
+  }
+});
+
+const useMultiLineStyle = makeStyles({
+  multiline: {
+    fontFamily: theme.typography.fontFamily,
+    fontSize: '3.57vw',
+    fontWeight: 'normal',
+    fontStretch: "normal",
+    fontStyle: "normal",
+    lineHeight: 1.5,
+    letterSpacing: '-0.45px',
+    textAlign: "left",
+    color: theme.palette.primary.main,
+    alignItems: 'flex-start'
+  }
 });
 
 
@@ -197,7 +211,7 @@ interface IFormInput {
   message: string;
 }
 
-export const ContactForm: React.FC<Props> = (props: Props) => {
+export const ContactFormMobile: React.FC<Props> = (props: Props) => {
 
   // FORM HOOK
   // eslint-disable-next-line @typescript-eslint/unbound-method
@@ -219,7 +233,7 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
 
   // SUCCESS AND FAILURE MESSAGES
   const successSnackBarStyle = useSuccessSnackBarStyle();
-  const failureSnackBarStyle = useFailureSnackBarStyle();
+  const failureSnackBarStyle = useFailsureSnackBarStyle();
   const [successOpen, setSuccessOpen] = React.useState(false);
   const [failOpen, setFailOpen] = React.useState(false);
   const handleClose = (event: React.SyntheticEvent | React.MouseEvent, reason?: string) => {
@@ -283,6 +297,9 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
     return labelColors.secondary;
   }
 
+  // Multiline InputBox styling workaround
+  const multiLineStyle = useMultiLineStyle();
+
   return (
     <StyledGrid container className={props.classes} direction='column' justify='center' alignItems='center'>
       <form onSubmit={handleSubmit(onSubmit)} method='post'>
@@ -318,14 +335,14 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
           {errors.email?.type === "pattern" && <StyledError>{ERROR_INVALID_EMAIL}</StyledError>}
         </InputContainer>
 
-        <InputContainer container direction='row' justify='flex-start' alignItems='flex-start' style={{height: '15.375vw'}}>
+        <InputContainer container direction='row' justify='flex-start' alignItems='flex-start' style={{height: '42.5vw'}}>
           <StyledIconWrapper container item justify='center' alignItems='center'>
             <RateReviewTwoTone fontSize='inherit'/>
           </StyledIconWrapper>
-          <Grid item style={{height: '13.975vw'}}>
-            <StyledTextField id='message' name='message' multiline rowsMax={9} label={MESSAGE_PLACEHOLDER} value={message}
+          <Grid item style={{height: '39vw'}}>
+            <StyledTextField id='message' name='message' multiline rowsMax={6} label={MESSAGE_PLACEHOLDER} value={message}
               onChange={handleMessageChange}
-              InputProps={{disableUnderline: true}}
+              InputProps={{disableUnderline: true, classes: multiLineStyle}}
               inputRef={register({required: true, maxLength: MAX_MESSAGE_LENGTH})}
               style={{height: 'inherit'}}
               className={unfocusedLabelColor(name)} />
@@ -339,13 +356,13 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
         </StyledSubmitButton>
       </form>
       <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} />
-      <Snackbar anchorOrigin={{vertical: 'bottom', horizontal: 'right',}}
+      <Snackbar anchorOrigin={{vertical: 'bottom', horizontal: 'center',}}
         open={successOpen}
         autoHideDuration={TOAST_DURATION}
         onClose={handleClose}
         message={SUCCESS_TEXT}
         ContentProps={{classes: successSnackBarStyle}} />
-      <Snackbar anchorOrigin={{vertical: 'bottom', horizontal: 'right',}}
+      <Snackbar anchorOrigin={{vertical: 'bottom', horizontal: 'center',}}
         open={failOpen}
         autoHideDuration={TOAST_DURATION}
         onClose={handleClose}
