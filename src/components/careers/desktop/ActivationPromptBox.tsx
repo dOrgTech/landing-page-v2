@@ -3,7 +3,6 @@ import {Box, styled, Typography, Grid} from '@material-ui/core'
 import { theme } from "../../../theme";
 import {CloseButton} from "../../about/desktop/CloseButton";
 
-
 const StyledBox = styled(Box)({
   margin: 'auto',
   width: '100%',
