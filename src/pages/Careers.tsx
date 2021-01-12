@@ -8,8 +8,9 @@ import {borderStyle, borderStyles} from "../theme/styles";
 import {RightMargin} from "../components/RightMargin";
 import {ActivationPromptBox} from "../components/careers/desktop/ActivationPromptBox";
 import {externalLinks} from "../constants/routes";
-import {ProfileSummary} from "../components/careers/desktop/ProfileSummary";
-import {testMember} from "../Utils/networkUtils";
+import {Member} from "../Utils/networkUtils";
+import {MeetBuildersTitleBox} from "../components/careers/desktop/MeetBuildersTitleBox";
+import {ProfileWheel} from "../components/careers/desktop/ProfileWheel";
 
 const Root = styled(Grid)({
   margins: 'auto',
@@ -25,6 +26,20 @@ const PerksContainer = styled(Grid)({
 });
 
 const useBorders = makeStyles(borderStyles);
+
+const testMember: Member = {
+  name: 'Christopher Walken',
+  photo: 'https://www.newdvdreleasedates.com/images/profiles/christopher-walken-13.jpg',
+  specializations: ['Smart Contracts', 'Backend', 'DevOps', 'Speech Cadence'],
+  technologies: ['TypeScript', 'React', 'Solidity'],
+  portfolio: ['https://github.com/dOrgTech']
+}
+
+const testMembers: Member[] = [];
+for (let i = 0; i < 25; i++) {
+  const index = i % 20;
+  testMembers.push(Object.assign({}, testMember, {name: `Christopher Walken ${index}`}));
+}
 
 export const Careers: React.FC = () => {
 
@@ -49,7 +64,12 @@ export const Careers: React.FC = () => {
         <Grid item xs={12}>
           <ActivationPromptBox prompt={'Get started by completing an activation challenge.'} buttonText={'APPLY NOW'} onButtonClick={navigationToActivation}/>
         </Grid>
-        <ProfileSummary member={testMember} />
+        <Grid item xs={12}>
+          <MeetBuildersTitleBox text={'Meet the Builders'} />
+        </Grid>
+        <Grid item xs={12}>
+          <ProfileWheel members={testMembers} />
+        </Grid>
       </ContentContainer>
       <RightMargin xs={1} border={borderStyle} height='116.775vw' longAccentIndex={3}/>
     </Root>
