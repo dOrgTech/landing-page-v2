@@ -8,6 +8,9 @@ import {borderStyle, borderStyles} from "../theme/styles";
 import {RightMargin} from "../components/RightMargin";
 import {ActivationPromptBox} from "../components/careers/desktop/ActivationPromptBox";
 import {externalLinks} from "../constants/routes";
+import {Member} from "../Utils/networkUtils";
+import {MeetBuildersTitleBox} from "../components/careers/desktop/MeetBuildersTitleBox";
+import {ProfileWheel} from "../components/careers/desktop/ProfileWheel";
 
 const Root = styled(Grid)({
   margins: 'auto',
@@ -24,6 +27,20 @@ const PerksContainer = styled(Grid)({
 
 const useBorders = makeStyles(borderStyles);
 
+const testMember: Member = {
+  name: 'Christopher Walken',
+  photo: 'https://www.newdvdreleasedates.com/images/profiles/christopher-walken-13.jpg',
+  specializations: ['Smart Contracts', 'Backend', 'DevOps', 'Speech Cadence'],
+  technologies: ['TypeScript', 'React', 'Solidity'],
+  portfolio: ['https://github.com/dOrgTech']
+}
+
+const testMembers: Member[] = [];
+for (let i = 0; i < 25; i++) {
+  const index = i % 20;
+  testMembers.push(Object.assign({}, testMember, {name: `Christopher Walken ${index}`}));
+}
+
 export const Careers: React.FC = () => {
 
   const navigationToActivation = () => window.location.assign(externalLinks.activation.path);
@@ -34,7 +51,9 @@ export const Careers: React.FC = () => {
     <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
       <LeftMargin xs={1} border={borderStyle} height='116.775vw'/>
       <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
-        <CareersTitleBox textPrimary={'Discover a new way to'} textSecondary={'work'} classes={borders.bottomLeftBorder}/>
+        <Grid item xs={12}>
+          <CareersTitleBox textPrimary={'Discover a new way to'} textSecondary={'work'} classes={borders.bottomLeftBorder}/>
+        </Grid>
         <PerksContainer container spacing={0} justify="center">
           {Object.values(perks).map((perk: Perk, index: number) => (
             <Grid item xs={3} key={`perk-${index}`}>
@@ -42,7 +61,15 @@ export const Careers: React.FC = () => {
             </Grid>
           ))}
         </PerksContainer>
-        <ActivationPromptBox prompt={'Get started by completing an activation challenge.'} buttonText={'APPLY NOW'} onButtonClick={navigationToActivation}/>
+        <Grid item xs={12}>
+          <ActivationPromptBox prompt={'Get started by completing an activation challenge.'} buttonText={'APPLY NOW'} onButtonClick={navigationToActivation}/>
+        </Grid>
+        <Grid item xs={12}>
+          <MeetBuildersTitleBox text={'Meet the Builders'} />
+        </Grid>
+        <Grid item xs={12}>
+          <ProfileWheel members={testMembers} />
+        </Grid>
       </ContentContainer>
       <RightMargin xs={1} border={borderStyle} height='116.775vw' longAccentIndex={3}/>
     </Root>
