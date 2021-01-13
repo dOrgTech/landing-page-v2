@@ -21,7 +21,7 @@ const StyledName = styled(Typography)({
   fontWeight: 'normal',
   fontStretch: "normal",
   fontStyle: "normal",
-  lineHeight: 1.1,
+  lineHeight: 1,
   letterSpacing: 'normal',
   textAlign: 'left',
   color: theme.palette.text.primary
@@ -29,23 +29,21 @@ const StyledName = styled(Typography)({
 
 interface Props {
   text: string;
-  margin?: string;
   xs?: boolean | "auto" | 10 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 11 | 12 | undefined;
   classes?: string;
 }
 
-const Chip: React.FC<Props> = (props: Props) => {
+const ChipSmall: React.FC<Props> = (props: Props) => {
 
   return (
-    <StyledGrid item xs={props.xs} className={props.classes} container direction='row' justify='flex-start' alignItems='center' style={{margin: props.margin}}>
+    <StyledGrid item xs={props.xs} className={props.classes} container direction='row' justify='center' alignItems='center'>
       <StyledName>{props.text}</StyledName>
     </StyledGrid>
   );
 }
 
-Chip.defaultProps = {
-  xs: false,
-  margin: '0.15vw'
+ChipSmall.defaultProps = {
+  xs: false
 }
 
-export {Chip};
+export {ChipSmall};

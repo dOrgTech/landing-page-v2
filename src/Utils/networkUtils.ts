@@ -1,7 +1,10 @@
 export interface Member {
   name: string;
   photo: string;
+  title: string;
+  bio: string;
   specializations: string[];
   technologies: string[];
-  portfolio: string[];
+  github: string;
+  website: string;
 }

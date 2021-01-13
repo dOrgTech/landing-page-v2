@@ -1,8 +1,8 @@
 import React from 'react'
-import {styled, Typography, Grid} from '@material-ui/core'
+import {styled, Typography, Grid, makeStyles} from '@material-ui/core'
 import { theme } from "../../../theme";
 import {Member} from "../../../Utils/networkUtils";
-import {Chip} from "./Chip";
+import {ChipSmall} from "./ChipSmall";
 import {PortfolioButton} from "./PortfolioButton";
 
 const BUTTON_TEXT = 'PORTFOLIO';
@@ -43,6 +43,12 @@ const ChipContainer = styled(Grid)({
   boxSizing: 'border-box'
 });
 
+const useChipStyle = makeStyles({
+  chip: {
+    margin: '0.15vw'
+  }
+});
+
 const ButtonContainer = styled(Grid)({
   marginTop: '1.5vw'
 })
@@ -56,6 +62,8 @@ export const ProfileSummary: React.FC<Props> = (props: Props) => {
 
   const openFullProfile = () => { console.log('profile open') };
 
+  const chipStyle = useChipStyle();
+
   return (
     <StyledGrid className={props.classes} container spacing={0} direction='column' justify='flex-start' alignItems='center'>
       <Grid item>
@@ -67,12 +75,12 @@ export const ProfileSummary: React.FC<Props> = (props: Props) => {
       <ChipContainer item container spacing={0} direction='row' justify='center' alignItems='flex-start'>
         {props.member.specializations.map((specialization: string, i: number) => (
           <Grid item key={`specialization-${i}`}>
-            <Chip text={specialization} />
+            <ChipSmall classes={chipStyle.chip} text={specialization} />
           </Grid>
         ))}
         {props.member.technologies.map((technology: string, i: number) => (
           <Grid item key={`technology-${i}`}>
-            <Chip text={technology} />
+            <ChipSmall classes={chipStyle.chip} text={technology} />
           </Grid>
         ))}
       </ChipContainer>
