@@ -4,7 +4,7 @@ import {theme} from "../../../../theme";
 
 const TextContainer = styled(Grid)({
   width: '10.625vw',
-  height: '11.25vw',
+  height: '100%',
   background: 'transparent',
   boxSizing: 'border-box'
 });

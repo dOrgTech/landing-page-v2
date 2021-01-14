@@ -1,5 +1,5 @@
 import React from 'react'
-import {styled, Grid} from '@material-ui/core'
+import {styled, Grid, makeStyles} from '@material-ui/core'
 import {Member} from "../../../../Utils/networkUtils";
 import {NameBioContainer} from "./NameBioContainer";
 import {SpecializationsContainer} from "./SpecializationsContainer";
@@ -10,6 +10,8 @@ import {PortfolioLinkContainer} from "./PortfolioLinkContainer";
 import {HireMeButton} from "./HireMeButton";
 import {routes} from "../../../../constants/routes";
 import { useHistory } from 'react-router-dom'
+import {borderStyle, borderStyles} from "../../../../theme/styles";
+import {ClosePopUpButton} from "./ClosePopUpButton";
 
 const StyledGrid = styled(Grid)({
   width: '42.5vw',
@@ -19,8 +21,24 @@ const StyledGrid = styled(Grid)({
   backgroundColor: '#000e3c',
   webkitBackdropFilter: 'blur(13px)',
   backdropFilter: 'blur(13px)',
-  boxShadow: '0 3px 6px 0 rgba(0, 0, 0, 0.16)'
+  boxShadow: '0 3px 6px 0 rgba(0, 0, 0, 0.16)',
+  border: borderStyle,
+  position: 'relative'
 });
+
+const StyledGridItem = styled(Grid)({
+  marginBottom: '2.25vw'
+});
+
+const useCancelButtonPosition = makeStyles({
+  positionStyle: {
+    position: 'absolute',
+    top: '2vw',
+    right: '2vw'
+  }
+});
+
+const useBorders = makeStyles(borderStyles);
 
 interface Props {
   member: Member;
@@ -32,35 +50,42 @@ export const ProfileFull: React.FC<Props> = (props: Props) => {
   const history = useHistory();
   const navigateToContactPage = () => history.push(routes.contact.path);
 
+  const cancelButtonPosition = useCancelButtonPosition();
+  const borders = useBorders();
+
   return (
-    <StyledGrid className={props.classes} container spacing={0} direction='row' justify='flex-start' alignItems='flex-start'>
-      <Grid item>
+    <StyledGrid className={props.classes} container spacing={0} direction='row' justify='space-between' alignItems='flex-start'>
+      <StyledGridItem item>
         <ProfilePhoto photo={props.member.photo} />
-      </Grid>
-      <Grid item>
+      </StyledGridItem>
+      <StyledGridItem item>
         <NameBioContainer name={props.member.name} title={props.member.title} bio={props.member.bio} />
-      </Grid>
-      <Grid item>
+      </StyledGridItem>
+      <StyledGridItem item>
         <ProfileSectionTitle text='Specializations' />
-      </Grid>
-      <Grid item>
+      </StyledGridItem>
+      <StyledGridItem item style={{marginBottom: '0.75vw'}}>
         <SpecializationsContainer specializations={props.member.specializations} />
-      </Grid>
-      <Grid item>
+      </StyledGridItem>
+      <StyledGridItem item xs={12} className={borders.topBorder} />
+      <StyledGridItem item>
         <ProfileSectionTitle text='Technologies' />
-      </Grid>
-      <Grid item>
+      </StyledGridItem>
+      <StyledGridItem item style={{marginBottom: '1.75vw'}}>
         <TechnologiesContainer technologies={props.member.technologies} />
-      </Grid>
-      <Grid item>
+      </StyledGridItem>
+      <StyledGridItem item xs={12} className={borders.topBorder} />
+      <StyledGridItem item>
         <ProfileSectionTitle text='Portfolio' />
-      </Grid>
-      <Grid item>
+      </StyledGridItem>
+      <StyledGridItem item style={{marginBottom: '0.75vw'}}>
         <PortfolioLinkContainer github={props.member.github} website={props.member.website} />
-      </Grid>
-      <Grid item>
+      </StyledGridItem>
+      <StyledGridItem item xs={12} className={borders.topBorder} />
+      <StyledGridItem item xs={12} container justify='flex-end'>
         <HireMeButton name={props.member.name} handleClick={navigateToContactPage} />
-      </Grid>
+      </StyledGridItem>
+      <ClosePopUpButton classes={cancelButtonPosition.positionStyle} handleClick={() => console.log('exit')} />
     </StyledGrid>
   );
 }

@@ -3,8 +3,8 @@ import {styled, Typography, Grid} from '@material-ui/core'
 import { theme } from "../../../../theme";
 
 const StyledGrid = styled(Grid)({
-  width: '25.375vw',
-  height: '11.4vw',
+  width: '23.375vw',
+  height: '100%',
   background: 'transparent',
   boxSizing: 'border-box'
 });
@@ -59,7 +59,7 @@ interface Props {
 export const NameBioContainer: React.FC<Props> = (props: Props) => {
 
   return (
-    <StyledGrid container spacing={0} direction='row' justify='flex-start' alignItems='flex-start'>
+    <StyledGrid className={props.classes} container spacing={0} direction='row' justify='flex-start' alignItems='flex-start'>
       <TextItemContainer item xs={8} container spacing={0} direction='row' justify='flex-start' alignItems='center'>
         <Grid item>
           <StyledName>{props.name}</StyledName>

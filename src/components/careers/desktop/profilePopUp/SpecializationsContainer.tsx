@@ -3,8 +3,8 @@ import {styled, Typography, Grid} from '@material-ui/core'
 import {theme} from "../../../../theme";
 
 const StyledGrid = styled(Grid)({
-  width: '25.375vw',
-  height: '11.25vw',
+  width: '23.375vw',
+  height: '100%',
   background: 'transparent',
   boxSizing: 'border-box'
 });
@@ -13,6 +13,7 @@ const SpecializationItem = styled(Grid)({
   height: '2.125vw',
   width: '11vw',
   minWidth: '11vw',
+  marginBottom: '1.5vw'
 });
 
 const StyleIcon = styled('img')({

@@ -3,8 +3,8 @@ import {styled, Typography, Grid, makeStyles} from '@material-ui/core';
 import {ChipLarge} from "./ChipLarge";
 
 const StyledGrid = styled(Grid)({
-  width: '25.375vw',
-  height: '11.25vw',
+  width: '23.375vw',
+  height: '100%',
   background: 'transparent',
   boxSizing: 'border-box'
 });

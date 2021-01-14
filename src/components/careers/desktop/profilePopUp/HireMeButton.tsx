@@ -34,13 +34,14 @@ const StyleArrow = styled('img')({
 
 interface Props {
   name: string;
-  handleClick: () => void
+  handleClick: () => void;
+  classes?: string;
 }
 
 export const HireMeButton: React.FC<Props> = (props: Props) => {
 
   return (
-    <ButtonBase onClick={() => props.handleClick()}>
+    <ButtonBase className={props.classes} onClick={() => props.handleClick()}>
       <StyleGrid container spacing={0} justify={'flex-end'} alignItems={'center'}>
         <Grid item>
           <StyleText>{`HIRE ${props.name.toUpperCase()}`}</StyleText>

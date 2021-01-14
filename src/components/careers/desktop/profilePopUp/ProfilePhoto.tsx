@@ -1,5 +1,12 @@
 import React from 'react'
-import {styled} from '@material-ui/core'
+import {Grid, styled} from '@material-ui/core'
+
+const StyledGrid = styled(Grid)({
+  width: "10.625vw",
+  height: "11.4vw",
+  background: 'transparent',
+  boxSizing: 'border-box'
+});
 
 const StyledPhoto = styled('img')({
   width: "10.625vw",
@@ -15,6 +22,8 @@ interface Props {
 
 export const ProfilePhoto: React.FC<Props> = (props: Props) => {
   return (
-    <StyledPhoto className={props.classes} src={props.photo} alt={'photo of member'} />
+    <StyledGrid className={props.classes} container justify='center'>
+      <StyledPhoto src={props.photo} alt={'photo of member'} />
+    </StyledGrid>
   );
 }
