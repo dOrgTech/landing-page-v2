@@ -14,7 +14,8 @@ import {ProfileWheel} from "../components/careers/desktop/ProfileWheel";
 
 const Root = styled(Grid)({
   margins: 'auto',
-  width: '100vw'
+  width: '100vw',
+  overflow: 'hidden'
 });
 
 const ContentContainer = styled(Grid)({
@@ -30,9 +31,12 @@ const useBorders = makeStyles(borderStyles);
 const testMember: Member = {
   name: 'Christopher Walken',
   photo: 'https://www.newdvdreleasedates.com/images/profiles/christopher-walken-13.jpg',
+  title: 'Actor',
+  bio: 'Christopher Walken is an American actor, singer, comedian, director, producer, screenwriter, and dancer, who has appeared in more than 100 films and television programs.',
   specializations: ['Smart Contracts', 'Backend', 'DevOps', 'Speech Cadence'],
   technologies: ['TypeScript', 'React', 'Solidity'],
-  portfolio: ['https://github.com/dOrgTech']
+  github: 'https://github.com/dOrgTech',
+  website: 'https://www.imdb.com/name/nm0000686/'
 }
 
 const testMembers: Member[] = [];
@@ -69,6 +73,8 @@ export const Careers: React.FC = () => {
         </Grid>
         <Grid item xs={12}>
           <ProfileWheel members={testMembers} />
+        </Grid>
+        <Grid item xs={12}>
         </Grid>
       </ContentContainer>
       <RightMargin xs={1} border={borderStyle} height='116.775vw' longAccentIndex={3}/>

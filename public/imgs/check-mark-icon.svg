@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+        <clipPath id="fee24egisa">
+            <path fill="#fff" stroke="#fff" d="M0 0H16V16H0z" transform="translate(1043 345)"/>
+        </clipPath>
+    </defs>
+    <g clip-path="url(#fee24egisa)" transform="translate(-1043 -345)">
+        <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7px" d="M17 5.1l-9.352 9.346L3.4 10.2" transform="translate(1040.803 343.404)"/>
+    </g>
+</svg>
