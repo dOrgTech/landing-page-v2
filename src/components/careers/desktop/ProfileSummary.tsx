@@ -1,9 +1,16 @@
 import React from 'react'
-import {styled, Typography, Grid, makeStyles} from '@material-ui/core'
+import {
+  styled,
+  Typography,
+  Grid,
+  makeStyles,
+  Modal
+} from '@material-ui/core'
 import { theme } from "../../../theme";
 import {Member} from "../../../Utils/networkUtils";
 import {ChipSmall} from "./ChipSmall";
 import {PortfolioButton} from "./PortfolioButton";
+import {ProfileFull} from "./profilePopUp/ProfileFull";
 
 const BUTTON_TEXT = 'PORTFOLIO';
 
@@ -60,7 +67,13 @@ interface Props {
 
 export const ProfileSummary: React.FC<Props> = (props: Props) => {
 
-  const openFullProfile = () => { console.log('profile open') };
+  const [open, setOpen] = React.useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const chipStyle = useChipStyle();
 
@@ -85,7 +98,13 @@ export const ProfileSummary: React.FC<Props> = (props: Props) => {
         ))}
       </ChipContainer>
       <ButtonContainer item>
-        <PortfolioButton text={BUTTON_TEXT} handleClick={openFullProfile} />
+        <PortfolioButton text={BUTTON_TEXT} handleClick={handleClickOpen} />
+        <Modal open={open} aria-labelledby={`full profile of ${props.member.name}`} aria-describedby="full member profile">
+          <div>
+            <ProfileFull member={props.member} onClose={handleClose} />
+          </div>
+        </Modal>
+
       </ButtonContainer>
     </StyledGrid>
   );

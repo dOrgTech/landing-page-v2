@@ -11,11 +11,11 @@ import {externalLinks} from "../constants/routes";
 import {Member} from "../Utils/networkUtils";
 import {MeetBuildersTitleBox} from "../components/careers/desktop/MeetBuildersTitleBox";
 import {ProfileWheel} from "../components/careers/desktop/ProfileWheel";
-import {ProfileFull} from "../components/careers/desktop/profilePopUp/ProfileFull";
 
 const Root = styled(Grid)({
   margins: 'auto',
-  width: '100vw'
+  width: '100vw',
+  overflow: 'hidden'
 });
 
 const ContentContainer = styled(Grid)({
@@ -75,7 +75,6 @@ export const Careers: React.FC = () => {
           <ProfileWheel members={testMembers} />
         </Grid>
         <Grid item xs={12}>
-          <ProfileFull member={testMembers[0]} />
         </Grid>
       </ContentContainer>
       <RightMargin xs={1} border={borderStyle} height='116.775vw' longAccentIndex={3}/>

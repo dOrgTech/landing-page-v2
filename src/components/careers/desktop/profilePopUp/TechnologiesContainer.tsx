@@ -1,5 +1,5 @@
 import React from 'react';
-import {styled, Typography, Grid, makeStyles} from '@material-ui/core';
+import {styled, Grid, makeStyles} from '@material-ui/core';
 import {ChipLarge} from "./ChipLarge";
 
 const StyledGrid = styled(Grid)({

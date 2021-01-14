@@ -42,6 +42,7 @@ const useBorders = makeStyles(borderStyles);
 
 interface Props {
   member: Member;
+  onClose: () => void;
   classes?: string;
 }
 
@@ -85,7 +86,7 @@ export const ProfileFull: React.FC<Props> = (props: Props) => {
       <StyledGridItem item xs={12} container justify='flex-end'>
         <HireMeButton name={props.member.name} handleClick={navigateToContactPage} />
       </StyledGridItem>
-      <ClosePopUpButton classes={cancelButtonPosition.positionStyle} handleClick={() => console.log('exit')} />
+      <ClosePopUpButton classes={cancelButtonPosition.positionStyle} handleClick={props.onClose} />
     </StyledGrid>
   );
 }
