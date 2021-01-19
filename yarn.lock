@@ -1604,6 +1604,7 @@ __metadata:
     react-dom: ^17.0.1
     react-ga: ^3.3.0
     react-hook-form: ^6.14.0
+    react-material-ui-carousel: ^2.1.2
     react-refresh: ^0.9.0
     react-router-dom: ^5.2.0
     react-scripts: 4.0.1
@@ -2725,7 +2726,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^16, @types/react@npm:^16.9.53":
+"@types/react@npm:^16, @types/react@npm:^16.8.12, @types/react@npm:^16.9.53":
   version: 16.14.2
   resolution: "@types/react@npm:16.14.2"
   dependencies:
@@ -3829,6 +3830,15 @@ __metadata:
   bin:
     atob: bin/atob.js
   checksum: 597c0d1a740bb6522c98bea8fe362ae9420b4203af588d2bd470326d9abd4504264956b8355923d7019a21527ef5e6526a7b4455862ec5178ccd81e0ea289d5f
+  languageName: node
+  linkType: hard
+
+"auto-bind@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "auto-bind@npm:2.1.1"
+  dependencies:
+    "@types/react": ^16.8.12
+  checksum: 23bf83ad7a787d84468c82565b542dd06401f1f9d9888b452588a22b18b8ddb6694f8e43ccefd58b5b2010d760a4583aa4db3d070973d0eec55b48fd8116c4ad
   languageName: node
   linkType: hard
 
@@ -14228,6 +14238,21 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"react-material-ui-carousel@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "react-material-ui-carousel@npm:2.1.2"
+  dependencies:
+    auto-bind: ^2.1.1
+    react-swipeable: ^5.5.1
+  peerDependencies:
+    "@material-ui/core": ^4.9.11
+    "@material-ui/icons": ^4.9.1
+    react: ^16.13.1
+    react-dom: ^16.13.1
+  checksum: 6d4d04767599392eea518889a67ee87a1ce1466d2d90b6f9837dcad551623f552da68c5f2db38e5a4fd6b2ec033dfa65218d16017852df6d9e3c0d3068d187e8
+  languageName: node
+  linkType: hard
+
 "react-refresh@npm:^0.8.3":
   version: 0.8.3
   resolution: "react-refresh@npm:0.8.3"
@@ -14353,6 +14378,17 @@ fsevents@~2.1.2:
   bin:
     react-scripts: ./bin/react-scripts.js
   checksum: 1d37d97d1bfa6705d412ea1bd3d02bb42ff8893138ae242f958ba408ad7a909b0961a3b8820908cafdfc4f9b09d75c50dae1932c968de47c80d9b7a0d48b9a99
+  languageName: node
+  linkType: hard
+
+"react-swipeable@npm:^5.5.1":
+  version: 5.5.1
+  resolution: "react-swipeable@npm:5.5.1"
+  dependencies:
+    prop-types: ^15.6.2
+  peerDependencies:
+    react: ^16.0.0-0
+  checksum: b9807d07a24dcddc03ab8e2bf1d825d5e0dc7d5a54187a4e3b28b4d5263fa663b9358e82c8788451d443d3b45f1b31a56b61136e572cef31c334e55a059147ad
   languageName: node
   linkType: hard
 

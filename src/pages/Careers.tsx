@@ -11,6 +11,8 @@ import {externalLinks} from "../constants/routes";
 import {Member} from "../Utils/networkUtils";
 import {MeetBuildersTitleBox} from "../components/careers/desktop/MeetBuildersTitleBox";
 import {ProfileWheel} from "../components/careers/desktop/ProfileWheel";
+import {testimonials} from "../constants/testimonials";
+import {TestimonialSection} from "../components/careers/desktop/TestimonialSection";
 
 const Root = styled(Grid)({
   margins: 'auto',
@@ -75,6 +77,7 @@ export const Careers: React.FC = () => {
           <ProfileWheel members={testMembers} />
         </Grid>
         <Grid item xs={12}>
+          <TestimonialSection testimonials={testimonials} />
         </Grid>
       </ContentContainer>
       <RightMargin xs={1} border={borderStyle} height='116.775vw' longAccentIndex={3}/>
