@@ -12,7 +12,7 @@ const StyledGrid = styled(Grid)({
   position: 'relative'
 });
 
-const StyledTextPrimary = styled(Typography)({
+const StyledText = styled(Typography)({
   fontFamily: theme.typography.fontFamily,
   fontSize: '2.625vw',
   fontWeight: 600,
@@ -33,7 +33,7 @@ export const MeetBuildersTitleBox: React.FC<Props> = (props: Props) => {
   return (
     <StyledGrid className={props.classes} container direction={'column'} spacing={0} justify={'flex-start'} alignItems={'center'}>
       <Grid item>
-        <StyledTextPrimary>{props.text}</StyledTextPrimary>
+        <StyledText>{props.text}</StyledText>
       </Grid>
     </StyledGrid>
   );

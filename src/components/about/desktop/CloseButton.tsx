@@ -16,6 +16,9 @@ const StyleGrid = styled(Grid)({
   '&:hover': {
     border: 'solid 1px ' + theme.palette.text.primary,
   },
+  '&:focus': {
+    border: 'solid 1px ' + theme.palette.text.primary,
+  },
   zIndex: 1
 });
 
@@ -46,13 +49,14 @@ const StyleArrow = styled('img')({
 interface Props {
   text: string;
   handleClick: () => void
+  classes?: string;
 }
 
 export const CloseButton: React.FC<Props> = (props: Props) => {
 
   return (
     <ButtonBase onClick={() => props.handleClick()}>
-      <StyleGrid container spacing={0} justify={'space-between'} alignItems={'center'}>
+      <StyleGrid className={props.classes} container spacing={0} justify={'space-between'} alignItems={'center'}>
         <Grid item>
           <StyleText>{props.text}</StyleText>
         </Grid>

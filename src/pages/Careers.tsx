@@ -13,6 +13,8 @@ import {MeetBuildersTitleBox} from "../components/careers/desktop/MeetBuildersTi
 import {ProfileWheel} from "../components/careers/desktop/ProfileWheel";
 import {testimonials} from "../constants/testimonials";
 import {TestimonialSection} from "../components/careers/desktop/TestimonialSection";
+import {CurrentOpeningsSection} from "../components/careers/desktop/CurrentOpeningsSection";
+import {openings} from "../constants/openings";
 
 const Root = styled(Grid)({
   margins: 'auto',
@@ -78,6 +80,9 @@ export const Careers: React.FC = () => {
         </Grid>
         <Grid item xs={12}>
           <TestimonialSection testimonials={testimonials} />
+        </Grid>
+        <Grid item xs={12}>
+          <CurrentOpeningsSection openings={openings} titleText={'Current Openings'} buttonText={'APPLY NOW'} onButtonClick={navigationToActivation} />
         </Grid>
       </ContentContainer>
       <RightMargin xs={1} border={borderStyle} height='116.775vw' longAccentIndex={3}/>
