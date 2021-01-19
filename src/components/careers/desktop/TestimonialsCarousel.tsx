@@ -1,11 +1,31 @@
-import React from 'react'
-import { Box, styled} from '@material-ui/core'
-import {Testimonials} from "../../../constants/testimonials";
+import React from 'react';
+import {makeStyles} from '@material-ui/core';
+import {Testimonial, Testimonials} from "../../../constants/testimonials";
 import {TestomonialItem} from "./TestomonialItem";
+import Carousel from 'react-material-ui-carousel';
 
 
-const StyleBox = styled(Box)({
-
+const useCarouselStyles = makeStyles({
+  root: {
+    width: '60.625vw',
+    height: '21.25vw'
+  },
+  indicatorContainer: {
+    position: 'relative',
+    top: '-3vw',
+    marginTop: "0.625vw",
+  },
+  indicator: {
+    fontSize: "0.9375vw",
+    padding: '0 0.2vw',
+    color: '#FFFFFF',
+    opacity: 0.32
+  },
+  activeIndicator: {
+    fontSize: "0.9375vw",
+    padding: '0 0.2vw',
+    color: '#FFFFFF'
+  }
 });
 
 
@@ -15,9 +35,18 @@ interface Props {
 }
 
 export const TestimonialsCarousel: React.FC<Props> = (props: Props) => {
+
+  const carouselStyles = useCarouselStyles();
+
   return (
-    <StyleBox className={props.classes} >
-      <TestomonialItem testimonial={props.testimonials.person1} />
-    </StyleBox>
+    <Carousel fullHeightHover
+      className={carouselStyles.root}
+      indicatorProps={{className: carouselStyles.indicator, style: {}}}
+      activeIndicatorProps={{className: carouselStyles.activeIndicator, style: {}}}
+      indicatorContainerProps={{className: carouselStyles.indicatorContainer, style: {}}}>
+      {Object.values(props.testimonials).map((testimonial: Testimonial, i: number) => (
+        <TestomonialItem testimonial={testimonial} key={`testimonial-${i}`} />
+      ))}
+    </Carousel>
   );
 }
