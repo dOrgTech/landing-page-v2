@@ -13,6 +13,7 @@ import {MeetBuildersTitleBox} from "../components/careers/desktop/MeetBuildersTi
 import {ProfileWheel} from "../components/careers/desktop/ProfileWheel";
 import {TestimonialsCarousel} from "../components/careers/desktop/TestimonialsCarousel";
 import {testimonials} from "../constants/testimonials";
+import {GreenDotsRectangle} from "../components/careers/desktop/GreenDotsRectangle";
 
 const Root = styled(Grid)({
   margins: 'auto',
@@ -78,6 +79,7 @@ export const Careers: React.FC = () => {
         </Grid>
         <Grid item xs={12}>
           <TestimonialsCarousel testimonials={testimonials} />
+          <GreenDotsRectangle length={19} />
         </Grid>
       </ContentContainer>
       <RightMargin xs={1} border={borderStyle} height='116.775vw' longAccentIndex={3}/>
