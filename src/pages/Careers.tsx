@@ -16,6 +16,7 @@ import {TestimonialSection} from "../components/careers/desktop/TestimonialSecti
 import {CurrentOpeningSection} from "../components/careers/desktop/CurrentOpeningSection";
 import {openings} from "../constants/openings";
 
+
 const Root = styled(Grid)({
   margins: 'auto',
   width: '100vw',
