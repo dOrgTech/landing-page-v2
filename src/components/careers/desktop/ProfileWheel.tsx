@@ -1,6 +1,6 @@
 import React from 'react'
 import {Box, Grid, makeStyles, styled} from '@material-ui/core'
-import {Member} from "../../../Utils/networkUtils";
+import {Member} from "../../../constants/members";
 import {ProfileSummary} from "./ProfileSummary";
 
 
@@ -55,7 +55,7 @@ export const ProfileWheel: React.FC<Props> = (props: Props) => {
     <SlideShow className={props.classes}>
       <ProfileContainer className={slideAnimation.animateLeft} container direction={'column'} spacing={0} justify={'flex-start'} alignItems={'center'}>
         {props.members.map((member: Member, i: number) => (
-          <ProfileItem item key={`profile-${i}`} >
+          <ProfileItem item key={`profile-${i}`}>
             <ProfileSummary member={member} />
           </ProfileItem>
         ))}

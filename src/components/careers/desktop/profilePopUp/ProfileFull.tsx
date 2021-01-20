@@ -1,6 +1,6 @@
 import React from 'react'
 import {styled, Grid, makeStyles} from '@material-ui/core'
-import {Member} from "../../../../Utils/networkUtils";
+import {Member} from "../../../../constants/members";
 import {NameBioContainer} from "./NameBioContainer";
 import {SpecializationsContainer} from "./SpecializationsContainer";
 import {ProfilePhoto} from "./ProfilePhoto";

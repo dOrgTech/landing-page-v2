@@ -57,7 +57,7 @@ interface Props {
   classes?: string;
 }
 
-export const CurrentOpeningsSection: React.FC<Props> = (props: Props) => {
+export const CurrentOpeningSection: React.FC<Props> = (props: Props) => {
 
   const borders = useBorders();
   const styleClasses = useStyleClasses();
