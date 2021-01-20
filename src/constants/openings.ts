@@ -16,6 +16,8 @@ export interface Openings {
   frontEndDeveloper: Readonly<Opening>;
   solidityDeveloper: Readonly<Opening>;
   designer: Readonly<Opening>;
+  rustDeveloper: Readonly<Opening>;
+  walken: Readonly<Opening>;
 }
 
 export const openings: Openings = {
@@ -38,6 +40,20 @@ export const openings: Openings = {
     role: Role.design,
     title: 'Product Designer',
     location: 'Remote / Vancouver / Victoria',
+    description: 'MetaLab is primarily PST-based so the candidate applying for this role must be comfortable with ~2hrs overlap during their workday (often 4-6:30pm GMT), operating autonomously in the other hours. We have a small (and growing!) team in Europe — plus global clients — so we resource teams in the same time zone together when. We have a small (and growing!) team in Europe — plus global crole must be comfortable with ~2hrs overlap during their workday (often 4-6:30pm GMT), operating autonomously in the other hours. '
+  },
+  rustDeveloper: {
+    id: '4',
+    role: Role.backend,
+    title: 'Rust Developer (WASM)',
+    location: 'Remote / Vancouver / Victoria',
+    description: 'MetaLab is primarily PST-based so the candidate applying for this role must be comfortable with ~2hrs overlap during their workday (often 4-6:30pm GMT), operating autonomously in the other hours. We have a small (and growing!) team in Europe — plus global clients — so we resource teams in the same time zone together when. We have a small (and growing!) team in Europe — plus global crole must be comfortable with ~2hrs overlap during their workday (often 4-6:30pm GMT), operating autonomously in the other hours. '
+  },
+  walken: {
+    id: '5',
+    role: Role.design,
+    title: 'Christopher Walken Impersonator',
+    location: 'Remote (GMT +0 Time Zone)',
     description: 'MetaLab is primarily PST-based so the candidate applying for this role must be comfortable with ~2hrs overlap during their workday (often 4-6:30pm GMT), operating autonomously in the other hours. We have a small (and growing!) team in Europe — plus global clients — so we resource teams in the same time zone together when. We have a small (and growing!) team in Europe — plus global crole must be comfortable with ~2hrs overlap during their workday (often 4-6:30pm GMT), operating autonomously in the other hours. '
   },
 }

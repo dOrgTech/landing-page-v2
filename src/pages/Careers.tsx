@@ -8,12 +8,12 @@ import {borderStyle, borderStyles} from "../theme/styles";
 import {RightMargin} from "../components/RightMargin";
 import {ActivationPromptBox} from "../components/careers/desktop/ActivationPromptBox";
 import {externalLinks} from "../constants/routes";
-import {Member} from "../Utils/networkUtils";
+import {testMembers} from "../constants/members";
 import {MeetBuildersTitleBox} from "../components/careers/desktop/MeetBuildersTitleBox";
 import {ProfileWheel} from "../components/careers/desktop/ProfileWheel";
 import {testimonials} from "../constants/testimonials";
 import {TestimonialSection} from "../components/careers/desktop/TestimonialSection";
-import {CurrentOpeningsSection} from "../components/careers/desktop/CurrentOpeningsSection";
+import {CurrentOpeningSection} from "../components/careers/desktop/CurrentOpeningSection";
 import {openings} from "../constants/openings";
 
 const Root = styled(Grid)({
@@ -32,23 +32,6 @@ const PerksContainer = styled(Grid)({
 
 const useBorders = makeStyles(borderStyles);
 
-const testMember: Member = {
-  name: 'Christopher Walken',
-  photo: 'https://www.newdvdreleasedates.com/images/profiles/christopher-walken-13.jpg',
-  title: 'Actor',
-  bio: 'Christopher Walken is an American actor, singer, comedian, director, producer, screenwriter, and dancer, who has appeared in more than 100 films and television programs.',
-  specializations: ['Smart Contracts', 'Backend', 'DevOps', 'Speech Cadence'],
-  technologies: ['TypeScript', 'React', 'Solidity'],
-  github: 'https://github.com/dOrgTech',
-  website: 'https://www.imdb.com/name/nm0000686/'
-}
-
-const testMembers: Member[] = [];
-for (let i = 0; i < 25; i++) {
-  const index = i % 20;
-  testMembers.push(Object.assign({}, testMember, {name: `Christopher Walken ${index}`}));
-}
-
 export const Careers: React.FC = () => {
 
   const navigationToActivation = () => window.location.assign(externalLinks.activation.path);
@@ -57,7 +40,7 @@ export const Careers: React.FC = () => {
 
   return (
     <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-      <LeftMargin xs={1} border={borderStyle} height='116.775vw'/>
+      <LeftMargin xs={1} border={borderStyle} height='189.625vw'/>
       <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
         <Grid item xs={12}>
           <CareersTitleBox textPrimary={'Discover a new way to'} textSecondary={'work'} classes={borders.bottomLeftBorder}/>
@@ -70,22 +53,29 @@ export const Careers: React.FC = () => {
           ))}
         </PerksContainer>
         <Grid item xs={12}>
-          <ActivationPromptBox prompt={'Get started by completing an activation challenge.'} buttonText={'APPLY NOW'} onButtonClick={navigationToActivation}/>
+          <ActivationPromptBox prompt={'Get started by completing an activation challenge.'}
+            buttonText={'APPLY NOW'}
+            onButtonClick={navigationToActivation}
+            classes={borders.leftBorder}/>
         </Grid>
         <Grid item xs={12}>
-          <MeetBuildersTitleBox text={'Meet the Builders'} />
+          <MeetBuildersTitleBox text={'Meet the Builders'} classes={borders.leftBorder} />
         </Grid>
         <Grid item xs={12}>
-          <ProfileWheel members={testMembers} />
+          <ProfileWheel members={testMembers} classes={borders.leftBorder} />
         </Grid>
         <Grid item xs={12}>
-          <TestimonialSection testimonials={testimonials} />
+          <TestimonialSection testimonials={testimonials} carouselBorder={borderStyle} classes={borders.leftBorder}  />
         </Grid>
         <Grid item xs={12}>
-          <CurrentOpeningsSection openings={openings} titleText={'Current Openings'} buttonText={'APPLY NOW'} onButtonClick={navigationToActivation} />
+          <CurrentOpeningSection openings={openings}
+            titleText={'Current Openings'}
+            buttonText={'APPLY NOW'}
+            onButtonClick={navigationToActivation}
+            classes={borders.leftBorder}  />
         </Grid>
       </ContentContainer>
-      <RightMargin xs={1} border={borderStyle} height='116.775vw' longAccentIndex={3}/>
+      <RightMargin xs={1} border={borderStyle} height='189.625vw' longAccentIndex={3}/>
     </Root>
   );
 }

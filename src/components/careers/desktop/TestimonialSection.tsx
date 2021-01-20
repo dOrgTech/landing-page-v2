@@ -37,6 +37,7 @@ const usePositionStyles = makeStyles({
 });
 
 interface Props {
+  carouselBorder: string;
   testimonials: Testimonials;
   classes?: string;
 }
@@ -47,7 +48,7 @@ export const TestimonialSection: React.FC<Props> = (props: Props) => {
 
   return (
     <StyledGrid className={props.classes} container direction='row' justify={'flex-start'} alignItems={'flex-end'}>
-      <TestimonialsCarousel testimonials={props.testimonials} classes={positionStyles.carouselPosition} />
+      <TestimonialsCarousel testimonials={props.testimonials} classes={positionStyles.carouselPosition} border={props.carouselBorder} />
       <GreenDotsRectangle length={19} classes={positionStyles.dotsPosition} />
       <ColorShift />
     </StyledGrid>

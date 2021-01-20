@@ -7,7 +7,7 @@ import {
   Modal
 } from '@material-ui/core'
 import { theme } from "../../../theme";
-import {Member} from "../../../Utils/networkUtils";
+import {Member} from "../../../constants/members";
 import {ChipSmall} from "./ChipSmall";
 import {PortfolioButton} from "./PortfolioButton";
 import {ProfileFull} from "./profilePopUp/ProfileFull";
@@ -18,7 +18,7 @@ const StyledGrid = styled(Grid)({
   width: '18.75vw',
   height: '25vw',
   padding: '2.3vw 1.6vw 1.4vw 1.6vw',
-  backgroundColor: 'rgba(0, 0, 0, 0.15)',
+  backgroundColor: '#000e3c',
   boxSizing: 'border-box'
 });
 
