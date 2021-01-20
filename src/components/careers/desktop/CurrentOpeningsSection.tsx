@@ -6,6 +6,7 @@ import {CurrentOpeningAccordion} from "./CurrentOpeningAccordion";
 import {Opening, Openings} from "../../../constants/openings";
 import {borderStyles, borderStyle} from "../../../theme/styles";
 
+
 const StyledGrid = styled(Grid)({
   width: '100%',
   height: '63.75vw',
