@@ -100,8 +100,8 @@ export const CurrentOpeningAccordion: React.FC<Props> = (props: Props) => {
 
   return (
     <Accordion classes={accordionStyle} className={props.classes} expanded={props.expanded} onChange={props.onChange}
-      style={{borderBottom: props.border, width: 'inherit'}}>
-      <AccordionSummary expandIcon={<ExpandIcon/>} aria-controls="panel1bh-content" id="panel1bh-header">
+      style={{borderBottom: props.border, width: 'inherit', margin: 0}}>
+      <AccordionSummary expandIcon={<ExpandIcon/>} aria-controls={`${props.opening.id}-content`} id={`${props.opening.id}-header`}>
         <SummaryGrid container direction='row' justify={'space-between'} alignItems={'center'}>
           <Grid item xs={6} container direction='row' justify={'flex-start'} alignItems={'center'} style={{height: 'inherit'}}>
             <StyledIcon src={icon} alt={'icon'}/>

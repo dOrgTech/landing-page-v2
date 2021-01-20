@@ -3,7 +3,7 @@ import {Grid, makeStyles, styled, Typography} from '@material-ui/core'
 import {CloseButton} from "../../about/desktop/CloseButton";
 import {theme} from "../../../theme";
 import {CurrentOpeningAccordion} from "./CurrentOpeningAccordion";
-import {Openings} from "../../../constants/openings";
+import {Opening, Openings} from "../../../constants/openings";
 import {borderStyles, borderStyle} from "../../../theme/styles";
 
 const StyledGrid = styled(Grid)({
@@ -14,6 +14,8 @@ const StyledGrid = styled(Grid)({
 });
 
 const StyledText = styled(Typography)({
+  marginTop: '4.5vw',
+  marginBottom: '3.375vw',
   fontFamily: theme.typography.fontFamily,
   fontSize: '2.625vw',
   fontWeight: 600,
@@ -27,6 +29,7 @@ const StyledText = styled(Typography)({
 
 const useStyleClasses = makeStyles({
   buttonStyle: {
+    marginTop: '2.75vw',
     transition: '0.25s',
     backgroundColor: theme.palette.secondary.main,
     border: 'initial',
@@ -70,7 +73,14 @@ export const CurrentOpeningsSection: React.FC<Props> = (props: Props) => {
         <StyledText>{props.titleText}</StyledText>
       </Grid>
       <Grid item className={borders.leftBorder + ' ' + borders.topBorder + ' ' + borders.rightBorder} style={{width: '61.25vw'}}>
-        <CurrentOpeningAccordion opening={props.openings.designer} expanded={expanded==='panel1'} onChange={handleChange('panel1')}  border={borderStyle}/>
+        {Object.values(props.openings).map((opening: Opening, i: number) => (
+          <CurrentOpeningAccordion
+            key={opening.id}
+            opening={opening}
+            expanded={expanded===opening.id}
+            onChange={handleChange(opening.id)}
+            border={borderStyle} />
+        ))}
       </Grid>
       <Grid item>
         <CloseButton classes={styleClasses.buttonStyle} text={props.buttonText} handleClick={props.onButtonClick} />
