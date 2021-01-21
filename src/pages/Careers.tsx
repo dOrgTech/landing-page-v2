@@ -19,6 +19,7 @@ import {CareersTitleBoxMobile} from "../components/careers/mobile/CareersTitleBo
 import {PerkBoxMobile} from "../components/careers/mobile/PerkBoxMobile";
 import {ActivationPromptBoxMobile} from "../components/careers/mobile/ActivationPromptBoxMobile";
 import {MeetBuildersTitleBoxMobile} from "../components/careers/mobile/MeetBuildersTitleBoxMobile";
+import {ProfileWheelMobile} from "../components/careers/mobile/ProfileWheelMobile";
 
 
 const Root = styled(Grid)({
@@ -114,7 +115,7 @@ export const Careers: React.FC = () => {
             <MeetBuildersTitleBoxMobile text={'Meet the Builders'} classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
-            <ProfileWheel members={testMembers} classes={borders.leftBorder}/>
+            <ProfileWheelMobile members={testMembers} classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
             <TestimonialSection testimonials={testimonials} carouselBorder={borderStyle} classes={borders.leftBorder}/>
