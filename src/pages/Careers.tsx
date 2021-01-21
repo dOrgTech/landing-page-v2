@@ -21,6 +21,7 @@ import {ActivationPromptBoxMobile} from "../components/careers/mobile/Activation
 import {MeetBuildersTitleBoxMobile} from "../components/careers/mobile/MeetBuildersTitleBoxMobile";
 import {ProfileWheelMobile} from "../components/careers/mobile/ProfileWheelMobile";
 import {TestimonialSectionMobile} from "../components/careers/mobile/TestimonialSectionMobile";
+import {CurrentOpeningSectionMobile} from "../components/careers/mobile/CurrentOpeningSectionMobile";
 
 
 const Root = styled(Grid)({
@@ -122,7 +123,7 @@ export const Careers: React.FC = () => {
             <TestimonialSectionMobile testimonials={testimonials} carouselBorder={borderStyle} classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
-            <CurrentOpeningSection openings={openings}
+            <CurrentOpeningSectionMobile openings={openings}
               titleText={'Current Openings'}
               buttonText={'APPLY NOW'}
               onButtonClick={navigationToActivation}
