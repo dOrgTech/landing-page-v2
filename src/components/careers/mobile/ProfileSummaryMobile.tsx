@@ -16,8 +16,8 @@ const BUTTON_TEXT = 'PORTFOLIO';
 
 const StyledGrid = styled(Grid)({
   width: '71.4vw',
-  height: '95.2vw',
-  padding: '8.5vw 6.1vw 5.3vw 6.1vw',
+  height: '95vw',
+  padding: '7.5vw 6.1vw 5.3vw 6.1vw',
   backgroundColor: '#000e3c',
   boxSizing: 'border-box'
 });

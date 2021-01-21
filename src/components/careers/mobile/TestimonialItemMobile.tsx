@@ -4,9 +4,9 @@ import {Testimonial} from "../../../constants/testimonials";
 import {theme} from "../../../theme";
 
 const StyledGrid = styled(Grid)({
-  width: '90.5vw',
+  width: '100%',
   height: '96.5vw',
-  padding: '10vw 7vw',
+  padding: '10vw 5vw',
   backgroundColor: 'transparent',
   boxSizing: 'border-box'
 });

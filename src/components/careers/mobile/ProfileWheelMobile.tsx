@@ -6,7 +6,7 @@ import {ProfileSummaryMobile} from "./ProfileSummaryMobile";
 
 const SlideShow = styled(Box)({
   width: '100%',
-  height: '95.2vw',
+  height: '95vw',
   background: 'transparent',
   boxSizing: 'border-box',
   overflow: 'visible',

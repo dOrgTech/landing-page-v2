@@ -14,7 +14,7 @@ const StyledGrid = styled(Grid)({
 });
 
 interface Props {
-  carouselBorder: string;
+  carouselBorder?: string;
   testimonials: Testimonials;
   classes?: string;
 }

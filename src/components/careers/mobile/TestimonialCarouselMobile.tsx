@@ -31,7 +31,7 @@ const useCarouselStyles = makeStyles({
 
 interface Props {
   testimonials: Testimonials;
-  border: string;
+  border?: string;
   classes?: string;
 }
 
@@ -40,7 +40,7 @@ export const TestimonialCarouselMobile: React.FC<Props> = (props: Props) => {
   const carouselStyles = useCarouselStyles();
 
   return (
-    <Box className={props.classes} style={{width: '90.5vw', height: '96.5vw', border: props.border}}>
+    <Box className={props.classes} style={{width: '100%', height: '96.5vw', borderTop: props.border, borderBottom: props.border}}>
       <Carousel fullHeightHover interval={4000} timeout={{appear: 0, enter: 0, exit: 0}}
         className={carouselStyles.root}
         indicatorProps={{className: carouselStyles.indicator, style: {}}}

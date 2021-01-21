@@ -8,7 +8,7 @@ import {CloseButtonMobile} from "../../about/mobile/CloseButtonMobile";
 
 
 const StyledGrid = styled(Grid)({
-  width: '90.5vw',
+  width: '100%',
   height: '285vw',
   boxSizing: 'border-box',
   backgroundColor: 'rgba(0, 0, 0, 0.15)',
@@ -74,7 +74,7 @@ export const CurrentOpeningSectionMobile: React.FC<Props> = (props: Props) => {
       <Grid item>
         <StyledText>{props.titleText}</StyledText>
       </Grid>
-      <Grid item className={borders.leftBorder + ' ' + borders.topBorder + ' ' + borders.rightBorder} style={{width: '100%'}}>
+      <Grid item className={borders.topBorder} style={{width: '100%'}}>
         {Object.values(props.openings).map((opening: Opening, i: number) => (
           <CurrentOpeningAccordionMobile
             key={opening.id}

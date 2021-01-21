@@ -5,7 +5,7 @@ import { theme } from "../../../theme";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
-  height: '34.3vw',
+  height: '34.5vw',
   padding: '16.2vw 0 0 0',
   background: 'transparent',
   boxSizing: 'border-box',
