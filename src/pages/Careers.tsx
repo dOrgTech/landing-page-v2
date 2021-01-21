@@ -18,6 +18,7 @@ import {openings} from "../constants/openings";
 import {CareersTitleBoxMobile} from "../components/careers/mobile/CareersTitleBoxMobile";
 import {PerkBoxMobile} from "../components/careers/mobile/PerkBoxMobile";
 import {ActivationPromptBoxMobile} from "../components/careers/mobile/ActivationPromptBoxMobile";
+import {MeetBuildersTitleBoxMobile} from "../components/careers/mobile/MeetBuildersTitleBoxMobile";
 
 
 const Root = styled(Grid)({
@@ -110,7 +111,7 @@ export const Careers: React.FC = () => {
               classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
-            <MeetBuildersTitleBox text={'Meet the Builders'} classes={borders.leftBorder}/>
+            <MeetBuildersTitleBoxMobile text={'Meet the Builders'} classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
             <ProfileWheel members={testMembers} classes={borders.leftBorder}/>
