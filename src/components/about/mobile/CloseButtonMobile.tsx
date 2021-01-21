@@ -45,14 +45,15 @@ const StyleArrow = styled('img')({
 
 interface Props {
   text: string;
-  handleClick: () => void
+  handleClick: () => void;
+  classes?: string;
 }
 
 export const CloseButtonMobile: React.FC<Props> = (props: Props) => {
 
   return (
     <ButtonBase onClick={() => props.handleClick()}>
-      <StyleGrid container spacing={0} justify={'space-between'} alignItems={'center'}>
+      <StyleGrid className={props.classes} container spacing={0} justify={'space-between'} alignItems={'center'}>
         <Grid item>
           <StyleText>{props.text}</StyleText>
         </Grid>

@@ -47,7 +47,8 @@ const StyledRings = styled('img')({
 });
 
 interface Props {
-  textPrimary: string;
+  textPrimaryL1: string;
+  textPrimaryL2: string;
   textSecondary: string;
   classes?: string;
 }
@@ -56,10 +57,10 @@ export const CareersTitleBoxMobile: React.FC<Props> = (props: Props) => {
   return (
     <StyledGrid className={props.classes} container direction={'row'} spacing={0} justify={'flex-start'} alignItems={'flex-start'}>
       <Grid item xs={12}>
-        <StyledTextPrimary>Discover a new</StyledTextPrimary>
+        <StyledTextPrimary>{props.textPrimaryL1}</StyledTextPrimary>
       </Grid>
       <Grid item>
-        <StyledTextPrimary>way to</StyledTextPrimary>
+        <StyledTextPrimary>{props.textPrimaryL2}</StyledTextPrimary>
       </Grid>
       <Grid item>
         <StyledTextSecondary>&nbsp;{props.textSecondary}</StyledTextSecondary>

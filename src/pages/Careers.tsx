@@ -17,6 +17,7 @@ import {CurrentOpeningSection} from "../components/careers/desktop/CurrentOpenin
 import {openings} from "../constants/openings";
 import {CareersTitleBoxMobile} from "../components/careers/mobile/CareersTitleBoxMobile";
 import {PerkBoxMobile} from "../components/careers/mobile/PerkBoxMobile";
+import {ActivationPromptBoxMobile} from "../components/careers/mobile/ActivationPromptBoxMobile";
 
 
 const Root = styled(Grid)({
@@ -92,7 +93,7 @@ export const Careers: React.FC = () => {
         <LeftMargin xs={1} border={borderStyle} height='189.625vw'/>
         <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
           <Grid item xs={12}>
-            <CareersTitleBoxMobile textPrimary={'Discover a new way to'} textSecondary={'work'}
+            <CareersTitleBoxMobile textPrimaryL1={'Discover a new'} textPrimaryL2={'way to'} textSecondary={'work'}
               classes={borders.bottomLeftBorder}/>
           </Grid>
           <PerksContainer container spacing={0} justify="center">
@@ -103,7 +104,7 @@ export const Careers: React.FC = () => {
             ))}
           </PerksContainer>
           <Grid item xs={12}>
-            <ActivationPromptBox prompt={'Get started by completing an activation challenge.'}
+            <ActivationPromptBoxMobile promptL1={'Get started'} promptLx={'by completing an activation challenge.'}
               buttonText={'APPLY NOW'}
               onButtonClick={navigationToActivation}
               classes={borders.leftBorder}/>
