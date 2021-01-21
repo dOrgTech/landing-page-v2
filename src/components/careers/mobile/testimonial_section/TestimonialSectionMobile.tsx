@@ -1,6 +1,6 @@
 import React from 'react'
 import {Grid, styled} from '@material-ui/core'
-import {Testimonials} from "../../../constants/testimonials";
+import {Testimonials} from "../../../../constants/testimonials";
 import {TestimonialCarouselMobile} from "./TestimonialCarouselMobile";
 
 

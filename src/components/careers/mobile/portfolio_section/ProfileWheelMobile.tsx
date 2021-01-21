@@ -1,6 +1,6 @@
 import React from 'react'
 import {Box, Grid, makeStyles, styled} from '@material-ui/core'
-import {Member} from "../../../constants/members";
+import {Member} from "../../../../constants/members";
 import {ProfileSummaryMobile} from "./ProfileSummaryMobile";
 
 

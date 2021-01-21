@@ -1,7 +1,7 @@
 import React from 'react'
 import {Grid, makeStyles, styled} from '@material-ui/core'
 import {TestimonialCarousel} from "./TestimonialCarousel";
-import {Testimonials} from "../../../constants/testimonials";
+import {Testimonials} from "../../../../constants/testimonials";
 import {GreenDotsRectangle} from "./GreenDotsRectangle";
 
 

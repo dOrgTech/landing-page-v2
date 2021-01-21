@@ -10,18 +10,18 @@ import {ActivationPromptBox} from "../components/careers/desktop/ActivationPromp
 import {externalLinks} from "../constants/routes";
 import {testMembers} from "../constants/members";
 import {MeetBuildersTitleBox} from "../components/careers/desktop/MeetBuildersTitleBox";
-import {ProfileWheel} from "../components/careers/desktop/ProfileWheel";
+import {ProfileWheel} from "../components/careers/desktop/portfolio_section/ProfileWheel";
 import {testimonials} from "../constants/testimonials";
-import {TestimonialSection} from "../components/careers/desktop/TestimonialSection";
-import {CurrentOpeningSection} from "../components/careers/desktop/CurrentOpeningSection";
+import {TestimonialSection} from "../components/careers/desktop/testimonial_section/TestimonialSection";
+import {CurrentOpeningSection} from "../components/careers/desktop/openings_section/CurrentOpeningSection";
 import {openings} from "../constants/openings";
 import {CareersTitleBoxMobile} from "../components/careers/mobile/CareersTitleBoxMobile";
 import {PerkBoxMobile} from "../components/careers/mobile/PerkBoxMobile";
 import {ActivationPromptBoxMobile} from "../components/careers/mobile/ActivationPromptBoxMobile";
 import {MeetBuildersTitleBoxMobile} from "../components/careers/mobile/MeetBuildersTitleBoxMobile";
-import {ProfileWheelMobile} from "../components/careers/mobile/ProfileWheelMobile";
-import {TestimonialSectionMobile} from "../components/careers/mobile/TestimonialSectionMobile";
-import {CurrentOpeningSectionMobile} from "../components/careers/mobile/CurrentOpeningSectionMobile";
+import {ProfileWheelMobile} from "../components/careers/mobile/portfolio_section/ProfileWheelMobile";
+import {TestimonialSectionMobile} from "../components/careers/mobile/testimonial_section/TestimonialSectionMobile";
+import {CurrentOpeningSectionMobile} from "../components/careers/mobile/openings_section/CurrentOpeningSectionMobile";
 
 
 const Root = styled(Grid)({

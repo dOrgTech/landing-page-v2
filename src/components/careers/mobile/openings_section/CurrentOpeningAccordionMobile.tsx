@@ -1,8 +1,8 @@
 import React from 'react'
 import {Accordion, AccordionDetails, AccordionSummary, Grid, makeStyles, styled, Typography} from '@material-ui/core'
-import {theme} from "../../../theme";
+import {theme} from "../../../../theme";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import {Opening, Role} from "../../../constants/openings";
+import {Opening, Role} from "../../../../constants/openings";
 
 const SummaryGrid = styled(Grid)({
   width: '100%',

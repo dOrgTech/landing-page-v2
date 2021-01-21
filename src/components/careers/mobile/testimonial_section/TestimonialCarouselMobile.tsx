@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box, makeStyles} from '@material-ui/core';
-import {Testimonial, Testimonials} from "../../../constants/testimonials";
+import {Testimonial, Testimonials} from "../../../../constants/testimonials";
 import Carousel from 'react-material-ui-carousel';
 import {TestomonialItemMobile} from "./TestimonialItemMobile";
 

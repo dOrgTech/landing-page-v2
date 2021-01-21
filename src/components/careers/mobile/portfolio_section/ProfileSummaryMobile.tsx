@@ -6,10 +6,10 @@ import {
   makeStyles,
   Modal
 } from '@material-ui/core'
-import { theme } from "../../../theme";
-import {Member} from "../../../constants/members";
-import {ProfileFull} from "../desktop/profilePopUp/ProfileFull";
-import {ChipSmallMobile} from "./ChipSmallMobile";
+import { theme } from "../../../../theme";
+import {Member} from "../../../../constants/members";
+import {ProfileFull} from "../../desktop/profilePopUp/ProfileFull";
+import {ChipSmallMobile} from "../ChipSmallMobile";
 import {PortfolioButtonMobile} from "./PortfolioButtonMobile";
 
 const BUTTON_TEXT = 'PORTFOLIO';

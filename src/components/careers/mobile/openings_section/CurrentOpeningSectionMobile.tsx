@@ -1,10 +1,10 @@
 import React from 'react'
 import {Grid, makeStyles, styled, Typography} from '@material-ui/core'
-import {theme} from "../../../theme";
-import {Opening, Openings} from "../../../constants/openings";
-import {borderStyles, borderStyle} from "../../../theme/styles";
+import {theme} from "../../../../theme";
+import {Opening, Openings} from "../../../../constants/openings";
+import {borderStyles, borderStyle} from "../../../../theme/styles";
 import {CurrentOpeningAccordionMobile} from "./CurrentOpeningAccordionMobile";
-import {CloseButtonMobile} from "../../about/mobile/CloseButtonMobile";
+import {CloseButtonMobile} from "../../../about/mobile/CloseButtonMobile";
 
 
 const StyledGrid = styled(Grid)({
