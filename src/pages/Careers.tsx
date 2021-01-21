@@ -104,7 +104,7 @@ export const Careers: React.FC = () => {
             ))}
           </PerksContainer>
           <Grid item xs={12}>
-            <ActivationPromptBoxMobile promptL1={'Get started'} promptLx={'by completing an activation challenge.'}
+            <ActivationPromptBoxMobile prompt={'Get started by completing an activation challenge.'}
               buttonText={'APPLY NOW'}
               onButtonClick={navigationToActivation}
               classes={borders.leftBorder}/>

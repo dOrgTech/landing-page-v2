@@ -1,7 +1,6 @@
 import React from 'react'
-import {Box, styled, Typography, Grid, makeStyles} from '@material-ui/core'
+import {styled, Typography, Grid, makeStyles} from '@material-ui/core'
 import { theme } from "../../../theme";
-import {CloseButton} from "../../about/desktop/CloseButton";
 import {CloseButtonMobile} from "../../about/mobile/CloseButtonMobile";
 
 const StyledGrid = styled(Grid)({
@@ -51,14 +50,22 @@ const useStyleClasses = makeStyles({
 });
 
 interface Props {
-  promptL1: string;
-  promptLx?: string;
+  prompt: string;
   buttonText: string;
   onButtonClick: () => void;
   classes?: string;
 }
 
 export const ActivationPromptBoxMobile: React.FC<Props> = (props: Props) => {
+
+  // split out first two words for first line of text
+  const lineOneArray: string[] = props.prompt.split(' ', 2);
+  const lineOne = lineOneArray.join(' ');
+  // get remaining words for remaining lines  of text
+  const remainingLinesArray: string[] = props.prompt.split(' ');
+  remainingLinesArray.shift();
+  remainingLinesArray.shift();
+  const remainingLines: string = remainingLinesArray.join(' ');
 
   const styleClasses = useStyleClasses();
 
@@ -68,7 +75,7 @@ export const ActivationPromptBoxMobile: React.FC<Props> = (props: Props) => {
         <StyledIcon src='imgs/mask-icon.svg' alt={'quotation mark icon'} />
       </Grid>
       <Grid item>
-        <StyledPrompt>{props.promptL1}<br/>{props.promptLx}</StyledPrompt>
+        <StyledPrompt>{lineOne}<br/>{remainingLines}</StyledPrompt>
       </Grid>
       <Grid item>
         <CloseButtonMobile text={props.buttonText} handleClick={props.onButtonClick} classes={styleClasses.buttonStyle} />
