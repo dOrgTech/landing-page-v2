@@ -60,6 +60,12 @@ const ButtonContainer = styled(Grid)({
   marginTop: '5.7vw'
 })
 
+const useModalStyle = makeStyles({
+  scrollable: {
+    overflow: 'scroll'
+  }
+});
+
 interface Props {
   member: Member;
   classes?: string;
@@ -76,6 +82,7 @@ export const ProfileSummaryMobile: React.FC<Props> = (props: Props) => {
   };
 
   const chipStyle = useChipStyle();
+  const modalStyle = useModalStyle();
 
   return (
     <StyledGrid className={props.classes} container spacing={0} direction='column' justify='flex-start' alignItems='center'>
@@ -99,7 +106,11 @@ export const ProfileSummaryMobile: React.FC<Props> = (props: Props) => {
       </ChipContainer>
       <ButtonContainer item>
         <PortfolioButtonMobile text={BUTTON_TEXT} handleClick={handleClickOpen} />
-        <Modal open={open} aria-labelledby={`full profile of ${props.member.name}`} aria-describedby="full member profile">
+        <Modal
+          className={modalStyle.scrollable}
+          open={open}
+          aria-labelledby={`full profile of ${props.member.name}`}
+          aria-describedby="full member profile">
           <div>
             <ProfileFullMobile member={props.member} onClose={handleClose} />
           </div>
