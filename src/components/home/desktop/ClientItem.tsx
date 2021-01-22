@@ -1,12 +1,11 @@
 import React from 'react'
 import { styled, Typography, Grid } from '@material-ui/core'
 import { theme } from "../../../theme";
-import {Community} from "../../../constants/community";
+import {Client} from "../../../constants/clients";
 
 const StyledGrid = styled(Grid)({
   width: '30vw',
   height:'100%',
-  marginBottom: '2vw',
   boxSizing: 'border-box',
   backgroundColor: 'transparent',
   '&:hover': {
@@ -17,19 +16,19 @@ const StyledGrid = styled(Grid)({
 
 const StyledTitle = styled(Typography)({
   fontFamily: theme.typography.fontFamily,
-  fontSize: '2vw',
+  fontSize: '2.25vw',
   fontWeight: 500,
   fontStretch: "normal",
   fontStyle: "normal",
   lineHeight: 1,
-  letterSpacing: '-1.5px',
+  letterSpacing: '-1.08px',
   textAlign: "left",
   color: theme.palette.text.primary,
 });
 
 const StyledIcon = styled('img')({
-  width: "2vw",
-  height: "2vw",
+  width: "2.25vw",
+  height: "2.25vw",
   objectFit: "contain",
   float: 'left',
   marginRight:'2.25vw',
@@ -39,17 +38,18 @@ const StyledIcon = styled('img')({
 
 
 interface Props {
-  community: Community;
+  client: Client
+  classes?: string;
 }
 
-export const CommunityBox: React.FC<Props> = (props: Props) => {
+export const ClientItem: React.FC<Props> = (props: Props) => {
   return (
-    <StyledGrid container direction='row' justify={'flex-start'} alignItems={'flex-start'}>
+    <StyledGrid className={props.classes} container direction='row' justify={'flex-start'} alignItems={'flex-start'}>
       <Grid item>
-        <StyledIcon src={props.community.icon} alt='icon' />
+        <StyledIcon src={props.client.icon} alt='icon' />
       </Grid>
       <Grid item>
-        <StyledTitle>{props.community.name}</StyledTitle>
+        <StyledTitle>{props.client.name}</StyledTitle>
       </Grid>
     </StyledGrid>
   );
