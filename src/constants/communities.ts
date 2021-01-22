@@ -50,6 +50,6 @@ export const communities: Communities = {
   Web3API: {
     name:'Web3API',
     link: '',
-    icon: 'imgs/logos/Web3api.png'
+    icon: 'imgs/logos/web3api_icon_color.png'
   }
 }

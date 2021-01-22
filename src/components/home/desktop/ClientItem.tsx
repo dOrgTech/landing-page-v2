@@ -1,22 +1,20 @@
-import React from 'react'
-import { styled, Typography, Grid } from '@material-ui/core'
+import React, {useState} from 'react'
+import {styled, Typography, Grid, makeStyles} from '@material-ui/core'
 import { theme } from "../../../theme";
 import {Client} from "../../../constants/clients";
 
 const StyledGrid = styled(Grid)({
-  width: '30vw',
-  height:'100%',
+  width: '100%',
+  height:'4.5vw',
+  paddingLeft: '2.75vw',
   boxSizing: 'border-box',
   backgroundColor: 'transparent',
-  '&:hover': {
-    backgroundColor: 'rgba(0, 0, 0, 0.15)'
-  },
   position: 'relative'
 });
 
 const StyledTitle = styled(Typography)({
   fontFamily: theme.typography.fontFamily,
-  fontSize: '2.25vw',
+  fontSize: '2vw',
   fontWeight: 500,
   fontStretch: "normal",
   fontStyle: "normal",
@@ -26,14 +24,22 @@ const StyledTitle = styled(Typography)({
   color: theme.palette.text.primary,
 });
 
-const StyledIcon = styled('img')({
+const ClientIcon = styled('img')({
+  marginRight:'2.25vw',
   width: "2.25vw",
   height: "2.25vw",
   objectFit: "contain",
-  float: 'left',
-  marginRight:'2.25vw',
   position: 'relative',
-  bottom: '0.25vw'
+  top: '-0.25vw'
+});
+
+const HoverIcon = styled('img')({
+  marginLeft: '1.75vw',
+  width: "1.25vw",
+  height: "1.25vw",
+  objectFit: "contain",
+  position: 'relative',
+  top: '0.1vw'
 });
 
 
@@ -43,13 +49,32 @@ interface Props {
 }
 
 export const ClientItem: React.FC<Props> = (props: Props) => {
+
+  const classes: string = props.classes ? props.classes : ''
+
+  const [isHover, setIsHover] = useState(false);
+
+  const hover = makeStyles({
+    highlight: {
+      '&:hover': {
+        backgroundColor: '#2548bf'
+      },
+    }
+  })();
+
   return (
-    <StyledGrid className={props.classes} container direction='row' justify={'flex-start'} alignItems={'flex-start'}>
+    <StyledGrid container direction='row' justify={'flex-start'} alignItems={'center'}
+      className={classes + ' ' + hover.highlight}
+      onMouseEnter={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}>
       <Grid item>
-        <StyledIcon src={props.client.icon} alt='icon' />
+        <ClientIcon src={props.client.icon} alt='client icon' />
       </Grid>
       <Grid item>
         <StyledTitle>{props.client.name}</StyledTitle>
+      </Grid>
+      <Grid item>
+        { isHover && <HoverIcon src={'imgs/external-link-icon.svg'} alt='pop-up content icon' />}
       </Grid>
     </StyledGrid>
   );
