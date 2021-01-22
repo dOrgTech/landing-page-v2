@@ -14,6 +14,7 @@ import {HireMeButtonMobile} from "./HireMeButtonMobile";
 import {theme} from "../../../../theme";
 import {ClosePopUpButtonMobile} from "./ClosePopUpButtonMobile";
 
+
 const BackgroundContainer = styled(Box)({
   width: '100vw',
   height: '100%',
