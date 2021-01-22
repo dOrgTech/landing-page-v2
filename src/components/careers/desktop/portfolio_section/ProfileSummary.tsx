@@ -6,18 +6,18 @@ import {
   makeStyles,
   Modal
 } from '@material-ui/core'
-import { theme } from "../../../theme";
-import {Member} from "../../../constants/members";
-import {ChipSmall} from "./ChipSmall";
+import { theme } from "../../../../theme";
+import {Member} from "../../../../constants/members";
+import {ChipSmall} from "../ChipSmall";
 import {PortfolioButton} from "./PortfolioButton";
-import {ProfileFull} from "./profilePopUp/ProfileFull";
+import {ProfileFull} from "../profile_popup/ProfileFull";
 
 const BUTTON_TEXT = 'PORTFOLIO';
 
 const StyledGrid = styled(Grid)({
   width: '18.75vw',
   height: '25vw',
-  padding: '2.3vw 1.6vw 1.4vw 1.6vw',
+  padding: '2.1vw 1.6vw 1.4vw 1.6vw',
   backgroundColor: '#000e3c',
   boxSizing: 'border-box'
 });

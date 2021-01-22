@@ -17,7 +17,7 @@ const testMember: Member = {
   specializations: ['Smart Contracts', 'Backend', 'DevOps', 'Speech Cadence'],
   technologies: ['TypeScript', 'React', 'Solidity'],
   github: 'https://github.com/dOrgTech',
-  website: 'https://www.imdb.com/name/nm0000686/'
+  website: 'https://www.imdb.com'
 }
 
 const testMembers: Member[] = [];

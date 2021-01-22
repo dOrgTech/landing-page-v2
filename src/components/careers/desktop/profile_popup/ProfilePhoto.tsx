@@ -9,8 +9,8 @@ const StyledGrid = styled(Grid)({
 });
 
 const StyledPhoto = styled('img')({
-  width: "10.625vw",
-  height: "11.4vw",
+  width: "inherit",
+  height: "inherit",
   objectFit: "contain",
   borderRadius: '5px'
 });

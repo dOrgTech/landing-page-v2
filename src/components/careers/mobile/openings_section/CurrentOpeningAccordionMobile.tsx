@@ -1,60 +1,63 @@
 import React from 'react'
 import {Accordion, AccordionDetails, AccordionSummary, Grid, makeStyles, styled, Typography} from '@material-ui/core'
-import {theme} from "../../../theme";
+import {theme} from "../../../../theme";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import {Opening, Role} from "../../../constants/openings";
+import {Opening, Role} from "../../../../constants/openings";
 
 const SummaryGrid = styled(Grid)({
   width: '100%',
-  height: '5vw',
+  height: '22vw',
+  paddingLeft: '0.5vw',
   boxSizing: 'border-box',
   background: 'transparent'
 });
 
 const StyledIcon = styled('img')({
-  marginLeft: '2.625vw',
-  marginRight: '2.125vw',
-  width: "1.75vw",
-  height: "1.75vw",
+  marginRight: '6.5vw',
+  width: "6.67vw",
+  height: "6.67vw",
   objectFit: "contain",
   float: 'left'
 });
 
 const StyledTitle = styled(Typography)({
+  minWidth: '55vw',
+  maxWidth: '65vw',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '1.25vw',
+  fontSize: '4.3vw',
   fontWeight: 600,
   fontStretch: "normal",
   fontStyle: "normal",
   lineHeight: 1,
-  letterSpacing: '-1px',
+  letterSpacing: '-0.9px',
   textAlign: "left",
   color: theme.palette.text.primary
 });
 
 const StyledLocation = styled(Typography)({
-  marginRight: '2vw',
+  margin: '1vw 0 0 13.17vw',
+  maxWidth: '65vw',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '0.75vw',
+  fontSize: '2.6vw',
   fontWeight: 500,
   fontStretch: "normal",
   fontStyle: "normal",
-  lineHeight: 1,
+  lineHeight: 1.64,
   letterSpacing: 'normal',
-  textAlign: "right",
+  textAlign: "left",
   color: theme.palette.text.primary
 });
 
 const ExpandIconWrapper = styled(Grid)({
-  fontSize: '2vw',
+  fontSize: '7.5vw',
   color: 'rgba(255, 255, 255, 0.5)'
 });
 
 const StyledDescription = styled(Typography)({
-  width: '49.3vw',
-  marginTop: '-0.75vw',
+  width: '81vw',
+  marginTop: '-2.85vw',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '0.75vw',
+  fontSize: '2.85vw',
   fontWeight: 500,
   fontStretch: "normal",
   fontStyle: "normal",
@@ -63,7 +66,6 @@ const StyledDescription = styled(Typography)({
   textAlign: "left",
   color: theme.palette.text.primary
 });
-
 
 const useAccordionStyle = makeStyles({
   root: {
@@ -90,7 +92,7 @@ export const ExpandIcon: React.FC = () => {
   );
 }
 
-export const CurrentOpeningAccordion: React.FC<Props> = (props: Props) => {
+export const CurrentOpeningAccordionMobile: React.FC<Props> = (props: Props) => {
 
   const accordionStyle = useAccordionStyle();
 
@@ -102,13 +104,15 @@ export const CurrentOpeningAccordion: React.FC<Props> = (props: Props) => {
     <Accordion classes={accordionStyle} className={props.classes} expanded={props.expanded} onChange={props.onChange}
       style={{borderBottom: props.border, width: 'inherit', margin: 0}}>
       <AccordionSummary expandIcon={<ExpandIcon/>} aria-controls={`${props.opening.id}-content`} id={`${props.opening.id}-header`}>
-        <SummaryGrid container direction='row' justify={'space-between'} alignItems={'center'}>
-          <Grid item xs={6} container direction='row' justify={'flex-start'} alignItems={'center'} style={{height: 'inherit'}}>
-            <StyledIcon src={icon} alt={'icon'}/>
-            <StyledTitle>{props.opening.title}</StyledTitle>
-          </Grid>
-          <Grid item xs={6}>
-            <StyledLocation>{props.opening.location}</StyledLocation>
+        <SummaryGrid container spacing={0} direction='row' justify={'flex-start'} alignItems={'center'}>
+          <Grid container spacing={0} direction='row' justify={'flex-start'} alignItems={'flex-start'} style={{height: 'max-content'}}>
+            <Grid item xs={12}>
+              <StyledIcon src={icon} alt={'icon'}/>
+              <StyledTitle>{props.opening.title}</StyledTitle>
+            </Grid>
+            <Grid item xs={12}>
+              <StyledLocation>{props.opening.location}</StyledLocation>
+            </Grid>
           </Grid>
         </SummaryGrid>
       </AccordionSummary>

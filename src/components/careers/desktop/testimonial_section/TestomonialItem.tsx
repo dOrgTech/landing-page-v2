@@ -1,7 +1,7 @@
 import React from 'react'
 import {styled, Grid, Typography} from '@material-ui/core'
-import {Testimonial} from "../../../constants/testimonials";
-import {theme} from "../../../theme";
+import {Testimonial} from "../../../../constants/testimonials";
+import {theme} from "../../../../theme";
 
 const StyledGrid = styled(Grid)({
   width: '60.625vw',

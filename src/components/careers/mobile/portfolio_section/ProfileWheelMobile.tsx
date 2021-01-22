@@ -1,12 +1,12 @@
 import React from 'react'
 import {Box, Grid, makeStyles, styled} from '@material-ui/core'
-import {Member} from "../../../constants/members";
-import {ProfileSummary} from "./ProfileSummary";
+import {Member} from "../../../../constants/members";
+import {ProfileSummaryMobile} from "./ProfileSummaryMobile";
 
 
 const SlideShow = styled(Box)({
   width: '100%',
-  height: '25vw',
+  height: '95vw',
   background: 'transparent',
   boxSizing: 'border-box',
   overflow: 'visible',
@@ -25,7 +25,7 @@ const ProfileContainer = styled(Grid)({
 });
 
 const ProfileItem = styled(Grid)({
-  marginRight: '1.25vw'
+  marginRight: '4.75vw'
 });
 
 
@@ -34,7 +34,7 @@ interface Props {
   classes?: string;
 }
 
-export const ProfileWheel: React.FC<Props> = (props: Props) => {
+export const ProfileWheelMobile: React.FC<Props> = (props: Props) => {
 
   const useSlideAnimation = makeStyles(theme => ({
     '@keyframes moveLeft': {
@@ -56,7 +56,7 @@ export const ProfileWheel: React.FC<Props> = (props: Props) => {
       <ProfileContainer className={slideAnimation.animateLeft} container direction={'column'} spacing={0} justify={'flex-start'} alignItems={'center'}>
         {props.members.map((member: Member, i: number) => (
           <ProfileItem item key={`profile-${i}`}>
-            <ProfileSummary member={member} />
+            <ProfileSummaryMobile member={member} />
           </ProfileItem>
         ))}
       </ProfileContainer>

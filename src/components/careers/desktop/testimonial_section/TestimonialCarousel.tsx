@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box, makeStyles} from '@material-ui/core';
-import {Testimonial, Testimonials} from "../../../constants/testimonials";
+import {Testimonial, Testimonials} from "../../../../constants/testimonials";
 import {TestomonialItem} from "./TestomonialItem";
 import Carousel from 'react-material-ui-carousel';
 
@@ -35,7 +35,7 @@ interface Props {
   classes?: string;
 }
 
-export const TestimonialsCarousel: React.FC<Props> = (props: Props) => {
+export const TestimonialCarousel: React.FC<Props> = (props: Props) => {
 
   const carouselStyles = useCarouselStyles();
 

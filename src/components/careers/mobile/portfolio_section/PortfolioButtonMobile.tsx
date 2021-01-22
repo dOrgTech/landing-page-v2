@@ -1,11 +1,11 @@
 import React from 'react'
 import {styled, Typography, Grid, ButtonBase} from '@material-ui/core'
-import { theme } from "../../../theme";
+import { theme } from "../../../../theme";
 
 
 const StyleGrid = styled(Grid)({
-  width: '8.75vw',
-  height: '2.25vw',
+  width: '33.33vw',
+  height: '8.55vw',
   backgroundColor: theme.palette.secondary.main,
   boxSizing: 'border-box',
   boxShadow: '0 3px 6px 0 rgba(0, 0, 0, 0.16)',
@@ -14,7 +14,7 @@ const StyleGrid = styled(Grid)({
 
 const StyleText = styled(Typography)({
   fontFamily: theme.typography.fontFamily,
-  fontSize: '0.75vw',
+  fontSize: '2.85vw',
   fontWeight: 500,
   fontStretch: "normal",
   fontStyle: "normal",
@@ -26,8 +26,8 @@ const StyleText = styled(Typography)({
 
 // link to FontAwesome license for legal compliance: https://fontawesome.com/license
 const PopUpIndicator = styled('img')({
-  width: '0.85vw',
-  height: '0.85vw',
+  width: '3.25vw',
+  height: '3.25vw',
   objectFit: 'contain',
   filter: 'invert(100%) sepia(0%) saturate(7500%) hue-rotate(170deg) brightness(119%) contrast(117%)'
 });
@@ -37,7 +37,7 @@ interface Props {
   handleClick: () => void
 }
 
-export const PortfolioButton: React.FC<Props> = (props: Props) => {
+export const PortfolioButtonMobile: React.FC<Props> = (props: Props) => {
 
   return (
     <ButtonBase onClick={() => props.handleClick()}>
