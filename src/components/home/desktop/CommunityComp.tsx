@@ -6,12 +6,6 @@ import {CompanyBox} from "./CompanyBox"
 import { Company, companies} from "../../../constants/company";
 import { Community, communities} from "../../../constants/community";
 
-
-  
-  
-  
-
-  
 const StyledContainer = styled(Grid)({
   float:'none',
   width:'80%',
@@ -47,8 +41,6 @@ export const Communitycomp: React.FC<Props> = (props: Props) => {
   
   
   return (
-     
-  
     <StyledContainer direction='row' alignItems='center'>
       <CompaniesContainer>
         <StyledTypography color={'textSecondary'} variant ='subtitle1' >COMPANIES</StyledTypography>
@@ -66,11 +58,6 @@ export const Communitycomp: React.FC<Props> = (props: Props) => {
           </Grid>
         ))}       
       </CommunitiesContainer>
-    
     </StyledContainer>
-    
-  
-  
-  
   );
 };

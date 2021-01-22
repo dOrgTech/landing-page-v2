@@ -1,41 +1,40 @@
 import React from 'react'
-import { Box, styled, Typography, Grid } from '@material-ui/core'
-
+import { styled, Typography, Grid } from '@material-ui/core'
 import { Company } from "../../../constants/company";
 import { theme } from "../../../theme";
 
-const StyleBox = styled(Box)({
-  width: '30rem',
-  backgroundColor: 'transparent',
+const StyledGrid = styled(Grid)({
+  width: '30vw',
   height:'100%',
+  marginBottom: '2vw',
   boxSizing: 'border-box',
-  overflow:'no-wrap',
+  backgroundColor: 'transparent',
   '&:hover': {
     backgroundColor: 'rgba(0, 0, 0, 0.15)'
-    
   },
-  marginRight:'auto'
+  position: 'relative'
 });
 
-const StyleTitle = styled(Typography)({
-  width: '80%',
-  fontStretch: 'normal',
-  fontStyle: 'normal',
-  letterSpacing: '1.5px',
-  textAlign: 'left',
-  float:'left',
+const StyledTitle = styled(Typography)({
+  fontFamily: theme.typography.fontFamily,
+  fontSize: '2vw',
+  fontWeight: 500,
+  fontStretch: "normal",
+  fontStyle: "normal",
+  lineHeight: 1,
+  letterSpacing: '-1.5px',
+  textAlign: "left",
   color: theme.palette.text.primary,
-  
 });
 
-
-const StyleIcon = styled('img')({
-  width: "3rem",
-  height: "3rem",
+const StyledIcon = styled('img')({
+  width: "2vw",
+  height: "2vw",
   objectFit: "contain",
   float: 'left',
-  margin:'0 3rem 0 0'
- 
+  marginRight:'2.25vw',
+  position: 'relative',
+  bottom: '0.25vw'
 });
 
 interface Props {
@@ -44,15 +43,13 @@ interface Props {
 
 export const CompanyBox: React.FC<Props> = (props: Props) => {
   return (
-    <StyleBox>
-    
-        
-      <Grid container direction='row'>
-        <StyleTitle variant = 'h5'>{props.company.name} <StyleIcon src={props.company.icon} alt='icon' /></StyleTitle>
-         
-   
-        
+    <StyledGrid container direction='row' justify={'flex-start'} alignItems={'flex-start'}>
+      <Grid item>
+        <StyledIcon src={props.company.icon} alt='icon' />
       </Grid>
-    </StyleBox>
+      <Grid item>
+        <StyledTitle>{props.company.name}</StyledTitle>
+      </Grid>
+    </StyledGrid>
   );
 }

@@ -1,42 +1,42 @@
 import React from 'react'
-import { Box, styled, Typography, Grid } from '@material-ui/core'
-
-import { Community } from "../../../constants/community";
+import { styled, Typography, Grid } from '@material-ui/core'
 import { theme } from "../../../theme";
+import {Community} from "../../../constants/community";
 
-const StyleBox = styled(Box)({
-  width: '25rem',
-  backgroundColor: 'transparent',
+const StyledGrid = styled(Grid)({
+  width: '30vw',
   height:'100%',
+  marginBottom: '2vw',
   boxSizing: 'border-box',
-  overflow:'no-wrap',
+  backgroundColor: 'transparent',
   '&:hover': {
     backgroundColor: 'rgba(0, 0, 0, 0.15)'
-    
   },
-  marginRight:'auto'
+  position: 'relative'
 });
 
-const StyleTitle = styled(Typography)({
-  width: '80%',
-  fontStretch: 'normal',
-  fontStyle: 'normal',
-  letterSpacing: '1.5px',
-  textAlign: 'left',
-  float:'left',
+const StyledTitle = styled(Typography)({
+  fontFamily: theme.typography.fontFamily,
+  fontSize: '2vw',
+  fontWeight: 500,
+  fontStretch: "normal",
+  fontStyle: "normal",
+  lineHeight: 1,
+  letterSpacing: '-1.5px',
+  textAlign: "left",
   color: theme.palette.text.primary,
-  
 });
 
-
-const StyleIcon = styled('img')({
-  width: "3rem",
-  height: "3rem",
+const StyledIcon = styled('img')({
+  width: "2vw",
+  height: "2vw",
   objectFit: "contain",
   float: 'left',
-  margin:'1rem 1rem 0 0'
- 
+  marginRight:'2.25vw',
+  position: 'relative',
+  bottom: '0.25vw'
 });
+
 
 interface Props {
   community: Community;
@@ -44,15 +44,13 @@ interface Props {
 
 export const CommunityBox: React.FC<Props> = (props: Props) => {
   return (
-    <StyleBox>
-    
-        
-      <Grid container direction='row'>
-        <StyleTitle variant = 'h5'>{props.community.name} <StyleIcon src={props.community.icon} alt='icon' /></StyleTitle>
-         
-   
-        
+    <StyledGrid container direction='row' justify={'flex-start'} alignItems={'flex-start'}>
+      <Grid item>
+        <StyledIcon src={props.community.icon} alt='icon' />
       </Grid>
-    </StyleBox>
+      <Grid item>
+        <StyledTitle>{props.community.name}</StyledTitle>
+      </Grid>
+    </StyledGrid>
   );
 }

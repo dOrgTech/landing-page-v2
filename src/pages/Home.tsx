@@ -1,8 +1,8 @@
-
 import { Box, styled } from "@material-ui/core";
 import React from "react";
 import ReactGA from "react-ga";
 import {Communitycomp} from "../components/home/desktop/CommunityComp"
+
 const Root = styled(Box)({
   margin: 'auto'
 });
