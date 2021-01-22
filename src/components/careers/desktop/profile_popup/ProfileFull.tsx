@@ -19,9 +19,9 @@ const StyledGrid = styled(Grid)({
   padding: '2.7vw 4.1vw 3.75vw 2.4vw',
   boxSizing: 'border-box',
   backgroundColor: '#000e3c',
-  webkitBackdropFilter: 'blur(13px)',
-  backdropFilter: 'blur(13px)',
-  boxShadow: '0 3px 6px 0 rgba(0, 0, 0, 0.16)',
+  webkitBackdropFilter: 'blur(0.8125vw)',
+  backdropFilter: 'blur(0.8125vw)',
+  boxShadow: '0 0.1875vw 0.375vw 0 rgba(0, 0, 0, 0.16)',
   border: borderStyle,
   position: 'relative'
 });

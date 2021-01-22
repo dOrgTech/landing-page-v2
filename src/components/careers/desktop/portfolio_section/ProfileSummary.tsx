@@ -10,7 +10,7 @@ import { theme } from "../../../../theme";
 import {Member} from "../../../../constants/members";
 import {ChipSmall} from "../ChipSmall";
 import {PortfolioButton} from "./PortfolioButton";
-import {ProfileFull} from "../profilePopUp/ProfileFull";
+import {ProfileFull} from "../profile_popup/ProfileFull";
 
 const BUTTON_TEXT = 'PORTFOLIO';
 

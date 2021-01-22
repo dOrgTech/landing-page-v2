@@ -8,9 +8,9 @@ import {
 } from '@material-ui/core'
 import { theme } from "../../../../theme";
 import {Member} from "../../../../constants/members";
-import {ProfileFull} from "../../desktop/profilePopUp/ProfileFull";
 import {ChipSmallMobile} from "../ChipSmallMobile";
 import {PortfolioButtonMobile} from "./PortfolioButtonMobile";
+import {ProfileFullMobile} from "../profile_popup/ProfileFullMobile";
 
 const BUTTON_TEXT = 'PORTFOLIO';
 
@@ -101,10 +101,9 @@ export const ProfileSummaryMobile: React.FC<Props> = (props: Props) => {
         <PortfolioButtonMobile text={BUTTON_TEXT} handleClick={handleClickOpen} />
         <Modal open={open} aria-labelledby={`full profile of ${props.member.name}`} aria-describedby="full member profile">
           <div>
-            <ProfileFull member={props.member} onClose={handleClose} />
+            <ProfileFullMobile member={props.member} onClose={handleClose} />
           </div>
         </Modal>
-
       </ButtonContainer>
     </StyledGrid>
   );
