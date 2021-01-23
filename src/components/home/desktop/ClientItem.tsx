@@ -3,6 +3,7 @@ import {styled, Typography, Grid, makeStyles} from '@material-ui/core'
 import { theme } from "../../../theme";
 import {Client} from "../../../constants/clients";
 
+
 const StyledGrid = styled(Grid)({
   width: '100%',
   height:'4.5vw',
