@@ -54,27 +54,40 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
 
   const [isHover, setIsHover] = useState(false);
 
-  const hover = makeStyles({
+  const iconColor = (isHover: boolean) => {
+    if (!isHover) {
+      return 'brightness(0) saturate(100%) invert(100%)';
+    } else if (isHover && props.client.iconHighlightFilter) {
+      return props.client.iconHighlightFilter;
+    } else {
+      return '';
+    }
+  }
+
+  const styles = makeStyles({
     highlight: {
       '&:hover': {
-        backgroundColor: '#2548bf'
-      },
-    }
+        backgroundColor: props.client.highlightColor
+      }
+    },
+    icon: {
+      filter: iconColor(isHover),
+    },
   })();
 
   return (
     <StyledGrid container direction='row' justify={'flex-start'} alignItems={'center'}
-      className={classes + ' ' + hover.highlight}
+      className={classes + ' ' + styles.highlight}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}>
       <Grid item>
-        <ClientIcon src={props.client.icon} alt='client icon' />
+        <ClientIcon src={props.client.icon} alt='client icon' className={styles.icon} />
       </Grid>
       <Grid item>
         <StyledTitle>{props.client.name}</StyledTitle>
       </Grid>
       <Grid item>
-        { isHover && <HoverIcon src={'imgs/external-link-icon.svg'} alt='pop-up content icon' />}
+        {isHover && <HoverIcon src={'imgs/external-link-icon.svg'} alt='pop-up content icon' />}
       </Grid>
     </StyledGrid>
   );

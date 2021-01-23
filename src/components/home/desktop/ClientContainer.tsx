@@ -1,4 +1,4 @@
-import {Grid, makeStyles, styled, Typography} from "@material-ui/core";
+import {Grid, styled, Typography} from "@material-ui/core";
 import React from "react";
 import {Companies} from "../../../constants/companies";
 import {Communities} from "../../../constants/communities";
@@ -7,18 +7,18 @@ import {ClientItem} from "./ClientItem";
 import {theme} from "../../../theme";
 
 const StyledGrid = styled(Grid)({
-
+  width: '100%'
 });
 
 const ClientGrid = styled(Grid)({
-  marginLeft: '3.75vw'
+  width: '100%'
 });
 
 const TitleContainer = styled(Grid)({
   width: '100%',
   height: '0.75vw',
   paddingLeft: '1.688vw',
-  marginBottom: '3.563vw',
+  marginBottom: '2.188vw',
   borderLeft: '0.188vw solid ' + theme.palette.text.secondary
 });
 
@@ -34,12 +34,6 @@ const StyledTitle = styled(Typography)({
   color: theme.palette.text.secondary,
 });
 
-const useClientStyle = makeStyles({
-  clientLayout: {
-    marginBottom: '2vw',
-  }
-});
-
 interface Props {
   title: string;
   clients: Companies | Communities;
@@ -48,8 +42,6 @@ interface Props {
 
 export const ClientContainer: React.FC<Props> = (props: Props) => {
 
-  const clientStyle = useClientStyle();
-
   return (
     <StyledGrid className={props.classes} container direction='column' justify='flex-start' alignItems='flex-start'>
       <TitleContainer item>
@@ -57,7 +49,7 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
       </TitleContainer>
       <ClientGrid item container direction='column' justify='flex-start' alignItems='flex-start'>
         {Object.values(props.clients).map((client: Client) => (
-          <Grid item key={`${client.name}`} className={clientStyle.clientLayout}>
+          <Grid item key={`${client.name}`} style={{width: '100%'}}>
             <ClientItem client={client} />
           </Grid>
         ))}

@@ -1,7 +1,7 @@
 import React from "react";
 import {styled, AppBar, Grid, Link, makeStyles, Box} from "@material-ui/core";
 import { useHistory, useLocation } from 'react-router-dom';
-import { routes } from "../constants/routes";
+import {Route, routes} from "../constants/routes";
 import {borderStyles} from "../theme/styles";
 import {theme} from "../theme";
 
@@ -85,10 +85,7 @@ export const HeaderDesktop: React.FC = () => {
   const onContactClick = () => history.push(routes.contact.path);
 
   const location = useLocation();
-  const underlineTranslation = location.pathname === routes.about.path ? '20.25vw'
-    : location.pathname === routes.careers.path ? '12vw'
-      : location.pathname === routes.contact.path ? '3.75vw'
-        : '0';
+  const isLocation = (route: Readonly<Route>) => { return location.pathname === route.path; }
 
   const borders = useBorders();
 
@@ -109,7 +106,9 @@ export const HeaderDesktop: React.FC = () => {
           <LinkBox item container direction='row' justify='center' alignItems='center'>
             <StyledLink onClick={onContactClick} underline='none'>{routes.contact.name}</StyledLink>
           </LinkBox>
-          <Underline style={{right: underlineTranslation}} />
+          {isLocation(routes.about) && <Underline style={{right: '20.25vw'}} />}
+          {isLocation(routes.careers) && <Underline style={{right: '12vw'}} />}
+          {isLocation(routes.contact) && <Underline style={{right: '3.75vw'}} />}
         </LinksContainer>
         <HeaderRightMargin item xs={1} className={borders.bottomLeftBorder} />
       </Grid>
