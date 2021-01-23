@@ -6,7 +6,15 @@ export interface Client {
   icon: string;
   iconHighlightFilter: string;
   highlightColor: string;
+  project: Project;
 }
+
+export interface Project {
+  description: string;
+  technologies: string[];
+  bullets: string[];
+}
+
 
 
 

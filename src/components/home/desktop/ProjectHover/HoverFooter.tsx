@@ -68,7 +68,7 @@ const FooterMargin = styled(Grid)({
 const useBorders = makeStyles(borderStyles);
 
 interface Props {
-  right?: boolean;
+  isOnRight?: boolean;
 }
 
 export const HoverFooter: React.FC<Props> = (props: Props) => {
@@ -77,12 +77,13 @@ export const HoverFooter: React.FC<Props> = (props: Props) => {
 
   return (
     <FooterContainer container justify='flex-start'>
-      {!props.right && <FooterMargin item className={borders.topBorder} />}
-      {!props.right &&
-      <LeftContainer container item spacing={0} direction='row' justify="flex-start" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
+      {!props.isOnRight && <FooterMargin item className={borders.topBorder} />}
+      {!props.isOnRight &&
+      <LeftContainer container item spacing={0} direction='row' justify="flex-start" alignItems='center'
+        className={`${borders.topBorder} ${borders.leftBorder} ${borders.rightBorder}`}>
         <CopyrightText>{COPYRIGHT_TEXT}</CopyrightText>
       </LeftContainer>}
-      {props.right &&
+      {props.isOnRight &&
       <RightContainer container item spacing={0} direction='row' justify="flex-end" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
         <Grid item>
           <IconContainer href="https://twitter.com/dOrg_tech" target="_blank" rel="noopener">
@@ -105,7 +106,7 @@ export const HoverFooter: React.FC<Props> = (props: Props) => {
           </IconContainer>
         </Grid>
       </RightContainer>}
-      {props.right && <FooterMargin item className={`${borders.topBorder} ${borders.leftBorder}`} />}
+      {props.isOnRight && <FooterMargin item className={`${borders.topBorder} ${borders.leftBorder}`} />}
     </FooterContainer>
   );
 }

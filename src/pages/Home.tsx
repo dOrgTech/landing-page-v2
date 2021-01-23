@@ -55,7 +55,7 @@ export const Home: React.FC = () => {
       <LeftMargin xs={1} border={borderStyle} height='57.375vw' />
       <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
         <PageHalf item xs={6}>
-          <ClientContainer title={'COMPANIES'} clients={companies} />
+          <ClientContainer title={'COMPANIES'} clients={companies} isOnLeft />
         </PageHalf>
         <PageHalf item xs={6}>
           <ClientContainer title={'COMMUNITIES'} clients={communities} />

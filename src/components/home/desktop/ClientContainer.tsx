@@ -36,6 +36,7 @@ const StyledTitle = styled(Typography)({
 
 interface Props {
   title: string;
+  isOnLeft?: boolean;
   clients: Companies | Communities;
   classes?: string;
 }
@@ -50,7 +51,7 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
       <ClientGrid item container direction='column' justify='flex-start' alignItems='flex-start'>
         {Object.values(props.clients).map((client: Client) => (
           <Grid item key={`${client.name}`} style={{width: '100%'}}>
-            <ClientItem client={client} />
+            <ClientItem isOnLeft={props.isOnLeft} client={client} />
           </Grid>
         ))}
       </ClientGrid>

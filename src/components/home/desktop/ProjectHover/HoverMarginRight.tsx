@@ -1,10 +1,12 @@
 import React from 'react'
-import {styled, Grid} from '@material-ui/core'
+import {styled, Grid, makeStyles} from '@material-ui/core'
 import {theme} from "../../../../theme";
+import {borderStyles} from "../../../../theme/styles";
 
 
 const StyledGrid = styled(Grid)({
-  width: '7.5.vw',
+  width: '7.5vw',
+  height: '57.375vw',
   background: 'transparent'
 });
 
@@ -18,15 +20,15 @@ const RectangleAccentPrimary = styled('div')({
   height: '0.125vw',
   marginTop: '1.125vw',
   opacity: '0.6',
-  backgroundColor: theme.palette.text.primary
 });
 
 const RectangleAccentSecondary = styled('div')({
   width: '2.875vw',
   height: '0.125vw',
   marginTop: '1.125vw',
-  backgroundColor: theme.palette.text.secondary
 });
+
+const useBorders = makeStyles(borderStyles);
 
 interface AccentProps {
   colorPrimary?: string;
@@ -51,17 +53,17 @@ Accents.defaultProps = {
 }
 
 interface Props {
-  height: string;
   xs?: boolean | "auto" | 10 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 11 | 12 | undefined;
-  border?: string;
   accentColorPrimary?: string;
   accentColorSecondary?: string;
 }
 
 const HoverMarginRight: React.FC<Props> = (props: Props) => {
 
+  const borders = useBorders();
+
   return (
-    <StyledGrid item xs={props.xs} style={{borderLeft: props.border, height: props.height}}>
+    <StyledGrid item xs={props.xs} className={borders.leftBorder}>
       <Accents colorPrimary={props.accentColorPrimary} colorSecondary={props.accentColorSecondary}/>
     </StyledGrid>
   );

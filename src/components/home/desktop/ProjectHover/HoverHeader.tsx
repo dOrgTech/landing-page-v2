@@ -65,7 +65,7 @@ const StyledLink = styled(Link)({
 const Underline = styled(Box)({
   width: '4.5vw',
   height: '0.438vw',
-  backgroundColor: theme.palette.primary.main,
+  backgroundColor: theme.palette.text.primary,
   position: 'absolute',
   bottom: 0
 });
@@ -78,7 +78,7 @@ const HeaderRightMargin = styled(Grid)({
 const useBorders = makeStyles(borderStyles);
 
 interface Props {
-  right?: boolean;
+  isOnRight?: boolean;
 }
 
 export const HoverHeader: React.FC<Props> = (props: Props) => {
@@ -94,12 +94,12 @@ export const HoverHeader: React.FC<Props> = (props: Props) => {
   return (
     <StyledAppBar position="static">
       <Grid container spacing={0} direction='row' justify="flex-start" alignItems='flex-start' style={{height: 'inherit'}}>
-        {!props.right &&
+        {!props.isOnRight &&
         <LogoContainer container item spacing={0} direction='row' justify="center" alignItems='center' className={borders.bottomBorder}>
           <StyledLogo src={LOGO_PATH} alt="dOrg Logo" onClick={onLogoClick} />
         </LogoContainer>}
-        {!props.right && <LeftHead item className={borders.bottomLeftBorder} />}
-        {props.right &&
+        {!props.isOnRight && <LeftHead item className={borders.bottomLeftBorder + ' ' + borders.rightBorder} />}
+        {props.isOnRight &&
         <LinksContainer container item spacing={0} direction='row' justify="flex-end" alignItems='center' className={borders.bottomLeftBorder}>
           <LinkBox item container direction='row' justify='center' alignItems='center'>
             <StyledLink onClick={onAboutClick} underline='none'>{routes.about.name}</StyledLink>
@@ -112,7 +112,7 @@ export const HoverHeader: React.FC<Props> = (props: Props) => {
           </LinkBox>
           <Underline style={{right: '3.75vw'}} />
         </LinksContainer>}
-        {props.right && <HeaderRightMargin item className={borders.bottomLeftBorder} />}
+        {props.isOnRight && <HeaderRightMargin item className={borders.bottomLeftBorder} />}
       </Grid>
     </StyledAppBar>
   );

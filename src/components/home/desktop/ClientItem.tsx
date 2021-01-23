@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
-import {styled, Typography, Grid, makeStyles} from '@material-ui/core'
+import {styled, Typography, Grid, makeStyles, Modal} from '@material-ui/core'
 import { theme } from "../../../theme";
 import {Client} from "../../../constants/clients";
-
+import {ProjectHoverRight} from "./ProjectHover/ProjectHoverRight";
+import {ProjectHoverLeft} from "./ProjectHover/ProjectHoverLeft";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
@@ -45,7 +46,8 @@ const HoverIcon = styled('img')({
 
 
 interface Props {
-  client: Client
+  client: Client;
+  isOnLeft?: boolean;
   classes?: string;
 }
 
@@ -55,6 +57,7 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
 
   const [isHover, setIsHover] = useState(false);
 
+  // hover-dependent styling
   const iconColor = (isHover: boolean) => {
     if (!isHover) {
       return 'brightness(0) saturate(100%) invert(100%)';
@@ -90,6 +93,12 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
       <Grid item>
         {isHover && <HoverIcon src={'imgs/external-link-icon.svg'} alt='pop-up content icon' />}
       </Grid>
+      <Modal open={isHover} aria-labelledby={`${props.client.name} client project description`} aria-describedby="client project description">
+        <div>
+          {props.isOnLeft && <ProjectHoverRight background={props.client.highlightColor} title={props.client.name} project={props.client.project} />}
+          {!props.isOnLeft && <ProjectHoverLeft background={props.client.highlightColor} title={props.client.name} project={props.client.project} />}
+        </div>
+      </Modal>
     </StyledGrid>
   );
 }
