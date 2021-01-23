@@ -20,15 +20,15 @@ const App: React.FC = () => {
           <Header/>
           <Switch >
             <Route path={routes.home.path} exact>
-              <Home onClick={() => console.log("hey")} />
+              <Home />
             </Route>
-            <Route path={routes.about.path}>
+            <Route path={routes.about.path} exact>
               <About />
             </Route>
-            <Route path={routes.careers.path}>
+            <Route path={routes.careers.path} exact>
               <Careers />
             </Route>
-            <Route path={routes.contact.path}>
+            <Route path={routes.contact.path} exact>
               <Contact />
             </Route>
           </Switch>
