@@ -11,8 +11,7 @@ const LOGO_PATH = process.env.PUBLIC_URL + "/imgs/dOrg-logo-white.svg";
 const StyledAppBar = styled(AppBar)({
   height: '5vw',
   width: '100vw',
-  minWidth: '100vw',
-  maxWidth: '100vw'
+  background: 'transparent'
 });
 
 const LogoContainer = styled(Grid)({
@@ -78,7 +77,15 @@ const HeaderRightMargin = styled(Grid)({
 
 const useBorders = makeStyles(borderStyles);
 
-export const HeaderDesktop: React.FC = () => {
+interface Props {
+  pageHalf?: 'left' | 'right';
+  classes?: string;
+}
+
+export const HeaderDesktop: React.FC<Props> = (props: Props) => {
+
+  const renderRight = props.pageHalf === 'right' || !props.pageHalf;
+  const renderLeft = props.pageHalf === 'left' || !props.pageHalf;
 
   const history = useHistory();
   const onLogoClick = () => history.push(routes.home.path);
@@ -92,12 +99,14 @@ export const HeaderDesktop: React.FC = () => {
   const borders = useBorders();
 
   return (
-    <StyledAppBar position="static">
+    <StyledAppBar position="static" className={props.classes} style={{width: props.pageHalf ? '50vw' : '100vw'}}>
       <Grid container spacing={0} direction='row' justify="flex-start" alignItems='flex-start' style={{height: 'inherit'}}>
+        {renderLeft &&
         <LogoContainer container item spacing={0} direction='row' justify="center" alignItems='center' className={borders.bottomBorder}>
-          <StyledLogo src={LOGO_PATH} alt="dOrg Logo" onClick={onLogoClick} />
-        </LogoContainer>
-        <LeftHead item className={borders.bottomLeftBorder} />
+          <StyledLogo src={LOGO_PATH} alt="dOrg Logo" onClick={onLogoClick}/>
+        </LogoContainer>}
+        {renderLeft && <LeftHead item className={borders.bottomLeftBorder}/>}
+        {renderRight &&
         <LinksContainer container item spacing={0} direction='row' justify="flex-end" alignItems='center' className={borders.bottomLeftBorder}>
           <LinkBox item container direction='row' justify='center' alignItems='center'>
             <StyledLink onClick={onAboutClick} underline='none'>{routes.about.name}</StyledLink>
@@ -108,11 +117,12 @@ export const HeaderDesktop: React.FC = () => {
           <LinkBox item container direction='row' justify='center' alignItems='center'>
             <StyledLink onClick={onContactClick} underline='none'>{routes.contact.name}</StyledLink>
           </LinkBox>
-          {isLocation(routes.about) && <Underline style={{right: '20.25vw'}} />}
-          {isLocation(routes.careers) && <Underline style={{right: '12vw'}} />}
-          {isLocation(routes.contact) && <Underline style={{right: '3.75vw'}} />}
-        </LinksContainer>
-        <HeaderRightMargin item className={borders.bottomLeftBorder} />
+          {isLocation(routes.about) && <Underline style={{right: '20.25vw'}}/>}
+          {isLocation(routes.careers) && <Underline style={{right: '12vw'}}/>}
+          {isLocation(routes.contact) && <Underline style={{right: '3.75vw'}}/>}
+          {props.pageHalf && <Underline style={{right: '3.75vw', backgroundColor: theme.palette.text.primary}}/>}
+        </LinksContainer>}
+        {renderRight && <HeaderRightMargin item className={borders.bottomLeftBorder}/>}
       </Grid>
     </StyledAppBar>
   );

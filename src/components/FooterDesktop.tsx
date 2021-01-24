@@ -13,8 +13,7 @@ const TWITTER_ICON_PATH = '/imgs/footer/twitter-logo.svg';
 const FooterContainer = styled(Grid)({
   height: '5vw',
   width: '100vw',
-  minWidth: '100vw',
-  maxWidth: '100vw'
+  background: 'transparent'
 });
 
 const IconContainer = styled(Link)({
@@ -68,16 +67,26 @@ const FooterMargin = styled(Grid)({
 
 const useBorders = makeStyles(borderStyles);
 
-export const FooterDesktop: React.FC = () => {
+interface Props {
+  pageHalf?: 'left' | 'right';
+  classes?: string;
+}
+
+export const FooterDesktop: React.FC<Props> = (props: Props) => {
+
+  const renderRight = props.pageHalf === 'right' || !props.pageHalf;
+  const renderLeft = props.pageHalf === 'left' || !props.pageHalf;
 
   const borders = useBorders();
 
   return (
-    <FooterContainer container justify='flex-start'>
-      <FooterMargin item className={borders.topBorder} />
+    <FooterContainer container justify='flex-start' className={props.classes} style={{width: props.pageHalf ? '50vw' : '100vw'}}>
+      {renderLeft && <FooterMargin item className={borders.topBorder} />}
+      {renderLeft &&
       <LeftContainer container item spacing={0} direction='row' justify="flex-start" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
         <CopyrightText>{COPYRIGHT_TEXT}</CopyrightText>
-      </LeftContainer>
+      </LeftContainer>}
+      {renderRight &&
       <RightContainer container item spacing={0} direction='row' justify="flex-end" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
         <Grid item>
           <IconContainer href="https://twitter.com/dOrg_tech" target="_blank" rel="noopener">
@@ -99,8 +108,8 @@ export const FooterDesktop: React.FC = () => {
             <StyledIcon src={EMAIL_ICON_PATH}/>
           </IconContainer>
         </Grid>
-      </RightContainer>
-      <FooterMargin item className={`${borders.topBorder} ${borders.leftBorder}`} />
+      </RightContainer>}
+      {renderRight && <FooterMargin item className={`${borders.topBorder} ${borders.leftBorder}`} />}
     </FooterContainer>
   );
 }

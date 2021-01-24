@@ -2,10 +2,10 @@ import React from 'react'
 import {styled, Grid, useTheme, Theme, useMediaQuery} from '@material-ui/core'
 
 const StyledGrid = styled(Grid)({
-  width: '7.5vw'
+  width: '7.5vw',
+  background: 'transparent'
 });
 
-// It's a little weird using a grid here, but doing so correctly lines up box borders
 const CenterLine = styled(Grid)({
   width: 'inherit',
 });
