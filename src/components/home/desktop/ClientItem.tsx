@@ -60,10 +60,12 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
   // handle hover-dependent state
   const handleMouseEnter = () => {
     setIsHover(true);
-    const popup = props.isOnLeft ?
-      <ProjectHoverRight background={props.client.highlightColor} title={props.client.name} project={props.client.project} />
-      : <ProjectHoverLeft background={props.client.highlightColor} title={props.client.name} project={props.client.project} />
-    props.onMouseEnter?.(popup);
+    if (props.onMouseEnter) {
+      const popup = props.isOnLeft ?
+        <ProjectHoverRight background={props.client.highlightColor} title={props.client.name} project={props.client.project}/>
+        : <ProjectHoverLeft background={props.client.highlightColor} title={props.client.name} project={props.client.project}/>
+      props.onMouseEnter?.(popup);
+    }
   }
   const handleMouseLave = () => {
     setIsHover(false);

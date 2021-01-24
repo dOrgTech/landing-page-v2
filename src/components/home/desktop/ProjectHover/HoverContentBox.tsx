@@ -61,6 +61,11 @@ const useChipStyle = makeStyles({
   }
 });
 
+const IllustrationView = styled('div')({
+  position: 'relative',
+  zIndex: 0
+})
+
 interface Props {
   title: string;
   project: Project;
@@ -90,6 +95,9 @@ export const HoverContentBox: React.FC<Props> = (props: Props) => {
           </Grid>
         ))}
       </ChipContainer>
+      <IllustrationView style={props.project?.illustration?.position}>
+        {props.project?.illustration?.view}
+      </IllustrationView>
     </StyledGrid>
   );
 }
