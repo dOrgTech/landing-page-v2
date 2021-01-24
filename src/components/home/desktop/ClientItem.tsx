@@ -2,7 +2,8 @@ import React, {useState} from 'react'
 import {styled, Typography, Grid, makeStyles} from '@material-ui/core'
 import { theme } from "../../../theme";
 import {Client} from "../../../constants/clients";
-
+import {ProjectHoverRight} from "./ProjectHover/ProjectHoverRight";
+import {ProjectHoverLeft} from "./ProjectHover/ProjectHoverLeft";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
@@ -43,10 +44,12 @@ const HoverIcon = styled('img')({
   top: '0.1vw'
 });
 
-
 interface Props {
-  client: Client
+  client: Client;
+  isOnLeft?: boolean;
   classes?: string;
+  onMouseEnter?: (popup: JSX.Element) => void;
+  onMouseLeave?: () => void;
 }
 
 export const ClientItem: React.FC<Props> = (props: Props) => {
@@ -54,7 +57,21 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
   const classes: string = props.classes ? props.classes : ''
 
   const [isHover, setIsHover] = useState(false);
-
+  // handle hover-dependent state
+  const handleMouseEnter = () => {
+    setIsHover(true);
+    if (props.onMouseEnter) {
+      const popup = props.isOnLeft ?
+        <ProjectHoverRight background={props.client.highlightColor} title={props.client.name} project={props.client.project}/>
+        : <ProjectHoverLeft background={props.client.highlightColor} title={props.client.name} project={props.client.project}/>
+      props.onMouseEnter?.(popup);
+    }
+  }
+  const handleMouseLave = () => {
+    setIsHover(false);
+    props.onMouseLeave?.();
+  }
+  // hover-dependent styling
   const iconColor = (isHover: boolean) => {
     if (!isHover) {
       return 'brightness(0) saturate(100%) invert(100%)';
@@ -64,7 +81,6 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
       return '';
     }
   }
-
   const styles = makeStyles({
     highlight: {
       '&:hover': {
@@ -79,8 +95,8 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
   return (
     <StyledGrid container direction='row' justify={'flex-start'} alignItems={'center'}
       className={classes + ' ' + styles.highlight}
-      onMouseEnter={() => setIsHover(true)}
-      onMouseLeave={() => setIsHover(false)}>
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLave}>
       <Grid item>
         <ClientIcon src={props.client.icon} alt='client icon' className={styles.icon} />
       </Grid>

@@ -104,7 +104,6 @@ export const ProfileSummary: React.FC<Props> = (props: Props) => {
             <ProfileFull member={props.member} onClose={handleClose} />
           </div>
         </Modal>
-
       </ButtonContainer>
     </StyledGrid>
   );

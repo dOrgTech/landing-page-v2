@@ -11,7 +11,9 @@ import {HomeTitleBox} from "../components/home/desktop/HomeTitleBox";
 
 const Root = styled(Grid)({
   margins: 'auto',
-  width: '100vw'
+  width: '100vw',
+  position: 'relative',
+  zIndex: 0
 });
 
 const ContentContainer = styled(Grid)({
@@ -40,7 +42,8 @@ const useTitlePositionStyle = makeStyles({
   location: {
     position: 'absolute',
     top: '-3vw',
-    left: '1.75vw'
+    left: '1.75vw',
+    zIndex: 0
   }
 })
 
@@ -55,7 +58,7 @@ export const Home: React.FC = () => {
       <LeftMargin xs={1} border={borderStyle} height='57.375vw' />
       <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
         <PageHalf item xs={6}>
-          <ClientContainer title={'COMPANIES'} clients={companies} />
+          <ClientContainer title={'COMPANIES'} clients={companies} isOnLeft />
         </PageHalf>
         <PageHalf item xs={6}>
           <ClientContainer title={'COMMUNITIES'} clients={communities} />
