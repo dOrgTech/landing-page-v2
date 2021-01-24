@@ -11,7 +11,9 @@ import {HomeTitleBox} from "../components/home/desktop/HomeTitleBox";
 
 const Root = styled(Grid)({
   margins: 'auto',
-  width: '100vw'
+  width: '100vw',
+  position: 'relative',
+  zIndex: 0
 });
 
 const ContentContainer = styled(Grid)({
@@ -40,7 +42,8 @@ const useTitlePositionStyle = makeStyles({
   location: {
     position: 'absolute',
     top: '-3vw',
-    left: '1.75vw'
+    left: '1.75vw',
+    zIndex: 0
   }
 })
 

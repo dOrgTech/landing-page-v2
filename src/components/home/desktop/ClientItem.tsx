@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {styled, Typography, Grid, makeStyles, Modal} from '@material-ui/core'
+import {styled, Typography, Grid, makeStyles} from '@material-ui/core'
 import { theme } from "../../../theme";
 import {Client} from "../../../constants/clients";
 import {ProjectHoverRight} from "./ProjectHover/ProjectHoverRight";
@@ -44,11 +44,12 @@ const HoverIcon = styled('img')({
   top: '0.1vw'
 });
 
-
 interface Props {
   client: Client;
   isOnLeft?: boolean;
   classes?: string;
+  onMouseEnter?: (popup: JSX.Element) => void;
+  onMouseLeave?: () => void;
 }
 
 export const ClientItem: React.FC<Props> = (props: Props) => {
@@ -56,7 +57,18 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
   const classes: string = props.classes ? props.classes : ''
 
   const [isHover, setIsHover] = useState(false);
-
+  // handle hover-dependent state
+  const handleMouseEnter = () => {
+    setIsHover(true);
+    const popup = props.isOnLeft ?
+      <ProjectHoverRight background={props.client.highlightColor} title={props.client.name} project={props.client.project} />
+      : <ProjectHoverLeft background={props.client.highlightColor} title={props.client.name} project={props.client.project} />
+    props.onMouseEnter?.(popup);
+  }
+  const handleMouseLave = () => {
+    setIsHover(false);
+    props.onMouseLeave?.();
+  }
   // hover-dependent styling
   const iconColor = (isHover: boolean) => {
     if (!isHover) {
@@ -67,7 +79,6 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
       return '';
     }
   }
-
   const styles = makeStyles({
     highlight: {
       '&:hover': {
@@ -82,8 +93,8 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
   return (
     <StyledGrid container direction='row' justify={'flex-start'} alignItems={'center'}
       className={classes + ' ' + styles.highlight}
-      onMouseEnter={() => setIsHover(true)}
-      onMouseLeave={() => setIsHover(false)}>
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLave}>
       <Grid item>
         <ClientIcon src={props.client.icon} alt='client icon' className={styles.icon} />
       </Grid>
@@ -93,12 +104,6 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
       <Grid item>
         {isHover && <HoverIcon src={'imgs/external-link-icon.svg'} alt='pop-up content icon' />}
       </Grid>
-      <Modal open={isHover} aria-labelledby={`${props.client.name} client project description`} aria-describedby="client project description">
-        <div>
-          {props.isOnLeft && <ProjectHoverRight background={props.client.highlightColor} title={props.client.name} project={props.client.project} />}
-          {!props.isOnLeft && <ProjectHoverLeft background={props.client.highlightColor} title={props.client.name} project={props.client.project} />}
-        </div>
-      </Modal>
     </StyledGrid>
   );
 }

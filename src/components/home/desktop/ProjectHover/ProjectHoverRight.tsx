@@ -9,8 +9,7 @@ import {borderStyles} from "../../../../theme/styles";
 
 const Root = styled(Grid)({
   width: '50vw',
-  position: 'absolute',
-  right: 0
+  position: 'relative'
 });
 
 const useBorders = makeStyles(borderStyles);

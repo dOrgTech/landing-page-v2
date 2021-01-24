@@ -79,7 +79,7 @@ export const HoverContentBox: React.FC<Props> = (props: Props) => {
       <Grid item>
         <StyledDescription>{props.project.description}</StyledDescription>
       </Grid>
-      {(props.project.bullets ).length > 0 &&
+      {props.project.bullets.length > 0 &&
       <BulletsContainer item>
         <BulletsBox bullets={props.project.bullets } />
       </BulletsContainer>}

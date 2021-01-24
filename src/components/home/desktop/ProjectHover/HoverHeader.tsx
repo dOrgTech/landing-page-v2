@@ -79,6 +79,7 @@ const useBorders = makeStyles(borderStyles);
 
 interface Props {
   isOnRight?: boolean;
+  classes?: string;
 }
 
 export const HoverHeader: React.FC<Props> = (props: Props) => {
@@ -92,7 +93,7 @@ export const HoverHeader: React.FC<Props> = (props: Props) => {
   const borders = useBorders();
 
   return (
-    <StyledAppBar position="static">
+    <StyledAppBar position="static" className={props.classes}>
       <Grid container spacing={0} direction='row' justify="flex-start" alignItems='flex-start' style={{height: 'inherit'}}>
         {!props.isOnRight &&
         <LogoContainer container item spacing={0} direction='row' justify="center" alignItems='center' className={borders.bottomBorder}>
