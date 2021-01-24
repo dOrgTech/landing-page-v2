@@ -5,7 +5,6 @@ import {Project} from "../../../../constants/clients";
 import {ChipLarge} from "../../../careers/desktop/profile_popup/ChipLarge";
 import {BulletsBox} from "./BulletsBox";
 
-
 const StyledGrid = styled(Grid)({
   height: '57.375vw',
   width: '42.5vw',
