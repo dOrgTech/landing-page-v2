@@ -15,7 +15,7 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box bgcolor="primary.main" width="100%" minHeight='100vh'>
+      <Box bgcolor="primary.main" width="100vw" minHeight='100vh'>
         <HashRouter>
           <Header/>
           <Switch >

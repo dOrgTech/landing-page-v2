@@ -10,11 +10,13 @@ const LOGO_PATH = process.env.PUBLIC_URL + "/imgs/dOrg-logo-white.svg";
 
 const StyledAppBar = styled(AppBar)({
   height: '5vw',
-  width: '100vw'
+  width: '100vw',
+  minWidth: '100vw',
+  maxWidth: '100vw'
 });
 
 const LogoContainer = styled(Grid)({
-  maxWidth: '8vw',
+  width: '7.5vw',
   height: 'inherit'
 });
 
@@ -70,7 +72,7 @@ const Underline = styled(Box)({
 });
 
 const HeaderRightMargin = styled(Grid)({
-  maxWidth: '8vw',
+  width: '7.5vw',
   height: 'inherit'
 });
 
@@ -92,11 +94,11 @@ export const HeaderDesktop: React.FC = () => {
   return (
     <StyledAppBar position="static">
       <Grid container spacing={0} direction='row' justify="flex-start" alignItems='flex-start' style={{height: 'inherit'}}>
-        <LogoContainer container item xs={1} spacing={0} direction='row' justify="center" alignItems='center' className={borders.bottomBorder}>
+        <LogoContainer container item spacing={0} direction='row' justify="center" alignItems='center' className={borders.bottomBorder}>
           <StyledLogo src={LOGO_PATH} alt="dOrg Logo" onClick={onLogoClick} />
         </LogoContainer>
-        <LeftHead item xs={5} className={borders.bottomLeftBorder} />
-        <LinksContainer container item xs={5} spacing={0} direction='row' justify="flex-end" alignItems='center' className={borders.bottomLeftBorder}>
+        <LeftHead item className={borders.bottomLeftBorder} />
+        <LinksContainer container item spacing={0} direction='row' justify="flex-end" alignItems='center' className={borders.bottomLeftBorder}>
           <LinkBox item container direction='row' justify='center' alignItems='center'>
             <StyledLink onClick={onAboutClick} underline='none'>{routes.about.name}</StyledLink>
           </LinkBox>
@@ -110,7 +112,7 @@ export const HeaderDesktop: React.FC = () => {
           {isLocation(routes.careers) && <Underline style={{right: '12vw'}} />}
           {isLocation(routes.contact) && <Underline style={{right: '3.75vw'}} />}
         </LinksContainer>
-        <HeaderRightMargin item xs={1} className={borders.bottomLeftBorder} />
+        <HeaderRightMargin item className={borders.bottomLeftBorder} />
       </Grid>
     </StyledAppBar>
   );

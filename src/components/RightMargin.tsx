@@ -3,8 +3,7 @@ import {styled, Grid, useTheme, Theme, useMediaQuery} from '@material-ui/core'
 import {theme} from "../theme";
 
 const StyledGrid = styled(Grid)({
-  maxWidth: '8vw',
-  minWidth: '4.5vw'
+  width: '7.5vw'
 });
 
 const CenterLine = styled(Grid)({
@@ -58,7 +57,7 @@ const RightMargin: React.FC<Props> = (props: Props) => {
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
   return (
-    <StyledGrid item xs={props.xs} style={{borderLeft: props.border, height: props.height, maxWidth: desktop ? '8vw' : '6vw'}}>
+    <StyledGrid item xs={props.xs} style={{borderLeft: props.border, height: props.height, width: desktop ? '7.5vw' : '5vw'}}>
       {desktop ?
         <Accents border={props.centerLineHeight ? props.border : ''} longAccentIndex={props.longAccentIndex}/> :
         (props.centerLineHeight && props.border && <CenterLine item style={{borderBottom: props.border, height: props.centerLineHeight}} />)}

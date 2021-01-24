@@ -12,7 +12,9 @@ const TWITTER_ICON_PATH = '/imgs/footer/twitter-logo.svg';
 
 const FooterContainer = styled(Grid)({
   height: '5vw',
-  width: '100vw'
+  width: '100vw',
+  minWidth: '100vw',
+  maxWidth: '100vw'
 });
 
 const IconContainer = styled(Link)({
@@ -60,7 +62,7 @@ const RightContainer = styled(Grid)({
 });
 
 const FooterMargin = styled(Grid)({
-  maxWidth: '8vw',
+  width: '7.5vw',
   height: 'inherit'
 });
 
@@ -72,11 +74,11 @@ export const FooterDesktop: React.FC = () => {
 
   return (
     <FooterContainer container justify='flex-start'>
-      <FooterMargin item xs={1} className={borders.topBorder} />
-      <LeftContainer container item xs={5} spacing={0} direction='row' justify="flex-start" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
+      <FooterMargin item className={borders.topBorder} />
+      <LeftContainer container item spacing={0} direction='row' justify="flex-start" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
         <CopyrightText>{COPYRIGHT_TEXT}</CopyrightText>
       </LeftContainer>
-      <RightContainer container item xs={5} spacing={0} direction='row' justify="flex-end" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
+      <RightContainer container item spacing={0} direction='row' justify="flex-end" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
         <Grid item>
           <IconContainer href="https://twitter.com/dOrg_tech" target="_blank" rel="noopener">
             <StyledIcon src={TWITTER_ICON_PATH}/>
@@ -98,7 +100,7 @@ export const FooterDesktop: React.FC = () => {
           </IconContainer>
         </Grid>
       </RightContainer>
-      <FooterMargin item xs={1} className={`${borders.topBorder} ${borders.leftBorder}`} />
+      <FooterMargin item className={`${borders.topBorder} ${borders.leftBorder}`} />
     </FooterContainer>
   );
 }
