@@ -10,6 +10,7 @@ import {Contact} from "./pages/Contact";
 import {Header} from "./components/Header";
 import { Footer } from "./components/Footer";
 import "./App.css";
+import {CookieConsentPrompt} from "./components/CookieConsentPrompt";
 
 const App: React.FC = () => {
 
@@ -32,6 +33,7 @@ const App: React.FC = () => {
               <Contact />
             </Route>
           </Switch>
+          <CookieConsentPrompt debug prompt={'This website uses cookies to enhance the user experience.'} />
           <Footer />
         </HashRouter>
       </Box>

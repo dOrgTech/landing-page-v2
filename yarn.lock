@@ -1601,6 +1601,7 @@ __metadata:
     lint-staged: ^10.5.3
     prop-types: ^15.7.2
     react: ^17.0.1
+    react-cookie-consent: ^6.2.1
     react-dom: ^17.0.1
     react-ga: ^3.3.0
     react-hook-form: ^6.14.0
@@ -10197,6 +10198,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"js-cookie@npm:^2.2.1":
+  version: 2.2.1
+  resolution: "js-cookie@npm:2.2.1"
+  checksum: c110f78427cb7715f67c69df0b3430f7cf9dafb5ddb13014df171d4fb61ccda0b1caf9767412cde63cab4bad697a5d4ce83b0c2e7ec650ec9929ed70750d20ae
+  languageName: node
+  linkType: hard
+
 "js-stringify@npm:^1.0.1":
   version: 1.0.2
   resolution: "js-stringify@npm:1.0.2"
@@ -14132,6 +14140,18 @@ fsevents@~2.1.2:
     regenerator-runtime: ^0.13.7
     whatwg-fetch: ^3.4.1
   checksum: 96b8bb3bdeb5279ebb73622744dcaba75a2f48861e8353052cb758e33db850845b11fa7da87c52663a4e4ee9ed356069f6a1e42151a74f01dc24bbfbbc5ad79a
+  languageName: node
+  linkType: hard
+
+"react-cookie-consent@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "react-cookie-consent@npm:6.2.1"
+  dependencies:
+    js-cookie: ^2.2.1
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: ^16.13.1 || ^17.0.0
+  checksum: 558d9366f9eddb0d413ce407482b6d3af05b4cd4ced3ad646514d77efa9e5563b2de597a06fdb0229a5af7a6dceebddda4bbd89a07b0e5665c1e92d0c62e8090
   languageName: node
   linkType: hard
 

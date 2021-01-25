@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactGA from 'react-ga';
 import {styled, Grid, makeStyles, Box} from '@material-ui/core'
 import {Member} from "../../../../constants/members";
 import {ProfilePhoto} from "../../desktop/profile_popup/ProfilePhoto";
@@ -60,6 +61,8 @@ interface Props {
 }
 
 export const ProfileFullMobile: React.FC<Props> = (props: Props) => {
+
+  ReactGA.modalview('/careers/profileMobile');
 
   const history = useHistory();
   const navigateToContactPage = () => history.push(routes.contact.path);
