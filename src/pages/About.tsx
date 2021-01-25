@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from "react-ga";
 import { useHistory } from 'react-router-dom'
 import {Grid, makeStyles, styled, Theme, useMediaQuery, useTheme} from "@material-ui/core";
 import { StatBox } from "../components/about/desktop/StatBox";
@@ -48,6 +49,8 @@ const PitchesContainer = styled(Grid)({
 const useBorders = makeStyles(borderStyles);
 
 export const About: React.FC = () => {
+
+  ReactGA.pageview('/about');
 
   const history = useHistory();
   const navigateToContactPage = () => history.push(routes.contact.path);

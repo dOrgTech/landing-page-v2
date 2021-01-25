@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from "react-ga";
 import {Grid, makeStyles, styled, Theme, useMediaQuery, useTheme} from "@material-ui/core";
 import {ContactTitleBox} from "../components/contact/desktop/ContactTitleBox";
 import {RightMargin} from "../components/RightMargin";
@@ -24,6 +25,8 @@ const ContentContainer = styled(Grid)({
 const useBorders = makeStyles(borderStyles);
 
 export const Contact: React.FC = () => {
+
+  ReactGA.pageview('/contact');
 
   const borders = useBorders();
 

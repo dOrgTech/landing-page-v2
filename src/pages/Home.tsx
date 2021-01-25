@@ -49,7 +49,7 @@ const useTitlePositionStyle = makeStyles({
 
 export const Home: React.FC = () => {
 
-  ReactGA.pageview('home');
+  ReactGA.pageview('/');
 
   const titlePosition = useTitlePositionStyle();
 

@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from "react-ga";
 import {Grid, makeStyles, styled, Theme, useMediaQuery, useTheme} from "@material-ui/core";
 import { Perk, perks } from "../constants/perks";
 import { PerkBox } from "../components/careers/desktop/PerkBox";
@@ -41,6 +42,8 @@ const PerksContainer = styled(Grid)({
 const useBorders = makeStyles(borderStyles);
 
 export const Careers: React.FC = () => {
+
+  ReactGA.pageview('/careers');
 
   const navigationToActivation = () => window.location.assign(externalLinks.activation.path);
 
