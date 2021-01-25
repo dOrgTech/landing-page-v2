@@ -3,6 +3,7 @@ import CookieConsent from "react-cookie-consent";
 import {theme} from "../theme";
 import {makeStyles} from "@material-ui/core";
 
+
 const cookieStyle = {
   background: '#000e3c',
 }
