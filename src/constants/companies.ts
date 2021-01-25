@@ -33,7 +33,7 @@ export const companies: Companies = {
     link: 'Full Transparency',
     icon: 'imgs/logos/Gnosis.svg',
     iconHighlightFilter: '',
-    highlightColor: '#2548bf',
+    highlightColor: '#009CB4',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -46,7 +46,7 @@ export const companies: Companies = {
     link: 'Never Stop Learning',
     icon: 'imgs/logos/Balancer.svg',
     iconHighlightFilter: '',
-    highlightColor: '#2548bf',
+    highlightColor: '#41476b',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -59,7 +59,7 @@ export const companies: Companies = {
     link: 'Never Stop Learning',
     icon: 'imgs/logos/Deversifi.svg',
     iconHighlightFilter: '',
-    highlightColor: '#2548bf',
+    highlightColor: '#5500FC',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -84,7 +84,7 @@ export const companies: Companies = {
     link: 'Never Stop Learning',
     icon: 'imgs/logos/StakedUs.svg',
     iconHighlightFilter: '',
-    highlightColor: '#2548bf',
+    highlightColor: '#3746bc',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -97,7 +97,7 @@ export const companies: Companies = {
     link: 'Never Stop Learning',
     icon: 'imgs/logos/Minds.svg',
     iconHighlightFilter: '',
-    highlightColor: '#2548bf',
+    highlightColor: '#dbab09',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -110,7 +110,7 @@ export const companies: Companies = {
     link: 'Never Stop Learning',
     icon: 'imgs/logos/ParaSwap.svg',
     iconHighlightFilter: '',
-    highlightColor: '#2548bf',
+    highlightColor: '#005ede',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -123,7 +123,7 @@ export const companies: Companies = {
     link: 'Never Stop Learning',
     icon: 'imgs/logos/Boardroom.svg',
     iconHighlightFilter: '',
-    highlightColor: '#2548bf',
+    highlightColor: '#E47C03',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -136,7 +136,7 @@ export const companies: Companies = {
     link: 'Freedom & Peer Support',
     icon: 'imgs/logos/Centrality.svg',
     iconHighlightFilter: '',
-    highlightColor: '#2548bf',
+    highlightColor: '#1130ff',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -149,7 +149,7 @@ export const companies: Companies = {
     link: 'Freedom & Peer Support',
     icon: 'imgs/logos/eToro.svg',
     iconHighlightFilter: '',
-    highlightColor: '#2548bf',
+    highlightColor: '#6CAC2F',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',

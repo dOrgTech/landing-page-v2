@@ -3,7 +3,6 @@ import {FooterDesktop} from "./FooterDesktop";
 import {FooterMobile} from "./FooterMobile";
 import {Theme, useMediaQuery, useTheme} from "@material-ui/core";
 
-
 export const Footer: React.FC = () => {
 
   const theme: Theme = useTheme();

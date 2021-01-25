@@ -17,7 +17,7 @@ export const communities: Communities = {
     link: '',
     icon: 'imgs/logos/DaoStack.svg',
     iconHighlightFilter: '',
-    highlightColor: '#2548bf',
+    highlightColor: '#00b4d6',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -43,7 +43,7 @@ export const communities: Communities = {
     link: '',
     icon: 'imgs/logos/DxDao.svg',
     iconHighlightFilter: '',
-    highlightColor: '#2548bf',
+    highlightColor: '#651fff',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -56,7 +56,7 @@ export const communities: Communities = {
     link: '',
     icon: 'imgs/logos/Prime.svg',
     iconHighlightFilter: '',
-    highlightColor: '#2548bf',
+    highlightColor: '#ff495b',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -69,7 +69,7 @@ export const communities: Communities = {
     link: '',
     icon: 'imgs/logos/Badger.svg',
     iconHighlightFilter: '',
-    highlightColor: '#2548bf',
+    highlightColor: '#F2A52B',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -82,7 +82,7 @@ export const communities: Communities = {
     link: '',
     icon: 'imgs/logos/api3.svg',
     iconHighlightFilter: '',
-    highlightColor: '#2548bf',
+    highlightColor: '#000',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -95,7 +95,7 @@ export const communities: Communities = {
     link: '',
     icon: 'imgs/logos/LID.svg',
     iconHighlightFilter: '',
-    highlightColor: '#2548bf',
+    highlightColor: '#246B8F',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -107,8 +107,8 @@ export const communities: Communities = {
     name:'Web3API',
     link: '',
     icon: 'imgs/logos/web3api_icon_color.png',
-    iconHighlightFilter: '',
-    highlightColor: '#2548bf',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(56%) sepia(56%) saturate(365%) hue-rotate(143deg) brightness(91%) contrast(83%)',
+    highlightColor: '#60c093',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
