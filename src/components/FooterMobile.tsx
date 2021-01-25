@@ -12,18 +12,19 @@ const TWITTER_ICON_PATH = '/imgs/footer/twitter-logo.svg';
 
 const FooterContainer = styled(Grid)({
   height: '18.8vw',
-  width: '105vw'
+  width: '100vw',
+  minWidth: '100vw',
+  maxWidth: '100vw'
 });
 
 const FooterBody = styled(Grid)({
-  width: '91vw',
+  width: '90vw',
   height: 'inherit',
   padding: '0 2vw 0 4vw'
 });
 
 const FooterMargin = styled(Grid)({
-  maxWidth: '6vw',
-  minWidth: '4.5vw',
+  width: '5vw',
   height: 'inherit'
 });
 
@@ -68,8 +69,8 @@ export const FooterMobile: React.FC = () => {
 
   return (
     <FooterContainer container justify='flex-start'>
-      <FooterMargin item xs={1} className={borders.topBorder} />
-      <FooterBody container item xs={10} spacing={0} direction='row' justify="space-between" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
+      <FooterMargin item className={borders.topBorder} />
+      <FooterBody container item spacing={0} direction='row' justify="space-between" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
         <Grid item xs={7}>
           <CopyrightText>{COPYRIGHT_TEXT}</CopyrightText>
         </Grid>
@@ -96,7 +97,7 @@ export const FooterMobile: React.FC = () => {
           </Grid>
         </Grid>
       </FooterBody>
-      <FooterMargin item xs={1} className={`${borders.topBorder} ${borders.leftBorder}`} />
+      <FooterMargin item className={`${borders.topBorder} ${borders.leftBorder}`} />
     </FooterContainer>
   );
 }

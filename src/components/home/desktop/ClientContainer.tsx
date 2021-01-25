@@ -71,7 +71,7 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
           ))}
         </ClientGrid>
       </StyledGrid>
-      <ProjectView style={{right: props.isOnLeft ? '-8.35vw' : '41.6vw'}}>{hovered}</ProjectView>
+      <ProjectView style={{right: props.isOnLeft ? '-7.5vw' : '42.5vw'}}>{hovered}</ProjectView>
     </div>
   );
 }
