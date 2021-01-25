@@ -12,7 +12,8 @@ const TWITTER_ICON_PATH = '/imgs/footer/twitter-logo.svg';
 
 const FooterContainer = styled(Grid)({
   height: '5vw',
-  width: '100vw'
+  width: '100vw',
+  background: 'transparent'
 });
 
 const IconContainer = styled(Link)({
@@ -60,23 +61,33 @@ const RightContainer = styled(Grid)({
 });
 
 const FooterMargin = styled(Grid)({
-  maxWidth: '8vw',
+  width: '7.5vw',
   height: 'inherit'
 });
 
 const useBorders = makeStyles(borderStyles);
 
-export const FooterDesktop: React.FC = () => {
+interface Props {
+  pageHalf?: 'left' | 'right';
+  classes?: string;
+}
+
+export const FooterDesktop: React.FC<Props> = (props: Props) => {
+
+  const renderRight = props.pageHalf === 'right' || !props.pageHalf;
+  const renderLeft = props.pageHalf === 'left' || !props.pageHalf;
 
   const borders = useBorders();
 
   return (
-    <FooterContainer container justify='flex-start'>
-      <FooterMargin item xs={1} className={borders.topBorder} />
-      <LeftContainer container item xs={5} spacing={0} direction='row' justify="flex-start" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
+    <FooterContainer container justify='flex-start' className={props.classes} style={{width: props.pageHalf ? '50vw' : '100vw'}}>
+      {renderLeft && <FooterMargin item className={borders.topBorder} />}
+      {renderLeft &&
+      <LeftContainer container item spacing={0} direction='row' justify="flex-start" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
         <CopyrightText>{COPYRIGHT_TEXT}</CopyrightText>
-      </LeftContainer>
-      <RightContainer container item xs={5} spacing={0} direction='row' justify="flex-end" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
+      </LeftContainer>}
+      {renderRight &&
+      <RightContainer container item spacing={0} direction='row' justify="flex-end" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
         <Grid item>
           <IconContainer href="https://twitter.com/dOrg_tech" target="_blank" rel="noopener">
             <StyledIcon src={TWITTER_ICON_PATH}/>
@@ -97,8 +108,8 @@ export const FooterDesktop: React.FC = () => {
             <StyledIcon src={EMAIL_ICON_PATH}/>
           </IconContainer>
         </Grid>
-      </RightContainer>
-      <FooterMargin item xs={1} className={`${borders.topBorder} ${borders.leftBorder}`} />
+      </RightContainer>}
+      {renderRight && <FooterMargin item className={`${borders.topBorder} ${borders.leftBorder}`} />}
     </FooterContainer>
   );
 }

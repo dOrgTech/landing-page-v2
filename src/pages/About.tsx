@@ -30,12 +30,13 @@ const QUOTE_CITATION = 'Satoshi - Bitcoin, Inc.';
 const CLOSE_BUTTON_TEXT = 'GET IN TOUCH';
 
 const Root = styled(Grid)({
-  margins: 'auto',
-  width: '100vw'
+  width: '100vw',
+  minWidth: '100vw',
+  maxWidth: '100vw'
 });
 
 const ContentContainer = styled(Grid)({
-  maxWidth: '85vw'
+  width: '85vw'
 });
 
 const StatsContainer = styled(Grid)({
@@ -63,8 +64,8 @@ export const About: React.FC = () => {
   if (desktop) {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-        <LeftMargin xs={1} border={borderStyle} height='116.775vw' centerLineHeight='57.375vw' />
-        <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
+        <LeftMargin border={borderStyle} height='116.775vw' centerLineHeight='57.375vw' />
+        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start'>
           <Grid item xs={6}>
             <AboutTitleBox text={ABOUT_TITLE} classes={borders.bottomLeftBorder} />
             <PressBox press={press} classes={borders.bottomLeftBorder} />
@@ -90,14 +91,14 @@ export const About: React.FC = () => {
             <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} classes={borders.leftBorder} />
           </Grid>
         </ContentContainer>
-        <RightMargin xs={1} border={borderStyle} height='116.775vw' centerLineHeight='57.375vw' longAccentIndex={1}/>
+        <RightMargin border={borderStyle} height='116.775vw' centerLineHeight='57.375vw' longAccentIndex={1}/>
       </Root>
     );
   } else {
     return (
-      <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start' style={{width: '105vw'}}>
-        <LeftMargin xs={1} border={borderStyle} height='550vw' centerLineHeight='180.5vw' />
-        <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start' style={{maxWidth: '91vw'}}>
+      <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
+        <LeftMargin border={borderStyle} height='550vw' centerLineHeight='180.5vw' />
+        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' style={{width: '90vw'}}>
           <Grid item xs={12}>
             <AboutTitleBoxMobile text={ABOUT_TITLE} classes={borders.bottomLeftBorder} />
             <PressBoxMobile press={press} classes={borders.bottomLeftBorder} />
@@ -123,7 +124,7 @@ export const About: React.FC = () => {
             <CloseBoxMobile quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} classes={borders.leftBorder} />
           </Grid>
         </ContentContainer>
-        <RightMargin xs={1} border={borderStyle} height='550vw' centerLineHeight='180.5vw' />
+        <RightMargin border={borderStyle} height='550vw' centerLineHeight='180.5vw' />
       </Root>
     );
   }

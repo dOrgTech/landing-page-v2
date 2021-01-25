@@ -12,12 +12,14 @@ import {HomeTitleBox} from "../components/home/desktop/HomeTitleBox";
 const Root = styled(Grid)({
   margins: 'auto',
   width: '100vw',
+  minWidth: '100vw',
+  maxWidth: '100vw',
   position: 'relative',
   zIndex: 0
 });
 
 const ContentContainer = styled(Grid)({
-  maxWidth: '85vw',
+  width: '85vw',
   position: 'relative'
 });
 
@@ -55,8 +57,8 @@ export const Home: React.FC = () => {
 
   return (
     <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-      <LeftMargin xs={1} border={borderStyle} height='57.375vw' />
-      <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
+      <LeftMargin border={borderStyle} height='57.375vw' />
+      <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start'>
         <PageHalf item xs={6}>
           <ClientContainer title={'COMPANIES'} clients={companies} isOnLeft />
         </PageHalf>
@@ -69,7 +71,7 @@ export const Home: React.FC = () => {
           subTitleText={'We’ve helped some of Web3’s top projects design, code and ship.'} />
         <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'} />
       </ContentContainer>
-      <RightMargin xs={1} border={borderStyle} height='57.375vw' longAccentIndex={0}/>
+      <RightMargin border={borderStyle} height='57.375vw' longAccentIndex={0}/>
     </Root>
   );
 };

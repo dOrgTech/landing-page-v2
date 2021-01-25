@@ -28,11 +28,13 @@ import {CurrentOpeningSectionMobile} from "../components/careers/mobile/openings
 const Root = styled(Grid)({
   margins: 'auto',
   width: '100vw',
+  minWidth: '100vw',
+  maxWidth: '100vw',
   overflow: 'hidden'
 });
 
 const ContentContainer = styled(Grid)({
-  maxWidth: '85vw'
+  width: '85vw'
 });
 
 const PerksContainer = styled(Grid)({
@@ -55,8 +57,8 @@ export const Careers: React.FC = () => {
   if (desktop) {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-        <LeftMargin xs={1} border={borderStyle} height='189.625vw'/>
-        <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
+        <LeftMargin border={borderStyle} height='189.625vw'/>
+        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start'>
           <Grid item xs={12}>
             <CareersTitleBox textPrimary={'Discover a new way to'} textSecondary={'work'}
               classes={borders.bottomLeftBorder}/>
@@ -91,14 +93,14 @@ export const Careers: React.FC = () => {
               classes={borders.leftBorder}/>
           </Grid>
         </ContentContainer>
-        <RightMargin xs={1} border={borderStyle} height='189.625vw' longAccentIndex={3}/>
+        <RightMargin border={borderStyle} height='189.625vw' longAccentIndex={3}/>
       </Root>
     );
   } else {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-        <LeftMargin xs={1} border={borderStyle} height='884.5vw'/>
-        <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start' style={{maxWidth: '87.5vw'}}>
+        <LeftMargin border={borderStyle} height='884.5vw'/>
+        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' style={{width: '90vw'}}>
           <Grid item xs={12}>
             <CareersTitleBoxMobile textPrimaryL1={'Discover a new'} textPrimaryL2={'way to'} textSecondary={'work'}
               classes={borders.bottomLeftBorder}/>
@@ -133,7 +135,7 @@ export const Careers: React.FC = () => {
               classes={borders.leftBorder}/>
           </Grid>
         </ContentContainer>
-        <RightMargin xs={1} border={borderStyle} height='884.5vw' longAccentIndex={3}/>
+        <RightMargin border={borderStyle} height='884.5vw' longAccentIndex={3}/>
       </Root>
     );
   }

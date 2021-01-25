@@ -1,12 +1,12 @@
 import {Grid, makeStyles, styled} from "@material-ui/core";
 import React from "react";
 import {borderStyles} from "../../../../theme/styles";
-import {HoverFooter} from "./HoverFooter";
-import {HoverHeader} from "./HoverHeader";
 import {HoverContentBox} from "./HoverContentBox";
 import {Project} from "../../../../constants/clients";
-import {HoverMarginLeft} from "./HoverMarginLeft";
 import {HomeTitleBox} from "../HomeTitleBox";
+import {HeaderDesktop} from "../../../HeaderDesktop";
+import {FooterDesktop} from "../../../FooterDesktop";
+import {LeftMargin} from "../../../LeftMargin";
 
 const Root = styled(Grid)({
   width: '50vw',
@@ -40,10 +40,10 @@ export const ProjectHoverLeft: React.FC<Props> = (props: Props) => {
 
   return (
     <Root className={props.classes} container spacing={0} direction='row' justify="flex-start" alignItems='flex-start' style={{background: props.background}}>
-      <HoverHeader classes={styleClasses.header}/>
-      <HoverMarginLeft />
-      <HoverContentBox title={props.title} project={props.project} classes={borders.leftBorder + ' ' + borders.rightBorder} />
-      <HoverFooter />
+      <HeaderDesktop pageHalf={'left'} classes={styleClasses.header}/>
+      <LeftMargin height={'57.375vw'}/>
+      <HoverContentBox title={props.title} project={props.project} classes={borders.leftBorder} />
+      <FooterDesktop pageHalf={'left'}/>
       <HomeTitleBox classes={styleClasses.title}
         titleTextPrimary={'We build custom'}
         titleTextSecondary={'Dapps'}

@@ -15,11 +15,13 @@ const INSTRUCTIONS = "Tell us about your product, your timeline, how you heard a
 
 const Root = styled(Grid)({
   margins: 'auto',
-  width: '100vw'
+  width: '100vw',
+  minWidth: '100vw',
+  maxWidth: '100vw'
 });
 
 const ContentContainer = styled(Grid)({
-  maxWidth: '85vw'
+  width: '85vw'
 });
 
 const useBorders = makeStyles(borderStyles);
@@ -36,8 +38,8 @@ export const Contact: React.FC = () => {
   if (desktop) {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-        <LeftMargin xs={1} border={borderStyle} height='57.375vw'/>
-        <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start'>
+        <LeftMargin border={borderStyle} height='57.375vw'/>
+        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start'>
           <Grid item xs={6}>
             <ContactTitleBox title={TITLE} subtitle={SUBTITLE} instructions={INSTRUCTIONS} classes={borders.leftBorder}/>
           </Grid>
@@ -45,14 +47,14 @@ export const Contact: React.FC = () => {
             <ContactForm classes={borders.leftBorder}/>
           </Grid>
         </ContentContainer>
-        <RightMargin xs={1} border={borderStyle} height='57.375vw' longAccentIndex={4}/>
+        <RightMargin border={borderStyle} height='57.375vw' longAccentIndex={4}/>
       </Root>
     );
   } else {
     return (
-      <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start' style={{width: '105vw'}}>
-        <LeftMargin xs={1} border={borderStyle} height='203.75vw'/>
-        <ContentContainer container item xs={10} spacing={0} direction='row' justify="center" alignItems='flex-start' style={{maxWidth: '91vw'}}>
+      <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
+        <LeftMargin border={borderStyle} height='203.75vw'/>
+        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' style={{width: '90vw'}}>
           <Grid item xs={12}>
             <ContactTitleBoxMobile title={TITLE} subtitle={SUBTITLE} instructions={INSTRUCTIONS} classes={borders.bottomLeftBorder}/>
           </Grid>
@@ -60,7 +62,7 @@ export const Contact: React.FC = () => {
             <ContactFormMobile classes={borders.leftBorder}/>
           </Grid>
         </ContentContainer>
-        <RightMargin xs={1} border={borderStyle} height='203.75vw' />
+        <RightMargin border={borderStyle} height='203.75vw' />
       </Root>
     );
   }
