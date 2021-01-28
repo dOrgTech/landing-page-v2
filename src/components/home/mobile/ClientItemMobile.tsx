@@ -4,10 +4,15 @@ import {Client} from "../../../constants/clients";
 import {theme} from "../../../theme";
 import {ExpandedContentBoxMobile} from "./ExpandedContentBoxMobile";
 
+const StyledAccordion = styled(Accordion)({
+  maxWidth: '89.73vw',
+  margin: 0,
+  padding: 0
+})
 
 const StyledGrid = styled(Grid)({
   width: '100%',
-  height: '7.6vw',
+  height: '9.75vw',
   paddingLeft: '4.75vw',
   boxSizing: 'border-box',
   backgroundColor: 'transparent',
@@ -77,16 +82,16 @@ export const ClientItemMobile: React.FC<Props> = (props: Props) => {
       opacity: props.someExpanded && !props.expanded ? 0.3 : 1
     },
     selected: {
-      height: props.expanded ? '9.75vw' : '7.6vw',
+      height: props.expanded ? '19.5vw' : '9.75vw',
       backgroundColor: props.expanded ? props.client.highlightColor : theme.palette.primary.main
     }
   })();
 
   return (
-    <Accordion classes={accordionStyle} className={classes} square elevation={0} style={{margin: 0, padding: 0, maxWidth: '89.73vw'}}
+    <StyledAccordion classes={accordionStyle} className={classes} square elevation={0}
       expanded={props.expanded} onChange={props.onChange} >
       <AccordionSummary aria-controls={`${props.client.name}-content`} id={`${props.client.name}-header`}
-        style={{margin: 0, padding: 0}}>
+        style={{margin: 0, padding: 0}} className={selectStyles.selected}>
         <StyledGrid container direction='row' justify={'flex-start'} alignItems={'center'} className={classes + ' ' + selectStyles.selected}>
           <Grid item>
             <ClientIcon src={props.client.icon} alt='client icon' className={selectStyles.hidden}/>
@@ -103,6 +108,6 @@ export const ClientItemMobile: React.FC<Props> = (props: Props) => {
       <AccordionDetails style={{margin: 0, padding: 0}}>
         <ExpandedContentBoxMobile title={props.client.name} project={props.client.project} />
       </AccordionDetails>
-    </Accordion>
+    </StyledAccordion>
   );
 }

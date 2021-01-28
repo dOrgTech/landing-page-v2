@@ -10,12 +10,13 @@ import {ClientContainerMobile} from "./ClientContainerMobile";
 const StyledContainer = styled('div')({
   width: '100%',
   position: 'relative',
-  zIndex: 1
+  zIndex: 1,
 });
 
 const useTabStyle = makeStyles({
   root: {
     width: '45vw',
+    minWidth: '45vw',
     height: '16.25vw',
     borderBottom: borderStyle,
     borderTop: 'none',
@@ -47,6 +48,12 @@ const useTabContainerStyle = makeStyles({
   }
 })
 
+const useContentMargin = makeStyles({
+  topMargin: {
+    marginTop: '2.5vw'
+  }
+})
+
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -74,6 +81,7 @@ export const ClientTabsMobile: React.FC<Props> = (props: Props) => {
 
   const tabStyle = useTabStyle();
   const tabContainerStyle = useTabContainerStyle();
+  const contentMargin = useContentMargin();
 
   const [value, setValue] = React.useState(0);
   const handleChange = (event: React.ChangeEvent<unknown>, newValue: number) => {
@@ -87,10 +95,10 @@ export const ClientTabsMobile: React.FC<Props> = (props: Props) => {
         <Tab label={props.communitiesTitle} id={`tab-${1}`} aria-controls={`tabpanel-${1}`} classes={tabStyle}/>
       </Tabs>
       <TabPanel value={value} index={0}>
-        <ClientContainerMobile clients={props.companies} />
+        <ClientContainerMobile clients={props.companies} classes={contentMargin.topMargin}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <ClientContainerMobile clients={props.communities} />
+        <ClientContainerMobile clients={props.communities} classes={contentMargin.topMargin}/>
       </TabPanel>
     </StyledContainer>
   );
