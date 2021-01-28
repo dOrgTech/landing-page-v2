@@ -9,7 +9,7 @@ import {CloseButtonMobile} from "../../../about/mobile/CloseButtonMobile";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
-  height: '285vw',
+  minHeight: '205vw',
   boxSizing: 'border-box',
   backgroundColor: 'rgba(0, 0, 0, 0.15)',
 });
@@ -31,6 +31,7 @@ const StyledText = styled(Typography)({
 const useStyleClasses = makeStyles({
   buttonStyle: {
     marginTop: '7.5vw',
+    marginBottom: '11vw',
     width: '81vw',
     transition: '0.25s',
     backgroundColor: theme.palette.secondary.main,

@@ -48,7 +48,8 @@ export const HeaderMobile: React.FC = () => {
     <StyledAppBar position="static">
       <Grid container spacing={0} direction='row' justify="flex-start" alignItems='flex-start' style={{height: 'inherit'}}>
         <HeaderMargin item className={borders.bottomBorder} />
-        <LogoContainer container item spacing={0} direction='row' justify="space-between" alignItems='center' className={borders.bottomLeftBorder}>
+        <LogoContainer container item spacing={0} direction='row' justify="space-between" alignItems='center'
+          className={`${borders.bottomLeftBorder} ${borders.rightBorder}`}>
           <Grid item>
             <StyledLogo src={LOGO_PATH} alt="dOrg Logo" onClick={onLogoClick} />
           </Grid>
@@ -56,7 +57,7 @@ export const HeaderMobile: React.FC = () => {
             <MobileMenu />
           </Grid>
         </LogoContainer>
-        <HeaderMargin item className={borders.bottomLeftBorder} />
+        <HeaderMargin item className={borders.bottomBorder} />
       </Grid>
     </StyledAppBar>
   );

@@ -70,7 +70,8 @@ export const FooterMobile: React.FC = () => {
   return (
     <FooterContainer container justify='flex-start'>
       <FooterMargin item className={borders.topBorder} />
-      <FooterBody container item spacing={0} direction='row' justify="space-between" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
+      <FooterBody container item spacing={0} direction='row' justify="space-between" alignItems='center'
+        className={`${borders.topBorder} ${borders.leftBorder} ${borders.rightBorder}`}>
         <Grid item xs={7}>
           <CopyrightText>{COPYRIGHT_TEXT}</CopyrightText>
         </Grid>
@@ -97,7 +98,7 @@ export const FooterMobile: React.FC = () => {
           </Grid>
         </Grid>
       </FooterBody>
-      <FooterMargin item className={`${borders.topBorder} ${borders.leftBorder}`} />
+      <FooterMargin item className={borders.topBorder} />
     </FooterContainer>
   );
 }

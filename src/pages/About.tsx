@@ -98,7 +98,8 @@ export const About: React.FC = () => {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
         <LeftMargin border={borderStyle} height='550vw' centerLineHeight='180.5vw' />
-        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' style={{width: '90vw'}}>
+        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' style={{width: '90vw'}}
+          className={borders.rightBorder}>
           <Grid item xs={12}>
             <AboutTitleBoxMobile text={ABOUT_TITLE} classes={borders.bottomLeftBorder} />
             <PressBoxMobile press={press} classes={borders.bottomLeftBorder} />

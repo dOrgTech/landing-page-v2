@@ -54,7 +54,8 @@ export const Contact: React.FC = () => {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
         <LeftMargin border={borderStyle} height='203.75vw'/>
-        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' style={{width: '90vw'}}>
+        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' style={{width: '90vw'}}
+          className={borders.rightBorder}>
           <Grid item xs={12}>
             <ContactTitleBoxMobile title={TITLE} subtitle={SUBTITLE} instructions={INSTRUCTIONS} classes={borders.bottomLeftBorder}/>
           </Grid>

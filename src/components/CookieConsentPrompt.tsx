@@ -1,7 +1,7 @@
 import React from 'react'
 import CookieConsent from "react-cookie-consent";
 import {theme} from "../theme";
-import {makeStyles} from "@material-ui/core";
+import {makeStyles, Theme, useMediaQuery, useTheme} from "@material-ui/core";
 
 
 const cookieStyle = {
@@ -10,7 +10,7 @@ const cookieStyle = {
 
 const cookieButtonStyle = {
   margin: 0,
-  width: '9vw',
+  width: '9.5vw',
   padding: '0.75vw',
   background: theme.palette.secondary.main,
   fontFamily: theme.typography.fontFamily,
@@ -52,8 +52,43 @@ const useButtonWrapperStyle = makeStyles({
       boxShadow: '0 0.5vw 0.5vw -0.2vw rgba(255, 255, 255, 1)',
       transform: 'translateY(-0.1vw)',
     }
+  },
+  buttonWrapperMobile: {
+    position: 'relative',
+    left: '32vw',
+    bottom: '2vw'
   }
 });
+
+
+const cookieButtonStyleMobile = {
+  margin: 0,
+  width: '36vw',
+  padding: '2.85vw',
+  background: theme.palette.secondary.main,
+  fontFamily: theme.typography.fontFamily,
+  fontSize: '3vw',
+  fontWeight: 'bold',
+  fontStretch: "normal",
+  fontStyle: "normal",
+  lineHeight: 1,
+  letterSpacing: '1.5px',
+  textAlign: "center",
+  color: theme.palette.text.primary,
+}
+
+const cookieContentStyleMobile = {
+  fontFamily: theme.typography.fontFamily,
+  fontSize: '3vw',
+  fontWeight: 'normal',
+  fontStretch: "normal",
+  fontStyle: "normal",
+  lineHeight: 1,
+  letterSpacing: 'normal',
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}
+
 
 interface Props {
   prompt: string;
@@ -63,15 +98,30 @@ interface Props {
 export const CookieConsentPrompt: React.FC<Props> = (props: Props) => {
 
   const buttonWrapperStyle = useButtonWrapperStyle();
+  const theme: Theme = useTheme();
+  const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
-  return (
-    <CookieConsent
-      debug={props.debug}
-      style={cookieStyle}
-      buttonStyle={cookieButtonStyle}
-      buttonWrapperClasses={buttonWrapperStyle.buttonWrapper}
-      contentStyle={cookieContentStyle}>
-      {props.prompt}
-    </CookieConsent>
-  );
+  if (desktop) {
+    return (
+      <CookieConsent
+        debug={props.debug}
+        style={cookieStyle}
+        buttonStyle={cookieButtonStyle}
+        buttonWrapperClasses={buttonWrapperStyle.buttonWrapper}
+        contentStyle={cookieContentStyle}>
+        {props.prompt}
+      </CookieConsent>
+    );
+  } else {
+    return (
+      <CookieConsent
+        debug={props.debug}
+        style={cookieStyle}
+        buttonStyle={cookieButtonStyleMobile}
+        buttonWrapperClasses={buttonWrapperStyle.buttonWrapperMobile}
+        contentStyle={cookieContentStyleMobile}>
+        {props.prompt}
+      </CookieConsent>
+    );
+  }
 }
