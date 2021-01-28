@@ -99,8 +99,9 @@ export const Careers: React.FC = () => {
   } else {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-        <LeftMargin border={borderStyle} height='884.5vw'/>
-        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' style={{width: '90vw'}}>
+        <LeftMargin border={borderStyle} height='804.5vw'/>
+        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' style={{width: '90vw'}}
+          className={borders.rightBorder}>
           <Grid item xs={12}>
             <CareersTitleBoxMobile textPrimaryL1={'Discover a new'} textPrimaryL2={'way to'} textSecondary={'work'}
               classes={borders.bottomLeftBorder}/>
@@ -135,7 +136,7 @@ export const Careers: React.FC = () => {
               classes={borders.leftBorder}/>
           </Grid>
         </ContentContainer>
-        <RightMargin border={borderStyle} height='884.5vw' longAccentIndex={3}/>
+        <RightMargin border={borderStyle} height='804.5vw' longAccentIndex={3}/>
       </Root>
     );
   }

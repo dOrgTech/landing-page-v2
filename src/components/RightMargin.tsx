@@ -75,7 +75,7 @@ const RightMargin: React.FC<Props> = (props: Props) => {
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
   return (
-    <StyledGrid item xs={props.xs} style={{borderLeft: props.border, height: props.height, width: desktop ? '7.5vw' : '5vw'}}>
+    <StyledGrid item xs={props.xs} style={{borderLeft: desktop ? props.border : '', height: props.height, width: desktop ? '7.5vw' : '5vw'}}>
       {desktop ?
         <Accents border={props.centerLineHeight ? props.border : ''}
           longAccentIndex={props.longAccentIndex}

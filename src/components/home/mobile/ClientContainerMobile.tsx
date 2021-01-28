@@ -7,7 +7,7 @@ import {ClientItemMobile} from "./ClientItemMobile";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
-  minHeight: '172vw',
+  minHeight: '160vw',
   position: 'relative',
   zIndex: 1
 });

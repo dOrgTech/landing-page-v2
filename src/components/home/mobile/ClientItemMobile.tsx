@@ -83,7 +83,7 @@ export const ClientItemMobile: React.FC<Props> = (props: Props) => {
   })();
 
   return (
-    <Accordion classes={accordionStyle} className={classes} square elevation={0} style={{margin: 0, padding: 0, maxWidth: '89.9vw'}}
+    <Accordion classes={accordionStyle} className={classes} square elevation={0} style={{margin: 0, padding: 0, maxWidth: '89.73vw'}}
       expanded={props.expanded} onChange={props.onChange} >
       <AccordionSummary aria-controls={`${props.client.name}-content`} id={`${props.client.name}-header`}
         style={{margin: 0, padding: 0}}>
