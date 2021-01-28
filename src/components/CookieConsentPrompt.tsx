@@ -54,17 +54,20 @@ const useButtonWrapperStyle = makeStyles({
     }
   },
   buttonWrapperMobile: {
+    height: '8vw',
     position: 'relative',
-    left: '32vw',
-    bottom: '2vw'
+    right: '1vw',
+    top: '1.5vw'
   }
 });
 
 
 const cookieButtonStyleMobile = {
+  height: '8vw',
+  maxWidth: '30vw',
+  width: '27vw',
   margin: 0,
-  width: '36vw',
-  padding: '2.85vw',
+  padding: '2.5vw 1vw',
   background: theme.palette.secondary.main,
   fontFamily: theme.typography.fontFamily,
   fontSize: '3vw',
@@ -78,6 +81,9 @@ const cookieButtonStyleMobile = {
 }
 
 const cookieContentStyleMobile = {
+  marginRight: '3vw',
+  maxWidth: '70vw',
+  height: '7vw',
   fontFamily: theme.typography.fontFamily,
   fontSize: '3vw',
   fontWeight: 'normal',
