@@ -56,18 +56,7 @@ const useButtonWrapperStyle = makeStyles({
   buttonWrapperMobile: {
     position: 'relative',
     left: '32vw',
-    bottom: '2vw',
-    transition: '0.15s',
-    '&:hover': {
-      border: 'initial',
-      boxShadow: '0 1.9vw 1.9vw -0.75vw rgba(255, 255, 255, 1)',
-      transform: 'translateY(-0.1vw)',
-    },
-    '&:focus': {
-      border: 'initial',
-      boxShadow: '0 1.9vw 1.9vw -0.75vw rgba(255, 255, 255, 1)',
-      transform: 'translateY(-0.1vw)',
-    }
+    bottom: '2vw'
   }
 });
 
