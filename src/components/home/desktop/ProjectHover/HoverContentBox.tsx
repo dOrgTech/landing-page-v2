@@ -1,14 +1,24 @@
-import React from 'react'
-import {styled, Typography, Grid, makeStyles} from '@material-ui/core'
+import React, {useEffect, useState} from 'react'
+import {styled, Typography, Grid, makeStyles, Box} from '@material-ui/core'
 import { theme } from "../../../../theme";
 import {Project} from "../../../../constants/clients";
 import {ChipLarge} from "../../../careers/desktop/profile_popup/ChipLarge";
 import {BulletsBox} from "./BulletsBox";
 
+
+const ScrollContainer = styled(Box)({
+  height: '57.375vw',
+  width: '42.5vw',
+  position: 'relative',
+  boxSizing: 'border-box',
+  overflow: 'hidden'
+})
+
 const StyledGrid = styled(Grid)({
   height: '57.375vw',
   width: '42.5vw',
   padding: '3.5vw 2.5vw 0 4.375vw',
+  boxSizing: 'border-box',
   position: 'relative'
 });
 
@@ -75,28 +85,39 @@ export const HoverContentBox: React.FC<Props> = (props: Props) => {
 
   const chipStyle = useChipStyle();
 
+  const [offset, setOffset] = useState(0)
+
+  useEffect(() => {
+    const y = document.body.getBoundingClientRect().top;
+    const cutoff = window.innerWidth * 0.05;
+    setOffset(Math.min(y + cutoff, 0));
+  }, [offset, props.title])
+
   return (
-    <StyledGrid className={props.classes} container spacing={0} direction='column' justify='flex-start' alignItems='flex-start'>
-      <Grid item>
-        <StyledTitle>{props.title}</StyledTitle>
-      </Grid>
-      <Grid item>
-        <StyledDescription>{props.project.description}</StyledDescription>
-      </Grid>
-      {props.project.bullets.length > 0 &&
-      <BulletsContainer item>
-        <BulletsBox bullets={props.project.bullets } />
-      </BulletsContainer>}
-      <ChipContainer item container spacing={0} direction='row' justify='flex-start' alignItems='flex-start'>
-        {props.project.technologies.map((technology: string, i: number) => (
-          <Grid item key={`technology-${i}`}>
-            <ChipLarge classes={chipStyle.chip} text={technology} />
-          </Grid>
-        ))}
-      </ChipContainer>
-      <IllustrationView style={props.project?.illustration?.position}>
-        {props.project?.illustration?.view}
-      </IllustrationView>
-    </StyledGrid>
+    <ScrollContainer>
+      <StyledGrid container spacing={0} direction='column' justify='flex-start' alignItems='flex-start'
+        className={props.classes} style={{bottom: offset}}>
+        <Grid item>
+          <StyledTitle>{props.title}</StyledTitle>
+        </Grid>
+        <Grid item>
+          <StyledDescription>{props.project.description}</StyledDescription>
+        </Grid>
+        {props.project.bullets.length > 0 &&
+        <BulletsContainer item>
+          <BulletsBox bullets={props.project.bullets } />
+        </BulletsContainer>}
+        <ChipContainer item container spacing={0} direction='row' justify='flex-start' alignItems='flex-start'>
+          {props.project.technologies.map((technology: string, i: number) => (
+            <Grid item key={`technology-${i}`}>
+              <ChipLarge classes={chipStyle.chip} text={technology} />
+            </Grid>
+          ))}
+        </ChipContainer>
+        <IllustrationView style={props.project?.illustration?.position}>
+          {props.project?.illustration?.view}
+        </IllustrationView>
+      </StyledGrid>
+    </ScrollContainer>
   );
 }

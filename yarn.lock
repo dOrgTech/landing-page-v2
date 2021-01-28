@@ -1581,7 +1581,6 @@ __metadata:
     "@fortawesome/react-fontawesome": ^0.1.13
     "@material-ui/core": ^4.11.2
     "@material-ui/icons": ^4.11.2
-    "@n8tb1t/use-scroll-position": ^2.0.3
     "@types/node": ^12.0.0
     "@types/react": ^16.9.53
     "@types/react-dom": ^16.9.8
@@ -2123,16 +2122,6 @@ __metadata:
     react: ^16.8.0 || ^17.0.0
     react-dom: ^16.8.0 || ^17.0.0
   checksum: 5bb7e1a27cd0a09ff9d2d2f1b8b5c9004519b635a4cbe546810172f7d32870c26cc1e846f4bcd9e8cb40202721871b55f6355ba7a6b3e9897d1553d8deac734c
-  languageName: node
-  linkType: hard
-
-"@n8tb1t/use-scroll-position@npm:^2.0.3":
-  version: 2.0.3
-  resolution: "@n8tb1t/use-scroll-position@npm:2.0.3"
-  peerDependencies:
-    "@types/react": "*"
-    react: "*"
-  checksum: 3fe3387e3f271c2558b74fd297988775a1e51daecd9a93b76f86ddec0b0d9d1e3f4016e7ddda8f90cb929f78460ce70b617d84a0e905a908911a2b30f6e98372
   languageName: node
   linkType: hard
 
