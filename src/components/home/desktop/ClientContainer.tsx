@@ -52,6 +52,7 @@ interface Props {
 export const ClientContainer: React.FC<Props> = (props: Props) => {
 
   const [hovered, setHovered] = useState<JSX.Element>(<div/>);
+  const [sticky, setSticky] = useState<string | undefined>(undefined);
 
   return (
     <div>
@@ -66,7 +67,9 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
                 isOnLeft={props.isOnLeft}
                 client={client}
                 onMouseEnter={(popup: JSX.Element) => setHovered(popup)}
-                onMouseLeave={() => setHovered(<div/>)}/>
+                onMouseLeave={() => setHovered(<div/>)}
+                stickyItem={sticky}
+                onClick={(name?: string) => setSticky(name)}/>
             </Grid>
           ))}
         </ClientGrid>

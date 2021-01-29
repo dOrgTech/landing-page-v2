@@ -5,6 +5,7 @@ import {Client} from "../../../constants/clients";
 import {ProjectHoverRight} from "./ProjectHover/ProjectHoverRight";
 import {ProjectHoverLeft} from "./ProjectHover/ProjectHoverLeft";
 
+
 const StyledGrid = styled(Grid)({
   width: '100%',
   height:'4.5vw',
@@ -44,33 +45,57 @@ const HoverIcon = styled('img')({
   top: '0.1vw'
 });
 
+const stickyBorder = '3px solid rgba(255, 255, 255, 1)';
+
 interface Props {
   client: Client;
   isOnLeft?: boolean;
   classes?: string;
   onMouseEnter?: (popup: JSX.Element) => void;
   onMouseLeave?: () => void;
+  stickyItem?: string;
+  onClick?: (name?: string) => void;
 }
 
 export const ClientItem: React.FC<Props> = (props: Props) => {
 
   const classes: string = props.classes ? props.classes : ''
-
+  const isSticky = props.stickyItem === props.client.name;
   const [isHover, setIsHover] = useState(false);
+
+
   // handle hover-dependent state
   const handleMouseEnter = () => {
-    setIsHover(true);
-    if (props.onMouseEnter) {
-      const popup = props.isOnLeft ?
-        <ProjectHoverRight background={props.client.highlightColor} title={props.client.name} project={props.client.project}/>
-        : <ProjectHoverLeft background={props.client.highlightColor} title={props.client.name} project={props.client.project}/>
-      props.onMouseEnter?.(popup);
+    if (!props.stickyItem) {
+      setIsHover(true);
+      if (props.onMouseEnter) {
+        const popup = props.isOnLeft ?
+          <ProjectHoverRight background={props.client.highlightColor} title={props.client.name} project={props.client.project}/>
+          : <ProjectHoverLeft background={props.client.highlightColor} title={props.client.name} project={props.client.project}/>
+        props.onMouseEnter?.(popup);
+      }
     }
   }
-  const handleMouseLave = () => {
-    setIsHover(false);
-    props.onMouseLeave?.();
+  const handleMouseOver = () => {
+    if (!isHover) {
+      handleMouseEnter();
+    }
   }
+  const handleMouseLeave = () => {
+    if (!props.stickyItem) {
+      setIsHover(false);
+      props.onMouseLeave?.();
+    }
+  }
+
+  const handleClick = (event: React.MouseEvent | MouseEvent) => {
+    if (!props.stickyItem) {
+      props.onClick?.(props.client.name);
+    } else if (isSticky) {
+      props.onClick?.();
+    }
+  }
+
   // hover-dependent styling
   const iconColor = (isHover: boolean) => {
     if (!isHover) {
@@ -81,11 +106,13 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
       return '';
     }
   }
+
   const styles = makeStyles({
     highlight: {
-      '&:hover': {
-        backgroundColor: props.client.highlightColor
-      }
+      backgroundColor: isHover ? props.client.highlightColor : ''
+    },
+    sticky: {
+      border: stickyBorder
     },
     icon: {
       filter: iconColor(isHover),
@@ -94,9 +121,11 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
 
   return (
     <StyledGrid container direction='row' justify={'flex-start'} alignItems={'center'}
-      className={classes + ' ' + styles.highlight}
+      className={`${classes} ${styles.highlight} ${isSticky ? styles.sticky : ''}`}
       onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLave}>
+      onMouseLeave={handleMouseLeave}
+      onMouseOver={handleMouseOver}
+      onClick={(event) => handleClick(event)}>
       <Grid item>
         <ClientIcon src={props.client.icon} alt='client icon' className={styles.icon} />
       </Grid>
