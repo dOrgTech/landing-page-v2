@@ -47,7 +47,7 @@ export const Contact: React.FC = () => {
             <ContactForm classes={borders.leftBorder}/>
           </Grid>
         </ContentContainer>
-        <RightMargin border={borderStyle} height='57.375vw' longAccentIndex={4}/>
+        <RightMargin border={borderStyle} height='57.375vw' longAccentIndex={3}/>
       </Root>
     );
   } else {

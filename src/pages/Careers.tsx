@@ -93,7 +93,7 @@ export const Careers: React.FC = () => {
               classes={borders.leftBorder}/>
           </Grid>
         </ContentContainer>
-        <RightMargin border={borderStyle} height='189.625vw' longAccentIndex={3}/>
+        <RightMargin border={borderStyle} height='189.625vw' longAccentIndex={2}/>
       </Root>
     );
   } else {
@@ -136,7 +136,7 @@ export const Careers: React.FC = () => {
               classes={borders.leftBorder}/>
           </Grid>
         </ContentContainer>
-        <RightMargin border={borderStyle} height='804.5vw' longAccentIndex={3}/>
+        <RightMargin border={borderStyle} height='804.5vw' longAccentIndex={2}/>
       </Root>
     );
   }

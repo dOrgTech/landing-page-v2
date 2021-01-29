@@ -1,6 +1,8 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import {styled, Grid, useTheme, Theme, useMediaQuery} from '@material-ui/core'
 import {theme} from "../theme";
+import {Route, routes} from "../constants/routes";
 
 const StyledGrid = styled(Grid)({
   width: '7.5vw',
@@ -14,15 +16,17 @@ const CenterLine = styled(Grid)({
 
 const RectangleAccentPrimary = styled('div')({
   width: '1.625vw',
-  height: '0.125vw',
+  height: '2.1px',
   marginTop: '1.125vw',
   opacity: '0.6',
+  cursor: 'pointer'
 });
 
 const RectangleAccentSecondary = styled('div')({
   width: '2.875vw',
-  height: '0.125vw',
+  height: '2.1px',
   marginTop: '1.125vw',
+  cursor: 'pointer'
 });
 
 interface AccentProps {
@@ -33,23 +37,24 @@ interface AccentProps {
 }
 
 const Accents: React.FC<AccentProps> = (props: AccentProps) => {
+
+  const history = useHistory();
+  const navigateToPage = (route: Route) => history.push(route.path);
+
   return (
     <CenterLine container direction={'column'} justify={'center'} alignItems={'center'} style={{borderBottom: props.border}}>
       {props.longAccentIndex === 0 ?
-        <RectangleAccentSecondary style={{backgroundColor: props.colorSecondary}} />
-        : <RectangleAccentPrimary style={{backgroundColor: props.colorPrimary}}/>}
+        <RectangleAccentSecondary style={{backgroundColor: props.colorSecondary}} onClick={() => navigateToPage(routes.home)}/>
+        : <RectangleAccentPrimary style={{backgroundColor: props.colorPrimary}} onClick={() => navigateToPage(routes.home)}/>}
       {props.longAccentIndex === 1 ?
-        <RectangleAccentSecondary style={{backgroundColor: props.colorSecondary}} />
-        : <RectangleAccentPrimary style={{backgroundColor: props.colorPrimary}}/>}
+        <RectangleAccentSecondary style={{backgroundColor: props.colorSecondary}} onClick={() => navigateToPage(routes.about)}/>
+        : <RectangleAccentPrimary style={{backgroundColor: props.colorPrimary}} onClick={() => navigateToPage(routes.about)}/>}
       {props.longAccentIndex === 2 ?
-        <RectangleAccentSecondary style={{backgroundColor: props.colorSecondary}} />
-        : <RectangleAccentPrimary style={{backgroundColor: props.colorPrimary}}/>}
+        <RectangleAccentSecondary style={{backgroundColor: props.colorSecondary}} onClick={() => navigateToPage(routes.careers)}/>
+        : <RectangleAccentPrimary style={{backgroundColor: props.colorPrimary}} onClick={() => navigateToPage(routes.careers)}/>}
       {props.longAccentIndex === 3 ?
-        <RectangleAccentSecondary style={{backgroundColor: props.colorSecondary}} />
-        : <RectangleAccentPrimary style={{backgroundColor: props.colorPrimary}}/>}
-      {props.longAccentIndex === 4 ?
-        <RectangleAccentSecondary style={{backgroundColor: props.colorSecondary}} />
-        : <RectangleAccentPrimary style={{backgroundColor: props.colorPrimary}}/>}
+        <RectangleAccentSecondary style={{backgroundColor: props.colorSecondary}} onClick={() => navigateToPage(routes.contact)}/>
+        : <RectangleAccentPrimary style={{backgroundColor: props.colorPrimary}} onClick={() => navigateToPage(routes.contact)}/>}
     </CenterLine>
   );
 }
