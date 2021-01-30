@@ -8,7 +8,7 @@ import {ProjectHoverLeft} from "./ProjectHover/ProjectHoverLeft";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
-  height:'4.5vw',
+  height:'4.4vw', // design spec says 4.5vw but 4.4 precludes need for scroll bar in communities container
   paddingLeft: '2.75vw',
   boxSizing: 'border-box',
   backgroundColor: 'transparent',

@@ -9,7 +9,6 @@ import {borderStyles, borderStyle} from "../../../../theme/styles";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
-  height: '63.75vw',
   boxSizing: 'border-box',
   backgroundColor: 'rgba(0, 0, 0, 0.15)',
 });
@@ -31,6 +30,7 @@ const StyledText = styled(Typography)({
 const useStyleClasses = makeStyles({
   buttonStyle: {
     marginTop: '2.75vw',
+    marginBottom: '4.75vw',
     transition: '0.25s',
     backgroundColor: theme.palette.secondary.main,
     border: 'initial',
