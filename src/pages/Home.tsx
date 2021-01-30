@@ -14,8 +14,6 @@ import {ClientTabsMobile} from "../components/home/mobile/ClientTabsMobile";
 const Root = styled(Grid)({
   margins: 'auto',
   width: '100vw',
-  minWidth: '100vw',
-  maxWidth: '100vw',
   position: 'relative',
   zIndex: 0
 });
@@ -26,7 +24,6 @@ const ContentContainer = styled(Grid)({
 });
 
 const PageHalf = styled(Grid)({
-  height: '57.375vw',
   width: '42.5vw',
   paddingTop: '3.125vw',
   borderLeft: borderStyle
@@ -64,11 +61,13 @@ export const Home: React.FC = () => {
   const theme: Theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
+  const desktopContentHeight = window.innerHeight - (0.1 * window.innerWidth);
+
   if (desktop) {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-        <LeftMargin border={borderStyle} height='57.375vw' />
-        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start'>
+        <LeftMargin border={borderStyle} height={`${desktopContentHeight}px`} />
+        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' className={borders.rightBorder}>
           <PageHalf item xs={6}>
             <ClientContainer title={'COMPANIES'} clients={companies} isOnLeft />
           </PageHalf>
@@ -81,7 +80,7 @@ export const Home: React.FC = () => {
             subTitleText={'We’ve helped some of Web3’s top projects design, code and ship.'} />
           <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'} />
         </ContentContainer>
-        <RightMargin border={borderStyle} height='57.375vw' longAccentIndex={0}/>
+        <RightMargin border={borderStyle} height={`${desktopContentHeight}px`} longAccentIndex={0}/>
       </Root>
     );
   } else {

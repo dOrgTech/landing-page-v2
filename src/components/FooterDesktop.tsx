@@ -87,7 +87,8 @@ export const FooterDesktop: React.FC<Props> = (props: Props) => {
         <CopyrightText>{COPYRIGHT_TEXT}</CopyrightText>
       </LeftContainer>}
       {renderRight &&
-      <RightContainer container item spacing={0} direction='row' justify="flex-end" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
+      <RightContainer container item spacing={0} direction='row' justify="flex-end" alignItems='center'
+        className={`${borders.topBorder} ${borders.leftBorder} ${borders.rightBorder}`}>
         <Grid item>
           <IconContainer href="https://twitter.com/dOrg_tech" target="_blank" rel="noopener">
             <StyledIcon src={TWITTER_ICON_PATH}/>
@@ -109,7 +110,7 @@ export const FooterDesktop: React.FC<Props> = (props: Props) => {
           </IconContainer>
         </Grid>
       </RightContainer>}
-      {renderRight && <FooterMargin item className={`${borders.topBorder} ${borders.leftBorder}`} />}
+      {renderRight && <FooterMargin item className={borders.topBorder} />}
     </FooterContainer>
   );
 }

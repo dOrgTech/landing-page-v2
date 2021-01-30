@@ -57,43 +57,41 @@ export const Careers: React.FC = () => {
   if (desktop) {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-        <LeftMargin border={borderStyle} height='189.625vw'/>
-        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start'>
+        <LeftMargin border={borderStyle} height='100%'/>
+        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' className={`${borders.leftBorder} ${borders.rightBorder}`}>
           <Grid item xs={12}>
             <CareersTitleBox textPrimary={'Discover a new way to'} textSecondary={'work'}
-              classes={borders.bottomLeftBorder}/>
+              classes={borders.bottomBorder}/>
           </Grid>
           <PerksContainer container spacing={0} justify="center">
             {Object.values(perks).map((perk: Perk, index: number) => (
               <Grid item xs={3} key={`perk-${index}`}>
-                <PerkBox perk={perk} classes={borders.leftBorder}/>
+                <PerkBox perk={perk} classes={index > 1 ? borders.leftBorder : ''}/>
               </Grid>
             ))}
           </PerksContainer>
           <Grid item xs={12}>
             <ActivationPromptBox prompt={'Get started by completing an activation challenge.'}
               buttonText={'APPLY NOW'}
-              onButtonClick={navigationToActivation}
-              classes={borders.leftBorder}/>
+              onButtonClick={navigationToActivation}/>
           </Grid>
           <Grid item xs={12}>
-            <MeetBuildersTitleBox text={'Meet the Builders'} classes={borders.leftBorder}/>
+            <MeetBuildersTitleBox text={'Meet the Builders'} />
           </Grid>
           <Grid item xs={12}>
-            <ProfileWheel members={testMembers} classes={borders.leftBorder}/>
+            <ProfileWheel members={testMembers} />
           </Grid>
           <Grid item xs={12}>
-            <TestimonialSection testimonials={testimonials} carouselBorder={borderStyle} classes={borders.leftBorder}/>
+            <TestimonialSection testimonials={testimonials} carouselBorder={borderStyle} />
           </Grid>
           <Grid item xs={12}>
             <CurrentOpeningSection openings={openings}
               titleText={'Current Openings'}
               buttonText={'APPLY NOW'}
-              onButtonClick={navigationToActivation}
-              classes={borders.leftBorder}/>
+              onButtonClick={navigationToActivation} />
           </Grid>
         </ContentContainer>
-        <RightMargin border={borderStyle} height='189.625vw' longAccentIndex={2}/>
+        <RightMargin border={borderStyle} height='100%' longAccentIndex={2} />
       </Root>
     );
   } else {

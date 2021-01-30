@@ -107,7 +107,8 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
         </LogoContainer>}
         {renderLeft && <LeftHead item className={borders.bottomLeftBorder}/>}
         {renderRight &&
-        <LinksContainer container item spacing={0} direction='row' justify="flex-end" alignItems='center' className={borders.bottomLeftBorder}>
+        <LinksContainer container item spacing={0} direction='row' justify="flex-end" alignItems='center'
+          className={`${borders.bottomLeftBorder} ${borders.rightBorder}`}>
           <LinkBox item container direction='row' justify='center' alignItems='center'>
             <StyledLink onClick={onAboutClick} underline='none'>{routes.about.name}</StyledLink>
           </LinkBox>
@@ -122,7 +123,7 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
           {isLocation(routes.contact) && <Underline style={{right: '3.75vw'}}/>}
           {props.pageHalf && <Underline style={{right: '3.75vw', backgroundColor: theme.palette.text.primary}}/>}
         </LinksContainer>}
-        {renderRight && <HeaderRightMargin item className={borders.bottomLeftBorder}/>}
+        {renderRight && <HeaderRightMargin item className={borders.bottomBorder}/>}
       </Grid>
     </StyledAppBar>
   );

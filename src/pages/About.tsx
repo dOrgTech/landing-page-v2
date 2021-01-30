@@ -65,10 +65,10 @@ export const About: React.FC = () => {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
         <LeftMargin border={borderStyle} height='116.775vw' centerLineHeight='57.375vw' />
-        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start'>
+        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' className={`${borders.leftBorder} ${borders.rightBorder}`}>
           <Grid item xs={6}>
-            <AboutTitleBox text={ABOUT_TITLE} classes={borders.bottomLeftBorder} />
-            <PressBox press={press} classes={borders.bottomLeftBorder} />
+            <AboutTitleBox text={ABOUT_TITLE} classes={borders.bottomBorder} />
+            <PressBox press={press} classes={borders.bottomBorder} />
           </Grid>
           <StatsContainer container item xs={6} spacing={0} justify="center">
             {Object.values(stats).map((stat: Stat, index: number) => (
@@ -78,17 +78,17 @@ export const About: React.FC = () => {
             ))}
           </StatsContainer>
           <Grid item xs={12}>
-            <PitchTitleBox text={PITCHES_TITLE} classes={borders.bottomLeftBorder} accentStyle={borderStyle} />
+            <PitchTitleBox text={PITCHES_TITLE} classes={borders.bottomBorder} accentStyle={borderStyle} />
           </Grid>
           <PitchesContainer container item xs={12} spacing={0} justify="center">
             {Object.values(pitches).map((pitch: Pitch, index: number) => (
               <Grid item xs={6} key={`pitch-${index}`}>
-                <PitchBox pitch={pitch} classes={borders.bottomLeftBorder} />
+                <PitchBox pitch={pitch} classes={index % 2 === 0 ? borders.bottomBorder : borders.bottomLeftBorder} />
               </Grid>
             ))}
           </PitchesContainer>
           <Grid item xs={12}>
-            <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} classes={borders.leftBorder} />
+            <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} />
           </Grid>
         </ContentContainer>
         <RightMargin border={borderStyle} height='116.775vw' centerLineHeight='57.375vw' longAccentIndex={1}/>
