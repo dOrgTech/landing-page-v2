@@ -61,12 +61,10 @@ export const Home: React.FC = () => {
   const theme: Theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
-  const desktopContentHeight = window.innerHeight - (0.1 * window.innerWidth);
-
   if (desktop) {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-        <LeftMargin border={borderStyle} height={`${desktopContentHeight}px`} />
+        <LeftMargin border={borderStyle} height={'5vh'} />
         <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' className={borders.rightBorder}>
           <PageHalf item xs={6}>
             <ClientContainer title={'COMPANIES'} clients={companies} isOnLeft />
@@ -80,7 +78,7 @@ export const Home: React.FC = () => {
             subTitleText={'We’ve helped some of Web3’s top projects design, code and ship.'} />
           <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'} />
         </ContentContainer>
-        <RightMargin border={borderStyle} height={`${desktopContentHeight}px`} longAccentIndex={0}/>
+        <RightMargin border={borderStyle} height={'5vh'} longAccentIndex={0}/>
       </Root>
     );
   } else {

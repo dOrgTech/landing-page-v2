@@ -5,7 +5,7 @@ import {Communities} from "../../../constants/communities";
 import {Client} from "../../../constants/clients";
 import {ClientItem} from "./ClientItem";
 import {theme} from "../../../theme";
-import Scrollbar from "react-scrollbars-custom";
+import {CustomScrollbar} from "../../CustomScrollbar";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
@@ -68,7 +68,7 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
           <StyledTitle>{props.title}</StyledTitle>
         </TitleContainer>
         <ScrollContainer>
-          <Scrollbar rtl={props.isOnLeft}>
+          <CustomScrollbar rtl={props.isOnLeft} style={{width: '100%', height: '100%'}}>
             <ClientGrid container direction='column' justify='flex-start' alignItems='flex-start'>
               {Object.values(props.clients).map((client: Client) => (
                 <Grid item key={`${client.name}`} style={{width: '100%'}}>
@@ -82,7 +82,7 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
                 </Grid>
               ))}
             </ClientGrid>
-          </Scrollbar>
+          </CustomScrollbar>
         </ScrollContainer>
       </StyledGrid>
       <ProjectView style={{right: props.isOnLeft ? '-7.5vw' : '42.5vw'}}>{hovered}</ProjectView>

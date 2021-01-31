@@ -66,7 +66,7 @@ export const Careers: React.FC = () => {
           <PerksContainer container spacing={0} justify="center">
             {Object.values(perks).map((perk: Perk, index: number) => (
               <Grid item xs={3} key={`perk-${index}`}>
-                <PerkBox perk={perk} classes={index > 1 ? borders.leftBorder : ''}/>
+                <PerkBox perk={perk} classes={index > 0 ? borders.leftBorder : ''}/>
               </Grid>
             ))}
           </PerksContainer>
