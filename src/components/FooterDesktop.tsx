@@ -29,8 +29,8 @@ const StyledIcon = styled('img')({
   height: 'auto',
   objectFit: 'contain',
   color: theme.palette.text.primary,
-  "&:hover": {
-    color: theme.palette.secondary.main
+  '&:hover': {
+    filter: 'brightness(0) saturate(100%) invert(51%) sepia(98%) saturate(396%) hue-rotate(103deg) brightness(90%) contrast(83%)'
   },
   cursor: 'pointer'
 });

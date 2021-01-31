@@ -18,7 +18,12 @@ const RectangleAccentPrimary = styled('div')({
   width: '1.625vw',
   height: '2.1px',
   marginTop: '1.125vw',
-  opacity: '0.6',
+  opacity: 0.6,
+  '&:hover': {
+    width: '2.875vw',
+    opacity: 1,
+    backgroundColor: theme.palette.secondary.main + ' !important'
+  },
   cursor: 'pointer'
 });
 
