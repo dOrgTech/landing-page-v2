@@ -3,7 +3,7 @@ import {styled, Typography, Grid} from '@material-ui/core'
 import {theme} from "../../../../theme";
 
 const TextContainer = styled(Grid)({
-  width: '10.625vw',
+  width: '19.8vh',
   height: '100%',
   background: 'transparent',
   boxSizing: 'border-box'
@@ -12,7 +12,7 @@ const TextContainer = styled(Grid)({
 
 const StyledTitle = styled(Typography)({
   fontFamily: theme.typography.fontFamily,
-  fontSize: '1.125vw',
+  fontSize: '2.1vh',
   fontWeight: 600,
   fontStretch: "normal",
   fontStyle: "normal",

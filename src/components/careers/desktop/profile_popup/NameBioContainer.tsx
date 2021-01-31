@@ -3,19 +3,19 @@ import {styled, Typography, Grid} from '@material-ui/core'
 import { theme } from "../../../../theme";
 
 const StyledGrid = styled(Grid)({
-  width: '23.375vw',
+  width: '43.6vh',
   height: '100%',
   background: 'transparent',
   boxSizing: 'border-box'
 });
 
 const TextItemContainer = styled(Grid)({
-  height: '5.7vw'
+  height: '10.65vh'
 });
 
 const StyledName = styled(Typography)({
   fontFamily: theme.typography.fontFamily,
-  fontSize: '1.75vw',
+  fontSize: '3.25vh',
   fontWeight: 600,
   fontStretch: "normal",
   fontStyle: "normal",
@@ -27,7 +27,7 @@ const StyledName = styled(Typography)({
 
 const StyledTitle = styled(Typography)({
   fontFamily: theme.typography.fontFamily,
-  fontSize: '0.875vw',
+  fontSize: '1.65vh',
   fontWeight: 'normal',
   fontStretch: "normal",
   fontStyle: "normal",
@@ -39,7 +39,7 @@ const StyledTitle = styled(Typography)({
 
 const StyledBio = styled(Typography)({
   fontFamily: theme.typography.fontFamily,
-  fontSize: '0.75vw',
+  fontSize: '1.4vh',
   fontWeight: 'normal',
   fontStretch: "normal",
   fontStyle: "normal",

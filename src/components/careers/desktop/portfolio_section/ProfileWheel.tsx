@@ -31,19 +31,19 @@ const ProfileItem = styled(Grid)({
 
 const OverlayLeft = styled('div')({
   height: '25vw',
-  width: '9.375vw',
+  width: '9.475vw',
   backgroundImage: 'linear-gradient(to right, #000e3c 5%, rgba(0, 14, 62, 0.6) 51%, rgba(0, 16, 71, 0) 95%)',
   position: 'absolute',
-  left: '-7.5vw',
+  left: '-7.6vw',
   zIndex: 1
 });
 
 const OverlayRight = styled('div')({
   height: '25vw',
-  width: '9.375vw',
+  width: '9.475vw',
   backgroundImage: 'linear-gradient(to left, #000e3c 5%, rgba(0, 14, 62, 0.6) 51%, rgba(0, 16, 71, 0) 95%)',
   position: 'absolute',
-  right: '-7.5vw',
+  right: '-7.6vw',
   zIndex: 1
 });
 

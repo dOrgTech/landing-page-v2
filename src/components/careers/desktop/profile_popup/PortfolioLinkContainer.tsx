@@ -3,27 +3,27 @@ import {styled, Typography, Grid} from '@material-ui/core'
 import {theme} from "../../../../theme";
 
 const StyledGrid = styled(Grid)({
-  width: '23.375vw',
+  width: '43.5vh',
   height: '100%',
   background: 'transparent',
   boxSizing: 'border-box'
 });
 
 const LinkItem = styled(Grid)({
-  width: '20vw',
-  marginBottom: '1.5vw'
+  width: '37.3vh',
+  marginBottom: '2.8vh'
 });
 
 const StyleIcon = styled('img')({
-  width: "1vw",
-  height: "1vw",
-  marginRight: '0.875vw',
+  width: "1.85vh",
+  height: "1.85vh",
+  marginRight: '1.65vh',
   objectFit: "contain"
 });
 
 const StyledUrl= styled(Typography)({
   fontFamily: theme.typography.fontFamily,
-  fontSize: '0.875vw',
+  fontSize: '1.65vh',
   fontWeight: 'normal',
   fontStretch: "normal",
   fontStyle: "normal",

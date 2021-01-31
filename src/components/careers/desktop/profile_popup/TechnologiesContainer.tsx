@@ -3,7 +3,7 @@ import {styled, Grid, makeStyles} from '@material-ui/core';
 import {ChipLarge} from "./ChipLarge";
 
 const StyledGrid = styled(Grid)({
-  width: '23.375vw',
+  width: '43.6vh',
   height: '100%',
   background: 'transparent',
   boxSizing: 'border-box'
@@ -11,7 +11,7 @@ const StyledGrid = styled(Grid)({
 
 const useChipStyle = makeStyles({
   chip: {
-    margin: '0 0.75vw 0.5vw 0'
+    margin: '0 1.4vh 0.95vh 0'
   }
 });
 
