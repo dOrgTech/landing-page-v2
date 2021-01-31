@@ -1,7 +1,8 @@
 import React from 'react'
-import {Box, Grid, makeStyles, styled} from '@material-ui/core'
+import {Box, ClickAwayListener, Grid, makeStyles, Modal, styled} from '@material-ui/core'
 import {Member} from "../../../../constants/members";
 import {ProfileSummary} from "./ProfileSummary";
+import {ProfileFull} from "../profile_popup/ProfileFull";
 
 
 const SlideShow = styled(Box)({
@@ -28,6 +29,24 @@ const ProfileItem = styled(Grid)({
   marginRight: '1.25vw'
 });
 
+const OverlayLeft = styled('div')({
+  height: '25vw',
+  width: '9.375vw',
+  backgroundImage: 'linear-gradient(to right, #000e3c 5%, rgba(0, 14, 62, 0.6) 51%, rgba(0, 16, 71, 0) 95%)',
+  position: 'absolute',
+  left: '-7.5vw',
+  zIndex: 1
+});
+
+const OverlayRight = styled('div')({
+  height: '25vw',
+  width: '9.375vw',
+  backgroundImage: 'linear-gradient(to left, #000e3c 5%, rgba(0, 14, 62, 0.6) 51%, rgba(0, 16, 71, 0) 95%)',
+  position: 'absolute',
+  right: '-7.5vw',
+  zIndex: 1
+});
+
 
 interface Props {
   members: Member[];
@@ -35,6 +54,16 @@ interface Props {
 }
 
 export const ProfileWheel: React.FC<Props> = (props: Props) => {
+
+  const [open, setOpen] = React.useState(false);
+  const [member, setMember] = React.useState<Member>(props.members[0]);
+  const handleClickOpen = (member: Member) => {
+    setMember(member);
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const useSlideAnimation = makeStyles(theme => ({
     '@keyframes moveLeft': {
@@ -56,10 +85,21 @@ export const ProfileWheel: React.FC<Props> = (props: Props) => {
       <ProfileContainer className={slideAnimation.animateLeft} container direction={'column'} spacing={0} justify={'flex-start'} alignItems={'center'}>
         {props.members.map((member: Member, i: number) => (
           <ProfileItem item key={`profile-${i}`}>
-            <ProfileSummary member={member} />
+            <ProfileSummary member={member} onClickOpen={handleClickOpen}/>
           </ProfileItem>
         ))}
       </ProfileContainer>
+      <OverlayLeft />
+      <OverlayRight />
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby={'full profile of selected member'}
+        aria-describedby="full member profile">
+        <ClickAwayListener onClickAway={handleClose}>
+          <ProfileFull member={member} onClose={handleClose} />
+        </ClickAwayListener>
+      </Modal>
     </SlideShow>
   );
 }
