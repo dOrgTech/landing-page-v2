@@ -105,6 +105,9 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
     },
     text: {
       color: props.textColor ? props.textColor : theme.palette.text.primary
+    },
+    underline: {
+      backgroundColor: props.textColor ? props.textColor : theme.palette.text.primary
     }
   })();
 
@@ -131,7 +134,7 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
           {isLocation(routes.about) && <Underline style={{right: '20.25vw'}}/>}
           {isLocation(routes.careers) && <Underline style={{right: '12vw'}}/>}
           {isLocation(routes.contact) && <Underline style={{right: '3.75vw'}}/>}
-          {props.pageHalf && <Underline style={{right: '3.75vw', backgroundColor: theme.palette.text.primary}}/>}
+          {props.pageHalf && <Underline className={styles.underline} style={{right: '3.75vw'}}/>}
         </LinksContainer>}
         {renderRight && <HeaderRightMargin item className={borders.bottomBorder}/>}
       </Grid>
