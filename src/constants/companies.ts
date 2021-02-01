@@ -21,6 +21,7 @@ export const companies: Companies = {
     icon: 'imgs/logos/TheGraph.svg',
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(73%) sepia(70%) saturate(3996%) hue-rotate(144deg) brightness(98%) contrast(97%)',
     highlightColor: '#2548bf',
+    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -30,10 +31,11 @@ export const companies: Companies = {
   },
   Gnosis: {
     name: 'Gnosis',
-    link: 'Full Transparency',
+    link: 'https://gnosis.io/',
     icon: 'imgs/logos/Gnosis.svg',
     iconHighlightFilter: '',
     highlightColor: '#009CB4',
+    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -43,10 +45,11 @@ export const companies: Companies = {
   },
   Balancer: {
     name:'Balancer',
-    link: 'Never Stop Learning',
+    link: 'https://balancer.finance/',
     icon: 'imgs/logos/Balancer.svg',
     iconHighlightFilter: '',
     highlightColor: '#41476b',
+    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -56,10 +59,11 @@ export const companies: Companies = {
   },
   DeversiFi: {
     name:'DeversiFi',
-    link: 'Never Stop Learning',
+    link: 'https://www.deversifi.com/',
     icon: 'imgs/logos/Deversifi.svg',
     iconHighlightFilter: '',
     highlightColor: '#5500FC',
+    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -68,10 +72,11 @@ export const companies: Companies = {
     }
   }, Compound: {
     name:'Compound',
-    link: 'Never Stop Learning',
+    link: 'https://compound.finance/',
     icon: 'imgs/logos/Compound.svg',
     iconHighlightFilter: '',
     highlightColor: '#00a977',
+    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -81,10 +86,11 @@ export const companies: Companies = {
   },
   Stakedus: {
     name:'Staked.us',
-    link: 'Never Stop Learning',
+    link: 'https://staked.us/',
     icon: 'imgs/logos/StakedUs.svg',
     iconHighlightFilter: '',
     highlightColor: '#3746bc',
+    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -94,10 +100,11 @@ export const companies: Companies = {
   },
   Minds: {
     name:'Minds',
-    link: 'Never Stop Learning',
+    link: 'https://www.minds.com/',
     icon: 'imgs/logos/Minds.svg',
     iconHighlightFilter: '',
     highlightColor: '#dbab09',
+    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -107,10 +114,11 @@ export const companies: Companies = {
   },
   ParaSwap: {
     name:'ParaSwap',
-    link: 'Never Stop Learning',
+    link: 'https://paraswap.io/#/',
     icon: 'imgs/logos/ParaSwap.svg',
     iconHighlightFilter: '',
     highlightColor: '#005ede',
+    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -120,10 +128,11 @@ export const companies: Companies = {
   },
   Boardroom: {
     name:'Boardroom',
-    link: 'Never Stop Learning',
+    link: 'http://boardroom.to/',
     icon: 'imgs/logos/Boardroom.svg',
     iconHighlightFilter: '',
     highlightColor: '#E47C03',
+    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -133,10 +142,11 @@ export const companies: Companies = {
   },
   Centrality: {
     name:'Centrality',
-    link: 'Freedom & Peer Support',
+    link: 'https://centrality.ai/',
     icon: 'imgs/logos/Centrality.svg',
     iconHighlightFilter: '',
     highlightColor: '#1130ff',
+    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -146,10 +156,11 @@ export const companies: Companies = {
   },
   eToro: {
     name:'eToro',
-    link: 'Freedom & Peer Support',
+    link: 'https://www.etoro.com/',
     icon: 'imgs/logos/eToro.svg',
     iconHighlightFilter: '',
     highlightColor: '#6CAC2F',
+    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',

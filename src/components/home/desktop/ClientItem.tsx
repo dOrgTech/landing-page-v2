@@ -36,16 +36,18 @@ const ClientIcon = styled('img')({
   top: '-0.25vw'
 });
 
-const HoverIcon = styled('img')({
+const Link = styled('a')({
+  textDecoration: 'none',
   marginLeft: '1.75vw',
+});
+
+const HoverIcon = styled('img')({
   width: "1.25vw",
   height: "1.25vw",
   objectFit: "contain",
   position: 'relative',
   top: '0.1vw'
 });
-
-const stickyBorder = '3px solid rgba(255, 255, 255, 1)';
 
 interface Props {
   client: Client;
@@ -112,16 +114,19 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
       backgroundColor: isHover ? props.client.highlightColor : ''
     },
     sticky: {
-      border: stickyBorder
+      border: isSticky ? '3px solid rgba(255, 255, 255, 1)' : ''
     },
     icon: {
       filter: iconColor(isHover),
     },
+    // text: {
+    //   color: isHover ? props.client.textColor : theme.palette.text.primary,
+    // }
   })();
 
   return (
     <StyledGrid container direction='row' justify={'flex-start'} alignItems={'center'}
-      className={`${classes} ${styles.highlight} ${isSticky ? styles.sticky : ''}`}
+      className={`${classes} ${styles.highlight} ${styles.sticky}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseOver={handleMouseOver}
@@ -133,7 +138,10 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
         <StyledTitle>{props.client.name}</StyledTitle>
       </Grid>
       <Grid item>
-        {isHover && <HoverIcon src={'imgs/external-link-icon.svg'} alt='pop-up content icon' />}
+        {isHover &&
+        <Link href={props.client.link} target='_blank' rel='noopener noreferrer'>
+          <HoverIcon src={'imgs/external-link-icon.svg'} alt={`external link for ${props.client.name}`} />
+        </Link>}
       </Grid>
     </StyledGrid>
   );
