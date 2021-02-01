@@ -9,6 +9,11 @@ const StyledGrid = styled(Grid)({
   background: 'transparent'
 });
 
+const AccentContainer = styled(Grid)({
+  width: 'inherit',
+  height: '100vh',
+});
+
 const CenterLine = styled(Grid)({
   width: 'inherit',
   height: '100vh',
@@ -35,7 +40,6 @@ const RectangleAccentSecondary = styled('div')({
 });
 
 interface AccentProps {
-  border?: string;
   longAccentIndex?: number;
   colorPrimary?: string;
   colorSecondary?: string;
@@ -48,7 +52,7 @@ const Accents: React.FC<AccentProps> = (props: AccentProps) => {
   const navigateToPage = (route: Route) => history.push(route.path);
 
   return (
-    <CenterLine container direction={'column'} justify={'center'} alignItems={'center'} style={{borderBottom: props.border, height: props.height}}>
+    <AccentContainer container direction={'column'} justify={'center'} alignItems={'center'} style={{height: props.height}}>
       {props.longAccentIndex === 0 ?
         <RectangleAccentSecondary style={{backgroundColor: props.colorSecondary}} onClick={() => navigateToPage(routes.home)}/>
         : <RectangleAccentPrimary style={{backgroundColor: props.colorPrimary}} onClick={() => navigateToPage(routes.home)}/>}
@@ -61,7 +65,7 @@ const Accents: React.FC<AccentProps> = (props: AccentProps) => {
       {props.longAccentIndex === 3 ?
         <RectangleAccentSecondary style={{backgroundColor: props.colorSecondary}} onClick={() => navigateToPage(routes.contact)}/>
         : <RectangleAccentPrimary style={{backgroundColor: props.colorPrimary}} onClick={() => navigateToPage(routes.contact)}/>}
-    </CenterLine>
+    </AccentContainer>
   );
 }
 
@@ -73,6 +77,7 @@ Accents.defaultProps = {
 interface Props {
   height: string;
   xs?: boolean | "auto" | 10 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 11 | 12 | undefined;
+  accentContainerHeight?: string;
   centerLineHeight?: string;
   border?: string;
   longAccentIndex?: number;
@@ -87,13 +92,14 @@ const RightMargin: React.FC<Props> = (props: Props) => {
 
   return (
     <StyledGrid item xs={props.xs} style={{height: props.height, width: desktop ? '7.5vw' : '5vw'}}>
-      {desktop ?
-        <Accents border={props.centerLineHeight ? props.border : ''}
-          height={props.centerLineHeight}
+      {desktop &&
+        <Accents
+          height={props.accentContainerHeight}
           longAccentIndex={props.longAccentIndex}
           colorPrimary={props.accentColorPrimary}
-          colorSecondary={props.accentColorSecondary}/>
-        : (props.centerLineHeight && props.border && <CenterLine item style={{borderBottom: props.border, height: props.centerLineHeight}} />)}
+          colorSecondary={props.accentColorSecondary}/>}
+      {props.centerLineHeight && props.border &&
+      <CenterLine item style={{borderBottom: props.border, height: props.centerLineHeight}} />}
     </StyledGrid>
   );
 }

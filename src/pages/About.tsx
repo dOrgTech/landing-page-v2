@@ -101,7 +101,11 @@ export const About: React.FC = () => {
             <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} />
           </Grid>
         </ContentContainer>
-        <RightMargin border={borderStyle} height='100%' centerLineHeight='57.375vw' longAccentIndex={1}/>
+        <RightMargin border={borderStyle}
+          height='100%'
+          accentContainerHeight={`${window.innerHeight - (0.1 * window.innerWidth)}px`}
+          centerLineHeight={`${(0.67375 * window.innerWidth) - window.innerHeight}px`}
+          longAccentIndex={1}/>
       </Root>
     );
   } else {

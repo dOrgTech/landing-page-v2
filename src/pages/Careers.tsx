@@ -91,7 +91,7 @@ export const Careers: React.FC = () => {
               onButtonClick={navigationToActivation} />
           </Grid>
         </ContentContainer>
-        <RightMargin border={borderStyle} height='100%' longAccentIndex={2} />
+        <RightMargin height='100%' accentContainerHeight={`${window.innerHeight - (0.1 * window.innerWidth)}px`} longAccentIndex={2} />
       </Root>
     );
   } else {

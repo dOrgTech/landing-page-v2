@@ -78,7 +78,7 @@ export const Home: React.FC = () => {
             subTitleText={'We’ve helped some of Web3’s top projects design, code and ship.'} />
           <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'} />
         </ContentContainer>
-        <RightMargin border={borderStyle} height={'5vh'} longAccentIndex={0}/>
+        <RightMargin height={'5vh'} accentContainerHeight={`${window.innerHeight - (0.1 * window.innerWidth)}px`} longAccentIndex={0}/>
       </Root>
     );
   } else {
