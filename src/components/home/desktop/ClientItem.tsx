@@ -72,8 +72,8 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
       setIsHover(true);
       if (props.onMouseEnter) {
         const popup = props.isOnLeft ?
-          <ProjectHoverRight background={props.client.highlightColor} title={props.client.name} project={props.client.project}/>
-          : <ProjectHoverLeft background={props.client.highlightColor} title={props.client.name} project={props.client.project}/>
+          <ProjectHoverRight client={props.client} />
+          : <ProjectHoverLeft client={props.client} />
         props.onMouseEnter?.(popup);
       }
     }
@@ -119,9 +119,9 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
     icon: {
       filter: iconColor(isHover),
     },
-    // text: {
-    //   color: isHover ? props.client.textColor : theme.palette.text.primary,
-    // }
+    text: {
+      color: isHover ? props.client.textColor : theme.palette.text.primary,
+    }
   })();
 
   return (
@@ -135,11 +135,11 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
         <ClientIcon src={props.client.icon} alt='client icon' className={styles.icon} />
       </Grid>
       <Grid item>
-        <StyledTitle>{props.client.name}</StyledTitle>
+        <StyledTitle className={styles.text}>{props.client.name}</StyledTitle>
       </Grid>
       <Grid item>
         {isHover &&
-        <Link href={props.client.link} target='_blank' rel='noopener noreferrer'>
+        <Link href={props.client.link} target='_blank' rel='noopener noreferrer' onClick={(e) => e.stopPropagation()}>
           <HoverIcon src={'imgs/external-link-icon.svg'} alt={`external link for ${props.client.name}`} />
         </Link>}
       </Grid>

@@ -18,7 +18,6 @@ export const communities: Communities = {
     icon: 'imgs/logos/DaoStack.svg',
     iconHighlightFilter: '',
     highlightColor: '#00b4d6',
-    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -32,7 +31,6 @@ export const communities: Communities = {
     icon: 'imgs/logos/Aragon.svg',
     iconHighlightFilter: '',
     highlightColor: '#484ecc',
-    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -46,7 +44,6 @@ export const communities: Communities = {
     icon: 'imgs/logos/DxDao.svg',
     iconHighlightFilter: '',
     highlightColor: '#651fff',
-    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -60,7 +57,6 @@ export const communities: Communities = {
     icon: 'imgs/logos/Prime.svg',
     iconHighlightFilter: '',
     highlightColor: '#ff495b',
-    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -74,7 +70,6 @@ export const communities: Communities = {
     icon: 'imgs/logos/Badger.svg',
     iconHighlightFilter: '',
     highlightColor: '#F2A52B',
-    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -88,7 +83,6 @@ export const communities: Communities = {
     icon: 'imgs/logos/api3.svg',
     iconHighlightFilter: '',
     highlightColor: '#000',
-    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -102,7 +96,6 @@ export const communities: Communities = {
     icon: 'imgs/logos/LID.svg',
     iconHighlightFilter: '',
     highlightColor: '#246B8F',
-    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -116,7 +109,6 @@ export const communities: Communities = {
     icon: 'imgs/logos/web3api_icon_color.png',
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(56%) sepia(56%) saturate(365%) hue-rotate(143deg) brightness(91%) contrast(83%)',
     highlightColor: '#60c093',
-    textColor: '#FFF',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',

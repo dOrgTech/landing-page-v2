@@ -79,6 +79,8 @@ const useBorders = makeStyles(borderStyles);
 
 interface Props {
   pageHalf?: 'left' | 'right';
+  textColor?: string;
+  iconColorFilter?: string;
   classes?: string;
 }
 
@@ -97,26 +99,34 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
   const isLocation = (route: Readonly<Route>) => { return location.pathname === route.path; }
 
   const borders = useBorders();
+  const styles = makeStyles({
+    icon: {
+      filter: props.iconColorFilter ? props.iconColorFilter : ''
+    },
+    text: {
+      color: props.textColor ? props.textColor : theme.palette.text.primary
+    }
+  })();
 
   return (
     <StyledAppBar position="static" className={props.classes} style={{width: props.pageHalf ? '50vw' : '100vw'}}>
       <Grid container spacing={0} direction='row' justify="flex-start" alignItems='flex-start' style={{height: 'inherit'}}>
         {renderLeft &&
         <LogoContainer container item spacing={0} direction='row' justify="center" alignItems='center' className={borders.bottomBorder}>
-          <StyledLogo src={LOGO_PATH} alt="dOrg Logo" onClick={onLogoClick}/>
+          <StyledLogo src={LOGO_PATH} alt="dOrg Logo" onClick={onLogoClick} className={styles.icon}/>
         </LogoContainer>}
         {renderLeft && <LeftHead item className={borders.bottomLeftBorder}/>}
         {renderRight &&
         <LinksContainer container item spacing={0} direction='row' justify="flex-end" alignItems='center'
           className={`${borders.bottomLeftBorder} ${borders.rightBorder}`}>
           <LinkBox item container direction='row' justify='center' alignItems='center'>
-            <StyledLink onClick={onAboutClick} underline='none'>{routes.about.name}</StyledLink>
+            <StyledLink onClick={onAboutClick} underline='none' className={styles.text}>{routes.about.name}</StyledLink>
           </LinkBox>
           <LinkBox item container direction='row' justify='center' alignItems='center'>
-            <StyledLink onClick={onCareersClick} underline='none'>{routes.careers.name}</StyledLink>
+            <StyledLink onClick={onCareersClick} underline='none' className={styles.text}>{routes.careers.name}</StyledLink>
           </LinkBox>
           <LinkBox item container direction='row' justify='center' alignItems='center'>
-            <StyledLink onClick={onContactClick} underline='none'>{routes.contact.name}</StyledLink>
+            <StyledLink onClick={onContactClick} underline='none' className={styles.text}>{routes.contact.name}</StyledLink>
           </LinkBox>
           {isLocation(routes.about) && <Underline style={{right: '20.25vw'}}/>}
           {isLocation(routes.careers) && <Underline style={{right: '12vw'}}/>}

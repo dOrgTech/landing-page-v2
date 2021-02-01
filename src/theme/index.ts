@@ -51,6 +51,11 @@ export const theme = createMuiTheme({
     }
   },
   overrides: {
+    MuiAppBar: {
+      root: {
+        boxShadow: 'none'
+      }
+    },
     MuiTextField: {
       root: {
         border: 'solid 1px #529dad',

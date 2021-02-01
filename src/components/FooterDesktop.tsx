@@ -69,6 +69,8 @@ const useBorders = makeStyles(borderStyles);
 
 interface Props {
   pageHalf?: 'left' | 'right';
+  textColor?: string;
+  iconColorFilter?: string;
   classes?: string;
 }
 
@@ -77,6 +79,15 @@ export const FooterDesktop: React.FC<Props> = (props: Props) => {
   const renderRight = props.pageHalf === 'right' || !props.pageHalf;
   const renderLeft = props.pageHalf === 'left' || !props.pageHalf;
 
+  const styles = makeStyles({
+    icon: {
+      filter: props.iconColorFilter ? props.iconColorFilter : ''
+    },
+    text: {
+      color: props.textColor ? props.textColor : theme.palette.text.primary
+    }
+  })();
+
   const borders = useBorders();
 
   return (
@@ -84,29 +95,29 @@ export const FooterDesktop: React.FC<Props> = (props: Props) => {
       {renderLeft && <FooterMargin item className={borders.topBorder} />}
       {renderLeft &&
       <LeftContainer container item spacing={0} direction='row' justify="flex-start" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
-        <CopyrightText>{COPYRIGHT_TEXT}</CopyrightText>
+        <CopyrightText className={styles.text}>{COPYRIGHT_TEXT}</CopyrightText>
       </LeftContainer>}
       {renderRight &&
       <RightContainer container item spacing={0} direction='row' justify="flex-end" alignItems='center'
         className={`${borders.topBorder} ${borders.leftBorder} ${borders.rightBorder}`}>
         <Grid item>
           <IconContainer href="https://twitter.com/dOrg_tech" target="_blank" rel="noopener">
-            <StyledIcon src={TWITTER_ICON_PATH}/>
+            <StyledIcon src={TWITTER_ICON_PATH} className={styles.icon} />
           </IconContainer>
         </Grid>
         <Grid item>
           <IconContainer href="https://keybase.io/team/dorg.membrane" target="_blank" rel="noopener">
-            <StyledIcon src={KEYBASE_ICON_PATH}/>
+            <StyledIcon src={KEYBASE_ICON_PATH} className={styles.icon} />
           </IconContainer>
         </Grid>
         <Grid item>
           <IconContainer href="https://github.com/dOrgTech" target="_blank" rel="noopener">
-            <StyledIcon src={GITHUB_ICON_PATH}/>
+            <StyledIcon src={GITHUB_ICON_PATH} className={styles.icon} />
           </IconContainer>
         </Grid>
         <Grid item>
           <IconContainer href="mailto:contact@dorg.tech" target="_blank" rel="noopener">
-            <StyledIcon src={EMAIL_ICON_PATH}/>
+            <StyledIcon src={EMAIL_ICON_PATH} className={styles.icon} />
           </IconContainer>
         </Grid>
       </RightContainer>}
