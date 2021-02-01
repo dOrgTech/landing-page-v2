@@ -1,6 +1,6 @@
 import {Grid, Link, makeStyles, styled, Typography} from '@material-ui/core'
 import React from 'react'
-import {borderStyles} from "../theme/styles";
+import {getBorderStyle} from "../theme/styles";
 import {theme} from "../theme";
 
 
@@ -65,8 +65,6 @@ const FooterMargin = styled(Grid)({
   height: 'inherit'
 });
 
-const useBorders = makeStyles(borderStyles);
-
 interface Props {
   pageHalf?: 'left' | 'right';
   textColor?: string;
@@ -88,7 +86,8 @@ export const FooterDesktop: React.FC<Props> = (props: Props) => {
     }
   })();
 
-  const borders = useBorders();
+  const borderColor = props.textColor ? props.textColor : theme.palette.text.primary;
+  const borders = makeStyles(getBorderStyle(borderColor))();
 
   return (
     <FooterContainer container justify='flex-start' className={props.classes} style={{width: props.pageHalf ? '50vw' : '100vw'}}>

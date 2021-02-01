@@ -1,19 +1,18 @@
 import {Grid, makeStyles, styled} from "@material-ui/core";
 import React from "react";
-import {borderStyles} from "../../../../theme/styles";
+import {borderStyles, getBorderStyle} from "../../../../theme/styles";
 import {HoverContentBox} from "./HoverContentBox";
 import {Client} from "../../../../constants/clients";
 import {HomeTitleBox} from "../HomeTitleBox";
 import {HeaderDesktop} from "../../../HeaderDesktop";
 import {FooterDesktop} from "../../../FooterDesktop";
 import {LeftMargin} from "../../../LeftMargin";
+import {theme} from "../../../../theme";
 
 const Root = styled(Grid)({
   width: '50vw',
   position: 'relative'
 });
-
-const useBorders = makeStyles(borderStyles);
 
 interface Props {
   client: Client
@@ -22,7 +21,8 @@ interface Props {
 
 export const ProjectHoverLeft: React.FC<Props> = (props: Props) => {
 
-  const borders = useBorders();
+  const borderColor = props.client.textColor ? props.client.textColor : theme.palette.text.primary;
+  const borders = makeStyles(getBorderStyle(borderColor))();
   const styleClasses = makeStyles({
     title: {
       background: props.client.highlightColor,

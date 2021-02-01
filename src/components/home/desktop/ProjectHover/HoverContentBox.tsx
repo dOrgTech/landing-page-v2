@@ -75,7 +75,7 @@ interface Props {
 export const HoverContentBox: React.FC<Props> = (props: Props) => {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { name, iconHighlightFilter, textColor, textColorFilter, project } = props.client;
+  const { name, textColor, textColorFilter, project } = props.client;
 
   const styles = makeStyles({
     icon: {
@@ -105,7 +105,7 @@ export const HoverContentBox: React.FC<Props> = (props: Props) => {
       </Grid>
       {project.bullets.length > 0 &&
       <BulletsContainer item>
-        <BulletsBox bullets={project.bullets} textColor={textColor} iconColorFilter={iconHighlightFilter} />
+        <BulletsBox bullets={project.bullets} textColor={textColor} iconColorFilter={textColorFilter} />
       </BulletsContainer>}
       <ChipContainer item container spacing={0} direction='row' justify='flex-start' alignItems='flex-start'>
         {project.technologies.map((technology: string, i: number) => (

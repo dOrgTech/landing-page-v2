@@ -121,6 +121,9 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
     },
     text: {
       color: isHover ? props.client.textColor : theme.palette.text.primary,
+    },
+    link: {
+      filter: props.client.textColorFilter ? props.client.textColorFilter : ''
     }
   })();
 
@@ -140,7 +143,8 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
       <Grid item>
         {isHover &&
         <Link href={props.client.link} target='_blank' rel='noopener noreferrer' onClick={(e) => e.stopPropagation()}>
-          <HoverIcon src={'imgs/external-link-icon.svg'} alt={`external link for ${props.client.name}`} />
+          <HoverIcon src={'imgs/external-link-icon.svg'} alt={`external link for ${props.client.name}`}
+            className={styles.link}/>
         </Link>}
       </Grid>
     </StyledGrid>

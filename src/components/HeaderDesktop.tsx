@@ -2,7 +2,7 @@ import React from "react";
 import {styled, AppBar, Grid, Link, makeStyles, Box} from "@material-ui/core";
 import { useHistory, useLocation } from 'react-router-dom';
 import {Route, routes} from "../constants/routes";
-import {borderStyles} from "../theme/styles";
+import {getBorderStyle} from "../theme/styles";
 import {theme} from "../theme";
 
 
@@ -75,7 +75,6 @@ const HeaderRightMargin = styled(Grid)({
   height: 'inherit'
 });
 
-const useBorders = makeStyles(borderStyles);
 
 interface Props {
   pageHalf?: 'left' | 'right';
@@ -98,7 +97,8 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
   const location = useLocation();
   const isLocation = (route: Readonly<Route>) => { return location.pathname === route.path; }
 
-  const borders = useBorders();
+  const borderColor = props.textColor ? props.textColor : theme.palette.text.primary;
+  const borders = makeStyles(getBorderStyle(borderColor))();
   const styles = makeStyles({
     icon: {
       filter: props.iconColorFilter ? props.iconColorFilter : ''
@@ -118,10 +118,10 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
         <LogoContainer container item spacing={0} direction='row' justify="center" alignItems='center' className={borders.bottomBorder}>
           <StyledLogo src={LOGO_PATH} alt="dOrg Logo" onClick={onLogoClick} className={styles.icon}/>
         </LogoContainer>}
-        {renderLeft && <LeftHead item className={borders.bottomLeftBorder}/>}
+        {renderLeft && <LeftHead item className={`${borders.bottomBorder} ${borders.leftBorder}`}/>}
         {renderRight &&
         <LinksContainer container item spacing={0} direction='row' justify="flex-end" alignItems='center'
-          className={`${borders.bottomLeftBorder} ${borders.rightBorder}`}>
+          className={`${borders.bottomBorder} ${borders.leftBorder}  ${borders.rightBorder}`}>
           <LinkBox item container direction='row' justify='center' alignItems='center'>
             <StyledLink onClick={onAboutClick} underline='none' className={styles.text}>{routes.about.name}</StyledLink>
           </LinkBox>

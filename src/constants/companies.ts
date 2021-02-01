@@ -31,9 +31,10 @@ export const companies: Companies = {
   Gnosis: {
     name: 'Gnosis',
     link: 'https://gnosis.io/',
-    icon: 'imgs/logos/Gnosis.svg',
-    iconHighlightFilter: '',
-    highlightColor: '#009CB4',
+    icon: 'imgs/logos/gnosis-logo-color.svg',
+    highlightColor: '#e8e7e6',
+    textColor: '#001428',
+    textColorFilter: 'brightness(0) saturate(100%) invert(6%) sepia(31%) saturate(5034%) hue-rotate(192deg) brightness(97%) contrast(102%)',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -66,7 +67,8 @@ export const companies: Companies = {
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
     }
-  }, Compound: {
+  },
+  Compound: {
     name:'Compound',
     link: 'https://compound.finance/',
     icon: 'imgs/logos/Compound.svg',
