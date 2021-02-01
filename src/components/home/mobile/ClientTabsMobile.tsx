@@ -16,7 +16,6 @@ const StyledContainer = styled('div')({
 const useTabStyle = makeStyles({
   root: {
     width: '45vw',
-    minWidth: '45vw',
     height: '16.25vw',
     borderBottom: borderStyle,
     borderTop: 'none',

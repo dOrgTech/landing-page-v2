@@ -84,7 +84,7 @@ export const Home: React.FC = () => {
   } else {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-        <LeftMargin border={borderStyle} height='221.45vw' />
+        <LeftMargin border={borderStyle} height='100%' />
         <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' style={{width: '90vw'}}
           className={borders.rightBorder}>
           <HomeTitleBoxMobile
@@ -99,7 +99,7 @@ export const Home: React.FC = () => {
             communities={communities}
             classes={borders.leftBorder}/>
         </ContentContainer>
-        <RightMargin border={borderStyle} height={'221.45vw'} />
+        <RightMargin border={borderStyle} height={'100%'} />
       </Root>
     );
   }
