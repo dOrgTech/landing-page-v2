@@ -5,6 +5,7 @@ import {theme} from "../../../theme";
 import {ExpandedContentBoxMobile} from "./ExpandedContentBoxMobile";
 import {borderStyle, borderStyles} from "../../../theme/styles";
 
+
 const StyledAccordion = styled(Accordion)({
   width: '100%',
   margin: 0,
