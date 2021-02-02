@@ -74,7 +74,6 @@ interface Props {
 
 export const HoverContentBox: React.FC<Props> = (props: Props) => {
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { name, iconHighlightFilter, textColor, textColorFilter, project } = props.client;
 
   const styles = makeStyles({

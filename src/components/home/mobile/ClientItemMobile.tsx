@@ -89,6 +89,15 @@ export const ClientItemMobile: React.FC<Props> = (props: Props) => {
       backgroundColor: props.client.highlightColor
     }
   })();
+  const iconColor = (isExpanded: boolean) => {
+    if (!isExpanded) {
+      return 'brightness(0) saturate(100%) invert(100%)';
+    } else if (isExpanded && props.client.iconHighlightFilter && !props.client.colorIcon) {
+      return props.client.iconHighlightFilter;
+    } else {
+      return '';
+    }
+  }
   const selectStyles = makeStyles({
     hidden: {
       opacity: props.someExpanded && !props.expanded ? 0.3 : 1
@@ -100,6 +109,15 @@ export const ClientItemMobile: React.FC<Props> = (props: Props) => {
     borders: {
       borderLeft: props.expanded ? borderStyle : '',
       borderRight: props.expanded ? borderStyle : ''
+    },
+    icon: {
+      filter: iconColor(props.expanded)
+    },
+    text: {
+      color: props.expanded && props.client.textColor ? props.client.textColor : theme.palette.text.primary,
+    },
+    link: {
+      filter: props.client.textColorFilter ? props.client.textColorFilter : ''
     }
   })();
   const marginStyle = makeStyles({
@@ -113,6 +131,7 @@ export const ClientItemMobile: React.FC<Props> = (props: Props) => {
     }
   })();
 
+
   return (
     <StyledAccordion classes={accordionStyle} className={classes} square elevation={0}
       expanded={props.expanded} onChange={props.onChange} >
@@ -121,20 +140,20 @@ export const ClientItemMobile: React.FC<Props> = (props: Props) => {
         <StyledGrid container direction='row' justify={'space-between'} alignItems={'center'} className={classes + ' ' + selectStyles.selected}>
           <Grid item xs={11} container direction='row' justify={'flex-start'} alignItems={'center'}>
             <Grid item>
-              <ClientIcon src={props.client.icon} alt='client icon' className={selectStyles.hidden}/>
+              <ClientIcon src={props.client.icon} alt='client icon' className={`${selectStyles.hidden} ${selectStyles.icon}`}/>
             </Grid>
             <Grid item>
-              <StyledTitle className={selectStyles.hidden}>{props.client.name}</StyledTitle>
+              <StyledTitle className={`${selectStyles.hidden} ${selectStyles.text}`}>{props.client.name}</StyledTitle>
             </Grid>
           </Grid>
           <Grid item xs={1}>
-            {props.expanded && <SelectedIcon src={'imgs/external-link-icon.svg'} alt='pop-up content icon' />}
+            {props.expanded && <SelectedIcon src={'imgs/external-link-icon.svg'} alt='pop-up content icon' className={selectStyles.link}/>}
           </Grid>
         </StyledGrid>
         {props.expanded && <ShadowOverlay />}
       </AccordionSummary>
       <AccordionDetails style={{margin: 0, padding: 0}}>
-        <ExpandedContentBoxMobile title={props.client.name} project={props.client.project} classes={`${borders.leftBorder} ${borders.rightBorder}`}/>
+        <ExpandedContentBoxMobile client={props.client} classes={`${borders.leftBorder} ${borders.rightBorder}`}/>
         {props.expanded && <MarginOverlay className={marginStyle.leftMargin} />}
         {props.expanded && <MarginOverlay className={marginStyle.rightMargin} />}
       </AccordionDetails>

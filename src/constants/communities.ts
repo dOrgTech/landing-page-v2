@@ -44,15 +44,13 @@ export const communities: Communities = {
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
     }
   },
-  Dxdao: {
-    name:'Dxdao',
-    link: 'https://dxdao.eth.link/#/',
-    icon: 'imgs/logos/DxDao.svg',
-    iconHighlightColor: '#651fff',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(12%) sepia(95%) saturate(5348%) hue-rotate(260deg) brightness(106%) contrast(107%)',
-    highlightColor: '#fff',
-    textColor: '#333333',
-    textColorFilter: 'brightness(0) saturate(100%) invert(26%) sepia(0%) saturate(31%) hue-rotate(140deg) brightness(96%) contrast(119%)',
+  Badger: {
+    name:'Badger',
+    link: 'https://badger.finance/',
+    icon: 'imgs/logos/Badger.svg',
+    iconHighlightColor: '#F2A52B',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(84%) sepia(11%) saturate(4929%) hue-rotate(333deg) brightness(95%) contrast(100%)',
+    highlightColor: '#181818',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -74,13 +72,15 @@ export const communities: Communities = {
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
     }
   },
-  Badger: {
-    name:'Badger',
-    link: 'https://badger.finance/',
-    icon: 'imgs/logos/Badger.svg',
-    iconHighlightColor: '#F2A52B',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(84%) sepia(11%) saturate(4929%) hue-rotate(333deg) brightness(95%) contrast(100%)',
-    highlightColor: '#181818',
+  Dxdao: {
+    name:'Dxdao',
+    link: 'https://dxdao.eth.link/#/',
+    icon: 'imgs/logos/DxDao.svg',
+    iconHighlightColor: '#651fff',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(12%) sepia(95%) saturate(5348%) hue-rotate(260deg) brightness(106%) contrast(107%)',
+    highlightColor: '#fff',
+    textColor: '#333333',
+    textColorFilter: 'brightness(0) saturate(100%) invert(26%) sepia(0%) saturate(31%) hue-rotate(140deg) brightness(96%) contrast(119%)',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
