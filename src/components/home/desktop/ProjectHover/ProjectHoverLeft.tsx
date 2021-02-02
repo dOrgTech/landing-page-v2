@@ -1,6 +1,6 @@
 import {Grid, makeStyles, styled} from "@material-ui/core";
 import React from "react";
-import {borderStyles, getBorderStyle} from "../../../../theme/styles";
+import {getBorderStyle} from "../../../../theme/styles";
 import {HoverContentBox} from "./HoverContentBox";
 import {Client} from "../../../../constants/clients";
 import {HomeTitleBox} from "../HomeTitleBox";
@@ -39,14 +39,16 @@ export const ProjectHoverLeft: React.FC<Props> = (props: Props) => {
   return (
     <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'
       className={props.classes} style={{background: props.client.highlightColor}}>
-      <HeaderDesktop pageHalf={'left'} classes={styleClasses.header} textColor={props.client.textColor} iconColorFilter={props.client.textColorFilter} />
+      <HeaderDesktop pageHalf={'left'} classes={styleClasses.header} textColor={props.client.textColor} logoColorFilter={props.client.textColorFilter} />
       <LeftMargin height={'100%'}/>
       <HoverContentBox client={props.client} classes={borders.leftBorder} />
       <FooterDesktop pageHalf={'left'} textColor={props.client.textColor} iconColorFilter={props.client.textColorFilter} />
       <HomeTitleBox classes={styleClasses.title}
         titleTextPrimary={'We build custom'}
         titleTextSecondary={'Dapps'}
-        subTitleText={'We’ve helped some of Web3’s top projects design, code and ship.'} />
+        subTitleText={'We’ve helped some of Web3’s top projects design, code and ship.'}
+        titleColorPrimary={props.client.textColor}
+        titleColorSecondary={props.client.iconHighlightColor as string}/>
     </Root>
   );
 };

@@ -26,7 +26,10 @@ export const ProjectHoverRight: React.FC<Props> = (props: Props) => {
   return (
     <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'
       className={props.classes} style={{background: props.client.highlightColor}}>
-      <HeaderDesktop pageHalf={'right'} textColor={props.client.textColor} iconColorFilter={props.client.iconHighlightFilter} />
+      <HeaderDesktop pageHalf={'right'}
+        textColor={props.client.textColor}
+        logoColorFilter={props.client.iconHighlightFilter}
+        underlineColor={props.client.iconHighlightColor as string}/>
       <HoverContentBox client={props.client} classes={`${borders.leftBorder} ${borders.rightBorder}`} />
       <RightMargin height='100%'
         accentContainerHeight={`${window.innerHeight - (0.1 * window.innerWidth)}px`}

@@ -102,7 +102,7 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
   const iconColor = (isHover: boolean) => {
     if (!isHover) {
       return 'brightness(0) saturate(100%) invert(100%)';
-    } else if (isHover && props.client.iconHighlightFilter) {
+    } else if (isHover && props.client.iconHighlightFilter && !props.client.colorIcon) {
       return props.client.iconHighlightFilter;
     } else {
       return '';
@@ -111,7 +111,7 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
 
   const styles = makeStyles({
     highlight: {
-      backgroundColor: isHover ? props.client.highlightColor : ''
+      background: isHover ? props.client.highlightColor : ''
     },
     sticky: {
       border: isSticky ? '3px solid rgba(255, 255, 255, 1)' : ''

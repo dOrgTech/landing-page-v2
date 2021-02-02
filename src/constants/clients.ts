@@ -5,6 +5,8 @@ export interface Client {
   link: string;
   icon: string;
   highlightColor: string;
+  colorIcon?: boolean;
+  iconHighlightColor?: string;
   iconHighlightFilter?: string;
   textColor?: string;
   textColorFilter?: string;

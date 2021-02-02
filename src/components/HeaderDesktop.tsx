@@ -79,7 +79,8 @@ const HeaderRightMargin = styled(Grid)({
 interface Props {
   pageHalf?: 'left' | 'right';
   textColor?: string;
-  iconColorFilter?: string;
+  underlineColor?: string;
+  logoColorFilter?: string;
   classes?: string;
 }
 
@@ -99,15 +100,20 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
 
   const borderColor = props.textColor ? props.textColor : theme.palette.text.primary;
   const borders = makeStyles(getBorderStyle(borderColor))();
+  const underlineColor = () => {
+    if (props.underlineColor) return props.underlineColor;
+    else if (props.textColor) return props.textColor;
+    else return theme.palette.text.primary;
+  }
   const styles = makeStyles({
-    icon: {
-      filter: props.iconColorFilter ? props.iconColorFilter : ''
+    logo: {
+      filter: props.logoColorFilter ? props.logoColorFilter : ''
     },
     text: {
       color: props.textColor ? props.textColor : theme.palette.text.primary
     },
-    underline: {
-      backgroundColor: props.textColor ? props.textColor : theme.palette.text.primary
+    halfPageUnderline: {
+      backgroundColor: underlineColor()
     }
   })();
 
@@ -116,7 +122,7 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
       <Grid container spacing={0} direction='row' justify="flex-start" alignItems='flex-start' style={{height: 'inherit'}}>
         {renderLeft &&
         <LogoContainer container item spacing={0} direction='row' justify="center" alignItems='center' className={borders.bottomBorder}>
-          <StyledLogo src={LOGO_PATH} alt="dOrg Logo" onClick={onLogoClick} className={styles.icon}/>
+          <StyledLogo src={LOGO_PATH} alt="dOrg Logo" onClick={onLogoClick} className={styles.logo}/>
         </LogoContainer>}
         {renderLeft && <LeftHead item className={`${borders.bottomBorder} ${borders.leftBorder}`}/>}
         {renderRight &&
@@ -134,7 +140,7 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
           {isLocation(routes.about) && <Underline style={{right: '20.25vw'}}/>}
           {isLocation(routes.careers) && <Underline style={{right: '12vw'}}/>}
           {isLocation(routes.contact) && <Underline style={{right: '3.75vw'}}/>}
-          {props.pageHalf && <Underline className={styles.underline} style={{right: '3.75vw'}}/>}
+          {props.pageHalf && <Underline className={styles.halfPageUnderline} style={{right: '3.75vw'}}/>}
         </LinksContainer>}
         {renderRight && <HeaderRightMargin item className={borders.bottomBorder}/>}
       </Grid>
