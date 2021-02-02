@@ -11,6 +11,13 @@ import {HomeTitleBox} from "../components/home/desktop/HomeTitleBox";
 import {HomeTitleBoxMobile} from "../components/home/mobile/HomeTItleBoxMobile";
 import {ClientTabsMobile} from "../components/home/mobile/ClientTabsMobile";
 
+const TITLE_TEXT_PRIMARY = 'We build custom';
+const TITLE_TEXT_SECONDARY = 'Dapps';
+const SUBTITLE_TEXT = 'We’ve helped some of Web3’s top projects design, code and ship.';
+const COMPANIES_TITLE = 'COMPANIES';
+const COMMUNITIES_TITLE = 'COMMUNITIES';
+
+
 const Root = styled(Grid)({
   margins: 'auto',
   width: '100vw',
@@ -67,15 +74,15 @@ export const Home: React.FC = () => {
         <LeftMargin border={borderStyle} height={'5vh'} />
         <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' className={borders.rightBorder}>
           <PageHalf item xs={6}>
-            <ClientContainer title={'COMPANIES'} clients={companies} isOnLeft />
+            <ClientContainer title={COMPANIES_TITLE} clients={companies} isOnLeft />
           </PageHalf>
           <PageHalf item xs={6}>
-            <ClientContainer title={'COMMUNITIES'} clients={communities} />
+            <ClientContainer title={COMMUNITIES_TITLE} clients={communities} />
           </PageHalf>
           <HomeTitleBox classes={titlePosition.location}
-            titleTextPrimary={'We build custom'}
-            titleTextSecondary={'Dapps'}
-            subTitleText={'We’ve helped some of Web3’s top projects design, code and ship.'} />
+            titleTextPrimary={TITLE_TEXT_PRIMARY}
+            titleTextSecondary={TITLE_TEXT_SECONDARY}
+            subTitleText={SUBTITLE_TEXT} />
           <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'} />
         </ContentContainer>
         <RightMargin height={'5vh'} accentContainerHeight={`${window.innerHeight - (0.1 * window.innerWidth)}px`} longAccentIndex={0}/>
@@ -88,13 +95,13 @@ export const Home: React.FC = () => {
         <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' style={{width: '90vw'}}
           className={borders.rightBorder}>
           <HomeTitleBoxMobile
-            titleTextPrimary={'We build custom'}
-            titleTextSecondary={'Dapps'}
-            subTitleText={'We’ve helped some of Web3’s top projects design, code and ship.'}
+            titleTextPrimary={TITLE_TEXT_PRIMARY}
+            titleTextSecondary={TITLE_TEXT_SECONDARY}
+            subTitleText={SUBTITLE_TEXT}
             classes={borders.bottomLeftBorder}/>
           <ClientTabsMobile
-            companiesTitle={'COMPANIES'}
-            communitiesTitle={'COMMUNITIES'}
+            companiesTitle={COMPANIES_TITLE}
+            communitiesTitle={COMMUNITIES_TITLE}
             companies={companies}
             communities={communities}
             classes={borders.leftBorder}/>
