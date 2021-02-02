@@ -1,12 +1,12 @@
 import React from 'react'
-import {Box, styled, Typography} from '@material-ui/core'
+import {Grid, styled, Typography} from '@material-ui/core'
 import { theme } from "../../../theme";
 
 
-const StyledBox = styled(Box)({
+const StyledBox = styled(Grid)({
   margin: 'auto',
   width: '100%',
-  height: '38.25vw',
+  height: '19.125vw',
   background: 'transparent',
   boxSizing: 'border-box',
   position: 'relative'
@@ -14,7 +14,7 @@ const StyledBox = styled(Box)({
 
 const StyledText = styled(Typography)({
   maxWidth: '36vw',
-  padding: '4.3vw 1.75vw',
+  padding: '0 1.75vw',
   fontFamily: theme.typography.fontFamily,
   fontSize: '3.25vw',
   fontWeight: 600,
@@ -34,8 +34,10 @@ interface Props {
 export const AboutTitleBox: React.FC<Props> = (props: Props) => {
 
   return (
-    <StyledBox className={props.classes}>
-      <StyledText>{props.text}</StyledText>
+    <StyledBox className={props.classes} container alignItems={'center'}>
+      <Grid item>
+        <StyledText>{props.text}</StyledText>
+      </Grid>
     </StyledBox>
   );
 }

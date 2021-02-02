@@ -1,6 +1,6 @@
 import React from 'react'
 import {styled, Typography, Grid, makeStyles} from '@material-ui/core'
-import {Project} from "../../../constants/clients";
+import {Client} from "../../../constants/clients";
 import {theme} from "../../../theme";
 import {ChipLargeMobile} from "../../careers/mobile/profile_popup/ChipLargeMobile";
 import {BulletsBoxMobile} from "./BulletsBoxMobile";
@@ -54,33 +54,42 @@ const IllustrationView = styled('div')({
 })
 
 interface Props {
-  title: string;
-  project: Project;
+  client: Client
   classes?: string;
 }
 
 export const ExpandedContentBoxMobile: React.FC<Props> = (props: Props) => {
 
+  const { iconHighlightFilter, textColor, textColorFilter, project } = props.client;
+
+  const styles = makeStyles({
+    icon: {
+      filter: textColorFilter ? textColorFilter : ''
+    },
+    text: {
+      color: textColor ? textColor : theme.palette.text.primary
+    }
+  })();
   const chipStyle = useChipStyle();
 
   return (
     <StyledGrid className={props.classes} container spacing={0} direction='column' justify='flex-start' alignItems='flex-start'>
       <Grid item>
-        <StyledDescription>{props.project.description}</StyledDescription>
+        <StyledDescription className={styles.text}>{project.description}</StyledDescription>
       </Grid>
-      {props.project.bullets.length > 0 &&
+      {project.bullets.length > 0 &&
       <BulletsContainer item>
-        <BulletsBoxMobile bullets={props.project.bullets } />
+        <BulletsBoxMobile bullets={project.bullets} textColor={textColor} iconColorFilter={iconHighlightFilter ? iconHighlightFilter : textColorFilter} />
       </BulletsContainer>}
       <ChipContainer item container spacing={0} direction='row' justify='flex-start' alignItems='flex-start'>
-        {props.project.technologies.map((technology: string, i: number) => (
+        {project.technologies.map((technology: string, i: number) => (
           <Grid item key={`technology-${i}`}>
-            <ChipLargeMobile classes={chipStyle.chip} text={technology} />
+            <ChipLargeMobile classes={chipStyle.chip} text={technology} textColor={textColor}/>
           </Grid>
         ))}
       </ChipContainer>
-      <IllustrationView style={props.project?.illustration?.position}>
-        {props.project?.illustration?.view}
+      <IllustrationView style={project?.illustration?.position}>
+        {project?.illustration?.view}
       </IllustrationView>
     </StyledGrid>
   );

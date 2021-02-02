@@ -54,10 +54,14 @@ const useButtonWrapperStyle = makeStyles({
     }
   },
   buttonWrapperMobile: {
-    height: '8vw',
+    height: 'max-content',
+    width: 'max-content',
+    margin: 0,
+    padding: 0,
     position: 'relative',
     right: '1vw',
-    top: '1.5vw'
+    top: '1.5vw',
+    boxSizing: 'border-box',
   }
 });
 
@@ -65,12 +69,12 @@ const useButtonWrapperStyle = makeStyles({
 const cookieButtonStyleMobile = {
   height: '8vw',
   maxWidth: '30vw',
-  width: '27vw',
+  width: '30vw',
   margin: 0,
-  padding: '2.5vw 1vw',
+  padding: '1vw 1vw',
   background: theme.palette.secondary.main,
   fontFamily: theme.typography.fontFamily,
-  fontSize: '3vw',
+  fontSize: '2.5vw',
   fontWeight: 'bold',
   fontStretch: "normal",
   fontStyle: "normal",
@@ -78,14 +82,16 @@ const cookieButtonStyleMobile = {
   letterSpacing: '1.5px',
   textAlign: "center",
   color: theme.palette.text.primary,
+  boxSizing: 'border-box',
 }
 
 const cookieContentStyleMobile = {
   marginRight: '3vw',
-  maxWidth: '70vw',
+  width: '59vw',
+  maxWidth: '59vw',
   height: '7vw',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '3vw',
+  fontSize: '3.5vw',
   fontWeight: 'normal',
   fontStretch: "normal",
   fontStyle: "normal",
@@ -93,6 +99,7 @@ const cookieContentStyleMobile = {
   letterSpacing: 'normal',
   textAlign: "center",
   color: theme.palette.text.secondary,
+  boxSizing: 'border-box',
 }
 
 

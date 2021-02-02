@@ -1,7 +1,6 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import {borderStyle} from "./styles";
 
-// TODO: adjust these settings to the theme provided by the designer
 export const theme = createMuiTheme({
   palette: {
     primary: {
@@ -52,6 +51,11 @@ export const theme = createMuiTheme({
     }
   },
   overrides: {
+    MuiAppBar: {
+      root: {
+        boxShadow: 'none'
+      }
+    },
     MuiTextField: {
       root: {
         border: 'solid 1px #529dad',
@@ -72,18 +76,6 @@ export const theme = createMuiTheme({
       },
     },
     MuiInput: {
-      root: {
-        height: 40,
-        "& $notchedOutline": {
-          borderWidth: 0
-        },
-        "&:hover $notchedOutline": {
-          borderWidth: 0
-        },
-        "&$focused $notchedOutline": {
-          borderWidth: 0
-        }
-      },
       multiline: {
         fontFamily: `'Spartan', sans-serif`,
         fontSize: '0.938vw',
@@ -102,12 +94,6 @@ export const theme = createMuiTheme({
         '&:hover': {
           color: '#60c093'
         }
-      }
-    },
-    MuiAppBar: {
-      root: {
-        backgroundColor: '#1B262C',
-        boxShadow: 'none'
       }
     },
     MuiButton: {

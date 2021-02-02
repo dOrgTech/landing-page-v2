@@ -1,16 +1,10 @@
 import React from 'react'
-import {
-  styled,
-  Typography,
-  Grid,
-  makeStyles,
-  Modal
-} from '@material-ui/core'
+import {styled, Typography, Grid, makeStyles} from '@material-ui/core'
 import { theme } from "../../../../theme";
 import {Member} from "../../../../constants/members";
 import {ChipSmall} from "../ChipSmall";
 import {PortfolioButton} from "./PortfolioButton";
-import {ProfileFull} from "../profile_popup/ProfileFull";
+
 
 const BUTTON_TEXT = 'PORTFOLIO';
 
@@ -63,17 +57,10 @@ const ButtonContainer = styled(Grid)({
 interface Props {
   member: Member;
   classes?: string;
+  onClickOpen?: (member: Member) => void;
 }
 
 export const ProfileSummary: React.FC<Props> = (props: Props) => {
-
-  const [open, setOpen] = React.useState(false);
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   const chipStyle = useChipStyle();
 
@@ -98,12 +85,7 @@ export const ProfileSummary: React.FC<Props> = (props: Props) => {
         ))}
       </ChipContainer>
       <ButtonContainer item>
-        <PortfolioButton text={BUTTON_TEXT} handleClick={handleClickOpen} />
-        <Modal open={open} aria-labelledby={`full profile of ${props.member.name}`} aria-describedby="full member profile">
-          <div>
-            <ProfileFull member={props.member} onClose={handleClose} />
-          </div>
-        </Modal>
+        <PortfolioButton text={BUTTON_TEXT} handleClick={() => props.onClickOpen?.(props.member)} />
       </ButtonContainer>
     </StyledGrid>
   );

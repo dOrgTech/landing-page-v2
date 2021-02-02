@@ -4,8 +4,12 @@ export interface Client {
   name: string;
   link: string;
   icon: string;
-  iconHighlightFilter: string;
   highlightColor: string;
+  colorIcon?: boolean;
+  iconHighlightColor?: string;
+  iconHighlightFilter?: string;
+  textColor?: string;
+  textColorFilter?: string;
   project: Project;
 }
 
@@ -25,6 +29,7 @@ export interface Illustration {
     right?: string | number;
   }
 }
+
 
 
 

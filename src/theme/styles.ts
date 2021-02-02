@@ -1,4 +1,6 @@
 // font used for StatBoxMobile statistics, in accordance with design spec
+import {hexToRGB} from "../Utils/colorUtils";
+
 export const mobileStatFont = "'Open Sans', sans-serif";
 
 // borders used for grid-like look
@@ -46,4 +48,28 @@ export const borderStyles: BorderClasses = {
     borderBottom: borderStyle,
     borderLeft: borderStyle
   }
+};
+
+export const getBorderStyle = (hexColor: string): BorderClasses => {
+  return {
+    allBorders: {
+      border: `1px solid ${hexToRGB(hexColor, 0.25)}`
+    },
+    rightBorder: {
+      borderRight: `1px solid ${hexToRGB(hexColor, 0.25)}`
+    },
+    leftBorder: {
+      borderLeft: `1px solid ${hexToRGB(hexColor, 0.25)}`
+    },
+    topBorder: {
+      borderTop: `1px solid ${hexToRGB(hexColor, 0.25)}`
+    },
+    bottomBorder: {
+      borderBottom: `1px solid ${hexToRGB(hexColor, 0.25)}`
+    },
+    bottomLeftBorder: {
+      borderBottom: `1px solid ${hexToRGB(hexColor, 0.25)}`,
+      borderLeft: `1px solid ${hexToRGB(hexColor, 0.25)}`
+    }
+  };
 };

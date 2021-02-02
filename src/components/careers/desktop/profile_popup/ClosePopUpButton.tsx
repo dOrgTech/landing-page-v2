@@ -5,12 +5,12 @@ import {theme} from "../../../../theme";
 
 
 const StyleGrid = styled(Grid)({
-  width: '1.875vw',
-  height: '1.875vw',
+  width: '3.5vh',
+  height: '3.5vh',
   boxSizing: 'border-box',
   backgroundColor: theme.palette.secondary.main,
   borderRadius: '50%',
-  fontSize: '1.2vw',
+  fontSize: '2.25vh',
   color: theme.palette.text.primary
 });
 

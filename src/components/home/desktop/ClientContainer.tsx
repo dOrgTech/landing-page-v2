@@ -5,6 +5,7 @@ import {Communities} from "../../../constants/communities";
 import {Client} from "../../../constants/clients";
 import {ClientItem} from "./ClientItem";
 import {theme} from "../../../theme";
+import {CustomScrollbar} from "../../CustomScrollbar";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
@@ -12,15 +13,21 @@ const StyledGrid = styled(Grid)({
   zIndex: 1
 });
 
+const ScrollContainer = styled(Grid)({
+  width: '100%',
+  height: `${window.innerHeight - (0.16 * window.innerWidth)}px`
+});
+
 const ClientGrid = styled(Grid)({
-  width: '100%'
+  width: '100%',
+  direction: 'ltr'
 });
 
 const TitleContainer = styled(Grid)({
   width: '100%',
   height: '0.75vw',
   paddingLeft: '1.688vw',
-  marginBottom: '2.188vw',
+  marginBottom: '2.125vw',
   borderLeft: '0.188vw solid ' + theme.palette.text.secondary
 });
 
@@ -52,6 +59,7 @@ interface Props {
 export const ClientContainer: React.FC<Props> = (props: Props) => {
 
   const [hovered, setHovered] = useState<JSX.Element>(<div/>);
+  const [sticky, setSticky] = useState<string | undefined>(undefined);
 
   return (
     <div>
@@ -59,17 +67,23 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
         <TitleContainer item>
           <StyledTitle>{props.title}</StyledTitle>
         </TitleContainer>
-        <ClientGrid item container direction='column' justify='flex-start' alignItems='flex-start'>
-          {Object.values(props.clients).map((client: Client) => (
-            <Grid item key={`${client.name}`} style={{width: '100%'}}>
-              <ClientItem
-                isOnLeft={props.isOnLeft}
-                client={client}
-                onMouseEnter={(popup: JSX.Element) => setHovered(popup)}
-                onMouseLeave={() => setHovered(<div/>)}/>
-            </Grid>
-          ))}
-        </ClientGrid>
+        <ScrollContainer>
+          <CustomScrollbar rtl={props.isOnLeft} style={{width: '100%', height: '100%'}}>
+            <ClientGrid container direction='column' justify='flex-start' alignItems='flex-start'>
+              {Object.values(props.clients).map((client: Client) => (
+                <Grid item key={`${client.name}`} style={{width: '100%'}}>
+                  <ClientItem
+                    isOnLeft={props.isOnLeft}
+                    client={client}
+                    onMouseEnter={(popup: JSX.Element) => setHovered(popup)}
+                    onMouseLeave={() => setHovered(<div/>)}
+                    stickyItem={sticky}
+                    onClick={(name?: string) => setSticky(name)}/>
+                </Grid>
+              ))}
+            </ClientGrid>
+          </CustomScrollbar>
+        </ScrollContainer>
       </StyledGrid>
       <ProjectView style={{right: props.isOnLeft ? '-7.5vw' : '42.5vw'}}>{hovered}</ProjectView>
     </div>

@@ -2,8 +2,8 @@ import React from 'react'
 import {Grid, styled} from '@material-ui/core'
 
 const StyledGrid = styled(Grid)({
-  width: "10.625vw",
-  height: "11.4vw",
+  width: "19.8vh",
+  height: "21.25vh",
   background: 'transparent',
   boxSizing: 'border-box'
 });

@@ -38,16 +38,16 @@ export const Contact: React.FC = () => {
   if (desktop) {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-        <LeftMargin border={borderStyle} height='57.375vw'/>
-        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start'>
+        <LeftMargin border={borderStyle} height='5vh'/>
+        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' className={`${borders.leftBorder} ${borders.rightBorder}`}>
           <Grid item xs={6}>
-            <ContactTitleBox title={TITLE} subtitle={SUBTITLE} instructions={INSTRUCTIONS} classes={borders.leftBorder}/>
+            <ContactTitleBox title={TITLE} subtitle={SUBTITLE} instructions={INSTRUCTIONS} />
           </Grid>
           <Grid item xs={6}>
             <ContactForm classes={borders.leftBorder}/>
           </Grid>
         </ContentContainer>
-        <RightMargin border={borderStyle} height='57.375vw' longAccentIndex={4}/>
+        <RightMargin height='5vh' accentContainerHeight={`${window.innerHeight - (0.1 * window.innerWidth)}px`} longAccentIndex={3}/>
       </Root>
     );
   } else {

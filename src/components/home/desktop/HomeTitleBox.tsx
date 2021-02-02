@@ -1,5 +1,5 @@
 import React from 'react'
-import {Grid, styled, Typography,} from '@material-ui/core'
+import {Grid, makeStyles, styled, Typography,} from '@material-ui/core'
 import { theme } from "../../../theme";
 
 
@@ -52,22 +52,34 @@ interface Props {
   titleTextPrimary: string;
   titleTextSecondary: string;
   subTitleText: string;
+  titleColorPrimary?: string;
+  titleColorSecondary?: string;
   classes?: string;
 }
 
 export const HomeTitleBox: React.FC<Props> = (props: Props) => {
+
+  const colors = makeStyles({
+    textPrimary: {
+      color: props.titleColorPrimary ? props.titleColorPrimary : theme.palette.text.primary
+    },
+    textSecondary: {
+      color: props.titleColorSecondary ? props.titleColorSecondary : theme.palette.text.secondary
+    }
+  })();
+
   return (
     <StyledGrid className={props.classes} container direction={'column'} spacing={0} justify={'flex-start'} alignItems={'flex-start'}>
       <Grid item container direction={'row'} spacing={0} justify={'flex-start'} alignItems={'flex-start'}>
         <Grid item>
-          <TitleTextPrimary>{props.titleTextPrimary}</TitleTextPrimary>
+          <TitleTextPrimary className={colors.textPrimary}>{props.titleTextPrimary}</TitleTextPrimary>
         </Grid>
         <Grid item>
-          <TitleTextSecondary>&nbsp;{props.titleTextSecondary}</TitleTextSecondary>
+          <TitleTextSecondary className={colors.textSecondary}>&nbsp;{props.titleTextSecondary}</TitleTextSecondary>
         </Grid>
       </Grid>
       <Grid item>
-        <SubtitleText>{props.subTitleText}</SubtitleText>
+        <SubtitleText className={colors.textPrimary}>{props.subTitleText}</SubtitleText>
       </Grid>
     </StyledGrid>
   );

@@ -15,27 +15,28 @@ import {borderStyle, borderStyles} from "../../../../theme/styles";
 import {ClosePopUpButton} from "./ClosePopUpButton";
 
 const StyledGrid = styled(Grid)({
-  width: '42.5vw',
-  height: '53.625vw',
-  padding: '2.7vw 4.1vw 3.75vw 2.4vw',
+  width: '79.25vh',
+  height: '100vh',
+  padding: '5vh 7.5vh 7vh 4.5vh',
   boxSizing: 'border-box',
   backgroundColor: '#000e3c',
-  webkitBackdropFilter: 'blur(0.8125vw)',
-  backdropFilter: 'blur(0.8125vw)',
-  boxShadow: '0 0.1875vw 0.375vw 0 rgba(0, 0, 0, 0.16)',
+  webkitBackdropFilter: 'blur(1.5vh)',
+  backdropFilter: 'blur(1.5vh)',
+  boxShadow: '0 0.35vh 0.7vh 0 rgba(0, 0, 0, 0.16)',
   border: borderStyle,
   position: 'relative'
 });
 
+
 const StyledGridItem = styled(Grid)({
-  marginBottom: '2.25vw'
+  marginBottom: '4.2vh'
 });
 
 const useCancelButtonPosition = makeStyles({
   positionStyle: {
     position: 'absolute',
-    top: '2vw',
-    right: '2vw'
+    top: '3.75vh',
+    right: '3.75vh'
   }
 });
 
@@ -68,21 +69,21 @@ export const ProfileFull: React.FC<Props> = (props: Props) => {
       <StyledGridItem item>
         <ProfileSectionTitle text='Specializations' />
       </StyledGridItem>
-      <StyledGridItem item style={{marginBottom: '0.75vw'}}>
+      <StyledGridItem item style={{marginBottom: '1.4vh'}}>
         <SpecializationsContainer specializations={props.member.specializations} />
       </StyledGridItem>
       <StyledGridItem item xs={12} className={borders.topBorder} />
       <StyledGridItem item>
         <ProfileSectionTitle text='Technologies' />
       </StyledGridItem>
-      <StyledGridItem item style={{marginBottom: '1.75vw'}}>
+      <StyledGridItem item style={{marginBottom: '3.25vh'}}>
         <TechnologiesContainer technologies={props.member.technologies} />
       </StyledGridItem>
       <StyledGridItem item xs={12} className={borders.topBorder} />
       <StyledGridItem item>
         <ProfileSectionTitle text='Portfolio' />
       </StyledGridItem>
-      <StyledGridItem item style={{marginBottom: '0.75vw'}}>
+      <StyledGridItem item style={{marginBottom: '1.4vh'}}>
         <PortfolioLinkContainer github={props.member.github} website={props.member.website} />
       </StyledGridItem>
       <StyledGridItem item xs={12} className={borders.topBorder} />

@@ -19,8 +19,9 @@ export const companies: Companies = {
     name: 'The Graph',
     link: 'https://thegraph.com',
     icon: 'imgs/logos/TheGraph.svg',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(73%) sepia(70%) saturate(3996%) hue-rotate(144deg) brightness(98%) contrast(97%)',
-    highlightColor: '#2548bf',
+    highlightColor: 'url(/imgs/project-backgrounds/the-graph.png) repeat top left, #0C0A1D',
+    iconHighlightColor: '#6f4cff',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(35%) sepia(51%) saturate(6120%) hue-rotate(241deg) brightness(100%) contrast(104%)',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -30,10 +31,12 @@ export const companies: Companies = {
   },
   Gnosis: {
     name: 'Gnosis',
-    link: 'Full Transparency',
-    icon: 'imgs/logos/Gnosis.svg',
-    iconHighlightFilter: '',
-    highlightColor: '#009CB4',
+    link: 'https://gnosis.io/',
+    icon: 'imgs/logos/gnosis-logo-color.svg',
+    highlightColor: '#e8e7e6',
+    colorIcon: true,
+    textColor: '#001428',
+    textColorFilter: 'brightness(0) saturate(100%) invert(6%) sepia(31%) saturate(5034%) hue-rotate(192deg) brightness(97%) contrast(102%)',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -43,9 +46,8 @@ export const companies: Companies = {
   },
   Balancer: {
     name:'Balancer',
-    link: 'Never Stop Learning',
+    link: 'https://balancer.finance/',
     icon: 'imgs/logos/Balancer.svg',
-    iconHighlightFilter: '',
     highlightColor: '#41476b',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
@@ -56,21 +58,22 @@ export const companies: Companies = {
   },
   DeversiFi: {
     name:'DeversiFi',
-    link: 'Never Stop Learning',
+    link: 'https://www.deversifi.com/',
     icon: 'imgs/logos/Deversifi.svg',
-    iconHighlightFilter: '',
-    highlightColor: '#5500FC',
+    iconHighlightColor: '#5500FC',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(13%) sepia(99%) saturate(5303%) hue-rotate(263deg) brightness(86%) contrast(135%)',
+    highlightColor: 'linear-gradient(3.2deg, #040E14 19.19%, #061824 88.66%)',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
     }
-  }, Compound: {
+  },
+  Compound: {
     name:'Compound',
-    link: 'Never Stop Learning',
+    link: 'https://compound.finance/',
     icon: 'imgs/logos/Compound.svg',
-    iconHighlightFilter: '',
     highlightColor: '#00a977',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
@@ -81,10 +84,11 @@ export const companies: Companies = {
   },
   Stakedus: {
     name:'Staked.us',
-    link: 'Never Stop Learning',
+    link: 'https://staked.us/',
     icon: 'imgs/logos/StakedUs.svg',
-    iconHighlightFilter: '',
-    highlightColor: '#3746bc',
+    iconHighlightColor: '#515fcb',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(19%) sepia(94%) saturate(2659%) hue-rotate(231deg) brightness(84%) contrast(83%)',
+    highlightColor: '#102039',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -94,10 +98,14 @@ export const companies: Companies = {
   },
   Minds: {
     name:'Minds',
-    link: 'Never Stop Learning',
-    icon: 'imgs/logos/Minds.svg',
-    iconHighlightFilter: '',
-    highlightColor: '#dbab09',
+    link: 'https://www.minds.com/',
+    icon: 'imgs/logos/minds-logo-color.svg',
+    iconHighlightColor: '#ffd740',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(72%) sepia(95%) saturate(334%) hue-rotate(355deg) brightness(102%) contrast(101%)',
+    highlightColor: '#FFF',
+    colorIcon: true,
+    textColor: '#43434d',
+    textColorFilter: 'brightness(0) saturate(100%) invert(22%) sepia(15%) saturate(438%) hue-rotate(202deg) brightness(97%) contrast(85%)',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -107,9 +115,8 @@ export const companies: Companies = {
   },
   ParaSwap: {
     name:'ParaSwap',
-    link: 'Never Stop Learning',
+    link: 'https://paraswap.io/#/',
     icon: 'imgs/logos/ParaSwap.svg',
-    iconHighlightFilter: '',
     highlightColor: '#005ede',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
@@ -120,10 +127,13 @@ export const companies: Companies = {
   },
   Boardroom: {
     name:'Boardroom',
-    link: 'Never Stop Learning',
+    link: 'http://boardroom.to/',
     icon: 'imgs/logos/Boardroom.svg',
-    iconHighlightFilter: '',
-    highlightColor: '#E47C03',
+    iconHighlightColor: '#09afdf',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(58%) sepia(82%) saturate(2727%) hue-rotate(156deg) brightness(96%) contrast(93%)',
+    highlightColor: '#fff',
+    textColor: '#333333',
+    textColorFilter: 'brightness(0) saturate(100%) invert(13%) sepia(0%) saturate(0%) hue-rotate(237deg) brightness(101%) contrast(82%)',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
@@ -133,9 +143,10 @@ export const companies: Companies = {
   },
   Centrality: {
     name:'Centrality',
-    link: 'Freedom & Peer Support',
+    link: 'https://centrality.ai/',
     icon: 'imgs/logos/Centrality.svg',
-    iconHighlightFilter: '',
+    iconHighlightColor: '#0e0e0e',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(0%) sepia(21%) saturate(141%) hue-rotate(355deg) brightness(104%) contrast(89%)',
     highlightColor: '#1130ff',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
@@ -146,10 +157,10 @@ export const companies: Companies = {
   },
   eToro: {
     name:'eToro',
-    link: 'Freedom & Peer Support',
+    link: 'https://www.etoro.com/',
     icon: 'imgs/logos/eToro.svg',
     iconHighlightFilter: '',
-    highlightColor: '#6CAC2F',
+    highlightColor: '#6aac0e',
     project: {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',

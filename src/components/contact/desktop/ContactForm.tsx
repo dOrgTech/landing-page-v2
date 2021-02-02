@@ -28,7 +28,7 @@ import {
 const StyledGrid = styled(Grid)({
   margin: 'auto',
   width: '100%',
-  height: '57.375vw',
+  height: `${window.innerHeight - (0.1 * window.innerWidth)}px`,
   background: theme.palette.secondary.main,
   boxSizing: 'border-box',
   position: 'relative'

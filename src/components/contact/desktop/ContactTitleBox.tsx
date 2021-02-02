@@ -6,13 +6,13 @@ import { theme } from "../../../theme";
 const StyledBox = styled(Box)({
   margin: 'auto',
   width: '100%',
-  height: '57.375vw',
+  height: `${window.innerHeight - (0.1 * window.innerWidth)}px`,
   background: 'transparent',
   boxSizing: 'border-box'
 });
 
 const TextContainer = styled(Box)({
-  padding: '6.75vw 1.75vw',
+  padding: '5vw 1.75vw',
   background: 'transparent',
   boxSizing: 'border-box'
 });

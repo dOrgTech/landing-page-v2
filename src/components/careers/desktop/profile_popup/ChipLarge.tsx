@@ -25,15 +25,18 @@ const StyledName = styled(Typography)({
 
 interface Props {
   text: string;
+  textColor?: string;
   xs?: boolean | "auto" | 10 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 11 | 12 | undefined;
   classes?: string;
 }
 
 const ChipLarge: React.FC<Props> = (props: Props) => {
 
+  const textColor = props.textColor ? props.textColor : theme.palette.text.primary;
+
   return (
     <StyledGrid item xs={props.xs} className={props.classes} container direction='row' justify='center' alignItems='center'>
-      <StyledName>{props.text}</StyledName>
+      <StyledName style={{color: textColor}}>{props.text}</StyledName>
     </StyledGrid>
   );
 }
