@@ -114,7 +114,8 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
       background: isHover ? props.client.highlightColor : ''
     },
     sticky: {
-      border: isSticky ? '3px solid rgba(255, 255, 255, 1)' : ''
+      boxShadow: isSticky ? '0 9px #1AAF71' : '',
+      transform: isSticky ? 'translateY(-9px)' : ''
     },
     icon: {
       filter: iconColor(isHover),
