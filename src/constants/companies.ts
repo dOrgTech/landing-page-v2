@@ -27,6 +27,7 @@ export const companies: Companies = {
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: [],
+      imageSrc: 'imgs/project-graphics/the-graph-phone.png'
     }
   },
   Gnosis: {
@@ -42,6 +43,7 @@ export const companies: Companies = {
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: 'imgs/logos/gnosis-logo-color.svg',
     }
   },
   Balancer: {
@@ -53,7 +55,8 @@ export const companies: Companies = {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      bullets: [],
+      imageSrc: 'imgs/project-graphics/balancer-scale.png'
     }
   },
   DeversiFi: {
@@ -67,7 +70,8 @@ export const companies: Companies = {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      bullets: [],
+      imageSrc: 'imgs/project-graphics/deversifi-laptop.png'
     }
   },
   Compound: {
@@ -80,6 +84,7 @@ export const companies: Companies = {
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: 'imgs/logos/Compound.svg',
     }
   },
   Stakedus: {
@@ -94,6 +99,7 @@ export const companies: Companies = {
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: 'imgs/project-graphics/staked-diamond.svg'
     }
   },
   Minds: {
@@ -111,6 +117,7 @@ export const companies: Companies = {
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: 'imgs/project-graphics/minds-compose.svg',
     }
   },
   ParaSwap: {
@@ -123,6 +130,7 @@ export const companies: Companies = {
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: 'imgs/logos/ParaSwap.svg',
     }
   },
   Boardroom: {
@@ -139,6 +147,7 @@ export const companies: Companies = {
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: ''
     }
   },
   Centrality: {
@@ -153,6 +162,7 @@ export const companies: Companies = {
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: 'imgs/project-graphics/centrality-graphic.svg'
     }
   },
   eToro: {
@@ -166,6 +176,7 @@ export const companies: Companies = {
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: 'imgs/logos/eToro.svg',
     }
   }
 }

@@ -87,7 +87,7 @@ export const ClientItemMobile: React.FC<Props> = (props: Props) => {
       background: 'transparent'
     },
     expanded: {
-      backgroundColor: props.client.highlightColor
+      background: props.client.highlightColor
     }
   })();
   const iconColor = (isExpanded: boolean) => {
@@ -105,7 +105,7 @@ export const ClientItemMobile: React.FC<Props> = (props: Props) => {
     },
     selected: {
       height: props.expanded ? '19.5vw' : '9.75vw',
-      backgroundColor: props.expanded ? props.client.highlightColor : 'transparent',
+      background: props.expanded ? props.client.highlightColor : 'transparent',
     },
     borders: {
       borderLeft: props.expanded ? borderStyle : '',
@@ -123,11 +123,11 @@ export const ClientItemMobile: React.FC<Props> = (props: Props) => {
   })();
   const marginStyle = makeStyles({
     leftMargin: {
-      backgroundColor: props.client.highlightColor,
+      background: props.client.highlightColor,
       left: '-5vw'
     },
     rightMargin: {
-      backgroundColor: props.client.highlightColor,
+      background: props.client.highlightColor,
       right: '-5vw'
     }
   })();

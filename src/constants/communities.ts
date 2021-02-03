@@ -26,6 +26,7 @@ export const communities: Communities = {
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: 'imgs/project-graphics/daostack-stack.png'
     }
   },
   Aragon: {
@@ -42,6 +43,7 @@ export const communities: Communities = {
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: 'imgs/project-graphics/aragon-brand.svg'
     }
   },
   Badger: {
@@ -56,6 +58,7 @@ export const communities: Communities = {
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: 'imgs/project-graphics/badger-logo.png'
     }
   },
   Prime: {
@@ -70,6 +73,7 @@ export const communities: Communities = {
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: 'imgs/logos/Prime.svg'
     }
   },
   Dxdao: {
@@ -86,6 +90,7 @@ export const communities: Communities = {
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: 'imgs/project-graphics/dxdao-blue.svg',
     }
   },
   API3: {
@@ -103,6 +108,7 @@ export const communities: Communities = {
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: 'imgs/logos/api3.svg',
     }
   },
   LID: {
@@ -134,6 +140,7 @@ export const communities: Communities = {
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: 'imgs/project-graphics/web3api-graphic.svg'
     }
   }
 }
