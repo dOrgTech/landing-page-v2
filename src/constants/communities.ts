@@ -26,7 +26,7 @@ export const communities: Communities = {
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
-      imageSrc: 'imgs/project-graphics/daostack-stack.png'
+      imageSrc: 'imgs/project-graphics/daostack-logo-black.svg',
     }
   },
   Aragon: {

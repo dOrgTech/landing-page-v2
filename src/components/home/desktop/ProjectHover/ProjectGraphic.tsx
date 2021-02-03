@@ -9,7 +9,6 @@ const Container = styled(Grid)({
   right: '1vw',
   zIndex: 0,
   height: '60%',
-  opacity: 0.25
 });
 
 const useMobileStyles = makeStyles({

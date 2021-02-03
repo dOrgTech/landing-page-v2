@@ -71,7 +71,7 @@ export const companies: Companies = {
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: [],
-      imageSrc: 'imgs/project-graphics/deversifi-laptop.png'
+      imageSrc: 'imgs/logos/Deversifi.svg',
     }
   },
   Compound: {
