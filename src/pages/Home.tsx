@@ -46,8 +46,8 @@ const useTitlePositionStyle = makeStyles({
 })
 
 const StyledRings = styled('img')({
-  width: '19.125vw',
-  height: '19.063vw',
+  width: 0,
+  height: 0,
   objectFit: 'contain',
   position: 'absolute',
   transform: 'scaleY(-1)',
@@ -55,6 +55,24 @@ const StyledRings = styled('img')({
   right: 0,
   zIndex: 0
 });
+
+const useSonarAnimation= makeStyles(theme => ({
+  '@keyframes sonar': {
+    from: {
+      width: 0,
+      height: 0,
+      opacity: 1
+    },
+    to: {
+      width: '30vw',
+      height: '30vw',
+      opacity: 0
+    }
+  },
+  animate: {
+    animation: `$sonar 3s ease-out infinite`,
+  }
+}));
 
 const useBorders = makeStyles(borderStyles);
 
@@ -64,7 +82,7 @@ export const Home: React.FC = () => {
 
   const titlePosition = useTitlePositionStyle();
   const borders = useBorders();
-
+  const sonarAnimation = useSonarAnimation();
   const theme: Theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
@@ -83,7 +101,7 @@ export const Home: React.FC = () => {
             titleTextPrimary={TITLE_TEXT_PRIMARY}
             titleTextSecondary={TITLE_TEXT_SECONDARY}
             subTitleText={SUBTITLE_TEXT} />
-          <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'} />
+          <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'} className={sonarAnimation.animate}/>
         </ContentContainer>
         <RightMargin height={'5vh'} accentContainerHeight={`${window.innerHeight - (0.1 * window.innerWidth)}px`} longAccentIndex={0}/>
       </Root>
@@ -91,7 +109,7 @@ export const Home: React.FC = () => {
   } else {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-        <LeftMargin border={borderStyle} height='100%' />
+        <LeftMargin border={borderStyle} height={'100%'} />
         <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' style={{width: '90vw'}}
           className={borders.rightBorder}>
           <HomeTitleBoxMobile

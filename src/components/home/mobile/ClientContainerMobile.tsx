@@ -1,4 +1,4 @@
-import {Grid, styled} from "@material-ui/core";
+import {Grid, makeStyles, styled} from "@material-ui/core";
 import React from "react";
 import {Companies} from "../../../constants/companies";
 import {Communities} from "../../../constants/communities";
@@ -22,6 +22,24 @@ const StyledRings = styled('img')({
   zIndex: 0
 });
 
+const useSonarAnimation= makeStyles(theme => ({
+  '@keyframes sonar': {
+    from: {
+      width: 0,
+      height: 0,
+      opacity: 1
+    },
+    to: {
+      width: '100vw',
+      height: '100vw',
+      opacity: 0
+    }
+  },
+  animate: {
+    animation: `$sonar 3s ease-out infinite`,
+  }
+}));
+
 interface Props {
   clients: Companies | Communities;
   classes?: string;
@@ -35,6 +53,8 @@ export const ClientContainerMobile: React.FC<Props> = (props: Props) => {
     setExpanded(isExpanded ? panel : false);
   };
 
+  const sonarAnimation = useSonarAnimation();
+
   return (
     <StyledGrid className={props.classes} container spacing={0} direction='column' justify='flex-start' alignItems='flex-start'>
       {Object.values(props.clients).map((client: Client) => (
@@ -42,7 +62,8 @@ export const ClientContainerMobile: React.FC<Props> = (props: Props) => {
           <ClientItemMobile client={client} expanded={expanded===client.name} someExpanded={expanded as boolean} onChange={handleChange(client.name)}/>
         </Grid>
       ))}
-      {!expanded && <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'} />}
+      {!expanded &&
+      <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings'} className={sonarAnimation.animate} />}
     </StyledGrid>
   );
 }

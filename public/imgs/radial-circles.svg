@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="585" height="585" viewBox="0 0 585 585">
+    <defs>
+        <style>
+            .cls-1,.cls-3{fill:none}.cls-1{stroke:#fff;opacity:.25}.cls-2{stroke:none}
+        </style>
+    </defs>
+    <g id="Group_1077" transform="translate(-847 -411)">
+        <g id="Ellipse_16" class="cls-1" transform="translate(847 411)">
+            <circle cx="292.5" cy="292.5" r="292.5" class="cls-2"/>
+            <circle cx="292.5" cy="292.5" r="292" class="cls-3"/>
+        </g>
+        <g id="Ellipse_17" class="cls-1" transform="translate(896 460)">
+            <circle cx="243.5" cy="243.5" r="243.5" class="cls-2"/>
+            <circle cx="243.5" cy="243.5" r="243" class="cls-3"/>
+        </g>
+        <g id="Ellipse_18" class="cls-1" transform="translate(948 512)">
+            <circle cx="191.5" cy="191.5" r="191.5" class="cls-2"/>
+            <circle cx="191.5" cy="191.5" r="191" class="cls-3"/>
+        </g>
+    </g>
+</svg>

@@ -4,6 +4,7 @@ import {Client} from "../../../constants/clients";
 import {theme} from "../../../theme";
 import {ChipLargeMobile} from "../../careers/mobile/profile_popup/ChipLargeMobile";
 import {BulletsBoxMobile} from "./BulletsBoxMobile";
+import {ProjectGraphic} from "../desktop/ProjectHover/ProjectGraphic";
 
 const StyledGrid = styled(Grid)({
   height: 'max-content',
@@ -48,11 +49,6 @@ const useChipStyle = makeStyles({
   }
 });
 
-const IllustrationView = styled('div')({
-  position: 'relative',
-  zIndex: 0
-})
-
 interface Props {
   client: Client
   classes?: string;
@@ -60,6 +56,7 @@ interface Props {
 
 export const ExpandedContentBoxMobile: React.FC<Props> = (props: Props) => {
 
+  const classes = props.classes ? props.classes : '';
   const { iconHighlightFilter, textColor, textColorFilter, project } = props.client;
 
   const styles = makeStyles({
@@ -68,12 +65,16 @@ export const ExpandedContentBoxMobile: React.FC<Props> = (props: Props) => {
     },
     text: {
       color: textColor ? textColor : theme.palette.text.primary
+    },
+    graphicSpace: {
+      paddingBottom: project.imageSrc ? '18vh' : '4vw'
     }
   })();
   const chipStyle = useChipStyle();
 
   return (
-    <StyledGrid className={props.classes} container spacing={0} direction='column' justify='flex-start' alignItems='flex-start'>
+    <StyledGrid container spacing={0} direction='column' justify='flex-start' alignItems='flex-start'
+      className={`${classes} ${styles.graphicSpace}`} >
       <Grid item>
         <StyledDescription className={styles.text}>{project.description}</StyledDescription>
       </Grid>
@@ -88,9 +89,8 @@ export const ExpandedContentBoxMobile: React.FC<Props> = (props: Props) => {
           </Grid>
         ))}
       </ChipContainer>
-      <IllustrationView style={project?.illustration?.position}>
-        {project?.illustration?.view}
-      </IllustrationView>
+      {project.imageSrc &&
+      <ProjectGraphic item src={project.imageSrc} />}
     </StyledGrid>
   );
 }

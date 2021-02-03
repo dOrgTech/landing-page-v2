@@ -4,6 +4,7 @@ import { theme } from "../../../../theme";
 import {Client} from "../../../../constants/clients";
 import {ChipLarge} from "../../../careers/desktop/profile_popup/ChipLarge";
 import {BulletsBox} from "./BulletsBox";
+import {ProjectGraphic} from "./ProjectGraphic";
 
 
 const StyledGrid = styled(Grid)({
@@ -62,11 +63,6 @@ const useChipStyle = makeStyles({
   }
 });
 
-const IllustrationView = styled('div')({
-  position: 'relative',
-  zIndex: 0
-})
-
 interface Props {
   client: Client;
   classes?: string;
@@ -113,9 +109,7 @@ export const HoverContentBox: React.FC<Props> = (props: Props) => {
           </Grid>
         ))}
       </ChipContainer>
-      <IllustrationView style={project.illustration?.position}>
-        {project.illustration?.view}
-      </IllustrationView>
+      {project.imageSrc && <ProjectGraphic item src={project.imageSrc} />}
     </StyledGrid>
   );
 }
