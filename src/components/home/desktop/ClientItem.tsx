@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import {styled, Typography, Grid, makeStyles} from '@material-ui/core'
 import { theme } from "../../../theme";
 import {Client} from "../../../constants/clients";

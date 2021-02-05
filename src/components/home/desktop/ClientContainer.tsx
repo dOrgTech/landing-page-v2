@@ -6,7 +6,7 @@ import {Client} from "../../../constants/clients";
 import {ClientItem} from "./ClientItem";
 import {theme} from "../../../theme";
 import {CustomScrollbar} from "../../CustomScrollbar";
-import useDebounce from "../../../Utils/hooks";
+import {useDebounce, useWindowSize} from "../../../Utils/hooks";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
@@ -59,6 +59,9 @@ interface Props {
 
 export const ClientContainer: React.FC<Props> = (props: Props) => {
 
+  const windowSize = useWindowSize()
+  const debouncedWindowSize = useDebounce(windowSize, 100);
+
   const [hovered, setHovered] = useState<JSX.Element>(<div/>);
   const [sticky, setSticky] = useState<string | undefined>(undefined);
   const debouncedSticky = useDebounce(sticky, 50);
@@ -76,7 +79,7 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
         <TitleContainer item>
           <StyledTitle>{props.title}</StyledTitle>
         </TitleContainer>
-        <ScrollContainer>
+        <ScrollContainer style={{height: `${debouncedWindowSize.height - (0.16 * debouncedWindowSize.width)}px`}}>
           <CustomScrollbar rtl={props.isOnLeft} style={{width: '100%', height: '100%'}}>
             <ClientGrid container direction='column' justify='flex-start' alignItems='flex-start'>
               {Object.values(props.clients).map((client: Client) => (

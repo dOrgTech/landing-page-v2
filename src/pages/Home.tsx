@@ -10,6 +10,7 @@ import {RightMargin} from "../components/RightMargin";
 import {HomeTitleBox} from "../components/home/desktop/HomeTitleBox";
 import {HomeTitleBoxMobile} from "../components/home/mobile/HomeTItleBoxMobile";
 import {ClientTabsMobile} from "../components/home/mobile/ClientTabsMobile";
+import {useDebounce, useWindowSize} from "../Utils/hooks";
 
 const TITLE_TEXT_PRIMARY = 'We build custom';
 const TITLE_TEXT_SECONDARY = 'Dapps';
@@ -86,6 +87,9 @@ export const Home: React.FC = () => {
   const theme: Theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
+  const windowSize = useWindowSize()
+  const debouncedWindowSize = useDebounce(windowSize, 100);
+
   if (desktop) {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
@@ -103,7 +107,7 @@ export const Home: React.FC = () => {
             subTitleText={SUBTITLE_TEXT} />
           <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'} className={sonarAnimation.animate}/>
         </ContentContainer>
-        <RightMargin height={'5vh'} accentContainerHeight={`${window.innerHeight - (0.1 * window.innerWidth)}px`} longAccentIndex={0}/>
+        <RightMargin height={'5vh'} accentContainerHeight={`${debouncedWindowSize.height - (0.1 * debouncedWindowSize.width)}px`} longAccentIndex={0}/>
       </Root>
     );
   } else {
