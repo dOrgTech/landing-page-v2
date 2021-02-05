@@ -1,5 +1,6 @@
 // font used for StatBoxMobile statistics, in accordance with design spec
 import {hexToRGB} from "../Utils/colorUtils";
+import {makeStyles} from "@material-ui/core";
 
 export const mobileStatFont = "'Open Sans', sans-serif";
 
@@ -73,3 +74,23 @@ export const getBorderStyle = (hexColor: string): BorderClasses => {
     }
   };
 };
+
+export const getSonarAnimation = (size: string, durationInSeconds: number): ((props?: never) => Record<"@keyframes sonar" | "animate", string>) => {
+  return makeStyles(theme => ({
+    '@keyframes sonar': {
+      from: {
+        width: 0,
+        height: 0,
+        opacity: 1
+      },
+      to: {
+        width: size,
+        height: size,
+        opacity: 0
+      }
+    },
+    animate: {
+      animation: `$sonar ${durationInSeconds}s ease-out infinite`,
+    }
+  }));
+}

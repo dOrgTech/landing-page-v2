@@ -23,6 +23,7 @@ import {
   SUCCESS_TEXT,
   TOAST_DURATION
 } from "../../../constants/contactForm";
+import {getSonarAnimation} from "../../../theme/styles";
 
 
 const StyledGrid = styled(Grid)({
@@ -136,6 +137,7 @@ const StyledRings = styled('img')({
   bottom: -1,
   left: 0
 })
+const useSonarAnimation= getSonarAnimation('55vw', 3);
 
 const StyledError = styled(Typography)({
   fontFamily: theme.typography.fontFamily,
@@ -212,6 +214,8 @@ interface IFormInput {
 }
 
 export const ContactFormMobile: React.FC<Props> = (props: Props) => {
+
+  const sonarAnimation = useSonarAnimation();
 
   // FORM HOOK
   // eslint-disable-next-line @typescript-eslint/unbound-method
@@ -355,7 +359,7 @@ export const ContactFormMobile: React.FC<Props> = (props: Props) => {
           <StyledSubmitIcon src={SUBMIT_BUTTON_IMG_PATH} />
         </StyledSubmitButton>
       </form>
-      <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} />
+      <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} className={sonarAnimation.animate}/>
       <Snackbar anchorOrigin={{vertical: 'bottom', horizontal: 'center',}}
         open={successOpen}
         autoHideDuration={TOAST_DURATION}

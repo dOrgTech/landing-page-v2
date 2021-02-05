@@ -5,7 +5,7 @@ import {ClientContainer} from "../components/home/desktop/ClientContainer";
 import {companies} from "../constants/companies";
 import {communities} from "../constants/communities";
 import {LeftMargin} from "../components/LeftMargin";
-import {borderStyle, borderStyles} from "../theme/styles";
+import {borderStyle, borderStyles, getSonarAnimation} from "../theme/styles";
 import {RightMargin} from "../components/RightMargin";
 import {HomeTitleBox} from "../components/home/desktop/HomeTitleBox";
 import {HomeTitleBoxMobile} from "../components/home/mobile/HomeTItleBoxMobile";
@@ -57,24 +57,7 @@ const StyledRings = styled('img')({
   zIndex: 0
 });
 
-const useSonarAnimation= makeStyles(theme => ({
-  '@keyframes sonar': {
-    from: {
-      width: 0,
-      height: 0,
-      opacity: 1
-    },
-    to: {
-      width: '30vw',
-      height: '30vw',
-      opacity: 0
-    }
-  },
-  animate: {
-    animation: `$sonar 3s ease-out infinite`,
-  }
-}));
-
+const useSonarAnimation= getSonarAnimation('30vw', 3);
 const useBorders = makeStyles(borderStyles);
 
 export const Home: React.FC = () => {

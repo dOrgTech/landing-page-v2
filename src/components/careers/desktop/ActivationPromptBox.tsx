@@ -2,6 +2,7 @@ import React from 'react'
 import {Box, styled, Typography, Grid} from '@material-ui/core'
 import { theme } from "../../../theme";
 import {CloseButton} from "../../about/desktop/CloseButton";
+import {getSonarAnimation} from "../../../theme/styles";
 
 const StyledBox = styled(Box)({
   margin: 'auto',
@@ -44,6 +45,8 @@ const StyledRings = styled('img')({
   right: 0
 });
 
+const useSonarAnimation= getSonarAnimation('22.5vw', 3);
+
 interface Props {
   prompt: string;
   buttonText: string;
@@ -52,6 +55,8 @@ interface Props {
 }
 
 export const ActivationPromptBox: React.FC<Props> = (props: Props) => {
+
+  const sonarAnimation = useSonarAnimation();
 
   return (
     <StyledBox className={props.classes}>
@@ -66,7 +71,7 @@ export const ActivationPromptBox: React.FC<Props> = (props: Props) => {
           <CloseButton text={props.buttonText} handleClick={props.onButtonClick} />
         </Grid>
       </Grid>
-      <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} />
+      <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} className={sonarAnimation.animate}/>
     </StyledBox>
   );
 }
