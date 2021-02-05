@@ -1,4 +1,4 @@
-import {Grid, styled, Typography} from "@material-ui/core";
+import {ClickAwayListener, Grid, styled, Typography} from "@material-ui/core";
 import React, {useState} from "react";
 import {Companies} from "../../../constants/companies";
 import {Communities} from "../../../constants/communities";
@@ -6,6 +6,7 @@ import {Client} from "../../../constants/clients";
 import {ClientItem} from "./ClientItem";
 import {theme} from "../../../theme";
 import {CustomScrollbar} from "../../CustomScrollbar";
+import useDebounce from "../../../Utils/hooks";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
@@ -60,6 +61,14 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
 
   const [hovered, setHovered] = useState<JSX.Element>(<div/>);
   const [sticky, setSticky] = useState<string | undefined>(undefined);
+  const debouncedSticky = useDebounce(sticky, 50);
+
+  // handle user clicking away from sticky project hover
+  const handleClickAway = (e: React.MouseEvent<Document, MouseEvent>) => {
+    if (debouncedSticky) {
+      setSticky(undefined);
+    }
+  }
 
   return (
     <div>
@@ -77,7 +86,7 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
                     client={client}
                     onMouseEnter={(popup: JSX.Element) => setHovered(popup)}
                     onMouseLeave={() => setHovered(<div/>)}
-                    stickyItem={sticky}
+                    stickyItem={debouncedSticky}
                     onClick={(name?: string) => setSticky(name)}/>
                 </Grid>
               ))}
@@ -85,7 +94,13 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
           </CustomScrollbar>
         </ScrollContainer>
       </StyledGrid>
-      <ProjectView style={{right: props.isOnLeft ? '-7.5vw' : '42.5vw'}}>{hovered}</ProjectView>
+      <ProjectView id='project-view' style={{right: props.isOnLeft ? '-7.5vw' : '42.5vw'}}>
+        <ClickAwayListener onClickAway={(e) => handleClickAway(e)}>
+          <div>
+            {hovered}
+          </div>
+        </ClickAwayListener>
+      </ProjectView>
     </div>
   );
 }

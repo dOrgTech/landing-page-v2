@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {styled, Typography, Grid, makeStyles} from '@material-ui/core'
 import { theme } from "../../../theme";
 import {Client} from "../../../constants/clients";
@@ -8,7 +8,7 @@ import {ProjectHoverLeft} from "./ProjectHover/ProjectHoverLeft";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
-  height:'4.3vw', // design spec says 4.5vw but 4.3 precludes need for scroll bar in communities container
+  height:'4.3vw',
   paddingLeft: '2.75vw',
   boxSizing: 'border-box',
   backgroundColor: 'transparent',
@@ -49,6 +49,7 @@ const HoverIcon = styled('img')({
   top: '0.1vw'
 });
 
+
 interface Props {
   client: Client;
   isOnLeft?: boolean;
@@ -65,15 +66,14 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
   const isSticky = props.stickyItem === props.client.name;
   const [isHover, setIsHover] = useState(false);
 
-
   // handle hover-dependent state
   const handleMouseEnter = () => {
     if (!props.stickyItem) {
       setIsHover(true);
       if (props.onMouseEnter) {
         const popup = props.isOnLeft ?
-          <ProjectHoverRight client={props.client} />
-          : <ProjectHoverLeft client={props.client} />
+          <ProjectHoverRight client={props.client}/>
+          : <ProjectHoverLeft client={props.client}/>
         props.onMouseEnter?.(popup);
       }
     }
@@ -90,7 +90,8 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
     }
   }
 
-  const handleClick = (event: React.MouseEvent | MouseEvent) => {
+  // make sticky on click
+  const handleClick = () => {
     if (!props.stickyItem) {
       props.onClick?.(props.client.name);
     } else if (isSticky) {
@@ -129,12 +130,12 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
   })();
 
   return (
-    <StyledGrid container direction='row' justify={'flex-start'} alignItems={'center'}
+    <StyledGrid id={props.client.name} container direction='row' justify={'flex-start'} alignItems={'center'}
       className={`${classes} ${styles.highlight} ${styles.sticky}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseOver={handleMouseOver}
-      onClick={(event) => handleClick(event)}>
+      onClick={handleClick}>
       <Grid item>
         <ClientIcon src={props.client.icon} alt='client icon' className={styles.icon} />
       </Grid>
