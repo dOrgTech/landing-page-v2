@@ -3,8 +3,7 @@ import { useHistory } from 'react-router-dom'
 import {styled, Grid, useTheme, Theme, useMediaQuery} from '@material-ui/core'
 import {theme} from "../theme";
 import {Route, routes} from "../constants/routes";
-import {ProjectHoverRight} from "./home/desktop/ProjectHover/ProjectHoverRight";
-import {ProjectHoverLeft} from "./home/desktop/ProjectHover/ProjectHoverLeft";
+
 
 const StyledGrid = styled(Grid)({
   width: '7.5vw',
