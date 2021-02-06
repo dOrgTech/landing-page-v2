@@ -2,6 +2,7 @@ import React from 'react'
 import { Box, styled, Grid } from '@material-ui/core'
 import { theme } from "../../../theme";
 import {Article, Press} from "../../../constants/press";
+import {getSonarAnimation} from "../../../theme/styles";
 
 
 const StyledBox = styled(Box)({
@@ -38,6 +39,7 @@ const StyledRings = styled('img')({
   left: 0,
   zIndex: 1
 })
+const useSonarAnimation= getSonarAnimation('55vw', 3);
 
 interface Props {
   press: Press;
@@ -45,9 +47,12 @@ interface Props {
 }
 
 export const PressBoxMobile: React.FC<Props> = (props: Props) => {
+
+  const sonarAnimation = useSonarAnimation();
+
   return (
     <StyledBox className={props.classes}>
-      <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} />
+      <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} className={sonarAnimation.animate}/>
       <StyledGrid container direction='row' spacing={0} justify='center' alignItems='center'>
         {Object.values(props.press).map((article: Article, index: number) => (
           <Grid item xs={6} key={`article-${index}`}>

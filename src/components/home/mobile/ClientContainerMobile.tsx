@@ -1,9 +1,10 @@
-import {Grid, makeStyles, styled} from "@material-ui/core";
+import {Grid, styled} from "@material-ui/core";
 import React from "react";
 import {Companies} from "../../../constants/companies";
 import {Communities} from "../../../constants/communities";
 import {Client} from "../../../constants/clients";
 import {ClientItemMobile} from "./ClientItemMobile";
+import {getSonarAnimation} from "../../../theme/styles";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
@@ -21,24 +22,7 @@ const StyledRings = styled('img')({
   right: '0.1vw',
   zIndex: 0
 });
-
-const useSonarAnimation= makeStyles(theme => ({
-  '@keyframes sonar': {
-    from: {
-      width: 0,
-      height: 0,
-      opacity: 1
-    },
-    to: {
-      width: '100vw',
-      height: '100vw',
-      opacity: 0
-    }
-  },
-  animate: {
-    animation: `$sonar 3s ease-out infinite`,
-  }
-}));
+const useSonarAnimation= getSonarAnimation('100vw', 3);
 
 interface Props {
   clients: Companies | Communities;

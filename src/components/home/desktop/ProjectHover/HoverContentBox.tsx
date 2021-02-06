@@ -5,6 +5,7 @@ import {Client} from "../../../../constants/clients";
 import {ChipLarge} from "../../../careers/desktop/profile_popup/ChipLarge";
 import {BulletsBox} from "./BulletsBox";
 import {ProjectGraphic} from "./ProjectGraphic";
+import {useDebounce, useWindowSize} from "../../../../Utils/hooks";
 
 
 const StyledGrid = styled(Grid)({
@@ -82,16 +83,19 @@ export const HoverContentBox: React.FC<Props> = (props: Props) => {
   })();
   const chipStyle = useChipStyle();
 
+  const windowSize = useWindowSize()
+  const debouncedWindowSize = useDebounce(windowSize, 100);
+
   const [offset, setOffset] = useState(0);
   useEffect(() => {
     const y = document.body.getBoundingClientRect().top;
-    const cutoff = window.innerWidth * 0.05;
+    const cutoff = debouncedWindowSize.width * 0.05;
     setOffset(Math.min(y + cutoff, 0));
-  }, [offset, props.client.name])
+  }, [debouncedWindowSize])
 
   return (
     <StyledGrid container spacing={0} direction='column' justify='flex-start' alignItems='flex-start'
-      className={props.classes} style={{bottom: offset}}>
+      className={props.classes} style={{bottom: offset, height: `${debouncedWindowSize.height - (0.1 * debouncedWindowSize.width)}px`}}>
       <Grid item>
         <StyledTitle className={styles.text}>{name}</StyledTitle>
       </Grid>

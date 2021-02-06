@@ -1,6 +1,7 @@
 import React from "react";
 import { Scrollbar } from "react-scrollbars-custom";
 import {makeStyles, Theme, useMediaQuery, useTheme} from "@material-ui/core";
+import {hexToRGB} from "../Utils/colorUtils";
 
 // see: https://github.com/xobotyi/react-scrollbars-custom
 
@@ -17,8 +18,13 @@ export const CustomScrollbar: React.FC<Props> = (props: Props) => {
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
   const scrollbarStyles = makeStyles({
-    thumbY: { },
-    trackY: { },
+    thumbY: {
+      background: `${hexToRGB(theme.palette.secondary.main, 0.5)} !important`
+    },
+    trackY: {
+      background: `${hexToRGB(theme.palette.secondary.main, 0.15)} !important`,
+      width: '8px !important'
+    },
     content: { },
     scroller: { },
     wrapper: { },

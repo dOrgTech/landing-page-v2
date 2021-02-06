@@ -1,4 +1,4 @@
-import {Grid, styled, Typography} from "@material-ui/core";
+import {ClickAwayListener, Grid, styled, Typography} from "@material-ui/core";
 import React, {useState} from "react";
 import {Companies} from "../../../constants/companies";
 import {Communities} from "../../../constants/communities";
@@ -6,6 +6,7 @@ import {Client} from "../../../constants/clients";
 import {ClientItem} from "./ClientItem";
 import {theme} from "../../../theme";
 import {CustomScrollbar} from "../../CustomScrollbar";
+import {useDebounce, useWindowSize} from "../../../Utils/hooks";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
@@ -58,8 +59,19 @@ interface Props {
 
 export const ClientContainer: React.FC<Props> = (props: Props) => {
 
+  const windowSize = useWindowSize()
+  const debouncedWindowSize = useDebounce(windowSize, 100);
+
   const [hovered, setHovered] = useState<JSX.Element>(<div/>);
   const [sticky, setSticky] = useState<string | undefined>(undefined);
+  const debouncedSticky = useDebounce(sticky, 50);
+
+  // handle user clicking away from sticky project hover
+  const handleClickAway = (e: React.MouseEvent<Document, MouseEvent>) => {
+    if (debouncedSticky) {
+      setSticky(undefined);
+    }
+  }
 
   return (
     <div>
@@ -67,7 +79,7 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
         <TitleContainer item>
           <StyledTitle>{props.title}</StyledTitle>
         </TitleContainer>
-        <ScrollContainer>
+        <ScrollContainer style={{height: `${debouncedWindowSize.height - (0.16 * debouncedWindowSize.width)}px`}}>
           <CustomScrollbar rtl={props.isOnLeft} style={{width: '100%', height: '100%'}}>
             <ClientGrid container direction='column' justify='flex-start' alignItems='flex-start'>
               {Object.values(props.clients).map((client: Client) => (
@@ -77,7 +89,7 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
                     client={client}
                     onMouseEnter={(popup: JSX.Element) => setHovered(popup)}
                     onMouseLeave={() => setHovered(<div/>)}
-                    stickyItem={sticky}
+                    stickyItem={debouncedSticky}
                     onClick={(name?: string) => setSticky(name)}/>
                 </Grid>
               ))}
@@ -85,7 +97,13 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
           </CustomScrollbar>
         </ScrollContainer>
       </StyledGrid>
-      <ProjectView style={{right: props.isOnLeft ? '-7.5vw' : '42.5vw'}}>{hovered}</ProjectView>
+      <ProjectView id='project-view' style={{right: props.isOnLeft ? '-7.5vw' : '42.5vw'}}>
+        <ClickAwayListener onClickAway={(e) => handleClickAway(e)}>
+          <div>
+            {hovered}
+          </div>
+        </ClickAwayListener>
+      </ProjectView>
     </div>
   );
 }

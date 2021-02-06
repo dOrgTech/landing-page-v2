@@ -5,11 +5,12 @@ import {ClientContainer} from "../components/home/desktop/ClientContainer";
 import {companies} from "../constants/companies";
 import {communities} from "../constants/communities";
 import {LeftMargin} from "../components/LeftMargin";
-import {borderStyle, borderStyles} from "../theme/styles";
+import {borderStyle, borderStyles, getSonarAnimation} from "../theme/styles";
 import {RightMargin} from "../components/RightMargin";
 import {HomeTitleBox} from "../components/home/desktop/HomeTitleBox";
 import {HomeTitleBoxMobile} from "../components/home/mobile/HomeTItleBoxMobile";
 import {ClientTabsMobile} from "../components/home/mobile/ClientTabsMobile";
+import {useDebounce, useWindowSize} from "../Utils/hooks";
 
 const TITLE_TEXT_PRIMARY = 'We build';
 const TITLE_TEXT_SECONDARY = 'Dapps';
@@ -56,24 +57,7 @@ const StyledRings = styled('img')({
   zIndex: 0
 });
 
-const useSonarAnimation= makeStyles(theme => ({
-  '@keyframes sonar': {
-    from: {
-      width: 0,
-      height: 0,
-      opacity: 1
-    },
-    to: {
-      width: '30vw',
-      height: '30vw',
-      opacity: 0
-    }
-  },
-  animate: {
-    animation: `$sonar 3s ease-out infinite`,
-  }
-}));
-
+const useSonarAnimation= getSonarAnimation('30vw', 3);
 const useBorders = makeStyles(borderStyles);
 
 export const Home: React.FC = () => {
@@ -85,6 +69,9 @@ export const Home: React.FC = () => {
   const sonarAnimation = useSonarAnimation();
   const theme: Theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
+
+  const windowSize = useWindowSize()
+  const debouncedWindowSize = useDebounce(windowSize, 100);
 
   if (desktop) {
     return (
@@ -103,7 +90,7 @@ export const Home: React.FC = () => {
             subTitleText={SUBTITLE_TEXT} />
           <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'} className={sonarAnimation.animate}/>
         </ContentContainer>
-        <RightMargin height={'5vh'} accentContainerHeight={`${window.innerHeight - (0.1 * window.innerWidth)}px`} longAccentIndex={0}/>
+        <RightMargin height={'5vh'} accentContainerHeight={`${debouncedWindowSize.height - (0.1 * debouncedWindowSize.width)}px`} longAccentIndex={0}/>
       </Root>
     );
   } else {

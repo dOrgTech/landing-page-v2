@@ -13,7 +13,7 @@ import {CloseBox} from "../components/about/desktop/CloseBox";
 import {LeftMargin} from "../components/LeftMargin";
 import {RightMargin} from "../components/RightMargin"
 import {routes} from "../constants/routes";
-import {borderStyle, borderStyles} from "../theme/styles";
+import {borderStyle, borderStyles, getSonarAnimation} from "../theme/styles";
 import {AboutTitleBoxMobile} from "../components/about/mobile/AboutTitleBoxMobile";
 import {PressBoxMobile} from "../components/about/mobile/PressBoxMobile";
 import {StatBoxMobile} from "../components/about/mobile/StatBoxMobile";
@@ -56,6 +56,7 @@ const StyledRings = styled('img')({
   zIndex: 1
 });
 
+const useSonarAnimation= getSonarAnimation('30vw', 3);
 const useBorders = makeStyles(borderStyles);
 
 export const About: React.FC = () => {
@@ -66,7 +67,7 @@ export const About: React.FC = () => {
   const navigateToContactPage = () => history.push(routes.contact.path);
 
   const borders = useBorders();
-
+  const sonarAnimation = useSonarAnimation();
   const theme: Theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
@@ -88,7 +89,7 @@ export const About: React.FC = () => {
             ))}
           </StatsContainer>
           <Grid item xs={12} style={{position: 'relative'}}>
-            <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'} />
+            <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'} className={sonarAnimation.animate}/>
           </Grid>
           <PitchesContainer container item xs={12} spacing={0} justify="center">
             {Object.values(pitches).map((pitch: Pitch, index: number) => (

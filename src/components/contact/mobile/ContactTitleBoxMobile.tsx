@@ -1,6 +1,7 @@
 import React from 'react'
 import {Box, styled, Typography} from '@material-ui/core'
 import { theme } from "../../../theme";
+import {getSonarAnimation} from "../../../theme/styles";
 
 
 const StyledBox = styled(Box)({
@@ -67,6 +68,7 @@ const StyledRings = styled('img')({
   right: 0,
   zIndex: 0
 });
+const useSonarAnimation= getSonarAnimation('75vw', 3);
 
 interface Props {
   title: string;
@@ -76,6 +78,9 @@ interface Props {
 }
 
 export const ContactTitleBoxMobile: React.FC<Props> = (props: Props) => {
+
+  const sonarAnimation = useSonarAnimation();
+
   return (
     <StyledBox className={props.classes}>
       <TextContainer>
@@ -83,7 +88,7 @@ export const ContactTitleBoxMobile: React.FC<Props> = (props: Props) => {
         <StyledSubTitle>{props.subtitle}</StyledSubTitle>
         <StyledInstructions>{props.instructions}</StyledInstructions>
       </TextContainer>
-      <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'}/>
+      <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'} className={sonarAnimation.animate}/>
     </StyledBox>
   );
 }

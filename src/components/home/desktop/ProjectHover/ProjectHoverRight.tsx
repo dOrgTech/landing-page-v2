@@ -7,6 +7,7 @@ import {HeaderDesktop} from "../../../HeaderDesktop";
 import {FooterDesktop} from "../../../FooterDesktop";
 import {RightMargin} from "../../../RightMargin";
 import {theme} from "../../../../theme";
+import {useDebounce, useWindowSize} from "../../../../Utils/hooks";
 
 const Root = styled(Grid)({
   width: '50vw',
@@ -20,6 +21,9 @@ interface Props {
 
 export const ProjectHoverRight: React.FC<Props> = (props: Props) => {
 
+  const windowSize = useWindowSize()
+  const debouncedWindowSize = useDebounce(windowSize, 100);
+
   const borderColor = props.client.textColor ? props.client.textColor : theme.palette.text.primary;
   const borders = makeStyles(getBorderStyle(borderColor))();
 
@@ -32,7 +36,7 @@ export const ProjectHoverRight: React.FC<Props> = (props: Props) => {
         underlineColor={props.client.iconHighlightColor as string}/>
       <HoverContentBox client={props.client} classes={`${borders.leftBorder} ${borders.rightBorder}`} />
       <RightMargin height='100%'
-        accentContainerHeight={`${window.innerHeight - (0.1 * window.innerWidth)}px`}
+        accentContainerHeight={`${debouncedWindowSize.height - (0.1 * debouncedWindowSize.width)}px`}
         longAccentIndex={0}
         accentColorPrimary={props.client.textColor ? props.client.textColor : theme.palette.text.primary}
         accentColorSecondary={props.client.textColor ? props.client.textColor : theme.palette.text.primary} />

@@ -2,6 +2,7 @@ import React from 'react'
 import {styled, Typography, Grid, makeStyles} from '@material-ui/core'
 import { theme } from "../../../theme";
 import {CloseButtonMobile} from "../../about/mobile/CloseButtonMobile";
+import {getSonarAnimation} from "../../../theme/styles";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
@@ -40,6 +41,7 @@ const StyledRings = styled('img')({
   bottom: 0,
   right: 0
 });
+const useSonarAnimation= getSonarAnimation('55vw', 3);
 
 const useStyleClasses = makeStyles({
   buttonStyle: {
@@ -68,6 +70,7 @@ export const ActivationPromptBoxMobile: React.FC<Props> = (props: Props) => {
   const remainingLines: string = remainingLinesArray.join(' ');
 
   const styleClasses = useStyleClasses();
+  const sonarAnimation = useSonarAnimation();
 
   return (
     <StyledGrid className={props.classes} container spacing={0} direction='column' justify='center' alignItems='center'>
@@ -80,7 +83,7 @@ export const ActivationPromptBoxMobile: React.FC<Props> = (props: Props) => {
       <Grid item>
         <CloseButtonMobile text={props.buttonText} handleClick={props.onButtonClick} classes={styleClasses.buttonStyle} />
       </Grid>
-      <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} />
+      <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} className={sonarAnimation.animate}/>
     </StyledGrid>
   );
 }

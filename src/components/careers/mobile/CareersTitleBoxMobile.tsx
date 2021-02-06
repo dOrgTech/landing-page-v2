@@ -1,6 +1,7 @@
 import React from 'react'
 import {Grid, styled, Typography,} from '@material-ui/core'
 import { theme } from "../../../theme";
+import {getSonarAnimation} from "../../../theme/styles";
 
 
 const StyledGrid = styled(Grid)({
@@ -45,6 +46,7 @@ const StyledRings = styled('img')({
   right: 0,
   zIndex: 1
 });
+const useSonarAnimation= getSonarAnimation('75vw', 3);
 
 interface Props {
   textPrimaryL1: string;
@@ -54,6 +56,9 @@ interface Props {
 }
 
 export const CareersTitleBoxMobile: React.FC<Props> = (props: Props) => {
+
+  const sonarAnimation = useSonarAnimation();
+
   return (
     <StyledGrid className={props.classes} container direction={'row'} spacing={0} justify={'flex-start'} alignItems={'flex-start'}>
       <Grid item xs={12}>
@@ -65,7 +70,7 @@ export const CareersTitleBoxMobile: React.FC<Props> = (props: Props) => {
       <Grid item>
         <StyledTextSecondary>&nbsp;{props.textSecondary}</StyledTextSecondary>
       </Grid>
-      <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'} />
+      <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'} className={sonarAnimation.animate} />
     </StyledGrid>
   );
 }
