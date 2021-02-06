@@ -11,7 +11,7 @@ import {HomeTitleBox} from "../components/home/desktop/HomeTitleBox";
 import {HomeTitleBoxMobile} from "../components/home/mobile/HomeTItleBoxMobile";
 import {ClientTabsMobile} from "../components/home/mobile/ClientTabsMobile";
 
-const TITLE_TEXT_PRIMARY = 'We build custom';
+const TITLE_TEXT_PRIMARY = 'We build';
 const TITLE_TEXT_SECONDARY = 'Dapps';
 const SUBTITLE_TEXT = 'We’ve helped some of Web3’s top projects design, code and ship.';
 const COMPANIES_TITLE = 'COMPANIES';
