@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useHistory } from 'react-router-dom'
 import {styled, Grid, useTheme, Theme, useMediaQuery} from '@material-ui/core'
 import {theme} from "../theme";
 import {Route, routes} from "../constants/routes";
+import {ProjectHoverRight} from "./home/desktop/ProjectHover/ProjectHoverRight";
+import {ProjectHoverLeft} from "./home/desktop/ProjectHover/ProjectHoverLeft";
 
 const StyledGrid = styled(Grid)({
   width: '7.5vw',
@@ -19,24 +21,23 @@ const CenterLine = styled(Grid)({
   height: '100vh',
 });
 
+const AccentBox = styled(Grid)({
+  margin: '0.0625vw 0',
+  height: '1.125vw',
+  width: '2.875vw',
+  boxSizing: 'border-box',
+  cursor: 'pointer',
+})
+
 const RectangleAccentPrimary = styled('div')({
   width: '1.625vw',
   height: '2.1px',
-  marginTop: '1.125vw',
-  opacity: 0.6,
-  '&:hover': {
-    width: '2.875vw',
-    opacity: 1,
-    backgroundColor: theme.palette.secondary.main + ' !important'
-  },
-  cursor: 'pointer'
+  opacity: 0.6
 });
 
 const RectangleAccentSecondary = styled('div')({
   width: '2.875vw',
   height: '2.1px',
-  marginTop: '1.125vw',
-  cursor: 'pointer'
 });
 
 interface AccentProps {
@@ -48,23 +49,31 @@ interface AccentProps {
 
 const Accents: React.FC<AccentProps> = (props: AccentProps) => {
 
+  const [hover, setHover] = useState(-1);
+  const handleMouseEnter = (val: number) => {
+    setHover(val);
+  }
+  const handleMouseLeave = () => {
+    setHover(-1);
+  }
+
   const history = useHistory();
   const navigateToPage = (route: Route) => history.push(route.path);
+  const routeList = [routes.home, routes.about, routes.careers, routes.contact]
 
   return (
     <AccentContainer container direction={'column'} justify={'center'} alignItems={'center'} style={{height: props.height}}>
-      {props.longAccentIndex === 0 ?
-        <RectangleAccentSecondary style={{backgroundColor: props.colorSecondary}} onClick={() => navigateToPage(routes.home)}/>
-        : <RectangleAccentPrimary style={{backgroundColor: props.colorPrimary}} onClick={() => navigateToPage(routes.home)}/>}
-      {props.longAccentIndex === 1 ?
-        <RectangleAccentSecondary style={{backgroundColor: props.colorSecondary}} onClick={() => navigateToPage(routes.about)}/>
-        : <RectangleAccentPrimary style={{backgroundColor: props.colorPrimary}} onClick={() => navigateToPage(routes.about)}/>}
-      {props.longAccentIndex === 2 ?
-        <RectangleAccentSecondary style={{backgroundColor: props.colorSecondary}} onClick={() => navigateToPage(routes.careers)}/>
-        : <RectangleAccentPrimary style={{backgroundColor: props.colorPrimary}} onClick={() => navigateToPage(routes.careers)}/>}
-      {props.longAccentIndex === 3 ?
-        <RectangleAccentSecondary style={{backgroundColor: props.colorSecondary}} onClick={() => navigateToPage(routes.contact)}/>
-        : <RectangleAccentPrimary style={{backgroundColor: props.colorPrimary}} onClick={() => navigateToPage(routes.contact)}/>}
+      {routeList.map((route: Route, index: number) => (
+        <AccentBox key={`route-${index}`}
+          container justify={'center'} alignItems={'center'}
+          onClick={() => navigateToPage(route)}
+          onMouseEnter={() => handleMouseEnter(index)}
+          onMouseLeave = {() => handleMouseLeave()}>
+          {props.longAccentIndex === index  || hover === index ?
+            <RectangleAccentSecondary style={{backgroundColor: props.colorSecondary}} />
+            : <RectangleAccentPrimary style={{backgroundColor: props.colorPrimary}} />}
+        </AccentBox>
+      ))}
     </AccentContainer>
   );
 }
