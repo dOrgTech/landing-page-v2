@@ -24,7 +24,6 @@ import {ProfileWheelMobile} from "../components/careers/mobile/portfolio_section
 import {TestimonialSectionMobile} from "../components/careers/mobile/testimonial_section/TestimonialSectionMobile";
 import {CurrentOpeningSectionMobile} from "../components/careers/mobile/openings_section/CurrentOpeningSectionMobile";
 
-
 const Root = styled(Grid)({
   margins: 'auto',
   width: '100vw',
