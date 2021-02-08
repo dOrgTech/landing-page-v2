@@ -46,8 +46,16 @@ const StyledRings = styled('img')({
   right: 0,
   zIndex: 1
 });
-
 const useSonarAnimation= getSonarAnimation('30vw', 3);
+
+const FadeCover = styled('div')({
+  width: '5.1vw',
+  height: '4.25vw',
+  position:'absolute',
+  bottom: '-0.5vw',
+  right: '-0.2vw',
+  background: theme.palette.primary.main,
+});
 
 const duration = 1.5
 const useSecondaryTextTransitionStyles = makeStyles({
@@ -55,19 +63,23 @@ const useSecondaryTextTransitionStyles = makeStyles({
   appearActive:  {},
   appearDone:  {},
   enter: {
-    opacity: 0
+    width: '100%',
+    height: '4.25vw',
   },
   enterActive:  {
-    opacity: 1,
-    transition: `opacity ${duration}s ease-out`,
+    width: '100%',
+    height: '0%',
+    transition: `height ${duration}s ease-out`,
   },
   enterDone:  {},
   exit: {
-    opacity: 1
+    width: '0%',
+    height: '4.25vw',
   },
   exitActive:  {
-    opacity: 0,
-    transition: `opacity ${duration}s ease-in`,
+    width: '100%',
+    height: '4.25vw',
+    transition: `width ${duration}s ease-in`,
   },
   exitDone:  {},
 });
@@ -113,13 +125,14 @@ export const CareersTitleBox: React.FC<Props> = (props: Props) => {
 
   return (
     <StyledGrid className={props.classes} container direction={'row'} spacing={0} justify={'flex-start'} alignItems={'flex-start'}>
-      <Grid item onClick={() => setTransitionIn(true)}>
+      <Grid item>
         <StyledTextPrimary>{props.textPrimary}</StyledTextPrimary>
       </Grid>
-      <Grid item>
+      <Grid item style={{position: 'relative'}}>
         <CSSTransition classNames={{...transitionClassNames}} appear in={transitionIn} timeout={timeout} onEntered={handleEntered} onExited={handleExited}>
-          <StyledTextSecondary>&nbsp;{props.textSecondary[textIndex]}</StyledTextSecondary>
+          <FadeCover/>
         </CSSTransition>
+        <StyledTextSecondary>&nbsp;{props.textSecondary[textIndex]}</StyledTextSecondary>
       </Grid>
       <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'} className={sonarAnimation.animate} />
     </StyledGrid>
