@@ -25,7 +25,7 @@ import {TestimonialSectionMobile} from "../components/careers/mobile/testimonial
 import {CurrentOpeningSectionMobile} from "../components/careers/mobile/openings_section/CurrentOpeningSectionMobile";
 
 const CAREERS_TITLE_PRIMARY = 'Discover a new way to';
-const CAREERS_TITLE_SECONDARY = 'work';
+const CAREERS_TITLE_SECONDARY = ['work', 'learn', 'grow', 'build'];
 const ACTIVATION_PROMPT = 'Get started by completing an activation challenge.';
 const APPLY_BUTTON_TEXT = 'APPLY NOW';
 const CURRENT_OPENINGS_TITLE = 'Current Openings';
@@ -33,8 +33,6 @@ const MEET_BUILDERS_TITLE = 'Meet the Builders';
 
 const CAREERS_TITLE_MOBILE_PRIMARY_1 = 'Discover a new';
 const CAREERS_TITLE_MOBILE_PRIMARY_2 = 'way to';
-
-// work" -> "learn" -> "grow" -> "build" -> "work"
 
 const Root = styled(Grid)({
   margins: 'auto',
@@ -61,7 +59,6 @@ export const Careers: React.FC = () => {
   const navigationToActivation = () => window.location.assign(externalLinks.activation.path);
 
   const borders = useBorders();
-
   const theme: Theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
@@ -112,7 +109,7 @@ export const Careers: React.FC = () => {
         <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' style={{width: '90vw'}}
           className={borders.rightBorder}>
           <Grid item xs={12}>
-            <CareersTitleBoxMobile textPrimaryL1={CAREERS_TITLE_MOBILE_PRIMARY_1} textPrimaryL2={CAREERS_TITLE_MOBILE_PRIMARY_2} textSecondary={CAREERS_TITLE_SECONDARY}
+            <CareersTitleBoxMobile textPrimaryL1={CAREERS_TITLE_MOBILE_PRIMARY_1} textPrimaryL2={CAREERS_TITLE_MOBILE_PRIMARY_2} textSecondary={'work'}
               classes={borders.bottomLeftBorder}/>
           </Grid>
           <PerksContainer container spacing={0} justify="center">
