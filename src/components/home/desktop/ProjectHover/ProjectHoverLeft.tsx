@@ -26,7 +26,7 @@ export const ProjectHoverLeft: React.FC<Props> = (props: Props) => {
   const borders = makeStyles(getBorderStyle(borderColor))();
   const styleClasses = makeStyles({
     title: {
-      background: props.client.highlightColor,
+      background: props.client.homeTitleBackground ? props.client.homeTitleBackground : props.client.highlightColor,
       position: 'absolute',
       top: '2vw',
       left: '9.25vw',

@@ -10,6 +10,7 @@ export interface Client {
   iconHighlightFilter?: string;
   textColor?: string;
   textColorFilter?: string;
+  homeTitleBackground?: string;
   project: Project;
 }
 
