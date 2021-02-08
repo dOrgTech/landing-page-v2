@@ -8,6 +8,7 @@ import {HeaderDesktop} from "../../../HeaderDesktop";
 import {FooterDesktop} from "../../../FooterDesktop";
 import {LeftMargin} from "../../../LeftMargin";
 import {theme} from "../../../../theme";
+import {SUBTITLE_TEXT, TITLE_TEXT_PRIMARY, TITLE_TEXT_SECONDARY} from "../../../../pages/Home";
 
 const Root = styled(Grid)({
   width: '50vw',
@@ -25,7 +26,7 @@ export const ProjectHoverLeft: React.FC<Props> = (props: Props) => {
   const borders = makeStyles(getBorderStyle(borderColor))();
   const styleClasses = makeStyles({
     title: {
-      background: props.client.highlightColor,
+      background: props.client.homeTitleBackground ? props.client.homeTitleBackground : props.client.highlightColor,
       position: 'absolute',
       top: '2vw',
       left: '9.25vw',
@@ -44,9 +45,9 @@ export const ProjectHoverLeft: React.FC<Props> = (props: Props) => {
       <HoverContentBox client={props.client} classes={borders.leftBorder} />
       <FooterDesktop pageHalf={'left'} textColor={props.client.textColor} iconColorFilter={props.client.textColorFilter} />
       <HomeTitleBox classes={styleClasses.title}
-        titleTextPrimary={'We build custom'}
-        titleTextSecondary={'Dapps'}
-        subTitleText={'We’ve helped some of Web3’s top projects design, code and ship.'}
+        titleTextPrimary={TITLE_TEXT_PRIMARY}
+        titleTextSecondary={TITLE_TEXT_SECONDARY}
+        subTitleText={SUBTITLE_TEXT}
         titleColorPrimary={props.client.textColor}
         titleColorSecondary={props.client.iconHighlightColor as string}/>
     </Root>
