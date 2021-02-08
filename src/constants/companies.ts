@@ -1,5 +1,6 @@
 import {Client} from "./clients";
 
+
 export interface Companies {
   TheGraph: Readonly<Client>;
   Gnosis: Readonly<Client>;
