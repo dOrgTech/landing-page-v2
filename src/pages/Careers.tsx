@@ -24,6 +24,17 @@ import {ProfileWheelMobile} from "../components/careers/mobile/portfolio_section
 import {TestimonialSectionMobile} from "../components/careers/mobile/testimonial_section/TestimonialSectionMobile";
 import {CurrentOpeningSectionMobile} from "../components/careers/mobile/openings_section/CurrentOpeningSectionMobile";
 
+const CAREERS_TITLE_PRIMARY = 'Discover a new way to';
+const CAREERS_TITLE_SECONDARY = 'work';
+const ACTIVATION_PROMPT = 'Get started by completing an activation challenge.';
+const APPLY_BUTTON_TEXT = 'APPLY NOW';
+const CURRENT_OPENINGS_TITLE = 'Current Openings';
+const MEET_BUILDERS_TITLE = 'Meet the Builders';
+
+const CAREERS_TITLE_MOBILE_PRIMARY_1 = 'Discover a new';
+const CAREERS_TITLE_MOBILE_PRIMARY_2 = 'way to';
+
+// work" -> "learn" -> "grow" -> "build" -> "work"
 
 const Root = styled(Grid)({
   margins: 'auto',
@@ -60,7 +71,7 @@ export const Careers: React.FC = () => {
         <LeftMargin border={borderStyle} height='100%'/>
         <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' className={`${borders.leftBorder} ${borders.rightBorder}`}>
           <Grid item xs={12}>
-            <CareersTitleBox textPrimary={'Discover a new way to'} textSecondary={'work'}
+            <CareersTitleBox textPrimary={CAREERS_TITLE_PRIMARY} textSecondary={CAREERS_TITLE_SECONDARY}
               classes={borders.bottomBorder}/>
           </Grid>
           <PerksContainer container spacing={0} justify="center">
@@ -71,12 +82,12 @@ export const Careers: React.FC = () => {
             ))}
           </PerksContainer>
           <Grid item xs={12}>
-            <ActivationPromptBox prompt={'Get started by completing an activation challenge.'}
-              buttonText={'APPLY NOW'}
+            <ActivationPromptBox prompt={ACTIVATION_PROMPT}
+              buttonText={APPLY_BUTTON_TEXT}
               onButtonClick={navigationToActivation}/>
           </Grid>
           <Grid item xs={12}>
-            <MeetBuildersTitleBox text={'Meet the Builders'} />
+            <MeetBuildersTitleBox text={MEET_BUILDERS_TITLE} />
           </Grid>
           <Grid item xs={12}>
             <ProfileWheel members={testMembers} />
@@ -86,8 +97,8 @@ export const Careers: React.FC = () => {
           </Grid>
           <Grid item xs={12}>
             <CurrentOpeningSection openings={openings}
-              titleText={'Current Openings'}
-              buttonText={'APPLY NOW'}
+              titleText={CURRENT_OPENINGS_TITLE}
+              buttonText={APPLY_BUTTON_TEXT}
               onButtonClick={navigationToActivation} />
           </Grid>
         </ContentContainer>
@@ -101,7 +112,7 @@ export const Careers: React.FC = () => {
         <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' style={{width: '90vw'}}
           className={borders.rightBorder}>
           <Grid item xs={12}>
-            <CareersTitleBoxMobile textPrimaryL1={'Discover a new'} textPrimaryL2={'way to'} textSecondary={'work'}
+            <CareersTitleBoxMobile textPrimaryL1={CAREERS_TITLE_MOBILE_PRIMARY_1} textPrimaryL2={CAREERS_TITLE_MOBILE_PRIMARY_2} textSecondary={CAREERS_TITLE_SECONDARY}
               classes={borders.bottomLeftBorder}/>
           </Grid>
           <PerksContainer container spacing={0} justify="center">
@@ -112,13 +123,13 @@ export const Careers: React.FC = () => {
             ))}
           </PerksContainer>
           <Grid item xs={12}>
-            <ActivationPromptBoxMobile prompt={'Get started by completing an activation challenge.'}
-              buttonText={'APPLY NOW'}
+            <ActivationPromptBoxMobile prompt={ACTIVATION_PROMPT}
+              buttonText={APPLY_BUTTON_TEXT}
               onButtonClick={navigationToActivation}
               classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
-            <MeetBuildersTitleBoxMobile text={'Meet the Builders'} classes={borders.leftBorder}/>
+            <MeetBuildersTitleBoxMobile text={MEET_BUILDERS_TITLE} classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
             <ProfileWheelMobile members={testMembers} classes={borders.leftBorder}/>
@@ -128,8 +139,8 @@ export const Careers: React.FC = () => {
           </Grid>
           <Grid item xs={12}>
             <CurrentOpeningSectionMobile openings={openings}
-              titleText={'Current Openings'}
-              buttonText={'APPLY NOW'}
+              titleText={CURRENT_OPENINGS_TITLE}
+              buttonText={APPLY_BUTTON_TEXT}
               onButtonClick={navigationToActivation}
               classes={borders.leftBorder}/>
           </Grid>
