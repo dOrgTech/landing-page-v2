@@ -12,11 +12,11 @@ import {HomeTitleBoxMobile} from "../components/home/mobile/HomeTItleBoxMobile";
 import {ClientTabsMobile} from "../components/home/mobile/ClientTabsMobile";
 import {useDebounce, useWindowSize} from "../Utils/hooks";
 
-const TITLE_TEXT_PRIMARY = 'We build';
-const TITLE_TEXT_SECONDARY = 'Dapps';
-const SUBTITLE_TEXT = 'We’ve helped some of Web3’s top projects design, code and ship.';
-const COMPANIES_TITLE = 'COMPANIES';
-const COMMUNITIES_TITLE = 'COMMUNITIES';
+export const TITLE_TEXT_PRIMARY = 'We build';
+export const TITLE_TEXT_SECONDARY = 'Dapps';
+export const SUBTITLE_TEXT = 'We’ve helped some of Web3’s top projects design, code and ship.';
+export const COMPANIES_TITLE = 'COMPANIES';
+export const COMMUNITIES_TITLE = 'COMMUNITIES';
 
 
 const Root = styled(Grid)({

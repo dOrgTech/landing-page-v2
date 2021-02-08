@@ -4,11 +4,11 @@ export interface Communities {
   DAOstack: Readonly<Client>;
   Aragon: Readonly<Client>;
   Dxdao: Readonly<Client>;
-  Prime: Readonly<Client>;
   Badger: Readonly<Client>;
   API3: Readonly<Client>;
-  LID: Readonly<Client>;
   Web3API: Readonly<Client>;
+  Zer0: Readonly<Client>;
+  Sovryn: Readonly<Client>;
 }
 
 export const communities: Communities = {
@@ -61,21 +61,6 @@ export const communities: Communities = {
       imageSrc: 'imgs/project-graphics/badger-logo.png'
     }
   },
-  Prime: {
-    name:'Prime',
-    link: 'https://primedao.eth.link/#/',
-    icon: 'imgs/logos/Prime.svg',
-    iconHighlightColor: '#8668fc',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(47%) sepia(97%) saturate(3829%) hue-rotate(231deg) brightness(105%) contrast(97%)',
-    highlightColor: '#ff6975',
-    project: {
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-      technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
-      imageSrc: 'imgs/logos/Prime.svg'
-    }
-  },
   Dxdao: {
     name:'Dxdao',
     link: 'https://dxdao.eth.link/#/',
@@ -111,20 +96,6 @@ export const communities: Communities = {
       imageSrc: 'imgs/logos/api3.svg',
     }
   },
-  LID: {
-    name:'LID',
-    link: 'https://github.com/Lid-Protocol',
-    icon: 'imgs/logos/LID.svg',
-    iconHighlightColor: '#fff',
-    iconHighlightFilter: '',
-    highlightColor: '#246B8F',
-    project: {
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-      technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
-    }
-  },
   Web3API: {
     name:'Web3API',
     link: 'https://web3api.dev/#/',
@@ -142,5 +113,68 @@ export const communities: Communities = {
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
       imageSrc: 'imgs/project-graphics/web3api-graphic.svg'
     }
-  }
+  },
+  Zer0: {
+    name:'Zer0',
+    link: 'https://zer0.io/',
+    icon: 'imgs/logos/zero-logo-white.png',
+    colorIcon: true,
+    highlightColor: 'linear-gradient(0deg,#d60e48,#000000)',
+    homeTitleBackground: 'linear-gradient(0deg,#200300,#000000)',
+    iconHighlightColor: '#006aff',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(33%) sepia(67%) saturate(5938%) hue-rotate(208deg) brightness(101%) contrast(109%)',
+    project: {
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
+        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
+      technologies: ['React', 'GraphQL', 'Solidity'],
+      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: 'imgs/project-graphics/zero-eye-graphic.png'
+    }
+  },
+  Sovryn: {
+    name:'Sovryn',
+    link: 'https://sovryn.app/',
+    icon: 'imgs/logos/sovryn.svg',
+    highlightColor: '#fff',
+    iconHighlightColor: '#fdc009',
+    iconHighlightFilter: 'brightness(0) saturate(100%)',
+    textColor: '#000',
+    textColorFilter: 'brightness(0) saturate(100%)',
+    project: {
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
+        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
+      technologies: ['React', 'GraphQL', 'Solidity'],
+      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: 'imgs/project-graphics/sovryn-beach-coins.svg'
+    }
+  },
+  // Prime: {
+  //   name:'Prime',
+  //   link: 'https://primedao.eth.link/#/',
+  //   icon: 'imgs/logos/Prime.svg',
+  //   iconHighlightColor: '#8668fc',
+  //   iconHighlightFilter: 'brightness(0) saturate(100%) invert(47%) sepia(97%) saturate(3829%) hue-rotate(231deg) brightness(105%) contrast(97%)',
+  //   highlightColor: '#ff6975',
+  //   project: {
+  //     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
+  //       '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
+  //     technologies: ['React', 'GraphQL', 'Solidity'],
+  //     bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+  //     imageSrc: 'imgs/logos/Prime.svg'
+  //   }
+  // },
+  // LID: {
+  //   name:'LID',
+  //   link: 'https://github.com/Lid-Protocol',
+  //   icon: 'imgs/logos/LID.svg',
+  //   iconHighlightColor: '#fff',
+  //   iconHighlightFilter: '',
+  //   highlightColor: '#246B8F',
+  //   project: {
+  //     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
+  //       '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
+  //     technologies: ['React', 'GraphQL', 'Solidity'],
+  //     bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+  //   }
+  // },
 }
