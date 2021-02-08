@@ -12,6 +12,7 @@ export interface Companies {
   Boardroom: Readonly<Client>;
   Centrality: Readonly<Client>;
   eToro: Readonly<Client>;
+  Stakehound: Readonly<Client>;
 }
 
 export const companies: Companies = {
@@ -178,5 +179,21 @@ export const companies: Companies = {
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
       imageSrc: 'imgs/logos/eToro.svg',
     }
-  }
+  },
+  Stakehound: {
+    name:'Stakehound',
+    link: 'https://stakehound.com/',
+    icon: 'imgs/logos/stakehound-logo.png',
+    colorIcon: true,
+    iconHighlightColor: '#00ceff',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(59%) sepia(77%) saturate(1571%) hue-rotate(149deg) brightness(101%) contrast(103%)',
+    highlightColor: '#0E223D',
+    project: {
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
+        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
+      technologies: ['React', 'GraphQL', 'Solidity'],
+      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: 'imgs/project-graphics/stakehound-brand.png'
+    }
+  },
 }
