@@ -18,11 +18,11 @@ const StyledQuote = styled(Typography)({
   maxWidth: '74vw',
   margin: '0 0 -4.3vw 0',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '8.57vw',
+  fontSize: '8.5vw',
   fontWeight: 300,
   fontStretch: "normal",
   fontStyle: "normal",
-  lineHeight: 1.72,
+  lineHeight: 1.5,
   letterSpacing: '-1.08px',
   textAlign: "center",
   color: theme.palette.text.primary

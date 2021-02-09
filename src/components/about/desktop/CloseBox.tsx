@@ -15,7 +15,7 @@ const StyledBox = styled(Box)({
 });
 
 const StyledQuote = styled(Typography)({
-  maxWidth: '31vw',
+  maxWidth: '36vw',
   height: '6.375vw',
   fontFamily: theme.typography.fontFamily,
   fontSize: '2.25vw',
