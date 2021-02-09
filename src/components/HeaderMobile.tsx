@@ -6,7 +6,7 @@ import {borderStyles} from "../theme/styles";
 import {MobileMenu} from "./MobileMenu";
 
 
-const LOGO_PATH = process.env.PUBLIC_URL + "/imgs/dOrg-logo-white.svg";
+const LOGO_PATH = process.env.PUBLIC_URL + "/imgs/logos/dOrg-logo-white.svg";
 
 const StyledAppBar = styled(AppBar)({
   height: '14.3vw',
