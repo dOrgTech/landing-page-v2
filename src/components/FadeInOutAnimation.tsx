@@ -19,6 +19,7 @@ const FadeCover = styled('div')({
 
 interface Props {
   textSecondary: string[];
+  background?: string;
   textClasses?: string;
   containerClasses?: string;
   duration?: number;
@@ -91,7 +92,7 @@ export const FadeInOutAnimation: React.FC<Props> = (props: Props) => {
   return (
     <div style={{position: 'relative'}} className={props.containerClasses}>
       <CSSTransition classNames={{...transitionClassNames}} appear in={transitionIn} timeout={timeout} onEntered={handleEntered} onExited={handleExited}>
-        <FadeCover/>
+        <FadeCover style={{background: props.background ? props.background : theme.palette.primary.main}}/>
       </CSSTransition>
       <StyledText className={props.textClasses}>{props.noSpace ? '' : '\u00A0'}{props.textSecondary[textIndex]}</StyledText>
     </div>

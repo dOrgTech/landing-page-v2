@@ -22,11 +22,12 @@ interface Props {
 
 export const ProjectHoverLeft: React.FC<Props> = (props: Props) => {
 
-  const borderColor = props.client.textColor ? props.client.textColor : theme.palette.text.primary;
+  const {textColor, textColorFilter, highlightColor, iconHighlightColor, homeTitleBackground} = props.client
+
+  const borderColor = textColor ? textColor : theme.palette.text.primary;
   const borders = makeStyles(getBorderStyle(borderColor))();
   const styleClasses = makeStyles({
     title: {
-      background: props.client.homeTitleBackground ? props.client.homeTitleBackground : props.client.highlightColor,
       position: 'absolute',
       top: '2vw',
       left: '9.25vw',
@@ -39,17 +40,18 @@ export const ProjectHoverLeft: React.FC<Props> = (props: Props) => {
 
   return (
     <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'
-      className={props.classes} style={{background: props.client.highlightColor}}>
-      <HeaderDesktop pageHalf={'left'} classes={styleClasses.header} textColor={props.client.textColor} logoColorFilter={props.client.textColorFilter} />
+      className={props.classes} style={{background: highlightColor}}>
+      <HeaderDesktop pageHalf={'left'} classes={styleClasses.header} textColor={textColor} logoColorFilter={textColorFilter} />
       <LeftMargin height={'100%'}/>
       <HoverContentBox client={props.client} classes={borders.leftBorder} />
-      <FooterDesktop pageHalf={'left'} textColor={props.client.textColor} iconColorFilter={props.client.textColorFilter} />
+      <FooterDesktop pageHalf={'left'} textColor={textColor} iconColorFilter={textColorFilter} />
       <HomeTitleBox classes={styleClasses.title}
         titleTextPrimary={TITLE_TEXT_PRIMARY}
         titleTextSecondary={TITLE_TEXT_SECONDARY}
         subTitleText={SUBTITLE_TEXT}
-        titleColorPrimary={props.client.textColor}
-        titleColorSecondary={props.client.iconHighlightColor as string}/>
+        titleColorPrimary={textColor}
+        titleColorSecondary={iconHighlightColor}
+        background={homeTitleBackground ? homeTitleBackground : highlightColor}/>
     </Root>
   );
 };
