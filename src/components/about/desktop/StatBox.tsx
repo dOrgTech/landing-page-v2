@@ -79,19 +79,34 @@ export const StatBox: React.FC<Props> = (props: Props) => {
     }
   }
 
+  const [wild, setWild] = useState<NodeJS.Timeout | null>(null);
+  const handleMouseEnter = () => {
+    setWild(setInterval(() => {
+      setStat(Math.floor(Math.random() * end));
+    }, 15));
+  };
+  const handleMouseLeave = () => {
+    if (wild) {
+      clearInterval(wild);
+      setWild(null);
+    }
+    setStat(0);
+  }
+
   const [stat, setStat] = useState(0);
   const increment = Math.ceil(end / 50);
   useEffect(() => {
-    if (stat < end) {
+    if (stat < end && !wild) {
       setTimeout(() => {
         const nextStat = Math.min(stat + increment, end);
         setStat(nextStat);
       }, 15)
     }
-  }, [stat, end, increment])
+  }, [stat, end, increment, wild])
+
 
   return (
-    <StyledBox className={props.classes}>
+    <StyledBox className={props.classes} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <StyledIcon src={props.stat.icon} alt='icon' />
       <Grid container direction='column' spacing={0} justify='center' alignItems='center'>
         <StyledStat>{formatStat(stat)}</StyledStat>

@@ -23,9 +23,9 @@ export const stats: Stats = {
   },
   tvl: {
     title: 'TVL IN OUR PRODUCTS',
-    stat: 1,
+    stat: 999,
     currency: true,
-    postfix: 'B+',
+    postfix: 'M+',
     icon: 'imgs/circle-slice-icon.svg'
   },
   clients: {
@@ -60,9 +60,9 @@ export const statsMobile: Stats = {
   },
   tvl: {
     title: 'TVL in our products',
-    stat: 1,
+    stat: 999,
     currency: true,
-    postfix: 'B+',
+    postfix: 'M+',
     icon: 'imgs/circle-slice-icon.svg'
   },
   clients: {

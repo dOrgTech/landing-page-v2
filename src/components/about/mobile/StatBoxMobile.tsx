@@ -96,8 +96,11 @@ export const StatBoxMobile: React.FC<Props> = (props: Props) => {
     }
   }, [stat, end, increment])
 
+  const handleTouch = () => setStat(0);
+
   return (
-    <StyledBox className={props.classes} container direction='row' spacing={0} justify='space-between' alignItems='center'>
+    <StyledBox className={props.classes} container direction='row' spacing={0} justify='space-between' alignItems='center'
+      onTouchEnd={handleTouch}>
       <Grid item xs={6}>
         <StyledStat>{formatStat(stat)}</StyledStat>
       </Grid>
