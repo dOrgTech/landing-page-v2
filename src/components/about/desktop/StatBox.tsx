@@ -104,7 +104,6 @@ export const StatBox: React.FC<Props> = (props: Props) => {
     }
   }, [stat, end, increment, wild])
 
-
   return (
     <StyledBox className={props.classes} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <StyledIcon src={props.stat.icon} alt='icon' />
