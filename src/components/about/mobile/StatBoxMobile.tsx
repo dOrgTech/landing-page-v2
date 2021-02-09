@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { styled, Typography, Grid } from '@material-ui/core'
 
 import { Stat } from "../../../constants/stats";
@@ -58,16 +58,51 @@ const StyledIcon = styled('img')({
   top: '-1vw'
 });
 
+const currencyFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
+});
+
+
 interface Props {
   stat: Stat;
   classes?: string;
 }
 
 export const StatBoxMobile: React.FC<Props> = (props: Props) => {
+
+  const postfix = props.stat.postfix ? props.stat.postfix : '';
+  const end = props.stat.stat;
+  const isCurrency = props.stat.currency
+
+  const formatStat = (num: number) => {
+    if (isCurrency) {
+      return currencyFormatter.format(num) + postfix;
+    } else {
+      return num.toString() + postfix;
+    }
+  }
+
+  const [stat, setStat] = useState(0);
+  const increment = Math.ceil(end / 50);
+  useEffect(() => {
+    if (stat < end) {
+      setTimeout(() => {
+        const nextStat = Math.min(stat + increment, end);
+        setStat(nextStat);
+      }, 15)
+    }
+  }, [stat, end, increment])
+
+  const handleTouch = () => setStat(0);
+
   return (
-    <StyledBox className={props.classes} container direction='row' spacing={0} justify='space-between' alignItems='center'>
+    <StyledBox className={props.classes} container direction='row' spacing={0} justify='space-between' alignItems='center'
+      onTouchEnd={handleTouch}>
       <Grid item xs={6}>
-        <StyledStat>{props.stat.stat}</StyledStat>
+        <StyledStat>{formatStat(stat)}</StyledStat>
       </Grid>
       <Grid item xs={6}>
         <StyledIcon src={props.stat.icon} alt='icon' />

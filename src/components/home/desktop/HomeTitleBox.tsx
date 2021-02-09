@@ -43,11 +43,13 @@ interface Props {
   subTitleText: string;
   titleColorPrimary?: string;
   titleColorSecondary?: string;
+  background?: string;
   classes?: string;
 }
 
 export const HomeTitleBox: React.FC<Props> = (props: Props) => {
 
+  const classes = props.classes ? props.classes : '';
   const styles = makeStyles({
     textPrimary: {
       color: props.titleColorPrimary ? props.titleColorPrimary : theme.palette.text.primary
@@ -62,17 +64,21 @@ export const HomeTitleBox: React.FC<Props> = (props: Props) => {
       lineHeight: 1,
       letterSpacing: '-0.84px',
       textAlign: "left",
+    },
+    container: {
+      background: props.background ? props.background : theme.palette.primary.main
     }
   })();
 
   return (
-    <StyledGrid className={props.classes} container direction={'column'} spacing={0} justify={'flex-start'} alignItems={'flex-start'}>
+    <StyledGrid container direction={'column'} spacing={0} justify={'flex-start'} alignItems={'flex-start'}
+      className={`${classes} ${styles.container}`}>
       <Grid item container direction={'row'} spacing={0} justify={'flex-start'} alignItems={'flex-start'}>
         <Grid item>
           <TitleTextPrimary className={styles.textPrimary}>{props.titleTextPrimary}</TitleTextPrimary>
         </Grid>
         <Grid item>
-          <FadeInOutAnimation textSecondary={props.titleTextSecondary} textClasses={styles.textSecondary} />
+          <FadeInOutAnimation background={props.background} textSecondary={props.titleTextSecondary} textClasses={styles.textSecondary} />
         </Grid>
       </Grid>
       <Grid item>
