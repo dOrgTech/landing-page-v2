@@ -13,7 +13,7 @@ import {ClientTabsMobile} from "../components/home/mobile/ClientTabsMobile";
 import {useDebounce, useWindowSize} from "../Utils/hooks";
 
 export const TITLE_TEXT_PRIMARY = 'We build';
-export const TITLE_TEXT_SECONDARY = 'Dapps';
+export const TITLE_TEXT_SECONDARY = ['Dapps', 'DAOs', 'Smart Contracts', 'Web3 SDKs'];
 export const SUBTITLE_TEXT = 'We’ve helped some of Web3’s top projects design, code and ship.';
 export const COMPANIES_TITLE = 'COMPANIES';
 export const COMMUNITIES_TITLE = 'COMMUNITIES';

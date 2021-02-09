@@ -1,8 +1,8 @@
 import React from 'react'
-import {Grid, styled, Typography,} from '@material-ui/core'
+import {Grid, makeStyles, styled, Typography,} from '@material-ui/core'
 import { theme } from "../../../theme";
 import {getSonarAnimation} from "../../../theme/styles";
-
+import {FadeInOutAnimation} from "../../FadeInOutAnimation";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
@@ -25,16 +25,18 @@ const StyledTextPrimary = styled(Typography)({
   color: theme.palette.text.primary
 });
 
-const StyledTextSecondary = styled(Typography)({
-  fontFamily: theme.typography.fontFamily,
-  fontSize: '3.25vw',
-  fontWeight: 600,
-  fontStretch: "normal",
-  fontStyle: "normal",
-  lineHeight: 1,
-  letterSpacing: '-1.6px',
-  textAlign: "left",
-  color: theme.palette.text.secondary
+const useStyledTextSecondary = makeStyles({
+  style: {
+    fontFamily: theme.typography.fontFamily,
+    fontSize: '3.25vw',
+    fontWeight: 600,
+    fontStretch: "normal",
+    fontStyle: "normal",
+    lineHeight: 1,
+    letterSpacing: '-1.6px',
+    textAlign: "left",
+    color: theme.palette.text.secondary
+  }
 });
 
 const StyledRings = styled('img')({
@@ -46,18 +48,18 @@ const StyledRings = styled('img')({
   right: 0,
   zIndex: 1
 });
-
 const useSonarAnimation= getSonarAnimation('30vw', 3);
 
 interface Props {
   textPrimary: string;
-  textSecondary: string;
+  textSecondary: string[];
   classes?: string;
 }
 
 export const CareersTitleBox: React.FC<Props> = (props: Props) => {
 
   const sonarAnimation = useSonarAnimation();
+  const styledTextSecondary = useStyledTextSecondary();
 
   return (
     <StyledGrid className={props.classes} container direction={'row'} spacing={0} justify={'flex-start'} alignItems={'flex-start'}>
@@ -65,7 +67,7 @@ export const CareersTitleBox: React.FC<Props> = (props: Props) => {
         <StyledTextPrimary>{props.textPrimary}</StyledTextPrimary>
       </Grid>
       <Grid item>
-        <StyledTextSecondary>&nbsp;{props.textSecondary}</StyledTextSecondary>
+        <FadeInOutAnimation textSecondary={props.textSecondary} textClasses={styledTextSecondary.style}/>
       </Grid>
       <StyledRings src='imgs/concentric-rings-left.svg' alt={'concentric rings flourish'} className={sonarAnimation.animate} />
     </StyledGrid>
