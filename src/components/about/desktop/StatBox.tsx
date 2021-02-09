@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { Box, styled, Typography, Grid } from '@material-ui/core'
 
 import { Stat } from "../../../constants/stats";
@@ -53,17 +53,48 @@ const StyledIcon = styled('img')({
   float: 'right'
 });
 
+const currencyFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
+});
+
 interface Props {
   stat: Stat;
   classes?: string;
 }
 
 export const StatBox: React.FC<Props> = (props: Props) => {
+
+  const postfix = props.stat.postfix ? props.stat.postfix : '';
+  const end = props.stat.stat;
+  const isCurrency = props.stat.currency
+
+  const formatStat = (num: number) => {
+    if (isCurrency) {
+      return currencyFormatter.format(num) + postfix;
+    } else {
+      return num.toString() + postfix;
+    }
+  }
+
+  const [stat, setStat] = useState(0);
+  const increment = Math.ceil(end / 50);
+  useEffect(() => {
+    if (stat < end) {
+      setTimeout(() => {
+        const nextStat = Math.min(stat + increment, end);
+        setStat(nextStat);
+      }, 15)
+    }
+  }, [stat, end, increment])
+
   return (
     <StyledBox className={props.classes}>
       <StyledIcon src={props.stat.icon} alt='icon' />
       <Grid container direction='column' spacing={0} justify='center' alignItems='center'>
-        <StyledStat>{props.stat.stat}</StyledStat>
+        <StyledStat>{formatStat(stat)}</StyledStat>
         <StyledTitle>{props.stat.title}</StyledTitle>
       </Grid>
     </StyledBox>
