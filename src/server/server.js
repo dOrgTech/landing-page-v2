@@ -1,4 +1,5 @@
 const express = require('express'); // eslint-disable-line
+const path = require('path'); //eslint-disable-line
 const {fetchMembers} = require("./network"); // eslint-disable-line
 
 const apiKey = process.argv[2];
@@ -20,6 +21,15 @@ app.get("/api/members", (request, response) => {
   response.json(JSON.stringify(membersCache));
 });
 
+
+app.use(express.static(path.resolve(__dirname, '../../build')));
+
+app.get('*', (request, response) => {
+  response.sendFile(path.resolve(__dirname, '../../build', 'index.html'));
+});
+
+
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
+
