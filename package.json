@@ -85,7 +85,7 @@
       "eslint --fix"
     ]
   },
-  "proxy": "http://localhost:3001/",
+  "proxy": "https://polished-fog-7734.on.fleek.co/",
   "main": "index.js",
   "repository": "https://github.com/dOrgTech/landing-page-v2.git",
   "author": "dorg.tech",
