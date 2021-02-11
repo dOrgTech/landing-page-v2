@@ -5,12 +5,19 @@ const apiKey = process.argv[2];
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-app.get("/api/members", (request, response) => {
+// cache members array to minimize hubspot api calls; update every 10 minutes
+let membersCache;
+fetchMembers(apiKey)
+  .then(members => membersCache = members)
+  .catch(error => console.log(error))
+setInterval(() => {
   fetchMembers(apiKey)
-    .then(members => {
-      response.json(JSON.stringify(members));
-    })
+    .then(members => membersCache = members)
     .catch(error => console.log(error))
+}, 600000);
+
+app.get("/api/members", (request, response) => {
+  response.json(JSON.stringify(membersCache));
 });
 
 app.listen(PORT, () => {

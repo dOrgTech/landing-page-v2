@@ -96,7 +96,7 @@ export const ProfileSummaryMobile: React.FC<Props> = (props: Props) => {
       </Grid>
       <ChipContainer item container spacing={0} direction='row' justify='center' alignItems='flex-start'>
         {props.member.skills.map((specialization: string, i: number) => (
-          <Grid item key={`specialization-${i}`}>
+          <Grid item key={`skill-${i}`}>
             <ChipSmallMobile classes={chipStyle.chip} text={specialization} />
           </Grid>
         ))}
