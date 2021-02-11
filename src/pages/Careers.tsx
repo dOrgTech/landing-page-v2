@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import ReactGA from "react-ga";
 import {Grid, makeStyles, styled, Theme, useMediaQuery, useTheme} from "@material-ui/core";
 import { Perk, perks } from "../constants/perks";
@@ -9,7 +9,7 @@ import {borderStyle, borderStyles} from "../theme/styles";
 import {RightMargin} from "../components/RightMargin";
 import {ActivationPromptBox} from "../components/careers/desktop/ActivationPromptBox";
 import {externalLinks} from "../constants/routes";
-import {testMembers} from "../constants/members";
+import {getMembers, Member, testMembers} from "../constants/members";
 import {MeetBuildersTitleBox} from "../components/careers/desktop/MeetBuildersTitleBox";
 import {ProfileWheel} from "../components/careers/desktop/portfolio_section/ProfileWheel";
 import {testimonials} from "../constants/testimonials";
@@ -56,8 +56,16 @@ export const Careers: React.FC = () => {
 
   ReactGA.pageview('/careers');
 
-  const navigationToActivation = () => window.location.assign(externalLinks.activation.path);
+  // request members from server
+  const [members, setMembers] = useState<Member[] | undefined>(undefined);
+  useEffect(() => {
+    if (members) return;
+    getMembers()
+      .then(members => setMembers(members as Member[]))
+      .catch(error => console.log(error))
+  }, [members])
 
+  const navigationToActivation = () => window.location.assign(externalLinks.activation.path);
   const borders = useBorders();
   const theme: Theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
@@ -87,7 +95,7 @@ export const Careers: React.FC = () => {
             <MeetBuildersTitleBox text={MEET_BUILDERS_TITLE} />
           </Grid>
           <Grid item xs={12}>
-            <ProfileWheel members={testMembers} />
+            <ProfileWheel members={members ? members : testMembers} />
           </Grid>
           <Grid item xs={12}>
             <TestimonialSection testimonials={testimonials} carouselBorder={borderStyle} />
@@ -129,7 +137,7 @@ export const Careers: React.FC = () => {
             <MeetBuildersTitleBoxMobile text={MEET_BUILDERS_TITLE} classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
-            <ProfileWheelMobile members={testMembers} classes={borders.leftBorder}/>
+            <ProfileWheelMobile members={members ? members : testMembers} classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
             <TestimonialSectionMobile testimonials={testimonials} carouselBorder={borderStyle} classes={borders.leftBorder} />

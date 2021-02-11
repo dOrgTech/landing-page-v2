@@ -52,6 +52,11 @@ export const ProfileFull: React.FC<Props> = (props: Props) => {
 
   ReactGA.modalview('/careers/profile');
 
+  const {name, photo, skills, portfolio} = props.member
+  const avatar = photo ? photo : 'https://www.newdvdreleasedates.com/images/profiles/christopher-walken-13.jpg';
+  const bio = '';
+  const title = 'dOrg Builder';
+
   const history = useHistory();
   const navigateToContactPage = () => history.push(routes.contact.path);
 
@@ -61,34 +66,34 @@ export const ProfileFull: React.FC<Props> = (props: Props) => {
   return (
     <StyledGrid className={props.classes} container spacing={0} direction='row' justify='space-between' alignItems='flex-start'>
       <StyledGridItem item>
-        <ProfilePhoto photo={props.member.photo} />
+        <ProfilePhoto photo={avatar} />
       </StyledGridItem>
       <StyledGridItem item>
-        <NameBioContainer name={props.member.name} title={props.member.title} bio={props.member.bio} />
+        <NameBioContainer name={name} title={title} bio={bio} />
       </StyledGridItem>
       <StyledGridItem item>
         <ProfileSectionTitle text='Specializations' />
       </StyledGridItem>
       <StyledGridItem item style={{marginBottom: '1.4vh'}}>
-        <SpecializationsContainer specializations={props.member.specializations} />
+        <SpecializationsContainer specializations={skills} />
       </StyledGridItem>
       <StyledGridItem item xs={12} className={borders.topBorder} />
       <StyledGridItem item>
         <ProfileSectionTitle text='Technologies' />
       </StyledGridItem>
       <StyledGridItem item style={{marginBottom: '3.25vh'}}>
-        <TechnologiesContainer technologies={props.member.technologies} />
+        <TechnologiesContainer technologies={skills} />
       </StyledGridItem>
       <StyledGridItem item xs={12} className={borders.topBorder} />
       <StyledGridItem item>
         <ProfileSectionTitle text='Portfolio' />
       </StyledGridItem>
       <StyledGridItem item style={{marginBottom: '1.4vh'}}>
-        <PortfolioLinkContainer github={props.member.github} website={props.member.website} />
+        <PortfolioLinkContainer github={portfolio.github} website={portfolio.website} linkedin={portfolio.linkedin} />
       </StyledGridItem>
       <StyledGridItem item xs={12} className={borders.topBorder} />
       <StyledGridItem item xs={12} container justify='flex-end'>
-        <HireMeButton name={props.member.name} handleClick={navigateToContactPage} />
+        <HireMeButton name={name} handleClick={navigateToContactPage} />
       </StyledGridItem>
       <ClosePopUpButton classes={cancelButtonPosition.positionStyle} handleClick={props.onClose} />
     </StyledGrid>

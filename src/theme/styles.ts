@@ -1,5 +1,5 @@
 // font used for StatBoxMobile statistics, in accordance with design spec
-import {hexToRGB} from "../Utils/colorUtils";
+import {hexToRGB} from "../utils/colorUtils";
 import {makeStyles} from "@material-ui/core";
 
 export const mobileStatFont = "'Open Sans', sans-serif";

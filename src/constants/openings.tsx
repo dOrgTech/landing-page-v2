@@ -137,7 +137,7 @@ export const openings: Openings = {
     id: '3',
     role: Role.design,
     title: 'UI/UX Designer',
-    location: 'Remote / Vancouver / Victoria',
+    location: '100% Remote',
     description: (
       <div>
         {dOrgintroduction}

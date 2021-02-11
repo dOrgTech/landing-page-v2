@@ -6,7 +6,7 @@ import {Client} from "../../../constants/clients";
 import {ClientItem} from "./ClientItem";
 import {theme} from "../../../theme";
 import {CustomScrollbar} from "../../CustomScrollbar";
-import {useDebounce, useWindowSize} from "../../../Utils/hooks";
+import {useDebounce, useWindowSize} from "../../../utils/hooks";
 
 const StyledGrid = styled(Grid)({
   width: '100%',

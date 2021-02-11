@@ -1,5 +1,0 @@
-- add our own linting config
-(eslint is already installed, check package.json)
-(maybe: http://rahulgaba.com/front-end/2019/02/17/Use-custom-eslint-config-in-create-react-app-using-three-simple-steps-No-external-dependencies.html)
-
-ref: https://github.com/web3-api/landing-page

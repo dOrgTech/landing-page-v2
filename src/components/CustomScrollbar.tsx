@@ -1,7 +1,7 @@
 import React from "react";
 import { Scrollbar } from "react-scrollbars-custom";
 import {makeStyles, Theme, useMediaQuery, useTheme} from "@material-ui/core";
-import {hexToRGB} from "../Utils/colorUtils";
+import {hexToRGB} from "../utils/colorUtils";
 
 // see: https://github.com/xobotyi/react-scrollbars-custom
 

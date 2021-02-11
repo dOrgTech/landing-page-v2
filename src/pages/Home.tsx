@@ -10,7 +10,7 @@ import {RightMargin} from "../components/RightMargin";
 import {HomeTitleBox} from "../components/home/desktop/HomeTitleBox";
 import {HomeTitleBoxMobile} from "../components/home/mobile/HomeTItleBoxMobile";
 import {ClientTabsMobile} from "../components/home/mobile/ClientTabsMobile";
-import {useDebounce, useWindowSize} from "../Utils/hooks";
+import {useDebounce, useWindowSize} from "../utils/hooks";
 
 export const TITLE_TEXT_PRIMARY = 'We build';
 export const TITLE_TEXT_SECONDARY = ['Dapps', 'DAOs', 'Smart Contracts', 'Web3 SDKs'];
