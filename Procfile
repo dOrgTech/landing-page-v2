@@ -1,1 +1,0 @@
-web: npm install && CI=false react-scripts build && echo dorg.tech > build/CNAME && npm node src/server/server.js
