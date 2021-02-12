@@ -1,0 +1,1 @@
+web: yarn && yarn predeploy && yarn node src/server/server.js
