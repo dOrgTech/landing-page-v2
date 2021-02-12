@@ -4,8 +4,6 @@ import {ButtonBase, Grid, makeStyles, Snackbar, styled, TextField, Typography} f
 import { theme } from "../../../theme";
 import {AccountCircleTwoTone, EmailTwoTone, RateReviewTwoTone} from '@material-ui/icons';
 import {
-  AIRTABLE_CREDENTIAL,
-  AIRTABLE_URL,
   EMAIL_PATTERN,
   EMAIL_PLACEHOLDER,
   ERROR_EMAIL_REQUIRED,
@@ -24,6 +22,7 @@ import {
   TOAST_DURATION
 } from "../../../constants/contactForm";
 import {getSonarAnimation} from "../../../theme/styles";
+import {sendContactForm} from "../../../utils/network";
 
 
 const StyledGrid = styled(Grid)({
@@ -160,7 +159,8 @@ const useSuccessSnackBarStyle = makeStyles({
     bottom: '50vh'
   },
   message: {
-    paddingLeft: '15.25vw',
+    width: '100%',
+    textAlign: 'center',
     fontFamily: theme.typography.fontFamily,
     fontSize: '3.8vw',
     fontWeight: 600,
@@ -176,7 +176,8 @@ const useFailsureSnackBarStyle = makeStyles({
     backgroundColor: '#FF1744'
   },
   message: {
-    paddingLeft: '15.25vw',
+    width: '100%',
+    textAlign: 'center',
     fontFamily: theme.typography.fontFamily,
     fontSize: '3.8vw',
     fontWeight: 600,
@@ -255,42 +256,18 @@ export const ContactFormMobile: React.FC<Props> = (props: Props) => {
     setMessage('');
   }
 
-  const sendSubmission = async (data: IFormInput) => {
-    return fetch(
-      AIRTABLE_URL,
-      {
-        method: "post",
-        headers: new Headers({
-          Authorization: AIRTABLE_CREDENTIAL,
-          "Content-Type": "application/json"
-        }),
-        body: JSON.stringify({ records: [{ fields: {
-          Name: data.name,
-          Email: data.email,
-          Message: data.message
-        }}]})
-      }
-    )
-  }
-
   const onSubmit = (data: IFormInput) => {
     const submittedData: IFormInput = {...data}
-
-    // the following three lines should be removed before final publish:
-    console.log(submittedData);
-    setSuccessOpen(true);
-    resetInputs();
-
-    // The following lines should be uncommented before final publish:
-    // sendSubmission(submittedData)
-    //   .then(() => {
-    //     setSuccessOpen(true);
-    //     resetInputs();
-    //   })
-    //   .catch(error => {
-    //     setFailOpen(true);
-    //   });
+    sendContactForm(submittedData)
+      .then(() => {
+        setSuccessOpen(true);
+        resetInputs();
+      })
+      .catch(error => {
+        setFailOpen(true);
+      });
   };
+
 
   // CONDITIONAL STYLING
   const labelColors = useLabelColors();

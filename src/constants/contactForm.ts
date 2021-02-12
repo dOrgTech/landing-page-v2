@@ -1,6 +1,7 @@
-// Airtable integration
-export const AIRTABLE_URL = 'https://api.airtable.com/PATH';
-export const AIRTABLE_CREDENTIAL = 'Bearer keyXXXXXXXXX';
+// Hubspot integration
+const portal_id = '9179421'
+const form_Guid = '07830d49-e3c4-4df2-9f60-6f3ab8f68fb6'
+export const HUBSPOT_URI = `https://api.hsforms.com/submissions/v3/integration/submit/${portal_id}/${form_Guid}`;
 
 // Input placeholders and button image
 export const NAME_PLACEHOLDER = 'Your Name';

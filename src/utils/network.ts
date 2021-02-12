@@ -1,5 +1,6 @@
 import * as hubspot from '@hubspot/api-client';
 import {Member} from "../constants/members";
+import {HUBSPOT_URI} from "../constants/contactForm";
 
 interface HubspotMember {
   firstname?: string;
@@ -9,6 +10,12 @@ interface HubspotMember {
   github?: string;
   portfolio?: string;
   linkedin?: string;
+}
+
+interface IFormInput {
+  name: string;
+  email: string;
+  message: string;
 }
 
 export async function fetchMembers(apiKey: string): Promise<Member[]> {
@@ -47,4 +54,31 @@ export async function fetchMembers(apiKey: string): Promise<Member[]> {
     })
   }
   return members
+}
+
+
+export const sendContactForm = async (data: IFormInput): Promise<Response> => {
+  const firstname = data.name.split(' ')[0];
+  const lastname = data.name.substring(firstname.length).trim();
+  return fetch(
+    HUBSPOT_URI,
+    {
+      method: "POST",
+      headers: new Headers({
+        "Content-Type": "application/json"
+      }),
+      body: JSON.stringify({fields: [
+        {name: 'firstname', value: firstname},
+        {name: 'lastname', value: lastname},
+        {name: 'email', value: data.email},
+        {name: 'message', value: data.message}
+      ]})
+    }
+  ).then(response => {
+    if (!response.ok) {
+      console.log(response.json());
+      throw Error('HTTP Error');
+    }
+    return response;
+  })
 }

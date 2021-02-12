@@ -1,8 +1,8 @@
 import express from 'express';
-import {fetchMembers} from "./network";
+import {fetchMembers} from "../utils/network";
 import {Member} from "../constants/members";
 
-const apiKey = process.argv[2];
+const apiKey = process.env.API_KEY || process.argv[2];
 const PORT = process.env.PORT || 3001;
 const app = express();
 

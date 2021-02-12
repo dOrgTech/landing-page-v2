@@ -38,8 +38,8 @@ const StyledName = styled(Typography)({
 
 const ChipContainer = styled(Grid)({
   width: '100%',
-  height: '5.5vw',
-  marginTop: '2vw',
+  height: '6vw',
+  marginTop: '1vw',
   background: 'transparent',
   boxSizing: 'border-box'
 });

@@ -1,5 +1,6 @@
 const hubspot = require('@hubspot/api-client') // eslint-disable-line
 
+
 // reference: https://github.com/HubSpot/hubspot-api-nodejs
 // takes apiKey as string and returns Promise<Member[]>
 async function fetchMembers(apiKey) {
@@ -38,4 +39,5 @@ async function fetchMembers(apiKey) {
   return members
 }
 
+// eslint-disable-next-line
 exports.fetchMembers = (apiKey) => fetchMembers(apiKey);
