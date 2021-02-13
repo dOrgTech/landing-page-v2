@@ -90,5 +90,8 @@
   "main": "index.js",
   "repository": "https://github.com/dOrgTech/landing-page-v2.git",
   "author": "dorg.tech",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": "12.6.2"
+  }
 }
