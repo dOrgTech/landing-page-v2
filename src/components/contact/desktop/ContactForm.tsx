@@ -23,6 +23,7 @@ import {
 } from "../../../constants/contactForm";
 import {getSonarAnimation} from "../../../theme/styles";
 import {sendContactForm} from "../../../utils/network";
+import {useDebounce} from "../../../utils/hooks";
 
 
 const StyledGrid = styled(Grid)({
@@ -207,6 +208,7 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
   // FORM HOOK
   // eslint-disable-next-line @typescript-eslint/unbound-method
   const { register, errors, handleSubmit } = useForm<IFormInput>();
+  const debouncedErrors = useDebounce(errors);
 
   // INPUT STATE HOOKS
   const [name, setName] = React.useState('');
@@ -278,8 +280,8 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
               inputRef={register({required: true, maxLength: MAX_NAME_LENGTH})}
               className={unfocusedLabelColor(name)} />
           </Grid>
-          {errors.name?.type === "required" && <StyledError>{ERROR_NAME_REQUIRED}</StyledError>}
-          {errors.name?.type === "maxLength" && <StyledError>{ERROR_EXCEEDS_LENGTH(name.length, MAX_NAME_LENGTH)}</StyledError>}
+          {debouncedErrors.name?.type === "required" && <StyledError>{ERROR_NAME_REQUIRED}</StyledError>}
+          {debouncedErrors.name?.type === "maxLength" && <StyledError>{ERROR_EXCEEDS_LENGTH(name.length, MAX_NAME_LENGTH)}</StyledError>}
         </InputContainer>
 
         <InputContainer container direction='row' justify='flex-start' alignItems='center'>
@@ -293,9 +295,9 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
               inputRef={register({required: true, maxLength: MAX_EMAIL_LENGTH, pattern: EMAIL_PATTERN})}
               className={unfocusedLabelColor(name)} />
           </Grid>
-          {errors.email?.type === "required" && <StyledError>{ERROR_EMAIL_REQUIRED}</StyledError>}
-          {errors.email?.type === "maxLength" && <StyledError>{ERROR_EXCEEDS_LENGTH(email.length, MAX_EMAIL_LENGTH)}</StyledError>}
-          {errors.email?.type === "pattern" && <StyledError>{ERROR_INVALID_EMAIL}</StyledError>}
+          {debouncedErrors.email?.type === "required" && <StyledError>{ERROR_EMAIL_REQUIRED}</StyledError>}
+          {debouncedErrors.email?.type === "maxLength" && <StyledError>{ERROR_EXCEEDS_LENGTH(email.length, MAX_EMAIL_LENGTH)}</StyledError>}
+          {debouncedErrors.email?.type === "pattern" && <StyledError>{ERROR_INVALID_EMAIL}</StyledError>}
         </InputContainer>
 
         <InputContainer container direction='row' justify='flex-start' alignItems='flex-start' style={{height: '15.375vw'}}>
@@ -310,8 +312,8 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
               style={{height: 'inherit'}}
               className={unfocusedLabelColor(name)} />
           </Grid>
-          {errors.message?.type === "required" && <StyledError>{ERROR_MESSAGE_REQUIRED}</StyledError>}
-          {errors.message?.type === "maxLength" && <StyledError>{ERROR_EXCEEDS_LENGTH(message.length, MAX_MESSAGE_LENGTH)}</StyledError>}
+          {debouncedErrors.message?.type === "required" && <StyledError>{ERROR_MESSAGE_REQUIRED}</StyledError>}
+          {debouncedErrors.message?.type === "maxLength" && <StyledError>{ERROR_EXCEEDS_LENGTH(message.length, MAX_MESSAGE_LENGTH)}</StyledError>}
         </InputContainer>
 
         <StyledSubmitButton type='submit'>
