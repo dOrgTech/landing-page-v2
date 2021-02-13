@@ -15,10 +15,10 @@ export async function getMembers(): Promise<Member[]> {
       if (!response.ok) {
         throw Error(response.statusText);
       }
+      console.log(response)
       return response.text()
     })
     .then(members => {
-      console.log(members)
       return JSON.parse(members) as Member[]
     })
 }

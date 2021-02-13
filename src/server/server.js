@@ -19,7 +19,7 @@ setInterval(() => {
 
 // path to fetch dOrg active builder data
 app.get("/members", (request, response) => {
-  response.json(membersCache);
+  response.json(JSON.stringify(membersCache));
 });
 
 // send react app for all other get requests
