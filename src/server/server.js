@@ -8,15 +8,11 @@ const app = express();
 
 // cache members array to minimize hubspot api calls; update every 10 minutes
 let membersCache;
-// eslint-disable-next-line
 fetchMembers(apiKey)
-  // eslint-disable-next-line
   .then(members => membersCache = members)
   .catch(error => console.log(error))
 setInterval(() => {
-  // eslint-disable-next-line
   fetchMembers(apiKey)
-    // eslint-disable-next-line
     .then(members => membersCache = members)
     .catch(error => console.log(error))
 }, 600000);

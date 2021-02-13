@@ -1,10 +1,14 @@
-const hubspot = require('@hubspot/api-client') // eslint-disable-line
+const hubspot = require('@hubspot/api-client');
+const fetch = require('node-fetch');
 
+// const apiKey = process.env.API_KEY || process.argv[2];
+const apiKey = '80bf5f81-f5a5-4b07-9199-4bc825dc1f9c';
+const secretKey = '$2b$10$LzwCZXxDZNi9w7cUHFiBWeY7wDpX8Mqc7RKASJitfG3Vq0KBtx6aq';
+const BIN_ID = '60271264435c323ba1c57e80';
 
 // reference: https://github.com/HubSpot/hubspot-api-nodejs
-// takes apiKey as string and returns Promise<Member[]>
+// takes apiKey as string, calls hubspot api, and returns Promise<Member[]>
 async function fetchMembers(apiKey) {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const hubspotClient = new hubspot.Client({ apiKey: apiKey});
   const filter = { propertyName: 'jobtitle', operator: 'EQ', value: 'dOrg Builder' }
   const filterGroup = { filters: [filter] }
@@ -39,5 +43,36 @@ async function fetchMembers(apiKey) {
   return members
 }
 
-// eslint-disable-next-line
+// upload json to jsonbin.io
+async function updateMembersJson(members, binId, secretKey) {
+  return fetch(
+    `https://api.jsonbin.io/b/${binId}`,
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        'secret-key': secretKey
+      },
+      body: JSON.stringify(members)
+    }
+  ).then(response => {
+    if (!response.ok) {
+      console.log(response.json());
+      throw Error('HTTP Error');
+    }
+    return response;
+  })
+}
+
+// update members json
+fetchMembers(apiKey)
+  .then(members =>
+    updateMembersJson(members, BIN_ID, secretKey)
+      .catch(error => console.log(error))
+  )
+  .catch(error => console.log(error))
+
+
+// export functions
 exports.fetchMembers = (apiKey) => fetchMembers(apiKey);
+exports.updateMembersJson = (members, binId, secretKey) => updateMembersJson(members, binId, secretKey);

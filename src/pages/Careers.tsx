@@ -9,7 +9,7 @@ import {borderStyle, borderStyles} from "../theme/styles";
 import {RightMargin} from "../components/RightMargin";
 import {ActivationPromptBox} from "../components/careers/desktop/ActivationPromptBox";
 import {externalLinks} from "../constants/routes";
-import {getMembers, Member, testMembers} from "../constants/members";
+import {Member} from "../constants/members";
 import {MeetBuildersTitleBox} from "../components/careers/desktop/MeetBuildersTitleBox";
 import {ProfileWheel} from "../components/careers/desktop/portfolio_section/ProfileWheel";
 import {testimonials} from "../constants/testimonials";
@@ -23,6 +23,7 @@ import {MeetBuildersTitleBoxMobile} from "../components/careers/mobile/MeetBuild
 import {ProfileWheelMobile} from "../components/careers/mobile/portfolio_section/ProfileWheelMobile";
 import {TestimonialSectionMobile} from "../components/careers/mobile/testimonial_section/TestimonialSectionMobile";
 import {CurrentOpeningSectionMobile} from "../components/careers/mobile/openings_section/CurrentOpeningSectionMobile";
+import {BIN_ID, getMembers, JSON_BIN_SECRET_KEY} from "../utils/network";
 
 const CAREERS_TITLE_PRIMARY = 'Discover a new way to';
 const CAREERS_TITLE_SECONDARY = ['work', 'learn', 'grow', 'build'];
@@ -57,11 +58,11 @@ export const Careers: React.FC = () => {
   ReactGA.pageview('/careers');
 
   // request members from server
-  const [members, setMembers] = useState<Member[] | undefined>(undefined);
+  const [members, setMembers] = useState<Member[]>([]);
   useEffect(() => {
-    if (members) return;
-    getMembers()
-      .then(members => setMembers(members as Member[]))
+    if (members.length > 0) return;
+    getMembers(BIN_ID, JSON_BIN_SECRET_KEY)
+      .then(members => setMembers(members))
       .catch(error => console.log(error))
   }, [members])
 
@@ -95,7 +96,7 @@ export const Careers: React.FC = () => {
             <MeetBuildersTitleBox text={MEET_BUILDERS_TITLE} />
           </Grid>
           <Grid item xs={12}>
-            <ProfileWheel members={members ? members : testMembers} />
+            <ProfileWheel members={members} />
           </Grid>
           <Grid item xs={12}>
             <TestimonialSection testimonials={testimonials} carouselBorder={borderStyle} />
@@ -137,7 +138,7 @@ export const Careers: React.FC = () => {
             <MeetBuildersTitleBoxMobile text={MEET_BUILDERS_TITLE} classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
-            <ProfileWheelMobile members={members ? members : testMembers} classes={borders.leftBorder}/>
+            <ProfileWheelMobile members={members} classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
             <TestimonialSectionMobile testimonials={testimonials} carouselBorder={borderStyle} classes={borders.leftBorder} />
