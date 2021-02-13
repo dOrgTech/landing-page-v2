@@ -92,6 +92,6 @@
   "author": "dorg.tech",
   "license": "MIT",
   "engines": {
-    "node": "12.6.2"
+    "node": "12.16.2"
   }
 }
