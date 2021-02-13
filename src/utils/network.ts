@@ -17,7 +17,10 @@ export async function getMembers(): Promise<Member[]> {
       }
       return response.text()
     })
-    .then(members => JSON.parse(members) as Member[])
+    .then(members => {
+      console.log(members)
+      return JSON.parse(members) as Member[]
+    })
 }
 
 export const sendContactForm = async (data: IFormInput): Promise<Response> => {
