@@ -19,26 +19,38 @@ interface IFormInput {
   message: string;
 }
 
-export async function getMembers(binId: string, secretKey: string): Promise<Member[]> {
-  return fetch(
-    `https://api.jsonbin.io/v3/b/${binId}/latest`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        'X-Master-Key': secretKey
+// export async function getMembers(binId: string, secretKey: string): Promise<Member[]> {
+//   return fetch(
+//     `https://api.jsonbin.io/v3/b/${binId}/latest`,
+//     {
+//       method: "GET",
+//       headers: {
+//         "Content-Type": "application/json",
+//         'X-Master-Key': secretKey
+//       }
+//     }
+//   ).then(response => {
+//     if (!response.ok) {
+//       console.log(response.json());
+//       throw Error('HTTP Error');
+//     }
+//     return response.json();
+//   })
+//     .then((body: jsonBinResponse) => {
+//       return body.record
+//     });
+// }
+
+export async function getMembers(): Promise<Member[]> {
+  return fetch('/api/members')
+    .then(response => {
+      if (!response.ok) {
+        console.log(response.json());
+        throw Error('HTTP Error');
       }
-    }
-  ).then(response => {
-    if (!response.ok) {
-      console.log(response.json());
-      throw Error('HTTP Error');
-    }
-    return response.json();
-  })
-    .then((body: jsonBinResponse) => {
-      return body.record
-    });
+      return response.json();
+    })
+    .then(members => members as Member[])
 }
 
 export const sendContactForm = async (data: IFormInput): Promise<Response> => {

@@ -63,25 +63,7 @@ async function updateMembersJson(members, binId, secretKey) {
   })
 }
 
-// update members json
-fetchMembers(HS_API_KEY)
-  .then(members =>
-    updateMembersJson(members, BIN_ID, JBIN_SECRET_KEY)
-      .catch(error => console.log(error))
-  )
-  .catch(error => console.log(error))
-
-// update every 12 hours
-setInterval(() => {
-  fetchMembers(HS_API_KEY)
-    .then(members =>
-      updateMembersJson(members, BIN_ID, JBIN_SECRET_KEY)
-        .catch(error => console.log(error))
-    )
-    .catch(error => console.log(error))
-}, 43200)
-
 
 // export functions
-// exports.fetchMembers = (apiKey) => fetchMembers(apiKey);
-// exports.updateMembersJson = (members, binId, secretKey) => updateMembersJson(members, binId, secretKey);
+exports.fetchMembers = (apiKey) => fetchMembers(apiKey);
+exports.updateMembersJson = (members, binId, secretKey) => updateMembersJson(members, binId, secretKey);

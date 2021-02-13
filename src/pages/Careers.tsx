@@ -9,7 +9,7 @@ import {borderStyle, borderStyles} from "../theme/styles";
 import {RightMargin} from "../components/RightMargin";
 import {ActivationPromptBox} from "../components/careers/desktop/ActivationPromptBox";
 import {externalLinks} from "../constants/routes";
-import {Member, testMembers} from "../constants/members";
+import {Member} from "../constants/members";
 import {MeetBuildersTitleBox} from "../components/careers/desktop/MeetBuildersTitleBox";
 import {ProfileWheel} from "../components/careers/desktop/portfolio_section/ProfileWheel";
 import {testimonials} from "../constants/testimonials";
@@ -23,7 +23,7 @@ import {MeetBuildersTitleBoxMobile} from "../components/careers/mobile/MeetBuild
 import {ProfileWheelMobile} from "../components/careers/mobile/portfolio_section/ProfileWheelMobile";
 import {TestimonialSectionMobile} from "../components/careers/mobile/testimonial_section/TestimonialSectionMobile";
 import {CurrentOpeningSectionMobile} from "../components/careers/mobile/openings_section/CurrentOpeningSectionMobile";
-import {BIN_ID, getMembers, JBIN_SECRET_KEY} from "../utils/network";
+import {getMembers} from "../utils/network";
 
 const CAREERS_TITLE_PRIMARY = 'Discover a new way to';
 const CAREERS_TITLE_SECONDARY = ['work', 'learn', 'grow', 'build'];
@@ -61,11 +61,7 @@ export const Careers: React.FC = () => {
   const [members, setMembers] = useState<Member[]>([]);
   useEffect(() => {
     if (members.length > 0) return;
-    if (!BIN_ID || !JBIN_SECRET_KEY) {
-      setMembers(testMembers);
-      return;
-    }
-    getMembers(BIN_ID, JBIN_SECRET_KEY)
+    getMembers()
       .then(members => setMembers(members))
       .catch(error => console.log(error))
   }, [members])

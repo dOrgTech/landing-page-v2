@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "homepage": "https://dorg.tech/",
   "scripts": {
-    "start": "yarn && concurrently \"yarn node src/utils/updateMembers.js\" \"yarn build && yarn serve -s build\"",
+    "start": "yarn build && yarn serve -s build",
     "dev": "react-scripts start",
     "build": "CI=false react-scripts build && echo dorg.tech > build/CNAME",
     "test": "react-scripts test",
@@ -91,6 +91,7 @@
   "repository": "https://github.com/dOrgTech/landing-page-v2.git",
   "author": "dorg.tech",
   "license": "MIT",
+  "proxy": "https://localhost:3042/",
   "engines": {
     "node": "12.16.2"
   }
