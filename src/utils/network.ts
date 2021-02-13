@@ -6,9 +6,9 @@ interface IFormInput {
   email: string;
   message: string;
 }
-
-interface Ipify {
-  ip: string;
+interface FormSubmission {
+  fields: {name: string, value: string}[];
+  context?: {ipAddress: string};
 }
 
 export async function getMembers(): Promise<Member[]> {
@@ -24,15 +24,31 @@ export async function getMembers(): Promise<Member[]> {
 }
 
 async function getIpAddress(): Promise<string> {
-  return fetch('https://api.ipify.org?format=json')
-    .then(response => response.json() as Promise<Ipify>)
-    .then(data => data.ip)
+  return fetch('https://api.ipify.org')
+    .then(response => response.text())
+    .catch(error => {
+      console.log(error);
+      return '';
+    })
 }
 
 export const sendContactForm = async (data: IFormInput): Promise<Response> => {
   const firstname = data.name.split(' ')[0];
   const lastname = data.name.substring(firstname.length).trim();
   const clientIpAddress = await getIpAddress();
+
+  const body: FormSubmission = {
+    fields: [
+      {name: 'firstname', value: firstname},
+      {name: 'lastname', value: lastname},
+      {name: 'email', value: data.email},
+      {name: 'message', value: data.message}
+    ]
+  }
+  if (clientIpAddress) {
+    body.context = {ipAddress: clientIpAddress}
+  }
+
   return fetch(
     HUBSPOT_URI,
     {
@@ -40,15 +56,7 @@ export const sendContactForm = async (data: IFormInput): Promise<Response> => {
       headers: new Headers({
         "Content-Type": "application/json"
       }),
-      body: JSON.stringify({
-        fields: [
-          {name: 'firstname', value: firstname},
-          {name: 'lastname', value: lastname},
-          {name: 'email', value: data.email},
-          {name: 'message', value: data.message}
-        ],
-        ipAddress: clientIpAddress
-      })
+      body: JSON.stringify(body)
     }
   ).then(response => {
     if (!response.ok) {
