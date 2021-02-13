@@ -1,1 +1,1 @@
-web: npm install -g yarn && yarn start
+web: yarn start

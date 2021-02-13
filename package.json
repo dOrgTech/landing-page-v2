@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "homepage": "https://dorg.tech/",
   "scripts": {
-    "start": "yarn && yarn node src/utils/updateMembers.js && yarn predeploy",
+    "start": "yarn && concurrently \"yarn node src/utils/updateMembers.js\" \"yarn build && yarn serve -s build\"",
     "dev": "react-scripts start",
     "build": "CI=false react-scripts build && echo dorg.tech > build/CNAME",
     "test": "react-scripts test",
@@ -23,6 +23,7 @@
     "@hubspot/api-client": "^3.3.0",
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
+    "concurrently": "^5.3.0",
     "express": "^4.17.1",
     "node-fetch": "^2.6.1",
     "react": "^17.0.1",

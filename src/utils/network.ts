@@ -2,8 +2,8 @@ import {Member} from "../constants/members";
 import {HUBSPOT_URI} from "../constants/contactForm";
 
 
-export const JBIN_SECRET_KEY = '$2b$10$IAKKq32UtWoiUtMm59uimezHHZEH8p8RA1jNX7tVPmOkgtUmrQK4G';
-export const BIN_ID = '60272fc187173a3d2f5c5ee6';
+export const JBIN_SECRET_KEY = process.env.JBIN_SECRET_KEY;
+export const BIN_ID = process.env.BIN_ID;
 
 interface jsonBinResponse {
   record: Member[],
@@ -66,17 +66,3 @@ export const sendContactForm = async (data: IFormInput): Promise<Response> => {
     return response;
   })
 }
-
-//
-// export async function getMembers(binId: string, secretKey: string): Promise<Member[]> {
-//   return fetch(
-//     'members.json',
-//     {
-//       method: "GET",
-//       headers: {
-//         "Content-Type": "application/json",
-//       }
-//     }
-//   ).then(response => response.json())
-//     .then(members => members as Member[]);
-// }
