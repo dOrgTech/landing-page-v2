@@ -1,6 +1,4 @@
 const hubspot = require('@hubspot/api-client');
-const fetch = require('node-fetch');
-
 
 // reference: https://github.com/HubSpot/hubspot-api-nodejs
 // takes apiKey as string, calls hubspot api, and returns Promise<Member[]>
@@ -39,28 +37,5 @@ async function fetchMembers(apiKey) {
   return members
 }
 
-// upload json to jsonbin.io
-async function updateMembersJson(members, binId, secretKey) {
-  return fetch(
-    `https://api.jsonbin.io/b/${binId}`,
-    {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        'secret-key': secretKey
-      },
-      body: JSON.stringify(members)
-    }
-  ).then(response => {
-    if (!response.ok) {
-      console.log(response.json());
-      throw Error('HTTP Error');
-    }
-    return response;
-  })
-}
-
-
 // export functions
 exports.fetchMembers = (apiKey) => fetchMembers(apiKey);
-exports.updateMembersJson = (members, binId, secretKey) => updateMembersJson(members, binId, secretKey);

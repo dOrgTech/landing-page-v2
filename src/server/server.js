@@ -1,9 +1,9 @@
 const express = require('express');
 const path = require('path');
-const {fetchMembers} = require("../utils/updateMembers");
+const {fetchMembers} = require("./updateMembers");
 
-const apiKey = process.env.API_KEY;
-const PORT = process.env.PORT;
+const apiKey = process.env.API_KEY || process.argv[2];
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 // cache members array to minimize hubspot api calls; update every 10 minutes
