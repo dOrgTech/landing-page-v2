@@ -14,12 +14,11 @@ export async function getMembers(): Promise<Member[]> {
   return fetch(`${baseUrl}/members`)
     .then(response => {
       if (!response.ok) {
-        console.log(response.json());
         throw Error('HTTP Error');
       }
-      return response.json();
+      return response.text();
     })
-    .then(members => members as Member[])
+    .then(members => JSON.parse(members) as Member[])
 }
 
 export const sendContactForm = async (data: IFormInput): Promise<Response> => {
