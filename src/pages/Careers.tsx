@@ -63,7 +63,7 @@ export const Careers: React.FC = () => {
     if (members.length > 0) return;
     getMembers()
       .then(members => setMembers(members))
-      .catch(error => setMembers(testMembers))
+      .catch(error => console.log(error))
   }, [members])
 
   const navigationToActivation = () => window.location.assign(externalLinks.activation.path);

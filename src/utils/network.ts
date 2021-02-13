@@ -10,7 +10,8 @@ interface IFormInput {
 export async function getMembers(): Promise<Member[]> {
   const loc = window.location;
   const baseUrl = `${loc.protocol}//${loc.hostname}:${loc.port}`;
-  return fetch(`${baseUrl}/api/members`)
+  console.log(baseUrl + '/members')
+  return fetch(`${baseUrl}/members`)
     .then(response => {
       if (!response.ok) {
         console.log(response.json());

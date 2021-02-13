@@ -18,7 +18,7 @@ setInterval(() => {
 }, 600000);
 
 // path to fetch dOrg active builder data
-app.get("/api/members", (request, response) => {
+app.get("/members", (request, response) => {
   response.json(JSON.stringify(membersCache));
 });
 
