@@ -1,10 +1,9 @@
 const hubspot = require('@hubspot/api-client');
 const fetch = require('node-fetch');
 
-// const apiKey = process.env.API_KEY || process.argv[2];
-const apiKey = '80bf5f81-f5a5-4b07-9199-4bc825dc1f9c';
-const secretKey = '$2b$10$LzwCZXxDZNi9w7cUHFiBWeY7wDpX8Mqc7RKASJitfG3Vq0KBtx6aq';
-const BIN_ID = '60271264435c323ba1c57e80';
+const HS_API_KEY = process.env.HS_API_KEY;
+const JBIN_SECRET_KEY = process.env.JBIN_SECRET_KEY;
+const BIN_ID = process.env.BIN_ID;
 
 // reference: https://github.com/HubSpot/hubspot-api-nodejs
 // takes apiKey as string, calls hubspot api, and returns Promise<Member[]>
@@ -65,9 +64,9 @@ async function updateMembersJson(members, binId, secretKey) {
 }
 
 // update members json
-fetchMembers(apiKey)
+fetchMembers(HS_API_KEY)
   .then(members =>
-    updateMembersJson(members, BIN_ID, secretKey)
+    updateMembersJson(members, BIN_ID, JBIN_SECRET_KEY)
       .catch(error => console.log(error))
   )
   .catch(error => console.log(error))

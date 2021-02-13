@@ -1,6 +1,6 @@
-const express = require('express'); // eslint-disable-line
-const path = require('path'); //eslint-disable-line
-const {fetchMembers, sendContactForm} = require("../utils/networkJS"); // eslint-disable-line
+const express = require('express');
+const path = require('path');
+const {fetchMembers} = require("../utils/updateMembers");
 
 const apiKey = process.env.API_KEY || process.argv[2];
 const PORT = process.env.PORT || 3042;

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "homepage": "https://dorg.tech/",
   "scripts": {
-    "start": "yarn && yarn predeploy && yarn node src/server/server.js 80bf5f81-f5a5-4b07-9199-4bc825dc1f9c",
+    "start": "yarn && yarn node src/utils/updateMembers.js && yarn predeploy",
     "dev": "react-scripts start",
     "build": "CI=false react-scripts build && echo dorg.tech > build/CNAME",
     "test": "react-scripts test",
