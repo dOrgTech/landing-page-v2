@@ -7,7 +7,7 @@ import {theme} from "../theme";
 const COPYRIGHT_TEXT = 'Copyright 2020, dorg.tech';
 const EMAIL_ICON_PATH = '/imgs/footer/email-icon.svg';
 const GITHUB_ICON_PATH = '/imgs/footer/github-logo.svg';
-const KEYBASE_ICON_PATH = '/imgs/footer/keybase-logo.svg';
+const DISCORD_ICON_PATH = '/imgs/footer/discord-logo.svg';
 const TWITTER_ICON_PATH = '/imgs/footer/twitter-logo.svg';
 
 const FooterContainer = styled(Grid)({
@@ -105,8 +105,8 @@ export const FooterDesktop: React.FC<Props> = (props: Props) => {
           </IconContainer>
         </Grid>
         <Grid item>
-          <IconContainer href="https://keybase.io/team/dorg.membrane" target="_blank" rel="noopener">
-            <StyledIcon src={KEYBASE_ICON_PATH} className={styles.icon} />
+          <IconContainer href="https://discord.com/invite/bA9ZM7WXZU" target="_blank" rel="noopener">
+            <StyledIcon src={DISCORD_ICON_PATH} className={styles.icon} />
           </IconContainer>
         </Grid>
         <Grid item>
