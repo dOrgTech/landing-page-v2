@@ -23,7 +23,6 @@
     "@hubspot/api-client": "^3.3.0",
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
-    "concurrently": "^5.3.0",
     "express": "^4.17.1",
     "node-fetch": "^2.6.1",
     "react": "^17.0.1",
@@ -91,7 +90,7 @@
   "repository": "https://github.com/dOrgTech/landing-page-v2.git",
   "author": "dorg.tech",
   "license": "MIT",
-  "proxy": "https://localhost:3042/",
+  "proxy": "https://dorg-landing-page.herokuapp.com/",
   "engines": {
     "node": "12.16.2"
   }

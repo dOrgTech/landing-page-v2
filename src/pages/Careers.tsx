@@ -9,7 +9,7 @@ import {borderStyle, borderStyles} from "../theme/styles";
 import {RightMargin} from "../components/RightMargin";
 import {ActivationPromptBox} from "../components/careers/desktop/ActivationPromptBox";
 import {externalLinks} from "../constants/routes";
-import {Member} from "../constants/members";
+import {Member, testMembers} from "../constants/members";
 import {MeetBuildersTitleBox} from "../components/careers/desktop/MeetBuildersTitleBox";
 import {ProfileWheel} from "../components/careers/desktop/portfolio_section/ProfileWheel";
 import {testimonials} from "../constants/testimonials";
@@ -63,7 +63,7 @@ export const Careers: React.FC = () => {
     if (members.length > 0) return;
     getMembers()
       .then(members => setMembers(members))
-      .catch(error => console.log(error))
+      .catch(error => setMembers(testMembers))
   }, [members])
 
   const navigationToActivation = () => window.location.assign(externalLinks.activation.path);

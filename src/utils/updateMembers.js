@@ -1,9 +1,6 @@
 const hubspot = require('@hubspot/api-client');
 const fetch = require('node-fetch');
 
-const HS_API_KEY = process.env.HS_API_KEY;
-const JBIN_SECRET_KEY = process.env.JBIN_SECRET_KEY;
-const BIN_ID = process.env.BIN_ID;
 
 // reference: https://github.com/HubSpot/hubspot-api-nodejs
 // takes apiKey as string, calls hubspot api, and returns Promise<Member[]>
