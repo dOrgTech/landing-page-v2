@@ -3,7 +3,7 @@ const path = require('path');
 const {fetchMembers} = require("./updateMembers");
 
 const apiKey = process.env.API_KEY || process.argv[2];
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3042;
 const app = express();
 
 // cache members array to minimize hubspot api calls; update every 10 minutes
@@ -18,8 +18,8 @@ setInterval(() => {
 }, 600000);
 
 // path to fetch dOrg active builder data
-app.get("/members", (request, response) => {
-  response.json(JSON.stringify(membersCache));
+app.get("/api/members", (request, response) => {
+  response.json(membersCache);
 });
 
 // send react app for all other get requests

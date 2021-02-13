@@ -10,15 +10,13 @@ interface IFormInput {
 export async function getMembers(): Promise<Member[]> {
   const loc = window.location;
   const baseUrl = `${loc.protocol}//${loc.hostname}:${loc.port}`;
-  console.log(baseUrl + '/members')
-  return fetch(`${baseUrl}/members`)
+  return fetch(`${baseUrl}/api/members`, {mode: 'same-origin'})
     .then(response => {
       if (!response.ok) {
-        throw Error('HTTP Error');
+        throw Error(response.statusText);
       }
-      return response.text();
+      return response.json() as Promise<Member[]>;
     })
-    .then(members => JSON.parse(members) as Member[])
 }
 
 export const sendContactForm = async (data: IFormInput): Promise<Response> => {
