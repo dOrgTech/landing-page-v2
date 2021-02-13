@@ -89,7 +89,6 @@
   "repository": "https://github.com/dOrgTech/landing-page-v2.git",
   "author": "dorg.tech",
   "license": "MIT",
-  "proxy": "https://dorg-landing-page.herokuapp.com/",
   "engines": {
     "node": "12.16.2"
   }
