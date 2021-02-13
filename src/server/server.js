@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const {fetchMembers} = require("./updateMembers");
 
-const apiKey = process.env.API_KEY || process.argv[2];
+const apiKey = process.env.HS_API_KEY || process.argv[2];
 const PORT = process.env.PORT || 3042;
 const app = express();
 
@@ -19,7 +19,7 @@ setInterval(() => {
 
 // path to fetch dOrg active builder data
 app.get("/members", (request, response) => {
-  response.json(JSON.stringify(membersCache));
+  response.json(membersCache);
 });
 
 // send react app for all other get requests
