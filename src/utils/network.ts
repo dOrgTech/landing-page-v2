@@ -66,3 +66,17 @@ export const sendContactForm = async (data: IFormInput): Promise<Response> => {
     return response;
   })
 }
+
+//
+// export async function getMembers(binId: string, secretKey: string): Promise<Member[]> {
+//   return fetch(
+//     'members.json',
+//     {
+//       method: "GET",
+//       headers: {
+//         "Content-Type": "application/json",
+//       }
+//     }
+//   ).then(response => response.json())
+//     .then(members => members as Member[]);
+// }
