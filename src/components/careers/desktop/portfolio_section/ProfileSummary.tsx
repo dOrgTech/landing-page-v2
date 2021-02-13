@@ -3,15 +3,13 @@ import {styled, Typography, Grid, makeStyles} from '@material-ui/core'
 import { theme } from "../../../../theme";
 import {Member} from "../../../../constants/members";
 import {ChipSmall} from "../ChipSmall";
-import {PortfolioButton} from "./PortfolioButton";
+import {PortfolioLinkBox} from "./PortfolioLinkBox";
 
-
-const BUTTON_TEXT = 'PORTFOLIO';
 
 const StyledGrid = styled(Grid)({
   width: '18.75vw',
   height: '25vw',
-  padding: '2.1vw 1.6vw 1.4vw 1.6vw',
+  padding: '2.1vw 1.6vw 1vw 1.6vw',
   backgroundColor: '#000e3c',
   boxSizing: 'border-box'
 });
@@ -38,7 +36,6 @@ const StyledName = styled(Typography)({
 
 const ChipContainer = styled(Grid)({
   width: '100%',
-  height: '6vw',
   marginTop: '1vw',
   background: 'transparent',
   boxSizing: 'border-box'
@@ -49,10 +46,6 @@ const useChipStyle = makeStyles({
     margin: '0.15vw'
   }
 });
-
-const ButtonContainer = styled(Grid)({
-  marginTop: '1.5vw'
-})
 
 interface Props {
   member: Member;
@@ -73,16 +66,19 @@ export const ProfileSummary: React.FC<Props> = (props: Props) => {
       <Grid item>
         <StyledName>{props.member.name}</StyledName>
       </Grid>
-      <ChipContainer item container spacing={0} direction='row' justify='center' alignItems='flex-start'>
-        {props.member.skills.map((specialization: string, i: number) => (
-          <Grid item key={`skill-${i}`}>
-            <ChipSmall classes={chipStyle.chip} text={specialization} />
-          </Grid>
-        ))}
-      </ChipContainer>
-      <ButtonContainer item>
-        <PortfolioButton text={BUTTON_TEXT} handleClick={() => props.onClickOpen?.(props.member)} />
-      </ButtonContainer>
+      <Grid item container direction='column' justify='space-between' alignItems='center' style={{height: '10.75vw'}}>
+        <ChipContainer item container spacing={0} direction='row' justify='center' alignItems='flex-start'>
+          {props.member.skills.map((specialization: string, i: number) => (
+            <Grid item key={`skill-${i}`}>
+              <ChipSmall classes={chipStyle.chip} text={specialization} />
+            </Grid>
+          ))}
+        </ChipContainer>
+        <PortfolioLinkBox item
+          github={props.member.portfolio.github}
+          website={props.member.portfolio.website}
+          linkedin={props.member.portfolio.linkedin}/>
+      </Grid>
     </StyledGrid>
   );
 }
