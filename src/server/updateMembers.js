@@ -25,7 +25,7 @@ async function fetchMembers(apiKey) {
     const name = (contact.firstname ? contact.firstname : '') + ' ' + (contact.lastname ? contact.lastname : '')
     members.push({
       name: name.trim(),
-      photo: contact.avatar_image ? contact.avatar_image : 'https://www.newdvdreleasedates.com/images/profiles/christopher-walken-13.jpg',
+      photo: contact.avatar_image,
       skills: contact.which_role_s__are_you_applying_for_ ? contact.which_role_s__are_you_applying_for_.split(';') : [],
       portfolio: {
         github: contact.github,
@@ -36,6 +36,7 @@ async function fetchMembers(apiKey) {
   }
   return members
 }
+
 
 // export functions
 exports.fetchMembers = (apiKey) => fetchMembers(apiKey);

@@ -62,7 +62,7 @@ interface Props {
 
 export const ProfileSummary: React.FC<Props> = (props: Props) => {
 
-  const photo = props.member.photo ? props.member.photo : 'https://www.newdvdreleasedates.com/images/profiles/christopher-walken-13.jpg';
+  const photo = props.member.photo ? props.member.photo : 'imgs/logos/dorg-logo-black-background.png';
   const chipStyle = useChipStyle();
 
   return (
