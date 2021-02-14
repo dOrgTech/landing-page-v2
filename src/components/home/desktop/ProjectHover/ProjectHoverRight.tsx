@@ -7,7 +7,7 @@ import {HeaderDesktop} from "../../../HeaderDesktop";
 import {FooterDesktop} from "../../../FooterDesktop";
 import {RightMargin} from "../../../RightMargin";
 import {theme} from "../../../../theme";
-import {useDebounce, useWindowSize} from "../../../../Utils/hooks";
+import {useDebounce, useWindowSize} from "../../../../utils/hooks";
 
 const Root = styled(Grid)({
   width: '50vw',

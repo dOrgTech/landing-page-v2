@@ -24,8 +24,8 @@ import {CloseBoxMobile} from "../components/about/mobile/CloseBoxMobile";
 // strings
 const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
 const PITCHES_TITLE = 'What’s it like to work with us?';
-const QUOTE_TEXT = 'dOrg helped me save 15% on car insurance.';
-const QUOTE_CITATION = 'Satoshi - Bitcoin, Inc.';
+const QUOTE_TEXT = 'Really great experiences working with the dOrg team.';
+const QUOTE_CITATION = 'Lillian Wang - Centrality';
 const CLOSE_BUTTON_TEXT = 'GET IN TOUCH';
 
 const Root = styled(Grid)({

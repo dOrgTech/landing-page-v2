@@ -6,7 +6,7 @@ import {getBorderStyle} from "../theme/styles";
 import {theme} from "../theme";
 
 
-const LOGO_PATH = process.env.PUBLIC_URL + "/imgs/dOrg-logo-white.svg";
+const LOGO_PATH = process.env.PUBLIC_URL + "/imgs/logos/dOrg-logo-white.svg";
 
 const StyledAppBar = styled(AppBar)({
   height: '5vw',

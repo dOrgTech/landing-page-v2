@@ -9,6 +9,7 @@ export interface Communities {
   Web3API: Readonly<Client>;
   Zer0: Readonly<Client>;
   Sovryn: Readonly<Client>;
+  Tezos: Readonly<Client>;
 }
 
 export const communities: Communities = {
@@ -146,6 +147,24 @@ export const communities: Communities = {
       technologies: ['React', 'GraphQL', 'Solidity'],
       bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
       imageSrc: 'imgs/project-graphics/sovryn-beach-coins.svg'
+    }
+  },
+  Tezos: {
+    name:'Tezos',
+    link: 'https://tezos.com/',
+    icon: 'imgs/logos/tezos-logo-blue.png',
+    colorIcon: true,
+    highlightColor: '#fff',
+    iconHighlightColor: '#2C7DF7',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(38%) sepia(57%) saturate(3760%) hue-rotate(206deg) brightness(103%) contrast(94%)',
+    textColor: '#123262',
+    textColorFilter: 'brightness(0) saturate(100%) invert(14%) sepia(15%) saturate(7037%) hue-rotate(199deg) brightness(97%) contrast(94%)',
+    project: {
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
+        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
+      technologies: ['React', 'GraphQL', 'Solidity'],
+      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      imageSrc: 'imgs/logos/tezos-logo-blue.png'
     }
   },
   // Prime: {

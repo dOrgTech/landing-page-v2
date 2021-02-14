@@ -41,7 +41,7 @@ export const TestimonialCarousel: React.FC<Props> = (props: Props) => {
 
   return (
     <Box className={props.classes} style={{width: '60.625vw', height: '21.25vw', border: props.border}}>
-      <Carousel fullHeightHover interval={4000} timeout={{appear: 0, enter: 0, exit: 0}}
+      <Carousel fullHeightHover interval={6000} timeout={{appear: 0, enter: 0, exit: 0}}
         className={carouselStyles.root}
         indicatorProps={{className: carouselStyles.indicator, style: {}}}
         activeIndicatorProps={{className: carouselStyles.activeIndicator, style: {}}}

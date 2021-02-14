@@ -1,23 +1,24 @@
+
 export interface Member {
   name: string;
-  photo: string;
-  title: string;
-  bio: string;
-  specializations: string[];
-  technologies: string[];
-  github: string;
-  website: string;
+  skills: string[];
+  photo?: string;
+  portfolio: {
+    github?: string;
+    website?: string;
+    linkedin?: string;
+  }
 }
 
+// TODO: update this to a reasonable placeholder for http request failure
 const testMember: Member = {
   name: 'Christopher Walken',
   photo: 'https://www.newdvdreleasedates.com/images/profiles/christopher-walken-13.jpg',
-  title: 'Actor',
-  bio: 'Christopher Walken is an American actor, singer, comedian, director, producer, screenwriter, and dancer, who has appeared in more than 100 films and television programs.',
-  specializations: ['Smart Contracts', 'Backend', 'DevOps', 'Speech Cadence'],
-  technologies: ['TypeScript', 'React', 'Solidity'],
-  github: 'https://github.com/dOrgTech',
-  website: 'https://www.imdb.com'
+  skills: ['Smart Contracts', 'Backend', 'DevOps', 'Speech Cadence', 'TypeScript', 'React', 'Solidity'],
+  portfolio: {
+    github: 'https://github.com/dOrgTech',
+    website: 'https://www.imdb.com'
+  }
 }
 
 const testMembers: Member[] = [];

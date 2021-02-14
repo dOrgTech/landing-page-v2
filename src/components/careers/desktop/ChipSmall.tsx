@@ -1,7 +1,7 @@
 import React from 'react'
 import {styled, Typography, Grid} from '@material-ui/core'
 import { theme } from "../../../theme";
-import {hexToRGB} from "../../../Utils/colorUtils";
+import {hexToRGB} from "../../../utils/colorUtils";
 
 const StyledGrid = styled(Grid)({
   width: 'max-content',

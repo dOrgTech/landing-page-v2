@@ -64,6 +64,11 @@ export const ProfileFullMobile: React.FC<Props> = (props: Props) => {
 
   ReactGA.modalview('/careers/profileMobile');
 
+  const {name, photo, skills, portfolio} = props.member
+  const avatar = photo ? photo : 'https://www.newdvdreleasedates.com/images/profiles/christopher-walken-13.jpg';
+  const bio = '';
+  const title = 'dOrg Builder';
+
   const history = useHistory();
   const navigateToContactPage = () => history.push(routes.contact.path);
 
@@ -74,31 +79,31 @@ export const ProfileFullMobile: React.FC<Props> = (props: Props) => {
     <BackgroundContainer>
       <ContentContainer className={props.classes} container spacing={0} direction='column' justify={'flex-start'} alignItems='flex-start'>
         <StyledGridItem item style={{marginBottom: '8vw'}}>
-          <ProfilePhoto photo={props.member.photo} classes={mobileStyles.profilePhoto} />
+          <ProfilePhoto photo={avatar} classes={mobileStyles.profilePhoto} />
         </StyledGridItem>
         <StyledGridItem item style={{marginBottom: '8vw'}}>
-          <NameBioContainerMobile name={props.member.name} title={props.member.title} bio={props.member.bio} />
+          <NameBioContainerMobile name={name} title={title} bio={bio} />
         </StyledGridItem>
         <StyledGridItem item style={{marginBottom: '3.8vw'}}>
           <ProfileSectionTitleMobile text='Specializations' />
         </StyledGridItem>
         <StyledGridItem item style={{marginBottom: '4.175vw'}}>
-          <SpecializationsContainerMobile specializations={props.member.specializations} />
+          <SpecializationsContainerMobile specializations={skills} />
         </StyledGridItem>
         <StyledGridItem item style={{marginBottom: '3.8vw'}}>
           <ProfileSectionTitleMobile text='Technologies' />
         </StyledGridItem>
         <StyledGridItem item style={{marginBottom: '6vw'}}>
-          <TechnologiesContainerMobile technologies={props.member.technologies} />
+          <TechnologiesContainerMobile technologies={skills} />
         </StyledGridItem>
         <StyledGridItem item style={{marginBottom: '3.8vw'}}>
           <ProfileSectionTitleMobile text='Portfolio' />
         </StyledGridItem>
         <StyledGridItem item style={{marginBottom: '4.1vw'}}>
-          <PortfolioLinkContainerMobile github={props.member.github} website={props.member.website} />
+          <PortfolioLinkContainerMobile github={portfolio.github} website={portfolio.website} linkedin={portfolio.linkedin} />
         </StyledGridItem>
         <StyledGridItem item>
-          <HireMeButtonMobile name={props.member.name} handleClick={navigateToContactPage} />
+          <HireMeButtonMobile name={name} handleClick={navigateToContactPage} />
         </StyledGridItem>
         <ClosePopUpButtonMobile classes={cancelButtonPosition.positionStyle} handleClick={props.onClose} />
       </ContentContainer>

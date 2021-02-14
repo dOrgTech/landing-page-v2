@@ -4,8 +4,6 @@ import {ButtonBase, Grid, makeStyles, Snackbar, styled, TextField, Typography} f
 import { theme } from "../../../theme";
 import {AccountCircleTwoTone, EmailTwoTone, RateReviewTwoTone} from '@material-ui/icons';
 import {
-  AIRTABLE_CREDENTIAL,
-  AIRTABLE_URL,
   EMAIL_PATTERN,
   EMAIL_PLACEHOLDER,
   ERROR_EMAIL_REQUIRED,
@@ -24,6 +22,8 @@ import {
   TOAST_DURATION
 } from "../../../constants/contactForm";
 import {getSonarAnimation} from "../../../theme/styles";
+import {sendContactForm} from "../../../utils/network";
+import {useDebounce} from "../../../utils/hooks";
 
 
 const StyledGrid = styled(Grid)({
@@ -160,7 +160,8 @@ const useSuccessSnackBarStyle = makeStyles({
     bottom: '50vh'
   },
   message: {
-    paddingLeft: '15.25vw',
+    width: '100%',
+    textAlign: 'center',
     fontFamily: theme.typography.fontFamily,
     fontSize: '3.8vw',
     fontWeight: 600,
@@ -176,7 +177,8 @@ const useFailsureSnackBarStyle = makeStyles({
     backgroundColor: '#FF1744'
   },
   message: {
-    paddingLeft: '15.25vw',
+    width: '100%',
+    textAlign: 'center',
     fontFamily: theme.typography.fontFamily,
     fontSize: '3.8vw',
     fontWeight: 600,
@@ -220,6 +222,7 @@ export const ContactFormMobile: React.FC<Props> = (props: Props) => {
   // FORM HOOK
   // eslint-disable-next-line @typescript-eslint/unbound-method
   const { register, errors, handleSubmit } = useForm<IFormInput>();
+  const debouncedErrors = useDebounce(errors);
 
   // INPUT STATE HOOKS
   const [name, setName] = React.useState('');
@@ -255,42 +258,18 @@ export const ContactFormMobile: React.FC<Props> = (props: Props) => {
     setMessage('');
   }
 
-  const sendSubmission = async (data: IFormInput) => {
-    return fetch(
-      AIRTABLE_URL,
-      {
-        method: "post",
-        headers: new Headers({
-          Authorization: AIRTABLE_CREDENTIAL,
-          "Content-Type": "application/json"
-        }),
-        body: JSON.stringify({ records: [{ fields: {
-          Name: data.name,
-          Email: data.email,
-          Message: data.message
-        }}]})
-      }
-    )
-  }
-
   const onSubmit = (data: IFormInput) => {
     const submittedData: IFormInput = {...data}
-
-    // the following three lines should be removed before final publish:
-    console.log(submittedData);
-    setSuccessOpen(true);
-    resetInputs();
-
-    // The following lines should be uncommented before final publish:
-    // sendSubmission(submittedData)
-    //   .then(() => {
-    //     setSuccessOpen(true);
-    //     resetInputs();
-    //   })
-    //   .catch(error => {
-    //     setFailOpen(true);
-    //   });
+    sendContactForm(submittedData)
+      .then(() => {
+        setSuccessOpen(true);
+        resetInputs();
+      })
+      .catch(error => {
+        setFailOpen(true);
+      });
   };
+
 
   // CONDITIONAL STYLING
   const labelColors = useLabelColors();
@@ -319,8 +298,8 @@ export const ContactFormMobile: React.FC<Props> = (props: Props) => {
               inputRef={register({required: true, maxLength: MAX_NAME_LENGTH})}
               className={unfocusedLabelColor(name)} />
           </Grid>
-          {errors.name?.type === "required" && <StyledError>{ERROR_NAME_REQUIRED}</StyledError>}
-          {errors.name?.type === "maxLength" && <StyledError>{ERROR_EXCEEDS_LENGTH(name.length, MAX_NAME_LENGTH)}</StyledError>}
+          {debouncedErrors.name?.type === "required" && <StyledError>{ERROR_NAME_REQUIRED}</StyledError>}
+          {debouncedErrors.name?.type === "maxLength" && <StyledError>{ERROR_EXCEEDS_LENGTH(name.length, MAX_NAME_LENGTH)}</StyledError>}
         </InputContainer>
 
         <InputContainer container direction='row' justify='flex-start' alignItems='center'>
@@ -334,9 +313,9 @@ export const ContactFormMobile: React.FC<Props> = (props: Props) => {
               inputRef={register({required: true, maxLength: MAX_EMAIL_LENGTH, pattern: EMAIL_PATTERN})}
               className={unfocusedLabelColor(name)} />
           </Grid>
-          {errors.email?.type === "required" && <StyledError>{ERROR_EMAIL_REQUIRED}</StyledError>}
-          {errors.email?.type === "maxLength" && <StyledError>{ERROR_EXCEEDS_LENGTH(email.length, MAX_EMAIL_LENGTH)}</StyledError>}
-          {errors.email?.type === "pattern" && <StyledError>{ERROR_INVALID_EMAIL}</StyledError>}
+          {debouncedErrors.email?.type === "required" && <StyledError>{ERROR_EMAIL_REQUIRED}</StyledError>}
+          {debouncedErrors.email?.type === "maxLength" && <StyledError>{ERROR_EXCEEDS_LENGTH(email.length, MAX_EMAIL_LENGTH)}</StyledError>}
+          {debouncedErrors.email?.type === "pattern" && <StyledError>{ERROR_INVALID_EMAIL}</StyledError>}
         </InputContainer>
 
         <InputContainer container direction='row' justify='flex-start' alignItems='flex-start' style={{height: '42.5vw'}}>
@@ -351,8 +330,8 @@ export const ContactFormMobile: React.FC<Props> = (props: Props) => {
               style={{height: 'inherit'}}
               className={unfocusedLabelColor(name)} />
           </Grid>
-          {errors.message?.type === "required" && <StyledError>{ERROR_MESSAGE_REQUIRED}</StyledError>}
-          {errors.message?.type === "maxLength" && <StyledError>{ERROR_EXCEEDS_LENGTH(message.length, MAX_MESSAGE_LENGTH)}</StyledError>}
+          {debouncedErrors.message?.type === "required" && <StyledError>{ERROR_MESSAGE_REQUIRED}</StyledError>}
+          {debouncedErrors.message?.type === "maxLength" && <StyledError>{ERROR_EXCEEDS_LENGTH(message.length, MAX_MESSAGE_LENGTH)}</StyledError>}
         </InputContainer>
 
         <StyledSubmitButton type='submit'>

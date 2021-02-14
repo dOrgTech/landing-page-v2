@@ -5,7 +5,7 @@ import {Client} from "../../../../constants/clients";
 import {ChipLarge} from "../../../careers/desktop/profile_popup/ChipLarge";
 import {BulletsBox} from "./BulletsBox";
 import {ProjectGraphic} from "./ProjectGraphic";
-import {useDebounce, useWindowSize} from "../../../../Utils/hooks";
+import {useDebounce, useWindowSize} from "../../../../utils/hooks";
 
 
 const StyledGrid = styled(Grid)({

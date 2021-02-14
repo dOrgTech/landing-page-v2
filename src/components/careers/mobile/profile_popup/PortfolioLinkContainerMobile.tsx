@@ -34,12 +34,15 @@ const StyledUrl= styled(Typography)({
 });
 
 interface Props {
-  github: string;
-  website: string;
+  github?: string;
+  website?: string;
+  linkedin?: string;
   classes?: string;
 }
 
 export const PortfolioLinkContainerMobile: React.FC<Props> = (props: Props) => {
+
+  const website = props.website ? props.website : props.linkedin;
 
   return (
     <StyledGrid className={props.classes} container spacing={0} direction='row' justify='flex-start' alignItems='flex-start'>
@@ -49,10 +52,10 @@ export const PortfolioLinkContainerMobile: React.FC<Props> = (props: Props) => {
           <StyledUrl>{props.github}</StyledUrl>
         </a>
       </LinkItem>}
-      {props.website && <LinkItem item xs={12} container spacing={0} direction='row' justify='flex-start' alignItems='center'>
+      {website && <LinkItem item xs={12} container spacing={0} direction='row' justify='flex-start' alignItems='center'>
         <StyleIcon src={'imgs/globe-icon.svg'} alt='world wide web icon' />
-        <a href={props.github} target='_blank' rel='noopener noreferrer' style={{textDecoration: 'none'}}>
-          <StyledUrl>{props.website}</StyledUrl>
+        <a href={website} target='_blank' rel='noopener noreferrer' style={{textDecoration: 'none'}}>
+          <StyledUrl>{website}</StyledUrl>
         </a>
       </LinkItem>}
     </StyledGrid>
