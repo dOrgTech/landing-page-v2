@@ -1,8 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { useHistory } from 'react-router-dom'
 import {styled, Grid, useTheme, Theme, useMediaQuery} from '@material-ui/core'
 import {theme} from "../theme";
 import {Route, routes} from "../constants/routes";
+import {useNavHoverContext} from "./NavHoverContext";
 
 
 const StyledGrid = styled(Grid)({
@@ -48,13 +49,10 @@ interface AccentProps {
 
 const Accents: React.FC<AccentProps> = (props: AccentProps) => {
 
-  const [hover, setHover] = useState(-1);
-  const handleMouseEnter = (val: number) => {
-    setHover(val);
-  }
-  const handleMouseLeave = () => {
-    setHover(-1);
-  }
+  const {state: navHoverIndex, dispatch: setNavHoverIndex} = useNavHoverContext();
+  const handleMouseEnter = (val: number) => setNavHoverIndex?.(val);
+  const handleMouseLeave = () => setNavHoverIndex?.(-1);
+
 
   const history = useHistory();
   const navigateToPage = (route: Route) => history.push(route.path);
@@ -68,7 +66,7 @@ const Accents: React.FC<AccentProps> = (props: AccentProps) => {
           onClick={() => navigateToPage(route)}
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave = {() => handleMouseLeave()}>
-          {props.longAccentIndex === index  || hover === index ?
+          {props.longAccentIndex === index  || navHoverIndex === index ?
             <RectangleAccentSecondary style={{backgroundColor: props.colorSecondary}} />
             : <RectangleAccentPrimary style={{backgroundColor: props.colorPrimary}} />}
         </AccentBox>
