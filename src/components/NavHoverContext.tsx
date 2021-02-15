@@ -1,6 +1,5 @@
 import React, {useContext, useState} from "react";
 
-
 export interface NavHoverStore {
   state: number,
   dispatch?: React.Dispatch<React.SetStateAction<number>>
