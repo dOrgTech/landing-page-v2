@@ -1,5 +1,14 @@
 import React from 'react'
-import {Accordion, AccordionDetails, AccordionSummary, Grid, makeStyles, styled, Typography} from '@material-ui/core'
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Grid,
+  Link,
+  makeStyles,
+  styled,
+  Typography
+} from '@material-ui/core'
 import {Client} from "../../../constants/clients";
 import {theme} from "../../../theme";
 import {ExpandedContentBoxMobile} from "./ExpandedContentBoxMobile";
@@ -148,7 +157,10 @@ export const ClientItemMobile: React.FC<Props> = (props: Props) => {
             </Grid>
           </Grid>
           <Grid item xs={1}>
-            {props.expanded && <SelectedIcon src={'imgs/external-link-icon.svg'} alt='pop-up content icon' className={selectStyles.link}/>}
+            {props.expanded &&
+            (<Link href={props.client.link} target="_blank" rel="noopener" underline={'none'}>
+              <SelectedIcon src={'imgs/external-link-icon.svg'} alt='pop-up content icon' className={selectStyles.link}/>
+            </Link>)}
           </Grid>
         </StyledGrid>
         {props.expanded && <ShadowOverlay />}

@@ -8,6 +8,7 @@ import {borderStyle, borderStyles} from "../theme/styles";
 import {ContactForm} from "../components/contact/desktop/ContactForm";
 import {ContactTitleBoxMobile} from "../components/contact/mobile/ContactTitleBoxMobile";
 import {ContactFormMobile} from "../components/contact/mobile/ContactFormMobile";
+import {useDebounce, useWindowSize} from "../utils/hooks";
 
 const TITLE = 'Get in Touch.';
 const SUBTITLE = 'Not sure where to start?';
@@ -35,6 +36,9 @@ export const Contact: React.FC = () => {
   const theme: Theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
+  const windowSize = useWindowSize()
+  const debouncedWindowSize = useDebounce(windowSize, 100);
+
   if (desktop) {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
@@ -47,7 +51,7 @@ export const Contact: React.FC = () => {
             <ContactForm classes={borders.leftBorder}/>
           </Grid>
         </ContentContainer>
-        <RightMargin height='5vh' accentContainerHeight={`${window.innerHeight - (0.1 * window.innerWidth)}px`} longAccentIndex={3}/>
+        <RightMargin height='5vh' accentContainerHeight={`${debouncedWindowSize.height - (0.1 * debouncedWindowSize.width)}px`} longAccentIndex={3}/>
       </Root>
     );
   } else {

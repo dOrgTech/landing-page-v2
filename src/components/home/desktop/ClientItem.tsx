@@ -12,7 +12,8 @@ const StyledGrid = styled(Grid)({
   paddingLeft: '2.75vw',
   boxSizing: 'border-box',
   backgroundColor: 'transparent',
-  position: 'relative'
+  position: 'relative',
+  cursor: 'pointer'
 });
 
 const StyledTitle = styled(Typography)({
@@ -36,28 +37,13 @@ const ClientIcon = styled('img')({
   top: '-0.25vw'
 });
 
-const Link = styled('a')({
-  textDecoration: 'none',
-  marginLeft: '1.75vw',
-});
-
-const HoverIcon = styled('img')({
-  width: "1.25vw",
-  height: "1.25vw",
-  objectFit: "contain",
-  position: 'relative',
-  top: '0.1vw'
-});
-
 
 interface Props {
   client: Client;
   isOnLeft?: boolean;
   classes?: string;
-  onMouseEnter?: (popup: JSX.Element) => void;
-  onMouseLeave?: () => void;
   stickyItem?: string;
-  onClick?: (name?: string) => void;
+  onClick?: (element: JSX.Element, name?: string) => void;
 }
 
 export const ClientItem: React.FC<Props> = (props: Props) => {
@@ -65,18 +51,11 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
   const classes: string = props.classes ? props.classes : ''
   const isSticky = props.stickyItem === props.client.name;
   const [isHover, setIsHover] = useState(false);
+  const isHighlight = isSticky || isHover;
 
   // handle hover-dependent state
   const handleMouseEnter = () => {
-    if (!props.stickyItem) {
-      setIsHover(true);
-      if (props.onMouseEnter) {
-        const popup = props.isOnLeft ?
-          <ProjectHoverRight client={props.client}/>
-          : <ProjectHoverLeft client={props.client}/>
-        props.onMouseEnter?.(popup);
-      }
-    }
+    setIsHover(true);
   }
   const handleMouseOver = () => {
     if (!isHover) {
@@ -84,18 +63,18 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
     }
   }
   const handleMouseLeave = () => {
-    if (!props.stickyItem) {
-      setIsHover(false);
-      props.onMouseLeave?.();
-    }
+    setIsHover(false);
   }
 
   // make sticky on click
   const handleClick = () => {
-    if (!props.stickyItem) {
-      props.onClick?.(props.client.name);
-    } else if (isSticky) {
-      props.onClick?.();
+    if (isSticky) {
+      props.onClick?.(<div/>)
+    } else {
+      const popup = props.isOnLeft ?
+        <ProjectHoverRight client={props.client}/>
+        : <ProjectHoverLeft client={props.client}/>
+      props.onClick?.(popup, props.client.name);
     }
   }
 
@@ -112,20 +91,17 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
 
   const styles = makeStyles({
     highlight: {
-      background: isHover ? props.client.highlightColor : ''
+      background: isHighlight ? props.client.highlightColor : ''
     },
     sticky: {
-      boxShadow: isSticky ? '0 9px #1AAF71' : '',
-      transform: isSticky ? 'translateY(-9px)' : ''
+      boxShadow: isSticky ? '0 0.5625vw #1AAF71' : '',
+      transform: isSticky ? 'translateY(-0.5625vw)' : ''
     },
     icon: {
-      filter: iconColor(isHover),
+      filter: iconColor(isHighlight),
     },
     text: {
-      color: isHover ? props.client.textColor : theme.palette.text.primary,
-    },
-    link: {
-      filter: props.client.textColorFilter ? props.client.textColorFilter : ''
+      color: isHighlight ? props.client.textColor : theme.palette.text.primary,
     }
   })();
 
@@ -141,13 +117,6 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
       </Grid>
       <Grid item>
         <StyledTitle className={styles.text}>{props.client.name}</StyledTitle>
-      </Grid>
-      <Grid item>
-        {isHover &&
-        <Link href={props.client.link} target='_blank' rel='noopener noreferrer' onClick={(e) => e.stopPropagation()}>
-          <HoverIcon src={'imgs/external-link-icon.svg'} alt={`external link for ${props.client.name}`}
-            className={styles.link}/>
-        </Link>}
       </Grid>
     </StyledGrid>
   );
