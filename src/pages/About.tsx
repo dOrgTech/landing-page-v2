@@ -20,6 +20,7 @@ import {StatBoxMobile} from "../components/about/mobile/StatBoxMobile";
 import {PitchTitleBoxMobile} from "../components/about/mobile/PitchTitleBoxMobile";
 import {PitchBoxMobile} from "../components/about/mobile/PitchBoxMobile";
 import {CloseBoxMobile} from "../components/about/mobile/CloseBoxMobile";
+import {useMembers} from "../utils/hooks";
 
 // strings
 const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
@@ -71,6 +72,12 @@ export const About: React.FC = () => {
   const theme: Theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
+  const {projects, tvl, clients, builders, lifetime, raised} = desktop ? stats : statsMobile;
+  // request members from server and update num builders
+  const numBuilders = useMembers().length;
+  const dynamicBuilders = {...builders, stat: numBuilders};
+  const statsList = [projects, tvl, clients, dynamicBuilders, lifetime, raised];
+
   if (desktop) {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
@@ -82,7 +89,7 @@ export const About: React.FC = () => {
             <AboutTitleBox text={PITCHES_TITLE} classes={borders.bottomBorder} />
           </Grid>
           <StatsContainer container item xs={6} spacing={0} justify="center">
-            {Object.values(stats).map((stat: Stat, index: number) => (
+            {statsList.map((stat: Stat, index: number) => (
               <Grid item xs={6} key={`stat-${index}`}>
                 <StatBox stat={stat} classes={borders.bottomLeftBorder} />
               </Grid>

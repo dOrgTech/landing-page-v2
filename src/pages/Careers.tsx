@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import ReactGA from "react-ga";
 import {Grid, makeStyles, styled, Theme, useMediaQuery, useTheme} from "@material-ui/core";
 import { Perk, perks } from "../constants/perks";
@@ -23,7 +23,7 @@ import {MeetBuildersTitleBoxMobile} from "../components/careers/mobile/MeetBuild
 import {ProfileWheelMobile} from "../components/careers/mobile/portfolio_section/ProfileWheelMobile";
 import {TestimonialSectionMobile} from "../components/careers/mobile/testimonial_section/TestimonialSectionMobile";
 import {CurrentOpeningSectionMobile} from "../components/careers/mobile/openings_section/CurrentOpeningSectionMobile";
-import {getMembers} from "../utils/network";
+import {useMembers} from "../utils/hooks";
 
 const CAREERS_TITLE_PRIMARY = 'Discover a new way to';
 const CAREERS_TITLE_SECONDARY = ['work', 'learn', 'grow', 'build'];
@@ -58,13 +58,7 @@ export const Careers: React.FC = () => {
   ReactGA.pageview('/careers');
 
   // request members from server
-  const [members, setMembers] = useState<Member[]>([]);
-  useEffect(() => {
-    if (members.length > 0) return;
-    getMembers()
-      .then(members => setMembers(members))
-      .catch(error => console.log(error))
-  }, [members])
+  const members: Member[] = useMembers(); // eslint-disable-line
 
   const navigationToActivation = () => window.location.assign(externalLinks.activation.path);
   const borders = useBorders();

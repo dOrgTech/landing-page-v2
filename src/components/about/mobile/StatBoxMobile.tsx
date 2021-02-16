@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import { styled, Typography, Grid } from '@material-ui/core'
-
-import { Stat } from "../../../constants/stats";
 import { theme } from "../../../theme";
 import {mobileStatFont} from "../../../theme/styles";
+import {Stat} from "../../../constants/stats";
+import {formatStat, getIncrement} from "../../../utils/statUtils";
 
 const StyledBox = styled(Grid)({
   margin: 'auto',
@@ -58,13 +58,6 @@ const StyledIcon = styled('img')({
   top: '-1vw'
 });
 
-const currencyFormatter = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
-  minimumFractionDigits: 0,
-  maximumFractionDigits: 0,
-});
-
 
 interface Props {
   stat: Stat;
@@ -73,42 +66,33 @@ interface Props {
 
 export const StatBoxMobile: React.FC<Props> = (props: Props) => {
 
-  const postfix = props.stat.postfix ? props.stat.postfix : '';
-  const end = props.stat.stat;
-  const isCurrency = props.stat.currency
+  const { title, stat, icon, formatter, postfix } = props.stat
 
-  const formatStat = (num: number) => {
-    if (isCurrency) {
-      return currencyFormatter.format(num) + postfix;
-    } else {
-      return num.toString() + postfix;
-    }
-  }
+  const [value, setValue] = useState(0);
+  const increment = getIncrement(stat);
 
-  const [stat, setStat] = useState(0);
-  const increment = Math.ceil(end / 50);
   useEffect(() => {
-    if (stat < end) {
+    if (value < stat) {
       setTimeout(() => {
-        const nextStat = Math.min(stat + increment, end);
-        setStat(nextStat);
+        const nextValue = Math.min(value + increment, stat);
+        setValue(nextValue);
       }, 15)
     }
-  }, [stat, end, increment])
+  }, [value, stat, increment])
 
-  const handleTouch = () => setStat(0);
+  const handleTouch = () => setValue(0);
 
   return (
     <StyledBox className={props.classes} container direction='row' spacing={0} justify='space-between' alignItems='center'
       onTouchEnd={handleTouch}>
       <Grid item xs={6}>
-        <StyledStat>{formatStat(stat)}</StyledStat>
+        <StyledStat>{formatStat(value, postfix, formatter)}</StyledStat>
       </Grid>
       <Grid item xs={6}>
-        <StyledIcon src={props.stat.icon} alt='icon' />
+        <StyledIcon src={icon} alt='icon' />
       </Grid>
       <Grid item xs={12}>
-        <StyledTitle>{props.stat.title}</StyledTitle>
+        <StyledTitle>{title}</StyledTitle>
       </Grid>
     </StyledBox>
   );

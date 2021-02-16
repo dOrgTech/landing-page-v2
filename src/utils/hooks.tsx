@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
+import {Member} from "../constants/members";
+import {getMembers} from "./network";
 
 
+// debounce a value
 function useDebounce<T>(value: T, delay?: number): T {
   const [debouncedValue, setDebouncedValue] = useState<T>(value)
 
@@ -17,7 +20,7 @@ export interface WindowSize {
   width: number;
   height: number;
 }
-
+// get window dimensions dynamically
 function useWindowSize(): WindowSize {
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
@@ -41,4 +44,16 @@ function useWindowSize(): WindowSize {
   return dimensions;
 }
 
-export {useWindowSize, useDebounce}
+// get members from server and return member array
+function useMembers(): Member[] {
+  const [members, setMembers] = useState<Member[]>([]);
+  useEffect(() => {
+    if (members.length > 0) return;
+    getMembers()
+      .then(members => setMembers(members))
+      .catch(error => console.log(error))
+  }, [members])
+  return members
+}
+
+export {useWindowSize, useDebounce, useMembers}

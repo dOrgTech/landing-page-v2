@@ -1,8 +1,10 @@
+import {getMonthsTogether} from "../utils/statUtils";
+
 export interface Stat {
   title: string;
   stat: number;
   icon: string;
-  currency?: boolean;
+  formatter?: Intl.NumberFormat
   postfix?: string;
 }
 
@@ -15,16 +17,31 @@ export interface Stats {
   raised: Readonly<Stat>;
 }
 
+const tvlFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 1,
+  maximumFractionDigits: 1,
+});
+
+const raisedFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
+});
+
 export const stats: Stats = {
   projects: {
     title: 'PROJECTS SHIPPED',
-    stat: 25,
+    stat: 40,
+    postfix: '+',
     icon: 'imgs/bracketed-dot-icon.svg'
   },
   tvl: {
     title: 'TVL IN OUR PRODUCTS',
-    stat: 2,
-    currency: true,
+    stat: 3.5,
+    formatter: tvlFormatter,
     postfix: 'B+',
     icon: 'imgs/circle-slice-icon.svg'
   },
@@ -36,18 +53,18 @@ export const stats: Stats = {
   },
   builders: {
     title: 'ACTIVE BUILDERS',
-    stat: 47,
+    stat: 35,
     icon: 'imgs/people-icon.svg'
   },
   lifetime: {
     title: 'MONTHS TOGETHER',
-    stat: 24,
+    stat: getMonthsTogether(new Date()),
     icon: 'imgs/calendar-icon.svg'
   },
   raised: {
     title: 'FUNDING RAISED',
     stat: 0,
-    currency: true,
+    formatter: raisedFormatter,
     icon: 'imgs/dollar-sign-icon.svg'
   }
 }
@@ -55,14 +72,15 @@ export const stats: Stats = {
 export const statsMobile: Stats = {
   projects: {
     title: 'Projects shipped',
-    stat: 25,
+    stat: 40,
+    postfix: '+',
     icon: 'imgs/bracketed-dot-icon.svg'
   },
   tvl: {
     title: 'TVL in our products',
-    stat: 999,
-    currency: true,
-    postfix: 'M+',
+    stat: 3.5,
+    formatter: tvlFormatter,
+    postfix: 'B+',
     icon: 'imgs/circle-slice-icon.svg'
   },
   clients: {
@@ -73,18 +91,18 @@ export const statsMobile: Stats = {
   },
   builders: {
     title: 'Active builders',
-    stat: 30,
+    stat: 35,
     icon: 'imgs/people-icon.svg'
   },
   lifetime: {
     title: 'Months together',
-    stat: 18,
+    stat: getMonthsTogether(new Date()),
     icon: 'imgs/calendar-icon.svg'
   },
   raised: {
     title: 'Funding raised',
     stat: 0,
-    currency: true,
+    formatter: raisedFormatter,
     icon: 'imgs/dollar-sign-icon.svg'
   }
 }
