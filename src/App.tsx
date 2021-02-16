@@ -12,6 +12,8 @@ import { Footer } from "./components/Footer";
 import "./App.css";
 import {CookieConsentPrompt} from "./components/CookieConsentPrompt";
 import {CustomScrollbar} from "./components/CustomScrollbar";
+import {NavHoverContext} from "./components/NavHoverContext";
+
 
 const App: React.FC = () => {
 
@@ -19,25 +21,27 @@ const App: React.FC = () => {
     <ThemeProvider theme={theme}>
       <Box bgcolor="primary.main" width="100vw" height='100%'>
         <CustomScrollbar style={{width: '100vw', height: '100vh'}} noScrollX>
-          <HashRouter>
-            <Header/>
-            <Switch >
-              <Route path={routes.home.path} exact>
-                <Home />
-              </Route>
-              <Route path={routes.about.path} exact>
-                <About />
-              </Route>
-              <Route path={routes.careers.path} exact>
-                <Careers />
-              </Route>
-              <Route path={routes.contact.path} exact>
-                <Contact />
-              </Route>
-            </Switch>
-            <CookieConsentPrompt debug prompt={'This website uses cookies to enhance the user experience.'} />
-            <Footer />
-          </HashRouter>
+          <NavHoverContext>
+            <HashRouter>
+              <Header/>
+              <Switch >
+                <Route path={routes.home.path} exact>
+                  <Home />
+                </Route>
+                <Route path={routes.about.path} exact>
+                  <About />
+                </Route>
+                <Route path={routes.careers.path} exact>
+                  <Careers />
+                </Route>
+                <Route path={routes.contact.path} exact>
+                  <Contact />
+                </Route>
+              </Switch>
+              <CookieConsentPrompt debug prompt={'This website uses cookies to enhance the user experience.'} />
+              <Footer />
+            </HashRouter>
+          </NavHoverContext>
         </CustomScrollbar>
       </Box>
     </ThemeProvider>

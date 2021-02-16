@@ -23,9 +23,9 @@ export const stats: Stats = {
   },
   tvl: {
     title: 'TVL IN OUR PRODUCTS',
-    stat: 999,
+    stat: 2,
     currency: true,
-    postfix: 'M+',
+    postfix: 'B+',
     icon: 'imgs/circle-slice-icon.svg'
   },
   clients: {
@@ -36,12 +36,12 @@ export const stats: Stats = {
   },
   builders: {
     title: 'ACTIVE BUILDERS',
-    stat: 30,
+    stat: 47,
     icon: 'imgs/people-icon.svg'
   },
   lifetime: {
     title: 'MONTHS TOGETHER',
-    stat: 18,
+    stat: 24,
     icon: 'imgs/calendar-icon.svg'
   },
   raised: {
