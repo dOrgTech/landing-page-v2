@@ -16,7 +16,7 @@ const StyledGrid = styled(Grid)({
 
 const ScrollContainer = styled(Grid)({
   width: '100%',
-  height: `${window.innerHeight - (0.16 * window.innerWidth)}px`
+  height: `${window.innerHeight - (0.16 * window.innerWidth)}px`,
 });
 
 const ClientGrid = styled(Grid)({
@@ -29,7 +29,9 @@ const TitleContainer = styled(Grid)({
   height: '0.75vw',
   paddingLeft: '1.688vw',
   marginBottom: '2.125vw',
-  borderLeft: '0.188vw solid ' + theme.palette.text.secondary
+  borderLeft: '0.188vw solid ' + theme.palette.text.secondary,
+  position: 'relative',
+  zIndex: 1
 });
 
 const StyledTitle = styled(Typography)({
@@ -62,7 +64,7 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
   const windowSize = useWindowSize()
   const debouncedWindowSize = useDebounce(windowSize, 100);
 
-  const [hovered, setHovered] = useState<JSX.Element>(<div/>);
+  const [caseStudy, setCaseStudy] = useState<JSX.Element>(<div/>);
   const [sticky, setSticky] = useState<string | undefined>(undefined);
   const debouncedSticky = useDebounce(sticky, 50);
 
@@ -70,7 +72,13 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
   const handleClickAway = (e: React.MouseEvent<Document, MouseEvent>) => {
     if (debouncedSticky) {
       setSticky(undefined);
+      setCaseStudy(<div/>);
     }
+  }
+
+  const handleClick = (element: JSX.Element, name?: string, ) => {
+    setSticky(name);
+    setCaseStudy(element);
   }
 
   return (
@@ -87,10 +95,8 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
                   <ClientItem
                     isOnLeft={props.isOnLeft}
                     client={client}
-                    onMouseEnter={(popup: JSX.Element) => setHovered(popup)}
-                    onMouseLeave={() => setHovered(<div/>)}
                     stickyItem={debouncedSticky}
-                    onClick={(name?: string) => setSticky(name)}/>
+                    onClick={(element: JSX.Element, name?: string) => handleClick(element, name)}/>
                 </Grid>
               ))}
             </ClientGrid>
@@ -98,9 +104,9 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
         </ScrollContainer>
       </StyledGrid>
       <ProjectView id='project-view' style={{right: props.isOnLeft ? '-7.5vw' : '42.5vw'}}>
-        <ClickAwayListener onClickAway={(e) => handleClickAway(e)}>
+        <ClickAwayListener onClickAway={(e) => handleClickAway(e)} mouseEvent={'onMouseDown'}>
           <div>
-            {hovered}
+            {caseStudy}
           </div>
         </ClickAwayListener>
       </ProjectView>

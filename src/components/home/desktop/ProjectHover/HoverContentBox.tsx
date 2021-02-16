@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import {styled, Typography, Grid, makeStyles} from '@material-ui/core'
+import {styled, Typography, Grid, makeStyles, Link} from '@material-ui/core'
 import { theme } from "../../../../theme";
 import {Client} from "../../../../constants/clients";
 import {ChipLarge} from "../../../careers/desktop/profile_popup/ChipLarge";
@@ -27,6 +27,9 @@ const StyledTitle = styled(Typography)({
   textAlign: "left",
   color: theme.palette.text.primary,
   zIndex: 1,
+  '&:hover': {
+    color: theme.palette.secondary.main
+  },
 });
 
 const StyledDescription = styled(Typography)({
@@ -71,7 +74,7 @@ interface Props {
 
 export const HoverContentBox: React.FC<Props> = (props: Props) => {
 
-  const { name, iconHighlightFilter, textColor, textColorFilter, project } = props.client;
+  const { name, link, iconHighlightFilter, textColor, textColorFilter, project } = props.client;
 
   const styles = makeStyles({
     icon: {
@@ -97,7 +100,9 @@ export const HoverContentBox: React.FC<Props> = (props: Props) => {
     <StyledGrid container spacing={0} direction='column' justify='flex-start' alignItems='flex-start'
       className={props.classes} style={{bottom: offset, height: `${debouncedWindowSize.height - (0.1 * debouncedWindowSize.width)}px`}}>
       <Grid item>
-        <StyledTitle className={styles.text}>{name}</StyledTitle>
+        <Link href={link} target="_blank" rel="noopener" underline={'none'}>
+          <StyledTitle className={styles.text}>{name}</StyledTitle>
+        </Link>
       </Grid>
       <Grid item>
         <StyledDescription className={styles.text}>{project.description}</StyledDescription>
