@@ -4,7 +4,7 @@ import {getBorderStyle} from "../theme/styles";
 import {theme} from "../theme";
 
 
-const COPYRIGHT_TEXT = 'Copyright 2020, dorg.tech';
+const COPYRIGHT_TEXT = '© dOrg, LLC';
 const EMAIL_ICON_PATH = '/imgs/footer/email-icon.svg';
 const GITHUB_ICON_PATH = '/imgs/footer/github-logo.svg';
 const DISCORD_ICON_PATH = '/imgs/footer/discord-logo.svg';

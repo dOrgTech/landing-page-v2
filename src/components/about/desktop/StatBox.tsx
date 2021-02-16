@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import { Box, styled, Typography, Grid } from '@material-ui/core'
-
-import { Stat } from "../../../constants/stats";
 import { theme } from "../../../theme";
+import {Stat} from "../../../constants/stats";
+import {formatStat, getIncrement, getWildNumber} from "../../../utils/statUtils";
 
 const StyledBox = styled(Box)({
   margin: 'auto',
@@ -53,13 +53,6 @@ const StyledIcon = styled('img')({
   float: 'right'
 });
 
-const currencyFormatter = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
-  minimumFractionDigits: 0,
-  maximumFractionDigits: 0,
-});
-
 interface Props {
   stat: Stat;
   classes?: string;
@@ -67,49 +60,41 @@ interface Props {
 
 export const StatBox: React.FC<Props> = (props: Props) => {
 
-  const postfix = props.stat.postfix ? props.stat.postfix : '';
-  const end = props.stat.stat;
-  const isCurrency = props.stat.currency
-
-  const formatStat = (num: number) => {
-    if (isCurrency) {
-      return currencyFormatter.format(num) + postfix;
-    } else {
-      return num.toString() + postfix;
-    }
-  }
+  const { title, stat, icon, formatter, postfix } = props.stat
 
   const [wild, setWild] = useState<NodeJS.Timeout | null>(null);
+  const [value, setValue] = useState(0);
+  const increment = getIncrement(stat);
+
   const handleMouseEnter = () => {
     setWild(setInterval(() => {
-      setStat(Math.floor(Math.random() * end));
+      setValue(getWildNumber(stat));
     }, 15));
   };
+
   const handleMouseLeave = () => {
     if (wild) {
       clearInterval(wild);
       setWild(null);
     }
-    setStat(0);
+    setValue(0);
   }
 
-  const [stat, setStat] = useState(0);
-  const increment = Math.ceil(end / 50);
   useEffect(() => {
-    if (stat < end && !wild) {
+    if (value < stat && !wild) {
       setTimeout(() => {
-        const nextStat = Math.min(stat + increment, end);
-        setStat(nextStat);
+        const nextValue = Math.min(value + increment, stat);
+        setValue(nextValue);
       }, 15)
     }
-  }, [stat, end, increment, wild])
+  }, [value, stat, increment, wild])
 
   return (
     <StyledBox className={props.classes} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <StyledIcon src={props.stat.icon} alt='icon' />
+      <StyledIcon src={icon} alt='icon' />
       <Grid container direction='column' spacing={0} justify='center' alignItems='center'>
-        <StyledStat>{formatStat(stat)}</StyledStat>
-        <StyledTitle>{props.stat.title}</StyledTitle>
+        <StyledStat>{formatStat(value, postfix, formatter)}</StyledStat>
+        <StyledTitle>{title}</StyledTitle>
       </Grid>
     </StyledBox>
   );

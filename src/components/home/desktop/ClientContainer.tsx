@@ -76,7 +76,7 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
     }
   }
 
-  const handleClick = (element: JSX.Element, name?: string, ) => {
+  const handleClick = (element: JSX.Element, name?: string) => {
     setSticky(name);
     setCaseStudy(element);
   }
