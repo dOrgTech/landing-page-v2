@@ -51,7 +51,7 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
 
   const classes: string = props.classes ? props.classes : ''
   const isSticky = props.stickyItem === props.client.name;
-  const debouncedIsSticky = useDebounce(isSticky, 50);
+  const debouncedIsSticky = useDebounce(isSticky, 100);
   const [isHover, setIsHover] = useState(false);
   const isHighlight = debouncedIsSticky || isHover;
 
@@ -113,7 +113,7 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onMouseOver={handleMouseOver}
-      onClick={handleClick}>
+      onClickCapture={handleClick}>
       <Grid item>
         <ClientIcon src={props.client.icon} alt='client icon' className={styles.icon} />
       </Grid>
