@@ -41,7 +41,11 @@ export const TestimonialCarouselMobile: React.FC<Props> = (props: Props) => {
 
   return (
     <Box className={props.classes} style={{width: '100%', height: '96.5vw', borderTop: props.border, borderBottom: props.border}}>
-      <Carousel fullHeightHover interval={6000} timeout={{appear: 0, enter: 0, exit: 0}}
+      <Carousel
+        fullHeightHover
+        interval={6000}
+        timeout={{appear: 0, enter: 0, exit: 0}}
+        navButtonsAlwaysVisible
         className={carouselStyles.root}
         indicatorProps={{className: carouselStyles.indicator, style: {}}}
         activeIndicatorProps={{className: carouselStyles.activeIndicator, style: {}}}
