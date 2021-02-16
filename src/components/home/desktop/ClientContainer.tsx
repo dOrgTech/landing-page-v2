@@ -104,7 +104,7 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
         </ScrollContainer>
       </StyledGrid>
       <ProjectView id='project-view' style={{right: props.isOnLeft ? '-7.5vw' : '42.5vw'}}>
-        <ClickAwayListener onClickAway={(e) => handleClickAway(e)} mouseEvent={'onClick'}>
+        <ClickAwayListener onClickAway={(e) => handleClickAway(e)} mouseEvent={'onMouseDown'}>
           <div>
             {caseStudy}
           </div>
