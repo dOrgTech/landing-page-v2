@@ -116,7 +116,7 @@ export const companies: Companies = {
     icon: 'imgs/logos/minds-logo-color.svg',
     iconHighlightColor: '#ffd740',
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(72%) sepia(95%) saturate(334%) hue-rotate(355deg) brightness(102%) contrast(101%)',
-    highlightColor: '#FFF',
+    highlightColor: '#FFFFFF',
     colorIcon: true,
     textColor: '#43434d',
     textColorFilter: 'brightness(0) saturate(100%) invert(22%) sepia(15%) saturate(438%) hue-rotate(202deg) brightness(97%) contrast(85%)',
@@ -147,7 +147,7 @@ export const companies: Companies = {
     icon: 'imgs/logos/Boardroom.svg',
     iconHighlightColor: '#09afdf',
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(58%) sepia(82%) saturate(2727%) hue-rotate(156deg) brightness(96%) contrast(93%)',
-    highlightColor: '#fff',
+    highlightColor: '#ffffff',
     textColor: '#333333',
     textColorFilter: 'brightness(0) saturate(100%) invert(13%) sepia(0%) saturate(0%) hue-rotate(237deg) brightness(101%) contrast(82%)',
     project: {

@@ -6,12 +6,12 @@ import {ChipLarge} from "../../../careers/desktop/profile_popup/ChipLarge";
 import {BulletsBox} from "./BulletsBox";
 import {ProjectGraphic} from "./ProjectGraphic";
 import {useDebounce, useWindowSize} from "../../../../utils/hooks";
-import {CustomScrollbar} from "../../../CustomScrollbar";
 
 
 const StyledGrid = styled(Grid)({
   height: `${window.innerHeight - (0.1 * window.innerWidth)}px`,
   width: '42.5vw',
+  padding: '3.5vw 2.5vw 1vw 4.375vw',
   boxSizing: 'border-box',
   position: 'relative'
 });
@@ -27,6 +27,7 @@ const StyledTitle = styled(Typography)({
   textAlign: "left",
   color: theme.palette.text.primary,
   zIndex: 1,
+  position: 'relative',
   '&:hover': {
     color: theme.palette.secondary.main
   },
@@ -44,13 +45,15 @@ const StyledDescription = styled(Typography)({
   letterSpacing: 'normal',
   textAlign: "left",
   color: theme.palette.text.primary,
+  whiteSpace: 'pre-wrap',
   zIndex: 1,
-  whiteSpace: 'pre-wrap'
+  position: 'relative',
 });
 
 const ChipContainer = styled(Grid)({
   background: 'transparent',
   boxSizing: 'border-box',
+  position: 'relative',
   zIndex: 1,
 });
 
@@ -58,6 +61,7 @@ const BulletsContainer = styled(Grid)({
   margin: '0.5vw 0 1.275vw 0',
   background: 'transparent',
   boxSizing: 'border-box',
+  position: 'relative',
   zIndex: 1,
 });
 
@@ -106,28 +110,28 @@ export const HoverContentBox: React.FC<Props> = (props: Props) => {
   return (
     <StyledGrid container spacing={0} direction='column' justify='flex-start' alignItems='flex-start'
       className={props.classes} style={{bottom: offset, height: `${debouncedWindowSize.height - (0.1 * debouncedWindowSize.width)}px`}}>
-      <CustomScrollbar rtl={props.rtl} style={{width: '100%', height: '100%'}} contentClass={styles.scrollbarContent} noScrollX>
-        <Grid item>
-          <Link href={link} target="_blank" rel="noopener" underline={'none'}>
-            <StyledTitle className={styles.text}>{name}</StyledTitle>
-          </Link>
-        </Grid>
-        <Grid item>
-          <StyledDescription className={styles.text}>{project.description}</StyledDescription>
-        </Grid>
-        {project.bullets.length > 0 &&
-        <BulletsContainer item>
-          <BulletsBox bullets={project.bullets} textColor={textColor} iconColorFilter={iconHighlightFilter ? iconHighlightFilter : textColorFilter} />
-        </BulletsContainer>}
-        <ChipContainer item container spacing={0} direction='row' justify='flex-start' alignItems='flex-start'>
-          {project.technologies.map((technology: string, i: number) => (
-            <Grid item key={`technology-${i}`}>
-              <ChipLarge classes={chipStyle.chip} text={technology} textColor={textColor}/>
-            </Grid>
-          ))}
-        </ChipContainer>
-        {project.imageSrc && <ProjectGraphic item src={project.imageSrc} />}
-      </CustomScrollbar>
+      {/*<CustomScrollbar rtl={props.rtl} style={{width: '100%', height: '100%'}} contentClass={styles.scrollbarContent} noScrollX>*/}
+      <Grid item>
+        <Link href={link} target="_blank" rel="noopener" underline={'none'}>
+          <StyledTitle className={styles.text}>{name}</StyledTitle>
+        </Link>
+      </Grid>
+      <Grid item>
+        <StyledDescription className={styles.text}>{project.description}</StyledDescription>
+      </Grid>
+      {project.bullets.length > 0 &&
+      <BulletsContainer item>
+        <BulletsBox bullets={project.bullets} textColor={textColor} iconColorFilter={iconHighlightFilter ? iconHighlightFilter : textColorFilter} />
+      </BulletsContainer>}
+      <ChipContainer item container spacing={0} direction='row' justify='flex-start' alignItems='flex-start'>
+        {project.technologies.map((technology: string, i: number) => (
+          <Grid item key={`technology-${i}`}>
+            <ChipLarge classes={chipStyle.chip} text={technology} textColor={textColor}/>
+          </Grid>
+        ))}
+      </ChipContainer>
+      {project.imageSrc && <ProjectGraphic item src={project.imageSrc} />}
+      {/*</CustomScrollbar>*/}
     </StyledGrid>
   );
 }
