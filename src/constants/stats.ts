@@ -1,6 +1,5 @@
 import {getMonthsTogether} from "../utils/statUtils";
 
-
 export interface Stat {
   title: string;
   stat: number;
@@ -59,7 +58,7 @@ export const stats: Stats = {
   },
   lifetime: {
     title: 'MONTHS TOGETHER',
-    stat: getMonthsTogether(new Date(), true),
+    stat: getMonthsTogether(new Date()),
     icon: 'imgs/calendar-icon.svg'
   },
   raised: {
@@ -97,7 +96,7 @@ export const statsMobile: Stats = {
   },
   lifetime: {
     title: 'Months together',
-    stat: getMonthsTogether(new Date(), true),
+    stat: getMonthsTogether(new Date()),
     icon: 'imgs/calendar-icon.svg'
   },
   raised: {

@@ -25,7 +25,7 @@ export const getWildNumber = (stat: number): number => {
 }
 
 // based on solution found at https://stackoverflow.com/questions/2536379/difference-in-months-between-two-dates-in-javascript
-export function getMonthsTogether(endDate: Date, roundUpFractionalMonths=false): number {
+export function getMonthsTogether(endDate: Date, roundUpFractionalMonths=true): number {
   const startDate = new Date('Jan 29, 2019');
 
   //Calculate the differences between the start and end dates
