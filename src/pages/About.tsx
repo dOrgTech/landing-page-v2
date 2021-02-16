@@ -22,7 +22,6 @@ import {PitchBoxMobile} from "../components/about/mobile/PitchBoxMobile";
 import {CloseBoxMobile} from "../components/about/mobile/CloseBoxMobile";
 import {useMembers} from "../utils/hooks";
 
-
 // strings
 const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
 const PITCHES_TITLE = 'What’s it like to work with us?';

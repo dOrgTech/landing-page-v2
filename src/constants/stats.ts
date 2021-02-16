@@ -1,6 +1,5 @@
 import {getMonthsTogether} from "../utils/statUtils";
 
-
 export interface Stat {
   title: string;
   stat: number;
