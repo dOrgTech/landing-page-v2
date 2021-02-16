@@ -4,6 +4,7 @@ import { theme } from "../../../theme";
 import {Client} from "../../../constants/clients";
 import {ProjectHoverRight} from "./ProjectHover/ProjectHoverRight";
 import {ProjectHoverLeft} from "./ProjectHover/ProjectHoverLeft";
+import {useDebounce} from "../../../utils/hooks";
 
 
 const StyledGrid = styled(Grid)({
@@ -50,8 +51,9 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
 
   const classes: string = props.classes ? props.classes : ''
   const isSticky = props.stickyItem === props.client.name;
+  const debouncedIsSticky = useDebounce(isSticky, 50);
   const [isHover, setIsHover] = useState(false);
-  const isHighlight = isSticky || isHover;
+  const isHighlight = debouncedIsSticky || isHover;
 
   // handle hover-dependent state
   const handleMouseEnter = () => {
@@ -68,7 +70,7 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
 
   // make sticky on click
   const handleClick = () => {
-    if (isSticky) {
+    if (debouncedIsSticky) {
       props.onClick?.(<div/>)
     } else {
       const popup = props.isOnLeft ?
@@ -94,8 +96,8 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
       background: isHighlight ? props.client.highlightColor : ''
     },
     sticky: {
-      boxShadow: isSticky ? '0 0.5625vw #1AAF71' : '',
-      transform: isSticky ? 'translateY(-0.5625vw)' : ''
+      boxShadow: debouncedIsSticky ? '0 0.5625vw #1AAF71' : '',
+      transform: debouncedIsSticky ? 'translateY(-0.5625vw)' : ''
     },
     icon: {
       filter: iconColor(isHighlight),
