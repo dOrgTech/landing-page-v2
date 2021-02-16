@@ -40,10 +40,12 @@ export const companies: Companies = {
     textColor: '#001428',
     textColorFilter: 'brightness(0) saturate(100%) invert(6%) sepia(31%) saturate(5034%) hue-rotate(192deg) brightness(97%) contrast(102%)',
     project: {
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-      technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      description: 'Gnosis builds critical DeFi infrastructure like the Gnosis Safe, Gnosis Protocol, and Conditional Tokens Framework.\n\ndOrg received a GECO grant from Gnosis in 2019 to design and develop a tool for decentralized fundraising that leverages bonding curves and reputation-weighted voting to align incentives.',
+      technologies: ['Smart Contracts', 'Web3 Integrations', 'Software Architecture'],
+      bullets: [
+        {text: 'Read the blog post', url: 'https://blog.gnosis.pm/geco-community-spotlight-fd7ee4b8c8a4'},
+        {text: 'Watch the presentation', url: 'https://www.youtube.com/watch?v=TTk-I7QmBm0'}
+      ],
       imageSrc: 'imgs/logos/gnosis-logo-color.svg',
     }
   },
@@ -53,11 +55,12 @@ export const companies: Companies = {
     icon: 'imgs/logos/Balancer.svg',
     highlightColor: '#41476b',
     project: {
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-      technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: [],
-      imageSrc: 'imgs/project-graphics/balancer-scale.png'
+      description: 'Balancer is a decentralized exchange protocol with multi-token automated market-making.\n\ndOrg designed and built the very first iteration of the Balancer Exchange and Pool Manager web apps. We worked closely with the core team to craft an experience that would be intuitive for new users yet powerful enough to leverage the full functionality of the underlying protocol. We also built the necessary middleware to handle internal data and external API interactions.',
+      technologies: ['Web3 Integrations', 'Frontend', 'UI/UX Design'],
+      bullets: [
+        {text: 'Check out the app', url: 'https://pools.balancer.exchange/#/explore'}
+      ],
+      imageSrc: 'imgs/logos/Balancer.svg'
     }
   },
   DeversiFi: {
@@ -68,10 +71,12 @@ export const companies: Companies = {
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(13%) sepia(99%) saturate(5303%) hue-rotate(263deg) brightness(86%) contrast(135%)',
     highlightColor: 'linear-gradient(3.2deg, #040E14 19.19%, #061824 88.66%)',
     project: {
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-      technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: [],
+      description: 'DeversiFi is a decentralized exchange optimized for high speed, low fee trades.\n\ndOrg designed and built the reputation bootstrapper, which allows users to lock tokens for voting power in the Nectar DAO. We also implemented the frontend for DeversiFi’s liquidity mining program, which rewarded users in BAL and time-locked NEC.',
+      technologies: ['UX/UI Design', 'Web3 Integrations', 'Frontend'],
+      bullets: [
+        {text: 'Check out the reputation bootstrapping app', url: 'https://stake.nectar.community/#/'},
+        {text: 'Check out the liquidity mining app', url: 'https://beehive.nectar.community/'}
+      ],
       imageSrc: 'imgs/logos/Deversifi.svg',
     }
   },
@@ -81,10 +86,12 @@ export const companies: Companies = {
     icon: 'imgs/logos/Compound.svg',
     highlightColor: '#00a977',
     project: {
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-      technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      description: 'Compound is a decentralized lending protocol with token-holder governance.\n\nAs part of MetaCartel’s Dragon Quest hackathon, we won Compound’s bounty for building a Governance SDK in Node for interacting with the Compound’s voting contracts.',
+      technologies: ['Developer Tools'],
+      bullets: [
+        {text: 'Check out the repo', url: 'https://github.com/dOrgTech/compound-sdk'},
+        {text: 'View bounty submission', url: 'https://explorer.bounties.network/bounty/3963'}
+      ],
       imageSrc: 'imgs/logos/Compound.svg',
     }
   },
@@ -99,7 +106,7 @@ export const companies: Companies = {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      bullets: [{text: 'Community-built interfaces integrating the protocol'}, {text: 'The most secure protocol for money'}, {text: 'Backed by World-class investors'}],
       imageSrc: 'imgs/project-graphics/staked-diamond.svg'
     }
   },
@@ -117,7 +124,7 @@ export const companies: Companies = {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      bullets: [{text: 'Community-built interfaces integrating the protocol'}, {text: 'The most secure protocol for money'}, {text: 'Backed by World-class investors'}],
       imageSrc: 'imgs/project-graphics/minds-compose.svg',
     }
   },
@@ -130,7 +137,7 @@ export const companies: Companies = {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      bullets: [{text: 'Community-built interfaces integrating the protocol'}, {text: 'The most secure protocol for money'}, {text: 'Backed by World-class investors'}],
       imageSrc: 'imgs/logos/ParaSwap.svg',
     }
   },
@@ -147,7 +154,7 @@ export const companies: Companies = {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      bullets: [{text: 'Community-built interfaces integrating the protocol'}, {text: 'The most secure protocol for money'}, {text: 'Backed by World-class investors'}],
       imageSrc: ''
     }
   },
@@ -159,10 +166,9 @@ export const companies: Companies = {
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(0%) sepia(21%) saturate(141%) hue-rotate(355deg) brightness(104%) contrast(89%)',
     highlightColor: '#1130ff',
     project: {
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-      technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      description: 'Centrality maintains CENNZnet, the world’s first natively permissioned, public blockchain.\n\ndOrg developed a one-way token bridge for migrating the CENNZ and CPAY tokens from Ethereum to CENNZnet mainnet. This included the migration contract, off-chain oracle, and mobile-friendly web app.',
+      technologies: ['Smart Contracts', 'Backend', 'Frontend'],
+      bullets: [],
       imageSrc: 'imgs/project-graphics/centrality-graphic.svg'
     }
   },
@@ -173,10 +179,11 @@ export const companies: Companies = {
     iconHighlightFilter: '',
     highlightColor: '#6aac0e',
     project: {
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-      technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      description: 'How can a decentralized Universal Basic Income protect against fraudulent accounts?\n\ndOrg teamed up with DAOstack to help the GoodDollar team at eToro answer this question. What resulted was the Identity DAO, a reputation-weighted circle of trust for verifying user identities without centralization. In addition to building out the prototype, dOrg specified the Identity DAO’s technical architecture, governance incentives, and UI mock-ups.',
+      technologies: ['Governance Design', 'Mobile', 'Web3 Integrations'],
+      bullets: [
+        {text: 'Check out the repo', url: 'https://github.com/dOrgTech/ID-DAO'}
+      ],
       imageSrc: 'imgs/logos/eToro.svg',
     }
   },
@@ -192,7 +199,7 @@ export const companies: Companies = {
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
         '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
       technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      bullets: [{text: 'Community-built interfaces integrating the protocol'}, {text: 'The most secure protocol for money'}, {text: 'Backed by World-class investors'}],
       imageSrc: 'imgs/project-graphics/stakehound-brand.png'
     }
   },

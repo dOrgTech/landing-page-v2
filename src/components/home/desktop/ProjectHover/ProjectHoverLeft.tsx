@@ -43,7 +43,7 @@ export const ProjectHoverLeft: React.FC<Props> = (props: Props) => {
       className={props.classes} style={{background: highlightColor}}>
       <HeaderDesktop pageHalf={'left'} classes={styleClasses.header} textColor={textColor} logoColorFilter={textColorFilter} />
       <LeftMargin height={'100%'}/>
-      <HoverContentBox client={props.client} classes={borders.leftBorder} />
+      <HoverContentBox rtl client={props.client} classes={borders.leftBorder} />
       <FooterDesktop pageHalf={'left'} textColor={textColor} iconColorFilter={textColorFilter} />
       <HomeTitleBox classes={styleClasses.title}
         titleTextPrimary={TITLE_TEXT_PRIMARY}
