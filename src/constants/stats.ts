@@ -58,7 +58,7 @@ export const stats: Stats = {
   },
   lifetime: {
     title: 'MONTHS TOGETHER',
-    stat: getMonthsTogether(new Date()),
+    stat: getMonthsTogether(new Date(), true),
     icon: 'imgs/calendar-icon.svg'
   },
   raised: {
@@ -96,7 +96,7 @@ export const statsMobile: Stats = {
   },
   lifetime: {
     title: 'Months together',
-    stat: getMonthsTogether(new Date()),
+    stat: getMonthsTogether(new Date(), true),
     icon: 'imgs/calendar-icon.svg'
   },
   raised: {
