@@ -26,8 +26,6 @@ import {useMembers} from "../utils/hooks";
 // strings
 const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
 const PITCHES_TITLE = 'What’s it like to work with us?';
-const QUOTE_TEXT = 'Really great experiences working with the dOrg team.';
-const QUOTE_CITATION = 'Lillian Wang - Centrality';
 const CLOSE_BUTTON_TEXT = 'GET IN TOUCH';
 
 const Root = styled(Grid)({
@@ -144,7 +142,7 @@ export const About: React.FC = () => {
             ))}
           </PitchesContainer>
           <Grid item xs={12}>
-            <CloseBoxMobile quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} classes={borders.leftBorder} />
+            <CloseBoxMobile quotes={quotes} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} classes={borders.leftBorder} />
           </Grid>
         </ContentContainer>
         <RightMargin border={borderStyle} height='550vw' centerLineHeight='180.5vw' />
