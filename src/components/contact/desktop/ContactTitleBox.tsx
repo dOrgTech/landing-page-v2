@@ -1,6 +1,7 @@
 import React from 'react'
 import {Box, styled, Typography} from '@material-ui/core'
 import { theme } from "../../../theme";
+import {useDebounce, useWindowSize} from "../../../utils/hooks";
 
 
 const StyledBox = styled(Box)({
@@ -64,8 +65,12 @@ interface Props {
 }
 
 export const ContactTitleBox: React.FC<Props> = (props: Props) => {
+
+  const windowSize = useWindowSize()
+  const debouncedWindowSize = useDebounce(windowSize, 100);
+
   return (
-    <StyledBox className={props.classes}>
+    <StyledBox className={props.classes} style={{height: `${debouncedWindowSize.height - (0.1 * debouncedWindowSize.width)}px`}}>
       <TextContainer>
         <StyledTitle>{props.title}</StyledTitle>
         <StyledSubTitle>{props.subtitle}</StyledSubTitle>
