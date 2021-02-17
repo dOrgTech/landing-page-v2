@@ -8,6 +8,7 @@ import {PressBox} from "../components/about/desktop/PressBox";
 import {Stat, stats, statsMobile} from "../constants/stats";
 import { Pitch, pitches } from "../constants/pitches";
 import {press} from "../constants/press";
+import {quotes} from "../constants/quotes";
 import {AboutTitleBox} from "../components/about/desktop/AboutTitleBox";
 import {CloseBox} from "../components/about/desktop/CloseBox";
 import {LeftMargin} from "../components/LeftMargin";
@@ -105,7 +106,7 @@ export const About: React.FC = () => {
             ))}
           </PitchesContainer>
           <Grid item xs={12}>
-            <CloseBox quote={QUOTE_TEXT} citation={QUOTE_CITATION} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} />
+            <CloseBox quotes={quotes} buttonText={CLOSE_BUTTON_TEXT} onButtonClick={navigateToContactPage} />
           </Grid>
         </ContentContainer>
         <RightMargin border={borderStyle}
