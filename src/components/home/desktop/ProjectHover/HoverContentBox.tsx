@@ -51,6 +51,7 @@ const StyledDescription = styled(Typography)({
 });
 
 const ChipContainer = styled(Grid)({
+  maxWidth: '30vw',
   background: 'transparent',
   boxSizing: 'border-box',
   position: 'relative',
@@ -68,6 +69,7 @@ const BulletsContainer = styled(Grid)({
 const useChipStyle = makeStyles({
   chip: {
     marginRight: '0.625vw',
+    marginBottom: '0.625vw',
     backgroundColor: 'rgba(0, 0, 0, 0.2)'
   }
 });

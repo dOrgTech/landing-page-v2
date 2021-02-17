@@ -23,8 +23,8 @@ export const communities: Communities = {
     textColor: '#2e2e2e',
     textColorFilter: 'brightness(0) saturate(100%) invert(14%) sepia(0%) saturate(455%) hue-rotate(195deg) brightness(91%) contrast(86%)',
     project: {
-      description: 'DAOstack is an operating system for scalable governance.\n\ndOrg has worked as a development catalyst for the DAOstack ecosystem since our earliest days. We built out and maintained key components of the stack including Arc.react, Arc.js, and the DAO launcher. We’ve also helped integrate external use-cases such as the Nectar DAO, Dxdao, and GoodDollar.',
-      technologies: ['Web3 Integrations', 'Frontend', 'Developer Tools'],
+      description: 'DAOstack is an operating system for scalable governance.\n\ndOrg has worked as a development catalyst for the DAOstack ecosystem since our earliest days. In addition to contributing to each layer of the stack, we\'ve built out and maintained key components including Arc.react, Arc.js, and the DAO launcher. We’ve also helped integrate external use-cases such as the Nectar DAO, Dxdao, and GoodDollar.',
+      technologies: ['Web3 Integrations', 'Smart Contracts', 'Frontend', 'UI/UX Design', 'Developer Tools', 'Software Architecture'],
       bullets: [
         {text: 'Watch the DAOstack OS Ecosystem presentation', url: 'https://www.youtube.com/watch?v=XBjy4oj61JE'},
         {text: 'Watch the Arc.React demo', url: 'https://www.youtube.com/watch?v=d0Zx4Z-EObE'},
@@ -73,7 +73,7 @@ export const communities: Communities = {
     textColor: '#333333',
     textColorFilter: 'brightness(0) saturate(100%) invert(26%) sepia(0%) saturate(31%) hue-rotate(140deg) brightness(96%) contrast(119%)',
     project: {
-      description: 'At the time of inception, Dxdao was one of the boldest experiments to date in distributed governance. Its mission: to develop and govern a suite of truly trustless DeFi components.\n\nIn the DAO’s early stages, dOrg provided expertise on DAOstack integrations and security. We also developed a custom UI and integration with the Fairmint CSO contracts for a first-of-its-kind continuous fundraiser.',
+      description: 'At the time of inception, Dxdao was one of the boldest experiments to date in distributed governance. It’s mission: to develop and govern a suite of truly trustless DeFi components.\n\nIn the DAO’s early stages dOrg provided expertise on DAOstack integrations and security. We also developed a custom UI and integration with the Fairmint CSO contracts for a first-of-its-kind continuous fundraiser.',
       technologies: ['Web3 Integrations', 'Frontend', 'UI/UX Design'],
       bullets: [
         {text: 'Check out the app', url: 'https://dxtrust.eth.link/#/'},
@@ -116,8 +116,7 @@ export const communities: Communities = {
       technologies: ['Developer Tools', 'Software Architecture', 'Governance Design'],
       bullets: [
         {text: 'Watch a technical walkthrough from ETH Denver 2021', url: 'https://www.youtube.com/watch?v=9HhB4XL4AR4'},
-        {text: 'Read the announcement', url: 'https://web3api.substack.com/p/developer-toolchain-web3api-successfully'},
-        {text: 'Visit the DAO', url: 'https://github.com/Web3-API/dao'}
+        {text: 'Read the announcement', url: 'https://web3api.substack.com/p/developer-toolchain-web3api-successfully'}
       ],
       // imageSrc: 'imgs/project-graphics/web3api-graphic.svg'
     }
@@ -165,10 +164,12 @@ export const communities: Communities = {
     textColor: '#123262',
     textColorFilter: 'brightness(0) saturate(100%) invert(14%) sepia(15%) saturate(7037%) hue-rotate(199deg) brightness(97%) contrast(94%)',
     project: {
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-      technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: [{text: 'Community-built interfaces integrating the protocol'}, {text: 'The most secure protocol for money'}, {text: 'Backed by World-class investors'}],
+      description: 'dOrg is proud to be working with TQ Tezos and the broader Tezos ecosystem on Homebase, an app that enables anyone to launch DAOs on the Tezos blockchain in a few clicks.\n\ndOrg designed and built the Homebase app on top of the BaseDAO smart contract framework We utilized Taquito and Beacon SDK. We also contributed to the BaseDAO framework spec and design as product co-owners.',
+      technologies: ['Web3 Integrations', 'Frontend', 'UI/UX Design'],
+      bullets: [
+        {text: 'Read the announcement', url: 'https://tqtezos.medium.com/daos-on-tezos-announcing-homebase-80bbecbb9bfe'},
+        {text: 'Check out the repo', url: 'https://github.com/dOrgTech/homebase-app'}
+      ],
       imageSrc: 'imgs/logos/tezos-logo-blue.png'
     }
   }
