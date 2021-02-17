@@ -6,7 +6,6 @@ import {getSonarAnimation} from "../../../theme/styles";
 import {ClientQuoteCarouselMobile} from "./ClientQuoteCarouselMobile";
 import {Quotes} from "../../../constants/quotes";
 
-
 const StyledBox = styled(Box)({
   margin: 'auto',
   width: '100%',
