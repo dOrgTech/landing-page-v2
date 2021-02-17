@@ -11,7 +11,8 @@ const StyledBox = styled(Box)({
   height: '14.6vw',
   background: theme.palette.secondary.main,
   boxSizing: 'border-box',
-  position: 'relative'
+  position: 'relative',
+  overflow: 'hidden'
 });
 
 const StyledQuote = styled(Typography)({
