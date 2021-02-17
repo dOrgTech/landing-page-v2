@@ -70,9 +70,7 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
 
   // make sticky on click
   const handleClick = () => {
-    if (debouncedIsSticky) {
-      props.onClick?.(<div/>)
-    } else {
+    if (!debouncedIsSticky) {
       const popup = props.isOnLeft ?
         <ProjectHoverRight client={props.client}/>
         : <ProjectHoverLeft client={props.client}/>
