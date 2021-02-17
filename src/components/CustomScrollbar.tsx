@@ -10,6 +10,7 @@ interface Props {
   noScrollX?: boolean;
   children?: React.ReactNode;
   style?: React.CSSProperties;
+  contentClass?: string;
 }
 
 export const CustomScrollbar: React.FC<Props> = (props: Props) => {
@@ -39,7 +40,7 @@ export const CustomScrollbar: React.FC<Props> = (props: Props) => {
       style={{...props.style}}
       thumbYProps={{ className: scrollbarStyles.thumbY }}
       trackYProps={{ className: scrollbarStyles.trackY }}
-      contentProps={{ className: scrollbarStyles.content }}
+      contentProps={{ className: `${scrollbarStyles.content} ${props.contentClass? props.contentClass : ''}` }}
       scrollerProps={{ className: scrollbarStyles.scroller }}
       wrapperProps={{ className: scrollbarStyles.wrapper }}
       className={scrollbarStyles.holder}>

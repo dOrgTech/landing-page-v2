@@ -23,10 +23,13 @@ export const communities: Communities = {
     textColor: '#2e2e2e',
     textColorFilter: 'brightness(0) saturate(100%) invert(14%) sepia(0%) saturate(455%) hue-rotate(195deg) brightness(91%) contrast(86%)',
     project: {
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-      technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      description: 'DAOstack is an operating system for scalable governance.\n\ndOrg has worked as a development catalyst for the DAOstack ecosystem since our earliest days. In addition to contributing to each layer of the stack, we\'ve built out and maintained key components including Arc.react, Arc.js, and the DAO launcher. We’ve also helped integrate external use-cases such as the Nectar DAO, Dxdao, and GoodDollar.',
+      technologies: ['Web3 Integrations', 'Smart Contracts', 'Frontend', 'UI/UX Design', 'Developer Tools', 'Software Architecture'],
+      bullets: [
+        {text: 'Watch the DAOstack OS Ecosystem presentation', url: 'https://www.youtube.com/watch?v=XBjy4oj61JE'},
+        {text: 'Watch the Arc.React demo', url: 'https://www.youtube.com/watch?v=d0Zx4Z-EObE'},
+        {text: 'Read the DAO Launcher blog post', url: 'https://medium.com/bitfwd/how-to-create-run-your-own-dao-5e3eadd96962'}
+      ],
       imageSrc: 'imgs/project-graphics/daostack-logo-black.svg',
     }
   },
@@ -36,14 +39,13 @@ export const communities: Communities = {
     icon: 'imgs/logos/Aragon.svg',
     iconHighlightColor: '#00c2ff',
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(59%) sepia(33%) saturate(5904%) hue-rotate(164deg) brightness(108%) contrast(106%)',
-    highlightColor: '#fff',
+    highlightColor: '#ffffff',
     textColor: '#333333',
     textColorFilter: 'brightness(0) saturate(100%) invert(26%) sepia(0%) saturate(31%) hue-rotate(140deg) brightness(96%) contrast(119%)',
     project: {
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-      technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      description: 'Aragon is the leading framework for decentralized governance.\n\ndOrg coordinates within the Aragon ecosystem to handle important UX enhancements and new features in core libraries. We also lead product research and development of the upcoming V2 Client.\n\ndOrg is a leading team in the Aragon Experts program. We have developed custom Aragon components for DAOs such as API3, RAY, and LID.',
+      technologies: ['Smart Contracts', 'Web3 Integrations', 'Product Owner'],
+      bullets: [],
       imageSrc: 'imgs/project-graphics/aragon-brand.svg'
     }
   },
@@ -55,10 +57,9 @@ export const communities: Communities = {
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(84%) sepia(11%) saturate(4929%) hue-rotate(333deg) brightness(95%) contrast(100%)',
     highlightColor: '#181818',
     project: {
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-      technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      description: 'The Badger is a DAO dedicated to bringing Bitcoin to DeFi.\n\ndOrg provides development support to the Badger community by improving its product suite (Sett, Digg) and surrounding infrastructure (merkle trees, geysers, keepers, oracles).',
+      technologies: ['Smart Contracts', 'Web3 Integrations', 'Frontend'],
+      bullets: [],
       imageSrc: 'imgs/project-graphics/badger-logo.png'
     }
   },
@@ -68,14 +69,16 @@ export const communities: Communities = {
     icon: 'imgs/logos/DxDao.svg',
     iconHighlightColor: '#651fff',
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(12%) sepia(95%) saturate(5348%) hue-rotate(260deg) brightness(106%) contrast(107%)',
-    highlightColor: '#fff',
+    highlightColor: '#ffffff',
     textColor: '#333333',
     textColorFilter: 'brightness(0) saturate(100%) invert(26%) sepia(0%) saturate(31%) hue-rotate(140deg) brightness(96%) contrast(119%)',
     project: {
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-      technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      description: 'At the time of inception, Dxdao was one of the boldest experiments to date in distributed governance. It’s mission: to develop and govern a suite of truly trustless DeFi components.\n\nIn the DAO’s early stages dOrg provided expertise on DAOstack integrations and security. We also developed a custom UI and integration with the Fairmint CSO contracts for a first-of-its-kind continuous fundraiser.',
+      technologies: ['Web3 Integrations', 'Frontend', 'UI/UX Design'],
+      bullets: [
+        {text: 'Check out the app', url: 'https://dxtrust.eth.link/#/'},
+        {text: 'Read the blog post', url: 'https://medium.com/bitfwd/distributed-capital-formation-with-openraise-3af9a601ad63'}
+      ],
       imageSrc: 'imgs/project-graphics/dxdao-blue.svg',
     }
   },
@@ -90,10 +93,11 @@ export const communities: Communities = {
     textColor: '#F3F3F3',
     textColorFilter: 'brightness(0) saturate(100%) invert(98%) sepia(79%) saturate(774%) hue-rotate(191deg) brightness(123%) contrast(91%)',
     project: {
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-      technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      description: 'API3 is a decentralized oracle network that connects data providers to dApps with no middlemen.\n\nThat’s why the AP3 team enlisted dOrg to build out the API3 DAO, a token-governed community running on the Aragon framework. Complete with custom governance modules and UI components, the API3 DAO will govern what may be the future of API services on the Ethereum platform.',
+      technologies: ['Smart Contracts', 'Software Architecture', 'Frontend'],
+      bullets: [
+        {text: 'Check out the repo', url: 'https://github.com/api3dao/api3-dao'}
+      ],
       imageSrc: 'imgs/logos/api3.svg',
     }
   },
@@ -108,11 +112,13 @@ export const communities: Communities = {
     textColor: '#529dad',
     textColorFilter: 'brightness(0) saturate(100%) invert(55%) sepia(32%) saturate(544%) hue-rotate(143deg) brightness(95%) contrast(92%)',
     project: {
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-      technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
-      imageSrc: 'imgs/project-graphics/web3api-graphic.svg'
+      description: 'Web3API is an integration standard that makes it easy to interact with any blockchain from any programming language. The project is stewarded by the Web3API DAO, a tokenized alliance of protocol partners, financial backers, and builder teams.\n\ndOrg provides the DAO with continuous product development and operational support services. On the product side, we are currently focused on the alpha release of the client, IDE, and developer docs. For operations, we help with content creation, partner onboarding, and strategy.',
+      technologies: ['Developer Tools', 'Software Architecture', 'Governance Design'],
+      bullets: [
+        {text: 'Watch a technical walkthrough from ETH Denver 2021', url: 'https://www.youtube.com/watch?v=9HhB4XL4AR4'},
+        {text: 'Read the announcement', url: 'https://web3api.substack.com/p/developer-toolchain-web3api-successfully'}
+      ],
+      // imageSrc: 'imgs/project-graphics/web3api-graphic.svg'
     }
   },
   Zer0: {
@@ -125,10 +131,9 @@ export const communities: Communities = {
     iconHighlightColor: '#006aff',
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(33%) sepia(67%) saturate(5938%) hue-rotate(208deg) brightness(101%) contrast(109%)',
     project: {
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-      technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      description: 'Zero is a social operating system that has been building in stealth for 6 years. The Zer0 OS enables peer-to-peer communication, collaboration, transactions, and governance.\n\ndOrg leads development on three critical components of the Zero stack: Zero Name Service (ZNS), zDAO governance, and zChain. We work with teams across the Zer0 ecosystem to go from ideas to well-crafted systems to expertly-executed products and beyond.',
+      technologies: ['Smart Contracts', 'Frontend', 'Software Architecture'],
+      bullets: [],
       imageSrc: 'imgs/project-graphics/zero-eye-graphic.png'
     }
   },
@@ -136,16 +141,15 @@ export const communities: Communities = {
     name:'Sovryn',
     link: 'https://sovryn.app/',
     icon: 'imgs/logos/sovryn.svg',
-    highlightColor: '#fff',
+    highlightColor: '#ffffff',
     iconHighlightColor: '#fdc009',
     iconHighlightFilter: 'brightness(0) saturate(100%)',
-    textColor: '#000',
+    textColor: '#000000',
     textColorFilter: 'brightness(0) saturate(100%)',
     project: {
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-      technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      description: 'Sovryn is a decentralized bitcoin trading and lending platform built on RSK.\n\nSovryn enlisted dOrg to spec-out and implement a collateralized stablecoin on top of the Sovryn protocol. The system includes stability fees, collateralized debt positions, and liquidation management functionality.',
+      technologies: ['Smart Contracts', 'Software Architecture'],
+      bullets: [],
       imageSrc: 'imgs/project-graphics/sovryn-beach-coins.svg'
     }
   },
@@ -154,46 +158,19 @@ export const communities: Communities = {
     link: 'https://tezos.com/',
     icon: 'imgs/logos/tezos-logo-blue.png',
     colorIcon: true,
-    highlightColor: '#fff',
+    highlightColor: '#ffffff',
     iconHighlightColor: '#2C7DF7',
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(38%) sepia(57%) saturate(3760%) hue-rotate(206deg) brightness(103%) contrast(94%)',
     textColor: '#123262',
     textColorFilter: 'brightness(0) saturate(100%) invert(14%) sepia(15%) saturate(7037%) hue-rotate(199deg) brightness(97%) contrast(94%)',
     project: {
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-        '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-      technologies: ['React', 'GraphQL', 'Solidity'],
-      bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
+      description: 'dOrg is proud to be working with TQ Tezos and the broader Tezos ecosystem on Homebase, an app that enables anyone to launch DAOs on the Tezos blockchain in a few clicks.\n\ndOrg designed and built the Homebase app on top of the BaseDAO smart contract framework We utilized Taquito and Beacon SDK. We also contributed to the BaseDAO framework spec and design as product co-owners.',
+      technologies: ['Web3 Integrations', 'Frontend', 'UI/UX Design'],
+      bullets: [
+        {text: 'Read the announcement', url: 'https://tqtezos.medium.com/daos-on-tezos-announcing-homebase-80bbecbb9bfe'},
+        {text: 'Check out the repo', url: 'https://github.com/dOrgTech/homebase-app'}
+      ],
       imageSrc: 'imgs/logos/tezos-logo-blue.png'
     }
-  },
-  // Prime: {
-  //   name:'Prime',
-  //   link: 'https://primedao.eth.link/#/',
-  //   icon: 'imgs/logos/Prime.svg',
-  //   iconHighlightColor: '#8668fc',
-  //   iconHighlightFilter: 'brightness(0) saturate(100%) invert(47%) sepia(97%) saturate(3829%) hue-rotate(231deg) brightness(105%) contrast(97%)',
-  //   highlightColor: '#ff6975',
-  //   project: {
-  //     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-  //       '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-  //     technologies: ['React', 'GraphQL', 'Solidity'],
-  //     bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
-  //     imageSrc: 'imgs/logos/Prime.svg'
-  //   }
-  // },
-  // LID: {
-  //   name:'LID',
-  //   link: 'https://github.com/Lid-Protocol',
-  //   icon: 'imgs/logos/LID.svg',
-  //   iconHighlightColor: '#fff',
-  //   iconHighlightFilter: '',
-  //   highlightColor: '#246B8F',
-  //   project: {
-  //     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus sapien eget ante accumsan, sed ultricies enim congue. In aliquet risus consequat magna malesuada vulputate. \n' +
-  //       '\nSed et gravida justo, at sodales nulla. Nulla euismod et massa a rhoncus. Praesent a dapibus sapien. Quisque lacinia dui eu ',
-  //     technologies: ['React', 'GraphQL', 'Solidity'],
-  //     bullets: ['Community-built interfaces integrating the protocol', 'The most secure protocol for money', 'Backed by World-class investors'],
-  //   }
-  // },
+  }
 }

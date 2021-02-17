@@ -14,10 +14,15 @@ export interface Client {
   project: Project;
 }
 
+export interface ProjectBullet {
+  text: string;
+  url?: string;
+}
+
 export interface Project {
   description: string;
   technologies: string[];
-  bullets: string[];
+  bullets: ProjectBullet[];
   imageSrc?: string;
 }
 
