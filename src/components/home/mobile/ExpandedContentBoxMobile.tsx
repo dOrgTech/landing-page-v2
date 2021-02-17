@@ -35,7 +35,6 @@ const BulletsContainer = styled(Grid)({
   zIndex: 1,
 });
 
-
 const ChipContainer = styled(Grid)({
   background: 'transparent',
   boxSizing: 'border-box',
@@ -45,6 +44,7 @@ const ChipContainer = styled(Grid)({
 const useChipStyle = makeStyles({
   chip: {
     marginRight: '2.4vw',
+    marginBottom: '2.4vw',
     backgroundColor: 'rgba(0, 0, 0, 0.2)'
   }
 });

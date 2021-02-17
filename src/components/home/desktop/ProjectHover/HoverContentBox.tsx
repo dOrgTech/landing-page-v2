@@ -11,7 +11,7 @@ import {useDebounce, useWindowSize} from "../../../../utils/hooks";
 const StyledGrid = styled(Grid)({
   height: `${window.innerHeight - (0.1 * window.innerWidth)}px`,
   width: '42.5vw',
-  padding: '3.5vw 2.5vw 0 4.375vw',
+  padding: '3.5vw 2.5vw 1vw 4.375vw',
   boxSizing: 'border-box',
   position: 'relative'
 });
@@ -27,6 +27,7 @@ const StyledTitle = styled(Typography)({
   textAlign: "left",
   color: theme.palette.text.primary,
   zIndex: 1,
+  position: 'relative',
   '&:hover': {
     color: theme.palette.secondary.main
   },
@@ -44,12 +45,16 @@ const StyledDescription = styled(Typography)({
   letterSpacing: 'normal',
   textAlign: "left",
   color: theme.palette.text.primary,
+  whiteSpace: 'pre-wrap',
   zIndex: 1,
+  position: 'relative',
 });
 
 const ChipContainer = styled(Grid)({
+  maxWidth: '30vw',
   background: 'transparent',
   boxSizing: 'border-box',
+  position: 'relative',
   zIndex: 1,
 });
 
@@ -57,18 +62,21 @@ const BulletsContainer = styled(Grid)({
   margin: '0.5vw 0 1.275vw 0',
   background: 'transparent',
   boxSizing: 'border-box',
+  position: 'relative',
   zIndex: 1,
 });
 
 const useChipStyle = makeStyles({
   chip: {
     marginRight: '0.625vw',
+    marginBottom: '0.625vw',
     backgroundColor: 'rgba(0, 0, 0, 0.2)'
   }
 });
 
 interface Props {
   client: Client;
+  rtl?: boolean;
   classes?: string;
 }
 
@@ -82,6 +90,11 @@ export const HoverContentBox: React.FC<Props> = (props: Props) => {
     },
     text: {
       color: textColor ? textColor : theme.palette.text.primary
+    },
+    scrollbarContent: {
+      padding: '3.5vw 2.5vw 1vw 4.375vw !important',
+      boxSizing: 'border-box',
+      position: 'relative'
     }
   })();
   const chipStyle = useChipStyle();
@@ -99,6 +112,7 @@ export const HoverContentBox: React.FC<Props> = (props: Props) => {
   return (
     <StyledGrid container spacing={0} direction='column' justify='flex-start' alignItems='flex-start'
       className={props.classes} style={{bottom: offset, height: `${debouncedWindowSize.height - (0.1 * debouncedWindowSize.width)}px`}}>
+      {/*<CustomScrollbar rtl={props.rtl} style={{width: '100%', height: '100%'}} contentClass={styles.scrollbarContent} noScrollX>*/}
       <Grid item>
         <Link href={link} target="_blank" rel="noopener" underline={'none'}>
           <StyledTitle className={styles.text}>{name}</StyledTitle>
@@ -119,6 +133,7 @@ export const HoverContentBox: React.FC<Props> = (props: Props) => {
         ))}
       </ChipContainer>
       {project.imageSrc && <ProjectGraphic item src={project.imageSrc} />}
+      {/*</CustomScrollbar>*/}
     </StyledGrid>
   );
 }

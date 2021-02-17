@@ -1,4 +1,4 @@
-import {ClickAwayListener, Grid, styled, Typography} from "@material-ui/core";
+import {ClickAwayListener, Fade, Grid, styled, Typography} from "@material-ui/core";
 import React, {useState} from "react";
 import {Companies} from "../../../constants/companies";
 import {Communities} from "../../../constants/communities";
@@ -67,18 +67,20 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
   const [caseStudy, setCaseStudy] = useState<JSX.Element>(<div/>);
   const [sticky, setSticky] = useState<string | undefined>(undefined);
   const debouncedSticky = useDebounce(sticky, 50);
+  const [fadeIn, setFadeIn] = useState(false);
 
   // handle user clicking away from sticky project hover
   const handleClickAway = (e: React.MouseEvent<Document, MouseEvent>) => {
     if (debouncedSticky) {
+      setFadeIn(false);
       setSticky(undefined);
-      setCaseStudy(<div/>);
     }
   }
 
   const handleClick = (element: JSX.Element, name?: string) => {
     setSticky(name);
     setCaseStudy(element);
+    setFadeIn(true);
   }
 
   return (
@@ -103,13 +105,15 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
           </CustomScrollbar>
         </ScrollContainer>
       </StyledGrid>
-      <ProjectView id='project-view' style={{right: props.isOnLeft ? '-7.5vw' : '42.5vw'}}>
-        <ClickAwayListener onClickAway={(e) => handleClickAway(e)} mouseEvent={'onClick'}>
-          <div>
-            {caseStudy}
-          </div>
-        </ClickAwayListener>
-      </ProjectView>
+      <Fade in={fadeIn} timeout={250}>
+        <ProjectView id='project-view' style={{right: props.isOnLeft ? '-7.5vw' : '42.5vw'}}>
+          <ClickAwayListener onClickAway={(e) => handleClickAway(e)} mouseEvent={'onMouseDown'}>
+            <div>
+              {caseStudy}
+            </div>
+          </ClickAwayListener>
+        </ProjectView>
+      </Fade>
     </div>
   );
 }
