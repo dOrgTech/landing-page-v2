@@ -68,9 +68,10 @@ export const ContactTitleBox: React.FC<Props> = (props: Props) => {
 
   const windowSize = useWindowSize()
   const debouncedWindowSize = useDebounce(windowSize, 100);
+  const containerHeight = Math.max(0.3 * debouncedWindowSize.width, debouncedWindowSize.height - (0.1 * debouncedWindowSize.width));
 
   return (
-    <StyledBox className={props.classes} style={{height: `${debouncedWindowSize.height - (0.1 * debouncedWindowSize.width)}px`}}>
+    <StyledBox className={props.classes} style={{height: `${containerHeight}px`}}>
       <TextContainer>
         <StyledTitle>{props.title}</StyledTitle>
         <StyledSubTitle>{props.subtitle}</StyledSubTitle>

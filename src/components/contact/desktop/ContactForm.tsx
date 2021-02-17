@@ -268,7 +268,7 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
   // container height
   const windowSize = useWindowSize();
   const debouncedWindowSize = useDebounce(windowSize, 100);
-  const containerHeight = debouncedWindowSize.height - (0.1 * debouncedWindowSize.width);
+  const containerHeight = Math.max(0.3 * debouncedWindowSize.width, debouncedWindowSize.height - (0.1 * debouncedWindowSize.width));
 
   return (
     <StyledGrid container direction='column' justify='center' alignItems='center'
@@ -306,11 +306,11 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
           {debouncedErrors.email?.type === "pattern" && <StyledError>{ERROR_INVALID_EMAIL}</StyledError>}
         </InputContainer>
 
-        <InputContainer container direction='row' justify='flex-start' alignItems='flex-start' style={{minHeight: '5vw', height: `${containerHeight-0.28225*debouncedWindowSize.width}px`}}>
+        <InputContainer container direction='row' justify='flex-start' alignItems='flex-start' style={{minHeight: '5vw', height: `${containerHeight-0.24*debouncedWindowSize.width}px`}}>
           <StyledIconWrapper container item justify='center' alignItems='center'>
             <RateReviewTwoTone fontSize='inherit'/>
           </StyledIconWrapper>
-          <Grid item style={{minHeight: '5vw', height: `${containerHeight-0.29625*debouncedWindowSize.width}px`}}>
+          <Grid item style={{minHeight: '5vw', height: `${containerHeight-0.254*debouncedWindowSize.width}px`}}>
             <StyledTextField id='message' name='message' multiline rowsMax={Math.max(2, Math.ceil((containerHeight-0.29625*debouncedWindowSize.width) / 30))} label={MESSAGE_PLACEHOLDER} value={message}
               onChange={handleMessageChange}
               InputProps={{disableUnderline: true}}
