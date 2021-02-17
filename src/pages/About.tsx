@@ -72,10 +72,10 @@ export const About: React.FC = () => {
   const theme: Theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
-  const {projects, tvl, clients, builders, lifetime, raised} = desktop ? stats : statsMobile;
+  const {projects, tvl, clients, builders, lifetime, revenue} = desktop ? stats : statsMobile;
   // request members from server and update num builders
   const dynamicBuilders = {...builders, stat: useMembers().length};
-  const statsList = [projects, tvl, clients, dynamicBuilders, lifetime, raised];
+  const statsList = [projects, tvl, clients, dynamicBuilders, lifetime, revenue];
 
   if (desktop) {
     return (
