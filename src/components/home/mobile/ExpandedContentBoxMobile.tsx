@@ -35,7 +35,6 @@ const BulletsContainer = styled(Grid)({
   zIndex: 1,
 });
 
-
 const ChipContainer = styled(Grid)({
   background: 'transparent',
   boxSizing: 'border-box',
