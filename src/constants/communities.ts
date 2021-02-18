@@ -1,15 +1,14 @@
 import {Client} from "./clients";
 
 export interface Communities {
-  DAOstack: Readonly<Client>;
-  Aragon: Readonly<Client>;
-  Dxdao: Readonly<Client>;
-  Badger: Readonly<Client>;
   API3: Readonly<Client>;
+  Aragon: Readonly<Client>;
+  Badger: Readonly<Client>;
+  DAOstack: Readonly<Client>;
+  Dxdao: Readonly<Client>;
+  Tezos: Readonly<Client>;
   Web3API: Readonly<Client>;
   Zer0: Readonly<Client>;
-  Sovryn: Readonly<Client>;
-  Tezos: Readonly<Client>;
 }
 
 export const communities: Communities = {
@@ -92,29 +91,13 @@ export const communities: Communities = {
     textColor: '#333333',
     textColorFilter: 'brightness(0) saturate(100%) invert(26%) sepia(0%) saturate(31%) hue-rotate(140deg) brightness(96%) contrast(119%)',
     project: {
-      description: 'At the time of inception, Dxdao was one of the boldest experiments to date in distributed governance. It’s mission: to develop and govern a suite of truly trustless DeFi components.\n\nIn the DAO’s early stages dOrg provided expertise on DAOstack integrations and security. We also developed a custom UI and integration with the Fairmint CSO contracts for a first-of-its-kind continuous fundraiser.',
+      description: 'At the time of inception, Dxdao was one of the boldest experiments to date in distributed governance. It’s mission: to develop and govern a suite of truly trustless DeFi components.\n\nIn the DAO’s early stages dOrg provided expertise on DAOstack integrations and security. We also developed a custom UI and integration with the Fairmint CSO contracts.',
       technologies: ['Web3 Integrations', 'Frontend', 'UI/UX Design'],
       bullets: [
         {text: 'Check out the app', url: 'https://dxtrust.eth.link/#/'},
         {text: 'Read the blog post', url: 'https://medium.com/bitfwd/distributed-capital-formation-with-openraise-3af9a601ad63'}
       ],
       imageSrc: 'imgs/project-graphics/dxdao-blue.svg',
-    }
-  },
-  Sovryn: {
-    name:'Sovryn',
-    link: 'https://sovryn.app/',
-    icon: 'imgs/logos/sovryn.svg',
-    highlightColor: '#ffffff',
-    iconHighlightColor: '#fdc009',
-    iconHighlightFilter: 'brightness(0) saturate(100%)',
-    textColor: '#000000',
-    textColorFilter: 'brightness(0) saturate(100%)',
-    project: {
-      description: 'Sovryn is a decentralized bitcoin trading and lending platform built on RSK.\n\nSovryn enlisted dOrg to spec-out and implement a collateralized stablecoin on top of the Sovryn protocol. The system includes stability fees, collateralized debt positions, and liquidation management functionality.',
-      technologies: ['Smart Contracts', 'Software Architecture'],
-      bullets: [],
-      imageSrc: 'imgs/project-graphics/sovryn-beach-coins.svg'
     }
   },
   Tezos: {

@@ -1,18 +1,19 @@
 import {Client} from "./clients";
 
 export interface Companies {
-  TheGraph: Readonly<Client>;
-  Gnosis: Readonly<Client>;
   Balancer: Readonly<Client>;
-  DeversiFi: Readonly<Client>;
-  Compound: Readonly<Client>;
-  Stakedus: Readonly<Client>;
-  Minds: Readonly<Client>;
-  ParaSwap: Readonly<Client>;
   Boardroom: Readonly<Client>;
   Centrality: Readonly<Client>;
+  Compound: Readonly<Client>;
+  DeversiFi: Readonly<Client>;
   eToro: Readonly<Client>;
+  Gnosis: Readonly<Client>;
+  Minds: Readonly<Client>;
+  ParaSwap: Readonly<Client>;
+  Sovryn: Readonly<Client>;
+  Stakedus: Readonly<Client>;
   Stakehound: Readonly<Client>;
+  TheGraph: Readonly<Client>;
 }
 
 export const companies: Companies = {
@@ -32,7 +33,7 @@ export const companies: Companies = {
   },
   Boardroom: {
     name:'Boardroom',
-    link: 'http://boardroom.to/',
+    link: 'https://www.boardroom.info/',
     icon: 'imgs/logos/Boardroom.svg',
     iconHighlightColor: '#09afdf',
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(58%) sepia(82%) saturate(2727%) hue-rotate(156deg) brightness(96%) contrast(93%)',
@@ -151,10 +152,26 @@ export const companies: Companies = {
     icon: 'imgs/logos/ParaSwap.svg',
     highlightColor: '#005ede',
     project: {
-      description: 'Paraswap is a decentralized exchange (DEX) aggregator which aims to become the connecting tissue between DeFi protocols.\n\ndOrg worked closely with the Paraswap team to optimize and rewrite their core aggregation algorithms and API. We also rebuilt their front-end application.',
+      description: 'Paraswap is a decentralized exchange (DEX) aggregator which aims to become the connecting tissue between DeFi protocols.\n\ndOrg worked closely with the Paraswap team to optimize and rewrite their core aggregation algorithms and API. We also helped them to rebuild their front-end application.',
       technologies: ['Smart Contracts', 'Backend', 'Software Architecture', 'Frontend'],
       bullets: [],
       imageSrc: 'imgs/logos/ParaSwap.svg',
+    }
+  },
+  Sovryn: {
+    name:'Sovryn',
+    link: 'https://sovryn.app/',
+    icon: 'imgs/logos/sovryn.svg',
+    highlightColor: '#ffffff',
+    iconHighlightColor: '#fdc009',
+    iconHighlightFilter: 'brightness(0) saturate(100%)',
+    textColor: '#000000',
+    textColorFilter: 'brightness(0) saturate(100%)',
+    project: {
+      description: 'Sovryn is a decentralized bitcoin trading and lending platform built on RSK.\n\nSovryn enlisted dOrg to spec-out and implement a collateralized stablecoin on top of the Sovryn protocol. The system includes stability fees, collateralized debt positions, and liquidation management functionality.',
+      technologies: ['Smart Contracts', 'Software Architecture'],
+      bullets: [],
+      imageSrc: 'imgs/project-graphics/sovryn-beach-coins.svg'
     }
   },
   Stakedus: {
