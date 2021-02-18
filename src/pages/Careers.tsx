@@ -60,7 +60,7 @@ export const Careers: React.FC = () => {
   // request members from server
   const members: Member[] = useMembers(); // eslint-disable-line
 
-  const navigationToActivation = () => window.location.assign(externalLinks.activation.path);
+  const navigateToBuilderInterestForm = () => window.location.assign(externalLinks.builderInterest.path);
   const borders = useBorders();
   const theme: Theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
@@ -84,7 +84,7 @@ export const Careers: React.FC = () => {
           <Grid item xs={12}>
             <ActivationPromptBox prompt={ACTIVATION_PROMPT}
               buttonText={APPLY_BUTTON_TEXT}
-              onButtonClick={navigationToActivation}/>
+              onButtonClick={navigateToBuilderInterestForm}/>
           </Grid>
           <Grid item xs={12}>
             <MeetBuildersTitleBox text={MEET_BUILDERS_TITLE} />
@@ -99,7 +99,7 @@ export const Careers: React.FC = () => {
             <CurrentOpeningSection openings={openings}
               titleText={CURRENT_OPENINGS_TITLE}
               buttonText={APPLY_BUTTON_TEXT}
-              onButtonClick={navigationToActivation} />
+              onButtonClick={navigateToBuilderInterestForm} />
           </Grid>
         </ContentContainer>
         <RightMargin height='100%' accentContainerHeight={`${window.innerHeight - (0.1 * window.innerWidth)}px`} longAccentIndex={2} />
@@ -125,7 +125,7 @@ export const Careers: React.FC = () => {
           <Grid item xs={12}>
             <ActivationPromptBoxMobile prompt={ACTIVATION_PROMPT}
               buttonText={APPLY_BUTTON_TEXT}
-              onButtonClick={navigationToActivation}
+              onButtonClick={navigateToBuilderInterestForm}
               classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
@@ -141,7 +141,7 @@ export const Careers: React.FC = () => {
             <CurrentOpeningSectionMobile openings={openings}
               titleText={CURRENT_OPENINGS_TITLE}
               buttonText={APPLY_BUTTON_TEXT}
-              onButtonClick={navigationToActivation}
+              onButtonClick={navigateToBuilderInterestForm}
               classes={borders.leftBorder}/>
           </Grid>
         </ContentContainer>
