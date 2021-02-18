@@ -1,6 +1,6 @@
 import React from 'react'
 import {Grid, makeStyles, styled} from '@material-ui/core'
-import {TestimonialCarousel} from "./TestimonialCarousel";
+import {BuilderTestimonialCarousel} from "./BuilderTestimonialCarousel";
 import {Testimonials} from "../../../../constants/testimonials";
 import {GreenDotsRectangle} from "./GreenDotsRectangle";
 
@@ -48,7 +48,7 @@ export const TestimonialSection: React.FC<Props> = (props: Props) => {
 
   return (
     <StyledGrid className={props.classes} container direction='row' justify={'flex-start'} alignItems={'flex-end'}>
-      <TestimonialCarousel testimonials={props.testimonials} classes={positionStyles.carouselPosition} border={props.carouselBorder} />
+      <BuilderTestimonialCarousel testimonials={props.testimonials} classes={positionStyles.carouselPosition} border={props.carouselBorder} />
       <GreenDotsRectangle length={19} classes={positionStyles.dotsPosition} />
       <ColorShift />
     </StyledGrid>

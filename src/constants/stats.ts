@@ -14,7 +14,7 @@ export interface Stats {
   clients: Readonly<Stat>;
   builders: Readonly<Stat>;
   lifetime: Readonly<Stat>;
-  raised: Readonly<Stat>;
+  revenue: Readonly<Stat>;
 }
 
 const tvlFormatter = new Intl.NumberFormat('en-US', {
@@ -22,13 +22,6 @@ const tvlFormatter = new Intl.NumberFormat('en-US', {
   currency: 'USD',
   minimumFractionDigits: 1,
   maximumFractionDigits: 1,
-});
-
-const raisedFormatter = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
-  minimumFractionDigits: 0,
-  maximumFractionDigits: 0,
 });
 
 export const stats: Stats = {
@@ -61,10 +54,11 @@ export const stats: Stats = {
     stat: getMonthsTogether(new Date()),
     icon: 'imgs/calendar-icon.svg'
   },
-  raised: {
-    title: 'FUNDING RAISED',
-    stat: 0,
-    formatter: raisedFormatter,
+  revenue: {
+    title: 'ON-CHAIN REVENUE',
+    stat: 1.5,
+    postfix: '+',
+    formatter: tvlFormatter,
     icon: 'imgs/dollar-sign-icon.svg'
   }
 }
@@ -99,10 +93,11 @@ export const statsMobile: Stats = {
     stat: getMonthsTogether(new Date()),
     icon: 'imgs/calendar-icon.svg'
   },
-  raised: {
-    title: 'Funding raised',
-    stat: 0,
-    formatter: raisedFormatter,
+  revenue: {
+    title: 'On-chain revenue',
+    stat: 1.5,
+    postfix: '+',
+    formatter: tvlFormatter,
     icon: 'imgs/dollar-sign-icon.svg'
   }
 }

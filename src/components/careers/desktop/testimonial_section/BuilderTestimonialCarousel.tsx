@@ -35,7 +35,7 @@ interface Props {
   classes?: string;
 }
 
-export const TestimonialCarousel: React.FC<Props> = (props: Props) => {
+export const BuilderTestimonialCarousel: React.FC<Props> = (props: Props) => {
 
   const carouselStyles = useCarouselStyles();
 
