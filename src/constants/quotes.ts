@@ -15,11 +15,11 @@ export const quotes: Quotes = {
     citation: 'Lillian Wang - Centrality',
   },
   client2: {
-    text: 'dOrg helped me save 15% on my car insurance.',
-    citation: 'Satoshi - Bitcoin Inventor',
+    text: 'Communication with dOrg team is easy and generally quite responsive.',
+    citation: 'Daniel Yanev - DeversiFi',
   },
   client3: {
-    text: 'I love cookies!',
-    citation: 'Cookie Monster - Sesame Street',
+    text: 'I look forward to working with you in the future!',
+    citation: 'Michael Johnson - Ideologi IP LLC',
   },
 }
