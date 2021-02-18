@@ -57,8 +57,8 @@ export const stats: Stats = {
   revenue: {
     title: 'ON-CHAIN REVENUE',
     stat: 1.5,
-    postfix: '+',
     formatter: tvlFormatter,
+    postfix: 'M+',
     icon: 'imgs/dollar-sign-icon.svg'
   }
 }
@@ -96,8 +96,8 @@ export const statsMobile: Stats = {
   revenue: {
     title: 'On-chain revenue',
     stat: 1.5,
-    postfix: '+',
     formatter: tvlFormatter,
+    postfix: 'M+',
     icon: 'imgs/dollar-sign-icon.svg'
   }
 }

@@ -57,6 +57,8 @@ interface Props {
 
 export const ProfileWheel: React.FC<Props> = (props: Props) => {
 
+
+
   return (
     <SlideShow className={props.classes} style={{overflow: 'hidden'}}>
       <CustomScrollbar style={{width: '100vw', height: '26.25vw'}} noScrollY>
