@@ -1,9 +1,10 @@
 import React from 'react'
-import {Box, styled, Typography, Grid} from '@material-ui/core'
+import {Box, styled, Grid} from '@material-ui/core'
 import { theme } from "../../../theme";
 import {CloseButtonMobile} from "./CloseButtonMobile";
 import {getSonarAnimation} from "../../../theme/styles";
-
+import {ClientQuoteCarouselMobile} from "./ClientQuoteCarouselMobile";
+import {Quotes} from "../../../constants/quotes";
 
 const StyledBox = styled(Box)({
   margin: 'auto',
@@ -14,32 +15,11 @@ const StyledBox = styled(Box)({
   position: 'relative'
 });
 
-const StyledQuote = styled(Typography)({
-  maxWidth: '74vw',
-  margin: '0 0 -4.3vw 0',
-  fontFamily: theme.typography.fontFamily,
-  fontSize: '8.5vw',
-  fontWeight: 300,
-  fontStretch: "normal",
-  fontStyle: "normal",
-  lineHeight: 1.5,
-  letterSpacing: '-1.08px',
-  textAlign: "center",
-  color: theme.palette.text.primary
-});
-
-const StyledCitation = styled(Typography)({
-  width: '100%',
-  fontFamily: theme.typography.fontFamily,
-  fontSize: '4.3vw',
-  fontWeight: 600,
-  fontStretch: "normal",
-  fontStyle: "normal",
-  lineHeight: 1,
-  letterSpacing: '-0.54px',
-  textAlign: "center",
-  color: theme.palette.text.primary
-});
+const GridContainer = styled(Grid)({
+  height: 'inherit',
+  width: 'inherit',
+  padding: '6vw 8vw 8vw 8vw',
+})
 
 const StyledRings = styled('img')({
   width: '34.53vw',
@@ -53,8 +33,7 @@ const StyledRings = styled('img')({
 const useSonarAnimation= getSonarAnimation('55vw', 3);
 
 interface Props {
-  quote: string;
-  citation: string;
+  quotes: Quotes;
   buttonText: string;
   onButtonClick: () => void;
   classes?: string;
@@ -66,17 +45,14 @@ export const CloseBoxMobile: React.FC<Props> = (props: Props) => {
 
   return (
     <StyledBox className={props.classes}>
-      <Grid container spacing={0} direction='column' justify='space-evenly' alignItems='center' style={{height: 'inherit', width: 'inherit'}}>
+      <GridContainer container spacing={0} direction='column' justify='space-between' alignItems='center'>
         <Grid item>
-          <StyledQuote><strong>“</strong>{props.quote}<strong>”</strong></StyledQuote>
-        </Grid>
-        <Grid item>
-          <StyledCitation>{props.citation}</StyledCitation>
+          <ClientQuoteCarouselMobile quotes={props.quotes} />
         </Grid>
         <Grid item>
           <CloseButtonMobile text={props.buttonText} handleClick={props.onButtonClick} />
         </Grid>
-      </Grid>
+      </GridContainer>
       <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} className={sonarAnimation.animate}/>
     </StyledBox>
   );

@@ -23,7 +23,7 @@ import {
 } from "../../../constants/contactForm";
 import {getSonarAnimation} from "../../../theme/styles";
 import {sendContactForm} from "../../../utils/network";
-import {useDebounce} from "../../../utils/hooks";
+import {useDebounce, useWindowSize} from "../../../utils/hooks";
 
 
 const StyledGrid = styled(Grid)({
@@ -32,7 +32,7 @@ const StyledGrid = styled(Grid)({
   height: `${window.innerHeight - (0.1 * window.innerWidth)}px`,
   background: theme.palette.secondary.main,
   boxSizing: 'border-box',
-  position: 'relative'
+  position: 'relative',
 });
 
 const InputContainer = styled(Grid)({
@@ -265,8 +265,14 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
     return labelColors.secondary;
   }
 
+  // container height
+  const windowSize = useWindowSize();
+  const debouncedWindowSize = useDebounce(windowSize, 100);
+  const containerHeight = Math.max(0.3 * debouncedWindowSize.width, debouncedWindowSize.height - (0.1 * debouncedWindowSize.width));
+
   return (
-    <StyledGrid container className={props.classes} direction='column' justify='center' alignItems='center'>
+    <StyledGrid container direction='column' justify='center' alignItems='center'
+      className={props.classes} style={{height: `${containerHeight}px`}}>
       <form onSubmit={handleSubmit(onSubmit)} method='post'>
 
         <InputContainer container direction='row' justify='flex-start' alignItems='center'>
@@ -300,12 +306,12 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
           {debouncedErrors.email?.type === "pattern" && <StyledError>{ERROR_INVALID_EMAIL}</StyledError>}
         </InputContainer>
 
-        <InputContainer container direction='row' justify='flex-start' alignItems='flex-start' style={{height: '15.375vw'}}>
+        <InputContainer container direction='row' justify='flex-start' alignItems='flex-start' style={{minHeight: '5vw', height: `${containerHeight-0.24*debouncedWindowSize.width}px`}}>
           <StyledIconWrapper container item justify='center' alignItems='center'>
             <RateReviewTwoTone fontSize='inherit'/>
           </StyledIconWrapper>
-          <Grid item style={{height: '13.975vw'}}>
-            <StyledTextField id='message' name='message' multiline rowsMax={9} label={MESSAGE_PLACEHOLDER} value={message}
+          <Grid item style={{minHeight: '5vw', height: `${containerHeight-0.254*debouncedWindowSize.width}px`}}>
+            <StyledTextField id='message' name='message' multiline rowsMax={Math.max(2, Math.ceil((containerHeight-0.29625*debouncedWindowSize.width) / 30))} label={MESSAGE_PLACEHOLDER} value={message}
               onChange={handleMessageChange}
               InputProps={{disableUnderline: true}}
               inputRef={register({required: true, maxLength: MAX_MESSAGE_LENGTH})}

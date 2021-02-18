@@ -12,7 +12,7 @@ export const SUBMIT_BUTTON_IMG_PATH = "/imgs/circled-arrow-icon.svg";
 // Form input validation parameters and error messages
 export const MAX_NAME_LENGTH = 100;
 export const MAX_EMAIL_LENGTH = 100;
-export const MAX_MESSAGE_LENGTH = 2000;
+export const MAX_MESSAGE_LENGTH = 6000;
 export const EMAIL_PATTERN = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 export const ERROR_NAME_REQUIRED = 'Your name is required';
 export const ERROR_EMAIL_REQUIRED = 'Your email is required';

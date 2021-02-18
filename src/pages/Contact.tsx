@@ -38,20 +38,22 @@ export const Contact: React.FC = () => {
 
   const windowSize = useWindowSize()
   const debouncedWindowSize = useDebounce(windowSize, 100);
+  const containerHeight = Math.max(0.3 * debouncedWindowSize.width, debouncedWindowSize.height - (0.1 * debouncedWindowSize.width));
 
   if (desktop) {
     return (
-      <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
-        <LeftMargin border={borderStyle} height='5vh'/>
-        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' className={`${borders.leftBorder} ${borders.rightBorder}`}>
+      <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start' style={{height: `${containerHeight}px`}}>
+        <LeftMargin border={borderStyle} height={`5vh`}/>
+        <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start'
+          className={`${borders.leftBorder} ${borders.rightBorder}`}>
           <Grid item xs={6}>
             <ContactTitleBox title={TITLE} subtitle={SUBTITLE} instructions={INSTRUCTIONS} />
           </Grid>
           <Grid item xs={6}>
-            <ContactForm classes={borders.leftBorder}/>
+            <ContactForm classes={borders.leftBorder} />
           </Grid>
         </ContentContainer>
-        <RightMargin height='5vh' accentContainerHeight={`${debouncedWindowSize.height - (0.1 * debouncedWindowSize.width)}px`} longAccentIndex={3}/>
+        <RightMargin height='5vh' accentContainerHeight={`${containerHeight}px`} longAccentIndex={3}/>
       </Root>
     );
   } else {
