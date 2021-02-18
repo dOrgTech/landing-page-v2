@@ -81,6 +81,7 @@ export const ProfileWheel: React.FC<Props> = (props: Props) => {
 
   const [isScrolling, setIsScrolling] = useState(false);
   const [clientX, setClientX] = useState(0);
+  const [scrollX, setScrollX] = useState(0);
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [autoScroll, setAutoScroll] = useState<NodeJS.Timeout | null>(null);
 
@@ -111,6 +112,20 @@ export const ProfileWheel: React.FC<Props> = (props: Props) => {
       } else if (scrollbar.scrollLeft === 0 && startScrollX > scrollbar.scrollLeft) {
         scrollbar.scrollLeft = scrollbar.scrollWidth;
       }
+      setScrollX(scrollbar.scrollLeft);
+    }
+  }
+  // handle normal scrolling
+  const handleScroll = (e: React.UIEvent, scrollRef: React.MutableRefObject<HTMLDivElement | null>) => {
+    const scrollbar = scrollRef.current;
+    if (scrollbar) {
+      // give appearance of infinite scroll
+      if (scrollbar.scrollLeft === scrollbar.scrollWidth - debouncedWindowSize.width && scrollX < scrollbar.scrollLeft) {
+        scrollbar.scrollLeft = 0;
+      } else if (scrollbar.scrollLeft === 0 && scrollX > scrollbar.scrollLeft) {
+        scrollbar.scrollLeft = scrollbar.scrollWidth;
+      }
+      setScrollX(scrollbar.scrollLeft);
     }
   }
   // start automatically scrolling (slide show behavior)
@@ -123,6 +138,7 @@ export const ProfileWheel: React.FC<Props> = (props: Props) => {
         if (scrollbar.scrollLeft === scrollbar.scrollWidth - window.innerWidth) {
           scrollbar.scrollLeft = 0;
         }
+        setScrollX(scrollbar.scrollLeft);
       }
     }, 15));
   }
@@ -147,7 +163,8 @@ export const ProfileWheel: React.FC<Props> = (props: Props) => {
         onMouseUp={handleMouseUp}
         onMouseMove={e => handleMouseMove(e, scrollRef)}
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}>
+        onMouseLeave={handleMouseLeave}
+        onScroll={e => handleScroll(e, scrollRef)}>
         {props.members.map((member: Member, i: number) => (
           <ProfileItem item key={`profile-${i}`}>
             <ProfileSummary member={member} />
