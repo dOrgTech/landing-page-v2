@@ -1,18 +1,18 @@
-import React from 'react'
-import {Box, Grid, styled} from '@material-ui/core'
+import React, {useEffect, useRef, useState} from 'react'
+import {Grid, styled} from '@material-ui/core'
 import {Member} from "../../../../constants/members";
 import {ProfileSummary} from "./ProfileSummary";
-import {CustomScrollbar} from "../../../CustomScrollbar";
+import {useDebounce, useWindowSize} from "../../../../utils/hooks";
 
 
-const SlideShow = styled(Box)({
+const SlideShow = styled(Grid)({
   width: '100vw',
   height: '25vw',
   background: 'transparent',
   boxSizing: 'border-box',
-  overflow: 'visible',
+  overflow: 'hidden',
   position: 'relative',
-  left: '-7.5vw'
+  left: '-7.5vw',
 });
 
 const ProfileContainer = styled(Grid)({
@@ -23,10 +23,32 @@ const ProfileContainer = styled(Grid)({
   left: 0,
   top: 0,
   zIndex: 1,
+  overflowX: 'scroll',
+  overflowY: 'hidden',
+  scrollbarColor: 'rgba(0, 0, 0, 0)',
+  scrollbarWidth: 'none',
+  '&::-webkit-scrollbar': {
+    background: 'transparent',
+    opacity: 0,
+    width: 0,
+    height: 0
+  },
+  '&::-webkit-scrollbar-track': {
+    background: 'transparent',
+    opacity: 0,
+    width: 0,
+    height: 0
+  },
+  '&::-webkit-scrollbar-thumb': {
+    background: 'transparent',
+    opacity: 0,
+    width: 0,
+    height: 0
+  }
 });
 
 const ProfileItem = styled(Grid)({
-  marginRight: '1.25vw'
+  marginRight: '1.25vw',
 });
 
 const OverlayLeft = styled('div')({
@@ -57,21 +79,81 @@ interface Props {
 
 export const ProfileWheel: React.FC<Props> = (props: Props) => {
 
+  const [isScrolling, setIsScrolling] = useState(false);
+  const [clientX, setClientX] = useState(0);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const [autoScroll, setAutoScroll] = useState<NodeJS.Timeout | null>(null);
+
+  const windowSize = useWindowSize()
+  const debouncedWindowSize = useDebounce(windowSize, 100);
+
+  // detect attempt to drag scroll
+  const handleMouseDown = (e: React.MouseEvent | MouseEvent, scrollbar: React.MutableRefObject<HTMLDivElement | null>) => {
+    if (scrollbar.current) {
+      setIsScrolling(true);
+      setClientX(e.clientX);
+    }
+  }
+  // stop drag scrolling
+  const handleMouseUp = (e: React.MouseEvent | MouseEvent) => {
+    setIsScrolling(false);
+  }
+  // calculate drag distance based on mouse movement
+  const handleMouseMove = (e: React.MouseEvent | MouseEvent, scrollRef: React.MutableRefObject<HTMLDivElement | null>) => {
+    const scrollbar = scrollRef.current;
+    if (isScrolling && scrollbar) {
+      const startScrollX = scrollbar.scrollLeft
+      scrollbar.scrollLeft += clientX - e.clientX;
+      setClientX(e.clientX)
+      // give appearance of infinite scroll
+      if (scrollbar.scrollLeft === scrollbar.scrollWidth - debouncedWindowSize.width && startScrollX < scrollbar.scrollLeft) {
+        scrollbar.scrollLeft = 0;
+      } else if (scrollbar.scrollLeft === 0 && startScrollX > scrollbar.scrollLeft) {
+        scrollbar.scrollLeft = scrollbar.scrollWidth;
+      }
+    }
+  }
+  // start automatically scrolling (slide show behavior)
+  const startAutoScroll = () => {
+    const scrollbar = scrollRef.current;
+    setAutoScroll(setInterval(() => {
+      if (scrollbar) {
+        scrollbar.scrollLeft += 1;
+        // give appearance of infinite scroll
+        if (scrollbar.scrollLeft === scrollbar.scrollWidth - window.innerWidth) {
+          scrollbar.scrollLeft = 0;
+        }
+      }
+    }, 15));
+  }
+  // get scroll started at page load
+  useEffect(() => startAutoScroll(), [])
+  // turn off auto scroll if mouse over
+  const handleMouseEnter = (e: React.MouseEvent | MouseEvent,) => {
+    if (autoScroll) {
+      clearInterval(autoScroll);
+      setAutoScroll(null);
+    }
+  }
+  // start auto scroll if mouse leaves
+  const handleMouseLeave = (e: React.MouseEvent | MouseEvent,) => startAutoScroll();
 
 
   return (
     <SlideShow className={props.classes} style={{overflow: 'hidden'}}>
-      <CustomScrollbar style={{width: '100vw', height: '26.25vw'}} noScrollY>
-        <SlideShow>
-          <ProfileContainer container direction={'column'} spacing={0} justify={'flex-start'} alignItems={'center'}>
-            {props.members.map((member: Member, i: number) => (
-              <ProfileItem item key={`profile-${i}`}>
-                <ProfileSummary member={member} />
-              </ProfileItem>
-            ))}
-          </ProfileContainer>
-        </SlideShow>
-      </CustomScrollbar>
+      <ProfileContainer container direction={'column'} spacing={0} justify={'flex-start'} alignItems={'center'}
+        ref={scrollRef}
+        onMouseDown={e => handleMouseDown(e, scrollRef)}
+        onMouseUp={handleMouseUp}
+        onMouseMove={e => handleMouseMove(e, scrollRef)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}>
+        {props.members.map((member: Member, i: number) => (
+          <ProfileItem item key={`profile-${i}`}>
+            <ProfileSummary member={member} />
+          </ProfileItem>
+        ))}
+      </ProfileContainer>
       <OverlayLeft />
       <OverlayRight />
     </SlideShow>

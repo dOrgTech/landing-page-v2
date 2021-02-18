@@ -9,11 +9,12 @@ interface Props {
   rtl?: boolean;
   noScrollX?: boolean;
   noScrollY?: boolean;
-  children?: React.ReactNode;
-  style?: React.CSSProperties;
   contentClass?: string;
+  style?: React.CSSProperties;
+  children?: React.ReactNode;
 }
 
+// eslint-disable-next-line react/display-name
 export const CustomScrollbar: React.FC<Props> = (props: Props) => {
 
   const theme: Theme = useTheme();
@@ -28,10 +29,7 @@ export const CustomScrollbar: React.FC<Props> = (props: Props) => {
       width: '8px !important',
     },
     thumbX: { },
-    trackX: {
-      width: '0px !important',
-      height: '0px !important',
-    },
+    trackX: { },
     content: { },
     scroller: { },
     wrapper: { },
