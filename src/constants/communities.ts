@@ -13,24 +13,23 @@ export interface Communities {
 }
 
 export const communities: Communities = {
-  DAOstack: {
-    name: 'DAOstack',
-    link: 'https://daostack.io/',
-    icon: 'imgs/logos/DaoStack.svg',
-    highlightColor: '#f8f9fa',
-    iconHighlightColor: '#00b4d6',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(51%) sepia(99%) saturate(1864%) hue-rotate(152deg) brightness(96%) contrast(101%)',
-    textColor: '#2e2e2e',
-    textColorFilter: 'brightness(0) saturate(100%) invert(14%) sepia(0%) saturate(455%) hue-rotate(195deg) brightness(91%) contrast(86%)',
+  API3: {
+    name:'API3',
+    link: 'https://www.api3.org/',
+    icon: 'imgs/logos/api3.svg',
+    colorIcon: true,
+    iconHighlightColor: '#7CE3CB',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(80%) sepia(57%) saturate(295%) hue-rotate(108deg) brightness(96%) contrast(87%)',
+    highlightColor: '#030303',
+    textColor: '#F3F3F3',
+    textColorFilter: 'brightness(0) saturate(100%) invert(98%) sepia(79%) saturate(774%) hue-rotate(191deg) brightness(123%) contrast(91%)',
     project: {
-      description: 'DAOstack is an operating system for scalable governance.\n\ndOrg has worked as a development catalyst for the DAOstack ecosystem since our earliest days. In addition to contributing to each layer of the stack, we\'ve built out and maintained key components including Arc.react, Arc.js, and the DAO launcher. We’ve also helped integrate external use-cases such as the Nectar DAO, Dxdao, and GoodDollar.',
-      technologies: ['Web3 Integrations', 'Smart Contracts', 'Frontend', 'UI/UX Design', 'Developer Tools', 'Software Architecture'],
+      description: 'API3 is a decentralized oracle network that connects data providers to dApps with no middlemen.\n\nThat’s why the AP3 team enlisted dOrg to build out the API3 DAO, a token-governed community running on the Aragon framework. Complete with custom governance modules and UI components, the API3 DAO will govern what may be the future of API services on the Ethereum platform.',
+      technologies: ['Smart Contracts', 'Software Architecture', 'Frontend'],
       bullets: [
-        {text: 'Watch the DAOstack OS Ecosystem presentation', url: 'https://www.youtube.com/watch?v=XBjy4oj61JE'},
-        {text: 'Watch the Arc.React demo', url: 'https://www.youtube.com/watch?v=d0Zx4Z-EObE'},
-        {text: 'Read the DAO Launcher blog post', url: 'https://medium.com/bitfwd/how-to-create-run-your-own-dao-5e3eadd96962'}
+        {text: 'Check out the repo', url: 'https://github.com/api3dao/api3-dao'}
       ],
-      imageSrc: 'imgs/project-graphics/daostack-logo-black.svg',
+      imageSrc: 'imgs/logos/api3.svg',
     }
   },
   Aragon: {
@@ -63,6 +62,26 @@ export const communities: Communities = {
       imageSrc: 'imgs/project-graphics/badger-logo.png'
     }
   },
+  DAOstack: {
+    name: 'DAOstack',
+    link: 'https://daostack.io/',
+    icon: 'imgs/logos/DaoStack.svg',
+    highlightColor: '#f8f9fa',
+    iconHighlightColor: '#00b4d6',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(51%) sepia(99%) saturate(1864%) hue-rotate(152deg) brightness(96%) contrast(101%)',
+    textColor: '#2e2e2e',
+    textColorFilter: 'brightness(0) saturate(100%) invert(14%) sepia(0%) saturate(455%) hue-rotate(195deg) brightness(91%) contrast(86%)',
+    project: {
+      description: 'DAOstack is an operating system for scalable governance.\n\ndOrg has worked as a development catalyst for the DAOstack ecosystem since our earliest days. In addition to contributing to each layer of the stack, we\'ve built out and maintained key components including Arc.react, Arc.js, and the DAO launcher. We’ve also helped integrate external use-cases such as the Nectar DAO, Dxdao, and GoodDollar.',
+      technologies: ['Web3 Integrations', 'Smart Contracts', 'Frontend', 'UI/UX Design', 'Developer Tools', 'Software Architecture'],
+      bullets: [
+        {text: 'Watch the DAOstack OS Ecosystem presentation', url: 'https://www.youtube.com/watch?v=XBjy4oj61JE'},
+        {text: 'Watch the Arc.React demo', url: 'https://www.youtube.com/watch?v=d0Zx4Z-EObE'},
+        {text: 'Read the DAO Launcher blog post', url: 'https://medium.com/bitfwd/how-to-create-run-your-own-dao-5e3eadd96962'}
+      ],
+      imageSrc: 'imgs/project-graphics/daostack-logo-black.svg',
+    }
+  },
   Dxdao: {
     name:'Dxdao',
     link: 'https://dxdao.eth.link/#/',
@@ -82,23 +101,40 @@ export const communities: Communities = {
       imageSrc: 'imgs/project-graphics/dxdao-blue.svg',
     }
   },
-  API3: {
-    name:'API3',
-    link: 'https://www.api3.org/',
-    icon: 'imgs/logos/api3.svg',
-    colorIcon: true,
-    iconHighlightColor: '#7CE3CB',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(80%) sepia(57%) saturate(295%) hue-rotate(108deg) brightness(96%) contrast(87%)',
-    highlightColor: '#030303',
-    textColor: '#F3F3F3',
-    textColorFilter: 'brightness(0) saturate(100%) invert(98%) sepia(79%) saturate(774%) hue-rotate(191deg) brightness(123%) contrast(91%)',
+  Sovryn: {
+    name:'Sovryn',
+    link: 'https://sovryn.app/',
+    icon: 'imgs/logos/sovryn.svg',
+    highlightColor: '#ffffff',
+    iconHighlightColor: '#fdc009',
+    iconHighlightFilter: 'brightness(0) saturate(100%)',
+    textColor: '#000000',
+    textColorFilter: 'brightness(0) saturate(100%)',
     project: {
-      description: 'API3 is a decentralized oracle network that connects data providers to dApps with no middlemen.\n\nThat’s why the AP3 team enlisted dOrg to build out the API3 DAO, a token-governed community running on the Aragon framework. Complete with custom governance modules and UI components, the API3 DAO will govern what may be the future of API services on the Ethereum platform.',
-      technologies: ['Smart Contracts', 'Software Architecture', 'Frontend'],
+      description: 'Sovryn is a decentralized bitcoin trading and lending platform built on RSK.\n\nSovryn enlisted dOrg to spec-out and implement a collateralized stablecoin on top of the Sovryn protocol. The system includes stability fees, collateralized debt positions, and liquidation management functionality.',
+      technologies: ['Smart Contracts', 'Software Architecture'],
+      bullets: [],
+      imageSrc: 'imgs/project-graphics/sovryn-beach-coins.svg'
+    }
+  },
+  Tezos: {
+    name:'Tezos',
+    link: 'https://tezos.com/',
+    icon: 'imgs/logos/tezos-logo-blue.png',
+    colorIcon: true,
+    highlightColor: '#ffffff',
+    iconHighlightColor: '#2C7DF7',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(38%) sepia(57%) saturate(3760%) hue-rotate(206deg) brightness(103%) contrast(94%)',
+    textColor: '#123262',
+    textColorFilter: 'brightness(0) saturate(100%) invert(14%) sepia(15%) saturate(7037%) hue-rotate(199deg) brightness(97%) contrast(94%)',
+    project: {
+      description: 'dOrg is proud to be working with TQ Tezos and the broader Tezos ecosystem on Homebase, an app that enables anyone to launch DAOs on the Tezos blockchain in a few clicks.\n\ndOrg designed and built the Homebase app on top of the BaseDAO smart contract framework We utilized Taquito and Beacon SDK. We also contributed to the BaseDAO framework spec and design as product co-owners.',
+      technologies: ['Web3 Integrations', 'Frontend', 'UI/UX Design'],
       bullets: [
-        {text: 'Check out the repo', url: 'https://github.com/api3dao/api3-dao'}
+        {text: 'Read the announcement', url: 'https://tqtezos.medium.com/daos-on-tezos-announcing-homebase-80bbecbb9bfe'},
+        {text: 'Check out the repo', url: 'https://github.com/dOrgTech/homebase-app'}
       ],
-      imageSrc: 'imgs/logos/api3.svg',
+      imageSrc: 'imgs/logos/tezos-logo-blue.png'
     }
   },
   Web3API: {
@@ -137,40 +173,4 @@ export const communities: Communities = {
       imageSrc: 'imgs/project-graphics/zero-eye-graphic.png'
     }
   },
-  Sovryn: {
-    name:'Sovryn',
-    link: 'https://sovryn.app/',
-    icon: 'imgs/logos/sovryn.svg',
-    highlightColor: '#ffffff',
-    iconHighlightColor: '#fdc009',
-    iconHighlightFilter: 'brightness(0) saturate(100%)',
-    textColor: '#000000',
-    textColorFilter: 'brightness(0) saturate(100%)',
-    project: {
-      description: 'Sovryn is a decentralized bitcoin trading and lending platform built on RSK.\n\nSovryn enlisted dOrg to spec-out and implement a collateralized stablecoin on top of the Sovryn protocol. The system includes stability fees, collateralized debt positions, and liquidation management functionality.',
-      technologies: ['Smart Contracts', 'Software Architecture'],
-      bullets: [],
-      imageSrc: 'imgs/project-graphics/sovryn-beach-coins.svg'
-    }
-  },
-  Tezos: {
-    name:'Tezos',
-    link: 'https://tezos.com/',
-    icon: 'imgs/logos/tezos-logo-blue.png',
-    colorIcon: true,
-    highlightColor: '#ffffff',
-    iconHighlightColor: '#2C7DF7',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(38%) sepia(57%) saturate(3760%) hue-rotate(206deg) brightness(103%) contrast(94%)',
-    textColor: '#123262',
-    textColorFilter: 'brightness(0) saturate(100%) invert(14%) sepia(15%) saturate(7037%) hue-rotate(199deg) brightness(97%) contrast(94%)',
-    project: {
-      description: 'dOrg is proud to be working with TQ Tezos and the broader Tezos ecosystem on Homebase, an app that enables anyone to launch DAOs on the Tezos blockchain in a few clicks.\n\ndOrg designed and built the Homebase app on top of the BaseDAO smart contract framework We utilized Taquito and Beacon SDK. We also contributed to the BaseDAO framework spec and design as product co-owners.',
-      technologies: ['Web3 Integrations', 'Frontend', 'UI/UX Design'],
-      bullets: [
-        {text: 'Read the announcement', url: 'https://tqtezos.medium.com/daos-on-tezos-announcing-homebase-80bbecbb9bfe'},
-        {text: 'Check out the repo', url: 'https://github.com/dOrgTech/homebase-app'}
-      ],
-      imageSrc: 'imgs/logos/tezos-logo-blue.png'
-    }
-  }
 }

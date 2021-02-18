@@ -16,42 +16,6 @@ export interface Companies {
 }
 
 export const companies: Companies = {
-  TheGraph: {
-    name: 'The Graph',
-    link: 'https://thegraph.com',
-    icon: 'imgs/logos/TheGraph.svg',
-    highlightColor: 'url(/imgs/project-backgrounds/the-graph.png) repeat top left, #0C0A1D',
-    iconHighlightColor: '#6f4cff',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(35%) sepia(51%) saturate(6120%) hue-rotate(241deg) brightness(100%) contrast(104%)',
-    project: {
-      description: 'The Graph is Web3’s largest indexing protocol. The network allows dApps to quickly load data without relying on centralized servers.\n\nThe Graph hired dOrg to research and develop an experimental new feature called Mutations that would enable client-side write operations on behalf of the user. These mutations would nicely complement read operations being sent to the graph-node network.',
-      technologies: ['Developer Tools', 'Software Architecture', 'Web3 Integrations'],
-      bullets: [
-        {text: 'Watch the demo', url: 'https://www.youtube.com/watch?v=GRnTJBxhQIw'},
-        {text: 'Read the spec', url: 'https://github.com/graphprotocol/rfcs/blob/master/rfcs/0003-mutations.md'},
-        {text: 'Check out the repo', url: 'https://github.com/graphprotocol/mutations'}
-      ],
-      imageSrc: 'imgs/project-graphics/the-graph-phone.png'
-    }
-  },
-  Gnosis: {
-    name: 'Gnosis',
-    link: 'https://gnosis.io/',
-    icon: 'imgs/logos/gnosis-logo-color.svg',
-    highlightColor: '#e8e7e6',
-    colorIcon: true,
-    textColor: '#001428',
-    textColorFilter: 'brightness(0) saturate(100%) invert(6%) sepia(31%) saturate(5034%) hue-rotate(192deg) brightness(97%) contrast(102%)',
-    project: {
-      description: 'Gnosis builds critical DeFi infrastructure like the Gnosis Safe, Gnosis Protocol, and Conditional Tokens Framework.\n\ndOrg received a GECO grant from Gnosis in 2019 to design and develop a tool for decentralized fundraising that leverages bonding curves and reputation-weighted voting to align incentives.',
-      technologies: ['Smart Contracts', 'Web3 Integrations', 'Software Architecture'],
-      bullets: [
-        {text: 'Read the blog post', url: 'https://blog.gnosis.pm/geco-community-spotlight-fd7ee4b8c8a4'},
-        {text: 'Watch the presentation', url: 'https://www.youtube.com/watch?v=TTk-I7QmBm0'}
-      ],
-      imageSrc: 'imgs/logos/gnosis-logo-color.svg',
-    }
-  },
   Balancer: {
     name:'Balancer',
     link: 'https://balancer.finance/',
@@ -64,81 +28,6 @@ export const companies: Companies = {
         {text: 'Check out the app', url: 'https://pools.balancer.exchange/#/explore'}
       ],
       imageSrc: 'imgs/logos/Balancer.svg'
-    }
-  },
-  DeversiFi: {
-    name:'DeversiFi',
-    link: 'https://www.deversifi.com/',
-    icon: 'imgs/logos/Deversifi.svg',
-    iconHighlightColor: '#5500FC',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(13%) sepia(99%) saturate(5303%) hue-rotate(263deg) brightness(86%) contrast(135%)',
-    highlightColor: 'linear-gradient(3.2deg, #040E14 19.19%, #061824 88.66%)',
-    project: {
-      description: 'DeversiFi is a decentralized exchange optimized for high speed, low fee trades.\n\ndOrg designed and built the reputation bootstrapper, which allows users to lock tokens for voting power in the Nectar DAO. We also implemented the frontend and snapshot utility for DeversiFi’s liquidity mining program, which rewarded users in BAL and time-locked NEC.',
-      technologies: ['UX/UI Design', 'Web3 Integrations', 'Frontend'],
-      bullets: [
-        {text: 'Check out the reputation bootstrapping app', url: 'https://stake.nectar.community/#/'},
-        {text: 'Check out the liquidity mining app', url: 'https://beehive.nectar.community/'}
-      ],
-      imageSrc: 'imgs/logos/Deversifi.svg',
-    }
-  },
-  Compound: {
-    name:'Compound',
-    link: 'https://compound.finance/',
-    icon: 'imgs/logos/Compound.svg',
-    highlightColor: '#00a977',
-    project: {
-      description: 'Compound is a decentralized lending protocol with token-holder governance.\n\nAs part of MetaCartel’s Dragon Quest hackathon, we won Compound’s bounty for building a Governance SDK in Node for interacting with the Compound’s voting contracts.',
-      technologies: ['Developer Tools'],
-      bullets: [
-        {text: 'Check out the repo', url: 'https://github.com/dOrgTech/compound-sdk'},
-        {text: 'View bounty submission', url: 'https://explorer.bounties.network/bounty/3963'}
-      ],
-      imageSrc: 'imgs/logos/Compound.svg',
-    }
-  },
-  Stakedus: {
-    name:'Staked.us',
-    link: 'https://staked.us/',
-    icon: 'imgs/logos/StakedUs.svg',
-    iconHighlightColor: '#515fcb',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(19%) sepia(94%) saturate(2659%) hue-rotate(231deg) brightness(84%) contrast(83%)',
-    highlightColor: '#102039',
-    project: {
-      description: 'Staked helps exchanges, VCs, and retail investors to earn fixed income yield on crypto assets without giving up custody.\n\nStaked hired dOrg to build a custom Aragon DAO that enables their users to govern the Robo Advisor for Yield (RAY) system. The project automates incentives for depositors, yield strategists, liquidity providers. We worked closely with the core team and external auditors to ensure system integrity throughout the project lifecycle.',
-      technologies: ['Smart Contracts', 'Web3 Integrations', 'Software Architecture'],
-      bullets: [],
-      imageSrc: 'imgs/project-graphics/staked-diamond.svg'
-    }
-  },
-  Minds: {
-    name:'Minds',
-    link: 'https://www.minds.com/',
-    icon: 'imgs/logos/minds-logo-color.svg',
-    iconHighlightColor: '#ffd740',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(72%) sepia(95%) saturate(334%) hue-rotate(355deg) brightness(102%) contrast(101%)',
-    highlightColor: '#FFFFFF',
-    colorIcon: true,
-    textColor: '#43434d',
-    textColorFilter: 'brightness(0) saturate(100%) invert(22%) sepia(15%) saturate(438%) hue-rotate(202deg) brightness(97%) contrast(85%)',
-    project: {
-      description: 'Minds is a free speech social network with over 250k weekly active users.\n\nThe Minds team hired dOrg to review and modernize the platform’s web3 architecture. This included updating to ethers.js, adding native Uniswap support, and adding multi-wallet support with Wallet Connect on both web and mobile. dOrg also helped redesign the network’s token economics, including a novel engagement mining game that incentivizes platform usage, hodling, and liquidity.',
-      technologies: ['Web3 Integrations', 'Mobile', 'Token Economics'],
-      bullets: [],
-      imageSrc: 'imgs/project-graphics/minds-compose.svg',
-    }
-  },
-  ParaSwap: {
-    name:'ParaSwap',
-    link: 'https://paraswap.io/#/',
-    icon: 'imgs/logos/ParaSwap.svg',
-    highlightColor: '#005ede',
-    project: {
-      description: 'Paraswap is a decentralized exchange (DEX) aggregator which aims to become the connecting tissue between DeFi protocols.\n\ndOrg worked closely with the Paraswap team to optimize and rewrite their core aggregation algorithms and API. We also rebuilt their front-end application.',
-      technologies: ['Smart Contracts', 'Backend', 'Software Architecture', 'Frontend'],
-      bullets: [],
-      imageSrc: 'imgs/logos/ParaSwap.svg',
     }
   },
   Boardroom: {
@@ -174,6 +63,38 @@ export const companies: Companies = {
       imageSrc: 'imgs/project-graphics/centrality-graphic.svg'
     }
   },
+  Compound: {
+    name:'Compound',
+    link: 'https://compound.finance/',
+    icon: 'imgs/logos/Compound.svg',
+    highlightColor: '#00a977',
+    project: {
+      description: 'Compound is a decentralized lending protocol with token-holder governance.\n\nAs part of MetaCartel’s Dragon Quest hackathon, we won Compound’s bounty for building a Governance SDK in Node for interacting with the Compound’s voting contracts.',
+      technologies: ['Developer Tools'],
+      bullets: [
+        {text: 'Check out the repo', url: 'https://github.com/dOrgTech/compound-sdk'},
+        {text: 'View bounty submission', url: 'https://explorer.bounties.network/bounty/3963'}
+      ],
+      imageSrc: 'imgs/logos/Compound.svg',
+    }
+  },
+  DeversiFi: {
+    name:'DeversiFi',
+    link: 'https://www.deversifi.com/',
+    icon: 'imgs/logos/Deversifi.svg',
+    iconHighlightColor: '#5500FC',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(13%) sepia(99%) saturate(5303%) hue-rotate(263deg) brightness(86%) contrast(135%)',
+    highlightColor: 'linear-gradient(3.2deg, #040E14 19.19%, #061824 88.66%)',
+    project: {
+      description: 'DeversiFi is a decentralized exchange optimized for high speed, low fee trades.\n\ndOrg designed and built the reputation bootstrapper, which allows users to lock tokens for voting power in the Nectar DAO. We also implemented the frontend and snapshot utility for DeversiFi’s liquidity mining program, which rewarded users in BAL and time-locked NEC.',
+      technologies: ['UX/UI Design', 'Web3 Integrations', 'Frontend'],
+      bullets: [
+        {text: 'Check out the reputation bootstrapping app', url: 'https://stake.nectar.community/#/'},
+        {text: 'Check out the liquidity mining app', url: 'https://beehive.nectar.community/'}
+      ],
+      imageSrc: 'imgs/logos/Deversifi.svg',
+    }
+  },
   eToro: {
     name:'eToro',
     link: 'https://www.etoro.com/',
@@ -189,6 +110,67 @@ export const companies: Companies = {
       imageSrc: 'imgs/logos/eToro.svg',
     }
   },
+  Gnosis: {
+    name: 'Gnosis',
+    link: 'https://gnosis.io/',
+    icon: 'imgs/logos/gnosis-logo-color.svg',
+    highlightColor: '#e8e7e6',
+    colorIcon: true,
+    textColor: '#001428',
+    textColorFilter: 'brightness(0) saturate(100%) invert(6%) sepia(31%) saturate(5034%) hue-rotate(192deg) brightness(97%) contrast(102%)',
+    project: {
+      description: 'Gnosis builds critical DeFi infrastructure like the Gnosis Safe, Gnosis Protocol, and Conditional Tokens Framework.\n\ndOrg received a GECO grant from Gnosis in 2019 to design and develop a tool for decentralized fundraising that leverages bonding curves and reputation-weighted voting to align incentives.',
+      technologies: ['Smart Contracts', 'Web3 Integrations', 'Software Architecture'],
+      bullets: [
+        {text: 'Read the blog post', url: 'https://blog.gnosis.pm/geco-community-spotlight-fd7ee4b8c8a4'},
+        {text: 'Watch the presentation', url: 'https://www.youtube.com/watch?v=TTk-I7QmBm0'}
+      ],
+      imageSrc: 'imgs/logos/gnosis-logo-color.svg',
+    }
+  },
+  Minds: {
+    name:'Minds',
+    link: 'https://www.minds.com/',
+    icon: 'imgs/logos/minds-logo-color.svg',
+    iconHighlightColor: '#ffd740',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(72%) sepia(95%) saturate(334%) hue-rotate(355deg) brightness(102%) contrast(101%)',
+    highlightColor: '#FFFFFF',
+    colorIcon: true,
+    textColor: '#43434d',
+    textColorFilter: 'brightness(0) saturate(100%) invert(22%) sepia(15%) saturate(438%) hue-rotate(202deg) brightness(97%) contrast(85%)',
+    project: {
+      description: 'Minds is a free speech social network with over 250k weekly active users.\n\nThe Minds team hired dOrg to review and modernize the platform’s web3 architecture. This included updating to ethers.js, adding native Uniswap support, and adding multi-wallet support with Wallet Connect on both web and mobile. dOrg also helped redesign the network’s token economics, including a novel engagement mining game that incentivizes platform usage, hodling, and liquidity.',
+      technologies: ['Web3 Integrations', 'Mobile', 'Token Economics'],
+      bullets: [],
+      imageSrc: 'imgs/project-graphics/minds-compose.svg',
+    }
+  },
+  ParaSwap: {
+    name:'ParaSwap',
+    link: 'https://paraswap.io/#/',
+    icon: 'imgs/logos/ParaSwap.svg',
+    highlightColor: '#005ede',
+    project: {
+      description: 'Paraswap is a decentralized exchange (DEX) aggregator which aims to become the connecting tissue between DeFi protocols.\n\ndOrg worked closely with the Paraswap team to optimize and rewrite their core aggregation algorithms and API. We also rebuilt their front-end application.',
+      technologies: ['Smart Contracts', 'Backend', 'Software Architecture', 'Frontend'],
+      bullets: [],
+      imageSrc: 'imgs/logos/ParaSwap.svg',
+    }
+  },
+  Stakedus: {
+    name:'Staked.us',
+    link: 'https://staked.us/',
+    icon: 'imgs/logos/StakedUs.svg',
+    iconHighlightColor: '#515fcb',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(19%) sepia(94%) saturate(2659%) hue-rotate(231deg) brightness(84%) contrast(83%)',
+    highlightColor: '#102039',
+    project: {
+      description: 'Staked helps exchanges, VCs, and retail investors to earn fixed income yield on crypto assets without giving up custody.\n\nStaked hired dOrg to build a custom Aragon DAO that enables their users to govern the Robo Advisor for Yield (RAY) system. The project automates incentives for depositors, yield strategists, liquidity providers. We worked closely with the core team and external auditors to ensure system integrity throughout the project lifecycle.',
+      technologies: ['Smart Contracts', 'Web3 Integrations', 'Software Architecture'],
+      bullets: [],
+      imageSrc: 'imgs/project-graphics/staked-diamond.svg'
+    }
+  },
   Stakehound: {
     name:'Stakehound',
     link: 'https://stakehound.com/',
@@ -202,6 +184,24 @@ export const companies: Companies = {
       technologies: ['Smart Contracts', 'Frontend', 'UI/UX Design'],
       bullets: [],
       imageSrc: 'imgs/project-graphics/stakehound-brand.png'
+    }
+  },
+  TheGraph: {
+    name: 'The Graph',
+    link: 'https://thegraph.com',
+    icon: 'imgs/logos/TheGraph.svg',
+    highlightColor: 'url(/imgs/project-backgrounds/the-graph.png) repeat top left, #0C0A1D',
+    iconHighlightColor: '#6f4cff',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(35%) sepia(51%) saturate(6120%) hue-rotate(241deg) brightness(100%) contrast(104%)',
+    project: {
+      description: 'The Graph is Web3’s largest indexing protocol. The network allows dApps to quickly load data without relying on centralized servers.\n\nThe Graph hired dOrg to research and develop an experimental new feature called Mutations that would enable client-side write operations on behalf of the user. These mutations would nicely complement read operations being sent to the graph-node network.',
+      technologies: ['Developer Tools', 'Software Architecture', 'Web3 Integrations'],
+      bullets: [
+        {text: 'Watch the demo', url: 'https://www.youtube.com/watch?v=GRnTJBxhQIw'},
+        {text: 'Read the spec', url: 'https://github.com/graphprotocol/rfcs/blob/master/rfcs/0003-mutations.md'},
+        {text: 'Check out the repo', url: 'https://github.com/graphprotocol/mutations'}
+      ],
+      imageSrc: 'imgs/project-graphics/the-graph-phone.png'
     }
   },
 }
