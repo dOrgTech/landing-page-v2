@@ -90,7 +90,7 @@ export const Careers: React.FC = () => {
             <MeetBuildersTitleBox text={MEET_BUILDERS_TITLE} />
           </Grid>
           <Grid item xs={12}>
-            <ProfileWheel members={members.length > 0 ? members : testMembers} />
+            <ProfileWheel members={members.length > 0 ? members.concat(members.slice(0, 5)) : testMembers} />
           </Grid>
           <Grid item xs={12}>
             <TestimonialSection testimonials={testimonials} carouselBorder={borderStyle} />
