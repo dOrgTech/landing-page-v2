@@ -25,6 +25,7 @@ import {TestimonialSectionMobile} from "../components/careers/mobile/testimonial
 import {CurrentOpeningSectionMobile} from "../components/careers/mobile/openings_section/CurrentOpeningSectionMobile";
 import {useMembers} from "../utils/hooks";
 
+
 const CAREERS_TITLE_PRIMARY = 'Discover a new way to';
 const CAREERS_TITLE_SECONDARY = ['work', 'learn', 'grow', 'build'];
 const ACTIVATION_PROMPT = 'Get started by completing an activation challenge.';
