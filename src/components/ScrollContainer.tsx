@@ -1,5 +1,5 @@
 import React, {CSSProperties} from "react";
-import {Box, styled} from "@material-ui/core";
+import {Box, makeStyles, styled, Theme, useMediaQuery, useTheme} from "@material-ui/core";
 import {theme} from "../theme";
 import {hexToRGB} from "../utils/colorUtils";
 
@@ -34,8 +34,28 @@ interface Props {
 
 export const ScrollContainer: React.FC<Props> = (props: Props) => {
 
+  const className = props.className ? props.className : '';
+
+  const theme: Theme = useTheme();
+  const desktop = useMediaQuery(theme.breakpoints.up('lg'));
+
+  const mobileStyle = makeStyles({
+    transparent: {
+      scrollbarWidth: desktop ? 'thin' : 'none',
+      '&::-webkit-scrollbar': {
+        width: desktop ? '8px' : '0px',
+      },
+      '&::-webkit-scrollbar-track': {
+        width: desktop ? '8px' : '0px',
+      },
+      '&::-webkit-scrollbar-thumb': {
+        width: desktop ? '8px' : '0px',
+      }
+    }
+  })();
+
   return (
-    <StyledBox style={props.style} className={props.className}>
+    <StyledBox style={props.style} className={`${className} ${mobileStyle.transparent}`}>
       {props.children}
     </StyledBox>
   );
