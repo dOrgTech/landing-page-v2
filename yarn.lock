@@ -1613,7 +1613,6 @@ __metadata:
     react-refresh: ^0.9.0
     react-router-dom: ^5.2.0
     react-scripts: 4.0.1
-    react-scrollbars-custom: ^4.0.25
     react-transition-group: ^4.4.1
     serve: ^11.3.2
     stylelint: ^13.8.0
@@ -5051,13 +5050,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classnames@npm:^2.2.5":
-  version: 2.2.6
-  resolution: "classnames@npm:2.2.6"
-  checksum: 490eaeca5931846737ffd33e472a701d268d5b8bc5717dd4cf108a127b06e86e05350e06799abbbe763a0e4c945b4217f6700b7ae00ddc703505682c370e5cf2
-  languageName: node
-  linkType: hard
-
 "clean-css@npm:^4.1.11, clean-css@npm:^4.2.3":
   version: 4.2.3
   resolution: "clean-css@npm:4.2.3"
@@ -5190,13 +5182,6 @@ __metadata:
   version: 1.1.1
   resolution: "clsx@npm:1.1.1"
   checksum: d8ae10ac0546da19fe8c9516886f6582a64a382cf4d09ea7d36d5287cafbdab1192ab249adc2cdf0310e0b0aeac4f4142cf7c738c98d9cb68c19ba24b6f673d5
-  languageName: node
-  linkType: hard
-
-"cnbuilder@npm:^2.5.0":
-  version: 2.6.0
-  resolution: "cnbuilder@npm:2.6.0"
-  checksum: bb7533f4047bb960503a5f643db70e3f874ec296239fccaae542de2a52732853ca8523428ee51d028be82b673eb3d58b1b6fe093a89496282da3d54495528113
   languageName: node
   linkType: hard
 
@@ -13868,7 +13853,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.6.0, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
+"prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.7.2
   resolution: "prop-types@npm:15.7.2"
   dependencies:
@@ -14330,16 +14315,6 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"react-draggable@npm:^4.4.2":
-  version: 4.4.3
-  resolution: "react-draggable@npm:4.4.3"
-  dependencies:
-    classnames: ^2.2.5
-    prop-types: ^15.6.0
-  checksum: 72f9e36019a76ea2e9ccf36e8d8c6d74e53d2ca52efcb102e8edb4bedf7c636a3fed4ffa17ea397df01603c6dd5c534190ab697f6e8378d04c4e546d04a6e612
-  languageName: node
-  linkType: hard
-
 "react-error-overlay@npm:^6.0.8":
   version: 6.0.8
   resolution: "react-error-overlay@npm:6.0.8"
@@ -14520,20 +14495,6 @@ fsevents@~2.1.2:
   bin:
     react-scripts: ./bin/react-scripts.js
   checksum: 1d37d97d1bfa6705d412ea1bd3d02bb42ff8893138ae242f958ba408ad7a909b0961a3b8820908cafdfc4f9b09d75c50dae1932c968de47c80d9b7a0d48b9a99
-  languageName: node
-  linkType: hard
-
-"react-scrollbars-custom@npm:^4.0.25":
-  version: 4.0.25
-  resolution: "react-scrollbars-custom@npm:4.0.25"
-  dependencies:
-    cnbuilder: ^2.5.0
-    react-draggable: ^4.4.2
-    zoom-level: ^2.5.0
-  peerDependencies:
-    prop-types: ^15.0.0
-    react: ^16.0.0
-  checksum: f5fa5bf75a4f972a4b175bca772e7045415234ca83e26f273086b0d326738a87e73394649cfd694c76a788896cbc6b9b435c59468214b587ec3f0fbe4164ac33
   languageName: node
   linkType: hard
 
@@ -18477,13 +18438,6 @@ typescript@^4.0.3:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: 096c3b40beb2804659539be1605a35c58eb0c85285f94b77b3e924f42ee265c1a40bf9f4153770039517146b469a964d51742395f35ca8135fc9f7e4982b785d
-  languageName: node
-  linkType: hard
-
-"zoom-level@npm:^2.5.0":
-  version: 2.5.0
-  resolution: "zoom-level@npm:2.5.0"
-  checksum: b241bf9a70995086a7f16bfc5ffc6593d5066dd30a889e161e2ed39a057da184ead56322eddc5f0a453388df4c06b158f3fcb8df2a4c5c77cb313337d8ec23d3
   languageName: node
   linkType: hard
 

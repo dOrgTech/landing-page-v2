@@ -1,39 +1,12 @@
 import React, {useEffect, useState} from 'react'
-import {styled, Typography, Grid, makeStyles, Link, Box} from '@material-ui/core'
+import {styled, Typography, Grid, makeStyles, Link} from '@material-ui/core'
 import { theme } from "../../../../theme";
 import {Client} from "../../../../constants/clients";
 import {ChipLarge} from "../../../careers/desktop/profile_popup/ChipLarge";
 import {BulletsBox} from "./BulletsBox";
 import {ProjectGraphic} from "./ProjectGraphic";
 import {useDebounce, useWindowSize} from "../../../../utils/hooks";
-import {hexToRGB} from "../../../../utils/colorUtils";
-
-
-const StyledBox = styled(Box)({
-  height: `${window.innerHeight - (0.1 * window.innerWidth)}px`,
-  width: '42.5vw',
-  boxSizing: 'border-box',
-  position: 'relative',
-  overflowY: 'scroll',
-  overflowX: 'visible',
-  scrollbarColor: `${hexToRGB(theme.palette.secondary.main, 0.5)} ${hexToRGB(theme.palette.secondary.main, 0.15)}`,
-  scrollbarWidth: 'thin',
-  '&::-webkit-scrollbar': {
-    background: 'transparent',
-    width: '8px',
-    height: 0
-  },
-  '&::-webkit-scrollbar-track': {
-    background: `${hexToRGB(theme.palette.secondary.main, 0.15)}`,
-    width: '8px',
-    borderRadius: '4px'
-  },
-  '&::-webkit-scrollbar-thumb': {
-    background: `${hexToRGB(theme.palette.secondary.main, 0.5)}`,
-    borderRadius: '4px',
-    width: '8px',
-  }
-});
+import {ScrollContainer} from "../../../ScrollContainer";
 
 const StyledGrid = styled(Grid)({
   height: `${Math.max(window.innerHeight - (0.1 * window.innerWidth), 0.4 * window.innerWidth)}px`,
@@ -110,16 +83,7 @@ interface Props {
 export const HoverContentBox: React.FC<Props> = (props: Props) => {
 
   const { name, link, iconHighlightFilter, textColor, textColorFilter, project } = props.client;
-
-  const styles = makeStyles({
-    icon: {
-      filter: textColorFilter ? textColorFilter : ''
-    },
-    text: {
-      color: textColor ? textColor : theme.palette.text.primary
-    }
-  })();
-  const chipStyle = useChipStyle();
+  const classes = props.classes ? props.classes : '';
 
   const windowSize = useWindowSize()
   const debouncedWindowSize = useDebounce(windowSize, 100);
@@ -134,19 +98,33 @@ export const HoverContentBox: React.FC<Props> = (props: Props) => {
     setOffset(Math.min(y + cutoff, 0));
   }, [debouncedWindowSize])
 
-  return (
-    <StyledBox className={props.classes} style={{
+  const styles = makeStyles({
+    icon: {
+      filter: textColorFilter ? textColorFilter : ''
+    },
+    text: {
+      color: textColor ? textColor : theme.palette.text.primary
+    },
+    scroll: {
+      width: '42.5vw',
+      boxSizing: 'border-box',
+      position: 'relative',
       bottom: offset,
       height: `${scrollContainerHeight}px`,
       overflowY: showScroll ? 'scroll' : 'visible',
-      direction: showScroll && props.rtl ? 'rtl' : 'initial'
-    }}>
-      <StyledGrid container spacing={0} direction='column' justify='flex-start' alignItems='flex-start'
-        style={{
-          height: `${contentContainerHeight}px`,
-          width: showScroll ? `${0.425*debouncedWindowSize.width-10}px` : '42.5vw',
-          direction: 'ltr'
-        }}>
+      direction: showScroll && props.rtl ? 'rtl' : 'ltr'
+    },
+    content: {
+      height: `${contentContainerHeight}px`,
+      width: showScroll ? `${0.425*debouncedWindowSize.width-10}px` : '42.5vw',
+      direction: 'ltr'
+    }
+  })();
+  const chipStyle = useChipStyle();
+
+  return (
+    <ScrollContainer className={`${classes} ${styles.scroll}`}>
+      <StyledGrid container spacing={0} direction='column' justify='flex-start' alignItems='flex-start' className={styles.content}>
         <Grid item>
           <Link href={link} target="_blank" rel="noopener" underline={'none'}>
             <StyledTitle className={styles.text}>{name}</StyledTitle>
@@ -168,6 +146,6 @@ export const HoverContentBox: React.FC<Props> = (props: Props) => {
         </ChipContainer>
         {project.imageSrc && <ProjectGraphic item src={project.imageSrc} />}
       </StyledGrid>
-    </StyledBox>
+    </ScrollContainer>
   );
 }
