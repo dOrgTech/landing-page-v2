@@ -104,7 +104,7 @@ export const ProfileWheel: React.FC<Props> = (props: Props) => {
     const scrollbar = scrollRef.current;
     if (isScrolling && scrollbar) {
       const startScrollX = scrollbar.scrollLeft
-      scrollbar.scrollLeft += clientX - e.clientX;
+      scrollbar.scrollLeft += 2 * (clientX - e.clientX);
       setClientX(e.clientX)
       // give appearance of infinite scroll
       if (scrollbar.scrollLeft === scrollbar.scrollWidth - debouncedWindowSize.width && startScrollX < scrollbar.scrollLeft) {
