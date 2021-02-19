@@ -1,19 +1,44 @@
 import React, {useEffect, useState} from 'react'
-import {styled, Typography, Grid, makeStyles, Link} from '@material-ui/core'
+import {styled, Typography, Grid, makeStyles, Link, Box} from '@material-ui/core'
 import { theme } from "../../../../theme";
 import {Client} from "../../../../constants/clients";
 import {ChipLarge} from "../../../careers/desktop/profile_popup/ChipLarge";
 import {BulletsBox} from "./BulletsBox";
 import {ProjectGraphic} from "./ProjectGraphic";
 import {useDebounce, useWindowSize} from "../../../../utils/hooks";
+import {hexToRGB} from "../../../../utils/colorUtils";
 
+const StyledBox = styled(Box)({
+  height: `${window.innerHeight - (0.1 * window.innerWidth)}px`,
+  width: '42.5vw',
+  boxSizing: 'border-box',
+  position: 'relative',
+  overflowY: 'scroll',
+  overflowX: 'visible',
+  scrollbarColor: `${hexToRGB(theme.palette.secondary.main, 0.5)} ${hexToRGB(theme.palette.secondary.main, 0.15)}`,
+  scrollbarWidth: 'thin',
+  '&::-webkit-scrollbar': {
+    background: 'transparent',
+    width: '8px',
+    height: 0
+  },
+  '&::-webkit-scrollbar-track': {
+    background: `${hexToRGB(theme.palette.secondary.main, 0.15)}`,
+    width: '8px',
+    borderRadius: '4px'
+  },
+  '&::-webkit-scrollbar-thumb': {
+    background: `${hexToRGB(theme.palette.secondary.main, 0.5)}`,
+    borderRadius: '4px'
+  }
+});
 
 const StyledGrid = styled(Grid)({
-  height: `${window.innerHeight - (0.1 * window.innerWidth)}px`,
+  height: `${Math.max(window.innerHeight - (0.1 * window.innerWidth), 0.4 * window.innerWidth)}px`,
   width: '42.5vw',
   padding: '3.5vw 2.5vw 1vw 4.375vw',
   boxSizing: 'border-box',
-  position: 'relative'
+  position: 'relative',
 });
 
 const StyledTitle = styled(Typography)({
@@ -90,17 +115,15 @@ export const HoverContentBox: React.FC<Props> = (props: Props) => {
     },
     text: {
       color: textColor ? textColor : theme.palette.text.primary
-    },
-    scrollbarContent: {
-      padding: '3.5vw 2.5vw 1vw 4.375vw !important',
-      boxSizing: 'border-box',
-      position: 'relative'
     }
   })();
   const chipStyle = useChipStyle();
 
   const windowSize = useWindowSize()
   const debouncedWindowSize = useDebounce(windowSize, 100);
+  const scrollContainerHeight = debouncedWindowSize.height - (0.1 * debouncedWindowSize.width);
+  const contentContainerHeight = Math.max(scrollContainerHeight, 0.4 * debouncedWindowSize.width);
+  const showScroll = contentContainerHeight === 0.4 * debouncedWindowSize.width;
 
   const [offset, setOffset] = useState(0);
   useEffect(() => {
@@ -110,30 +133,29 @@ export const HoverContentBox: React.FC<Props> = (props: Props) => {
   }, [debouncedWindowSize])
 
   return (
-    <StyledGrid container spacing={0} direction='column' justify='flex-start' alignItems='flex-start'
-      className={props.classes} style={{bottom: offset, height: `${debouncedWindowSize.height - (0.1 * debouncedWindowSize.width)}px`}}>
-      {/*<CustomScrollbar rtl={props.rtl} style={{width: '100%', height: '100%'}} contentClass={styles.scrollbarContent} noScrollX>*/}
-      <Grid item>
-        <Link href={link} target="_blank" rel="noopener" underline={'none'}>
-          <StyledTitle className={styles.text}>{name}</StyledTitle>
-        </Link>
-      </Grid>
-      <Grid item>
-        <StyledDescription className={styles.text}>{project.description}</StyledDescription>
-      </Grid>
-      {project.bullets.length > 0 &&
-      <BulletsContainer item>
-        <BulletsBox bullets={project.bullets} textColor={textColor} iconColorFilter={iconHighlightFilter ? iconHighlightFilter : textColorFilter} />
-      </BulletsContainer>}
-      <ChipContainer item container spacing={0} direction='row' justify='flex-start' alignItems='flex-start'>
-        {project.technologies.map((technology: string, i: number) => (
-          <Grid item key={`technology-${i}`}>
-            <ChipLarge classes={chipStyle.chip} text={technology} textColor={textColor}/>
-          </Grid>
-        ))}
-      </ChipContainer>
-      {project.imageSrc && <ProjectGraphic item src={project.imageSrc} />}
-      {/*</CustomScrollbar>*/}
-    </StyledGrid>
+    <StyledBox className={props.classes} style={{bottom: offset, height: `${scrollContainerHeight}px`, overflowY: showScroll ? 'scroll' : 'visible'}}>
+      <StyledGrid container spacing={0} direction='column' justify='flex-start' alignItems='flex-start' style={{height: `${contentContainerHeight}px`}}>
+        <Grid item>
+          <Link href={link} target="_blank" rel="noopener" underline={'none'}>
+            <StyledTitle className={styles.text}>{name}</StyledTitle>
+          </Link>
+        </Grid>
+        <Grid item>
+          <StyledDescription className={styles.text}>{project.description}</StyledDescription>
+        </Grid>
+        {project.bullets.length > 0 &&
+        <BulletsContainer item>
+          <BulletsBox bullets={project.bullets} textColor={textColor} iconColorFilter={iconHighlightFilter ? iconHighlightFilter : textColorFilter} />
+        </BulletsContainer>}
+        <ChipContainer item container spacing={0} direction='row' justify='flex-start' alignItems='flex-start'>
+          {project.technologies.map((technology: string, i: number) => (
+            <Grid item key={`technology-${i}`}>
+              <ChipLarge classes={chipStyle.chip} text={technology} textColor={textColor}/>
+            </Grid>
+          ))}
+        </ChipContainer>
+        {project.imageSrc && <ProjectGraphic item src={project.imageSrc} />}
+      </StyledGrid>
+    </StyledBox>
   );
 }
