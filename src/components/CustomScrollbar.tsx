@@ -8,11 +8,13 @@ import {hexToRGB} from "../utils/colorUtils";
 interface Props {
   rtl?: boolean;
   noScrollX?: boolean;
-  children?: React.ReactNode;
-  style?: React.CSSProperties;
+  noScrollY?: boolean;
   contentClass?: string;
+  style?: React.CSSProperties;
+  children?: React.ReactNode;
 }
 
+// eslint-disable-next-line react/display-name
 export const CustomScrollbar: React.FC<Props> = (props: Props) => {
 
   const theme: Theme = useTheme();
@@ -24,8 +26,10 @@ export const CustomScrollbar: React.FC<Props> = (props: Props) => {
     },
     trackY: {
       background: `${hexToRGB(theme.palette.secondary.main, 0.15)} !important`,
-      width: '8px !important'
+      width: '8px !important',
     },
+    thumbX: { },
+    trackX: { },
     content: { },
     scroller: { },
     wrapper: { },
@@ -37,9 +41,12 @@ export const CustomScrollbar: React.FC<Props> = (props: Props) => {
       native={!desktop}
       rtl={props.rtl}
       noScrollX={props.noScrollX}
+      noScrollY={props.noScrollY}
       style={{...props.style}}
       thumbYProps={{ className: scrollbarStyles.thumbY }}
       trackYProps={{ className: scrollbarStyles.trackY }}
+      thumbXProps={{ className: scrollbarStyles.thumbX }}
+      trackXProps={{className: scrollbarStyles.trackX}}
       contentProps={{ className: `${scrollbarStyles.content} ${props.contentClass? props.contentClass : ''}` }}
       scrollerProps={{ className: scrollbarStyles.scroller }}
       wrapperProps={{ className: scrollbarStyles.wrapper }}

@@ -12,7 +12,7 @@ export const getIncrement = (stat: number): number => {
   if (stat % 1 === 0) {
     return Math.ceil(stat / 50);
   } else {
-    return Math.round( 10 * stat / 50) / 10;
+    return Math.max(Math.round( 10 * stat / 50) / 10, 0.1);
   }
 }
 

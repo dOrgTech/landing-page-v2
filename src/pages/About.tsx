@@ -21,7 +21,7 @@ import {StatBoxMobile} from "../components/about/mobile/StatBoxMobile";
 import {PitchTitleBoxMobile} from "../components/about/mobile/PitchTitleBoxMobile";
 import {PitchBoxMobile} from "../components/about/mobile/PitchBoxMobile";
 import {CloseBoxMobile} from "../components/about/mobile/CloseBoxMobile";
-import {useMembers} from "../utils/hooks";
+import {useDebounce, useMembers, useWindowSize} from "../utils/hooks";
 
 // strings
 const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
@@ -71,6 +71,9 @@ export const About: React.FC = () => {
   const theme: Theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
+  const windowSize = useWindowSize()
+  const debouncedWindowSize = useDebounce(windowSize, 100);
+
   const {projects, tvl, clients, builders, lifetime, revenue} = desktop ? stats : statsMobile;
   // request members from server and update num builders
   const dynamicBuilders = {...builders, stat: useMembers().length};
@@ -109,8 +112,8 @@ export const About: React.FC = () => {
         </ContentContainer>
         <RightMargin border={borderStyle}
           height='100%'
-          accentContainerHeight={`${window.innerHeight - (0.1 * window.innerWidth)}px`}
-          centerLineHeight={`${(0.67375 * window.innerWidth) - window.innerHeight}px`}
+          accentContainerHeight={`${debouncedWindowSize.height - (0.1 * debouncedWindowSize.width)}px`}
+          centerLineHeight={`${(0.67375 * debouncedWindowSize.width) - debouncedWindowSize.height}px`}
           longAccentIndex={1}/>
       </Root>
     );

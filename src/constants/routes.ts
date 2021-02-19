@@ -30,12 +30,12 @@ export const routes: Routes = {
 }
 
 export interface ExternalLinks {
-  activation: Readonly<Route>;
+  builderInterest: Readonly<Route>;
 }
 
 export const externalLinks: ExternalLinks = {
-  activation: {
-    path: 'https://docs.dorg.tech/lifecycle/activation',
-    name: 'Activation'
+  builderInterest: {
+    path: 'https://share.hsforms.com/1qdN5EBi_SJW7U1c5cJigUw5gqvx',
+    name: 'Builder Interest'
   }
 }
