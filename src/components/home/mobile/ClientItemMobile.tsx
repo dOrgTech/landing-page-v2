@@ -65,7 +65,8 @@ const ShadowOverlay = styled('div')({
   position: 'absolute',
   top: 0,
   left: '-5vw',
-  zIndex: 2
+  zIndex: 2,
+  pointerEvents: 'none'
 });
 
 const MarginOverlay = styled('div')({
@@ -158,7 +159,10 @@ export const ClientItemMobile: React.FC<Props> = (props: Props) => {
           </Grid>
           <Grid item xs={1}>
             {props.expanded &&
-            (<Link href={props.client.link} target="_blank" rel="noopener" underline={'none'}>
+            (<Link href={props.client.link} target="_blank" rel="noopener" underline={'none'}
+              aria-label="External link"
+              onFocus={(e: React.FocusEvent) => e.stopPropagation()}
+              onClick={(e: React.MouseEvent) => e.stopPropagation()}>
               <SelectedIcon src={'imgs/external-link-icon.svg'} alt='pop-up content icon' className={selectStyles.link}/>
             </Link>)}
           </Grid>
