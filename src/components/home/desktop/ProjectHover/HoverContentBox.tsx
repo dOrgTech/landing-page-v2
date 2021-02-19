@@ -135,9 +135,18 @@ export const HoverContentBox: React.FC<Props> = (props: Props) => {
   }, [debouncedWindowSize])
 
   return (
-    <StyledBox className={props.classes} style={{bottom: offset, height: `${scrollContainerHeight}px`, overflowY: showScroll ? 'scroll' : 'visible'}}>
+    <StyledBox className={props.classes} style={{
+      bottom: offset,
+      height: `${scrollContainerHeight}px`,
+      overflowY: showScroll ? 'scroll' : 'visible',
+      direction: showScroll && props.rtl ? 'rtl' : 'initial'
+    }}>
       <StyledGrid container spacing={0} direction='column' justify='flex-start' alignItems='flex-start'
-        style={{height: `${contentContainerHeight}px`, width: showScroll ? `${0.425*debouncedWindowSize.width-10}px` : '42.5vw'}}>
+        style={{
+          height: `${contentContainerHeight}px`,
+          width: showScroll ? `${0.425*debouncedWindowSize.width-10}px` : '42.5vw',
+          direction: 'ltr'
+        }}>
         <Grid item>
           <Link href={link} target="_blank" rel="noopener" underline={'none'}>
             <StyledTitle className={styles.text}>{name}</StyledTitle>
