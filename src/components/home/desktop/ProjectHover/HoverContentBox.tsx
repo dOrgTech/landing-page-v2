@@ -29,7 +29,8 @@ const StyledBox = styled(Box)({
   },
   '&::-webkit-scrollbar-thumb': {
     background: `${hexToRGB(theme.palette.secondary.main, 0.5)}`,
-    borderRadius: '4px'
+    borderRadius: '4px',
+    width: '8px',
   }
 });
 
@@ -134,7 +135,8 @@ export const HoverContentBox: React.FC<Props> = (props: Props) => {
 
   return (
     <StyledBox className={props.classes} style={{bottom: offset, height: `${scrollContainerHeight}px`, overflowY: showScroll ? 'scroll' : 'visible'}}>
-      <StyledGrid container spacing={0} direction='column' justify='flex-start' alignItems='flex-start' style={{height: `${contentContainerHeight}px`}}>
+      <StyledGrid container spacing={0} direction='column' justify='flex-start' alignItems='flex-start'
+        style={{height: `${contentContainerHeight}px`, width: showScroll ? `${0.425*debouncedWindowSize.width-10}px` : '42.5vw'}}>
         <Grid item>
           <Link href={link} target="_blank" rel="noopener" underline={'none'}>
             <StyledTitle className={styles.text}>{name}</StyledTitle>
