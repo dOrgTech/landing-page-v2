@@ -8,6 +8,7 @@ import {ProjectGraphic} from "./ProjectGraphic";
 import {useDebounce, useWindowSize} from "../../../../utils/hooks";
 import {hexToRGB} from "../../../../utils/colorUtils";
 
+
 const StyledBox = styled(Box)({
   height: `${window.innerHeight - (0.1 * window.innerWidth)}px`,
   width: '42.5vw',
