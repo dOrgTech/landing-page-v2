@@ -6,14 +6,14 @@ import {ChipLarge} from "../../../careers/desktop/profile_popup/ChipLarge";
 import {BulletsBox} from "./BulletsBox";
 import {ProjectGraphic} from "./ProjectGraphic";
 import {useDebounce, useWindowSize} from "../../../../utils/hooks";
-
+import {ScrollContainer} from "../../../ScrollContainer";
 
 const StyledGrid = styled(Grid)({
-  height: `${window.innerHeight - (0.1 * window.innerWidth)}px`,
+  height: `${Math.max(window.innerHeight - (0.1 * window.innerWidth), 0.4 * window.innerWidth)}px`,
   width: '42.5vw',
   padding: '3.5vw 2.5vw 1vw 4.375vw',
   boxSizing: 'border-box',
-  position: 'relative'
+  position: 'relative',
 });
 
 const StyledTitle = styled(Typography)({
@@ -83,24 +83,13 @@ interface Props {
 export const HoverContentBox: React.FC<Props> = (props: Props) => {
 
   const { name, link, iconHighlightFilter, textColor, textColorFilter, project } = props.client;
-
-  const styles = makeStyles({
-    icon: {
-      filter: textColorFilter ? textColorFilter : ''
-    },
-    text: {
-      color: textColor ? textColor : theme.palette.text.primary
-    },
-    scrollbarContent: {
-      padding: '3.5vw 2.5vw 1vw 4.375vw !important',
-      boxSizing: 'border-box',
-      position: 'relative'
-    }
-  })();
-  const chipStyle = useChipStyle();
+  const classes = props.classes ? props.classes : '';
 
   const windowSize = useWindowSize()
   const debouncedWindowSize = useDebounce(windowSize, 100);
+  const scrollContainerHeight = debouncedWindowSize.height - (0.1 * debouncedWindowSize.width);
+  const contentContainerHeight = Math.max(scrollContainerHeight, 0.4 * debouncedWindowSize.width);
+  const showScroll = contentContainerHeight === 0.4 * debouncedWindowSize.width;
 
   const [offset, setOffset] = useState(0);
   useEffect(() => {
@@ -109,31 +98,54 @@ export const HoverContentBox: React.FC<Props> = (props: Props) => {
     setOffset(Math.min(y + cutoff, 0));
   }, [debouncedWindowSize])
 
+  const styles = makeStyles({
+    icon: {
+      filter: textColorFilter ? textColorFilter : ''
+    },
+    text: {
+      color: textColor ? textColor : theme.palette.text.primary
+    },
+    scroll: {
+      width: '42.5vw',
+      boxSizing: 'border-box',
+      position: 'relative',
+      bottom: offset,
+      height: `${scrollContainerHeight}px`,
+      overflowY: showScroll ? 'scroll' : 'visible',
+      direction: showScroll && props.rtl ? 'rtl' : 'ltr'
+    },
+    content: {
+      height: `${contentContainerHeight}px`,
+      width: showScroll ? `${0.425*debouncedWindowSize.width-10}px` : '42.5vw',
+      direction: 'ltr'
+    }
+  })();
+  const chipStyle = useChipStyle();
+
   return (
-    <StyledGrid container spacing={0} direction='column' justify='flex-start' alignItems='flex-start'
-      className={props.classes} style={{bottom: offset, height: `${debouncedWindowSize.height - (0.1 * debouncedWindowSize.width)}px`}}>
-      {/*<CustomScrollbar rtl={props.rtl} style={{width: '100%', height: '100%'}} contentClass={styles.scrollbarContent} noScrollX>*/}
-      <Grid item>
-        <Link href={link} target="_blank" rel="noopener" underline={'none'}>
-          <StyledTitle className={styles.text}>{name}</StyledTitle>
-        </Link>
-      </Grid>
-      <Grid item>
-        <StyledDescription className={styles.text}>{project.description}</StyledDescription>
-      </Grid>
-      {project.bullets.length > 0 &&
-      <BulletsContainer item>
-        <BulletsBox bullets={project.bullets} textColor={textColor} iconColorFilter={iconHighlightFilter ? iconHighlightFilter : textColorFilter} />
-      </BulletsContainer>}
-      <ChipContainer item container spacing={0} direction='row' justify='flex-start' alignItems='flex-start'>
-        {project.technologies.map((technology: string, i: number) => (
-          <Grid item key={`technology-${i}`}>
-            <ChipLarge classes={chipStyle.chip} text={technology} textColor={textColor}/>
-          </Grid>
-        ))}
-      </ChipContainer>
-      {project.imageSrc && <ProjectGraphic item src={project.imageSrc} />}
-      {/*</CustomScrollbar>*/}
-    </StyledGrid>
+    <ScrollContainer className={`${classes} ${styles.scroll}`}>
+      <StyledGrid container spacing={0} direction='column' justify='flex-start' alignItems='flex-start' className={styles.content}>
+        <Grid item>
+          <Link href={link} target="_blank" rel="noopener" underline={'none'}>
+            <StyledTitle className={styles.text}>{name}</StyledTitle>
+          </Link>
+        </Grid>
+        <Grid item>
+          <StyledDescription className={styles.text}>{project.description}</StyledDescription>
+        </Grid>
+        {project.bullets.length > 0 &&
+        <BulletsContainer item>
+          <BulletsBox bullets={project.bullets} textColor={textColor} iconColorFilter={iconHighlightFilter ? iconHighlightFilter : textColorFilter} />
+        </BulletsContainer>}
+        <ChipContainer item container spacing={0} direction='row' justify='flex-start' alignItems='flex-start'>
+          {project.technologies.map((technology: string, i: number) => (
+            <Grid item key={`technology-${i}`}>
+              <ChipLarge classes={chipStyle.chip} text={technology} textColor={textColor}/>
+            </Grid>
+          ))}
+        </ChipContainer>
+        {project.imageSrc && <ProjectGraphic item src={project.imageSrc} />}
+      </StyledGrid>
+    </ScrollContainer>
   );
 }

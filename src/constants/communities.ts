@@ -111,7 +111,7 @@ export const communities: Communities = {
     textColor: '#123262',
     textColorFilter: 'brightness(0) saturate(100%) invert(14%) sepia(15%) saturate(7037%) hue-rotate(199deg) brightness(97%) contrast(94%)',
     project: {
-      description: 'dOrg is proud to be working with TQ Tezos and the broader Tezos ecosystem on Homebase, an app that enables anyone to launch DAOs on the Tezos blockchain in a few clicks.\n\ndOrg designed and built the Homebase app on top of the BaseDAO smart contract framework We utilized Taquito and Beacon SDK. We also contributed to the BaseDAO framework spec and design as product co-owners.',
+      description: 'dOrg is proud to be working with TQ Tezos and the broader Tezos ecosystem on Homebase, an app that enables anyone to launch DAOs on the Tezos blockchain in a few clicks.\n\ndOrg designed and built the Homebase app on top of the BaseDAO smart contract framework. We utilized Taquito and Beacon SDK. We also contributed to the BaseDAO framework spec and design as product co-owners.',
       technologies: ['Web3 Integrations', 'Frontend', 'UI/UX Design'],
       bullets: [
         {text: 'Read the announcement', url: 'https://tqtezos.medium.com/daos-on-tezos-announcing-homebase-80bbecbb9bfe'},

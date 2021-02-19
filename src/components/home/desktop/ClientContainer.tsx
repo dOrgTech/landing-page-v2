@@ -1,22 +1,17 @@
-import {ClickAwayListener, Fade, Grid, styled, Typography} from "@material-ui/core";
+import {ClickAwayListener, Fade, Grid, makeStyles, styled, Typography} from "@material-ui/core";
 import React, {useState} from "react";
 import {Companies} from "../../../constants/companies";
 import {Communities} from "../../../constants/communities";
 import {Client} from "../../../constants/clients";
 import {ClientItem} from "./ClientItem";
 import {theme} from "../../../theme";
-import {CustomScrollbar} from "../../CustomScrollbar";
 import {useDebounce, useWindowSize} from "../../../utils/hooks";
+import {ScrollContainer} from "../../ScrollContainer";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
   position: 'relative',
   zIndex: 1
-});
-
-const ScrollContainer = styled(Grid)({
-  width: '100%',
-  height: `${window.innerHeight - (0.16 * window.innerWidth)}px`,
 });
 
 const ClientGrid = styled(Grid)({
@@ -83,26 +78,32 @@ export const ClientContainer: React.FC<Props> = (props: Props) => {
     setFadeIn(true);
   }
 
+  const styles = makeStyles({
+    scroll: {
+      width: '100%',
+      height: `${debouncedWindowSize.height - (0.16 * debouncedWindowSize.width)}px`,
+      direction: props.isOnLeft ? 'rtl' : 'ltr'
+    },
+  })();
+
   return (
     <div>
       <StyledGrid className={props.classes} container direction='column' justify='flex-start' alignItems='flex-start'>
         <TitleContainer item>
           <StyledTitle>{props.title}</StyledTitle>
         </TitleContainer>
-        <ScrollContainer style={{height: `${debouncedWindowSize.height - (0.16 * debouncedWindowSize.width)}px`}}>
-          <CustomScrollbar rtl={props.isOnLeft} style={{width: '100%', height: '100%'}}>
-            <ClientGrid container direction='column' justify='flex-start' alignItems='flex-start'>
-              {Object.values(props.clients).map((client: Client) => (
-                <Grid item key={`${client.name}`} style={{width: '100%'}}>
-                  <ClientItem
-                    isOnLeft={props.isOnLeft}
-                    client={client}
-                    stickyItem={debouncedSticky}
-                    onClick={(element: JSX.Element, name?: string) => handleClick(element, name)}/>
-                </Grid>
-              ))}
-            </ClientGrid>
-          </CustomScrollbar>
+        <ScrollContainer className={styles.scroll}>
+          <ClientGrid container direction='column' justify='flex-start' alignItems='flex-start' style={{direction: 'ltr'}}>
+            {Object.values(props.clients).map((client: Client) => (
+              <Grid item key={`${client.name}`} style={{width: '100%'}}>
+                <ClientItem
+                  isOnLeft={props.isOnLeft}
+                  client={client}
+                  stickyItem={debouncedSticky}
+                  onClick={(element: JSX.Element, name?: string) => handleClick(element, name)}/>
+              </Grid>
+            ))}
+          </ClientGrid>
         </ScrollContainer>
       </StyledGrid>
       <Fade in={fadeIn} timeout={250}>

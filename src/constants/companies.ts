@@ -8,12 +8,12 @@ export interface Companies {
   DeversiFi: Readonly<Client>;
   eToro: Readonly<Client>;
   Gnosis: Readonly<Client>;
+  TheGraph: Readonly<Client>;
   Minds: Readonly<Client>;
   ParaSwap: Readonly<Client>;
   Sovryn: Readonly<Client>;
   Stakedus: Readonly<Client>;
   Stakehound: Readonly<Client>;
-  TheGraph: Readonly<Client>;
 }
 
 export const companies: Companies = {
@@ -129,6 +129,24 @@ export const companies: Companies = {
       imageSrc: 'imgs/logos/gnosis-logo-color.svg',
     }
   },
+  TheGraph: {
+    name: 'The Graph',
+    link: 'https://thegraph.com',
+    icon: 'imgs/logos/TheGraph.svg',
+    highlightColor: 'url(/imgs/project-backgrounds/the-graph.png) repeat top left, #0C0A1D',
+    iconHighlightColor: '#6f4cff',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(35%) sepia(51%) saturate(6120%) hue-rotate(241deg) brightness(100%) contrast(104%)',
+    project: {
+      description: 'The Graph is Web3’s largest indexing protocol. The network allows dApps to quickly load data without relying on centralized servers.\n\nThe Graph hired dOrg to research and develop an experimental new feature called Mutations that would enable client-side write operations on behalf of the user. These mutations would nicely complement read operations being sent to the graph-node network.',
+      technologies: ['Developer Tools', 'Software Architecture', 'Web3 Integrations'],
+      bullets: [
+        {text: 'Watch the demo', url: 'https://www.youtube.com/watch?v=GRnTJBxhQIw'},
+        {text: 'Read the spec', url: 'https://github.com/graphprotocol/rfcs/blob/master/rfcs/0003-mutations.md'},
+        {text: 'Check out the repo', url: 'https://github.com/graphprotocol/mutations'}
+      ],
+      imageSrc: 'imgs/project-graphics/the-graph-phone.png'
+    }
+  },
   Minds: {
     name:'Minds',
     link: 'https://www.minds.com/',
@@ -201,24 +219,6 @@ export const companies: Companies = {
       technologies: ['Smart Contracts', 'Frontend', 'UI/UX Design'],
       bullets: [],
       imageSrc: 'imgs/project-graphics/stakehound-brand.png'
-    }
-  },
-  TheGraph: {
-    name: 'The Graph',
-    link: 'https://thegraph.com',
-    icon: 'imgs/logos/TheGraph.svg',
-    highlightColor: 'url(/imgs/project-backgrounds/the-graph.png) repeat top left, #0C0A1D',
-    iconHighlightColor: '#6f4cff',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(35%) sepia(51%) saturate(6120%) hue-rotate(241deg) brightness(100%) contrast(104%)',
-    project: {
-      description: 'The Graph is Web3’s largest indexing protocol. The network allows dApps to quickly load data without relying on centralized servers.\n\nThe Graph hired dOrg to research and develop an experimental new feature called Mutations that would enable client-side write operations on behalf of the user. These mutations would nicely complement read operations being sent to the graph-node network.',
-      technologies: ['Developer Tools', 'Software Architecture', 'Web3 Integrations'],
-      bullets: [
-        {text: 'Watch the demo', url: 'https://www.youtube.com/watch?v=GRnTJBxhQIw'},
-        {text: 'Read the spec', url: 'https://github.com/graphprotocol/rfcs/blob/master/rfcs/0003-mutations.md'},
-        {text: 'Check out the repo', url: 'https://github.com/graphprotocol/mutations'}
-      ],
-      imageSrc: 'imgs/project-graphics/the-graph-phone.png'
     }
   },
 }
