@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useCallback, useEffect, useRef, useState} from 'react'
 import {Box, Grid, styled} from '@material-ui/core'
 import {Member} from "../../../../constants/members";
 import {ProfileSummaryMobile} from "./ProfileSummaryMobile";
@@ -83,6 +83,7 @@ export const ProfileWheelMobile: React.FC<Props> = (props: Props) => {
   const [isScrolling, setIsScrolling] = useState(false);
   const [clientX, setClientX] = useState(0);
   const [scrollX, setScrollX] = useState(0);
+  const [momentum, setMomentum] = useState(0);
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [autoScroll, setAutoScroll] = useState<NodeJS.Timeout | null>(null);
 
@@ -104,29 +105,39 @@ export const ProfileWheelMobile: React.FC<Props> = (props: Props) => {
   const handleMouseMove = (e: React.MouseEvent | MouseEvent, scrollRef: React.MutableRefObject<HTMLDivElement | null>) => {
     const scrollbar = scrollRef.current;
     if (isScrolling && scrollbar) {
-      const startScrollX = scrollbar.scrollLeft
-      scrollbar.scrollLeft += 2 * (clientX - e.clientX);
-      setClientX(e.clientX)
-      // give appearance of infinite scroll
-      if (scrollbar.scrollLeft === scrollbar.scrollWidth - debouncedWindowSize.width && startScrollX < scrollbar.scrollLeft) {
-        scrollbar.scrollLeft = 0;
-      } else if (scrollbar.scrollLeft === 0 && startScrollX > scrollbar.scrollLeft) {
-        scrollbar.scrollLeft = scrollbar.scrollWidth;
-      }
-      setScrollX(scrollbar.scrollLeft);
+      const startScrollX = scrollbar.scrollLeft;
+      const movement = 2 * (clientX - e.clientX);
+      scrollbar.scrollLeft += movement;
+      setClientX(e.clientX);
+      setMomentum(movement);
+      allowInfiniteScroll(scrollbar, startScrollX);
     }
   }
+  // helper function --> give appearance of infinite scroll
+  const allowInfiniteScroll = useCallback((scrollbar: HTMLDivElement, startScrollX: number) => {
+    if (scrollbar.scrollLeft === scrollbar.scrollWidth - debouncedWindowSize.width && startScrollX < scrollbar.scrollLeft) {
+      scrollbar.scrollLeft = 0;
+    } else if (scrollbar.scrollLeft === 0 && startScrollX > scrollbar.scrollLeft) {
+      scrollbar.scrollLeft = scrollbar.scrollWidth;
+    }
+    setScrollX(scrollbar.scrollLeft);
+  }, [debouncedWindowSize])
+  // apply drag scroll momentum
+  useEffect(() => {
+    if(!isScrolling && momentum !== 0 && scrollRef.current) {
+      const scrollbar = scrollRef.current;
+      const startScrollX = scrollbar.scrollLeft;
+      scrollbar.scrollLeft += momentum;
+      Math.abs(momentum) < 0.05 ? setMomentum(0) : setMomentum(momentum * 0.9);
+      allowInfiniteScroll(scrollbar, startScrollX);
+    }
+  }, [isScrolling, momentum, allowInfiniteScroll])
   // handle normal scrolling
   const handleScroll = (e: React.UIEvent, scrollRef: React.MutableRefObject<HTMLDivElement | null>) => {
     const scrollbar = scrollRef.current;
     if (scrollbar) {
       // give appearance of infinite scroll
-      if (scrollbar.scrollLeft === scrollbar.scrollWidth - debouncedWindowSize.width && scrollX < scrollbar.scrollLeft) {
-        scrollbar.scrollLeft = 0;
-      } else if (scrollbar.scrollLeft === 0 && scrollX > scrollbar.scrollLeft) {
-        scrollbar.scrollLeft = scrollbar.scrollWidth;
-      }
-      setScrollX(scrollbar.scrollLeft);
+      allowInfiniteScroll(scrollbar, scrollX);
     }
   }
   // start automatically scrolling (slide show behavior)
