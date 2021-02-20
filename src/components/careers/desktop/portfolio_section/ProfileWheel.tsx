@@ -58,7 +58,8 @@ const OverlayLeft = styled('div')({
   position: 'absolute',
   left: '-0.1vw',
   top: 0,
-  zIndex: 1
+  zIndex: 1,
+  pointerEvents: 'none'
 });
 
 const OverlayRight = styled('div')({
@@ -68,7 +69,8 @@ const OverlayRight = styled('div')({
   position: 'absolute',
   right: '-0.1vw',
   top: 0,
-  zIndex: 1
+  zIndex: 1,
+  pointerEvents: 'none'
 });
 
 
