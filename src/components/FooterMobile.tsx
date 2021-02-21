@@ -2,13 +2,10 @@ import {Grid, Link, makeStyles, styled, Typography} from '@material-ui/core'
 import React from 'react'
 import {borderStyles} from "../theme/styles";
 import {theme} from "../theme";
+import {iconLinks} from "../constants/routes";
 
-
+const CALL_TO_ACTION = 'Join our Discord';
 const COPYRIGHT_TEXT = '© dOrg, LLC';
-const EMAIL_ICON_PATH = '/imgs/footer/email-icon.svg';
-const GITHUB_ICON_PATH = '/imgs/footer/github-logo.svg';
-const DISCORD_ICON_PATH = '/imgs/footer/discord-logo.svg';
-const TWITTER_ICON_PATH = '/imgs/footer/twitter-logo.svg';
 
 const FooterContainer = styled(Grid)({
   height: '18.8vw',
@@ -28,14 +25,13 @@ const FooterMargin = styled(Grid)({
   height: 'inherit'
 });
 
-const CopyrightText = styled(Typography)({
-  height: '3.1vw',
+const FooterText = styled(Typography)({
   fontFamily: theme.typography.fontFamily,
-  fontSize: '2.86vw',
+  fontSize: '2.85vw',
   fontWeight: 'normal',
   fontStretch: "normal",
   fontStyle: "normal",
-  lineHeight: 1.17,
+  lineHeight: 1,
   letterSpacing: 'normal',
   textAlign: "left",
   color: theme.palette.text.primary
@@ -72,28 +68,16 @@ export const FooterMobile: React.FC = () => {
       <FooterMargin item className={borders.topBorder} />
       <FooterBody container item spacing={0} direction='row' justify="space-between" alignItems='center'
         className={`${borders.topBorder} ${borders.leftBorder} ${borders.rightBorder}`}>
-        <Grid item xs={7}>
-          <CopyrightText>{COPYRIGHT_TEXT}</CopyrightText>
+        <Grid item xs={6}>
+          <FooterText>{COPYRIGHT_TEXT}</FooterText>
         </Grid>
-        <Grid container item xs={5} spacing={0} justify='flex-end' alignItems='center'>
+        <Grid container item xs={6} spacing={0} justify='flex-end' alignItems='center'>
           <Grid item>
-            <IconContainer href="https://twitter.com/dOrg_tech" target="_blank" rel="noopener">
-              <StyledIcon src={TWITTER_ICON_PATH}/>
-            </IconContainer>
+            <FooterText style={{marginRight: '2.65vw'}}>{CALL_TO_ACTION}</FooterText>
           </Grid>
           <Grid item>
-            <IconContainer href="https://discord.com/invite/bA9ZM7WXZU" target="_blank" rel="noopener">
-              <StyledIcon src={DISCORD_ICON_PATH}/>
-            </IconContainer>
-          </Grid>
-          <Grid item>
-            <IconContainer href="https://github.com/dOrgTech" target="_blank" rel="noopener">
-              <StyledIcon src={GITHUB_ICON_PATH}/>
-            </IconContainer>
-          </Grid>
-          <Grid item>
-            <IconContainer href="mailto:contact@dorg.tech" target="_blank" rel="noopener">
-              <StyledIcon src={EMAIL_ICON_PATH}/>
+            <IconContainer href={iconLinks.discord.path} target="_blank" rel="noopener">
+              <StyledIcon src={iconLinks.discord.icon}/>
             </IconContainer>
           </Grid>
         </Grid>
