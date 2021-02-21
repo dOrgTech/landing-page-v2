@@ -2,7 +2,7 @@ import React from 'react'
 import {styled, Typography, Grid} from '@material-ui/core'
 import { theme } from "../../../theme";
 import {Pitch} from "../../../constants/pitches";
-import {hexToRGB} from "../../../utils/colorUtils";
+import {hexToRGBA} from "../../../utils/colorUtils";
 
 const StyledGrid = styled(Grid)({
   margin: 'auto',
@@ -12,7 +12,7 @@ const StyledGrid = styled(Grid)({
   backgroundColor: 'rgba(0, 0, 0, 0.15)',
   boxSizing: 'border-box',
   '&:hover': {
-    backgroundColor: hexToRGB(theme.palette.secondary.main, 0.15)
+    backgroundColor: hexToRGBA(theme.palette.secondary.main, 0.15)
   },
   position: 'relative',
   zIndex: 2

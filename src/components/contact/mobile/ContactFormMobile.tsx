@@ -112,20 +112,20 @@ const useLabelColors = makeStyles({
 });
 
 const StyledSubmitButton = styled(ButtonBase)({
+  width: "25vw",
+  height: "25vw",
   marginTop: '2vw',
   float: 'right',
   borderRadius: '50%',
-  position: 'relative',
-  left: '3vw'
+  '&:active': {
+    boxShadow: '0 2.4vw 4.75vw 0 rgba(0, 0, 0, 0.32)',
+  }
 });
 
 const StyledSubmitIcon = styled('img')({
-  width: "25vw",
-  height: "25vw",
   objectFit: "contain",
-  position: 'relative',
-  top: '1vw',
   borderRadius: '50%',
+  boxShadow: '0 2.4vw 4.75vw 0 rgba(0, 0, 0, 0.16)',
 });
 
 const StyledRings = styled('img')({

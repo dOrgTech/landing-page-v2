@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="30 20 80 80">
     <defs>
         <filter id="Rectangle_50" width="140" height="140" x="0" y="0" filterUnits="userSpaceOnUse">
             <feOffset dy="10"/>

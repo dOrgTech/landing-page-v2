@@ -1,14 +1,14 @@
 import React, {CSSProperties} from "react";
 import {Box, makeStyles, styled, Theme, useMediaQuery, useTheme} from "@material-ui/core";
 import {theme} from "../theme";
-import {hexToRGB} from "../utils/colorUtils";
+import {hexToRGBA} from "../utils/colorUtils";
 
 
 const StyledBox = styled(Box)({
   overflowY: 'auto',
   overflowX: 'hidden',
   scrolLBehavior: 'smooth',
-  scrollbarColor: `${hexToRGB(theme.palette.secondary.main, 0.5)} ${hexToRGB(theme.palette.secondary.main, 0.15)}`,
+  scrollbarColor: `${hexToRGBA(theme.palette.secondary.main, 0.5)} ${hexToRGBA(theme.palette.secondary.main, 0.15)}`,
   scrollbarWidth: 'thin',
   '&::-webkit-scrollbar': {
     background: 'transparent',
@@ -17,11 +17,11 @@ const StyledBox = styled(Box)({
     height: 0
   },
   '&::-webkit-scrollbar-track': {
-    background: `${hexToRGB(theme.palette.secondary.main, 0.15)}`,
+    background: `${hexToRGBA(theme.palette.secondary.main, 0.15)}`,
     width: '8px',
   },
   '&::-webkit-scrollbar-thumb': {
-    background: `${hexToRGB(theme.palette.secondary.main, 0.5)}`,
+    background: `${hexToRGBA(theme.palette.secondary.main, 0.5)}`,
     width: '8px',
   }
 });

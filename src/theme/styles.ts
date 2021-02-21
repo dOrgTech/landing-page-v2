@@ -1,5 +1,5 @@
 // font used for StatBoxMobile statistics, in accordance with design spec
-import {hexToRGB} from "../utils/colorUtils";
+import {hexToRGBA} from "../utils/colorUtils";
 import {makeStyles} from "@material-ui/core";
 
 export const mobileStatFont = "'Open Sans', sans-serif";
@@ -54,23 +54,23 @@ export const borderStyles: BorderClasses = {
 export const getBorderStyle = (hexColor: string): BorderClasses => {
   return {
     allBorders: {
-      border: `1px solid ${hexToRGB(hexColor, 0.25)}`
+      border: `1px solid ${hexToRGBA(hexColor, 0.25)}`
     },
     rightBorder: {
-      borderRight: `1px solid ${hexToRGB(hexColor, 0.25)}`
+      borderRight: `1px solid ${hexToRGBA(hexColor, 0.25)}`
     },
     leftBorder: {
-      borderLeft: `1px solid ${hexToRGB(hexColor, 0.25)}`
+      borderLeft: `1px solid ${hexToRGBA(hexColor, 0.25)}`
     },
     topBorder: {
-      borderTop: `1px solid ${hexToRGB(hexColor, 0.25)}`
+      borderTop: `1px solid ${hexToRGBA(hexColor, 0.25)}`
     },
     bottomBorder: {
-      borderBottom: `1px solid ${hexToRGB(hexColor, 0.25)}`
+      borderBottom: `1px solid ${hexToRGBA(hexColor, 0.25)}`
     },
     bottomLeftBorder: {
-      borderBottom: `1px solid ${hexToRGB(hexColor, 0.25)}`,
-      borderLeft: `1px solid ${hexToRGB(hexColor, 0.25)}`
+      borderBottom: `1px solid ${hexToRGBA(hexColor, 0.25)}`,
+      borderLeft: `1px solid ${hexToRGBA(hexColor, 0.25)}`
     }
   };
 };
