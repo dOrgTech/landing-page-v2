@@ -115,14 +115,16 @@ const StyledSubmitButton = styled(ButtonBase)({
   width: "5vw",
   height: "5vw",
   float: 'right',
-  borderRadius: '50%'
+  borderRadius: '50%',
 });
 
 const StyledSubmitIcon = styled('img')({
   objectFit: "contain",
-  position: 'relative',
-  top: '0.5vw',
-  borderRadius: '50%'
+  borderRadius: '50%',
+  boxShadow: '0 0.625vw 1.25vw 0 rgba(0, 0, 0, 0.16)',
+  '&:hover': {
+    boxShadow: `0 0.625vw 1.25vw 0 rgba(0, 0, 0, 0.32)`,
+  }
 });
 
 const StyledRings = styled('img')({

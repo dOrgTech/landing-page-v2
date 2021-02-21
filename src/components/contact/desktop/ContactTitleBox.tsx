@@ -4,7 +4,6 @@ import { theme } from "../../../theme";
 import {useDebounce, useWindowSize} from "../../../utils/hooks";
 import {IconLink, IconLinks} from "../../../constants/routes";
 
-
 const StyledGrid = styled(Grid)({
   width: '100%',
   padding: '5vw 1.75vw',
