@@ -4,6 +4,7 @@ import {borderStyles} from "../theme/styles";
 import {theme} from "../theme";
 import {iconLinks} from "../constants/routes";
 
+
 const CALL_TO_ACTION = 'Join our Discord';
 const COPYRIGHT_TEXT = '© dOrg, LLC';
 
