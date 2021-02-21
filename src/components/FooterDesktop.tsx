@@ -2,13 +2,11 @@ import {Grid, Link, makeStyles, styled, Typography} from '@material-ui/core'
 import React from 'react'
 import {getBorderStyle} from "../theme/styles";
 import {theme} from "../theme";
+import {iconLinks} from "../constants/routes";
 
 
+const CALL_TO_ACTION = 'Join our Discord';
 const COPYRIGHT_TEXT = '© dOrg, LLC';
-const EMAIL_ICON_PATH = '/imgs/footer/email-icon.svg';
-const GITHUB_ICON_PATH = '/imgs/footer/github-logo.svg';
-const DISCORD_ICON_PATH = '/imgs/footer/discord-logo.svg';
-const TWITTER_ICON_PATH = '/imgs/footer/twitter-logo.svg';
 
 const FooterContainer = styled(Grid)({
   height: '5vw',
@@ -18,6 +16,7 @@ const FooterContainer = styled(Grid)({
 
 const IconContainer = styled(Link)({
   height: '1.5vw',
+  width: '1.25vw',
   marginRight: '0.7vw',
   display: 'flex',
   justifyContent: 'center',
@@ -25,7 +24,7 @@ const IconContainer = styled(Link)({
 });
 
 const StyledIcon = styled('img')({
-  width: '1.25vw',
+  width: 'inherit',
   height: 'auto',
   objectFit: 'contain',
   color: theme.palette.text.primary,
@@ -35,14 +34,13 @@ const StyledIcon = styled('img')({
   cursor: 'pointer'
 });
 
-const CopyrightText = styled(Typography)({
-  height: '0.75vw',
+const FooterText = styled(Typography)({
   fontFamily: theme.typography.fontFamily,
   fontSize: '0.688vw',
   fontWeight: 'normal',
   fontStretch: "normal",
   fontStyle: "normal",
-  lineHeight: 1.18,
+  lineHeight: 1,
   letterSpacing: 'normal',
   textAlign: "left",
   color: theme.palette.text.primary
@@ -83,6 +81,10 @@ export const FooterDesktop: React.FC<Props> = (props: Props) => {
     },
     text: {
       color: props.textColor ? props.textColor : theme.palette.text.primary
+    },
+    callToAction: {
+      fontSize: '1vw',
+      marginRight: '0.7vw'
     }
   })();
 
@@ -94,29 +96,17 @@ export const FooterDesktop: React.FC<Props> = (props: Props) => {
       {renderLeft && <FooterMargin item className={borders.topBorder} />}
       {renderLeft &&
       <LeftContainer container item spacing={0} direction='row' justify="flex-start" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
-        <CopyrightText className={styles.text}>{COPYRIGHT_TEXT}</CopyrightText>
+        <FooterText className={styles.text}>{COPYRIGHT_TEXT}</FooterText>
       </LeftContainer>}
       {renderRight &&
       <RightContainer container item spacing={0} direction='row' justify="flex-end" alignItems='center'
         className={`${borders.topBorder} ${borders.leftBorder} ${borders.rightBorder}`}>
         <Grid item>
-          <IconContainer href="https://twitter.com/dOrg_tech" target="_blank" rel="noopener">
-            <StyledIcon src={TWITTER_ICON_PATH} className={styles.icon} />
-          </IconContainer>
+          <FooterText className={`${styles.text} ${styles.callToAction}`}>{CALL_TO_ACTION}</FooterText>
         </Grid>
         <Grid item>
-          <IconContainer href="https://discord.com/invite/bA9ZM7WXZU" target="_blank" rel="noopener">
-            <StyledIcon src={DISCORD_ICON_PATH} className={styles.icon} />
-          </IconContainer>
-        </Grid>
-        <Grid item>
-          <IconContainer href="https://github.com/dOrgTech" target="_blank" rel="noopener">
-            <StyledIcon src={GITHUB_ICON_PATH} className={styles.icon} />
-          </IconContainer>
-        </Grid>
-        <Grid item>
-          <IconContainer href="mailto:contact@dorg.tech" target="_blank" rel="noopener">
-            <StyledIcon src={EMAIL_ICON_PATH} className={styles.icon} />
+          <IconContainer href={iconLinks.discord.path} target="_blank" rel="noopener">
+            <StyledIcon src={iconLinks.discord.icon} className={styles.icon} />
           </IconContainer>
         </Grid>
       </RightContainer>}

@@ -23,7 +23,7 @@ import {MeetBuildersTitleBoxMobile} from "../components/careers/mobile/MeetBuild
 import {ProfileWheelMobile} from "../components/careers/mobile/portfolio_section/ProfileWheelMobile";
 import {TestimonialSectionMobile} from "../components/careers/mobile/testimonial_section/TestimonialSectionMobile";
 import {CurrentOpeningSectionMobile} from "../components/careers/mobile/openings_section/CurrentOpeningSectionMobile";
-import {useMembers} from "../utils/hooks";
+import {useDebounce, useMembers, useWindowSize} from "../utils/hooks";
 
 const CAREERS_TITLE_PRIMARY = 'Discover a new way to';
 const CAREERS_TITLE_SECONDARY = ['work', 'learn', 'grow', 'build'];
@@ -65,6 +65,9 @@ export const Careers: React.FC = () => {
   const theme: Theme = useTheme();
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
 
+  const windowSize = useWindowSize()
+  const debouncedWindowSize = useDebounce(windowSize, 100);
+
   if (desktop) {
     return (
       <Root container spacing={0} direction='row' justify="flex-start" alignItems='flex-start'>
@@ -102,7 +105,7 @@ export const Careers: React.FC = () => {
               onButtonClick={navigateToBuilderInterestForm} />
           </Grid>
         </ContentContainer>
-        <RightMargin height='100%' accentContainerHeight={`${window.innerHeight - (0.1 * window.innerWidth)}px`} longAccentIndex={2} />
+        <RightMargin height='100%' accentContainerHeight={`${debouncedWindowSize.height - (0.1 * debouncedWindowSize.width)}px`} longAccentIndex={2} />
       </Root>
     );
   } else {

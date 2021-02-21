@@ -1,3 +1,4 @@
+
 export interface Route {
   path: string;
   name: string;
@@ -9,6 +10,23 @@ export interface Routes {
   careers: Readonly<Route>;
   contact: Readonly<Route>;
 }
+
+export interface ExternalRoutes {
+  builderInterest: Readonly<Route>;
+}
+
+export interface IconLink {
+  path: string;
+  icon: string;
+}
+
+export interface IconLinks {
+  discord: Readonly<IconLink>;
+  twitter: Readonly<IconLink>;
+  github: Readonly<IconLink>;
+  email: Readonly<IconLink>;
+}
+
 
 export const routes: Routes = {
   home: {
@@ -29,13 +47,28 @@ export const routes: Routes = {
   }
 }
 
-export interface ExternalLinks {
-  builderInterest: Readonly<Route>;
-}
-
-export const externalLinks: ExternalLinks = {
+export const externalLinks: ExternalRoutes = {
   builderInterest: {
     path: 'https://share.hsforms.com/1qdN5EBi_SJW7U1c5cJigUw5gqvx',
     name: 'Builder Interest'
   }
+}
+
+export const iconLinks: IconLinks = {
+  discord: {
+    path: "https://discord.com/invite/bA9ZM7WXZU",
+    icon: '/imgs/footer/discord-logo.svg',
+  },
+  twitter: {
+    path: "https://twitter.com/dOrg_tech",
+    icon: '/imgs/footer/twitter-logo.svg',
+  },
+  github: {
+    path: "https://github.com/dOrgTech",
+    icon: '/imgs/footer/github-logo.svg',
+  },
+  email: {
+    path: "mailto:contact@dorg.tech",
+    icon: '/imgs/footer/email-icon.svg',
+  },
 }
