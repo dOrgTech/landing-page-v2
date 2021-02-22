@@ -1,3 +1,4 @@
+
 export interface Perk {
     detail: string;
     perk: string;
@@ -5,31 +6,37 @@ export interface Perk {
 }
 
 export interface Perks {
-    ownWorkplace: Readonly<Perk>;
-    transparency: Readonly<Perk>;
-    learning: Readonly<Perk>;
-    freedomSupport: Readonly<Perk>;
+  remote: Readonly<Perk>;
+  airdrop: Readonly<Perk>;
+  commission: Readonly<Perk>;
+  launchpad: Readonly<Perk>;
+  benefits: Readonly<Perk>;
 }
 
 export const perks: Perks = {
-  ownWorkplace: {
-    detail: 'Accumulate DAO governance stake with every crypto dollar you earn.',
-    perk: 'Own Your Workplace',
-    icon: 'imgs/developer-icon.svg'
+  remote: {
+    detail: 'Work from anywhere, anytime with a global team.',
+    perk: '100% Remote',
+    icon: '🏖️'
   },
-  transparency: {
-    detail: 'No bosses. Every builder has the same level of access to all information.',
-    perk: 'Full Transparency',
-    icon: 'imgs/handshake-icon.svg'
+  airdrop: {
+    detail: 'Receive airdrops in proportion to your share of reputation.',
+    perk: 'Token Airdrops',
+    icon: '☔️'
   },
-  learning: {
-    detail: 'Work on projects at the bleeding edge of Web3 with high profile clients.',
-    perk: 'Never Stop Learning',
-    icon: 'imgs/gears-chains-icon.svg'
+  commission: {
+    detail: 'Earn commissions by referring your friends or sourcing new projects.',
+    perk: 'Commissions',
+    icon: '💸'
   },
-  freedomSupport: {
-    detail: 'Learn from talented peers without sacrificing the flexibilities of freelancing.',
-    perk: 'Freedom & Peer Support',
-    icon: 'imgs/loop-icon.svg'
-  }
+  launchpad: {
+    detail: 'Leverage shared resources to launch your own projects.',
+    perk: 'Project Launchpad',
+    icon: '🚀'
+  },
+  benefits: {
+    detail: 'Enjoy group benefits like discounted tax prep, apparel and more!',
+    perk: 'Group Benefits',
+    icon: '🎡'
+  },
 }
