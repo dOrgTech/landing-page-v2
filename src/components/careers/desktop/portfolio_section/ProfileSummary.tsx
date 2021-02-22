@@ -17,7 +17,7 @@ const StyledGrid = styled(Grid)({
 const StyledPhoto = styled('img')({
   width: "7.5vw",
   height: "7.5vw",
-  objectFit: "contain",
+  objectFit: "cover",
   borderRadius: '75px'
 });
 
