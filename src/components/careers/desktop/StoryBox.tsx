@@ -1,16 +1,18 @@
 import React from 'react'
 import {styled, Typography, Grid} from '@material-ui/core'
 import { theme } from "../../../theme";
-import {borderStyle} from "../../../theme/styles";
+import {hexToRGBA} from "../../../utils/colorUtils";
 
 
 const StyledGrid = styled(Grid)({
   width: '42.5vw',
   height: '30vw',
   padding: '1.5vw 3vw',
-  background: 'transparent',
   boxSizing: 'border-box',
-  border: borderStyle
+  backgroundColor: 'rgba(0, 0, 0, 0.15)',
+  '&:hover': {
+    backgroundColor: hexToRGBA(theme.palette.secondary.main, 0.15)
+  }
 });
 
 const StyledText= styled(Typography)({
