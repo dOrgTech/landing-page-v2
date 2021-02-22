@@ -27,7 +27,12 @@ const StyledIcon = styled('img')({
   background: 'transparent',
   display: 'block',
   position: 'relative',
-  zIndex: 2
+  zIndex: 2,
+  '&:hover': {
+    transition: 'width 0.1s, height 0.1s',
+    width: "37vw",
+    height: "8vw",
+  }
 });
 
 const StyledRings = styled('img')({

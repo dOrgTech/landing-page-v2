@@ -28,7 +28,12 @@ const StyledIcon = styled('img')({
   background: 'transparent',
   display: 'block',
   position: 'relative',
-  zIndex: 2
+  zIndex: 2,
+  '&:hover': {
+    transition: 'width 0.3s, height 0.3s',
+    width: "15vw",
+    height: "3.6vw",
+  }
 });
 
 const StyledRings = styled('img')({
@@ -56,7 +61,7 @@ export const PressBox: React.FC<Props> = (props: Props) => {
       <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} className={sonarAnimation.animate}/>
       <StyledGrid container direction='row' spacing={0} justify='center' alignItems='center'>
         {Object.values(props.press).map((article: Article, index: number) => (
-          <Grid item xs={6} key={`article-${index}`}>
+          <Grid item xs={6} key={`article-${index}`} container justify={'center'} alignItems={'center'}>
             <a href={article.url} target='_blank' rel='noopener noreferrer'>
               <StyledIcon src={article.logo} srcSet={article.logo + ' 1x, ' + article.logo2x + ' 2x, ' + article.logo3x + ' 3x'} alt='icon' />
             </a>
