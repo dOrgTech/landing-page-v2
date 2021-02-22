@@ -17,11 +17,11 @@ const StyledGrid = styled(Grid)({
 
 const StyledText= styled(Typography)({
   fontFamily: theme.typography.fontFamily,
-  fontSize: '1.25vw',
-  fontWeight: 500,
+  fontSize: '1.3vw',
+  fontWeight: 'normal',
   fontStretch: "normal",
   fontStyle: "normal",
-  lineHeight: 2,
+  lineHeight: 1.87,
   letterSpacing: 'normal',
   textAlign: "left",
   color: theme.palette.text.primary,
@@ -36,7 +36,7 @@ const dOrgStory = (
   <div>
     dOrg spawned at the start of 2019 as an <GreenStrong>experiment in distributed organization</GreenStrong>.
     <br/><br/>
-    Its genetic code was simple:
+    Its genetic code is simple:
     <ol style={{margin: 0}}>
       <li>Build tools that advance Web3</li>
       <li>Use Web3 to operate</li>

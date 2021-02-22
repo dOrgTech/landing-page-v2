@@ -8,7 +8,7 @@ const StyledGrid = styled(Grid)({
   margin: 'auto',
   width: '100%',
   height: '58.5vw',
-  padding: '9vw 0 0 5.5vw',
+  padding: '7.5vw 0 0 5.5vw',
   backgroundColor: 'rgba(0, 0, 0, 0.15)',
   boxSizing: 'border-box',
   '&:hover': {
@@ -43,12 +43,9 @@ const StyledPerk = styled(Typography)({
   color: theme.palette.text.primary
 });
 
-const StyledIcon = styled('img')({
-  width: "11.43vw",
-  height: 'auto',
-  margin: '0 7.6vw 0 0',
-  objectFit: "contain",
-  float: 'left'
+const FontIcon = styled(Typography)({
+  fontSize: '11vw',
+  textAlign: "left",
 });
 
 interface Props {
@@ -60,7 +57,7 @@ export const PerkBoxMobile: React.FC<Props> = (props: Props) => {
   return (
     <StyledGrid className={props.classes} container direction='column' spacing={0} justify='flex-start' alignItems='flex-start'>
       <Grid item>
-        <StyledIcon src={props.perk.icon} alt='icon' />
+        <FontIcon>{props.perk.icon}</FontIcon>
       </Grid>
       <Grid item>
         <StyledPerk>{props.perk.perk}</StyledPerk>

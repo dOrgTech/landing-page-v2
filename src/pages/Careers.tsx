@@ -2,7 +2,6 @@ import React from "react";
 import ReactGA from "react-ga";
 import {Grid, makeStyles, styled, Theme, useMediaQuery, useTheme} from "@material-ui/core";
 import { Perk, perks } from "../constants/perks";
-import { PerkBox } from "../components/careers/desktop/PerkBox";
 import {CareersTitleBox} from "../components/careers/desktop/CareersTitleBox";
 import {LeftMargin} from "../components/LeftMargin";
 import {borderStyle, borderStyles} from "../theme/styles";
@@ -24,6 +23,9 @@ import {ProfileWheelMobile} from "../components/careers/mobile/portfolio_section
 import {TestimonialSectionMobile} from "../components/careers/mobile/testimonial_section/TestimonialSectionMobile";
 import {CurrentOpeningSectionMobile} from "../components/careers/mobile/openings_section/CurrentOpeningSectionMobile";
 import {useDebounce, useMembers, useWindowSize} from "../utils/hooks";
+import {StoryBox} from "../components/careers/desktop/StoryBox";
+import {BuilderCycleBox} from "../components/careers/desktop/BuilderCycleBox";
+import {PerkSection} from "../components/careers/desktop/PerkSection";
 
 const CAREERS_TITLE_PRIMARY = 'Discover a new way to';
 const CAREERS_TITLE_SECONDARY = ['work', 'learn', 'grow', 'build'];
@@ -47,7 +49,7 @@ const ContentContainer = styled(Grid)({
   width: '85vw'
 });
 
-const PerksContainer = styled(Grid)({
+const PerksContainerMobile = styled(Grid)({
   width: '100%'
 });
 
@@ -77,18 +79,20 @@ export const Careers: React.FC = () => {
             <CareersTitleBox textPrimary={CAREERS_TITLE_PRIMARY} textSecondary={CAREERS_TITLE_SECONDARY}
               classes={borders.bottomBorder}/>
           </Grid>
-          <PerksContainer container spacing={0} justify="center">
-            {Object.values(perks).map((perk: Perk, index: number) => (
-              <Grid item xs={3} key={`perk-${index}`}>
-                <PerkBox perk={perk} classes={index > 0 ? borders.leftBorder : ''}/>
-              </Grid>
-            ))}
-          </PerksContainer>
+          <Grid container item xs={12} justify="center">
+            <Grid item xs={6}>
+              <StoryBox />
+            </Grid>
+            <Grid item xs={6}>
+              <BuilderCycleBox classes={borders.leftBorder} />
+            </Grid>
+          </Grid>
           <Grid item xs={12}>
             <ActivationPromptBox prompt={ACTIVATION_PROMPT}
               buttonText={APPLY_BUTTON_TEXT}
               onButtonClick={navigateToBuilderInterestForm}/>
           </Grid>
+          <PerkSection perks={perks} item xs={12} />
           <Grid item xs={12}>
             <MeetBuildersTitleBox text={MEET_BUILDERS_TITLE} />
           </Grid>
@@ -118,13 +122,13 @@ export const Careers: React.FC = () => {
             <CareersTitleBoxMobile textPrimaryL1={CAREERS_TITLE_MOBILE_PRIMARY_1} textPrimaryL2={CAREERS_TITLE_MOBILE_PRIMARY_2} textSecondary={CAREERS_TITLE_SECONDARY}
               classes={borders.bottomLeftBorder}/>
           </Grid>
-          <PerksContainer container spacing={0} justify="center">
+          <PerksContainerMobile container spacing={0} justify="center">
             {Object.values(perks).map((perk: Perk, index: number) => (
               <Grid item xs={12} key={`perk-${index}`}>
                 <PerkBoxMobile perk={perk} classes={borders.bottomLeftBorder}/>
               </Grid>
             ))}
-          </PerksContainer>
+          </PerksContainerMobile>
           <Grid item xs={12}>
             <ActivationPromptBoxMobile prompt={ACTIVATION_PROMPT}
               buttonText={APPLY_BUTTON_TEXT}
