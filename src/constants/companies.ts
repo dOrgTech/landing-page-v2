@@ -103,7 +103,7 @@ export const companies: Companies = {
     iconHighlightFilter: '',
     highlightColor: '#6aac0e',
     project: {
-      description: 'How can a decentralized Universal Basic Income protect against fraudulent accounts?\n\ndOrg teamed up with the GoodDollar team at eToro and DAOstack answer this question. What resulted was the Identity DAO, a reputation-weighted circle of trust for verifying user identities without centralization. In addition to building out the prototype, dOrg specified the Identity DAO’s technical architecture, governance incentives, and UI mock-ups.',
+      description: 'How can a decentralized Universal Basic Income protect against fraudulent accounts?\n\ndOrg teamed up with the GoodDollar team at eToro and DAOstack to answer this question. What resulted was the Identity DAO, a reputation-weighted circle of trust for verifying user identities without centralization. In addition to building out the prototype, dOrg specified the Identity DAO’s technical architecture, governance incentives, and UI mock-ups.',
       technologies: ['Governance Design', 'Mobile', 'Web3 Integrations'],
       bullets: [
         {text: 'Check out the repo', url: 'https://github.com/dOrgTech/ID-DAO'}
