@@ -11,7 +11,12 @@ const StyledGrid = styled(Grid)({
   height: '25vw',
   padding: '2.1vw 1.6vw 1vw 1.6vw',
   backgroundColor: '#000e3c',
-  boxSizing: 'border-box'
+  boxSizing: 'border-box',
+  userSelect: 'none',
+  '-moz-user-select': '-moz-none',
+  '-khtml-user-select': 'none',
+  '-webkit-user-select': 'none',
+  '-ms-user-select': 'none',
 });
 
 const StyledPhoto = styled('img')({

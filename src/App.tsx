@@ -47,7 +47,7 @@ const App: React.FC = () => {
                 <Contact />
               </Route>
             </Switch>
-            <CookieConsentPrompt debug prompt={'This website uses cookies to enhance the user experience.'} />
+            <CookieConsentPrompt prompt={'This website uses cookies to enhance the user experience.'} />
             <Footer />
           </HashRouter>
         </NavHoverContext>

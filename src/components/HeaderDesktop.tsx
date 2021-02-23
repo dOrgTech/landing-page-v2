@@ -104,11 +104,7 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
   // conditional styling and underline
   const borderColor = props.textColor ? props.textColor : theme.palette.text.primary;
   const borders = makeStyles(getBorderStyle(borderColor))();
-  const underlineColor = () => {
-    if (props.underlineColor) return props.underlineColor;
-    else if (props.textColor) return props.textColor;
-    else return theme.palette.text.primary;
-  }
+
   const navTextColor = (navHoverIndex: number, index: number) => {
     if (navHoverIndex === index) return theme.palette.secondary.main;
     else if (props.textColor) return props.textColor;
@@ -119,11 +115,6 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
     else if (props.logoColorFilter) return props.logoColorFilter;
     else return '';
   }
-  const styles = makeStyles({
-    halfPageUnderline: {
-      backgroundColor: underlineColor()
-    }
-  })();
 
   return (
     <StyledAppBar position="static" className={props.classes} style={{width: props.pageHalf ? '50vw' : '100vw'}}>
@@ -158,7 +149,6 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
           {isLocation(routes.about) && <Underline style={{right: '20.25vw'}}/>}
           {isLocation(routes.careers) && <Underline style={{right: '12vw'}}/>}
           {isLocation(routes.contact) && <Underline style={{right: '3.75vw'}}/>}
-          {props.pageHalf && <Underline className={styles.halfPageUnderline} style={{right: '3.75vw'}}/>}
         </LinksContainer>}
         {renderRight && <HeaderRightMargin item className={borders.bottomBorder}/>}
       </Grid>

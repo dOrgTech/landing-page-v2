@@ -1,6 +1,7 @@
 import {Member} from "../constants/members";
 import {HUBSPOT_URI} from "../constants/contactForm";
 
+
 interface IFormInput {
   name: string;
   email: string;
@@ -8,6 +9,7 @@ interface IFormInput {
 }
 interface FormSubmission {
   fields: {name: string, value: string}[];
+  skipValidation: boolean;
   context?: {ipAddress: string};
 }
 
@@ -43,7 +45,8 @@ export const sendContactForm = async (data: IFormInput): Promise<Response> => {
       {name: 'lastname', value: lastname},
       {name: 'email', value: data.email},
       {name: 'message', value: data.message}
-    ]
+    ],
+    skipValidation: true
   }
   if (clientIpAddress) {
     body.context = {ipAddress: clientIpAddress}
