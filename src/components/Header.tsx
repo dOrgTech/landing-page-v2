@@ -6,7 +6,7 @@ import {HeaderDesktop} from "./HeaderDesktop";
 export const Header: React.FC = () => {
 
   const theme: Theme = useTheme();
-  const desktop = useMediaQuery(theme.breakpoints.up('lg'));
+  const desktop = useMediaQuery(theme.breakpoints.up('md'));
 
   if (desktop) {
     return (<HeaderDesktop/>);

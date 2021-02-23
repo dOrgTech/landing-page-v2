@@ -111,7 +111,7 @@ export const CookieConsentPrompt: React.FC<Props> = (props: Props) => {
 
   const buttonWrapperStyle = useButtonWrapperStyle();
   const theme: Theme = useTheme();
-  const desktop = useMediaQuery(theme.breakpoints.up('lg'));
+  const desktop = useMediaQuery(theme.breakpoints.up('md'));
 
   if (desktop) {
     return (

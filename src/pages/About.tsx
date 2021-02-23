@@ -69,7 +69,7 @@ export const About: React.FC = () => {
   const borders = useBorders();
   const sonarAnimation = useSonarAnimation();
   const theme: Theme = useTheme();
-  const desktop = useMediaQuery(theme.breakpoints.up('lg'));
+  const desktop = useMediaQuery(theme.breakpoints.up('md'));
 
   const windowSize = useWindowSize()
   const debouncedWindowSize = useDebounce(windowSize, 100);
@@ -112,8 +112,8 @@ export const About: React.FC = () => {
         </ContentContainer>
         <RightMargin border={borderStyle}
           height='100%'
-          accentContainerHeight={`${debouncedWindowSize.height - (0.1 * debouncedWindowSize.width)}px`}
-          centerLineHeight={`${(0.67375 * debouncedWindowSize.width) - debouncedWindowSize.height}px`}
+          accentContainerHeight={`${Math.min(debouncedWindowSize.height - (0.1 * debouncedWindowSize.width), 0.57375*debouncedWindowSize.width-1)}px`}
+          centerLineHeight={`${Math.max((0.67375 * debouncedWindowSize.width) - debouncedWindowSize.height, 0)}px`}
           longAccentIndex={1}/>
       </Root>
     );
