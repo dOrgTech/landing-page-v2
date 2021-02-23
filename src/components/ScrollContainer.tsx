@@ -37,7 +37,7 @@ export const ScrollContainer: React.FC<Props> = (props: Props) => {
   const className = props.className ? props.className : '';
 
   const theme: Theme = useTheme();
-  const desktop = useMediaQuery(theme.breakpoints.up('lg'));
+  const desktop = useMediaQuery(theme.breakpoints.up('md'));
 
   const mobileStyle = makeStyles({
     transparent: {

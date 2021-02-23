@@ -6,7 +6,7 @@ import {Theme, useMediaQuery, useTheme} from "@material-ui/core";
 export const Footer: React.FC = () => {
 
   const theme: Theme = useTheme();
-  const desktop = useMediaQuery(theme.breakpoints.up('lg'));
+  const desktop = useMediaQuery(theme.breakpoints.up('md'));
 
   if (desktop) {
     return (<FooterDesktop/>);

@@ -68,7 +68,7 @@ export const Home: React.FC = () => {
   const borders = useBorders();
   const sonarAnimation = useSonarAnimation();
   const theme: Theme = useTheme();
-  const desktop = useMediaQuery(theme.breakpoints.up('lg'));
+  const desktop = useMediaQuery(theme.breakpoints.up('md'));
 
   const windowSize = useWindowSize()
   const debouncedWindowSize = useDebounce(windowSize, 100);
