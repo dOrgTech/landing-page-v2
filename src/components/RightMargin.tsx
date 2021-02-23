@@ -5,6 +5,7 @@ import {theme} from "../theme";
 import {Route, routes} from "../constants/routes";
 import {useNavHoverContext} from "./NavHoverContext";
 
+
 const StyledGrid = styled(Grid)({
   width: '7.5vw',
   background: 'transparent'
