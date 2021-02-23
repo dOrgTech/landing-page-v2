@@ -1,6 +1,5 @@
 import React from "react";
 
-
 export enum Role {
   design,
   frontend,
