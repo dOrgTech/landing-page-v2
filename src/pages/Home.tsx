@@ -12,6 +12,7 @@ import {HomeTitleBoxMobile} from "../components/home/mobile/HomeTItleBoxMobile";
 import {ClientTabsMobile} from "../components/home/mobile/ClientTabsMobile";
 import {useDebounce, useWindowSize} from "../utils/hooks";
 
+
 export const TITLE_TEXT_PRIMARY = 'We build';
 export const TITLE_TEXT_SECONDARY = ['Dapps', 'DAOs', 'Smart Contracts', 'Web3 SDKs'];
 export const SUBTITLE_TEXT = 'We’ve helped some of Web3’s top projects design, code and ship.';
