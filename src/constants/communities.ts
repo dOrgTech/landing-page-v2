@@ -23,7 +23,7 @@ export const communities: Communities = {
     textColor: '#F3F3F3',
     textColorFilter: 'brightness(0) saturate(100%) invert(98%) sepia(79%) saturate(774%) hue-rotate(191deg) brightness(123%) contrast(91%)',
     project: {
-      description: 'API3 is a decentralized oracle network that connects data providers to dApps with no middlemen.\n\nThat’s why the AP3 team enlisted dOrg to build out the API3 DAO, a token-governed community running on the Aragon framework. Complete with custom governance modules and UI components, the API3 DAO will govern what may be the future of API services on the Ethereum platform.',
+      description: 'API3 provides dApps with decentrally governed and quantifiably secure data feeds.\n\nThe API3 team enlisted dOrg to help build the API3 DAO, a custom Aragon DAO that will allow anyone to stake API3 tokens in order to receive staking rewards and voting power. Complete with its own staking modules and custom UI, the API3 DAO will govern what may be the future of API services on Web3.',
       technologies: ['Smart Contracts', 'Software Architecture', 'Frontend'],
       bullets: [
         {text: 'Check out the repo', url: 'https://github.com/api3dao/api3-dao'}
@@ -41,7 +41,7 @@ export const communities: Communities = {
     textColor: '#333333',
     textColorFilter: 'brightness(0) saturate(100%) invert(26%) sepia(0%) saturate(31%) hue-rotate(140deg) brightness(96%) contrast(119%)',
     project: {
-      description: 'Aragon is the leading framework for decentralized governance.\n\ndOrg coordinates within the Aragon ecosystem to handle important UX enhancements and new features in core libraries. We also lead product research and development of the upcoming V2 Client.\n\ndOrg is a leading team in the Aragon Experts program. We have developed custom Aragon components for DAOs such as API3, RAY, and LID.',
+      description: 'Aragon is a leading framework for decentralized governance.\n\ndOrg coordinates within the Aragon ecosystem to handle important UX enhancements and new features in core libraries. We also lead product research and development of the upcoming V2 Client.\n\ndOrg is one of the most active teams in the Aragon Experts program. We have developed custom Aragon components for DAOs such as API3, RAY, and LID.',
       technologies: ['Smart Contracts', 'Web3 Integrations', 'Product Owner'],
       bullets: [],
       imageSrc: 'imgs/project-graphics/aragon-brand.svg'
@@ -111,7 +111,7 @@ export const communities: Communities = {
     textColor: '#123262',
     textColorFilter: 'brightness(0) saturate(100%) invert(14%) sepia(15%) saturate(7037%) hue-rotate(199deg) brightness(97%) contrast(94%)',
     project: {
-      description: 'dOrg is proud to be working with TQ Tezos and the broader Tezos ecosystem on Homebase, an app that enables anyone to launch DAOs on the Tezos blockchain in a few clicks.\n\ndOrg designed and built the Homebase app on top of the BaseDAO smart contract framework. We utilized Taquito and Beacon SDK. We also contributed to the BaseDAO framework spec and design as product co-owners.',
+      description: 'dOrg is proud to be working with TQ Tezos and the broader Tezos ecosystem on Homebase, an app that enables anyone to launch DAOs on the Tezos blockchain in a few clicks.\n\ndOrg designed and built the Homebase app on top of the BaseDAO smart contract framework We utilized Taquito and Beacon SDK. We also contributed to the BaseDAO framework spec and design as product co-owners.',
       technologies: ['Web3 Integrations', 'Frontend', 'UI/UX Design'],
       bullets: [
         {text: 'Read the announcement', url: 'https://tqtezos.medium.com/daos-on-tezos-announcing-homebase-80bbecbb9bfe'},
@@ -150,7 +150,7 @@ export const communities: Communities = {
     iconHighlightColor: '#006aff',
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(33%) sepia(67%) saturate(5938%) hue-rotate(208deg) brightness(101%) contrast(109%)',
     project: {
-      description: 'Zero is a social operating system that has been building in stealth for 6 years. The Zer0 OS enables peer-to-peer communication, collaboration, transactions, and governance.\n\ndOrg leads development on three critical components of the Zero stack: Zero Name Service (ZNS), zDAO governance, and zChain. We work with teams across the Zer0 ecosystem to go from ideas to well-crafted systems to expertly-executed products and beyond.',
+      description: 'Zero is a Social Operating System that has been building in stealth for 6 years. The Zero OS enables peer-to-peer communication, collaboration, transactions, and governance.\n\ndOrg works with teams across the Zero ecosystem to architect and implement critical components of the Zero stack like the Zero Name Service (ZNS) and zDAO.',
       technologies: ['Smart Contracts', 'Frontend', 'Software Architecture'],
       bullets: [],
       imageSrc: 'imgs/project-graphics/zero-eye-graphic.png'
