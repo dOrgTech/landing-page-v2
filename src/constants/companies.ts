@@ -1,5 +1,6 @@
 import {Client} from "./clients";
 
+
 export interface Companies {
   Balancer: Readonly<Client>;
   Boardroom: Readonly<Client>;

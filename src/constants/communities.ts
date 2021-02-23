@@ -1,5 +1,6 @@
 import {Client} from "./clients";
 
+
 export interface Communities {
   API3: Readonly<Client>;
   Aragon: Readonly<Client>;
