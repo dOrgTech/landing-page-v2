@@ -104,11 +104,7 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
   // conditional styling and underline
   const borderColor = props.textColor ? props.textColor : theme.palette.text.primary;
   const borders = makeStyles(getBorderStyle(borderColor))();
-  const underlineColor = () => {
-    if (props.underlineColor) return props.underlineColor;
-    else if (props.textColor) return props.textColor;
-    else return theme.palette.text.primary;
-  }
+
   const navTextColor = (navHoverIndex: number, index: number) => {
     if (navHoverIndex === index) return theme.palette.secondary.main;
     else if (props.textColor) return props.textColor;
