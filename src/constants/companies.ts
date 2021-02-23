@@ -103,7 +103,7 @@ export const companies: Companies = {
     iconHighlightFilter: '',
     highlightColor: '#6aac0e',
     project: {
-      description: 'How can a decentralized Universal Basic Income protect against fraudulent accounts?\n\ndOrg teamed up with DAOstack to help the GoodDollar team at eToro answer this question. What resulted was the Identity DAO, a reputation-weighted circle of trust for verifying user identities without centralization. In addition to building out the prototype, dOrg specified the Identity DAO’s technical architecture, governance incentives, and UI mock-ups.',
+      description: 'How can a decentralized Universal Basic Income protect against fraudulent accounts?\n\ndOrg teamed up with the GoodDollar team at eToro and DAOstack answer this question. What resulted was the Identity DAO, a reputation-weighted circle of trust for verifying user identities without centralization. In addition to building out the prototype, dOrg specified the Identity DAO’s technical architecture, governance incentives, and UI mock-ups.',
       technologies: ['Governance Design', 'Mobile', 'Web3 Integrations'],
       bullets: [
         {text: 'Check out the repo', url: 'https://github.com/dOrgTech/ID-DAO'}
@@ -137,7 +137,7 @@ export const companies: Companies = {
     iconHighlightColor: '#6f4cff',
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(35%) sepia(51%) saturate(6120%) hue-rotate(241deg) brightness(100%) contrast(104%)',
     project: {
-      description: 'The Graph is Web3’s largest indexing protocol. The network allows dApps to quickly load data without relying on centralized servers.\n\nThe Graph hired dOrg to research and develop an experimental new feature called Mutations that would enable client-side write operations on behalf of the user. These mutations would nicely complement read operations being sent to the graph-node network.',
+      description: 'The Graph is Web3’s largest indexing protocol. The network allows dApps to quickly load data without relying on centralized caching servers.\n\nThe Graph hired dOrg to research and develop an experimental Mutations feature. Mutations enable client-side write operations, complementing the read-only operations that the network currently handles.',
       technologies: ['Developer Tools', 'Software Architecture', 'Web3 Integrations'],
       bullets: [
         {text: 'Watch the demo', url: 'https://www.youtube.com/watch?v=GRnTJBxhQIw'},
@@ -158,7 +158,7 @@ export const companies: Companies = {
     textColor: '#43434d',
     textColorFilter: 'brightness(0) saturate(100%) invert(22%) sepia(15%) saturate(438%) hue-rotate(202deg) brightness(97%) contrast(85%)',
     project: {
-      description: 'Minds is a free speech social network with over 250k weekly active users.\n\nThe Minds team hired dOrg to review and modernize the platform’s web3 architecture. This included updating to ethers.js, adding native Uniswap support, and adding multi-wallet support with Wallet Connect on both web and mobile. dOrg also helped redesign the network’s token economics, including a novel engagement mining game that incentivizes platform usage, hodling, and liquidity.',
+      description: 'Minds is a crypto social network with over 4 million users.\n\nThe Minds team hired dOrg to modernize the platform’s web3 architecture. This included updating to ethers.js, adding native Uniswap support, and Wallet Connect multi-wallet support on both web and mobile. dOrg also helped redesign the network’s token economics, including a novel engagement mining game that incentivizes platform usage, hodling, and liquidity.',
       technologies: ['Web3 Integrations', 'Mobile', 'Token Economics'],
       bullets: [],
       imageSrc: 'imgs/project-graphics/minds-compose.svg',
@@ -170,7 +170,7 @@ export const companies: Companies = {
     icon: 'imgs/logos/ParaSwap.svg',
     highlightColor: '#005ede',
     project: {
-      description: 'Paraswap is a decentralized exchange (DEX) aggregator which aims to become the connecting tissue between DeFi protocols.\n\ndOrg worked closely with the Paraswap team to optimize and rewrite their core aggregation algorithms and API. We also helped them to rebuild their front-end application.',
+      description: 'ParaSwap is a decentralized exchange (DEX) aggregator which aims to become the connecting tissue between DeFi protocols.\n\ndOrg provided ongoing development services to improve and optimize their aggregation algorithms, API, and UI.',
       technologies: ['Smart Contracts', 'Backend', 'Software Architecture', 'Frontend'],
       bullets: [],
       imageSrc: 'imgs/logos/ParaSwap.svg',
