@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import {Member} from "../constants/members";
 import {getMembers} from "./network";
+import {useMediaQuery} from "@material-ui/core";
+import {theme} from "../theme";
 
 
 // debounce a value
@@ -44,6 +46,7 @@ function useWindowSize(): WindowSize {
   return dimensions;
 }
 
+
 // get members from server and return member array
 function useMembers(): Member[] {
   const [members, setMembers] = useState<Member[]>([]);
@@ -56,4 +59,13 @@ function useMembers(): Member[] {
   return members
 }
 
-export {useWindowSize, useDebounce, useMembers}
+
+// check if desktop or mobile/tablet
+function useIsDesktop(): boolean {
+  const isMobileUA = /Mobile|Tablet|Android|iOS|iPhone|iPad|iPod|BlackBerry|Phone/i.test(window.navigator.userAgent);
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up('sm'));
+  return isLargeScreen && !isMobileUA;
+}
+
+
+export {useWindowSize, useDebounce, useMembers, useIsDesktop}

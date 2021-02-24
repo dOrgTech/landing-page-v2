@@ -1,9 +1,10 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import {styled, Grid, useTheme, Theme, useMediaQuery} from '@material-ui/core'
+import {styled, Grid} from '@material-ui/core'
 import {theme} from "../theme";
 import {Route, routes} from "../constants/routes";
 import {useNavHoverContext} from "./NavHoverContext";
+import {useIsDesktop} from "../utils/hooks";
 
 
 const StyledGrid = styled(Grid)({
@@ -93,8 +94,7 @@ interface Props {
 
 const RightMargin: React.FC<Props> = (props: Props) => {
 
-  const theme: Theme = useTheme();
-  const desktop = useMediaQuery(theme.breakpoints.up('md'));
+  const desktop = useIsDesktop();
 
   return (
     <StyledGrid item xs={props.xs} style={{height: props.height, width: desktop ? '7.5vw' : '5vw'}}>

@@ -1,7 +1,8 @@
 import React from 'react'
 import CookieConsent from "react-cookie-consent";
 import {theme} from "../theme";
-import {makeStyles, Theme, useMediaQuery, useTheme} from "@material-ui/core";
+import {makeStyles} from "@material-ui/core";
+import {useIsDesktop} from "../utils/hooks";
 
 const cookieStyle = {
   background: '#000e3c',
@@ -110,8 +111,7 @@ interface Props {
 export const CookieConsentPrompt: React.FC<Props> = (props: Props) => {
 
   const buttonWrapperStyle = useButtonWrapperStyle();
-  const theme: Theme = useTheme();
-  const desktop = useMediaQuery(theme.breakpoints.up('md'));
+  const desktop = useIsDesktop();
 
   if (desktop) {
     return (
