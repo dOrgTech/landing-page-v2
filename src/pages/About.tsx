@@ -1,7 +1,7 @@
 import React from "react";
 import ReactGA from "react-ga";
 import { useHistory } from 'react-router-dom'
-import {Grid, makeStyles, styled, Theme, useMediaQuery, useTheme} from "@material-ui/core";
+import {Grid, makeStyles, styled} from "@material-ui/core";
 import { StatBox } from "../components/about/desktop/StatBox";
 import { PitchBox } from "../components/about/desktop/PitchBox";
 import {PressBox} from "../components/about/desktop/PressBox";
@@ -21,7 +21,7 @@ import {StatBoxMobile} from "../components/about/mobile/StatBoxMobile";
 import {PitchTitleBoxMobile} from "../components/about/mobile/PitchTitleBoxMobile";
 import {PitchBoxMobile} from "../components/about/mobile/PitchBoxMobile";
 import {CloseBoxMobile} from "../components/about/mobile/CloseBoxMobile";
-import {useDebounce, useMembers, useWindowSize} from "../utils/hooks";
+import {useDebounce, useIsDesktop, useMembers, useWindowSize} from "../utils/hooks";
 
 // strings
 const ABOUT_TITLE = 'We are a full-stack Web3 development collective.';
@@ -68,8 +68,8 @@ export const About: React.FC = () => {
 
   const borders = useBorders();
   const sonarAnimation = useSonarAnimation();
-  const theme: Theme = useTheme();
-  const desktop = useMediaQuery(theme.breakpoints.up('md'));
+
+  const desktop = useIsDesktop();
 
   const windowSize = useWindowSize()
   const debouncedWindowSize = useDebounce(windowSize, 100);

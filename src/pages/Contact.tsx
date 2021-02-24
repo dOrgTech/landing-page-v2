@@ -1,6 +1,6 @@
 import React from "react";
 import ReactGA from "react-ga";
-import {Grid, makeStyles, styled, Theme, useMediaQuery, useTheme} from "@material-ui/core";
+import {Grid, makeStyles, styled} from "@material-ui/core";
 import {ContactTitleBox} from "../components/contact/desktop/ContactTitleBox";
 import {RightMargin} from "../components/RightMargin";
 import {LeftMargin} from "../components/LeftMargin";
@@ -8,7 +8,7 @@ import {borderStyle, borderStyles} from "../theme/styles";
 import {ContactForm} from "../components/contact/desktop/ContactForm";
 import {ContactTitleBoxMobile} from "../components/contact/mobile/ContactTitleBoxMobile";
 import {ContactFormMobile} from "../components/contact/mobile/ContactFormMobile";
-import {useDebounce, useWindowSize} from "../utils/hooks";
+import {useDebounce, useIsDesktop, useWindowSize} from "../utils/hooks";
 import {iconLinks} from "../constants/routes";
 
 const TITLE = 'Not sure where to start?'
@@ -34,8 +34,7 @@ export const Contact: React.FC = () => {
 
   const borders = useBorders();
 
-  const theme: Theme = useTheme();
-  const desktop = useMediaQuery(theme.breakpoints.up('md'));
+  const desktop = useIsDesktop();
 
   const windowSize = useWindowSize()
   const debouncedWindowSize = useDebounce(windowSize, 100);
