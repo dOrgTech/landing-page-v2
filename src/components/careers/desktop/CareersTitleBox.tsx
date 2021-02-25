@@ -6,8 +6,7 @@ import {FadeInOutAnimation} from "../../FadeInOutAnimation";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
-  height: '13.75vw',
-  padding: '3.625vw 0 0 1.75vw',
+  height: '10.5vw',
   background: 'transparent',
   boxSizing: 'border-box',
   position: 'relative'
@@ -62,7 +61,7 @@ export const CareersTitleBox: React.FC<Props> = (props: Props) => {
   const styledTextSecondary = useStyledTextSecondary();
 
   return (
-    <StyledGrid className={props.classes} container direction={'row'} spacing={0} justify={'flex-start'} alignItems={'flex-start'}>
+    <StyledGrid className={props.classes} container direction={'row'} spacing={0} justify={'flex-start'} alignItems={'center'}>
       <Grid item>
         <StyledTextPrimary>{props.textPrimary}</StyledTextPrimary>
       </Grid>
