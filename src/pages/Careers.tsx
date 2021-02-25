@@ -139,7 +139,7 @@ export const Careers: React.FC = () => {
             <MeetBuildersTitleBoxMobile text={MEET_BUILDERS_TITLE} classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
-            <ProfileWheelMobile members={members.length > 0 ? members : testMembers} classes={borders.leftBorder}/>
+            <ProfileWheelMobile members={members.length > 0 ? members.concat(members.slice(0, 2)) : testMembers} classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
             <TestimonialSectionMobile testimonials={testimonials} carouselBorder={borderStyle} classes={borders.leftBorder} />

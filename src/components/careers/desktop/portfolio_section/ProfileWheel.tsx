@@ -141,6 +141,15 @@ export const ProfileWheel: React.FC<Props> = (props: Props) => {
     }
   }
 
+  // get scroll over 1 pixel on page load to fix bug that otherwise prevents scrolling left without first scrolling right
+  useEffect(() => {
+    const scrollbar = scrollRef.current;
+    if (scrollbar) {
+      scrollbar.scrollLeft += 1;
+      setScrollX(scrollbar.scrollLeft);
+    }
+  }, [])
+
   return (
     <SlideShow className={props.classes} style={{overflow: 'hidden'}}>
       <ProfileContainer container direction={'column'} spacing={0} justify={'flex-start'} alignItems={'center'}
@@ -151,7 +160,7 @@ export const ProfileWheel: React.FC<Props> = (props: Props) => {
         onScroll={e => handleScroll(e, scrollRef)}>
         {props.members.map((member: Member, i: number) => (
           <ProfileItem item key={`profile-${i}`}>
-            <ProfileSummary member={member} indexTag={`${i % props.members.length + 1}/${props.members.length-5}`}/>
+            <ProfileSummary member={member} indexTag={`${i % (props.members.length-5) + 1}/${props.members.length-5}`}/>
           </ProfileItem>
         ))}
       </ProfileContainer>
