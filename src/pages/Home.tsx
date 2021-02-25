@@ -1,4 +1,4 @@
-import {Grid, makeStyles, styled, Theme, useMediaQuery, useTheme} from "@material-ui/core";
+import {Grid, makeStyles, styled} from "@material-ui/core";
 import React from "react";
 import ReactGA from "react-ga";
 import {ClientContainer} from "../components/home/desktop/ClientContainer";
@@ -10,7 +10,8 @@ import {RightMargin} from "../components/RightMargin";
 import {HomeTitleBox} from "../components/home/desktop/HomeTitleBox";
 import {HomeTitleBoxMobile} from "../components/home/mobile/HomeTItleBoxMobile";
 import {ClientTabsMobile} from "../components/home/mobile/ClientTabsMobile";
-import {useDebounce, useWindowSize} from "../utils/hooks";
+import {useDebounce, useIsDesktop, useWindowSize} from "../utils/hooks";
+
 
 export const TITLE_TEXT_PRIMARY = 'We build';
 export const TITLE_TEXT_SECONDARY = ['Dapps', 'DAOs', 'Smart Contracts', 'Web3 SDKs'];
@@ -67,8 +68,8 @@ export const Home: React.FC = () => {
   const titlePosition = useTitlePositionStyle();
   const borders = useBorders();
   const sonarAnimation = useSonarAnimation();
-  const theme: Theme = useTheme();
-  const desktop = useMediaQuery(theme.breakpoints.up('md'));
+
+  const desktop = useIsDesktop();
 
   const windowSize = useWindowSize()
   const debouncedWindowSize = useDebounce(windowSize, 100);

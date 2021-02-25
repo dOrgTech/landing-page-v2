@@ -4,7 +4,6 @@ import {Member} from "../../../../constants/members";
 import {ProfileSummaryMobile} from "./ProfileSummaryMobile";
 import {useDebounce, useWindowSize} from "../../../../utils/hooks";
 
-
 const SlideShow = styled(Box)({
   width: '100vw',
   height: '95vw',
@@ -85,7 +84,6 @@ export const ProfileWheelMobile: React.FC<Props> = (props: Props) => {
   const [scrollX, setScrollX] = useState(0);
   const [momentum, setMomentum] = useState(0);
   const scrollRef = useRef<HTMLDivElement | null>(null);
-  const [autoScroll, setAutoScroll] = useState<NodeJS.Timeout | null>(null);
 
   const windowSize = useWindowSize()
   const debouncedWindowSize = useDebounce(windowSize, 100);
@@ -140,32 +138,15 @@ export const ProfileWheelMobile: React.FC<Props> = (props: Props) => {
       allowInfiniteScroll(scrollbar, scrollX);
     }
   }
-  // start automatically scrolling (slide show behavior)
-  const startAutoScroll = () => {
-    const scrollbar = scrollRef.current;
-    setAutoScroll(setInterval(() => {
-      if (scrollbar) {
-        scrollbar.scrollLeft += 1;
-        // give appearance of infinite scroll
-        if (scrollbar.scrollLeft === scrollbar.scrollWidth - window.innerWidth) {
-          scrollbar.scrollLeft = 0;
-        }
-        setScrollX(scrollbar.scrollLeft);
-      }
-    }, 15));
-  }
-  // get scroll started at page load
-  useEffect(() => startAutoScroll(), [])
-  // turn off auto scroll if mouse over
-  const handleMouseEnter = (e: React.MouseEvent | MouseEvent,) => {
-    if (autoScroll) {
-      clearInterval(autoScroll);
-      setAutoScroll(null);
-    }
-  }
-  // start auto scroll if mouse leaves
-  const handleMouseLeave = (e: React.MouseEvent | MouseEvent,) => startAutoScroll();
 
+  // get scroll over 1 pixel on page load to fix bug that otherwise prevents scrolling left without first scrolling right
+  useEffect(() => {
+    const scrollbar = scrollRef.current;
+    if (scrollbar) {
+      scrollbar.scrollLeft += 1;
+      setScrollX(scrollbar.scrollLeft);
+    }
+  }, [])
 
   return (
     <SlideShow className={props.classes} style={{overflow: 'hidden'}}>
@@ -174,12 +155,10 @@ export const ProfileWheelMobile: React.FC<Props> = (props: Props) => {
         onMouseDown={e => handleMouseDown(e, scrollRef)}
         onMouseUp={handleMouseUp}
         onMouseMove={e => handleMouseMove(e, scrollRef)}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
         onScroll={e => handleScroll(e, scrollRef)}>
         {props.members.map((member: Member, i: number) => (
           <ProfileItem item key={`profile-${i}`}>
-            <ProfileSummaryMobile member={member} />
+            <ProfileSummaryMobile member={member} indexTag={`${i % (props.members.length-2) + 1}/${props.members.length-2}`} />
           </ProfileItem>
         ))}
       </ProfileContainer>

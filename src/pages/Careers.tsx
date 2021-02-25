@@ -1,6 +1,6 @@
 import React from "react";
 import ReactGA from "react-ga";
-import {Grid, makeStyles, styled, Theme, useMediaQuery, useTheme} from "@material-ui/core";
+import {Grid, makeStyles, styled} from "@material-ui/core";
 import { Perk, perks } from "../constants/perks";
 import {CareersTitleBox} from "../components/careers/desktop/CareersTitleBox";
 import {LeftMargin} from "../components/LeftMargin";
@@ -22,7 +22,7 @@ import {MeetBuildersTitleBoxMobile} from "../components/careers/mobile/MeetBuild
 import {ProfileWheelMobile} from "../components/careers/mobile/portfolio_section/ProfileWheelMobile";
 import {TestimonialSectionMobile} from "../components/careers/mobile/testimonial_section/TestimonialSectionMobile";
 import {CurrentOpeningSectionMobile} from "../components/careers/mobile/openings_section/CurrentOpeningSectionMobile";
-import {useDebounce, useMembers, useWindowSize} from "../utils/hooks";
+import {useDebounce, useIsDesktop, useMembers, useWindowSize} from "../utils/hooks";
 import {StoryBox} from "../components/careers/desktop/StoryBox";
 import {BuilderCycleBox} from "../components/careers/desktop/BuilderCycleBox";
 import {PerkSection} from "../components/careers/desktop/PerkSection";
@@ -64,8 +64,8 @@ export const Careers: React.FC = () => {
 
   const navigateToBuilderInterestForm = () => window.location.assign(externalLinks.builderInterest.path);
   const borders = useBorders();
-  const theme: Theme = useTheme();
-  const desktop = useMediaQuery(theme.breakpoints.up('md'));
+
+  const desktop = useIsDesktop();
 
   const windowSize = useWindowSize()
   const debouncedWindowSize = useDebounce(windowSize, 100);
@@ -139,7 +139,7 @@ export const Careers: React.FC = () => {
             <MeetBuildersTitleBoxMobile text={MEET_BUILDERS_TITLE} classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
-            <ProfileWheelMobile members={members.length > 0 ? members : testMembers} classes={borders.leftBorder}/>
+            <ProfileWheelMobile members={members.length > 0 ? members.concat(members.slice(0, 2)) : testMembers} classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
             <TestimonialSectionMobile testimonials={testimonials} carouselBorder={borderStyle} classes={borders.leftBorder} />

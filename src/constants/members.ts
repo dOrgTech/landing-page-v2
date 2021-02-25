@@ -22,8 +22,8 @@ const testMember: Member = {
 }
 
 const testMembers: Member[] = [];
-for (let i = 0; i < 25; i++) {
-  const index = i % 20;
+for (let i = 0; i < 15; i++) {
+  const index = i % 10;
   testMembers.push(Object.assign({}, testMember, {name: `Christopher Walken ${index}`}));
 }
 

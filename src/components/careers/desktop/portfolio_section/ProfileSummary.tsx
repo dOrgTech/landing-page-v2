@@ -5,7 +5,6 @@ import {Member} from "../../../../constants/members";
 import {ChipSmall} from "../ChipSmall";
 import {PortfolioLinkBox} from "./PortfolioLinkBox";
 
-
 const StyledGrid = styled(Grid)({
   width: '18.75vw',
   height: '25vw',
@@ -17,13 +16,16 @@ const StyledGrid = styled(Grid)({
   '-khtml-user-select': 'none',
   '-webkit-user-select': 'none',
   '-ms-user-select': 'none',
+  position: 'relative',
+  cursor: "url(imgs/cursors/grab-cursor-icon-small.png), default"
 });
 
 const StyledPhoto = styled('img')({
   width: "7.5vw",
   height: "7.5vw",
   objectFit: "cover",
-  borderRadius: '75px'
+  borderRadius: '75px',
+  userDrag: 'none',
 });
 
 const StyledName = styled(Typography)({
@@ -43,19 +45,35 @@ const ChipContainer = styled(Grid)({
   width: '100%',
   marginTop: '1vw',
   background: 'transparent',
-  boxSizing: 'border-box'
+  boxSizing: 'border-box',
 });
 
 const useChipStyle = makeStyles({
   chip: {
-    margin: '0.15vw'
+    margin: '0.15vw',
+    cursor: 'default'
   }
 });
+
+const DisplayIndex = styled(Typography)({
+  fontFamily: theme.typography.fontFamily,
+  fontSize: '0.7rem',
+  fontWeight: 'normal',
+  fontStretch: "normal",
+  fontStyle: "normal",
+  lineHeight: 1,
+  letterSpacing: 'normal',
+  color: theme.palette.text.primary,
+  position: 'absolute',
+  right: '0.5vw',
+  bottom: '0.5vw',
+})
 
 interface Props {
   member: Member;
   classes?: string;
   onClickOpen?: (member: Member) => void;
+  indexTag?: string;
 }
 
 export const ProfileSummary: React.FC<Props> = (props: Props) => {
@@ -84,6 +102,7 @@ export const ProfileSummary: React.FC<Props> = (props: Props) => {
           website={props.member.portfolio.website}
           linkedin={props.member.portfolio.linkedin}/>
       </Grid>
+      <DisplayIndex>{props.indexTag}</DisplayIndex>
     </StyledGrid>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import {Switch, Route, HashRouter} from "react-router-dom";
+import {Switch, Route, BrowserRouter} from "react-router-dom";
 import {makeStyles, ThemeProvider} from "@material-ui/core";
 import { theme } from "./theme";
 import { routes } from "./constants/routes";
@@ -31,7 +31,7 @@ const App: React.FC = () => {
     <ThemeProvider theme={theme}>
       <ScrollContainer className={appContainerStyle.container}>
         <NavHoverContext>
-          <HashRouter>
+          <BrowserRouter>
             <Header/>
             <Switch >
               <Route path={routes.home.path} exact>
@@ -49,7 +49,7 @@ const App: React.FC = () => {
             </Switch>
             <CookieConsentPrompt prompt={'This website uses cookies to enhance the user experience.'} />
             <Footer />
-          </HashRouter>
+          </BrowserRouter>
         </NavHoverContext>
       </ScrollContainer>
     </ThemeProvider>
