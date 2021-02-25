@@ -11,6 +11,7 @@ const StyledGrid = styled(Grid)({
   padding: '7.5vw 6.1vw 3.5vw 6.1vw',
   backgroundColor: '#000e3c',
   boxSizing: 'border-box',
+  position: 'relative',
   userSelect: 'none',
   '-moz-user-select': '-moz-none',
   '-khtml-user-select': 'none',
@@ -51,9 +52,24 @@ const useChipStyle = makeStyles({
   }
 });
 
+const DisplayIndex = styled(Typography)({
+  fontFamily: theme.typography.fontFamily,
+  fontSize: '0.7rem',
+  fontWeight: 'normal',
+  fontStretch: "normal",
+  fontStyle: "normal",
+  lineHeight: 1,
+  letterSpacing: 'normal',
+  color: theme.palette.text.primary,
+  position: 'absolute',
+  right: '2vw',
+  bottom: '2vw',
+})
+
 interface Props {
   member: Member;
   classes?: string;
+  indexTag?: string;
 }
 
 export const ProfileSummaryMobile: React.FC<Props> = (props: Props) => {
@@ -82,6 +98,7 @@ export const ProfileSummaryMobile: React.FC<Props> = (props: Props) => {
           website={props.member.portfolio.website}
           linkedin={props.member.portfolio.linkedin}/>
       </Grid>
+      <DisplayIndex>{props.indexTag}</DisplayIndex>
     </StyledGrid>
   );
 }
