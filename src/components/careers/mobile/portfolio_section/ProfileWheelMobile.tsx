@@ -4,7 +4,6 @@ import {Member} from "../../../../constants/members";
 import {ProfileSummaryMobile} from "./ProfileSummaryMobile";
 import {useDebounce, useWindowSize} from "../../../../utils/hooks";
 
-
 const SlideShow = styled(Box)({
   width: '100vw',
   height: '95vw',

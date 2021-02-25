@@ -5,7 +5,6 @@ import {Member} from "../../../../constants/members";
 import {ChipSmall} from "../ChipSmall";
 import {PortfolioLinkBox} from "./PortfolioLinkBox";
 
-
 const StyledGrid = styled(Grid)({
   width: '18.75vw',
   height: '25vw',
