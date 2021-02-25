@@ -58,7 +58,7 @@ export const companies: Companies = {
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(0%) sepia(21%) saturate(141%) hue-rotate(355deg) brightness(104%) contrast(89%)',
     highlightColor: '#1130ff',
     project: {
-      description: 'Centrality maintains CENNZnet, the world’s first natively permissioned, public blockchain.\n\ndOrg developed a one-way token bridge for migrating the CENNZ and CPAY tokens from Ethereum to CENNZnet mainnet. This included the migration contract, off-chain oracle, and mobile-friendly web app.',
+      description: 'Centrality maintains CENNZnet, the world’s first natively permissioned, public blockchain.\n\ndOrg developed a one-way token bridge for migrating the CENNZ and CPAY tokens from Ethereum to CENNZnet. This included the migration contract, off-chain oracle, and mobile-friendly web app.',
       technologies: ['Smart Contracts', 'Backend', 'Frontend'],
       bullets: [],
       imageSrc: 'imgs/project-graphics/centrality-graphic.svg'
@@ -70,7 +70,7 @@ export const companies: Companies = {
     icon: 'imgs/logos/Compound.svg',
     highlightColor: '#00a977',
     project: {
-      description: 'Compound is a decentralized lending protocol with token-holder governance.\n\nAs part of MetaCartel’s Dragon Quest hackathon, we won Compound’s bounty for building a Governance SDK in Node for interacting with the Compound’s voting contracts.',
+      description: 'Compound is a decentralized lending protocol with token-holder governance.\n\ndOrg built a Node SDK for interacting with the Compound voting contracts, winning Compound’s governance bounty at the MetaCartel Dragon Quest hackathon.',
       technologies: ['Developer Tools'],
       bullets: [
         {text: 'Check out the repo', url: 'https://github.com/dOrgTech/compound-sdk'},
@@ -200,7 +200,7 @@ export const companies: Companies = {
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(19%) sepia(94%) saturate(2659%) hue-rotate(231deg) brightness(84%) contrast(83%)',
     highlightColor: '#102039',
     project: {
-      description: 'Staked helps exchanges, VCs, and retail investors to earn fixed income yield on crypto assets without giving up custody.\n\nStaked hired dOrg to build a custom Aragon DAO that enables their users to govern the Robo Advisor for Yield (RAY) system. The project automates incentives for depositors, yield strategists, liquidity providers. We worked closely with the core team and external auditors to ensure system integrity throughout the project lifecycle.',
+      description: 'Staked helps exchanges, VCs, and retail investors to earn fixed income yield on crypto assets without giving up custody.\n\nStaked hired dOrg to build a custom Aragon DAO that enables their users to govern the Robo Advisor for Yield (RAY) system. The project automates incentives for depositors, yield strategists, and liquidity providers. We worked closely with the core team and external auditors to ensure system integrity throughout the project lifecycle.',
       technologies: ['Smart Contracts', 'Web3 Integrations', 'Software Architecture'],
       bullets: [],
       imageSrc: 'imgs/project-graphics/staked-diamond.svg'
