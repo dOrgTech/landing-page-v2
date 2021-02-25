@@ -1,5 +1,6 @@
 import React from 'react'
-import {Grid, makeStyles, styled, Theme, useMediaQuery, useTheme} from '@material-ui/core'
+import {Grid, makeStyles, styled} from '@material-ui/core'
+import {useIsDesktop} from "../../../../utils/hooks";
 
 
 const Container = styled(Grid)({
@@ -38,8 +39,7 @@ interface Props {
 export const ProjectGraphic: React.FC<Props> = (props: Props) => {
 
   const classes = props.classes ? props.classes : '';
-  const theme: Theme = useTheme();
-  const desktop = useMediaQuery(theme.breakpoints.up('md'));
+  const desktop = useIsDesktop();
   const mobileStyles = useMobileStyles();
 
   return (

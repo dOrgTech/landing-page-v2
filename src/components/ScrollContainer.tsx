@@ -1,7 +1,8 @@
 import React, {CSSProperties} from "react";
-import {Box, makeStyles, styled, Theme, useMediaQuery, useTheme} from "@material-ui/core";
+import {Box, makeStyles, styled} from "@material-ui/core";
 import {theme} from "../theme";
 import {hexToRGBA} from "../utils/colorUtils";
+import {useIsDesktop} from "../utils/hooks";
 
 
 const StyledBox = styled(Box)({
@@ -36,8 +37,7 @@ export const ScrollContainer: React.FC<Props> = (props: Props) => {
 
   const className = props.className ? props.className : '';
 
-  const theme: Theme = useTheme();
-  const desktop = useMediaQuery(theme.breakpoints.up('md'));
+  const desktop = useIsDesktop();
 
   const mobileStyle = makeStyles({
     transparent: {
