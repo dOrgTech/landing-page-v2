@@ -24,7 +24,7 @@ app.get("/members", (request, response) => {
 
 // send react app for all other get requests
 app.use(express.static(path.resolve(__dirname, '../../build')));
-app.get('/', (request, response) => {
+app.get('/*', (request, response) => {
   response.sendFile(path.resolve(__dirname, '../../build', 'index.html'));
 });
 
