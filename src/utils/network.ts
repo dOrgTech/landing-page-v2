@@ -14,9 +14,8 @@ interface FormSubmission {
 }
 
 export async function getMembers(): Promise<Member[]> {
-  const loc = window.location;
-  const baseUrl = `${loc.protocol}//${loc.hostname}:${loc.port}`;
-  return fetch(`${baseUrl}/members`, {mode: 'same-origin'})
+  const lambdaUrl = '/.netlify/functions/getMembers';
+  return fetch(lambdaUrl, {mode: 'same-origin'})
     .then(response => {
       if (!response.ok) {
         throw Error(response.statusText);
