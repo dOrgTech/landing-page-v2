@@ -5,6 +5,6 @@ exports.handler = async (event, context, callback) => {
   const members = await fetchMembers(apiKey);
   return {
     statusCode: 200,
-    body: members,
+    body: JSON.stringify(members),
   }
 }
