@@ -32,8 +32,8 @@ export const stats: Stats = {
     icon: 'imgs/bracketed-dot-icon.svg'
   },
   tvl: {
-    title: 'TVL IN OUR PRODUCTS',
-    stat: 3.5,
+    title: 'TVL IN SHIPPED PRODUCTS',
+    stat: 2.5,
     formatter: tvlFormatter,
     postfix: 'B+',
     icon: 'imgs/circle-slice-icon.svg'
@@ -71,8 +71,8 @@ export const statsMobile: Stats = {
     icon: 'imgs/bracketed-dot-icon.svg'
   },
   tvl: {
-    title: 'TVL in our products',
-    stat: 3.5,
+    title: 'TVL in shipped products',
+    stat: 2.5,
     formatter: tvlFormatter,
     postfix: 'B+',
     icon: 'imgs/circle-slice-icon.svg'
