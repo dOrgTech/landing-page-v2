@@ -25,7 +25,7 @@ export const testimonials: Testimonials = {
   person2: {
     name: 'Roberto',
     title: 'dOrg Builder',
-    location: 'Maracaibo, Venezuela',
+    location: 'Madrid',
     testimonial: "Joining dOrg allowed me to work 100% remotely on impactful projects while learning with a global team of skilled web3 professionals. As a freelancer, I am able to commit as many hours as I want to specific projects, tackling the areas which interest me the most and developing new abilities which are essential to build a decentralized internet.",
     photo: 'https://i.ibb.co/SV7B22p/image.png',
     background: 'imgs/testimonials/default-testimonials-background.png',
@@ -33,7 +33,7 @@ export const testimonials: Testimonials = {
   person3: {
     name: 'Kris Bitney',
     title: 'dOrg Builder',
-    location: 'Saint Louis',
+    location: 'St. Louis',
     testimonial: "I work while I travel. I choose my own hours. I drink way too much coffee. This is freedom.",
     photo: 'https://i.ibb.co/Sfr6Q00/image.png',
     background: 'imgs/testimonials/default-testimonials-background.png',
