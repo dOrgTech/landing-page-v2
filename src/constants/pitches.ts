@@ -28,7 +28,7 @@ export const pitches: Pitches = {
     icon: 'imgs/computer-gear-icon.svg'
   },
   alignment: {
-    detail: 'We dogfood your products and accept native tokens to align incentives.',
+    detail: 'We find ways to align incentives like accepting native tokens and dogfooding your tech.',
     pitch: 'Long-term Alignment',
     icon: 'imgs/server-jewel-icon.svg'
   }
