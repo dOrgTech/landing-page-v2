@@ -5,7 +5,7 @@ import { Perk } from "../../../constants/perks";
 
 const StyledGrid = styled(Grid)({
   width: '20vw',
-  height: '11vw',
+  height: '11.5vw',
   boxSizing: 'border-box',
 });
 

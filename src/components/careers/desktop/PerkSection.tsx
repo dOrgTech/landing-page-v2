@@ -9,7 +9,7 @@ const PERKS_TITLE='Perks';
 
 const StyledGrid = styled(Grid)({
   width: '100%',
-  padding: '7.5vw 0 2.5vw 0',
+  padding: '6.75vw 0 2.25vw 0',
   boxSizing: 'border-box',
   backgroundColor: 'rgba(0, 0, 0, 0.15)',
 });

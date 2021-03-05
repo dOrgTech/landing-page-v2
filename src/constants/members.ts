@@ -10,21 +10,20 @@ export interface Member {
   }
 }
 
-// TODO: update this to a reasonable placeholder for http request failure
-const testMember: Member = {
-  name: 'Christopher Walken',
-  photo: 'https://www.newdvdreleasedates.com/images/profiles/christopher-walken-13.jpg',
-  skills: ['Smart Contracts', 'Backend', 'DevOps', 'Speech Cadence', 'TypeScript', 'React', 'Solidity'],
+
+const placeholderMember: Member = {
+  name: 'dOrg Builder',
+  photo: 'imgs/logos/dorg-logo-black-background.png',
+  skills: ['Smart Contracts', 'Frontend', 'Backend', 'Design', 'UX', 'DevOps', 'Security', 'Tokenomics'],
   portfolio: {
     github: 'https://github.com/dOrgTech',
-    website: 'https://www.imdb.com'
+    website: 'https://dorg.tech/'
   }
 }
 
-const testMembers: Member[] = [];
-for (let i = 0; i < 15; i++) {
-  const index = i % 10;
-  testMembers.push(Object.assign({}, testMember, {name: `Christopher Walken ${index}`}));
+const placeholderMembers: Member[] = [];
+for (let i = 0; i < 6; i++) {
+  placeholderMembers.push(Object.assign({}, placeholderMember, {name: `dOrg Builder`}));
 }
 
-export {testMembers}
+export {placeholderMembers}

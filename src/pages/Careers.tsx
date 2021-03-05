@@ -8,7 +8,7 @@ import {borderStyle, borderStyles} from "../theme/styles";
 import {RightMargin} from "../components/RightMargin";
 import {ActivationPromptBox} from "../components/careers/desktop/ActivationPromptBox";
 import {externalLinks} from "../constants/routes";
-import {Member, testMembers} from "../constants/members";
+import {Member, placeholderMembers} from "../constants/members";
 import {MeetBuildersTitleBox} from "../components/careers/desktop/MeetBuildersTitleBox";
 import {ProfileWheel} from "../components/careers/desktop/portfolio_section/ProfileWheel";
 import {testimonials} from "../constants/testimonials";
@@ -97,7 +97,7 @@ export const Careers: React.FC = () => {
             <MeetBuildersTitleBox text={MEET_BUILDERS_TITLE} />
           </Grid>
           <Grid item xs={12}>
-            <ProfileWheel members={members.length > 0 ? members.concat(members.slice(0, 5)) : testMembers} />
+            <ProfileWheel members={members.length > 0 ? members : placeholderMembers} />
           </Grid>
           <Grid item xs={12}>
             <TestimonialSection testimonials={testimonials} carouselBorder={borderStyle} />
@@ -139,7 +139,7 @@ export const Careers: React.FC = () => {
             <MeetBuildersTitleBoxMobile text={MEET_BUILDERS_TITLE} classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
-            <ProfileWheelMobile members={members.length > 0 ? members.concat(members.slice(0, 2)) : testMembers} classes={borders.leftBorder}/>
+            <ProfileWheelMobile members={members.length > 0 ? members : placeholderMembers} classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
             <TestimonialSectionMobile testimonials={testimonials} carouselBorder={borderStyle} classes={borders.leftBorder} />
