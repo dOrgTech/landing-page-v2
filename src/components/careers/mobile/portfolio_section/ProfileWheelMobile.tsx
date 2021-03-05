@@ -158,7 +158,7 @@ export const ProfileWheelMobile: React.FC<Props> = (props: Props) => {
         onScroll={e => handleScroll(e, scrollRef)}>
         {props.members.map((member: Member, i: number) => (
           <ProfileItem item key={`profile-${i}`}>
-            <ProfileSummaryMobile member={member} indexTag={`${i + 1}/${props.members.length}`} />
+            <ProfileSummaryMobile member={member} indexTag={`${i % (props.members.length-2) + 1}/${props.members.length-2}`} />
           </ProfileItem>
         ))}
       </ProfileContainer>

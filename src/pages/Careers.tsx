@@ -97,7 +97,7 @@ export const Careers: React.FC = () => {
             <MeetBuildersTitleBox text={MEET_BUILDERS_TITLE} />
           </Grid>
           <Grid item xs={12}>
-            <ProfileWheel members={members.length > 0 ? members : placeholderMembers} />
+            <ProfileWheel members={members.length > 0 ? members.concat(members.slice(0,5)) : placeholderMembers} />
           </Grid>
           <Grid item xs={12}>
             <TestimonialSection testimonials={testimonials} carouselBorder={borderStyle} />
@@ -139,7 +139,7 @@ export const Careers: React.FC = () => {
             <MeetBuildersTitleBoxMobile text={MEET_BUILDERS_TITLE} classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
-            <ProfileWheelMobile members={members.length > 0 ? members : placeholderMembers} classes={borders.leftBorder}/>
+            <ProfileWheelMobile members={members.length > 0 ? members.concat(members.slice(0, 2)) : placeholderMembers} classes={borders.leftBorder}/>
           </Grid>
           <Grid item xs={12}>
             <TestimonialSectionMobile testimonials={testimonials} carouselBorder={borderStyle} classes={borders.leftBorder} />
