@@ -15,7 +15,7 @@ import {useDebounce, useIsDesktop, useWindowSize} from "../utils/hooks";
 
 export const TITLE_TEXT_PRIMARY = 'We build';
 export const TITLE_TEXT_SECONDARY = ['Dapps', 'DAOs', 'Smart Contracts', 'Web3 SDKs'];
-export const SUBTITLE_TEXT = 'We help Web3’s top projects design, code and ship.';
+export const SUBTITLE_TEXT = 'We accelerate development and adoption for our favorite Web3 projects';
 export const COMPANIES_TITLE = 'COMPANIES';
 export const COMMUNITIES_TITLE = 'COMMUNITIES';
 
