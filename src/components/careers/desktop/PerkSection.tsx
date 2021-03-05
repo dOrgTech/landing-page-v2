@@ -4,7 +4,6 @@ import {PerkItem} from "./PerkItem";
 import {Perk, Perks} from "../../../constants/perks";
 import {theme} from "../../../theme";
 
-
 const PERKS_TITLE='Perks';
 
 const StyledGrid = styled(Grid)({
