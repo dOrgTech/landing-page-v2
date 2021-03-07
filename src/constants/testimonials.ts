@@ -33,7 +33,7 @@ export const testimonials: Testimonials = {
   person3: {
     name: 'Kris Bitney',
     title: 'dOrg Builder',
-    location: 'Saint Louis',
+    location: 'St. Louis',
     testimonial: "I work while I travel. I choose my own hours. I drink way too much coffee. This is freedom.",
     photo: 'https://i.ibb.co/Sfr6Q00/image.png',
     background: 'imgs/testimonials/default-testimonials-background.png',

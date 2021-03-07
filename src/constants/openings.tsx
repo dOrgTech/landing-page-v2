@@ -115,7 +115,7 @@ export const openings: Openings = {
         </ul>
         Basic understanding of...
         <ul>
-          <li>Cryptographic tools (merke trees, hash functions, etc)</li>
+          <li>Cryptographic tools (merkle trees, hash functions, etc)</li>
           <li>Smart contract security best practices</li>
           <li>Game theory and economics</li>
         </ul>
