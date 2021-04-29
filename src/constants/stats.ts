@@ -11,7 +11,7 @@ export interface Stat {
 export interface Stats {
   projects: Readonly<Stat>;
   tvl: Readonly<Stat>;
-  clients: Readonly<Stat>;
+  funding: Readonly<Stat>;
   builders: Readonly<Stat>;
   lifetime: Readonly<Stat>;
   revenue: Readonly<Stat>;
@@ -38,10 +38,10 @@ export const stats: Stats = {
     postfix: 'B+',
     icon: 'imgs/circle-slice-icon.svg'
   },
-  clients: {
-    title: 'CLIENT SATISFACTION',
-    stat: 98,
-    postfix: '%',
+  funding: {
+    title: 'FUNDING RAISED',
+    stat: 0,
+    postfix: '$',
     icon: 'imgs/smiley-face-icon.svg'
   },
   builders: {
@@ -77,10 +77,10 @@ export const statsMobile: Stats = {
     postfix: 'B+',
     icon: 'imgs/circle-slice-icon.svg'
   },
-  clients: {
-    title: 'Client satisfaction',
-    stat: 98,
-    postfix: '%',
+  funding: {
+    title: 'Funding raised',
+    stat: 0,
+    postfix: '$',
     icon: 'imgs/smiley-face-icon.svg'
   },
   builders: {

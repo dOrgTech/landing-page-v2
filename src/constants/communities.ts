@@ -140,20 +140,4 @@ export const communities: Communities = {
       // imageSrc: 'imgs/project-graphics/web3api-graphic.svg'
     }
   },
-  Zer0: {
-    name:'Zer0',
-    link: 'https://zer0.io/',
-    icon: 'imgs/logos/zero-logo-white.png',
-    colorIcon: true,
-    highlightColor: 'linear-gradient(0deg,#d60e48,#000000)',
-    homeTitleBackground: 'linear-gradient(0deg,#200300,#000000)',
-    iconHighlightColor: '#006aff',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(33%) sepia(67%) saturate(5938%) hue-rotate(208deg) brightness(101%) contrast(109%)',
-    project: {
-      description: 'Zero is a Social Operating System that has been building in stealth for 6 years. The Zero OS enables peer-to-peer communication, collaboration, transactions, and governance.\n\ndOrg works with teams across the Zero ecosystem to architect and implement critical components of the Zero stack like the Zero Name Service (ZNS) and zDAO.',
-      technologies: ['Smart Contracts', 'Frontend', 'Software Architecture'],
-      bullets: [],
-      imageSrc: 'imgs/project-graphics/zero-eye-graphic.png'
-    }
-  },
 }
