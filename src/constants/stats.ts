@@ -41,7 +41,7 @@ export const stats: Stats = {
   funding: {
     title: 'FUNDING RAISED',
     stat: 0,
-    postfix: '$',
+    formatter: tvlFormatter,
     icon: 'imgs/smiley-face-icon.svg'
   },
   builders: {
@@ -56,7 +56,7 @@ export const stats: Stats = {
   },
   revenue: {
     title: 'ON-CHAIN REVENUE',
-    stat: 1.5,
+    stat: 2.0,
     formatter: tvlFormatter,
     postfix: 'M+',
     icon: 'imgs/dollar-sign-icon.svg'
@@ -80,7 +80,7 @@ export const statsMobile: Stats = {
   funding: {
     title: 'Funding raised',
     stat: 0,
-    postfix: '$',
+    formatter: tvlFormatter,
     icon: 'imgs/smiley-face-icon.svg'
   },
   builders: {
@@ -95,7 +95,7 @@ export const statsMobile: Stats = {
   },
   revenue: {
     title: 'On-chain revenue',
-    stat: 1.5,
+    stat: 2.0,
     formatter: tvlFormatter,
     postfix: 'M+',
     icon: 'imgs/dollar-sign-icon.svg'
