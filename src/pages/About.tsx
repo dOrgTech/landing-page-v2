@@ -74,10 +74,10 @@ export const About: React.FC = () => {
   const windowSize = useWindowSize()
   const debouncedWindowSize = useDebounce(windowSize, 100);
 
-  const {projects, tvl, clients, builders, lifetime, revenue} = desktop ? stats : statsMobile;
+  const {projects, tvl, funding, builders, lifetime, revenue} = desktop ? stats : statsMobile;
   // request members from server and update num builders
   const dynamicBuilders = {...builders, stat: useMembers().length};
-  const statsList = [projects, tvl, clients, dynamicBuilders, lifetime, revenue];
+  const statsList = [projects, tvl, funding, dynamicBuilders, lifetime, revenue];
 
   if (desktop) {
     return (

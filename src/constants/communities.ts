@@ -6,9 +6,9 @@ export interface Communities {
   Badger: Readonly<Client>;
   DAOstack: Readonly<Client>;
   Dxdao: Readonly<Client>;
+  Minds: Readonly<Client>;
   Tezos: Readonly<Client>;
   Web3API: Readonly<Client>;
-  Zer0: Readonly<Client>;
 }
 
 export const communities: Communities = {
@@ -100,6 +100,23 @@ export const communities: Communities = {
       imageSrc: 'imgs/project-graphics/dxdao-blue.svg',
     }
   },
+  Minds: {
+    name:'Minds',
+    link: 'https://www.minds.com/',
+    icon: 'imgs/logos/minds-logo-color.svg',
+    iconHighlightColor: '#ffd740',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(72%) sepia(95%) saturate(334%) hue-rotate(355deg) brightness(102%) contrast(101%)',
+    highlightColor: '#FFFFFF',
+    colorIcon: true,
+    textColor: '#43434d',
+    textColorFilter: 'brightness(0) saturate(100%) invert(22%) sepia(15%) saturate(438%) hue-rotate(202deg) brightness(97%) contrast(85%)',
+    project: {
+      description: 'Minds is a crypto social network with over 4 million users.\n\nThe Minds team hired dOrg to modernize the platform’s web3 architecture. This included updating to ethers.js, adding native Uniswap support, and Wallet Connect multi-wallet support on both web and mobile. dOrg also helped redesign the network’s token economics, including a novel engagement mining game that incentivizes platform usage, hodling, and liquidity.',
+      technologies: ['Web3 Integrations', 'Mobile', 'Token Economics'],
+      bullets: [],
+      imageSrc: 'imgs/project-graphics/minds-compose.svg',
+    }
+  },
   Tezos: {
     name:'Tezos',
     link: 'https://tezos.com/',
@@ -138,22 +155,6 @@ export const communities: Communities = {
         {text: 'Read the announcement', url: 'https://web3api.substack.com/p/developer-toolchain-web3api-successfully'}
       ],
       // imageSrc: 'imgs/project-graphics/web3api-graphic.svg'
-    }
-  },
-  Zer0: {
-    name:'Zer0',
-    link: 'https://zer0.io/',
-    icon: 'imgs/logos/zero-logo-white.png',
-    colorIcon: true,
-    highlightColor: 'linear-gradient(0deg,#d60e48,#000000)',
-    homeTitleBackground: 'linear-gradient(0deg,#200300,#000000)',
-    iconHighlightColor: '#006aff',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(33%) sepia(67%) saturate(5938%) hue-rotate(208deg) brightness(101%) contrast(109%)',
-    project: {
-      description: 'Zero is a Social Operating System that has been building in stealth for 6 years. The Zero OS enables peer-to-peer communication, collaboration, transactions, and governance.\n\ndOrg works with teams across the Zero ecosystem to architect and implement critical components of the Zero stack like the Zero Name Service (ZNS) and zDAO.',
-      technologies: ['Smart Contracts', 'Frontend', 'Software Architecture'],
-      bullets: [],
-      imageSrc: 'imgs/project-graphics/zero-eye-graphic.png'
     }
   },
 }
