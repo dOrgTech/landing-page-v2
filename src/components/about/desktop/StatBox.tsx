@@ -66,19 +66,19 @@ export const StatBox: React.FC<Props> = (props: Props) => {
   const [value, setValue] = useState(0);
   const increment = getIncrement(stat);
 
-  const handleMouseEnter = () => {
-    setWild(setInterval(() => {
-      setValue(getWildNumber(stat));
-    }, 15));
-  };
-
-  const handleMouseLeave = () => {
-    if (wild) {
-      clearInterval(wild);
-      setWild(null);
-    }
-    setValue(0);
-  }
+  // const handleMouseEnter = () => {
+  //   setWild(setInterval(() => {
+  //     setValue(getWildNumber(stat));
+  //   }, 15));
+  // };
+  //
+  // const handleMouseLeave = () => {
+  //   if (wild) {
+  //     clearInterval(wild);
+  //     setWild(null);
+  //   }
+  //   setValue(0);
+  // }
 
   useEffect(() => {
     if (value < stat && !wild) {
@@ -90,7 +90,8 @@ export const StatBox: React.FC<Props> = (props: Props) => {
   }, [value, stat, increment, wild])
 
   return (
-    <StyledBox className={props.classes} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    // <StyledBox className={props.classes} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <StyledBox className={props.classes}>
       <StyledIcon src={icon} alt='icon' />
       <Grid container direction='column' spacing={0} justify='center' alignItems='center'>
         <StyledStat>{formatStat(value, postfix, formatter)}</StyledStat>

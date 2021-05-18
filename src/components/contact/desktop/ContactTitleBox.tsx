@@ -39,6 +39,10 @@ const StyledInstructions = styled(Typography)({
   color: theme.palette.text.primary
 });
 
+const StyledInformation = styled(StyledInstructions)({
+  marginBottom: '1.625vw',
+});
+
 const LinksContainer = styled(Grid)({
   width: '7.8vw',
 });
@@ -66,6 +70,7 @@ interface Props {
   title: string;
   instructions: string;
   callToAction: string;
+  joinInformation: string;
   iconLinks: IconLinks;
   classes?: string;
 }
@@ -87,6 +92,9 @@ export const ContactTitleBox: React.FC<Props> = (props: Props) => {
       </Grid>
       <Grid item>
         <StyledTitle>{props.callToAction}</StyledTitle>
+      </Grid>
+      <Grid item>
+        <StyledInformation>{props.joinInformation}</StyledInformation>
       </Grid>
       <LinksContainer container item spacing={0} direction='row' justify="space-between" alignItems='center'>
         {Object.values(props.iconLinks).map((iconLink: IconLink, index: number) => (

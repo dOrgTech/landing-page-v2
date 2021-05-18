@@ -154,7 +154,7 @@ export const communities: Communities = {
         {text: 'Watch a technical walkthrough from ETH Denver 2021', url: 'https://www.youtube.com/watch?v=9HhB4XL4AR4'},
         {text: 'Read the announcement', url: 'https://web3api.substack.com/p/developer-toolchain-web3api-successfully'}
       ],
-      // imageSrc: 'imgs/project-graphics/web3api-graphic.svg'
+      imageSrc: 'imgs/project-graphics/web3api-graphic-2.png'
     }
   },
 }
