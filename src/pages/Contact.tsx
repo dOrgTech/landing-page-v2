@@ -13,6 +13,7 @@ import {iconLinks} from "../constants/routes";
 
 const TITLE = 'Not sure where to start?'
 const INSTRUCTIONS = "Tell us about your project, your timeline, and how you heard about us.";
+const JOIN_INFORMATION = "dOrg has a decentralized protocol for responding to external inquiries. To improve your chances of hearing back, join our Discord and engage with our community!";
 const CALL_TO_ACTION = "Join our community!";
 
 const Root = styled(Grid)({
@@ -47,7 +48,7 @@ export const Contact: React.FC = () => {
         <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start'
           className={`${borders.leftBorder} ${borders.rightBorder}`}>
           <Grid item xs={6}>
-            <ContactTitleBox title={TITLE} instructions={INSTRUCTIONS} callToAction={CALL_TO_ACTION} iconLinks={iconLinks} />
+            <ContactTitleBox title={TITLE} instructions={INSTRUCTIONS} callToAction={CALL_TO_ACTION} joinInformation={JOIN_INFORMATION} iconLinks={iconLinks} />
           </Grid>
           <Grid item xs={6}>
             <ContactForm classes={borders.leftBorder} />
@@ -63,7 +64,7 @@ export const Contact: React.FC = () => {
         <ContentContainer container item spacing={0} direction='row' justify="center" alignItems='flex-start' style={{width: '90vw'}}
           className={borders.rightBorder}>
           <Grid item xs={12}>
-            <ContactTitleBoxMobile title={TITLE} instructions={INSTRUCTIONS} callToAction={CALL_TO_ACTION} iconLinks={iconLinks} classes={borders.bottomLeftBorder}/>
+            <ContactTitleBoxMobile title={TITLE} instructions={INSTRUCTIONS} callToAction={CALL_TO_ACTION} joinInformation={JOIN_INFORMATION} iconLinks={iconLinks} classes={borders.bottomLeftBorder}/>
           </Grid>
           <Grid item xs={12}>
             <ContactFormMobile classes={borders.leftBorder}/>

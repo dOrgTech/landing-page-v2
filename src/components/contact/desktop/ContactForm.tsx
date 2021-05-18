@@ -308,11 +308,11 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
           {debouncedErrors.email?.type === "pattern" && <StyledError>{ERROR_INVALID_EMAIL}</StyledError>}
         </InputContainer>
 
-        <InputContainer container direction='row' justify='flex-start' alignItems='flex-start' style={{minHeight: '5vw', height: `${containerHeight-0.24*debouncedWindowSize.width}px`}}>
+        <InputContainer container direction='row' justify='flex-start' alignItems='flex-start' style={{minHeight: '5vw', height: `${containerHeight-0.26*debouncedWindowSize.width}px`}}>
           <StyledIconWrapper container item justify='center' alignItems='center'>
             <RateReviewTwoTone fontSize='inherit'/>
           </StyledIconWrapper>
-          <Grid item style={{minHeight: '5vw', height: `${containerHeight-0.254*debouncedWindowSize.width}px`}}>
+          <Grid item style={{minHeight: '5vw', height: `${containerHeight-0.274*debouncedWindowSize.width}px`}}>
             <StyledTextField id='message' name='message' multiline rowsMax={Math.max(2, Math.ceil((containerHeight-0.29625*debouncedWindowSize.width) / 30))} label={MESSAGE_PLACEHOLDER} value={message}
               onChange={handleMessageChange}
               InputProps={{disableUnderline: true}}

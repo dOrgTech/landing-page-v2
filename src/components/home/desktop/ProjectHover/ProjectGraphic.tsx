@@ -18,7 +18,7 @@ const useMobileStyles = makeStyles({
     height: '15vh',
     opacity: 1,
     overflow: 'hidden',
-    bottom: '1vw',
+    bottom: '6vw',
     right: 0
   },
 });

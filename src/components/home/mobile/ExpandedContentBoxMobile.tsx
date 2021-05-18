@@ -67,7 +67,7 @@ export const ExpandedContentBoxMobile: React.FC<Props> = (props: Props) => {
       color: textColor ? textColor : theme.palette.text.primary
     },
     graphicSpace: {
-      paddingBottom: project.imageSrc ? '18vh' : '4vw'
+      paddingBottom: project.imageSrc ? '21vh' : '4vw'
     }
   })();
   const chipStyle = useChipStyle();
