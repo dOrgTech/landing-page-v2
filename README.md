@@ -1,6 +1,6 @@
 # landing-page-v2
 
-Dev branch hosted at https://polished-fog-7734.on.fleek.co/
+Dev branch hosted at https://dev--dorgv2.netlify.app/
 
 ## Setup
 1. `nvm install && nvm use` - Use the proper version of node.

@@ -46,7 +46,7 @@ export const companies: Companies = {
         {text: 'Check out the app', url: 'https://app.boardroom.info/'},
         {text: 'Read the docs', url: 'https://docs.boardroom.info/'}
       ],
-      imageSrc: ''
+      imageSrc: 'imgs/project-graphics/Boardroom.svg'
     }
   },
   Centrality: {

@@ -6,7 +6,7 @@ import {FadeInOutAnimation} from "../../FadeInOutAnimation";
 
 const StyledGrid = styled(Grid)({
   width: '100%',
-  height: '13.75vw',
+  height: '10.75vw',
   padding: '3.625vw 0 0 1.75vw',
   background: 'transparent',
   boxSizing: 'border-box',

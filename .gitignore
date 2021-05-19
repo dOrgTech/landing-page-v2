@@ -24,3 +24,6 @@ yarn-error.log*
 
 # vscode
 .vscode
+/.yarn/cache/
+/.yarn/build-state.yml
+/.yarn/install-state.gz

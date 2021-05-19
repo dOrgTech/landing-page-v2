@@ -6,9 +6,9 @@ import {IconLink, IconLinks} from "../../../constants/routes";
 
 
 const StyledGrid = styled(Grid)({
-  padding: '0 5.5vw',
+  padding: '7vh 5.5vw 0 5.5vw',
   width: '100%',
-  height: '68.5vw',
+  height: '110vw',
   background: 'transparent',
   boxSizing: 'border-box',
   position: 'relative'
@@ -39,6 +39,10 @@ const StyledInstructions = styled(Typography)({
   letterSpacing: 'normal',
   textAlign: "left",
   color: theme.palette.text.primary
+});
+
+const StyledInformation = styled(StyledInstructions)({
+  marginBottom: '-1.15vw',
 });
 
 const LinksContainer = styled(Grid)({
@@ -80,6 +84,7 @@ interface Props {
   title: string;
   instructions: string;
   callToAction: string;
+  joinInformation: string;
   iconLinks: IconLinks;
   classes?: string;
 }
@@ -89,7 +94,7 @@ export const ContactTitleBoxMobile: React.FC<Props> = (props: Props) => {
   const sonarAnimation = useSonarAnimation();
 
   return (
-    <StyledGrid container direction='column' justify="space-evenly" alignItems='flex-start' className={props.classes}>
+    <StyledGrid container direction='row' justify="space-evenly" alignItems='flex-start' className={props.classes}>
       <Grid item container direction='column' justify="flex-start" alignItems='flex-start'>
         <Grid item>
           <StyledTitle>{props.title}</StyledTitle>
@@ -101,6 +106,7 @@ export const ContactTitleBoxMobile: React.FC<Props> = (props: Props) => {
       <Grid item container direction='column' justify="flex-start" alignItems='flex-start'>
         <Grid item>
           <StyledTitle>{props.callToAction}</StyledTitle>
+          <StyledInformation>{props.joinInformation}</StyledInformation>
         </Grid>
         <LinksContainer container item spacing={0} direction='row' justify="space-between" alignItems='center'>
           {Object.values(props.iconLinks).map((iconLink: IconLink, index: number) => (
