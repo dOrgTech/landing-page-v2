@@ -55,7 +55,7 @@ export const communities: Communities = {
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(84%) sepia(11%) saturate(4929%) hue-rotate(333deg) brightness(95%) contrast(100%)',
     highlightColor: '#181818',
     project: {
-      description: 'The Badger is a DAO dedicated to bringing Bitcoin to DeFi.\n\ndOrg provides development support to the Badger community by improving its product suite (Sett, Digg, Claws) and surrounding infrastructure (merkle trees, geysers, keepers, oracles).',
+      description: 'Badger is a DAO dedicated to bringing Bitcoin to DeFi.\n\ndOrg provides development support to the Badger community by improving its product suite (Sett, Digg, Claws) and surrounding infrastructure (merkle trees, geysers, keepers, oracles).',
       technologies: ['Smart Contracts', 'Web3 Integrations', 'Frontend'],
       bullets: [],
       imageSrc: 'imgs/project-graphics/badger-logo.png'
