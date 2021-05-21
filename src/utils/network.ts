@@ -1,5 +1,4 @@
 import {Member} from "../constants/members";
-import {HUBSPOT_URI} from "../constants/contactForm";
 
 
 interface IFormInput {
@@ -7,10 +6,9 @@ interface IFormInput {
   email: string;
   message: string;
 }
+
 interface FormSubmission {
-  fields: {name: string, value: string}[];
-  skipValidation: boolean;
-  context?: {ipAddress: string};
+  fields: IFormInput
 }
 
 export async function getMembers(): Promise<Member[]> {
@@ -34,29 +32,15 @@ async function getIpAddress(): Promise<string> {
 }
 
 export const sendContactForm = async (data: IFormInput): Promise<Response> => {
-  const firstname = data.name.split(' ')[0];
-  const lastname = data.name.substring(firstname.length).trim();
-  const clientIpAddress = await getIpAddress();
-
-  const body: FormSubmission = {
-    fields: [
-      {name: 'firstname', value: firstname},
-      {name: 'lastname', value: lastname},
-      {name: 'email', value: data.email},
-      {name: 'message', value: data.message}
-    ],
-    skipValidation: true
-  }
-  if (clientIpAddress) {
-    body.context = {ipAddress: clientIpAddress}
-  }
-
+  const body: FormSubmission = { fields: data };
+  const apiKey: string = process.env.AIRTABLE_API_KEY ?? "";
   return fetch(
-    HUBSPOT_URI,
+    "https://api.airtable.com/v0/app6IBhJWYR4dcak6/Contacts",
     {
       method: "POST",
       headers: new Headers({
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${apiKey}`
       }),
       body: JSON.stringify(body)
     }
