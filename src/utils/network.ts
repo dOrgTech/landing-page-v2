@@ -8,7 +8,11 @@ interface IFormInput {
 }
 
 interface FormSubmission {
-  fields: IFormInput
+  fields: {
+    Name: string,
+    Email: string,
+    Message: string
+  }
 }
 
 export async function getMembers(): Promise<Member[]> {
@@ -22,25 +26,22 @@ export async function getMembers(): Promise<Member[]> {
     })
 }
 
-async function getIpAddress(): Promise<string> {
-  return fetch('https://api.ipify.org')
-    .then(response => response.text())
-    .catch(error => {
-      console.log(error);
-      return '';
-    })
-}
-
 export const sendContactForm = async (data: IFormInput): Promise<Response> => {
-  const body: FormSubmission = { fields: data };
+  const body: FormSubmission = { 
+    fields: {
+      Name: data.name,
+      Email: data.email,
+      Message: data.message
+    } 
+  };
   const apiKey: string = process.env.AIRTABLE_API_KEY ?? "";
   return fetch(
     "https://api.airtable.com/v0/app6IBhJWYR4dcak6/Contacts",
     {
       method: "POST",
       headers: new Headers({
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${apiKey}`
+        "Authorization": `Bearer ${apiKey}`,
+        "Content-Type": "application/json"
       }),
       body: JSON.stringify(body)
     }
