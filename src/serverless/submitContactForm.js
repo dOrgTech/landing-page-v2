@@ -11,7 +11,7 @@ exports.handler = async (event, context, callback) => {
         "Authorization": `Bearer ${apiKey}`,
         "Content-Type": "application/json"
       }),
-      body: body
+      body: event.body
     }
   )
 }
