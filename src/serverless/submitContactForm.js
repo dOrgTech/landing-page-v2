@@ -6,7 +6,7 @@ exports.handler = async (event, context, callback) => {
     "https://api.airtable.com/v0/app6IBhJWYR4dcak6/Contacts",
     {
       method: "POST",
-      headers: new Headers({
+      headers: new fetch.Headers({
         "Authorization": `Bearer ${apiKey}`,
         "Content-Type": "application/json"
       }),
