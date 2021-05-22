@@ -1603,6 +1603,7 @@ __metadata:
     gh-pages: ^3.1.0
     husky: ^4.3.6
     lint-staged: ^10.5.3
+    node-fetch: ^2.6.1
     prop-types: ^15.7.2
     react: ^17.0.1
     react-cookie-consent: ^6.2.1
@@ -11823,6 +11824,13 @@ fsevents@~2.1.2:
   dependencies:
     minimatch: ^3.0.2
   checksum: 80c61dbf8da20a8820fd9ab1e4d78d3973a247389f4667147a18ffce77adbc71b42520914064cc23b6a1c9a0b8efcf8c6a360b109e327ed93a3f52d944c1b314
+  languageName: node
+  linkType: hard
+
+"node-fetch@npm:^2.6.1":
+  version: 2.6.1
+  resolution: "node-fetch@npm:2.6.1"
+  checksum: cbb171635e538162b977eac5dfe7a1e07a9a02e991924377a6435502291e2f823d306b95aabc455caebf4a118ccf836868462bc70ccc3095af02bb9da61fda37
   languageName: node
   linkType: hard
 

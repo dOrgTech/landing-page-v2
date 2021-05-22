@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { Box, styled, Typography, Grid } from '@material-ui/core'
 import { theme } from "../../../theme";
 import {Stat} from "../../../constants/stats";
-import {formatStat, getIncrement, getWildNumber} from "../../../utils/statUtils";
+import {formatStat, getIncrement} from "../../../utils/statUtils";
 
 const StyledBox = styled(Box)({
   margin: 'auto',
@@ -62,32 +62,17 @@ export const StatBox: React.FC<Props> = (props: Props) => {
 
   const { title, stat, icon, formatter, postfix } = props.stat
 
-  const [wild, setWild] = useState<NodeJS.Timeout | null>(null);
   const [value, setValue] = useState(0);
   const increment = getIncrement(stat);
 
-  // const handleMouseEnter = () => {
-  //   setWild(setInterval(() => {
-  //     setValue(getWildNumber(stat));
-  //   }, 15));
-  // };
-  //
-  // const handleMouseLeave = () => {
-  //   if (wild) {
-  //     clearInterval(wild);
-  //     setWild(null);
-  //   }
-  //   setValue(0);
-  // }
-
   useEffect(() => {
-    if (value < stat && !wild) {
+    if (value < stat) {
       setTimeout(() => {
         const nextValue = Math.min(value + increment, stat);
         setValue(nextValue);
       }, 15)
     }
-  }, [value, stat, increment, wild])
+  }, [value, stat, increment])
 
   return (
     // <StyledBox className={props.classes} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
