@@ -34,22 +34,17 @@ export const sendContactForm = async (data: IFormInput): Promise<Response> => {
       Message: data.message
     } 
   };
-  const apiKey: string = process.env.AIRTABLE_API_KEY ?? "";
-  return fetch(
-    "https://api.airtable.com/v0/app6IBhJWYR4dcak6/Contacts",
-    {
-      method: "POST",
-      headers: new Headers({
-        "Authorization": `Bearer ${apiKey}`,
-        "Content-Type": "application/json"
-      }),
-      body: JSON.stringify(body)
-    }
-  ).then(response => {
-    if (!response.ok) {
-      console.log(response.json());
-      throw Error('HTTP Error');
-    }
-    return response;
+  const lambdaUrl = '/.netlify/functions/submitContactForm';
+  return fetch(lambdaUrl, {
+    mode: 'same-origin',
+    method: "POST",
+    body: JSON.stringify(body)
   })
+    .then(response => {
+      if (!response.ok) {
+        console.log(response.json());
+        throw Error('HTTP Error');
+      }
+      return response;
+    })
 }
