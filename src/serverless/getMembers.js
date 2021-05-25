@@ -4,7 +4,7 @@ let members;
 
 exports.handler = async (event, context, callback) => {
   if (!members) {
-    const apiKey = process.env.HS_API_KEY;
+    const apiKey = process.env.AIRTABLE_API_KEY;
     members = await fetchMembers(apiKey);
   }
   return {

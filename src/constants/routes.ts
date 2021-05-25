@@ -49,7 +49,7 @@ export const routes: Routes = {
 
 export const externalLinks: ExternalRoutes = {
   builderInterest: {
-    path: 'https://share.hsforms.com/1qdN5EBi_SJW7U1c5cJigUw5gqvx',
+    path: 'https://airtable.com/shr0eQZfACL3Yarac',
     name: 'Builder Interest'
   }
 }
