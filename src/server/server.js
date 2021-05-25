@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const {fetchMembers} = require("./updateMembers");
 
-const apiKey = process.env.HS_API_KEY || process.argv[2];
+const apiKey = process.env.AIRTABLE_API_KEY || process.argv[2];
 const PORT = process.env.PORT || 3042;
 const app = express();
 
