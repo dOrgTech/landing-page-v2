@@ -13,7 +13,7 @@ async function fetchMembers(apiKey) {
   ).then(response => response.json())
   .then(response => response.records.map(record => ({
       name: record.fields.Name,
-      photo: record.fields.Headshot[0].url,
+      photo: record.fields.Headshot ? record.fields.Headshot[0].url : undefined,
       skills: record.fields.Skills,
       portfolio: {
       github: record.fields.Github,
