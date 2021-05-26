@@ -12,25 +12,6 @@ export interface Communities {
 }
 
 export const communities: Communities = {
-  API3: {
-    name:'API3',
-    link: 'https://www.api3.org/',
-    icon: 'imgs/logos/api3.svg',
-    colorIcon: true,
-    iconHighlightColor: '#7CE3CB',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(80%) sepia(57%) saturate(295%) hue-rotate(108deg) brightness(96%) contrast(87%)',
-    highlightColor: '#030303',
-    textColor: '#F3F3F3',
-    textColorFilter: 'brightness(0) saturate(100%) invert(98%) sepia(79%) saturate(774%) hue-rotate(191deg) brightness(123%) contrast(91%)',
-    project: {
-      description: 'API3 provides dApps with decentrally governed and quantifiably secure data feeds.\n\nThe API3 team enlisted dOrg to help build the API3 DAO, a custom Aragon DAO that will allow anyone to stake API3 tokens in order to earn rewards and voting power. Complete with its own staking modules and custom UI, the API3 DAO will govern what may be the future of API services on Web3.',
-      technologies: ['Smart Contracts', 'Software Architecture', 'Frontend'],
-      bullets: [
-        {text: 'Check out the repo', url: 'https://github.com/api3dao/api3-dao'}
-      ],
-      imageSrc: 'imgs/logos/api3.svg',
-    }
-  },
   Aragon: {
     name: 'Aragon',
     link: 'https://aragon.org/',
