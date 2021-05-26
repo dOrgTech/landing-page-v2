@@ -11,7 +11,6 @@ export interface Companies {
   ParaSwap: Readonly<Client>;
   Sovryn: Readonly<Client>;
   Stakedus: Readonly<Client>;
-  Stakehound: Readonly<Client>;
 }
 
 export const companies: Companies = {
@@ -167,21 +166,6 @@ export const companies: Companies = {
       technologies: ['Smart Contracts', 'Web3 Integrations', 'Software Architecture'],
       bullets: [],
       imageSrc: 'imgs/project-graphics/staked-diamond.svg'
-    }
-  },
-  Stakehound: {
-    name:'Stakehound',
-    link: 'https://stakehound.com/',
-    icon: 'imgs/logos/stakehound-logo.png',
-    colorIcon: true,
-    iconHighlightColor: '#00ceff',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(59%) sepia(77%) saturate(1571%) hue-rotate(149deg) brightness(101%) contrast(103%)',
-    highlightColor: '#0E223D',
-    project: {
-      description: 'Stakehound lets you wrap tokens from your favorite PoS blockchains into DeFi compatible versions on Ethereum.\n\ndOrg took on end-to-end development of Stakehound’s liquidity mining program– including specification, multiplexed geyser contracts, UI mock-ups, Uniswap integration, responsive frontend, and testing.',
-      technologies: ['Smart Contracts', 'Frontend', 'UI/UX Design'],
-      bullets: [],
-      imageSrc: 'imgs/project-graphics/stakehound-brand.png'
     }
   },
 }
