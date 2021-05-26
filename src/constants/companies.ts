@@ -7,7 +7,6 @@ export interface Companies {
   Compound: Readonly<Client>;
   DeversiFi: Readonly<Client>;
   eToro: Readonly<Client>;
-  Gnosis: Readonly<Client>;
   TheGraph: Readonly<Client>;
   ParaSwap: Readonly<Client>;
   Sovryn: Readonly<Client>;
@@ -108,24 +107,6 @@ export const companies: Companies = {
         {text: 'Check out the repo', url: 'https://github.com/dOrgTech/ID-DAO'}
       ],
       imageSrc: 'imgs/logos/eToro.svg',
-    }
-  },
-  Gnosis: {
-    name: 'Gnosis',
-    link: 'https://gnosis.io/',
-    icon: 'imgs/logos/gnosis-logo-color.svg',
-    highlightColor: '#e8e7e6',
-    colorIcon: true,
-    textColor: '#001428',
-    textColorFilter: 'brightness(0) saturate(100%) invert(6%) sepia(31%) saturate(5034%) hue-rotate(192deg) brightness(97%) contrast(102%)',
-    project: {
-      description: 'Gnosis builds critical DeFi infrastructure like the Gnosis Safe, Gnosis Protocol, and Conditional Tokens Framework.\n\ndOrg received a GECO grant from Gnosis in 2019 to design and develop a tool for decentralized fundraising that leverages bonding curves and reputation-weighted voting to align incentives.',
-      technologies: ['Smart Contracts', 'Web3 Integrations', 'Software Architecture'],
-      bullets: [
-        {text: 'Read the blog post', url: 'https://blog.gnosis.pm/geco-community-spotlight-fd7ee4b8c8a4'},
-        {text: 'Watch the presentation', url: 'https://www.youtube.com/watch?v=TTk-I7QmBm0'}
-      ],
-      imageSrc: 'imgs/logos/gnosis-logo-color.svg',
     }
   },
   TheGraph: {
