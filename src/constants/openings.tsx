@@ -76,7 +76,7 @@ export const openings: Openings = {
     location: '100% Remote',
     description: (
       <div>
-        Create interactive mock-ups and branding assets for external and internal and products.
+        Create interactive mock-ups and branding assets for external, internal and products.
         <br/><br/>
         <strong>Minimum Qualifications:</strong>
         <ul/>
