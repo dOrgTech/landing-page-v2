@@ -12,13 +12,13 @@ async function fetchMembers(apiKey) {
     }
   ).then(response => response.json())
   .then(response => response.records.map(record => ({
-      name: record.fields.Name,
-      photo: record.fields.Headshot ? record.fields.Headshot[0].url : undefined,
-      skills: record.fields.Skills,
-      portfolio: {
+    name: record.fields.Name ? record.fields.Name : "",
+    photo: record.fields.Headshot ? record.fields.Headshot[0].url : undefined,
+    skills: record.fields.Skills ? record.fields.Skills : [],
+    portfolio: {
       github: record.fields.Github,
-        website: record.fields['Portfolio Link'] === 'n/a' ? undefined : record.fields['Portfolio Link'],
-        linkedin: record.fields.LinkedIn,
+      website: record.fields['Portfolio Link'] === 'n/a' ? undefined : record.fields['Portfolio Link'],
+      linkedin: record.fields.LinkedIn,
       }
     })))
 }
