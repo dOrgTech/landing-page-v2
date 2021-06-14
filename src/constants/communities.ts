@@ -1,36 +1,17 @@
 import {Client} from "./clients";
 
 export interface Communities {
-  API3: Readonly<Client>;
   Aragon: Readonly<Client>;
   Badger: Readonly<Client>;
   DAOstack: Readonly<Client>;
   Dxdao: Readonly<Client>;
+  Gnosis: Readonly<Client>;
   Minds: Readonly<Client>;
   Tezos: Readonly<Client>;
   Web3API: Readonly<Client>;
 }
 
 export const communities: Communities = {
-  API3: {
-    name:'API3',
-    link: 'https://www.api3.org/',
-    icon: 'imgs/logos/api3.svg',
-    colorIcon: true,
-    iconHighlightColor: '#7CE3CB',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(80%) sepia(57%) saturate(295%) hue-rotate(108deg) brightness(96%) contrast(87%)',
-    highlightColor: '#030303',
-    textColor: '#F3F3F3',
-    textColorFilter: 'brightness(0) saturate(100%) invert(98%) sepia(79%) saturate(774%) hue-rotate(191deg) brightness(123%) contrast(91%)',
-    project: {
-      description: 'API3 provides dApps with decentrally governed and quantifiably secure data feeds.\n\nThe API3 team enlisted dOrg to help build the API3 DAO, a custom Aragon DAO that will allow anyone to stake API3 tokens in order to earn rewards and voting power. Complete with its own staking modules and custom UI, the API3 DAO will govern what may be the future of API services on Web3.',
-      technologies: ['Smart Contracts', 'Software Architecture', 'Frontend'],
-      bullets: [
-        {text: 'Check out the repo', url: 'https://github.com/api3dao/api3-dao'}
-      ],
-      imageSrc: 'imgs/logos/api3.svg',
-    }
-  },
   Aragon: {
     name: 'Aragon',
     link: 'https://aragon.org/',
@@ -55,7 +36,7 @@ export const communities: Communities = {
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(84%) sepia(11%) saturate(4929%) hue-rotate(333deg) brightness(95%) contrast(100%)',
     highlightColor: '#181818',
     project: {
-      description: 'The Badger is a DAO dedicated to bringing Bitcoin to DeFi.\n\ndOrg provides development support to the Badger community by improving its product suite (Sett, Digg, Claws) and surrounding infrastructure (merkle trees, geysers, keepers, oracles).',
+      description: 'Badger is a DAO dedicated to bringing Bitcoin to DeFi.\n\ndOrg provides development support to the Badger community by improving its product suite (Sett, Digg, Claws) and surrounding infrastructure (merkle trees, geysers, keepers, oracles).',
       technologies: ['Smart Contracts', 'Web3 Integrations', 'Frontend'],
       bullets: [],
       imageSrc: 'imgs/project-graphics/badger-logo.png'
@@ -98,6 +79,24 @@ export const communities: Communities = {
         {text: 'Read the blog post', url: 'https://medium.com/bitfwd/distributed-capital-formation-with-openraise-3af9a601ad63'}
       ],
       imageSrc: 'imgs/project-graphics/dxdao-blue.svg',
+    }
+  },
+  Gnosis: {
+    name: 'Gnosis',
+    link: 'https://gnosis.io/',
+    icon: 'imgs/logos/gnosis-logo-color.svg',
+    highlightColor: '#e8e7e6',
+    colorIcon: true,
+    textColor: '#001428',
+    textColorFilter: 'brightness(0) saturate(100%) invert(6%) sepia(31%) saturate(5034%) hue-rotate(192deg) brightness(97%) contrast(102%)',
+    project: {
+      description: 'Gnosis builds critical DeFi infrastructure like the Gnosis Safe, Gnosis Protocol, and Conditional Tokens Framework.\n\ndOrg received a GECO grant from Gnosis in 2019 to design and develop a tool for decentralized fundraising that leverages bonding curves and reputation-weighted voting to align incentives.',
+      technologies: ['Smart Contracts', 'Web3 Integrations', 'Software Architecture'],
+      bullets: [
+        {text: 'Read the blog post', url: 'https://blog.gnosis.pm/geco-community-spotlight-fd7ee4b8c8a4'},
+        {text: 'Watch the presentation', url: 'https://www.youtube.com/watch?v=TTk-I7QmBm0'}
+      ],
+      imageSrc: 'imgs/logos/gnosis-logo-color.svg',
     }
   },
   Minds: {

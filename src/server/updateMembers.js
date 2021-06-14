@@ -1,42 +1,27 @@
-const hubspot = require('@hubspot/api-client');
+const fetch = require('node-fetch');
 
-// reference: https://github.com/HubSpot/hubspot-api-nodejs
-// takes apiKey as string, calls hubspot api, and returns Promise<Member[]>
+// takes apiKey as string and returns Promise<Member[]>
 async function fetchMembers(apiKey) {
-  const hubspotClient = new hubspot.Client({ apiKey: apiKey});
-  const filter = { propertyName: 'jobtitle', operator: 'EQ', value: 'dOrg Builder' }
-  const filterGroup = { filters: [filter] }
-  const sort = JSON.stringify({ propertyName: 'createdate', direction: 'ASCENDING' })
-  const properties = ['firstname', 'lastname', 'avatar_image', 'which_role_s__are_you_applying_for_', 'github', 'linkedin', 'portfolio']
-  const limit = 100
-  const after = 0
-  const publicObjectSearchRequest = {
-    filterGroups: [filterGroup],
-    sorts: [sort],
-    properties,
-    limit,
-    after,
-  }
-  const response = await hubspotClient.crm.contacts.searchApi.doSearch(publicObjectSearchRequest)
-
-  const members = []
-  for (const result of response.body.results) {
-    const contact = result.properties;
-    const name = (contact.firstname ? contact.firstname : '') + ' ' + (contact.lastname ? contact.lastname : '')
-    members.push({
-      name: name.trim(),
-      photo: contact.avatar_image,
-      skills: contact.which_role_s__are_you_applying_for_ ? contact.which_role_s__are_you_applying_for_.split(';') : [],
-      portfolio: {
-        github: contact.github,
-        website: contact.portfolio,
-        linkedin: contact.linkedin,
+  return fetch(
+    "https://api.airtable.com/v0/app6IBhJWYR4dcak6/tblb0WHq7hTaODqks?fields%5B%5D=Name&fields%5B%5D=Email&fields%5B%5D=Github&fields%5B%5D=Portfolio+Link&fields%5B%5D=LinkedIn&fields%5B%5D=Skills&fields%5B%5D=Headshot&sort%5B0%5D%5Bfield%5D=Onboarding+Date&sort%5B0%5D%5Bdirection%5D=asc&sort%5B1%5D%5Bfield%5D=Name&sort%5B1%5D%5Bdirection%5D=asc&view=viw15s9zxmaFM8NkO",
+    {
+      method: "GET",
+      headers: new fetch.Headers({
+        "Authorization": `Bearer ${apiKey}`
+      })
+    }
+  ).then(response => response.json())
+  .then(response => response.records.map(record => ({
+    name: record.fields.Name ? record.fields.Name : "",
+    photo: record.fields.Headshot ? record.fields.Headshot[0].url : undefined,
+    skills: record.fields.Skills ? record.fields.Skills : [],
+    portfolio: {
+      github: record.fields.Github,
+      website: record.fields['Portfolio Link'] === 'n/a' ? undefined : record.fields['Portfolio Link'],
+      linkedin: record.fields.LinkedIn,
       }
-    })
-  }
-  return members
+    })))
 }
-
 
 // export functions
 exports.fetchMembers = (apiKey) => fetchMembers(apiKey);
