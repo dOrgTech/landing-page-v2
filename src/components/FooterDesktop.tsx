@@ -46,6 +46,18 @@ const FooterText = styled(Typography)({
   color: theme.palette.text.primary
 });
 
+const FooterLink = styled(Link)({
+  fontFamily: theme.typography.fontFamily,
+  fontSize: '0.688vw',
+  fontWeight: 'normal',
+  fontStretch: "normal",
+  fontStyle: "normal",
+  lineHeight: 1,
+  letterSpacing: 'normal',
+  textAlign: "left",
+  color: theme.palette.text.primary
+});
+
 const LeftContainer = styled(Grid)({
   width: '42.5vw',
   height: 'inherit',
@@ -102,7 +114,7 @@ export const FooterDesktop: React.FC<Props> = (props: Props) => {
       <RightContainer container item spacing={0} direction='row' justify="flex-end" alignItems='center'
         className={`${borders.topBorder} ${borders.leftBorder} ${borders.rightBorder}`}>
         <Grid item>
-          <FooterText className={`${styles.text} ${styles.callToAction}`}>{CALL_TO_ACTION}</FooterText>
+          <FooterLink href={iconLinks.discord.path} target="_blank" rel="noopener" className={`${styles.text} ${styles.callToAction}`}>{CALL_TO_ACTION}</FooterLink>
         </Grid>
         <Grid item>
           <IconContainer href={iconLinks.discord.path} target="_blank" rel="noopener">
