@@ -38,6 +38,18 @@ const FooterText = styled(Typography)({
   color: theme.palette.text.primary
 });
 
+const FooterLink = styled(Link)({
+  fontFamily: theme.typography.fontFamily,
+  fontSize: '2.85vw',
+  fontWeight: 'normal',
+  fontStretch: "normal",
+  fontStyle: "normal",
+  lineHeight: 1,
+  letterSpacing: 'normal',
+  textAlign: "left",
+  color: theme.palette.text.primary
+});
+
 const IconContainer = styled(Link)({
   height: '5vw',
   width: 'auto',
@@ -74,7 +86,7 @@ export const FooterMobile: React.FC = () => {
         </Grid>
         <Grid container item xs={6} spacing={0} justify='flex-end' alignItems='center'>
           <Grid item>
-            <FooterText style={{marginRight: '2.65vw'}}>{CALL_TO_ACTION}</FooterText>
+            <FooterLink href={iconLinks.discord.path} target="_blank" rel="noopener" style={{marginRight: '2.65vw'}}>{CALL_TO_ACTION}</FooterLink>
           </Grid>
           <Grid item>
             <IconContainer href={iconLinks.discord.path} target="_blank" rel="noopener">
