@@ -8,7 +8,7 @@ export interface Communities {
   Gnosis: Readonly<Client>;
   Minds: Readonly<Client>;
   Tezos: Readonly<Client>;
-  Web3API: Readonly<Client>;
+  Polywrap: Readonly<Client>;
 }
 
 export const communities: Communities = {
@@ -52,7 +52,7 @@ export const communities: Communities = {
     textColor: '#2e2e2e',
     textColorFilter: 'brightness(0) saturate(100%) invert(14%) sepia(0%) saturate(455%) hue-rotate(195deg) brightness(91%) contrast(86%)',
     project: {
-      description: 'DAOstack is an operating system for scalable governance.\n\ndOrg has worked as a development catalyst for the DAOstack ecosystem since our earliest days. In addition to contributing to each layer of the stack, we\'ve built out and maintained key components including Arc.react, Arc.js, and the DAO launcher. We’ve also helped integrate external use-cases such as the Nectar DAO, Dxdao, and GoodDollar.',
+      description: 'DAOstack is an operating system for scalable governance.\n\ndOrg has contributed to various layers of the DAOstack ecosystem, including Arc.react, Arc.js, and the DAO launcher. We’ve also helped integrate external use-cases such as Dxdao and Nectar DAO.',
       technologies: ['Web3 Integrations', 'Developer Tools', 'Software Architecture'],
       bullets: [
         {text: 'Watch the DAOstack OS Ecosystem presentation', url: 'https://www.youtube.com/watch?v=XBjy4oj61JE'},
@@ -72,7 +72,7 @@ export const communities: Communities = {
     textColor: '#333333',
     textColorFilter: 'brightness(0) saturate(100%) invert(26%) sepia(0%) saturate(31%) hue-rotate(140deg) brightness(96%) contrast(119%)',
     project: {
-      description: 'Dxdao is one of the boldest experiments to date in decentralized governance. It’s mission: to develop and govern a suite of truly trustless DeFi components.\n\nIn the DAO’s early stages dOrg provided expertise on DAOstack integrations and security. We also developed a custom UI and integration with the Fairmint CSO contracts.',
+      description: 'Dxdao develops and governs a suite of truly trustless DeFi components.\n\ndOrg provided expertise on DAOstack integrations and security. We also developed a custom UI and integration with the Fairmint CSO contracts.',
       technologies: ['Web3 Integrations', 'Frontend', 'UI/UX Design'],
       bullets: [
         {text: 'Check out the app', url: 'https://dxtrust.eth.link/#/'},
@@ -82,19 +82,18 @@ export const communities: Communities = {
     }
   },
   Gnosis: {
-    name: 'Gnosis',
-    link: 'https://gnosis.io/',
-    icon: 'imgs/logos/gnosis-logo-color.svg',
+    name: 'Gnosis Safe',
+    link: 'gnosis-safe.io',
+    icon: 'imgs/logos/gnosis-safe.png',
     highlightColor: '#e8e7e6',
     colorIcon: true,
     textColor: '#001428',
     textColorFilter: 'brightness(0) saturate(100%) invert(6%) sepia(31%) saturate(5034%) hue-rotate(192deg) brightness(97%) contrast(102%)',
     project: {
-      description: 'Gnosis builds critical DeFi infrastructure like the Gnosis Safe, Gnosis Protocol, and Conditional Tokens Framework.\n\ndOrg received a GECO grant from Gnosis in 2019 to design and develop a tool for decentralized fundraising that leverages bonding curves and reputation-weighted voting to align incentives.',
-      technologies: ['Smart Contracts', 'Web3 Integrations', 'Software Architecture'],
+      description: 'Gnosis Safe is the most trusted platform for managing digital assets on Ethereum.\n\ndOrg is helping to build the SafeSnap app, which enables cheap yet secure governance through on-chain execution of off-chain votes.',
+      technologies: ['Frontend', 'Web3 Integrations', 'Software Architecture'],
       bullets: [
-        {text: 'Read the blog post', url: 'https://blog.gnosis.pm/geco-community-spotlight-fd7ee4b8c8a4'},
-        {text: 'Watch the presentation', url: 'https://www.youtube.com/watch?v=TTk-I7QmBm0'}
+        {text: 'Read the blog post', url: 'https://blog.gnosis.pm/introducing-safesnap-the-first-in-a-decentralized-governance-tool-suite-for-the-gnosis-safe-ea67eb95c34f'},
       ],
       imageSrc: 'imgs/logos/gnosis-logo-color.svg',
     }
@@ -136,24 +135,24 @@ export const communities: Communities = {
       imageSrc: 'imgs/logos/tezos-logo-blue.png'
     }
   },
-  Web3API: {
-    name:'Web3API',
-    link: 'https://web3api.dev/#/',
-    icon: 'imgs/logos/web3api_icon_color.png',
+  Polywrap: {
+    name:'Polywrap',
+    link: 'https://polywrap.io/',
+    icon: 'imgs/logos/polywrap-logo.png',
     colorIcon: true,
     iconHighlightColor: '#60c093',
     iconHighlightFilter: 'brightness(0) saturate(100%) invert(66%) sepia(37%) saturate(459%) hue-rotate(100deg) brightness(96%) contrast(88%)',
-    highlightColor: '#1C272D',
-    textColor: '#529dad',
+    highlightColor: '#000000',
+    textColor: '#ffffff',
     textColorFilter: 'brightness(0) saturate(100%) invert(55%) sepia(32%) saturate(544%) hue-rotate(143deg) brightness(95%) contrast(92%)',
     project: {
-      description: 'Web3API is an integration standard that makes it easy to interact with any blockchain from any programming language. The project is stewarded by the Web3API DAO, a tokenized alliance of protocol partners, financial backers, and builder teams.\n\ndOrg provides the DAO with continuous product development and operational support services. On the product side, we are currently focused on the alpha release of the client, IDE, and developer docs. For operations, we help with content creation, partner onboarding, and strategy.',
+      description: 'Polywrap is a developer pipeline that makes it easy to interact with web3 protocols from anywhere. The project is stewarded by the Polywrap DAO, a tokenized alliance of protocol partners, financial backers, and builder teams.\n\ndOrg provides the DAO with continuous development services, including the core client, IDE, and developer docs.',
       technologies: ['Developer Tools', 'Software Architecture', 'Governance Design'],
       bullets: [
-        {text: 'Watch a technical walkthrough from ETH Denver 2021', url: 'https://www.youtube.com/watch?v=9HhB4XL4AR4'},
-        {text: 'Read the announcement', url: 'https://web3api.substack.com/p/developer-toolchain-web3api-successfully'}
+        {text: 'Watch the UniGrants presentation', url: 'https://youtu.be/MQFLaXUm1-0?t=3265'},
+        {text: 'Read the announcement', url: 'https://blog.polywrap.io/p/introducing-web3api-the-universal'}
       ],
-      imageSrc: 'imgs/project-graphics/web3api-graphic-2.png'
+      imageSrc: 'imgs/logos/polywrap-logo.png'
     }
   },
 }
