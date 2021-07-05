@@ -7,6 +7,8 @@ export interface Communities {
   Dxdao: Readonly<Client>;
   Gnosis: Readonly<Client>;
   Minds: Readonly<Client>;
+  Near: Readonly<Client>;
+  Rarible: Readonly<Client>;
   Tezos: Readonly<Client>;
   Polywrap: Readonly<Client>;
 }
@@ -115,24 +117,20 @@ export const communities: Communities = {
       imageSrc: 'imgs/project-graphics/minds-compose.svg',
     }
   },
-  Tezos: {
-    name:'Tezos',
-    link: 'https://tezos.com/',
-    icon: 'imgs/logos/tezos-logo-blue.png',
+  Near: {
+    name:'Near',
+    link: 'https://near.org/',
+    icon: 'imgs/logos/near.png',
+    iconHighlightColor: '#00C1DE',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(72%) sepia(95%) saturate(334%) hue-rotate(355deg) brightness(102%) contrast(101%)',
+    highlightColor: '#FFFFFF',
     colorIcon: true,
-    highlightColor: '#ffffff',
-    iconHighlightColor: '#2C7DF7',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(38%) sepia(57%) saturate(3760%) hue-rotate(206deg) brightness(103%) contrast(94%)',
-    textColor: '#123262',
-    textColorFilter: 'brightness(0) saturate(100%) invert(14%) sepia(15%) saturate(7037%) hue-rotate(199deg) brightness(97%) contrast(94%)',
+    textColor: '#43434d',
     project: {
-      description: 'dOrg is proud to be working with TQ Tezos and the broader Tezos ecosystem on Homebase, an app that enables anyone to launch DAOs on the Tezos blockchain in a few clicks.\n\ndOrg designed and built the Homebase app on top of the BaseDAO smart contract framework, utilizing Taquito and Beacon SDK. We also contributed to the BaseDAO framework spec and design as product co-owners.',
-      technologies: ['Web3 Integrations', 'Frontend', 'UI/UX Design'],
-      bullets: [
-        {text: 'Read the announcement', url: 'https://tqtezos.medium.com/daos-on-tezos-announcing-homebase-80bbecbb9bfe'},
-        {text: 'Check out the repo', url: 'https://github.com/dOrgTech/homebase-app'}
-      ],
-      imageSrc: 'imgs/logos/tezos-logo-blue.png'
+      description: 'Near is a fast, low-cost blockchain built for developers.\n\ndOrg is handling fullstack development of the first Proof of Attendance protocol on Near.',
+      technologies: ['Frontend', 'Web3 Integrations', 'Smart Contracts', 'Backend', 'Software Architecture'],
+      bullets: [],
+      imageSrc: 'imgs/logos/near.png',
     }
   },
   Polywrap: {
@@ -153,6 +151,41 @@ export const communities: Communities = {
         {text: 'Read the announcement', url: 'https://blog.polywrap.io/p/introducing-web3api-the-universal'}
       ],
       imageSrc: 'imgs/logos/polywrap-logo.png'
+    }
+  },
+  Rarible: {
+    name:'Rarible',
+    link: 'https://www.minds.com/',
+    icon: 'imgs/logos/rarible.svg',
+    iconHighlightColor: '#FEDA03',
+    highlightColor: '#ffffff',
+    colorIcon: true,
+    textColor: '#000000',
+    project: {
+      description: 'Rarible is a leading platform for creating, selling and collecting NFTs.\n\ndOrg is building an SDK to drastically improve the developor experience for integrating the Rarible protocol into any app.',
+      technologies: ['Developer Tools', 'Software Architecture'],
+      bullets: [],
+      imageSrc: 'imgs/logos/rarible.svg',
+    }
+  },
+  Tezos: {
+    name:'Tezos',
+    link: 'https://tezos.com/',
+    icon: 'imgs/logos/tezos-logo-blue.png',
+    colorIcon: true,
+    highlightColor: '#ffffff',
+    iconHighlightColor: '#2C7DF7',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(38%) sepia(57%) saturate(3760%) hue-rotate(206deg) brightness(103%) contrast(94%)',
+    textColor: '#123262',
+    textColorFilter: 'brightness(0) saturate(100%) invert(14%) sepia(15%) saturate(7037%) hue-rotate(199deg) brightness(97%) contrast(94%)',
+    project: {
+      description: 'dOrg is proud to be working with TQ Tezos and the broader Tezos ecosystem on Homebase, an app that enables anyone to launch DAOs on the Tezos blockchain in a few clicks.\n\ndOrg designed and built the Homebase app on top of the BaseDAO smart contract framework, utilizing Taquito and Beacon SDK. We also contributed to the BaseDAO framework spec and design as product co-owners.',
+      technologies: ['Web3 Integrations', 'Frontend', 'UI/UX Design'],
+      bullets: [
+        {text: 'Read the announcement', url: 'https://tqtezos.medium.com/daos-on-tezos-announcing-homebase-80bbecbb9bfe'},
+        {text: 'Check out the repo', url: 'https://github.com/dOrgTech/homebase-app'}
+      ],
+      imageSrc: 'imgs/logos/tezos-logo-blue.png'
     }
   },
 }
