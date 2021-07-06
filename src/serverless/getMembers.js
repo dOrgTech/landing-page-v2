@@ -1,4 +1,4 @@
-const {fetchMembers} = require("../server/updateMembers");
+const {fetchMembers} = require("../server/requests");
 
 let members;
 
