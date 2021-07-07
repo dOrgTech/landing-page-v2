@@ -15,7 +15,7 @@ interface FormSubmission {
 }
 
 export async function getMembers(): Promise<Member[]> {
-  const url = window.location.href + '/members';
+  const url = window.location.href.substring(0, window.location.href.indexOf("/#")) + '/members';
   return fetch(url)
     .then(response => {
       if (!response.ok) {
@@ -33,7 +33,7 @@ export const sendContactForm = async (data: IFormInput): Promise<Response> => {
       Message: data.message
     } 
   };
-  const url = window.location.href + '/submitContactForm';
+  const url = window.location.href.substring(0, window.location.href.indexOf("/#")) + '/submitContactForm';
   return fetch(url, {
     method: "POST",
     body: JSON.stringify(body)

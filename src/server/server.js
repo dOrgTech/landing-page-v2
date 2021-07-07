@@ -8,7 +8,7 @@ const app = express();
 app.use(express.text());
 
 // cache members array; update every 5 minutes
-let membersCache;
+let membersCache = [];
 fetchMembers(apiKey)
   .then(members => membersCache = members)
   .catch(error => console.log(error));
@@ -25,7 +25,12 @@ app.get("/members", (request, response) => {
 
 // path to submit contact form
 app.post("/submitContactForm", (request, response) => {
-  response.json(submitContactForm(apiKey, request.body));
+  let responseBody = submitContactForm(apiKey, request.body)
+    .catch(e => console.log(e));
+  if (!responseBody) {
+    responseBody = "";
+  }
+  response.json(responseBody);
 });
 
 // send react app for all other get requests
