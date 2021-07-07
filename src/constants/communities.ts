@@ -155,8 +155,8 @@ export const communities: Communities = {
   },
   Rarible: {
     name:'Rarible',
-    link: 'https://www.minds.com/',
-    icon: 'imgs/logos/rarible.svg',
+    link: 'https://www.rarible.com/',
+    icon: 'imgs/logos/rarible-simple.svg',
     iconHighlightColor: '#FEDA03',
     highlightColor: '#ffffff',
     colorIcon: true,
