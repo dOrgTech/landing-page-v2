@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
-import {ButtonBase, Grid, makeStyles, Snackbar, styled, TextField, Typography} from '@material-ui/core'
+import {ButtonBase, Grid, makeStyles, Snackbar, styled, TextField, Typography, Checkbox} from '@material-ui/core'
 import { theme } from "../../../theme";
 import {AccountCircleTwoTone, EmailTwoTone, RateReviewTwoTone} from '@material-ui/icons';
 import {
@@ -45,6 +45,31 @@ const InputContainer = styled(Grid)({
   backgroundColor: '#FFFFFF',
   position: 'relative'
 });
+
+const StyledCheckBoxText = styled(Typography)({
+  fontFamily: theme.typography.fontFamily,
+  fontSize: '0.938vw',
+  fontWeight: 600,
+  fontStretch: "normal",
+  fontStyle: "normal",
+  lineHeight: 1.5,
+  letterSpacing: '-0.45px',
+  textAlign: "left",
+  color: theme.palette.primary.main,
+  position: 'absolute',
+  left: '4.5vw',
+  top: '1.53vh'
+})
+
+const StyledCheckBox = styled(Checkbox)({
+  width: '1.25vw',
+  height: '3.6vw',
+  paddingRight: '1.5vw',
+  fontSize: '1.25vw',
+  color: theme.palette.secondary.main,
+  position: 'relative',
+  top: '-1.79vw'
+})
 
 const StyledIconWrapper = styled(Grid)({
   width: '1.25vw',
@@ -201,6 +226,7 @@ interface IFormInput {
   name: string;
   email: string;
   message: string;
+  emailOptIn: boolean;
 }
 
 export const ContactForm: React.FC<Props> = (props: Props) => {
@@ -225,6 +251,10 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
   const handleMessageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMessage(event.target.value);
   };
+  const [emailOptIn, setEmailOptIn] = React.useState(false);
+  const handleEmailOptIn = () => {
+    setEmailOptIn(!emailOptIn);
+  }
 
   // SUCCESS AND FAILURE MESSAGES
   const successSnackBarStyle = useSuccessSnackBarStyle();
@@ -244,6 +274,7 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
     setName('');
     setEmail('');
     setMessage('');
+    setEmailOptIn(false);
   }
 
   const onSubmit = (data: IFormInput) => {
@@ -322,6 +353,11 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
           </Grid>
           {debouncedErrors.message?.type === "required" && <StyledError>{ERROR_MESSAGE_REQUIRED}</StyledError>}
           {debouncedErrors.message?.type === "maxLength" && <StyledError>{ERROR_EXCEEDS_LENGTH(message.length, MAX_MESSAGE_LENGTH)}</StyledError>}
+        </InputContainer>
+
+        <InputContainer container direction='row' justify='flex-start' alignItems='center' style={{height: '5.25vh'}}>
+          <StyledCheckBox checked={emailOptIn} onChange={handleEmailOptIn}/>
+          <StyledCheckBoxText>I&apos;d like to receive marketing emails</StyledCheckBoxText>
         </InputContainer>
 
         <StyledSubmitButton type='submit'>
