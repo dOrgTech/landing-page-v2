@@ -25,6 +25,7 @@ export interface IconLinks {
   twitter: Readonly<IconLink>;
   github: Readonly<IconLink>;
   email: Readonly<IconLink>;
+  gitBook: Readonly<IconLink>;
 }
 
 
@@ -71,4 +72,8 @@ export const iconLinks: IconLinks = {
     path: "mailto:contact@dorg.tech",
     icon: '/imgs/footer/email-icon.svg',
   },
+  gitBook: {
+    path: "https://docs.dorg.tech/",
+    icon: './imgs/footer/gitbook-logo.svg'
+  }
 }
