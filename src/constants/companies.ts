@@ -84,9 +84,10 @@ export const companies: Companies = {
   Doingud: {
     name:'Doingud',
     link: 'https://doingud.com/',
-    icon: 'imgs/logos/doingud.svg',
+    icon: 'imgs/logos/doingud-simple.svg',
+    colorIcon: 'imgs/logos/doingud.svg',
     iconHighlightColor: '#5500FC',
-    iconHighlightFilter: '',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(16%) sepia(0%) saturate(1760%) hue-rotate(184deg) brightness(87%) contrast(82%)',
     highlightColor: '#ffffff',
     textColor: '#333333',
     project: {

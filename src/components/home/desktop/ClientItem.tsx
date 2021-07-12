@@ -113,7 +113,7 @@ export const ClientItem: React.FC<Props> = (props: Props) => {
       onMouseOver={handleMouseOver}
       onMouseUp={handleClick}>
       <Grid item>
-        <ClientIcon src={props.client.icon} alt='client icon' className={styles.icon} />
+        <ClientIcon src={isHover && props.client.colorIcon ? props.client.colorIcon : props.client.icon} alt='client icon' className={styles.icon} />
       </Grid>
       <Grid item>
         <StyledTitle className={styles.text}>{props.client.name}</StyledTitle>
