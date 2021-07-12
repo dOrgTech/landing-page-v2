@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="93.011" height="65.677" viewBox="0 0 93.011 65.677">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#fff;stroke-linejoin:round;stroke-width:3px}
+        </style>
+    </defs>
+    <g id="Component_33_1" transform="translate(1.5 1.5)">
+        <path id="Subtraction_5" d="M20.6 62.677h-.81V45.464a6.007 6.007 0 0 0-6-6H0V17A17 17 0 0 1 17 0h3.6a17 17 0 0 1 17 17v28.677a17 17 0 0 1-17 17z" class="cls-1" transform="translate(.001)"/>
+        <path id="Subtraction_6" d="M20.6 62.677h-.81V45.464a6.007 6.007 0 0 0-6-6H0V17A17 17 0 0 1 17 0h3.6a17 17 0 0 1 17 17v28.677a17 17 0 0 1-17 17z" class="cls-1" transform="translate(52.412)"/>
+    </g>
+</svg>

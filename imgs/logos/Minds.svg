@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32.215" height="39.528" viewBox="0 0 32.215 39.528">
+    <defs>
+        <style>
+            .cls-1{fill:#fff;fill-rule:evenodd}
+        </style>
+    </defs>
+    <g id="Page-1" transform="translate(-439.764 25.711)">
+        <g id="bulb" transform="translate(439.764 -25.711)">
+            <g id="Group-5" transform="translate(10.688 30.784)">
+                <path id="Triangle-3" d="M22.983 43l-.211 3.092z" class="cls-1" transform="translate(-20.344 -38.415)"/>
+                <path id="Triangle-3-2" d="M0 43.239L2.666 41l2.666 4.372z" class="cls-1" transform="translate(0 -36.628)"/>
+                <path id="Triangle-3-3" d="M0 0v6.611l2.666-2.239z" class="cls-1"/>
+                <path id="Triangle-3-4" d="M52.666 41L50 45.372l5.331-2.133z" class="cls-1" transform="translate(-44.669 -36.628)"/>
+                <path id="Triangle-3-5" d="M77.666 6.611L75 4.372 77.666 0z" class="cls-1" transform="translate(-67.003)"/>
+                <path id="Triangle-3-6" d="M0 0h10.663L5.331 8.743z" class="cls-1"/>
+            </g>
+            <g id="Group">
+                <path id="Triangle-3-7" d="M111 100l11.3 4.692-8.1 6.5z" class="cls-1" transform="translate(-99.246 -89.368)"/>
+                <path id="Triangle-3-8" d="M191 26l6.4 6.611-3.625 5.971z" class="cls-1" transform="translate(-170.716 -23.258)"/>
+                <path id="Triangle-3-9" d="M101 260.412L112.729 257l-1.066 3.412z" class="cls-1" transform="translate(-90.312 -229.628)"/>
+                <path id="Triangle-3-10" d="M91 210.545L96.331 205l-4.265 8.957z" class="cls-1" transform="translate(-81.378 -183.172)"/>
+                <path id="Triangle-3-11" d="M51 32.611L57.4 26v7.89z" class="cls-1" transform="translate(-45.643 -23.258)"/>
+                <path id="Triangle-3-12" d="M141 150.5l7.464 5.545L149.1 144z" class="cls-1" transform="translate(-126.047 -128.676)"/>
+                <path id="Triangle-3-13" d="M0 .82l6.676 7.969L7.648 0z" class="cls-1" transform="rotate(140 3.652 14.045)"/>
+                <path id="Triangle-3-14" d="M0 0l11.435 2.064-8.38 9.786z" class="cls-1" transform="rotate(-53 16.532 -6.468)"/>
+                <path id="Triangle-3-15" d="M0 .027L11.729 0 4.713 9.293z" class="cls-1" transform="rotate(-53 22.393 5.288)"/>
+                <path id="Triangle-3-16" d="M0 1.984L9.72 0l.064 9.3z" class="cls-1" transform="rotate(-53 34.21 5.664)"/>
+                <path id="Triangle-3-17" d="M0 6.74L10.008 0l-1.18 6.23z" class="cls-1" transform="rotate(-53 31.884 -5.42)"/>
+                <path id="Triangle-3-18" d="M0 5.906L8.9 0l2.828 5.879z" class="cls-1" transform="rotate(-53 16.5 8.227)"/>
+                <path id="Triangle-3-19" d="M1.18.7L8.131 0 0 6.928z" class="cls-1" transform="rotate(-53 26.773 -13.92)"/>
+                <path id="Triangle-3-20" d="M0 4.5L10.714 0l-2.7 7.415z" class="cls-1" transform="scale(-1) rotate(-20 -30.665 58.402)"/>
+            </g>
+        </g>
+    </g>
+</svg>

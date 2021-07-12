@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32.864" height="38.861" viewBox="0 0 32.864 38.861">
+    <defs>
+        <style>
+            .cls-1,.cls-4{fill:none}.cls-1{stroke:#fff}.cls-3{stroke:none}
+        </style>
+    </defs>
+    <g id="Group_5" transform="translate(-201.58 -759.58)">
+        <g id="Rectangle_15" class="cls-1">
+            <path d="M0 0H23.238V23.238H0z" class="cls-3" transform="rotate(-45 1037.52 144.677)"/>
+            <path d="M0.5 0.5H22.738V22.738H0.5z" class="cls-4" transform="rotate(-45 1037.52 144.677)"/>
+        </g>
+        <g id="Rectangle_16" class="cls-1">
+            <path d="M0 0H23.238V23.238H0z" class="cls-3" transform="rotate(-45 1041.138 146.176)"/>
+            <path d="M0.5 0.5H22.738V22.738H0.5z" class="cls-4" transform="rotate(-45 1041.138 146.176)"/>
+        </g>
+        <g id="Rectangle_17" class="cls-1">
+            <path d="M0 0H23.238V23.238H0z" class="cls-3" transform="rotate(-45 1044.758 147.676)"/>
+            <path d="M0.5 0.5H22.738V22.738H0.5z" class="cls-4" transform="rotate(-45 1044.758 147.676)"/>
+        </g>
+        <text id="B" fill="#fff" font-family="ArialMT, Arial" font-size="12px" transform="translate(214 784)">
+            <tspan x="0" y="0">B</tspan>
+        </text>
+    </g>
+</svg>

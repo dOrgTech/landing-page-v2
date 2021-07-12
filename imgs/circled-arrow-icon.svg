@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="30 20 80 80">
+    <defs>
+        <filter id="Rectangle_50" width="140" height="140" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="10"/>
+            <feGaussianBlur result="blur" stdDeviation="10"/>
+            <feFlood flood-color="#001047" flood-opacity=".2"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <style>
+            .cls-2{fill:none}
+        </style>
+    </defs>
+    <g id="Component_32_2" transform="translate(30 20)">
+        <g filter="url(#Rectangle_50)" transform="translate(-30 -20)">
+            <rect id="Rectangle_50-2" width="80" height="80" fill="#fff" rx="40" transform="translate(30 20)"/>
+        </g>
+        <g id="Group_334" transform="translate(-143.864 19.136)">
+            <g id="trending_flat-24px_2_" transform="translate(163)">
+                <path id="Path_44" d="M0 0h41.729v41.729H0z" class="cls-2"/>
+                <path id="Path_45" fill="#1aaf71" d="M36.035 14.955L29.08 8v5.216H3v3.477h26.08v5.217z" transform="translate(2.216 5.91)"/>
+            </g>
+        </g>
+        <g id="Rectangle_475" fill="none" stroke="#1aaf71" transform="translate(7 7)">
+            <rect width="66" height="66" stroke="none" rx="33"/>
+            <rect width="65" height="65" x=".5" y=".5" class="cls-2" rx="32.5"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Component_19_2" width="60" height="60" viewBox="0 0 60 60">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="Rectangle_302" fill="#fff" stroke="#707070" d="M0 0H54V54H0z" transform="translate(846 212)"/>
+        </clipPath>
+        <style>
+            .cls-5{fill:#fff}
+        </style>
+    </defs>
+    <g id="Group_1205" transform="translate(-159 -362)">
+        <circle id="Ellipse_24" cx="8.5" cy="8.5" r="8.5" fill="#1aaf71" transform="translate(168 366)"/>
+        <g id="Mask_Group_44" clip-path="url(#clip-path)" transform="translate(-684 153)">
+            <g id="programmer" transform="translate(846 212)">
+                <g id="Group_619">
+                    <g id="Group_618">
+                        <path id="Rectangle_297" d="M0 0H1.8V1.8H0z" class="cls-5" transform="translate(31.5 29.7)"/>
+                    </g>
+                </g>
+                <g id="Group_621">
+                    <g id="Group_620">
+                        <path id="Rectangle_298" d="M0 0H4.5V1.8H0z" class="cls-5" transform="translate(30.6 19.8)"/>
+                    </g>
+                </g>
+                <g id="Group_623">
+                    <g id="Group_622">
+                        <path id="Rectangle_299" d="M0 0H4.5V1.8H0z" class="cls-5" transform="translate(37.8 19.8)"/>
+                    </g>
+                </g>
+                <g id="Group_625">
+                    <g id="Group_624">
+                        <path id="Rectangle_300" d="M0 0H4.5V1.8H0z" class="cls-5" transform="translate(45 19.8)"/>
+                    </g>
+                </g>
+                <g id="Group_627">
+                    <g id="Group_626">
+                        <path id="Path_273" d="M49.236 10.164l-5.4-5.4-1.272 1.272 4.763 4.764-4.764 4.764 1.273 1.273 5.4-5.4a.9.9 0 0 0 0-1.273z" class="cls-5"/>
+                    </g>
+                </g>
+                <g id="Group_629">
+                    <g id="Group_628">
+                        <path id="Path_274" d="M33.036 6.036l-1.272-1.272-5.4 5.4a.9.9 0 0 0 0 1.273l5.4 5.4 1.273-1.273-4.764-4.764z" class="cls-5"/>
+                    </g>
+                </g>
+                <g id="Group_631">
+                    <g id="Group_630">
+                        <path id="Rectangle_301" d="M0 0H11.272V1.8H0z" class="cls-5" transform="rotate(-61.374 30.434 -21.028)"/>
+                    </g>
+                </g>
+                <g id="Group_633">
+                    <g id="Group_632">
+                        <path id="Path_275" d="M54 30.6V5.4A4.505 4.505 0 0 0 49.5.9H14.4a8.989 8.989 0 0 0-5.322 16.241A9.908 9.908 0 0 0 0 27v25.286h.017A.892.892 0 0 0 .9 53.1h20.7a.9.9 0 0 0 .9-.9V39.506A6.282 6.282 0 0 0 27 41.4h25.2V45h-3.6v1.8h1.8v6.3h1.8v-6.3h.9a.9.9 0 0 0 .9-.9v-5.4a.9.9 0 0 0-.9-.9H41.614a4.034 4.034 0 0 0 0-4.5H49.5a4.505 4.505 0 0 0 4.5-4.5zM49.5 2.7a2.7 2.7 0 0 1 2.7 2.7v20.7H28.8v.9a9.908 9.908 0 0 0-9.078-9.859A8.967 8.967 0 0 0 19.778 2.7zM7.2 9.9a7.2 7.2 0 1 1 12.86 4.435A3.6 3.6 0 0 1 17.1 10.8h-1.8a5.407 5.407 0 0 0 3.268 4.96A7.188 7.188 0 0 1 7.2 9.9zm9.9 41.4H1.8V28.8h12.639a2.841 2.841 0 0 1 2.093.722 1.722 1.722 0 0 1 .568 1.24zm21.15-11.7H27a4.505 4.505 0 0 1-4.5-4.5V27h-1.8v24.3h-1.8V30.761a3.507 3.507 0 0 0-1.123-2.54A4.633 4.633 0 0 0 14.4 27H1.8a8.11 8.11 0 0 1 8.1-8.1h9A8.11 8.11 0 0 1 27 27v7.2a.9.9 0 0 0 .9.9h10.35a2.25 2.25 0 0 1 0 4.5zm0-6.3H28.8v-5.4h23.4v2.7a2.7 2.7 0 0 1-2.7 2.7z" class="cls-5"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

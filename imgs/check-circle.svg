@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.88" height="16.632" viewBox="0 0 16.88 16.632">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px}
+        </style>
+    </defs>
+    <g id="check-circle" transform="translate(-1.052 -1.085)">
+        <path id="Path_417" d="M16.871 8.75v.684a7.436 7.436 0 1 1-4.409-6.8" class="cls-1"/>
+        <path id="Path_418" d="M18.666 4l-7.436 7.443L9 9.212" class="cls-1" transform="translate(-1.795 -.514)"/>
+    </g>
+</svg>
