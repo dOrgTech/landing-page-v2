@@ -22,7 +22,7 @@ import {
   TOAST_DURATION
 } from "../../../constants/contactForm";
 import {getSonarAnimation} from "../../../theme/styles";
-import {sendContactForm} from "../../../utils/network";
+import {IFormInput, sendContactForm} from "../../../utils/network";
 import {useDebounce, useWindowSize} from "../../../utils/hooks";
 
 
@@ -222,13 +222,6 @@ interface Props {
   classes?: string;
 }
 
-interface IFormInput {
-  name: string;
-  email: string;
-  message: string;
-  emailOptIn: boolean;
-}
-
 export const ContactForm: React.FC<Props> = (props: Props) => {
 
   const sonarAnimation = useSonarAnimation();
@@ -356,7 +349,7 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
         </InputContainer>
 
         <InputContainer container direction='row' justify='flex-start' alignItems='center' style={{height: '5.25vh'}}>
-          <StyledCheckBox checked={emailOptIn} onChange={handleEmailOptIn}/>
+          <StyledCheckBox id='emailOptIn' name='emailOptIn' inputRef={register({required: true})} checked={emailOptIn} onChange={handleEmailOptIn}/>
           <StyledCheckBoxText>I&apos;d like to receive marketing emails</StyledCheckBoxText>
         </InputContainer>
 
