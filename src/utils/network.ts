@@ -1,4 +1,5 @@
 import {Member} from "../constants/members";
+import { AIRTABLE_API_KEY } from "../config.json";
 
 interface IFormInput {
   name: string;
@@ -25,7 +26,7 @@ interface AirtableMember {
 }
 
 export async function getMembers(): Promise<Member[]> {
-  const apiKey: string = process.env.AIRTABLE_API_KEY ?? "";
+  const apiKey: string = process.env.AIRTABLE_API_KEY ?? AIRTABLE_API_KEY ?? "";
   return fetch(
     "https://api.airtable.com/v0/app6IBhJWYR4dcak6/tblb0WHq7hTaODqks?fields%5B%5D=Name&fields%5B%5D=Email&fields%5B%5D=Github&fields%5B%5D=Portfolio+Link&fields%5B%5D=Skills&fields%5B%5D=Headshot&sort%5B0%5D%5Bfield%5D=Onboarding+Date&sort%5B0%5D%5Bdirection%5D=asc&sort%5B1%5D%5Bfield%5D=Name&sort%5B1%5D%5Bdirection%5D=asc&view=viw15s9zxmaFM8NkO",
     {
@@ -47,7 +48,7 @@ export async function getMembers(): Promise<Member[]> {
 }
 
 export const sendContactForm = async (data: IFormInput): Promise<Response> => {
-  const apiKey: string = process.env.AIRTABLE_API_KEY ?? "";
+  const apiKey: string = process.env.AIRTABLE_API_KEY ?? AIRTABLE_API_KEY ?? "";
   const body: FormSubmission = { 
     fields: {
       Name: data.name,

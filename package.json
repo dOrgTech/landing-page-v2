@@ -5,6 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "dev": "react-scripts start",
+    "prebuild": "echo '{ \"AIRTABLE_API_KEY\": \"'$AIRTABLE_API_KEY'\" }' > src/config.json",
     "build": "CI=false react-scripts build && echo dorg.tech > build/CNAME",
     "test": "react-scripts test",
     "lint:check": "eslint --quiet 'src/**/*.{js,jsx,ts,tsx}'",
