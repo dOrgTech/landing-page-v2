@@ -3,14 +3,16 @@ import {Client} from "./clients";
 export interface Companies {
   Balancer: Readonly<Client>;
   Boardroom: Readonly<Client>;
-  Centrality: Readonly<Client>;
   Compound: Readonly<Client>;
   DeversiFi: Readonly<Client>;
+  Doingud: Readonly<Client>;
   eToro: Readonly<Client>;
   TheGraph: Readonly<Client>;
+  Opolis: Readonly<Client>;
   ParaSwap: Readonly<Client>;
   Sovryn: Readonly<Client>;
   Stakedus: Readonly<Client>;
+  Starkware: Readonly<Client>;
 }
 
 export const companies: Companies = {
@@ -47,20 +49,6 @@ export const companies: Companies = {
       imageSrc: 'imgs/project-graphics/Boardroom.svg'
     }
   },
-  Centrality: {
-    name:'Centrality',
-    link: 'https://centrality.ai/',
-    icon: 'imgs/logos/Centrality.svg',
-    iconHighlightColor: '#0e0e0e',
-    iconHighlightFilter: 'brightness(0) saturate(100%) invert(0%) sepia(21%) saturate(141%) hue-rotate(355deg) brightness(104%) contrast(89%)',
-    highlightColor: '#1130ff',
-    project: {
-      description: 'Centrality maintains CENNZnet, the world’s first natively permissioned, public blockchain.\n\ndOrg developed a one-way token bridge for migrating the CENNZ and CPAY tokens from Ethereum to CENNZnet. This included the migration contract, off-chain oracle, and mobile-friendly web app.',
-      technologies: ['Smart Contracts', 'Backend', 'Frontend'],
-      bullets: [],
-      imageSrc: 'imgs/project-graphics/centrality-graphic.svg'
-    }
-  },
   Compound: {
     name:'Compound',
     link: 'https://compound.finance/',
@@ -91,6 +79,24 @@ export const companies: Companies = {
         {text: 'Check out the liquidity mining app', url: 'https://beehive.nectar.community/'}
       ],
       imageSrc: 'imgs/logos/Deversifi.svg',
+    }
+  },
+  Doingud: {
+    name:'Doingud',
+    link: 'https://doingud.com/',
+    icon: 'imgs/logos/doingud-simple.svg',
+    colorIcon: 'imgs/logos/doingud.svg',
+    iconHighlightColor: '#5500FC',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(16%) sepia(0%) saturate(1760%) hue-rotate(184deg) brightness(87%) contrast(82%)',
+    highlightColor: '#ffffff',
+    textColor: '#333333',
+    project: {
+      description: 'DoinGud is an NFT ecosystem focused on inspiring creativity and positive social impact.\n\ndOrg is helping to build out the platform\'s custom capabilities, including governance, decentralized identifiers, and several styles of NFT auction and minting.',
+      technologies: ['Smart Contracts', 'Web3 Integrations', 'Backend'],
+      bullets: [
+        {text: 'Read the announcement', url: 'https://blog.doingud.com/dorg-and-doingud-establish-a-technical-partnership/'},
+      ],
+      imageSrc: 'imgs/logos/doingud.svg',
     }
   },
   eToro: {
@@ -124,6 +130,19 @@ export const companies: Companies = {
         {text: 'Check out the repo', url: 'https://github.com/graphprotocol/mutations'}
       ],
       imageSrc: 'imgs/project-graphics/the-graph-phone.png'
+    }
+  },
+  Opolis: {
+    name:'Opolis',
+    link: 'https://opolis.co/',
+    icon: 'imgs/logos/opolis.png',
+    textColor: '#404040',
+    highlightColor: '#ffffff',
+    project: {
+      description: 'Opolis is building next-generation benefits layer for the freelancer economy.\n\ndOrg is supporting the Opolis team on fullstack improvements to its Employee Dashboard, including token integrations, token streaming, wallet integrations, fiat on-ramps and more!',
+      technologies: ['Smart Contracts', 'Backend', 'Software Architecture', 'Frontend'],
+      bullets: [],
+      imageSrc: 'imgs/logos/opolis.png',
     }
   },
   ParaSwap: {
@@ -166,6 +185,23 @@ export const companies: Companies = {
       technologies: ['Smart Contracts', 'Web3 Integrations', 'Software Architecture'],
       bullets: [],
       imageSrc: 'imgs/project-graphics/staked-diamond.svg'
+    }
+  },
+  Starkware: {
+    name:'Starkware',
+    link: 'https://starkware.co/',
+    icon: 'imgs/logos/starkware.svg',
+    iconHighlightColor: '#515fcb',
+    iconHighlightFilter: 'brightness(0) saturate(100%) invert(19%) sepia(94%) saturate(2659%) hue-rotate(231deg) brightness(84%) contrast(83%)',
+    highlightColor: '#FF4B49',
+    project: {
+      description: 'Starkware uses zero-knowledge technology to bring scalability and privacy to blockchains.\n\nStarkware enlisted dOrg to design and develop the first app on Starknet ahead of its alpha release. dOrg also supports the Starkware ecosystem by developing various tools and libraries that enhance developer experience.',
+      technologies: ['UX/UI Design', 'Fronten', 'Web3 Integrations', 'Software Architecture', 'Developer Tools'],
+      bullets: [
+        {text: 'Check out the app', url: 'https://starkware-amm-demo.netlify.app/swap'},
+        {text: 'Learn more about our contributions', url: 'https://medium.com/starkware/starknet-planets-alpha-on-ropsten-e7494929cb95'},
+      ],
+      imageSrc: 'imgs/logos/starkware.svg'
     }
   },
 }
