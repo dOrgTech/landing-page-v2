@@ -7,10 +7,6 @@
     "dev": "react-scripts start",
     "build": "CI=false react-scripts build && echo dorg.tech > build/CNAME",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build",
-    "deploy:ci": "gh-pages -d build -b ci-$(git rev-parse HEAD | cut -c 1-10)",
     "lint:check": "eslint --quiet 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'"
   },
@@ -23,7 +19,6 @@
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
     "express": "^4.17.1",
-    "gh-pages": "^3.1.0",
     "node-fetch": "^2.6.1",
     "react": "^17.0.1",
     "react-cookie-consent": "^6.2.1",
