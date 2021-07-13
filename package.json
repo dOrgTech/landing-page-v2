@@ -7,7 +7,6 @@
     "dev": "react-scripts start",
     "build": "CI=false react-scripts build && echo dorg.tech > build/CNAME",
     "test": "react-scripts test",
-    "deploy": "serve -s build",
     "lint:check": "eslint --quiet 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'"
   },
@@ -28,8 +27,7 @@
     "react-refresh": "^0.9.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
-    "react-transition-group": "^4.4.1",
-    "serve": "11.3.2"
+    "react-transition-group": "^4.4.1"
   },
   "devDependencies": {
     "@types/react": "^16.9.53",
