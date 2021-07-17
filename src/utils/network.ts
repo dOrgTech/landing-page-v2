@@ -1,17 +1,19 @@
 import {Member} from "../constants/members";
 
 
-interface IFormInput {
+export interface IFormInput {
   name: string;
   email: string;
   message: string;
+  emailOptIn: boolean;
 }
 
 interface FormSubmission {
   fields: {
     Name: string,
     Email: string,
-    Message: string
+    Message: string,
+    EmailOptIn: boolean,
   }
 }
 
@@ -31,7 +33,8 @@ export const sendContactForm = async (data: IFormInput): Promise<Response> => {
     fields: {
       Name: data.name,
       Email: data.email,
-      Message: data.message
+      Message: data.message,
+      EmailOptIn: data.emailOptIn
     } 
   };
   const lambdaUrl = '/.netlify/functions/submitContactForm';
