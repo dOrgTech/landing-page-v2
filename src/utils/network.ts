@@ -1,6 +1,5 @@
 import {Member} from "../constants/members";
 
-
 interface IFormInput {
   name: string;
   email: string;
@@ -16,8 +15,8 @@ interface FormSubmission {
 }
 
 export async function getMembers(): Promise<Member[]> {
-  const lambdaUrl = '/.netlify/functions/getMembers';
-  return fetch(lambdaUrl, {mode: 'same-origin'})
+  const url = window.location.href.substring(0, window.location.href.indexOf("/#")) + '/members';
+  return fetch(url)
     .then(response => {
       if (!response.ok) {
         throw Error(response.statusText);
@@ -34,9 +33,8 @@ export const sendContactForm = async (data: IFormInput): Promise<Response> => {
       Message: data.message
     } 
   };
-  const lambdaUrl = '/.netlify/functions/submitContactForm';
-  return fetch(lambdaUrl, {
-    mode: 'same-origin',
+  const url = window.location.href.substring(0, window.location.href.indexOf("/#")) + '/submitContactForm';
+  return fetch(url, {
     method: "POST",
     body: JSON.stringify(body)
   })
