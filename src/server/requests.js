@@ -37,5 +37,5 @@ async function submitContactForm(apiKey, body) {
 }
 
 // export functions
-exports.submitContactForm = (body) => submitContactForm(body);
+exports.submitContactForm = (apiKey, body) => submitContactForm(apiKey, body);
 exports.fetchMembers = (apiKey) => fetchMembers(apiKey);
