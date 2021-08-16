@@ -29,8 +29,8 @@ import {PerkSection} from "../components/careers/desktop/PerkSection";
 
 const CAREERS_TITLE_PRIMARY = 'Discover a new way to';
 const CAREERS_TITLE_SECONDARY = ['work', 'learn', 'grow', 'build'];
-const ACTIVATION_PROMPT = 'Get started by completing an activation challenge.';
-const APPLY_BUTTON_TEXT = 'APPLY NOW';
+const ACTIVATION_PROMPT = 'Join our database of highly skilled builders.';
+const APPLY_BUTTON_TEXT = 'ACTIVATE';
 const CURRENT_OPENINGS_TITLE = 'Current Openings';
 const MEET_BUILDERS_TITLE = 'Meet the Builders';
 
