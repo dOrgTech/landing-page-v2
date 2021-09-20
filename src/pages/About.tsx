@@ -128,7 +128,7 @@ export const About: React.FC = () => {
             <PressBoxMobile press={press} classes={borders.bottomLeftBorder} />
           </Grid>
           <StatsContainer container item xs={12} spacing={0} justify="center">
-            {Object.values(statsMobile).map((stat: Stat, index: number) => (
+            {statsList.map((stat: Stat, index: number) => (
               <Grid item xs={6} key={`statMobile-${index}`}>
                 <StatBoxMobile stat={stat} classes={borders.bottomLeftBorder} />
               </Grid>
