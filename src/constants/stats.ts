@@ -27,7 +27,7 @@ const tvlFormatter = new Intl.NumberFormat('en-US', {
 export const stats: Stats = {
   projects: {
     title: 'PROJECTS SHIPPED',
-    stat: 40,
+    stat: 50,
     postfix: '+',
     icon: 'imgs/bracketed-dot-icon.svg'
   },
@@ -56,7 +56,7 @@ export const stats: Stats = {
   },
   revenue: {
     title: 'ON-CHAIN REVENUE',
-    stat: 2.0,
+    stat: 3.0,
     formatter: tvlFormatter,
     postfix: 'M+',
     icon: 'imgs/dollar-sign-icon.svg'
@@ -66,7 +66,7 @@ export const stats: Stats = {
 export const statsMobile: Stats = {
   projects: {
     title: 'Projects shipped',
-    stat: 40,
+    stat: 50,
     postfix: '+',
     icon: 'imgs/bracketed-dot-icon.svg'
   },
@@ -95,7 +95,7 @@ export const statsMobile: Stats = {
   },
   revenue: {
     title: 'On-chain revenue',
-    stat: 2.0,
+    stat: 3.0,
     formatter: tvlFormatter,
     postfix: 'M+',
     icon: 'imgs/dollar-sign-icon.svg'
