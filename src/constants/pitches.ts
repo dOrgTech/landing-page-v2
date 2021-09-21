@@ -18,7 +18,7 @@ export const pitches: Pitches = {
     icon: 'imgs/graph-icon.svg'
   },
   coordination: {
-    detail: 'Interface through a dedicated Project Manager to ensure your requirements are continuously satisfied.',
+    detail: 'Interface through a dedicated PM to ensure we continuously satisfy your requirements.',
     pitch: 'Continuous Coordination',
     icon: 'imgs/task-flow-icon.svg'
   },
