@@ -13,22 +13,22 @@ export interface Pitches {
 
 export const pitches: Pitches = {
   swarm: {
-    detail: 'We dynamically match your project with the relevant expertise at the right time.',
+    detail: 'Work with the right builders at the right time based on your project’s week-to-week needs.',
     pitch: 'Swarm Methodology',
     icon: 'imgs/graph-icon.svg'
   },
   coordination: {
-    detail: 'Dedicated PM, live deliverable tracking, weekly check-ins, chat support.',
+    detail: 'Interface through a dedicated Project Manager to ensure your requirements are continuously satisfied.',
     pitch: 'Continuous Coordination',
     icon: 'imgs/task-flow-icon.svg'
   },
   edge: {
-    detail: 'We stay on top of the latest trends in Web3 so that you don’t have to.',
+    detail: 'Leverage our experience building with the latest web3 tech and best practices.',
     pitch: 'Bleeding Edge',
     icon: 'imgs/computer-gear-icon.svg'
   },
   alignment: {
-    detail: 'We find ways to align incentives like accepting native tokens and dogfooding your tech.',
+    detail: 'Utilize your project’s tokens to align incentives with our builders.',
     pitch: 'Long-term Alignment',
     icon: 'imgs/server-jewel-icon.svg'
   }
