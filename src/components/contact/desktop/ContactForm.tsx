@@ -301,7 +301,7 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
               onChange={handleEmailChange}
               InputProps={{disableUnderline: true}}
               inputRef={register({required: true, maxLength: MAX_EMAIL_LENGTH, pattern: EMAIL_PATTERN})}
-              className={unfocusedLabelColor(name)} />
+              className={unfocusedLabelColor(email)} />
           </Grid>
           {debouncedErrors.email?.type === "required" && <StyledError>{ERROR_EMAIL_REQUIRED}</StyledError>}
           {debouncedErrors.email?.type === "maxLength" && <StyledError>{ERROR_EXCEEDS_LENGTH(email.length, MAX_EMAIL_LENGTH)}</StyledError>}
@@ -318,7 +318,7 @@ export const ContactForm: React.FC<Props> = (props: Props) => {
               InputProps={{disableUnderline: true}}
               inputRef={register({required: true, maxLength: MAX_MESSAGE_LENGTH})}
               style={{height: 'inherit'}}
-              className={unfocusedLabelColor(name)} />
+              className={unfocusedLabelColor(message)} />
           </Grid>
           {debouncedErrors.message?.type === "required" && <StyledError>{ERROR_MESSAGE_REQUIRED}</StyledError>}
           {debouncedErrors.message?.type === "maxLength" && <StyledError>{ERROR_EXCEEDS_LENGTH(message.length, MAX_MESSAGE_LENGTH)}</StyledError>}
