@@ -13,6 +13,7 @@ export interface Routes {
 
 export interface ExternalRoutes {
   builderInterest: Readonly<Route>;
+  blog: Readonly<Route>;
 }
 
 export interface IconLink {
@@ -52,7 +53,11 @@ export const externalLinks: ExternalRoutes = {
   builderInterest: {
     path: 'https://airtable.com/shr0eQZfACL3Yarac',
     name: 'Builder Interest'
-  }
+  },
+  blog: {
+    path: 'https://dorg.substack.com/',
+    name: 'BLOG'
+  },
 }
 
 export const iconLinks: IconLinks = {
