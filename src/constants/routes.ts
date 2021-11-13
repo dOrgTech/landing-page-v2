@@ -55,7 +55,7 @@ export const externalLinks: ExternalRoutes = {
     name: 'Builder Interest'
   },
   blog: {
-    path: 'https://dorg.substack.com/',
+    path: 'https://blog.dorg.tech/',
     name: 'BLOG'
   },
 }
