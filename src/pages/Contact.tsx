@@ -54,7 +54,7 @@ export const Contact: React.FC = () => {
             <ContactForm classes={borders.leftBorder} />
           </Grid>
         </ContentContainer>
-        <RightMargin height='5vh' accentContainerHeight={`${containerHeight}px`} longAccentIndex={4}/>
+        <RightMargin height='5vh' accentContainerHeight={`${containerHeight}px`} longAccentIndex={3}/>
       </Root>
     );
   } else {

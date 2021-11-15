@@ -5,8 +5,7 @@ import {theme} from "../theme";
 import {iconLinks} from "../constants/routes";
 
 
-const CALL_TO_ACTION_DISCORD = 'Join our Discord';
-const CALL_TO_ACTION_HANDBOOK = 'Read our Handbook';
+const CALL_TO_ACTION = 'Join our Discord';
 const COPYRIGHT_TEXT = '© dOrg, LLC';
 
 const FooterContainer = styled(Grid)({
@@ -68,17 +67,12 @@ const LeftContainer = styled(Grid)({
 const RightContainer = styled(Grid)({
   width: '42.5vw',
   height: 'inherit',
-  paddingLeft: '1.75vw',
   paddingRight: '1.75vw'
 });
 
 const FooterMargin = styled(Grid)({
   width: '7.5vw',
   height: 'inherit'
-});
-
-const RightContainerItem = styled(Grid)({
-  maxWidth: '19vw'
 });
 
 interface Props {
@@ -117,28 +111,16 @@ export const FooterDesktop: React.FC<Props> = (props: Props) => {
         <FooterText className={styles.text}>{COPYRIGHT_TEXT}</FooterText>
       </LeftContainer>}
       {renderRight &&
-      <RightContainer container item spacing={0} direction='row' justify="space-between" alignItems='center'
+      <RightContainer container item spacing={0} direction='row' justify="flex-end" alignItems='center'
         className={`${borders.topBorder} ${borders.leftBorder} ${borders.rightBorder}`}>
-        <RightContainerItem container item spacing={0} direction='row' justify="flex-start" alignItems='center'>
-          <Grid item>
-            <FooterLink href={iconLinks.gitBook.path} target="_blank" rel="noopener" className={`${styles.text} ${styles.callToAction}`}>{CALL_TO_ACTION_HANDBOOK}</FooterLink>
-          </Grid>
-          <Grid item>
-            <IconContainer href={iconLinks.gitBook.path} target="_blank" rel="noopener">
-              <StyledIcon src={iconLinks.gitBook.icon} className={styles.icon} />
-            </IconContainer>
-          </Grid>
-        </RightContainerItem>
-        <RightContainerItem container item spacing={0} direction='row' justify="flex-end" alignItems='center'>
-          <Grid item>
-            <FooterLink href={iconLinks.discord.path} target="_blank" rel="noopener" className={`${styles.text} ${styles.callToAction}`}>{CALL_TO_ACTION_DISCORD}</FooterLink>
-          </Grid>
-          <Grid item>
-            <IconContainer href={iconLinks.discord.path} target="_blank" rel="noopener">
-              <StyledIcon src={iconLinks.discord.icon} className={styles.icon} />
-            </IconContainer>
-          </Grid>
-        </RightContainerItem>
+        <Grid item>
+          <FooterLink href={iconLinks.discord.path} target="_blank" rel="noopener" className={`${styles.text} ${styles.callToAction}`}>{CALL_TO_ACTION}</FooterLink>
+        </Grid>
+        <Grid item>
+          <IconContainer href={iconLinks.discord.path} target="_blank" rel="noopener">
+            <StyledIcon src={iconLinks.discord.icon} className={styles.icon} />
+          </IconContainer>
+        </Grid>
       </RightContainer>}
       {renderRight && <FooterMargin item className={borders.topBorder} />}
     </FooterContainer>

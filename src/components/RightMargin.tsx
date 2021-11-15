@@ -2,7 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import {styled, Grid} from '@material-ui/core'
 import {theme} from "../theme";
-import {externalLinks, Route, routes} from "../constants/routes";
+import {Route, routes} from "../constants/routes";
 import {useNavHoverContext} from "./NavHoverContext";
 import {useIsDesktop} from "../utils/hooks";
 
@@ -56,14 +56,8 @@ const Accents: React.FC<AccentProps> = (props: AccentProps) => {
 
 
   const history = useHistory();
-  const navigateToPage = (route: Route) => {
-    if (route.name === externalLinks.blog.name) {
-      window.location.assign(externalLinks.blog.path);
-    } else {
-      history.push(route.path);
-    }
-  }
-  const routeList = [routes.home, routes.about, routes.careers, externalLinks.blog, routes.contact]
+  const navigateToPage = (route: Route) => history.push(route.path);
+  const routeList = [routes.home, routes.about, routes.careers, routes.contact]
 
   return (
     <AccentContainer container direction={'column'} justify={'center'} alignItems={'center'} style={{height: props.height}}>

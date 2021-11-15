@@ -1,7 +1,7 @@
 import React from "react";
 import {styled, AppBar, Grid, Link, makeStyles, Box} from "@material-ui/core";
 import { useHistory, useLocation } from 'react-router-dom';
-import {externalLinks, Route, routes} from "../constants/routes";
+import {Route, routes} from "../constants/routes";
 import {getBorderStyle} from "../theme/styles";
 import {theme} from "../theme";
 import {useNavHoverContext} from "./NavHoverContext";
@@ -90,14 +90,8 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
 
   // navigation
   const history = useHistory();
-  const navigateToPage = (route: Route) => {
-    if (route.name === externalLinks.blog.name) {
-      window.location.assign(externalLinks.blog.path);
-    } else {
-      history.push(route.path);
-    }
-  }
-  const routesList = [routes.home, routes.about, routes.careers, externalLinks.blog, routes.contact]
+  const navigateToPage = (route: Route) => history.push(route.path);
+  const routesList = [routes.home, routes.about, routes.careers, routes.contact]
 
   const location = useLocation();
   const isLocation = (route: Readonly<Route>) => { return location.pathname === route.path; }
@@ -152,9 +146,8 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
                 </StyledLink>
               </LinkBox>
           ))}
-          {isLocation(routes.about) && <Underline style={{right: '28.25vw'}}/>}
-          {isLocation(routes.careers) && <Underline style={{right: '20.25vw'}}/>}
-          {isLocation(externalLinks.blog) && <Underline style={{right: '12vw'}}/>}
+          {isLocation(routes.about) && <Underline style={{right: '20.25vw'}}/>}
+          {isLocation(routes.careers) && <Underline style={{right: '12vw'}}/>}
           {isLocation(routes.contact) && <Underline style={{right: '3.75vw'}}/>}
         </LinksContainer>}
         {renderRight && <HeaderRightMargin item className={borders.bottomBorder}/>}

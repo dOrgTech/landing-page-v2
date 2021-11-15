@@ -1,24 +1,56 @@
 const fetch = require('node-fetch');
 
-// takes apiKey as string and returns Promise<Member[]>
-async function fetchMembers(apiKey) {
+// fetches a list of usernames from the discourse API and pushes each item to usernameArray
+async function fetchMemberList(apiKey) {
   return fetch(
-    "https://api.airtable.com/v0/app6IBhJWYR4dcak6/tblb0WHq7hTaODqks?fields%5B%5D=Name&fields%5B%5D=Headshot&fields%5B%5D=Skills&fields%5B%5D=Github&sort%5B0%5D%5Bfield%5D=Onboarding+Date&sort%5B0%5D%5Bdirection%5D=asc&sort%5B1%5D%5Bfield%5D=Name&sort%5B1%5D%5Bdirection%5D=asc&view=viw15s9zxmaFM8NkO",
-  {
+    "https://forum.dorg.tech/admin/users/list/active.json",
+    {
       method: "GET",
       headers: new fetch.Headers({
-        "Authorization": `Bearer ${apiKey}`
+        "Api-Key": `${apiKey}`,
+        "Api-username": "system"
       })
     }
   ).then(response => response.json())
-    .then(response => response.records.map(record => ({
-      name: record.fields.Name ? record.fields.Name : "",
-      photo: record.fields.Headshot ? record.fields.Headshot[0].url : undefined,
-      skills: record.fields.Skills ? record.fields.Skills : [],
-      portfolio: {
-        github: record.fields.Github,
+    .then(response => response.forEach(user => {
+      usernameArray.push(user.username)
+    }))
+    .then(response => console.log(usernameArray))
+}
+
+
+// array where usernames will be stored and iterated over
+let usernameArray = [];
+
+// takes apiKey as string and returns Promise<Member[]>
+async function fetchMemberInfo(apiKey, username) {
+  return fetch(
+    `https://forum.dorg.tech/u/${username}.json`, // try using .map 
+  {
+      method: "GET",
+      headers: new fetch.Headers({
+        "Api-Key": `${apiKey}`,
+        "Api-username": "system"
+      })
+    }
+  ).then(response => response.json())
+    /*/.then(response => {
+      return {
+        name: response.data.user?.name || '',
+        photo: response.data.user?.avatar_template, //it's not returning image size
+        skills: response.data.user?.user_fields[1] || [],
+        portfolio: {
+          github: ''
+        }
       }
-    })))
+    })*/.then(response => console.log(response))
+}
+
+// .map is called on usernameArray, passing a callback to fetchMemberInfo
+//  
+async function fetchMembers(apiKey) {
+  const members = usernameArray.map(username => fetchMemberInfo(apiKey, username));
+  return Promise.all(members)
 }
 
 // takes form data as json string and submits to airtable
@@ -38,4 +70,6 @@ async function submitContactForm(apiKey, body) {
 
 // export functions
 exports.submitContactForm = (apiKey, body) => submitContactForm(apiKey, body);
-exports.fetchMembers = (apiKey) => fetchMembers(apiKey);
+exports.fetchMemberInfo = (apiKey) => fetchMemberInfo(apiKey);
+exports.fetchMemberList = (apiKey) => fetchMemberList(apiKey);
+exports.fetchMembers = (apiKey) => fetchMembers(apiKey)

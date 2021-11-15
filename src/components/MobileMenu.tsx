@@ -1,7 +1,7 @@
 import React from "react";
 import {styled, Grid, MenuItem, Menu, ButtonBase, Typography, Box} from "@material-ui/core";
 import { useHistory, useLocation } from 'react-router-dom';
-import {externalLinks, Route, routes} from "../constants/routes";
+import {Route, routes} from "../constants/routes";
 import {theme} from "../theme";
 
 // NOTE: Styling for menu background and border is located in the Mui theme
@@ -56,17 +56,13 @@ export const MobileMenu: React.FC = () => {
   const handleClose = () => { setAnchorEl(null); };
 
   const history = useHistory();
-  const handleAboutClick = () => {
+  const handleAboutclick = () => {
     handleClose();
     history.push(routes.about.path);
   };
   const handleCareersClick = () => {
     handleClose();
     history.push(routes.careers.path);
-  };
-  const handleBlogClick = () => {
-    handleClose();
-    window.location.assign(externalLinks.blog.path);
   };
   const handleContactClick = () => {
     handleClose();
@@ -89,17 +85,13 @@ export const MobileMenu: React.FC = () => {
         </AccentsContainer>
       </StyledButton>
       <Menu id="mobile-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-        <StyledMenuItem onClick={handleAboutClick}>
+        <StyledMenuItem onClick={handleAboutclick}>
           {isLocation(routes.about) && <SelectionAccent/>}
           <StyledMenuText style={{color: highlight(routes.about)}}>About</StyledMenuText>
         </StyledMenuItem>
         <StyledMenuItem onClick={handleCareersClick}>
           {isLocation(routes.careers) && <SelectionAccent/>}
           <StyledMenuText style={{color: highlight(routes.careers)}}>Careers</StyledMenuText>
-        </StyledMenuItem>
-        <StyledMenuItem onClick={handleBlogClick}>
-          {isLocation(externalLinks.blog) && <SelectionAccent/>}
-          <StyledMenuText style={{color: highlight(externalLinks.blog)}}>Blog</StyledMenuText>
         </StyledMenuItem>
         <StyledMenuItem onClick={handleContactClick}>
           {isLocation(routes.contact) && <SelectionAccent/>}
