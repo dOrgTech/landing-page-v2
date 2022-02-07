@@ -94,16 +94,16 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
     if (route.name === externalLinks.blog.name) {
       window.location.assign(externalLinks.blog.path);
     }
-    if (route.name === externalLinks.careers.name) {
-      window.location.assign(externalLinks.careers.path);
+    if (route.name === externalLinks.buildWithUs.name) {
+      window.location.assign(externalLinks.buildWithUs.path);
     }
     if (route.name === externalLinks.contact.name) {
-      window.location.assign(externalLinks.careers.path);
+      window.location.assign(externalLinks.contact.path);
     } else {
       history.push(route.path);
     }
   }
-  const routesList = [routes.home, routes.about, externalLinks.careers, externalLinks.contact, externalLinks.blog, ]
+  const routesList = [routes.home, routes.about, externalLinks.buildWithUs, externalLinks.contact, externalLinks.blog, ]
 
   const location = useLocation();
   const isLocation = (route: Readonly<Route>) => { return location.pathname === route.path; }
@@ -159,7 +159,7 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
               </LinkBox>
           ))}
           {isLocation(routes.about) && <Underline style={{right: '28.25vw'}}/>}
-          {isLocation(externalLinks.careers) && <Underline style={{right: '20.25vw'}}/>}
+          {isLocation(externalLinks.buildWithUs) && <Underline style={{right: '20.25vw'}}/>}
           {isLocation(externalLinks.contact) && <Underline style={{right: '3.75vw'}}/>}
           {isLocation(externalLinks.blog) && <Underline style={{right: '12vw'}}/>}
         </LinksContainer>}

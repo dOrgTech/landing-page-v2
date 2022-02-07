@@ -62,7 +62,7 @@ export const MobileMenu: React.FC = () => {
   };
   const handleCareersClick = () => {
     handleClose();
-    window.location.assign(externalLinks.careers.path);
+    window.location.assign(externalLinks.buildWithUs.path);
   };
   const handleBlogClick = () => {
     handleClose();
@@ -94,8 +94,8 @@ export const MobileMenu: React.FC = () => {
           <StyledMenuText style={{color: highlight(routes.about)}}>About</StyledMenuText>
         </StyledMenuItem>
         <StyledMenuItem onClick={handleCareersClick}>
-          {isLocation(externalLinks.careers) && <SelectionAccent/>}
-          <StyledMenuText style={{color: highlight(externalLinks.careers)}}>Join Us</StyledMenuText>
+          {isLocation(externalLinks.buildWithUs) && <SelectionAccent/>}
+          <StyledMenuText style={{color: highlight(externalLinks.buildWithUs)}}>Join Us</StyledMenuText>
         </StyledMenuItem>
         <StyledMenuItem onClick={handleContactClick}>
           {isLocation(externalLinks.contact) && <SelectionAccent/>}

@@ -10,10 +10,9 @@ export interface Routes {
 }
 
 export interface ExternalRoutes {
-  builderInterest: Readonly<Route>;
   blog: Readonly<Route>;
-  careers: Readonly<Route>;
   contact: Readonly<Route>;
+  buildWithUs: Readonly<Route>;
 }
 
 export interface IconLink {
@@ -42,21 +41,17 @@ export const routes: Routes = {
 }
 
 export const externalLinks: ExternalRoutes = {
-  builderInterest: {
-    path: 'https://airtable.com/shr0eQZfACL3Yarac',
-    name: 'Builder Interest'
-  },
   blog: {
     path: 'https://blog.dorg.tech/',
     name: 'BLOG'
   },
-  careers: {
-    path: 'https://airtable.com/shr0eQZfACL3Yarac',
-    name: 'JOIN US'
-  },
   contact: {
     path: 'https://airtable.com/shrDwCltoS7MHDfsT',
     name: 'HIRE US'
+  },
+  buildWithUs: {
+    path: 'https://airtable.com/shr0eQZfACL3Yarac',
+    name: 'JOIN US'
   },
 }
 

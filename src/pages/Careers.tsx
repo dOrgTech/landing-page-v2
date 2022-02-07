@@ -62,7 +62,7 @@ export const Careers: React.FC = () => {
   // request members from server
   const members: Member[] = useMembers(); // eslint-disable-line
 
-  const navigateToBuilderInterestForm = () => window.location.assign(externalLinks.builderInterest.path);
+  const navigateToBuilderInterestForm = () => window.location.assign(externalLinks.buildWithUs.path);
   const borders = useBorders();
 
   const desktop = useIsDesktop();

@@ -60,16 +60,16 @@ const Accents: React.FC<AccentProps> = (props: AccentProps) => {
     if (route.name === externalLinks.blog.name) {
       window.location.assign(externalLinks.blog.path);
     }
-    if (route.name === externalLinks.careers.name) {
-      window.location.assign(externalLinks.careers.path);
+    if (route.name === externalLinks.buildWithUs.name) {
+      window.location.assign(externalLinks.buildWithUs.path);
     }
     if (route.name === externalLinks.contact.name) {
-      window.location.assign(externalLinks.careers.path);
+      window.location.assign(externalLinks.contact.path);
     } else {
       history.push(route.path);
     }
   }
-  const routeList = [routes.home, routes.about, externalLinks.careers, externalLinks.blog, externalLinks.contact]
+  const routeList = [routes.home, routes.about, externalLinks.buildWithUs, externalLinks.blog, externalLinks.contact]
 
   return (
     <AccentContainer container direction={'column'} justify={'center'} alignItems={'center'} style={{height: props.height}}>
