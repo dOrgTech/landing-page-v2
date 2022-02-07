@@ -93,11 +93,17 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
   const navigateToPage = (route: Route) => {
     if (route.name === externalLinks.blog.name) {
       window.location.assign(externalLinks.blog.path);
+    }
+    if (route.name === externalLinks.careers.name) {
+      window.location.assign(externalLinks.careers.path);
+    }
+    if (route.name === externalLinks.contact.name) {
+      window.location.assign(externalLinks.careers.path);
     } else {
       history.push(route.path);
     }
   }
-  const routesList = [routes.home, routes.about, routes.careers, externalLinks.blog, routes.contact]
+  const routesList = [routes.home, routes.about, externalLinks.careers, externalLinks.contact, externalLinks.blog, ]
 
   const location = useLocation();
   const isLocation = (route: Readonly<Route>) => { return location.pathname === route.path; }
@@ -153,9 +159,9 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
               </LinkBox>
           ))}
           {isLocation(routes.about) && <Underline style={{right: '28.25vw'}}/>}
-          {isLocation(routes.careers) && <Underline style={{right: '20.25vw'}}/>}
+          {isLocation(externalLinks.careers) && <Underline style={{right: '20.25vw'}}/>}
+          {isLocation(externalLinks.contact) && <Underline style={{right: '3.75vw'}}/>}
           {isLocation(externalLinks.blog) && <Underline style={{right: '12vw'}}/>}
-          {isLocation(routes.contact) && <Underline style={{right: '3.75vw'}}/>}
         </LinksContainer>}
         {renderRight && <HeaderRightMargin item className={borders.bottomBorder}/>}
       </Grid>

@@ -4,6 +4,7 @@ import {styled, Grid, makeStyles, Box} from '@material-ui/core'
 import {Member} from "../../../../constants/members";
 import {ProfilePhoto} from "../../desktop/profile_popup/ProfilePhoto";
 import {routes} from "../../../../constants/routes";
+import { externalLinks } from '../../../../constants/routes';
 import { useHistory } from 'react-router-dom'
 import {borderStyle} from "../../../../theme/styles";
 import {NameBioContainerMobile} from "./NameBioContainerMobile";
@@ -70,7 +71,7 @@ export const ProfileFullMobile: React.FC<Props> = (props: Props) => {
   const title = 'dOrg Builder';
 
   const history = useHistory();
-  const navigateToContactPage = () => history.push(routes.contact.path);
+  const navigateToContactPage = () => window.location.assign(externalLinks.contact.path);
 
   const cancelButtonPosition = useCancelButtonPosition();
   const mobileStyles = useMobileStyles();

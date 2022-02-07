@@ -59,11 +59,17 @@ const Accents: React.FC<AccentProps> = (props: AccentProps) => {
   const navigateToPage = (route: Route) => {
     if (route.name === externalLinks.blog.name) {
       window.location.assign(externalLinks.blog.path);
+    }
+    if (route.name === externalLinks.careers.name) {
+      window.location.assign(externalLinks.careers.path);
+    }
+    if (route.name === externalLinks.contact.name) {
+      window.location.assign(externalLinks.careers.path);
     } else {
       history.push(route.path);
     }
   }
-  const routeList = [routes.home, routes.about, routes.careers, externalLinks.blog, routes.contact]
+  const routeList = [routes.home, routes.about, externalLinks.careers, externalLinks.blog, externalLinks.contact]
 
   return (
     <AccentContainer container direction={'column'} justify={'center'} alignItems={'center'} style={{height: props.height}}>

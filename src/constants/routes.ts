@@ -7,13 +7,13 @@ export interface Route {
 export interface Routes {
   home: Readonly<Route>;
   about: Readonly<Route>;
-  careers: Readonly<Route>;
-  contact: Readonly<Route>;
 }
 
 export interface ExternalRoutes {
   builderInterest: Readonly<Route>;
   blog: Readonly<Route>;
+  careers: Readonly<Route>;
+  contact: Readonly<Route>;
 }
 
 export interface IconLink {
@@ -39,14 +39,6 @@ export const routes: Routes = {
     path: '/about',
     name: 'ABOUT'
   },
-  careers: {
-    path: '/careers',
-    name: 'CAREERS'
-  },
-  contact: {
-    path: '/contact',
-    name: 'CONTACT'
-  }
 }
 
 export const externalLinks: ExternalRoutes = {
@@ -57,6 +49,14 @@ export const externalLinks: ExternalRoutes = {
   blog: {
     path: 'https://blog.dorg.tech/',
     name: 'BLOG'
+  },
+  careers: {
+    path: 'https://airtable.com/shr0eQZfACL3Yarac',
+    name: 'JOIN US'
+  },
+  contact: {
+    path: 'https://airtable.com/shrDwCltoS7MHDfsT',
+    name: 'HIRE US'
   },
 }
 

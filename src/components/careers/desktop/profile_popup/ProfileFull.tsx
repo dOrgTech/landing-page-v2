@@ -13,7 +13,7 @@ import {routes} from "../../../../constants/routes";
 import { useHistory } from 'react-router-dom'
 import {borderStyle, borderStyles} from "../../../../theme/styles";
 import {ClosePopUpButton} from "./ClosePopUpButton";
-
+import { externalLinks } from '../../../../constants/routes';
 const StyledGrid = styled(Grid)({
   width: '79.25vh',
   height: '100vh',
@@ -58,7 +58,7 @@ export const ProfileFull: React.FC<Props> = (props: Props) => {
   const title = 'dOrg Builder';
 
   const history = useHistory();
-  const navigateToContactPage = () => history.push(routes.contact.path);
+  const navigateToContactPage = () =>   window.location.assign(externalLinks.contact.path);
 
   const cancelButtonPosition = useCancelButtonPosition();
   const borders = useBorders();

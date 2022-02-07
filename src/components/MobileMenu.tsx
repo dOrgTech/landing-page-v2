@@ -62,7 +62,7 @@ export const MobileMenu: React.FC = () => {
   };
   const handleCareersClick = () => {
     handleClose();
-    history.push(routes.careers.path);
+    window.location.assign(externalLinks.careers.path);
   };
   const handleBlogClick = () => {
     handleClose();
@@ -70,7 +70,7 @@ export const MobileMenu: React.FC = () => {
   };
   const handleContactClick = () => {
     handleClose();
-    history.push(routes.contact.path);
+    window.location.assign(externalLinks.contact.path);
   };
 
   const location = useLocation();
@@ -94,17 +94,18 @@ export const MobileMenu: React.FC = () => {
           <StyledMenuText style={{color: highlight(routes.about)}}>About</StyledMenuText>
         </StyledMenuItem>
         <StyledMenuItem onClick={handleCareersClick}>
-          {isLocation(routes.careers) && <SelectionAccent/>}
-          <StyledMenuText style={{color: highlight(routes.careers)}}>Careers</StyledMenuText>
+          {isLocation(externalLinks.careers) && <SelectionAccent/>}
+          <StyledMenuText style={{color: highlight(externalLinks.careers)}}>Join Us</StyledMenuText>
+        </StyledMenuItem>
+        <StyledMenuItem onClick={handleContactClick}>
+          {isLocation(externalLinks.contact) && <SelectionAccent/>}
+          <StyledMenuText style={{color: highlight(externalLinks.contact)}}>Hire Us</StyledMenuText>
         </StyledMenuItem>
         <StyledMenuItem onClick={handleBlogClick}>
           {isLocation(externalLinks.blog) && <SelectionAccent/>}
           <StyledMenuText style={{color: highlight(externalLinks.blog)}}>Blog</StyledMenuText>
         </StyledMenuItem>
-        <StyledMenuItem onClick={handleContactClick}>
-          {isLocation(routes.contact) && <SelectionAccent/>}
-          <StyledMenuText style={{color: highlight(routes.contact)}}>Contact</StyledMenuText>
-        </StyledMenuItem>
+        
       </Menu>
     </div>
   );
