@@ -1,12 +1,11 @@
-import {Grid, Link, makeStyles, styled, Typography} from '@material-ui/core'
+import {Box, Grid, Link, makeStyles, styled, Typography} from '@material-ui/core'
 import React from 'react'
 import {borderStyles} from "../theme/styles";
 import {theme} from "../theme";
-import {iconLinks} from "../constants/routes";
+import {iconLinks, IconLink} from "../constants/routes";
 
 
-const CALL_TO_ACTION = 'Join our Discord';
-const COPYRIGHT_TEXT = '© dOrg, LLC';
+const CALL_TO_ACTION_HANDBOOK = 'Handbook';
 
 const FooterContainer = styled(Grid)({
   height: '18.8vw',
@@ -53,7 +52,7 @@ const FooterLink = styled(Link)({
 const IconContainer = styled(Link)({
   height: '5vw',
   width: 'auto',
-  marginRight: '2.65vw',
+  marginRight: '3.5vw',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center'
@@ -70,11 +69,21 @@ const StyledIcon = styled('img')({
   cursor: 'pointer'
 });
 
+const SocialIcons = styled(Box)({
+  display: 'flex',
+})
+
+const RightGrid = styled(Grid)({
+  maxWidth: '40%',
+})
+
 const useBorders = makeStyles(borderStyles);
 
 export const FooterMobile: React.FC = () => {
 
   const borders = useBorders();
+  const socialIcons = Object.values(iconLinks)
+  socialIcons.pop()
 
   return (
     <FooterContainer container justify='flex-start'>
@@ -82,18 +91,24 @@ export const FooterMobile: React.FC = () => {
       <FooterBody container item spacing={0} direction='row' justify="space-between" alignItems='center'
         className={`${borders.topBorder} ${borders.leftBorder} ${borders.rightBorder}`}>
         <Grid item xs={6}>
-          <FooterText>{COPYRIGHT_TEXT}</FooterText>
+          <SocialIcons>
+            {socialIcons.map((iconLink: IconLink) => (
+              <IconContainer href={iconLink.path} target="_blank" rel="noopener" key={iconLink.icon}>
+                <StyledIcon src={iconLink.icon} />
+              </IconContainer>
+            ))}
+          </SocialIcons>
         </Grid>
-        <Grid container item xs={6} spacing={0} justify='flex-end' alignItems='center'>
+        <RightGrid container item spacing={1} direction='row' justify="flex-end" alignItems='center'>
           <Grid item>
-            <FooterLink href={iconLinks.discord.path} target="_blank" rel="noopener" style={{marginRight: '2.65vw'}}>{CALL_TO_ACTION}</FooterLink>
+            <FooterLink href={iconLinks.gitBook.path} target="_blank" rel="noopener">{CALL_TO_ACTION_HANDBOOK}</FooterLink>
           </Grid>
           <Grid item>
-            <IconContainer href={iconLinks.discord.path} target="_blank" rel="noopener">
-              <StyledIcon src={iconLinks.discord.icon}/>
+            <IconContainer href={iconLinks.gitBook.path} target="_blank" rel="noopener">
+              <StyledIcon src={iconLinks.gitBook.icon} />
             </IconContainer>
           </Grid>
-        </Grid>
+        </RightGrid>
       </FooterBody>
       <FooterMargin item className={borders.topBorder} />
     </FooterContainer>
