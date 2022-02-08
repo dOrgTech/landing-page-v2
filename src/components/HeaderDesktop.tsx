@@ -91,18 +91,17 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
   // navigation
   const history = useHistory();
   const navigateToPage = (route: Route) => {
-    console.log(route.name)
     if (route.name === externalLinks.blog.name) {
-      console.log('hire us')
-      window.location.assign(externalLinks.blog.path);
+      window.open(externalLinks.blog.path, "_blank");
+      return false;
     }
     if (route.name === externalLinks.builderInterest.name) {
-      console.log('hire us')
-      window.location.assign(externalLinks.builderInterest.path);
+      window.open(externalLinks.builderInterest.path, "_blank");
+      return false;
     }
     if (route.name === externalLinks.contact.name) {
-      console.log('hire us')
-      window.location.assign(externalLinks.contact.path);
+      window.open(externalLinks.contact.path, "_blank");
+      return false;
     }
     else {
       history.push(route.path);
