@@ -58,7 +58,7 @@ export const ProfileFull: React.FC<Props> = (props: Props) => {
   const title = 'dOrg Builder';
 
   const history = useHistory();
-  const navigateToContactPage = () => history.push(routes.contact.path);
+  // const navigateToContactPage = () => history.push(routes.contact.path);
 
   const cancelButtonPosition = useCancelButtonPosition();
   const borders = useBorders();
@@ -92,9 +92,7 @@ export const ProfileFull: React.FC<Props> = (props: Props) => {
         <PortfolioLinkContainer github={portfolio.github} website={portfolio.website} linkedin={portfolio.linkedin} />
       </StyledGridItem>
       <StyledGridItem item xs={12} className={borders.topBorder} />
-      <StyledGridItem item xs={12} container justify='flex-end'>
-        <HireMeButton name={name} handleClick={navigateToContactPage} />
-      </StyledGridItem>
+      <StyledGridItem item xs={12} container justify='flex-end'>      </StyledGridItem>
       <ClosePopUpButton classes={cancelButtonPosition.positionStyle} handleClick={props.onClose} />
     </StyledGrid>
   );

@@ -91,13 +91,24 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
   // navigation
   const history = useHistory();
   const navigateToPage = (route: Route) => {
+    console.log(route.name)
     if (route.name === externalLinks.blog.name) {
+      console.log('hire us')
       window.location.assign(externalLinks.blog.path);
-    } else {
+    }
+    if (route.name === externalLinks.builderInterest.name) {
+      console.log('hire us')
+      window.location.assign(externalLinks.builderInterest.path);
+    }
+    if (route.name === externalLinks.contact.name) {
+      console.log('hire us')
+      window.location.assign(externalLinks.contact.path);
+    }
+    else {
       history.push(route.path);
     }
   }
-  const routesList = [routes.home, routes.about, routes.careers, externalLinks.blog, routes.contact]
+  const routesList = [routes.home, routes.about, externalLinks.builderInterest, externalLinks.contact, externalLinks.blog,]
 
   const location = useLocation();
   const isLocation = (route: Readonly<Route>) => { return location.pathname === route.path; }
@@ -153,9 +164,9 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
               </LinkBox>
           ))}
           {isLocation(routes.about) && <Underline style={{right: '28.25vw', backgroundColor: Object.values(colors)[1]}}/>}
-          {isLocation(routes.careers) && <Underline style={{right: '20.25vw', backgroundColor: Object.values(colors)[2]}}/>}
+          {isLocation(externalLinks.contact) && <Underline style={{right: '3.75vw', backgroundColor: Object.values(colors)[4]}}/>}
+          {isLocation(externalLinks.builderInterest) && <Underline style={{right: '20.25vw', backgroundColor: Object.values(colors)[2]}}/>}
           {isLocation(externalLinks.blog) && <Underline style={{right: '12vw', backgroundColor: Object.values(colors)[3]}}/>}
-          {isLocation(routes.contact) && <Underline style={{right: '3.75vw', backgroundColor: Object.values(colors)[4]}}/>}
         </LinksContainer>}
         {renderRight && <HeaderRightMargin item className={borders.bottomBorder}/>}
       </Grid>
