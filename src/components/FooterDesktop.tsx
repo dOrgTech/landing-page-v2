@@ -2,12 +2,9 @@ import {Grid, Link, makeStyles, styled, Typography} from '@material-ui/core'
 import React from 'react'
 import {getBorderStyle} from "../theme/styles";
 import {theme} from "../theme";
-import {iconLinks} from "../constants/routes";
+import {iconLinks, IconLink} from "../constants/routes";
 
-
-const CALL_TO_ACTION_DISCORD = 'Join our Discord';
-const CALL_TO_ACTION_HANDBOOK = 'Read our Handbook';
-const COPYRIGHT_TEXT = '© dOrg, LLC';
+const CALL_TO_ACTION_HANDBOOK = 'Handbook';
 
 const FooterContainer = styled(Grid)({
   height: '5vw',
@@ -18,7 +15,7 @@ const FooterContainer = styled(Grid)({
 const IconContainer = styled(Link)({
   height: '1.5vw',
   width: '1.25vw',
-  marginRight: '0.7vw',
+  marginRight: '1vw',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center'
@@ -30,7 +27,7 @@ const StyledIcon = styled('img')({
   objectFit: 'contain',
   color: theme.palette.text.primary,
   '&:hover': {
-    filter: 'brightness(0) saturate(100%) invert(51%) sepia(98%) saturate(396%) hue-rotate(103deg) brightness(90%) contrast(83%)'
+    filter: 'brightness(0) saturate(100%) invert(80%) sepia(150%) saturate(400%) hue-rotate(48deg) brightness(140%) contrast(170%)'
   },
   cursor: 'pointer'
 });
@@ -77,10 +74,6 @@ const FooterMargin = styled(Grid)({
   height: 'inherit'
 });
 
-const RightContainerItem = styled(Grid)({
-  maxWidth: '19vw'
-});
-
 interface Props {
   pageHalf?: 'left' | 'right';
   textColor?: string;
@@ -108,18 +101,24 @@ export const FooterDesktop: React.FC<Props> = (props: Props) => {
 
   const borderColor = props.textColor ? props.textColor : theme.palette.text.primary;
   const borders = makeStyles(getBorderStyle(borderColor))();
+  const socialIcons = Object.values(iconLinks)
+  socialIcons.pop()
 
   return (
     <FooterContainer container justify='flex-start' className={props.classes} style={{width: props.pageHalf ? '50vw' : '100vw'}}>
       {renderLeft && <FooterMargin item className={borders.topBorder} />}
       {renderLeft &&
       <LeftContainer container item spacing={0} direction='row' justify="flex-start" alignItems='center' className={`${borders.topBorder} ${borders.leftBorder}`}>
-        <FooterText className={styles.text}>{COPYRIGHT_TEXT}</FooterText>
+        {socialIcons.map((iconLink: IconLink) => (
+          <IconContainer href={iconLink.path} target="_blank" rel="noopener" key={iconLink.icon}>
+            <StyledIcon src={iconLink.icon} className={styles.icon} />
+          </IconContainer>
+        ))}
       </LeftContainer>}
       {renderRight &&
       <RightContainer container item spacing={0} direction='row' justify="space-between" alignItems='center'
         className={`${borders.topBorder} ${borders.leftBorder} ${borders.rightBorder}`}>
-        <RightContainerItem container item spacing={0} direction='row' justify="flex-start" alignItems='center'>
+        <Grid container item spacing={0} direction='row' justify="flex-end" alignItems='center'>
           <Grid item>
             <FooterLink href={iconLinks.gitBook.path} target="_blank" rel="noopener" className={`${styles.text} ${styles.callToAction}`}>{CALL_TO_ACTION_HANDBOOK}</FooterLink>
           </Grid>
@@ -128,17 +127,7 @@ export const FooterDesktop: React.FC<Props> = (props: Props) => {
               <StyledIcon src={iconLinks.gitBook.icon} className={styles.icon} />
             </IconContainer>
           </Grid>
-        </RightContainerItem>
-        <RightContainerItem container item spacing={0} direction='row' justify="flex-end" alignItems='center'>
-          <Grid item>
-            <FooterLink href={iconLinks.discord.path} target="_blank" rel="noopener" className={`${styles.text} ${styles.callToAction}`}>{CALL_TO_ACTION_DISCORD}</FooterLink>
-          </Grid>
-          <Grid item>
-            <IconContainer href={iconLinks.discord.path} target="_blank" rel="noopener">
-              <StyledIcon src={iconLinks.discord.icon} className={styles.icon} />
-            </IconContainer>
-          </Grid>
-        </RightContainerItem>
+        </Grid>
       </RightContainer>}
       {renderRight && <FooterMargin item className={borders.topBorder} />}
     </FooterContainer>
