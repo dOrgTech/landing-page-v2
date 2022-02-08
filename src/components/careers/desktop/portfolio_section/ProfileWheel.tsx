@@ -53,7 +53,7 @@ const ProfileItem = styled(Grid)({
 const OverlayLeft = styled('div')({
   height: '25vw',
   width: '9.475vw',
-  backgroundImage: 'linear-gradient(to right, #000e3c 5%, rgba(0, 14, 62, 0.6) 51%, rgba(0, 16, 71, 0) 95%)',
+  backgroundImage: 'linear-gradient(to right, #000 5%, rgba(0,0,0,0) 95%)',
   position: 'absolute',
   left: '-0.1vw',
   top: 0,
@@ -64,7 +64,7 @@ const OverlayLeft = styled('div')({
 const OverlayRight = styled('div')({
   height: '25vw',
   width: '9.475vw',
-  backgroundImage: 'linear-gradient(to left, #000e3c 5%, rgba(0, 14, 62, 0.6) 51%, rgba(0, 16, 71, 0) 95%)',
+  backgroundImage: 'linear-gradient(to left, #000 5%, rgba(0,0,0,0) 95%)',
   position: 'absolute',
   right: '-0.1vw',
   top: 0,

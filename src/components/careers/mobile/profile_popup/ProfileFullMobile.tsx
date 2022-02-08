@@ -70,7 +70,7 @@ export const ProfileFullMobile: React.FC<Props> = (props: Props) => {
   const title = 'dOrg Builder';
 
   const history = useHistory();
-  const navigateToContactPage = () => history.push(routes.contact.path);
+  // const navigateToContactPage = () => history.push(routes.contact.path);
 
   const cancelButtonPosition = useCancelButtonPosition();
   const mobileStyles = useMobileStyles();
@@ -102,9 +102,7 @@ export const ProfileFullMobile: React.FC<Props> = (props: Props) => {
         <StyledGridItem item style={{marginBottom: '4.1vw'}}>
           <PortfolioLinkContainerMobile github={portfolio.github} website={portfolio.website} linkedin={portfolio.linkedin} />
         </StyledGridItem>
-        <StyledGridItem item>
-          <HireMeButtonMobile name={name} handleClick={navigateToContactPage} />
-        </StyledGridItem>
+        <StyledGridItem item></StyledGridItem>
         <ClosePopUpButtonMobile classes={cancelButtonPosition.positionStyle} handleClick={props.onClose} />
       </ContentContainer>
     </BackgroundContainer>

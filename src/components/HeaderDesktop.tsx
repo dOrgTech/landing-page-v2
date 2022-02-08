@@ -3,11 +3,11 @@ import {styled, AppBar, Grid, Link, makeStyles, Box} from "@material-ui/core";
 import { useHistory, useLocation } from 'react-router-dom';
 import {externalLinks, Route, routes} from "../constants/routes";
 import {getBorderStyle} from "../theme/styles";
-import {theme} from "../theme";
+import {colors, theme} from "../theme";
 import {useNavHoverContext} from "./NavHoverContext";
 
 
-const LOGO_PATH = process.env.PUBLIC_URL + "/imgs/logos/dOrg-logo-white.svg";
+const LOGO_PATH = process.env.PUBLIC_URL + "/imgs/logos/dOrg-logo.svg";
 
 const StyledAppBar = styled(AppBar)({
   height: '5vw',
@@ -91,13 +91,24 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
   // navigation
   const history = useHistory();
   const navigateToPage = (route: Route) => {
+    console.log(route.name)
     if (route.name === externalLinks.blog.name) {
+      console.log('hire us')
       window.location.assign(externalLinks.blog.path);
-    } else {
+    }
+    if (route.name === externalLinks.builderInterest.name) {
+      console.log('hire us')
+      window.location.assign(externalLinks.builderInterest.path);
+    }
+    if (route.name === externalLinks.contact.name) {
+      console.log('hire us')
+      window.location.assign(externalLinks.contact.path);
+    }
+    else {
       history.push(route.path);
     }
   }
-  const routesList = [routes.home, routes.about, routes.careers, externalLinks.blog, routes.contact]
+  const routesList = [routes.home, routes.about, externalLinks.builderInterest, externalLinks.contact, externalLinks.blog,]
 
   const location = useLocation();
   const isLocation = (route: Readonly<Route>) => { return location.pathname === route.path; }
@@ -112,12 +123,12 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
   const borders = makeStyles(getBorderStyle(borderColor))();
 
   const navTextColor = (navHoverIndex: number, index: number) => {
-    if (navHoverIndex === index) return theme.palette.secondary.main;
+    if (navHoverIndex === index) return Object.values(colors)[index];
     else if (props.textColor) return props.textColor;
     else return theme.palette.text.primary;
   }
   const logoColorFilter = (navHoverIndex: number, index: number) => {
-    if (navHoverIndex === index) return 'brightness(0) saturate(100%) invert(74%) sepia(71%) saturate(6519%) hue-rotate(125deg) brightness(99%) contrast(80%)';
+    if (navHoverIndex === index) return 'brightness(300%) saturate(0%) contrast(100%)';
     else if (props.logoColorFilter) return props.logoColorFilter;
     else return '';
   }
@@ -152,10 +163,10 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
                 </StyledLink>
               </LinkBox>
           ))}
-          {isLocation(routes.about) && <Underline style={{right: '28.25vw'}}/>}
-          {isLocation(routes.careers) && <Underline style={{right: '20.25vw'}}/>}
-          {isLocation(externalLinks.blog) && <Underline style={{right: '12vw'}}/>}
-          {isLocation(routes.contact) && <Underline style={{right: '3.75vw'}}/>}
+          {isLocation(routes.about) && <Underline style={{right: '28.25vw', backgroundColor: Object.values(colors)[1]}}/>}
+          {isLocation(externalLinks.contact) && <Underline style={{right: '3.75vw', backgroundColor: Object.values(colors)[4]}}/>}
+          {isLocation(externalLinks.builderInterest) && <Underline style={{right: '20.25vw', backgroundColor: Object.values(colors)[2]}}/>}
+          {isLocation(externalLinks.blog) && <Underline style={{right: '12vw', backgroundColor: Object.values(colors)[3]}}/>}
         </LinksContainer>}
         {renderRight && <HeaderRightMargin item className={borders.bottomBorder}/>}
       </Grid>

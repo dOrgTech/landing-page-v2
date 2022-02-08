@@ -1,6 +1,6 @@
 import React from 'react'
 import {Box, styled, Typography, Grid} from '@material-ui/core'
-import { theme } from "../../../theme";
+import {colors, theme} from "../../../theme";
 import {CloseButton} from "../../about/desktop/CloseButton";
 import {getSonarAnimation} from "../../../theme/styles";
 
@@ -8,7 +8,7 @@ const StyledBox = styled(Box)({
   margin: 'auto',
   width: '100%',
   height: '14.5vw',
-  background: theme.palette.secondary.main,
+  background: colors.purple,
   boxSizing: 'border-box',
   position: 'relative'
 });

@@ -5,11 +5,13 @@ import {Member} from "../../../../constants/members";
 import {ChipSmall} from "../ChipSmall";
 import {PortfolioLinkBox} from "./PortfolioLinkBox";
 
+const BACKGROUND_PATTERN = process.env.PUBLIC_URL + "/imgs/life-bg-pattern.svg";
+
 const StyledGrid = styled(Grid)({
   width: '18.75vw',
   height: '25vw',
   padding: '2.1vw 1.6vw 1vw 1.6vw',
-  backgroundColor: '#000e3c',
+  backgroundColor: "#191a1a",
   boxSizing: 'border-box',
   userSelect: 'none',
   '-moz-user-select': '-moz-none',
@@ -17,13 +19,29 @@ const StyledGrid = styled(Grid)({
   '-webkit-user-select': 'none',
   '-ms-user-select': 'none',
   position: 'relative',
-  cursor: "url(imgs/cursors/grab-cursor-icon-small.png), default"
+  cursor: "url(imgs/cursors/grab-cursor-icon-small.png), default",
+  zIndex: 1,
+  '&::after': {
+    content: `""`,
+    position: 'absolute',
+    inset: 0,
+    backgroundImage: `url(${BACKGROUND_PATTERN})`,
+    backgroundPosition: `${Math.random()*100}% ${Math.random()*100}%`,
+    backgroundSize: '200%',
+    opacity: 0.05,
+    transition: 'opacity 0.3s ease-in-out',
+    zIndex: -1,
+  },
+  '&:hover::after': {
+    opacity: 0.2,
+  }
 });
 
 const StyledPhoto = styled('img')({
+  backgroundColor: theme.palette.primary.main,
   width: "7.5vw",
   height: "7.5vw",
-  objectFit: "cover",
+  objectFit: "contain",
   borderRadius: '75px',
   userDrag: 'none',
 });
@@ -78,7 +96,7 @@ interface Props {
 
 export const ProfileSummary: React.FC<Props> = (props: Props) => {
 
-  const photo = props.member.photo ? props.member.photo : 'imgs/logos/dorg-logo-black-background.png';
+  const photo = props.member.photo ? props.member.photo : 'imgs/logos/dorg-logo-stacked.svg';
   const chipStyle = useChipStyle();
 
   return (

@@ -21,7 +21,7 @@ const StyleText = styled(Typography)({
   lineHeight: 1,
   letterSpacing: '1.2px',
   textAlign: "left",
-  color: theme.palette.text.primary
+  color: theme.palette.text.primary,
 });
 
 const StyleArrow = styled('img')({

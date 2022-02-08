@@ -10,9 +10,9 @@ const StyleGrid = styled(Grid)({
   padding: '1.5vw 1.5vw 1.5vw 2.5vw',
   background: 'transparent',
   boxSizing: 'border-box',
-  boxShadow: '0 0.1875vw 0.375vw 0 rgba(0, 0, 0, 0.16), inset 0 0.1875vw 0.375vw 0 rgba(0, 0, 0, 0.16)',
   borderRadius: 0,
   border: 'solid 2px ' + theme.palette.text.primary,
+  color: theme.palette.text.primary,
   '&:hover': {
     border: 'solid 1px ' + theme.palette.text.primary,
   },
@@ -35,7 +35,6 @@ const StyleText = styled(Typography)({
   lineHeight: 1,
   letterSpacing: '1.5px',
   textAlign: "center",
-  color: theme.palette.text.primary
 });
 
 const StyleArrow = styled('img')({
