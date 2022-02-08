@@ -1,17 +1,28 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import {borderStyle} from "./styles";
 
+export const colors = {
+  blue: '#4494F8',
+  green: '#73F25F',
+  yellow: '#EFEE02',
+  orange: '#FF7B22',
+  magenta: '#E65688',
+  purple: '#5F6EEF',
+  gray: '#373B3D',
+}
+
 export const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#001047",
+      main: '#000',
     },
     secondary: {
-      main: "#1AAF71",
+      main: colors.purple,
+      contrastText: '#000',
     },
     text: {
-      primary: '#FFFFFF',
-      secondary: '#1AAF71'
+      primary: '#FFF',
+      secondary: colors.green,
     }
   },
   typography: {
@@ -85,7 +96,7 @@ export const theme = createMuiTheme({
         lineHeight: 1.5,
         letterSpacing: '-0.45px',
         textAlign: "left",
-        color: "#001047",
+        color: colors.gray,
         alignItems: 'flex-start'
       }
     },
@@ -108,7 +119,7 @@ export const theme = createMuiTheme({
     },
     MuiMenu: {
       paper: {
-        backgroundColor: "#001047",
+        backgroundColor: colors.gray,
         border: borderStyle
       },
       list: {
