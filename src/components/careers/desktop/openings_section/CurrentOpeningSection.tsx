@@ -34,14 +34,13 @@ const useStyleClasses = makeStyles({
     transition: '0.25s',
     backgroundColor: theme.palette.secondary.main,
     border: 'initial',
+    color: theme.palette.text.primary,
     '&:hover': {
       border: 'initial',
-      boxShadow: '0 0.5vw 0.5vw -0.2vw rgba(255, 255, 255, 1)',
       transform: 'translateY(-0.25vw)',
     },
     '&:focus': {
       border: 'initial',
-      boxShadow: '0 0.5vw 0.5vw -0.2vw rgba(255, 255, 255, 1)',
       transform: 'translateY(-0.25vw)',
     }
   }

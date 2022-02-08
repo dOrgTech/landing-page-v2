@@ -5,7 +5,7 @@
         </style>
     </defs>
     <g id="calendar_1_">
-        <path id="Line_9" fill="none" stroke="#1aaf71" stroke-linecap="round" stroke-linejoin="round" stroke-width="2px" d="M0 0L18 0" transform="translate(3 10)"/>
+        <path id="Line_9" fill="none" stroke="#FF7B22" stroke-linecap="round" stroke-linejoin="round" stroke-width="2px" d="M0 0L18 0" transform="translate(3 10)"/>
         <rect id="Rectangle_509" width="18" height="18" class="cls-3" rx="2" transform="translate(3 4)"/>
         <path id="Line_10" d="M0 0L0 4" class="cls-3" transform="translate(16 2)"/>
         <path id="Line_11" d="M0 0L0 4" class="cls-3" transform="translate(8 2)"/>

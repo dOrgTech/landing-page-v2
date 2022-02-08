@@ -13,7 +13,7 @@ import {AboutTitleBox} from "../components/about/desktop/AboutTitleBox";
 import {CloseBox} from "../components/about/desktop/CloseBox";
 import {LeftMargin} from "../components/LeftMargin";
 import {RightMargin} from "../components/RightMargin"
-import {routes} from "../constants/routes";
+import {externalLinks, routes} from "../constants/routes";
 import {borderStyle, borderStyles, getSonarAnimation} from "../theme/styles";
 import {AboutTitleBoxMobile} from "../components/about/mobile/AboutTitleBoxMobile";
 import {PressBoxMobile} from "../components/about/mobile/PressBoxMobile";
@@ -63,8 +63,7 @@ export const About: React.FC = () => {
 
   ReactGA.pageview('/about');
 
-  const history = useHistory();
-  const navigateToContactPage = () => history.push(routes.contact.path);
+  const navigateToContactPage = () => window.location.assign(externalLinks.contact.path);
 
   const borders = useBorders();
   const sonarAnimation = useSonarAnimation();

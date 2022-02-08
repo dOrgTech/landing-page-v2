@@ -2,6 +2,7 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import {ButtonBase, Grid, makeStyles, Snackbar, styled, TextField, Typography} from '@material-ui/core'
 import { theme } from "../../../theme";
+import {hexToRGBA} from "../../../utils/colorUtils";
 import {AccountCircleTwoTone, EmailTwoTone, RateReviewTwoTone} from '@material-ui/icons';
 import {
   EMAIL_PATTERN,
@@ -30,7 +31,7 @@ const StyledGrid = styled(Grid)({
   margin: 'auto',
   width: '100%',
   height: `${window.innerHeight - (0.1 * window.innerWidth)}px`,
-  background: theme.palette.secondary.main,
+  background: `${hexToRGBA(theme.palette.secondary.main, 0.5)}`,
   boxSizing: 'border-box',
   position: 'relative',
 });

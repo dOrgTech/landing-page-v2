@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
     <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2px">
         <path stroke="#fff" d="M21.21 15.89A10 10 0 1 1 8 2.83" transform="translate(.001)"/>
-        <path stroke="#1aaf71" d="M22 12A10 10 0 0 0 12 2v10z" transform="translate(.001)"/>
+        <path stroke="#FF7B22" d="M22 12A10 10 0 0 0 12 2v10z" transform="translate(.001)"/>
     </g>
 </svg>

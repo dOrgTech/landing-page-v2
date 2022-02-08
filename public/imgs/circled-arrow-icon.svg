@@ -18,10 +18,10 @@
         <g id="Group_334" transform="translate(-143.864 19.136)">
             <g id="trending_flat-24px_2_" transform="translate(163)">
                 <path id="Path_44" d="M0 0h41.729v41.729H0z" class="cls-2"/>
-                <path id="Path_45" fill="#1aaf71" d="M36.035 14.955L29.08 8v5.216H3v3.477h26.08v5.217z" transform="translate(2.216 5.91)"/>
+            <path id="Path_45" fill="#E65688" d="M36.035 14.955L29.08 8v5.216H3v3.477h26.08v5.217z" transform="translate(2.216 5.91)"/>
             </g>
         </g>
-        <g id="Rectangle_475" fill="none" stroke="#1aaf71" transform="translate(7 7)">
+        <g id="Rectangle_475" fill="none" stroke="#E65688" transform="translate(7 7)">
             <rect width="66" height="66" stroke="none" rx="33"/>
             <rect width="65" height="65" x=".5" y=".5" class="cls-2" rx="32.5"/>
         </g>
