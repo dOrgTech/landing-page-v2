@@ -1,6 +1,6 @@
 import React from 'react'
 import {Accordion, AccordionDetails, AccordionSummary, Grid, makeStyles, styled, Typography} from '@material-ui/core'
-import {theme} from "../../../../theme";
+import {colors,theme} from "../../../../theme";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import {Opening, Role} from "../../../../constants/openings";
 
@@ -70,7 +70,7 @@ const useAccordionStyle = makeStyles({
     background: 'transparent'
   },
   expanded: {
-    backgroundColor: '#03284d'
+    backgroundColor: colors.blue,
   }
 });
 

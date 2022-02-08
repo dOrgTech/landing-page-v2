@@ -32,7 +32,7 @@ const StyleText = styled(Typography)({
   lineHeight: 1,
   letterSpacing: '1.5px',
   textAlign: "center",
-  color: theme.palette.text.primary
+  color: theme.palette.secondary.contrastText,
 });
 
 const StyleArrow = styled('img')({

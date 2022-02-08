@@ -62,7 +62,6 @@ export const About: React.FC = () => {
 
   ReactGA.pageview('/about');
 
-  //const history = useHistory();
   const navigateToContactPage = () => window.location.assign(externalLinks.contact.path);
 
   const borders = useBorders();

@@ -13,7 +13,7 @@ export interface Member {
 
 const placeholderMember: Member = {
   name: 'dOrg Builder',
-  photo: 'imgs/logos/dorg-logo-black-background.png',
+  photo: 'imgs/logos/dorg-logo-stacked.svg',
   skills: ['Smart Contracts', 'Frontend', 'Backend', 'Design', 'UX', 'DevOps', 'Security', 'Tokenomics'],
   portfolio: {
     github: 'https://github.com/dOrgTech',

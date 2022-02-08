@@ -1,6 +1,6 @@
 import React from 'react'
 import {Box, styled, Grid} from '@material-ui/core'
-import { theme } from "../../../theme";
+import { colors, theme } from "../../../theme";
 import {Article, Press} from "../../../constants/press";
 import {getSonarAnimation} from "../../../theme/styles";
 
@@ -10,7 +10,7 @@ const StyledBox = styled(Box)({
   width: '100%',
   height: '19.125vw',
   padding: '1vw 0',
-  backgroundColor: theme.palette.secondary.main,
+  backgroundColor: colors.purple,
   boxSizing: 'border-box',
   position: 'relative'
 });

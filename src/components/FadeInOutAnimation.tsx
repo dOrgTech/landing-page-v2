@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {makeStyles, styled, Typography,} from '@material-ui/core'
 import {CSSTransition} from 'react-transition-group';
-import {theme} from "../theme";
+import {colors, theme} from "../theme";
 
 const StyledText = styled(Typography)({
   fontFamily: theme.typography.fontFamily,
@@ -21,6 +21,7 @@ interface Props {
   textSecondary: string[];
   background?: string;
   textClasses?: string;
+  multiColor?: boolean;
   containerClasses?: string;
   duration?: number;
   noSpace?: boolean;
@@ -94,7 +95,12 @@ export const FadeInOutAnimation: React.FC<Props> = (props: Props) => {
       <CSSTransition classNames={{...transitionClassNames}} appear in={transitionIn} timeout={timeout} onEntered={handleEntered} onExited={handleExited}>
         <FadeCover style={{background: props.background ? props.background : theme.palette.primary.main}}/>
       </CSSTransition>
-      <StyledText className={props.textClasses}>{props.noSpace ? '' : '\u00A0'}{props.textSecondary[textIndex]}</StyledText>
+      <StyledText 
+        className={props.textClasses} 
+        style={{color: props.multiColor ? Object.values(colors)[textIndex] : 'unset'}}
+      >
+        {props.noSpace ? '' : '\u00A0'}{props.textSecondary[textIndex]}
+      </StyledText>
     </div>
   );
 }

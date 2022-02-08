@@ -105,7 +105,6 @@ export const MobileMenu: React.FC = () => {
           {isLocation(externalLinks.blog) && <SelectionAccent/>}
           <StyledMenuText style={{color: highlight(externalLinks.blog)}}>Blog</StyledMenuText>
         </StyledMenuItem>
-        
       </Menu>
     </div>
   );
