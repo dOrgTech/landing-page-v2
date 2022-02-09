@@ -58,18 +58,21 @@ const Accents: React.FC<AccentProps> = (props: AccentProps) => {
   const history = useHistory();
   const navigateToPage = (route: Route) => {
     if (route.name === externalLinks.blog.name) {
-      window.location.assign(externalLinks.blog.path);
+      window.open(externalLinks.blog.path, "_blank");
+      return false;
     }
     if (route.name === externalLinks.builderInterest.name) {
-      window.location.assign(externalLinks.builderInterest.path);
+      window.open(externalLinks.builderInterest.path, "_blank");
+      return false;
     }
     if (route.name === externalLinks.contact.name) {
-      window.location.assign(externalLinks.contact.path);
+      window.open(externalLinks.contact.path, "_blank");
+      return false;
     } else {
       history.push(route.path);
     }
   }
-  const routeList = [routes.home, routes.about, externalLinks.builderInterest, externalLinks.blog, externalLinks.contact]
+  const routeList = [routes.home, routes.about, externalLinks.builderInterest, externalLinks.contact, externalLinks.blog]
 
   return (
     <AccentContainer container direction={'column'} justify={'center'} alignItems={'center'} style={{height: props.height}}>
