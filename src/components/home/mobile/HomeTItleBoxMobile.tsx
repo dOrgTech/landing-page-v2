@@ -67,7 +67,7 @@ export const HomeTitleBoxMobile: React.FC<Props> = (props: Props) => {
         <TitleTextPrimary>{props.titleTextPrimary}</TitleTextPrimary>
       </Grid>
       <Grid item>
-        <FadeInOutAnimation noSpace textSecondary={props.titleTextSecondary} textClasses={styles.textSecondary} />
+        <FadeInOutAnimation noSpace textSecondary={props.titleTextSecondary} textClasses={styles.textSecondary} multiColor />
       </Grid>
       <Grid item>
         <SubtitleText>{props.subTitleText}</SubtitleText>

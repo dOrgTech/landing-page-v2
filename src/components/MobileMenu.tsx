@@ -62,15 +62,15 @@ export const MobileMenu: React.FC = () => {
   };
   const handleCareersClick = () => {
     handleClose();
-    window.location.assign(externalLinks.builderInterest.path);
+    window.open(externalLinks.builderInterest.path, "_blank");
   };
   const handleBlogClick = () => {
     handleClose();
-    window.location.assign(externalLinks.blog.path);
+    window.open(externalLinks.blog.path, "_blank");
   };
   const handleContactClick = () => {
     handleClose();
-    window.location.assign(externalLinks.contact.path);
+    window.open(externalLinks.contact.path, "_blank");
   };
 
   const location = useLocation();
@@ -91,19 +91,19 @@ export const MobileMenu: React.FC = () => {
       <Menu id="mobile-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
         <StyledMenuItem onClick={handleAboutClick}>
           {isLocation(routes.about) && <SelectionAccent/>}
-          <StyledMenuText style={{color: highlight(routes.about)}}>About</StyledMenuText>
+          <StyledMenuText style={{color: highlight(routes.about)}}>ABOUT</StyledMenuText>
         </StyledMenuItem>
         <StyledMenuItem onClick={handleCareersClick}>
           {isLocation(externalLinks.builderInterest) && <SelectionAccent/>}
-          <StyledMenuText style={{color: highlight(externalLinks.builderInterest)}}>Careers</StyledMenuText>
+          <StyledMenuText style={{color: highlight(externalLinks.builderInterest)}}>JOIN US</StyledMenuText>
         </StyledMenuItem>
         <StyledMenuItem onClick={handleContactClick}>
           {isLocation(externalLinks.contact) && <SelectionAccent/>}
-          <StyledMenuText style={{color: highlight(externalLinks.contact)}}>Contact</StyledMenuText>
+          <StyledMenuText style={{color: highlight(externalLinks.contact)}}>HIRE US</StyledMenuText>
         </StyledMenuItem>
         <StyledMenuItem onClick={handleBlogClick}>
           {isLocation(externalLinks.blog) && <SelectionAccent/>}
-          <StyledMenuText style={{color: highlight(externalLinks.blog)}}>Blog</StyledMenuText>
+          <StyledMenuText style={{color: highlight(externalLinks.blog)}}>BLOG</StyledMenuText>
         </StyledMenuItem>
       </Menu>
     </div>
