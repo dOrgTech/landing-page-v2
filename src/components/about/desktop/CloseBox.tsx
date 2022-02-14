@@ -5,13 +5,12 @@ import { CloseButton } from "./CloseButton";
 import {getSonarAnimation} from "../../../theme/styles";
 import {quotes, Quotes} from "../../../constants/quotes";
 import {ClientQuoteCarousel} from "./ClientQuoteCarousel";
-
+import PatternBackground from "./PressBox";
 
 const StyledBox = styled(Box)({
   margin: 'auto',
   width: '100%',
   height: '14.6vw',
-  background: theme.palette.secondary.main,
   boxSizing: 'border-box',
   position: 'relative',
   overflow: 'hidden'
@@ -51,6 +50,7 @@ export const CloseBox: React.FC<Props> = (props: Props) => {
 
   return (
     <StyledBox className={props.classes}>
+      <PatternBackground src='imgs/patternbackground2.png' />
       <Grid container spacing={0} direction='row' justify='flex-start' alignItems='flex-start' style={{height: 'inherit'}}>
         <Grid container item xs={8} spacing={0} direction='row' justify='space-evenly' alignItems='center' style={{height: 'inherit'}}>
           <Grid item>
