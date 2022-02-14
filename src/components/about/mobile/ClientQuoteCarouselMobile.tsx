@@ -7,7 +7,6 @@ import {theme} from "../../../theme";
 const StyledGrid = styled(Grid)({
   width: 'inherit',
   height: '66.85vw',
-  background: theme.palette.secondary.main,
   boxSizing: 'border-box',
   position: 'relative'
 });

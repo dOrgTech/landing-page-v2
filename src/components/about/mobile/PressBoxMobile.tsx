@@ -3,13 +3,12 @@ import { Box, styled, Grid } from '@material-ui/core'
 import { theme } from "../../../theme";
 import {Article, Press} from "../../../constants/press";
 import {getSonarAnimation} from "../../../theme/styles";
-
+import PatternBackground from "../desktop/PressBox";
 
 const StyledBox = styled(Box)({
   margin: 'auto',
   width: '100%',
   height: '41vw',
-  backgroundColor: theme.palette.secondary.main,
   boxSizing: 'border-box',
   position: 'relative'
 });
@@ -57,6 +56,7 @@ export const PressBoxMobile: React.FC<Props> = (props: Props) => {
 
   return (
     <StyledBox className={props.classes}>
+      <PatternBackground src='imgs/patternbackground1.png' />
       <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} className={sonarAnimation.animate}/>
       <StyledGrid container direction='row' spacing={0} justify='center' alignItems='center'>
         {Object.values(props.press).map((article: Article, index: number) => (

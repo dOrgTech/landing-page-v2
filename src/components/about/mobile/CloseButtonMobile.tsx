@@ -16,7 +16,9 @@ const StyleGrid = styled(Grid)({
   '&:hover': {
     border: 'solid 1px ' + theme.palette.text.primary,
   },
-  zIndex: 1
+  zIndex: 1,
+  position: 'relative'
+
 });
 
 const StyleText = styled(Typography)({
@@ -32,7 +34,7 @@ const StyleText = styled(Typography)({
   lineHeight: 1,
   letterSpacing: '1.5px',
   textAlign: "center",
-  color: theme.palette.secondary.contrastText,
+  color: theme.palette.text.primary,
 });
 
 const StyleArrow = styled('img')({

@@ -10,9 +10,17 @@ const StyledBox = styled(Box)({
   width: '100%',
   height: '19.125vw',
   padding: '1vw 0',
-  backgroundColor: colors.purple,
   boxSizing: 'border-box',
   position: 'relative'
+});
+
+const PatternBackground = styled('img')({
+  zIndex: 0,
+  position: 'absolute',
+  width: 'inherit',
+  height: '99%',
+  
+  opacity: .72,
 });
 
 const StyledGrid = styled(Grid)({
@@ -58,6 +66,7 @@ export const PressBox: React.FC<Props> = (props: Props) => {
 
   return (
     <StyledBox className={props.classes}>
+      <PatternBackground src='imgs/patternbackground1.png' style={{marginTop: '-11.5px'}}/>
       <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} className={sonarAnimation.animate}/>
       <StyledGrid container direction='row' spacing={0} justify='center' alignItems='center'>
         {Object.values(props.press).map((article: Article, index: number) => (
@@ -71,3 +80,5 @@ export const PressBox: React.FC<Props> = (props: Props) => {
     </StyledBox>
   );
 }
+
+export default PatternBackground;
