@@ -24,13 +24,14 @@ const StyledIcon = styled('img')({
   margin: 'auto',
   objectFit: "contain",
   background: 'transparent',
-  display: 'block',
   position: 'relative',
+  display: 'block',
   zIndex: 2,
+  transitionDuration: '0.3s',
+  transitionProperty: 'transform',
+
   '&:hover': {
-    transition: 'width 0.1s, height 0.1s',
-    width: "37vw",
-    height: "8vw",
+    transform: 'scale(1.1)'
   }
 });
 
@@ -56,7 +57,7 @@ export const PressBoxMobile: React.FC<Props> = (props: Props) => {
 
   return (
     <StyledBox className={props.classes}>
-      <PatternBackground src='imgs/patternbackground1.png' />
+      <PatternBackground src='imgs/patternbackground1.svg' />
       <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} className={sonarAnimation.animate}/>
       <StyledGrid container direction='row' spacing={0} justify='center' alignItems='center'>
         {Object.values(props.press).map((article: Article, index: number) => (

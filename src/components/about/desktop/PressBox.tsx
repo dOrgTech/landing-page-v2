@@ -9,7 +9,6 @@ const StyledBox = styled(Box)({
   margin: 'auto',
   width: '100%',
   height: '19.125vw',
-  padding: '1vw 0',
   boxSizing: 'border-box',
   position: 'relative'
 });
@@ -17,9 +16,6 @@ const StyledBox = styled(Box)({
 const PatternBackground = styled('img')({
   zIndex: 0,
   position: 'absolute',
-  width: 'inherit',
-  height: '99%',
-  
   opacity: .72,
 });
 
@@ -32,15 +28,17 @@ const StyledIcon = styled('img')({
   width: "12.5vw",
   height: "3vw",
   margin: 'auto',
+  paddingBottom: '.5vh',
   objectFit: "contain",
   background: 'transparent',
-  display: 'block',
   position: 'relative',
+  display: 'block',
   zIndex: 2,
+  transitionDuration: '0.3s',
+  transitionProperty: 'transform',
+
   '&:hover': {
-    transition: 'width 0.3s, height 0.3s',
-    width: "15vw",
-    height: "3.6vw",
+    transform: 'scale(1.17)'
   }
 });
 
@@ -66,7 +64,7 @@ export const PressBox: React.FC<Props> = (props: Props) => {
 
   return (
     <StyledBox className={props.classes}>
-      <PatternBackground src='imgs/patternbackground1.png' style={{marginTop: '-11.5px'}}/>
+      <PatternBackground src='imgs/patternbackground1.svg' />
       <StyledRings src='imgs/concentric-rings-right.svg' alt={'concentric rings flourish'} className={sonarAnimation.animate}/>
       <StyledGrid container direction='row' spacing={0} justify='center' alignItems='center'>
         {Object.values(props.press).map((article: Article, index: number) => (

@@ -6,15 +6,18 @@ import { theme } from "../../../theme";
 const StyleGrid = styled(Grid)({
   margin: 'auto',
   width: '100%',
-  height: '17.15vw',
-  padding: '5.7vw 5.7vw 5.7vw 9.5vw',
+  height: '15vw',
+  padding: '5vw 5vw 5vw 8.6vw',
   background: 'transparent',
   boxSizing: 'border-box',
-  boxShadow: '0 0.715vw 1.43vw 0 rgba(0, 0, 0, 0.16), inset 0 0.715vw 1.43vw 0 rgba(0, 0, 0, 0.16)',
-  borderRadius: 0,
-  border: 'solid 2px ' + theme.palette.text.primary,
+  boxShadow: '0px 0px 0px 1.5px' + theme.palette.text.primary,
+  color: theme.palette.text.primary,
+  transform: 'perspective(1px) translateZ(0)',
+  transitionDuration: '0.3s',
+  transitionProperty: 'transform',
+
   '&:hover': {
-    border: 'solid 1px ' + theme.palette.text.primary,
+    transform: 'scale(1.02)'
   },
   zIndex: 1,
   position: 'relative'
@@ -23,11 +26,11 @@ const StyleGrid = styled(Grid)({
 
 const StyleText = styled(Typography)({
   width: '100%',
-  height: '3.81vw',
+  height: '3.1vw',
   margin: 'auto',
   padding: 0,
   fontFamily: theme.typography.fontFamily,
-  fontSize: '3.57vw',
+  fontSize: '3vw',
   fontWeight: 'bold',
   fontStretch: "normal",
   fontStyle: "normal",

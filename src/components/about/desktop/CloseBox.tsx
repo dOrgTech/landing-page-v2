@@ -50,7 +50,7 @@ export const CloseBox: React.FC<Props> = (props: Props) => {
 
   return (
     <StyledBox className={props.classes}>
-      <PatternBackground src='imgs/patternbackground2.png' />
+      <PatternBackground src='imgs/patternbackground2.svg' />
       <Grid container spacing={0} direction='row' justify='flex-start' alignItems='flex-start' style={{height: 'inherit'}}>
         <Grid container item xs={8} spacing={0} direction='row' justify='space-evenly' alignItems='center' style={{height: 'inherit'}}>
           <Grid item>
