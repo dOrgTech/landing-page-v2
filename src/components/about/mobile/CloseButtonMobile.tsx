@@ -1,7 +1,7 @@
 import React from 'react'
 import {styled, Typography, Grid, ButtonBase} from '@material-ui/core'
 import { theme } from "../../../theme";
-
+import {navigateToPage} from '../desktop/CloseButton';
 
 const StyleGrid = styled(Grid)({
   margin: 'auto',
@@ -57,7 +57,7 @@ interface Props {
 export const CloseButtonMobile: React.FC<Props> = (props: Props) => {
 
   return (
-    <ButtonBase onClick={() => props.handleClick()}>
+    <ButtonBase onClick={() => navigateToPage()}>
       <StyleGrid className={props.classes} container spacing={0} justify={'space-between'} alignItems={'center'}>
         <Grid item>
           <StyleText>{props.text}</StyleText>
