@@ -1,38 +1,43 @@
 import React from 'react'
 import {styled, Typography, Grid, ButtonBase} from '@material-ui/core'
 import { theme } from "../../../theme";
-
+import {navigateToPage} from '../desktop/CloseButton';
 
 const StyleGrid = styled(Grid)({
   margin: 'auto',
   width: '100%',
-  height: '17.15vw',
-  padding: '5.7vw 5.7vw 5.7vw 9.5vw',
+  height: '15vw',
+  padding: '5vw 5vw 5vw 8.6vw',
   background: 'transparent',
   boxSizing: 'border-box',
-  boxShadow: '0 0.715vw 1.43vw 0 rgba(0, 0, 0, 0.16), inset 0 0.715vw 1.43vw 0 rgba(0, 0, 0, 0.16)',
-  borderRadius: 0,
-  border: 'solid 2px ' + theme.palette.text.primary,
+  boxShadow: '0px 0px 0px 1.5px' + theme.palette.text.primary,
+  color: theme.palette.text.primary,
+  transform: 'perspective(1px) translateZ(0)',
+  transitionDuration: '0.3s',
+  transitionProperty: 'transform',
+
   '&:hover': {
-    border: 'solid 1px ' + theme.palette.text.primary,
+    transform: 'scale(1.02)'
   },
-  zIndex: 1
+  zIndex: 1,
+  position: 'relative'
+
 });
 
 const StyleText = styled(Typography)({
   width: '100%',
-  height: '3.81vw',
+  height: '3.1vw',
   margin: 'auto',
   padding: 0,
   fontFamily: theme.typography.fontFamily,
-  fontSize: '3.57vw',
+  fontSize: '3vw',
   fontWeight: 'bold',
   fontStretch: "normal",
   fontStyle: "normal",
   lineHeight: 1,
   letterSpacing: '1.5px',
   textAlign: "center",
-  color: theme.palette.secondary.contrastText,
+  color: theme.palette.text.primary,
 });
 
 const StyleArrow = styled('img')({
@@ -52,7 +57,7 @@ interface Props {
 export const CloseButtonMobile: React.FC<Props> = (props: Props) => {
 
   return (
-    <ButtonBase onClick={() => props.handleClick()}>
+    <ButtonBase onClick={() => navigateToPage()}>
       <StyleGrid className={props.classes} container spacing={0} justify={'space-between'} alignItems={'center'}>
         <Grid item>
           <StyleText>{props.text}</StyleText>

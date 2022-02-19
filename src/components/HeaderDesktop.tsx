@@ -57,7 +57,8 @@ const StyledLink = styled(Link)({
   letterSpacing: '1.3px',
   textAlign: "left",
   color: theme.palette.text.primary,
-  cursor: 'pointer'
+  cursor: 'pointer',
+  whiteSpace: 'nowrap',
 });
 
 const Underline = styled(Box)({
@@ -172,5 +173,3 @@ export const HeaderDesktop: React.FC<Props> = (props: Props) => {
     </StyledAppBar>
   );
 };
-
-
