@@ -1,32 +1,31 @@
 import React from 'react'
 import CookieConsent from "react-cookie-consent";
-import {theme} from "../theme";
+import {colors, theme} from "../theme";
 import {makeStyles} from "@material-ui/core";
 import {useIsDesktop} from "../utils/hooks";
 
 const cookieStyle = {
-  background: '#000e3c',
+  background: '#101112',
 }
 
 const cookieButtonStyle = {
   margin: 0,
-  width: '9.5vw',
-  padding: '0.75vw',
+  padding: '0.73vw 1vw .73vw 1vw',
   background: theme.palette.secondary.main,
   fontFamily: theme.typography.fontFamily,
   fontSize: '0.938vw',
   fontWeight: 'bold',
-  fontStretch: "normal",
-  fontStyle: "normal",
   lineHeight: 1,
   letterSpacing: '1.5px',
-  textAlign: "center",
+  textAlign: 'center',
   color: theme.palette.text.primary,
+  whiteSpace: 'nowrap',
 }
 
 const cookieContentStyle = {
+  padding: '.25vw',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '1.5vw',
+  fontSize: '1.2vw',
   fontWeight: 'normal',
   fontStretch: "normal",
   fontStyle: "normal",
@@ -38,19 +37,17 @@ const cookieContentStyle = {
 
 const useButtonWrapperStyle = makeStyles({
   buttonWrapper: {
+    width: '9.5vw',
     position: 'relative',
-    right: '0.938vw',
-    top: '-0.25vw',
-    transition: '0.15s',
+    right: '2vw',
+    top: '-0.09vw',
+    transition: '0.3s',
+    transitionProperty: 'transform',
     '&:hover': {
-      border: 'initial',
-      boxShadow: '0 0.5vw 0.5vw -0.2vw rgba(255, 255, 255, 1)',
-      transform: 'translateY(-0.1vw)',
+      transform: 'scale(1.05)',
     },
     '&:focus': {
-      border: 'initial',
-      boxShadow: '0 0.5vw 0.5vw -0.2vw rgba(255, 255, 255, 1)',
-      transform: 'translateY(-0.1vw)',
+      transform: 'scale(1.05)',
     }
   },
   buttonWrapperMobile: {
@@ -59,22 +56,22 @@ const useButtonWrapperStyle = makeStyles({
     margin: 0,
     padding: 0,
     position: 'relative',
-    right: '1vw',
-    top: '1.5vw',
+    right: '3.5vw',
+    top: '1.4vw',
     boxSizing: 'border-box',
   }
 });
 
 
 const cookieButtonStyleMobile = {
-  height: '8vw',
+  height: '7.5vw',
   maxWidth: '30vw',
   width: '30vw',
   margin: 0,
   padding: '1vw 1vw',
   background: theme.palette.secondary.main,
   fontFamily: theme.typography.fontFamily,
-  fontSize: '2.5vw',
+  fontSize: '3vw',
   fontWeight: 'bold',
   fontStretch: "normal",
   fontStyle: "normal",
@@ -83,19 +80,20 @@ const cookieButtonStyleMobile = {
   textAlign: "center",
   color: theme.palette.text.primary,
   boxSizing: 'border-box',
+  whiteSpace: 'nowrap',
 }
 
 const cookieContentStyleMobile = {
   marginRight: '3vw',
   width: '59vw',
   maxWidth: '59vw',
-  height: '7vw',
+  height: '6vw',
   fontFamily: theme.typography.fontFamily,
-  fontSize: '3.5vw',
+  fontSize: '2.8vw',
   fontWeight: 'normal',
   fontStretch: "normal",
   fontStyle: "normal",
-  lineHeight: 1,
+  lineHeight: 1.2,
   letterSpacing: 'normal',
   textAlign: "center",
   color: theme.palette.text.secondary,

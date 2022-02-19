@@ -1,6 +1,7 @@
 import React from 'react'
 import {styled, Typography, Grid, ButtonBase} from '@material-ui/core'
 import { theme } from "../../../theme";
+import {externalLinks, Route, routes} from "../../../constants/routes";
 
 
 const StyleGrid = styled(Grid)({
@@ -11,13 +12,17 @@ const StyleGrid = styled(Grid)({
   background: 'transparent',
   boxSizing: 'border-box',
   borderRadius: 0,
-  border: 'solid 2px ' + theme.palette.text.primary,
+  boxShadow: '0px 0px 0px 1.5px' + theme.palette.text.primary,
   color: theme.palette.text.primary,
+  transform: 'perspective(1px) translateZ(0)',
+  transitionDuration: '0.3s',
+  transitionProperty: 'transform',
+
   '&:hover': {
-    border: 'solid 1px ' + theme.palette.text.primary,
+    transform: 'scale(1.02)'  
   },
   '&:focus': {
-    border: 'solid 1px ' + theme.palette.text.primary,
+    transform: 'scale(1.02)'
   },
   zIndex: 1
 });
@@ -45,16 +50,21 @@ const StyleArrow = styled('img')({
   objectFit: "contain"
 });
 
+export const navigateToPage = () => {
+  window.open(externalLinks.builderInterest.path, "_blank");
+  return false;
+}
+
 interface Props {
   text: string;
-  handleClick: () => void
+  handleClick: () => void;
   classes?: string;
 }
 
 export const CloseButton: React.FC<Props> = (props: Props) => {
 
   return (
-    <ButtonBase onClick={() => props.handleClick()}>
+    <ButtonBase onClick={() => navigateToPage()}>
       <StyleGrid className={props.classes} container spacing={0} justify={'space-between'} alignItems={'center'}>
         <Grid item>
           <StyleText>{props.text}</StyleText>

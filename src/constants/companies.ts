@@ -196,7 +196,7 @@ export const companies: Companies = {
     highlightColor: '#FF4B49',
     project: {
       description: 'Starkware uses zero-knowledge technology to bring scalability and privacy to blockchains.\n\nStarkware enlisted dOrg to design and develop the first app on Starknet ahead of its alpha release. dOrg also supports the Starkware ecosystem by developing various tools and libraries that enhance developer experience.',
-      technologies: ['UX/UI Design', 'Fronten', 'Web3 Integrations', 'Software Architecture', 'Developer Tools'],
+      technologies: ['UX/UI Design', 'Frontend', 'Web3 Integrations', 'Software Architecture', 'Developer Tools'],
       bullets: [
         {text: 'Check out the app', url: 'https://starkware-amm-demo.netlify.app/swap'},
         {text: 'Learn more about our contributions', url: 'https://medium.com/starkware/starknet-planets-alpha-on-ropsten-e7494929cb95'},

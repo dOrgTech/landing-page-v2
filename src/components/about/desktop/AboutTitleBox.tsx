@@ -14,7 +14,7 @@ const StyledBox = styled(Grid)({
 
 const StyledText = styled(Typography)({
   maxWidth: '36vw',
-  padding: '0 1.75vw',
+  padding: '0 3vw',
   fontFamily: theme.typography.fontFamily,
   fontSize: '3.25vw',
   fontWeight: 600,

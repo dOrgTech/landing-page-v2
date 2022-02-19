@@ -5,12 +5,12 @@ import {CloseButtonMobile} from "./CloseButtonMobile";
 import {getSonarAnimation} from "../../../theme/styles";
 import {ClientQuoteCarouselMobile} from "./ClientQuoteCarouselMobile";
 import {Quotes} from "../../../constants/quotes";
+import PatternBackground from "../desktop/PressBox";
 
 const StyledBox = styled(Box)({
   margin: 'auto',
   width: '100%',
   height: '98vw',
-  background: theme.palette.secondary.main,
   boxSizing: 'border-box',
   position: 'relative'
 });
@@ -45,6 +45,7 @@ export const CloseBoxMobile: React.FC<Props> = (props: Props) => {
 
   return (
     <StyledBox className={props.classes}>
+      <PatternBackground src='imgs/patternbackground3.svg' />
       <GridContainer container spacing={0} direction='column' justify='space-between' alignItems='center'>
         <Grid item>
           <ClientQuoteCarouselMobile quotes={props.quotes} />

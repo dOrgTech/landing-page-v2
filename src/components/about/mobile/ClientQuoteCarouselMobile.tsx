@@ -7,7 +7,6 @@ import {theme} from "../../../theme";
 const StyledGrid = styled(Grid)({
   width: 'inherit',
   height: '66.85vw',
-  background: theme.palette.secondary.main,
   boxSizing: 'border-box',
   position: 'relative'
 });
@@ -45,7 +44,7 @@ const useCarouselStyles = makeStyles({
   },
   indicatorContainer: {
     position: 'relative',
-    marginTop: '2.5vw',
+    marginTop: '5.5vw',
   },
   indicator: {
     fontSize: "0.9375vw",
