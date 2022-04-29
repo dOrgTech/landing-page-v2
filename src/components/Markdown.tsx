@@ -1,5 +1,5 @@
 import React from "react";
-import ReactMarkdown from "markdown-to-jsx";
+import ReactMarkdown, { MarkdownToJSX } from "markdown-to-jsx";
 import { Typography, List, ListItem, Link } from "@material-ui/core";
 
 const options = {
@@ -88,6 +88,10 @@ const options = {
   },
 };
 
-export const Markdown: React.FC<any> = (props) => {
+export const Markdown: React.FC<{
+  [key: string]: unknown;
+  children: string;
+  options?: MarkdownToJSX.Options;
+}> = (props) => {
   return <ReactMarkdown options={options} {...props} />;
 };
