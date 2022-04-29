@@ -1586,6 +1586,7 @@ __metadata:
     express: ^4.17.1
     husky: ^4.3.6
     lint-staged: ^10.5.3
+    markdown-to-jsx: ^7.1.7
     node-fetch: ^2.6.1
     prop-types: ^15.7.2
     react: ^17.0.1
@@ -10008,6 +10009,15 @@ fsevents@~2.1.2:
   dependencies:
     object-visit: ^1.0.0
   checksum: 9e85e6d802183927229d9ad04d70a0e0c7225451994605674d3ed4e4a21f817b4d9aba42a775e98078ffe47cf67df44a50eb07f965f14afead5015c8692503bd
+  languageName: node
+  linkType: hard
+
+"markdown-to-jsx@npm:^7.1.7":
+  version: 7.1.7
+  resolution: "markdown-to-jsx@npm:7.1.7"
+  peerDependencies:
+    react: ">= 0.14.0"
+  checksum: 5a2825910da5ea1cd48ae68c4f004966ed2939280cdb5d6938edd11ab4c67ee7a01c4931173c50d7b7b1ae014daf62b209011ef3fe982e537f8c19a980bd241a
   languageName: node
   linkType: hard
 

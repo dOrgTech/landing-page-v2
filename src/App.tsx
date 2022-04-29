@@ -5,6 +5,7 @@ import { theme } from "./theme";
 import { routes } from "./constants/routes";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
+import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 import {Header} from "./components/Header";
 import { Footer } from "./components/Footer";
 import "./App.css";
@@ -37,6 +38,9 @@ const App: React.FC = () => {
               </Route>
               <Route path={routes.about.path} exact>
                 <About />
+              </Route>
+              <Route path={routes.privacyPolicy.path} exact>
+                <PrivacyPolicy />
               </Route>
             </Switch>
             <CookieConsentPrompt prompt={'This website uses cookies to enhance the user experience.'} />
