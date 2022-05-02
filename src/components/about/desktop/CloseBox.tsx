@@ -1,6 +1,5 @@
 import React from 'react'
 import {Box, styled, Grid} from '@material-ui/core'
-import { theme } from "../../../theme";
 import { CloseButton } from "./CloseButton";
 import {getSonarAnimation} from "../../../theme/styles";
 import {quotes, Quotes} from "../../../constants/quotes";

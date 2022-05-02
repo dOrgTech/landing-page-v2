@@ -1,6 +1,5 @@
 import React from 'react'
 import {Box, styled, Grid} from '@material-ui/core'
-import { theme } from "../../../theme";
 import {CloseButtonMobile} from "./CloseButtonMobile";
 import {getSonarAnimation} from "../../../theme/styles";
 import {ClientQuoteCarouselMobile} from "./ClientQuoteCarouselMobile";

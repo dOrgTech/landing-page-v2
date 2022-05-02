@@ -8,9 +8,6 @@ import {ProfilePhoto} from "./ProfilePhoto";
 import {ProfileSectionTitle} from "./ProfileSectionTitle";
 import {TechnologiesContainer} from "./TechnologiesContainer";
 import {PortfolioLinkContainer} from "./PortfolioLinkContainer";
-import {HireMeButton} from "./HireMeButton";
-import {routes} from "../../../../constants/routes";
-import { useHistory } from 'react-router-dom'
 import {borderStyle, borderStyles} from "../../../../theme/styles";
 import {ClosePopUpButton} from "./ClosePopUpButton";
 
@@ -56,8 +53,6 @@ export const ProfileFull: React.FC<Props> = (props: Props) => {
   const avatar = photo ? photo : 'https://www.newdvdreleasedates.com/images/profiles/christopher-walken-13.jpg';
   const bio = '';
   const title = 'dOrg Builder';
-
-  const history = useHistory();
   // const navigateToContactPage = () => history.push(routes.contact.path);
 
   const cancelButtonPosition = useCancelButtonPosition();

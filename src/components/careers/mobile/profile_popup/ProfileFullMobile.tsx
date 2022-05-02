@@ -3,15 +3,12 @@ import ReactGA from 'react-ga';
 import {styled, Grid, makeStyles, Box} from '@material-ui/core'
 import {Member} from "../../../../constants/members";
 import {ProfilePhoto} from "../../desktop/profile_popup/ProfilePhoto";
-import {routes} from "../../../../constants/routes";
-import { useHistory } from 'react-router-dom'
 import {borderStyle} from "../../../../theme/styles";
 import {NameBioContainerMobile} from "./NameBioContainerMobile";
 import {ProfileSectionTitleMobile} from "./ProfileSectionTitleMobile";
 import {SpecializationsContainerMobile} from "./SpecializationsContainerMobile";
 import {TechnologiesContainerMobile} from "./TechnologiesContainerMobile";
 import {PortfolioLinkContainerMobile} from "./PortfolioLinkContainerMobile";
-import {HireMeButtonMobile} from "./HireMeButtonMobile";
 import {theme} from "../../../../theme";
 import {ClosePopUpButtonMobile} from "./ClosePopUpButtonMobile";
 
@@ -69,7 +66,6 @@ export const ProfileFullMobile: React.FC<Props> = (props: Props) => {
   const bio = '';
   const title = 'dOrg Builder';
 
-  const history = useHistory();
   // const navigateToContactPage = () => history.push(routes.contact.path);
 
   const cancelButtonPosition = useCancelButtonPosition();

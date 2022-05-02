@@ -1,10 +1,12 @@
-import {Grid, Link, makeStyles, styled, Typography} from '@material-ui/core'
+import {Divider, Grid, Link, makeStyles, styled} from '@material-ui/core'
 import React from 'react'
 import {getBorderStyle} from "../theme/styles";
 import {theme} from "../theme";
-import {iconLinks, IconLink} from "../constants/routes";
+import {iconLinks, IconLink, Route, routes} from "../constants/routes";
+import {useHistory} from 'react-router-dom' 
 
 const CALL_TO_ACTION_HANDBOOK = 'Handbook';
+const CALL_TO_ACTION_PRIVACY_POLICY = 'Privacy Policy';
 
 const FooterContainer = styled(Grid)({
   height: '5vw',
@@ -32,17 +34,6 @@ const StyledIcon = styled('img')({
   cursor: 'pointer'
 });
 
-const FooterText = styled(Typography)({
-  fontFamily: theme.typography.fontFamily,
-  fontSize: '0.688vw',
-  fontWeight: 'normal',
-  fontStretch: "normal",
-  fontStyle: "normal",
-  lineHeight: 1,
-  letterSpacing: 'normal',
-  textAlign: "left",
-  color: theme.palette.text.primary
-});
 
 const FooterLink = styled(Link)({
   fontFamily: theme.typography.fontFamily,
@@ -55,6 +46,7 @@ const FooterLink = styled(Link)({
   textAlign: "left",
   color: theme.palette.text.primary
 });
+
 
 const LeftContainer = styled(Grid)({
   width: '42.5vw',
@@ -85,7 +77,11 @@ export const FooterDesktop: React.FC<Props> = (props: Props) => {
 
   const renderRight = props.pageHalf === 'right' || !props.pageHalf;
   const renderLeft = props.pageHalf === 'left' || !props.pageHalf;
-
+  // navigation
+  const history = useHistory();
+  const navigateToPage = (route: Route) => {
+    history.push(route.path);
+  }
   const styles = makeStyles({
     icon: {
       filter: props.iconColorFilter ? props.iconColorFilter : ''
@@ -119,6 +115,12 @@ export const FooterDesktop: React.FC<Props> = (props: Props) => {
       <RightContainer container item spacing={0} direction='row' justify="space-between" alignItems='center'
         className={`${borders.topBorder} ${borders.leftBorder} ${borders.rightBorder}`}>
         <Grid container item spacing={0} direction='row' justify="flex-end" alignItems='center'>
+          <Grid item>
+            <FooterLink onClick={() => navigateToPage(routes.privacyPolicy)} rel="noopener" style={{cursor: 'pointer'}} className={`${styles.text} ${styles.callToAction}`}>{CALL_TO_ACTION_PRIVACY_POLICY}</FooterLink>
+          </Grid>
+          <Grid item>
+            <Divider orientation='vertical' style={{color: 'white', background: 'white', width: '100%'}}/>
+          </Grid>
           <Grid item>
             <FooterLink href={iconLinks.gitBook.path} target="_blank" rel="noopener" className={`${styles.text} ${styles.callToAction}`}>{CALL_TO_ACTION_HANDBOOK}</FooterLink>
           </Grid>

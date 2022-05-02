@@ -7,6 +7,7 @@ export interface Route {
 export interface Routes {
   home: Readonly<Route>;
   about: Readonly<Route>;
+  privacyPolicy: Readonly<Route>;
 }
 
 export interface ExternalRoutes {
@@ -26,6 +27,7 @@ export interface IconLinks {
   github: Readonly<IconLink>;
   email: Readonly<IconLink>;
   gitBook: Readonly<IconLink>;
+  privacyPolicy: Readonly<IconLink>
 }
 
 
@@ -37,6 +39,10 @@ export const routes: Routes = {
   about: {
     path: '/about',
     name: 'ABOUT'
+  },
+  privacyPolicy: {
+    path: '/privacy-policy',
+    name: 'PRIVACY POLICY'
   },
 }
 
@@ -75,6 +81,10 @@ export const iconLinks: IconLinks = {
   },
   gitBook: {
     path: "https://docs.dorg.tech/",
+    icon: './imgs/footer/gitbook-logo.svg'
+  },
+  privacyPolicy: {
+    path: routes.privacyPolicy.path,
     icon: './imgs/footer/gitbook-logo.svg'
   }
 }

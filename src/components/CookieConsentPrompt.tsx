@@ -1,6 +1,6 @@
 import React from 'react'
 import CookieConsent from "react-cookie-consent";
-import {colors, theme} from "../theme";
+import {theme} from "../theme";
 import {makeStyles} from "@material-ui/core";
 import {useIsDesktop} from "../utils/hooks";
 

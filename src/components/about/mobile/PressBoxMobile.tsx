@@ -1,6 +1,5 @@
 import React from 'react'
 import { Box, styled, Grid } from '@material-ui/core'
-import { theme } from "../../../theme";
 import {Article, Press} from "../../../constants/press";
 import {getSonarAnimation} from "../../../theme/styles";
 import PatternBackground from "../desktop/PressBox";
