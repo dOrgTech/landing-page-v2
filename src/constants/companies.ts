@@ -54,7 +54,7 @@ export const companies: Companies = {
     name:'Cent',
     link: 'https://cent.co/',
     icon: 'imgs/logos/cent_logo_white.png',
-    highlightColor: '#f04135',
+    highlightColor: '#f04136',
     project: {
       description: 'Cent is a family of ad-free products and services designed to help anyone earn a creative income.\n\ndOrg worked collaboratively with Cent on developing the Hive explorer to demonstrate the opportunities for enhanced media discoverability through web3 metadata. This service facilitates exploration of the relationships between Ethereum addresses by combining NFT ownership history with Jaccard similarity scoring in order to tell users which NFT collectors share interests most similar to their own',
       technologies: ['Frontend','Backend','Web3 integrations','R&D'],
