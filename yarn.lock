@@ -1597,7 +1597,6 @@ __metadata:
     lint-staged: ^10.5.3
     markdown-to-jsx: ^7.1.7
     node-fetch: ^2.6.1
-    prettier: ^2.6.2
     prop-types: ^15.7.2
     react: ^17.0.1
     react-cookie-consent: ^6.2.1
@@ -12908,15 +12907,6 @@ fsevents@~2.1.2:
   version: 1.0.4
   resolution: "prepend-http@npm:1.0.4"
   checksum: f723f34a23394b568a9ff0cd502bdda244b343c03b12a259343566eab1184cf41a6c7e9975d9e6010ccb2901b7c428d296e56a67a72d0a6ecb0f13531a3fa44e
-  languageName: node
-  linkType: hard
-
-"prettier@npm:^2.6.2":
-  version: 2.6.2
-  resolution: "prettier@npm:2.6.2"
-  bin:
-    prettier: bin-prettier.js
-  checksum: 10af3147eeb6e7038d6bb4cab48bace7095c4f35e9da45215a8fd3aa8785b4ca6e6cc2cc2fee073a19e230ec0271bae0660031b9252c5263eae7c08113aa8f50
   languageName: node
   linkType: hard
 
