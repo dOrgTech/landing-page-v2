@@ -3,11 +3,11 @@ export const PRIVACY_POLICY_MARKDOWN = `
 
 dOrg, LLC (“hereinafter dOrg, collectively encompassing dorg.tech”) is committed to ensuring the privacy of all our users. We take our duty to process your personal data very seriously. This policy represents our commitment to your right to privacy, giving you a clear explanation about how we use your information and your rights over that information.
 
-It's possible to use **dorg.tech **(“hereinafter website” or “us”)** **without submitting any personal information. For example, you can use Tor, plus a throwaway email, plus a VPN, plus a new pseudonym. If you care about preventing personal information from being collected on **dorg.tech**, then preventing this collection is **_your _**responsibility. 
+It's possible to use **dorg.tech**(“hereinafter website” or “us”)** **without submitting any personal information. For example, you can use Tor, plus a throwaway email, plus a VPN, plus a new pseudonym. If you care about preventing personal information from being collected on **dorg.tech**, then preventing this collection is **_your _**responsibility. 
 
 <h5>**Scope of Privacy Policy:**</h5>
 
-This privacy policy applies only to your use of our website, dorg.tech. Our website may contain links to other websites which are not hosted by us. Please note that we have no control over how your data is collected, stored, or used by other websites and we advise you to check the privacy policies of any such websites before providing any data to them.
+This privacy policy applies only to your use of our website, [dorg.tech](https://dorg.tech). Our website may contain links to other websites which are not hosted by us. Please note that we have no control over how your data is collected, stored, or used by other websites and we advise you to check the privacy policies of any such websites before providing any data to them.
 
 **What types of information do we collect and how?**
 
@@ -16,7 +16,7 @@ The type and amount of information we receive and store depends on how you use t
 Data protection laws require us to have a legal justification to process your personal information. We use the following depending on the type of data and the type of processing:
 
 This data is used to:
-\n * optimize the website, so that  quick and easy to use.
+\n * optimize the website, so that it's quick and easy to use.
 \n * diagnose and debug technical errors
 
 <h5>**Use of cookies:**</h5>

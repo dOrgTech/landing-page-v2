@@ -12,7 +12,6 @@ import "./App.css";
 import { CookieConsentPrompt } from "./components/CookieConsentPrompt";
 import { NavHoverContext } from "./components/NavHoverContext";
 import { ScrollContainer } from "./components/ScrollContainer";
-import { CookiesConsent } from "./components/CookiesConsent";
 
 const useAppContainerStyle = makeStyles({
   container: {
@@ -44,7 +43,6 @@ const App: React.FC = () => {
             </Switch>
             <CookieConsentPrompt prompt={"This website uses cookies to enhance the user experience."} />
             <Footer />
-            <CookiesConsent />
           </HashRouter>
         </NavHoverContext>
       </ScrollContainer>
