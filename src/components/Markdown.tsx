@@ -51,7 +51,12 @@ const options = {
       component: Typography,
       props: { gutterBottom: true, paragraph: true },
     },
-    a: { component: Link },
+    a: {
+      component: Link,
+      props: {
+        className: "markdownLink",
+      },
+    },
     ul: {
       component: List,
       dense: true,
