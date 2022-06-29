@@ -27,13 +27,13 @@ const tvlFormatter = new Intl.NumberFormat('en-US', {
 export const stats: Stats = {
   projects: {
     title: 'PROJECTS SHIPPED',
-    stat: 50,
+    stat: 65,
     postfix: '+',
     icon: 'imgs/bracketed-dot-icon.svg'
   },
   tvl: {
     title: 'TVL IN SHIPPED PRODUCTS',
-    stat: 2.5,
+    stat: 2.0,
     formatter: tvlFormatter,
     postfix: 'B+',
     icon: 'imgs/circle-slice-icon.svg'
@@ -46,7 +46,7 @@ export const stats: Stats = {
   },
   builders: {
     title: 'ACTIVE BUILDERS',
-    stat: 35,
+    stat: 63,
     icon: 'imgs/people-icon.svg'
   },
   lifetime: {
@@ -56,7 +56,7 @@ export const stats: Stats = {
   },
   revenue: {
     title: 'ON-CHAIN REVENUE',
-    stat: 3.0,
+    stat: 5.0,
     formatter: tvlFormatter,
     postfix: 'M+',
     icon: 'imgs/dollar-sign-icon.svg'
@@ -66,13 +66,13 @@ export const stats: Stats = {
 export const statsMobile: Stats = {
   projects: {
     title: 'Projects shipped',
-    stat: 50,
+    stat: 65,
     postfix: '+',
     icon: 'imgs/bracketed-dot-icon.svg'
   },
   tvl: {
     title: 'TVL in shipped products',
-    stat: 2.5,
+    stat: 2.0,
     formatter: tvlFormatter,
     postfix: 'B+',
     icon: 'imgs/circle-slice-icon.svg'
@@ -85,7 +85,7 @@ export const statsMobile: Stats = {
   },
   builders: {
     title: 'Active builders',
-    stat: 35,
+    stat: 63,
     icon: 'imgs/people-icon.svg'
   },
   lifetime: {
@@ -95,7 +95,7 @@ export const statsMobile: Stats = {
   },
   revenue: {
     title: 'On-chain revenue',
-    stat: 3.0,
+    stat: 5.0,
     formatter: tvlFormatter,
     postfix: 'M+',
     icon: 'imgs/dollar-sign-icon.svg'
