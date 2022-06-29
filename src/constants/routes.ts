@@ -48,11 +48,11 @@ export const routes: Routes = {
 
 export const externalLinks: ExternalRoutes = {
   builderInterest: {
-    path: 'https://airtable.com/shr0eQZfACL3Yarac',
+    path: 'https://airtable.com/shrYZEjlgxLn228cE',
     name: 'JOIN US'
   },
   contact: {
-    path: 'https://airtable.com/shrDwCltoS7MHDfsT',
+    path: 'https://airtable.com/shrRlMjGkPmeiqzEa',
     name: 'HIRE US'
   },
   blog: {

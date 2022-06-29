@@ -74,8 +74,8 @@ export const About: React.FC = () => {
 
   const {projects, tvl, funding, builders, lifetime, revenue} = desktop ? stats : statsMobile;
   // request members from server and update num builders
-  const dynamicBuilders = {...builders, stat: useMembers().length};
-  const statsList = [projects, tvl, funding, dynamicBuilders, lifetime, revenue];
+  // const dynamicBuilders = {...builders, stat: useMembers().length};
+  const statsList = [projects, tvl, funding, builders, lifetime, revenue];
 
   if (desktop) {
     return (
